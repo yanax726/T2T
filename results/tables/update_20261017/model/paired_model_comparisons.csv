@@ -1,0 +1,22 @@
+candidate,reference,week,n_patients,MAE_difference,difference_lo,difference_hi,interpretation
+unified_selected,stage_interaction,0,152,0.12161498065824064,-0.03282904996052333,0.2703247225079107,positive means candidate has greater absolute error
+unified_selected,stage_interaction,12,89,0.17582300054336278,-0.0629726299517352,0.3953383758626994,positive means candidate has greater absolute error
+unified_selected,stage_interaction,24,75,0.2774424187214714,0.10563762848423817,0.47090018463579164,positive means candidate has greater absolute error
+unified_linear,stage_interaction,0,152,-0.00949293485377072,-0.10439412694893133,0.08939265586402825,positive means candidate has greater absolute error
+unified_linear,stage_interaction,12,89,0.49797874088348293,0.23486663093942634,0.7524763861778642,positive means candidate has greater absolute error
+unified_linear,stage_interaction,24,75,0.7246092908093337,0.5189840234490255,0.9377285986653116,positive means candidate has greater absolute error
+unified_quadratic,stage_interaction,0,152,-0.008220463278619172,-0.10453182929875017,0.08924679370289303,positive means candidate has greater absolute error
+unified_quadratic,stage_interaction,12,89,0.3427534672758674,0.08833670682098684,0.593959665413039,positive means candidate has greater absolute error
+unified_quadratic,stage_interaction,24,75,0.5171838410265104,0.29382568016251837,0.7428850989512673,positive means candidate has greater absolute error
+unified_area_interaction,stage_interaction,0,152,0.18287932742581686,-0.030469773980016088,0.4116537773436282,positive means candidate has greater absolute error
+unified_area_interaction,stage_interaction,12,89,0.025310682991114827,-0.19442964420253286,0.23850261147948607,positive means candidate has greater absolute error
+unified_area_interaction,stage_interaction,24,75,0.0922112621297629,-0.05380560160634288,0.25476709999106034,positive means candidate has greater absolute error
+unified_linear,bsa_linear,0,152,0.024287620772563755,-0.06086285471056908,0.11338005397377418,positive means candidate has greater absolute error
+unified_linear,bsa_linear,12,89,0.043670004607038806,-0.04319124819709814,0.1439903141467344,positive means candidate has greater absolute error
+unified_linear,bsa_linear,24,75,0.13453958347543685,0.05080906027613243,0.22323313370788325,positive means candidate has greater absolute error
+unified_area_interaction,bsa_area,0,152,0.13268876198519167,-0.0005088410996079832,0.27979245100887934,positive means candidate has greater absolute error
+unified_area_interaction,bsa_area,12,89,-0.03142397364179254,-0.08631410025311502,0.03200749929766545,positive means candidate has greater absolute error
+unified_area_interaction,bsa_area,24,75,-0.014719784512370326,-0.04415951349205037,0.013666751883340506,positive means candidate has greater absolute error
+stage_interaction,bsa_stage,0,152,0.06888469093695986,-0.03518535629976848,0.18821072490551113,positive means candidate has greater absolute error
+stage_interaction,bsa_stage,12,89,0.02966777026093711,-0.02016885489057966,0.07857911504893668,positive means candidate has greater absolute error
+stage_interaction,bsa_stage,24,75,0.024412255851981004,-0.021376480456275992,0.07237411276404203,positive means candidate has greater absolute error

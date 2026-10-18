@@ -1,0 +1,7 @@
+target,n_values,minimum,maximum,nominal_maximum,outside_nominal_range_n,handling
+easi_total,543,0.0,58.4,72,0,No outcome imputation or clipping
+pp_nrs,685,0.0,10.0,10,0,No outcome imputation or clipping
+dlqi,392,0.0,30.0,30,0,No outcome imputation or clipping
+bsa,488,0.0,79.0,100,0,No outcome imputation or clipping
+scorad,442,0.0,93.9,103,0,No outcome imputation or clipping
+iga,543,0.0,5.0,4,22,Source category 5 retained; CRF scale confirmation required

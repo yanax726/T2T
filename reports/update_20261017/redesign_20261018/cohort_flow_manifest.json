@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "checks": {
+    "unique_patient_visit_rows": true,
+    "serum_rows_linked_to_clinical_source": true,
+    "reconstructed_frozen_model_rows_and_values": true,
+    "clinical_and_model_not_assumed_nested": true,
+    "overlapping_development_temporal_people_explicit": true,
+    "model_rows": 316,
+    "model_patients": 160
+  },
+  "inputs": [
+    {
+      "path": "results/tables/update_20260925/clinical.csv",
+      "sha256": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009"
+    },
+    {
+      "path": "results/tables/redevelopment/molecular.csv",
+      "sha256": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53"
+    },
+    {
+      "path": "results/tables/update_20261002/stage_refinement/input.csv",
+      "sha256": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022"
+    }
+  ],
+  "source_sha256": "8e1049536e9bdce29610861099f2fc5207c14cb8fa8523e5e74c4e8de870c9ee",
+  "tables": [
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/cohort_nonoverlap_reasons.csv",
+      "sha256": "850a5ecaf24b6bf2b84d62056ed17e9b1a4c71860693839a0ec722d624343b5d"
+    },
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/cohort_overlap.csv",
+      "sha256": "6614fa56785843c6c58fec251a7b8870d12290962cd5a5e69f93e728a138384f"
+    },
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/flow_edges.csv",
+      "sha256": "e6d9c462effc4c414b031a2a578e8f3e1af1740c1ab7c13b5b01eb740c6411cc"
+    },
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/flow_exclusions.csv",
+      "sha256": "b34d521704b9bb0f7388584c9c3a21a08ffd75b6750e959da4e5dc60a6e667bf"
+    },
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/flow_nodes.csv",
+      "sha256": "deaf8299c249e05ff87111cbeacc6af0891c9527ba330ec5dbbdb65031a8afd7"
+    },
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/model_ordered_exclusions.csv",
+      "sha256": "c16e5ddd61a183d8a222285a3253b6c97ea7c159c0a67c91baa8257fb5bcce75"
+    },
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/model_visit_patterns.csv",
+      "sha256": "5fbfa2033d0873ed8637d952d1424ad1d8e775d9041e0b03ddb90fc6443d8507"
+    },
+    {
+      "path": "results/tables/update_20261017/redesign_20261018/visit_inventory.csv",
+      "sha256": "cd37d1cc2c0046161db523b1a0e5e330475eb50234205a4d568cb829bdf02106"
+    }
+  ],
+  "exclusions_note": "Ordered missing-field exclusions are mutually exclusive at the visit level. Patients may have another retained visit; excluded rows are not excluded patients.",
+  "recruitment_boundary": "The source begins with 170 curated patients; screened or consented patients before this source are not documented by these inputs and cannot be invented."
+}

@@ -1,0 +1,11 @@
+repeat,fold,selected_structure,alpha,max_training_week,patient_overlap
+0,0,unified_quadratic,0.1,12,0
+0,1,unified_area_interaction,1.0,12,0
+0,2,unified_quadratic,0.1,12,0
+0,3,unified_area_interaction,1.0,12,0
+0,4,unified_quadratic,0.1,12,0
+1,0,unified_area_interaction,1.0,12,0
+1,1,unified_quadratic,0.1,12,0
+1,2,unified_area_interaction,1.0,12,0
+1,3,unified_linear,0.1,12,0
+1,4,unified_area_interaction,10.0,12,0

@@ -1,0 +1,7 @@
+week,target,treatment,model,n_initial,n_evaluable,ESS
+2,PP_NRS_le4,dupilumab,original_baseline_weights,65,27,17.590068115117788
+2,PP_NRS_le4,abrocitinib_100mg,original_baseline_weights,56,37,25.08957037015061
+2,PP_NRS_le4,abrocitinib_200mg,original_baseline_weights,42,36,21.079858387628544
+24,overall,dupilumab,original_baseline_weights,65,36,20.841585780922337
+24,overall,abrocitinib_100mg,original_baseline_weights,56,24,14.742104262827986
+24,overall,abrocitinib_200mg,original_baseline_weights,42,23,12.514779724338299

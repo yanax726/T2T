@@ -1,0 +1,288 @@
+{
+  "pass": true,
+  "n_target_visits": 28,
+  "source": "clinical_overall.csv generated solely from public clinical_observed.csv group moments",
+  "independent_check": "current clinical snapshot restricted to same eligible patients and designated visits",
+  "checks": [
+    {
+      "target": "bsa",
+      "week": 0,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "bsa",
+      "week": 4,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": -1.7763568394002505e-15,
+      "ci_low_difference": 1.7763568394002505e-15,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "bsa",
+      "week": 12,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": -1.7763568394002505e-15,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "bsa",
+      "week": 24,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": -4.440892098500626e-16,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "dlqi",
+      "week": 0,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": -1.7763568394002505e-15,
+      "sd_difference": -8.881784197001252e-16,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "dlqi",
+      "week": 4,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "dlqi",
+      "week": 12,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "dlqi",
+      "week": 24,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": -4.440892098500626e-16,
+      "sd_difference": 0.0,
+      "ci_low_difference": 2.220446049250313e-16,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "easi_total",
+      "week": 0,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "easi_total",
+      "week": 4,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": -8.881784197001252e-16,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "easi_total",
+      "week": 12,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "easi_total",
+      "week": 24,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": -8.881784197001252e-16,
+      "ci_low_difference": 4.440892098500626e-16,
+      "ci_high_difference": -4.440892098500626e-16
+    },
+    {
+      "target": "eo_count_numeric",
+      "week": 0,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": -5.551115123125783e-17,
+      "sd_difference": 0.0,
+      "ci_low_difference": -5.551115123125783e-17,
+      "ci_high_difference": -5.551115123125783e-17
+    },
+    {
+      "target": "eo_count_numeric",
+      "week": 4,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": -8.326672684688674e-17,
+      "sd_difference": -1.3877787807814457e-16,
+      "ci_low_difference": -8.326672684688674e-17,
+      "ci_high_difference": -5.551115123125783e-17
+    },
+    {
+      "target": "eo_count_numeric",
+      "week": 12,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": -5.551115123125783e-17,
+      "ci_high_difference": -5.551115123125783e-17
+    },
+    {
+      "target": "eo_count_numeric",
+      "week": 24,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 5.551115123125783e-17,
+      "sd_difference": -5.551115123125783e-17,
+      "ci_low_difference": 5.551115123125783e-17,
+      "ci_high_difference": 5.551115123125783e-17
+    },
+    {
+      "target": "ige_numeric",
+      "week": 0,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 2.2737367544323206e-13,
+      "sd_difference": -2.2737367544323206e-13,
+      "ci_low_difference": 2.2737367544323206e-13,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "ige_numeric",
+      "week": 12,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 5.684341886080802e-14,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "ige_numeric",
+      "week": 24,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 2.2737367544323206e-13,
+      "sd_difference": 2.2737367544323206e-13,
+      "ci_low_difference": 2.2737367544323206e-13,
+      "ci_high_difference": 4.547473508864641e-13
+    },
+    {
+      "target": "pp_nrs",
+      "week": 0,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 4.440892098500626e-16,
+      "ci_low_difference": -8.881784197001252e-16,
+      "ci_high_difference": 8.881784197001252e-16
+    },
+    {
+      "target": "pp_nrs",
+      "week": 2,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 4.440892098500626e-16,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "pp_nrs",
+      "week": 4,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "pp_nrs",
+      "week": 12,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 2.220446049250313e-16,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "pp_nrs",
+      "week": 24,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": -2.220446049250313e-16,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "scorad",
+      "week": 0,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 0.0,
+      "ci_low_difference": 0.0,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "scorad",
+      "week": 4,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 0.0,
+      "sd_difference": 1.7763568394002505e-15,
+      "ci_low_difference": 3.552713678800501e-15,
+      "ci_high_difference": 0.0
+    },
+    {
+      "target": "scorad",
+      "week": 12,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": 7.105427357601002e-15,
+      "sd_difference": -1.7763568394002505e-15,
+      "ci_low_difference": 7.105427357601002e-15,
+      "ci_high_difference": 3.552713678800501e-15
+    },
+    {
+      "target": "scorad",
+      "week": 24,
+      "n_equal": true,
+      "n_initial_equal": true,
+      "mean_difference": -3.552713678800501e-15,
+      "sd_difference": 1.7763568394002505e-15,
+      "ci_low_difference": -3.552713678800501e-15,
+      "ci_high_difference": 0.0
+    }
+  ]
+}

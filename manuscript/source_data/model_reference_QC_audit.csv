@@ -1,0 +1,4 @@
+week,n_model_visits,n_complete_regional_reference,n_recorded_contradiction,n_regional_reference_unknown,largest_absolute_total_region_gap,n_strict_consistent_visits,primary_MAE,strict_consistent_MAE,strict_definition,sensitivity_scope
+0,152,151,8,1,18.7,140,3.1939736758830954,3.1736273246845035,all four regions observed and absolute total-minus-regional-sum difference <=0.01,restrict evaluation of unchanged saved predictions; no training exclusion or refit
+12,89,88,2,1,8.5,86,1.296872471578925,1.3208235896858866,all four regions observed and absolute total-minus-regional-sum difference <=0.01,restrict evaluation of unchanged saved predictions; no training exclusion or refit
+24,75,71,0,4,1.7763568394002505e-15,71,1.192046435313409,1.1051413175010347,all four regions observed and absolute total-minus-regional-sum difference <=0.01,restrict evaluation of unchanged saved predictions; no training exclusion or refit

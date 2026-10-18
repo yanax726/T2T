@@ -1,0 +1,139 @@
+source,correction,family,n_source_cells,n_finite_tests
+molecular_paired_changes.csv,BH exploratory,all_23_markers_three_drugs_three_windows,207,193
+molecular_adjusted_contrasts.csv,BH exploratory,CAMS|primary,276,224
+molecular_adjusted_contrasts.csv,BH exploratory,HUASHAN|primary,276,0
+molecular_adjusted_contrasts.csv,BH exploratory,all_centers|assay_batch_sensitivity,276,240
+molecular_adjusted_contrasts.csv,BH exploratory,all_centers|primary,276,240
+molecular_global_interactions.csv,BH exploratory,23_molecule_time_by_treatment_interactions,23,21
+molecular_baseline_clinical_correlations.csv,BH exploratory,pooled_baseline,92,92
+molecular_baseline_clinical_correlations.csv,BH exploratory,stratified_baseline,276,274
+molecular_clinical_change_correlations.csv,BH exploratory,changes_all,1035,883
+doctor_stratified_response_contrasts.csv,BH exploratory,response_contrasts,414,350
+endpoint_tests.csv,BH exploratory,pooled_supplement,61,61
+endpoint_tests.csv,BH exploratory,three_groups,59,59
+endpoint_tests.csv,BH exploratory,three_pairwise,183,183
+endpoint_tests.csv,Holm,2|PP_NRS_le4,3,3
+endpoint_tests.csv,Holm,4|DLQI_le10,3,3
+endpoint_tests.csv,Holm,4|DLQI_le4,3,3
+endpoint_tests.csv,Holm,4|EASI50,3,3
+endpoint_tests.csv,Holm,4|EASI75,3,3
+endpoint_tests.csv,Holm,4|EASI90,3,3
+endpoint_tests.csv,Holm,4|EASI_le3,3,3
+endpoint_tests.csv,Holm,4|EASI_le5,3,3
+endpoint_tests.csv,Holm,4|IGA_01,3,3
+endpoint_tests.csv,Holm,4|IGA_drop2,3,3
+endpoint_tests.csv,Holm,4|PP_NRS_01,3,3
+endpoint_tests.csv,Holm,4|PP_NRS_drop4,3,3
+endpoint_tests.csv,Holm,4|PP_NRS_le4,3,3
+endpoint_tests.csv,Holm,4|overall,3,3
+endpoint_tests.csv,Holm,4|patient,3,3
+endpoint_tests.csv,Holm,4|physician,3,3
+endpoint_tests.csv,Holm,12|DLQI_le10,3,3
+endpoint_tests.csv,Holm,12|DLQI_le4,3,3
+endpoint_tests.csv,Holm,12|EASI50,3,3
+endpoint_tests.csv,Holm,12|EASI75,3,3
+endpoint_tests.csv,Holm,12|EASI90,3,3
+endpoint_tests.csv,Holm,12|EASI_le3,3,3
+endpoint_tests.csv,Holm,12|EASI_le5,3,3
+endpoint_tests.csv,Holm,12|IGA_01,3,3
+endpoint_tests.csv,Holm,12|IGA_drop2,3,3
+endpoint_tests.csv,Holm,12|PP_NRS_01,3,3
+endpoint_tests.csv,Holm,12|PP_NRS_drop4,3,3
+endpoint_tests.csv,Holm,12|PP_NRS_le4,3,3
+endpoint_tests.csv,Holm,12|overall,3,3
+endpoint_tests.csv,Holm,12|patient,3,3
+endpoint_tests.csv,Holm,12|physician,3,3
+endpoint_tests.csv,Holm,24|DLQI_le10,3,3
+endpoint_tests.csv,Holm,24|DLQI_le4,3,3
+endpoint_tests.csv,Holm,24|EASI50,3,3
+endpoint_tests.csv,Holm,24|EASI75,3,3
+endpoint_tests.csv,Holm,24|EASI90,3,3
+endpoint_tests.csv,Holm,24|EASI_le3,3,3
+endpoint_tests.csv,Holm,24|EASI_le5,3,3
+endpoint_tests.csv,Holm,24|IGA_01,3,3
+endpoint_tests.csv,Holm,24|IGA_drop2,3,3
+endpoint_tests.csv,Holm,24|PP_NRS_01,3,3
+endpoint_tests.csv,Holm,24|PP_NRS_drop4,3,3
+endpoint_tests.csv,Holm,24|PP_NRS_le4,3,3
+endpoint_tests.csv,Holm,24|overall,3,3
+endpoint_tests.csv,Holm,24|patient,3,3
+endpoint_tests.csv,Holm,24|physician,3,3
+endpoint_tests.csv,Holm,48|DLQI_le10,3,3
+endpoint_tests.csv,Holm,48|DLQI_le4,3,3
+endpoint_tests.csv,Holm,48|EASI50,3,3
+endpoint_tests.csv,Holm,48|EASI75,3,3
+endpoint_tests.csv,Holm,48|EASI90,3,3
+endpoint_tests.csv,Holm,48|EASI_le3,3,3
+endpoint_tests.csv,Holm,48|EASI_le5,3,3
+endpoint_tests.csv,Holm,48|IGA_01,3,3
+endpoint_tests.csv,Holm,48|IGA_drop2,3,3
+endpoint_tests.csv,Holm,48|PP_NRS_01,3,3
+endpoint_tests.csv,Holm,48|PP_NRS_drop4,3,3
+endpoint_tests.csv,Holm,48|PP_NRS_le4,3,3
+endpoint_tests.csv,Holm,48|overall,3,3
+endpoint_tests.csv,Holm,48|patient,3,3
+endpoint_tests.csv,Holm,48|physician,3,3
+endpoint_weighted_contrasts.csv,BH exploratory,pooled_supplement,61,59
+endpoint_weighted_contrasts.csv,BH exploratory,three_groups,58,58
+endpoint_weighted_contrasts.csv,BH exploratory,three_pairwise,183,176
+endpoint_weighted_contrasts.csv,Holm,2|PP_NRS_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,4|DLQI_le10,3,3
+endpoint_weighted_contrasts.csv,Holm,4|DLQI_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,4|EASI50,3,3
+endpoint_weighted_contrasts.csv,Holm,4|EASI75,3,3
+endpoint_weighted_contrasts.csv,Holm,4|EASI90,3,3
+endpoint_weighted_contrasts.csv,Holm,4|EASI_le3,3,3
+endpoint_weighted_contrasts.csv,Holm,4|EASI_le5,3,3
+endpoint_weighted_contrasts.csv,Holm,4|IGA_01,3,3
+endpoint_weighted_contrasts.csv,Holm,4|IGA_drop2,3,3
+endpoint_weighted_contrasts.csv,Holm,4|PP_NRS_01,3,3
+endpoint_weighted_contrasts.csv,Holm,4|PP_NRS_drop4,3,3
+endpoint_weighted_contrasts.csv,Holm,4|PP_NRS_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,4|overall,3,3
+endpoint_weighted_contrasts.csv,Holm,4|patient,3,3
+endpoint_weighted_contrasts.csv,Holm,4|physician,3,3
+endpoint_weighted_contrasts.csv,Holm,12|DLQI_le10,3,3
+endpoint_weighted_contrasts.csv,Holm,12|DLQI_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,12|EASI50,3,3
+endpoint_weighted_contrasts.csv,Holm,12|EASI75,3,3
+endpoint_weighted_contrasts.csv,Holm,12|EASI90,3,3
+endpoint_weighted_contrasts.csv,Holm,12|EASI_le3,3,3
+endpoint_weighted_contrasts.csv,Holm,12|EASI_le5,3,3
+endpoint_weighted_contrasts.csv,Holm,12|IGA_01,3,3
+endpoint_weighted_contrasts.csv,Holm,12|IGA_drop2,3,3
+endpoint_weighted_contrasts.csv,Holm,12|PP_NRS_01,3,3
+endpoint_weighted_contrasts.csv,Holm,12|PP_NRS_drop4,3,3
+endpoint_weighted_contrasts.csv,Holm,12|PP_NRS_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,12|overall,3,3
+endpoint_weighted_contrasts.csv,Holm,12|patient,3,3
+endpoint_weighted_contrasts.csv,Holm,12|physician,3,3
+endpoint_weighted_contrasts.csv,Holm,24|DLQI_le10,3,3
+endpoint_weighted_contrasts.csv,Holm,24|DLQI_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,24|EASI50,3,3
+endpoint_weighted_contrasts.csv,Holm,24|EASI75,3,3
+endpoint_weighted_contrasts.csv,Holm,24|EASI90,3,3
+endpoint_weighted_contrasts.csv,Holm,24|EASI_le3,3,3
+endpoint_weighted_contrasts.csv,Holm,24|EASI_le5,3,3
+endpoint_weighted_contrasts.csv,Holm,24|IGA_01,3,3
+endpoint_weighted_contrasts.csv,Holm,24|IGA_drop2,3,3
+endpoint_weighted_contrasts.csv,Holm,24|PP_NRS_01,3,3
+endpoint_weighted_contrasts.csv,Holm,24|PP_NRS_drop4,3,3
+endpoint_weighted_contrasts.csv,Holm,24|PP_NRS_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,24|overall,3,3
+endpoint_weighted_contrasts.csv,Holm,24|patient,3,3
+endpoint_weighted_contrasts.csv,Holm,24|physician,3,3
+endpoint_weighted_contrasts.csv,Holm,48|DLQI_le10,3,0
+endpoint_weighted_contrasts.csv,Holm,48|DLQI_le4,3,3
+endpoint_weighted_contrasts.csv,Holm,48|EASI50,3,0
+endpoint_weighted_contrasts.csv,Holm,48|EASI75,3,3
+endpoint_weighted_contrasts.csv,Holm,48|EASI90,3,3
+endpoint_weighted_contrasts.csv,Holm,48|EASI_le3,3,3
+endpoint_weighted_contrasts.csv,Holm,48|EASI_le5,3,3
+endpoint_weighted_contrasts.csv,Holm,48|IGA_01,3,3
+endpoint_weighted_contrasts.csv,Holm,48|IGA_drop2,3,3
+endpoint_weighted_contrasts.csv,Holm,48|PP_NRS_01,3,3
+endpoint_weighted_contrasts.csv,Holm,48|PP_NRS_drop4,3,3
+endpoint_weighted_contrasts.csv,Holm,48|PP_NRS_le4,3,2
+endpoint_weighted_contrasts.csv,Holm,48|overall,3,3
+endpoint_weighted_contrasts.csv,Holm,48|patient,3,3
+endpoint_weighted_contrasts.csv,Holm,48|physician,3,3

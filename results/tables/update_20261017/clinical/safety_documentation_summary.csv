@@ -1,0 +1,4 @@
+initial_treatment,n_patients,n_with_documentation,n_without_documentation,n_text_to_review,n_explicit_negative,status
+abrocitinib_100mg,56,20,36,20,0,"Documentation counts, not adjudicated AE incidence; event-time actual treatment attribution unresolved"
+abrocitinib_200mg,42,19,23,19,0,"Documentation counts, not adjudicated AE incidence; event-time actual treatment attribution unresolved"
+dupilumab,65,28,37,28,0,"Documentation counts, not adjudicated AE incidence; event-time actual treatment attribution unresolved"

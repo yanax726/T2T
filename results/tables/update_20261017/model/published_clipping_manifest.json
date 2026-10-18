@@ -1,0 +1,34 @@
+{
+  "version": "2026-10-17",
+  "new_fitting": false,
+  "primary_raw_results_preserved": true,
+  "private_inputs": [
+    "results/tables/update_20261017/model/published_matched_predictions_private.csv"
+  ],
+  "files": [
+    {
+      "path": "src/cytot2t/curation/published_clipping_sensitivity_20261017.py",
+      "sha256": "518493d2a0f99ad157ff38007d13ad3723b6ff668665912c3c43550383cee9a8"
+    },
+    {
+      "path": "results/tables/update_20261017/model/published_matched_predictions_private.csv",
+      "sha256": "b1f5021296f5c16ce5ae235f5542a21134346a71fc84b1d74e75f7adbb833d31"
+    },
+    {
+      "path": "results/tables/update_20261017/model/published_matched_metrics.csv",
+      "sha256": "ff635cd1b44f440cc67128bf0c3d00580a9fb11f1b82713055abc04d47060739"
+    },
+    {
+      "path": "results/tables/update_20261017/model/published_clipping_sensitivity.csv",
+      "sha256": "d73cadcafd3e56bc385a81282beeababa07895292ee4b54aed058b2aa7e89f3d"
+    },
+    {
+      "path": "reports/update_20261017/model/published_clipping_sensitivity.log",
+      "sha256": "d3f5801ff775849b5d58aec1a25e9d943cd341c0bf9856f747579a7b9c156cb7"
+    },
+    {
+      "path": "reports/update_20261017/model/published_clipping_note.md",
+      "sha256": "e71c9e1a6ed07ac0a56df45fe9a2cb5e74a9196e6c035f18f821137ae0529fa6"
+    }
+  ]
+}

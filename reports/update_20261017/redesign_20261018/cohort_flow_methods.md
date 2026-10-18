@@ -1,0 +1,3 @@
+# Parallel population flow
+
+Clinical comparisons and model development use different eligibility rules. Start from the curated clinical roster and show separate clinical and linked-serum branches; connect the resulting populations with an overlap annotation, not a subset arrow. Clinical source rows are predefined visit slots. Counts of nonempty slots and observed scores are supplied separately. The model source is reconstructed from current clinical and serum rows, with exact patient/visit and input-value equality to the frozen input. W0/W12 and W24 partition visits, not people. W24 is previously inspected within-cohort temporal application. All outputs here are aggregate counts without identifiers.

@@ -1,0 +1,7 @@
+reason,before_rows,excluded_rows,remaining_rows,excluded_patient_records,patients_fully_lost,remaining_patients
+age_below_12_or_unknown,352,12,340,6,6,162
+missing_easi_total,340,13,327,11,1,161
+missing_bsa,327,1,326,1,0,161
+missing_log2_CCL17,326,0,326,0,0,161
+missing_log2_CCL26,326,8,318,6,1,160
+missing_log2_IL-5,318,2,316,2,0,160

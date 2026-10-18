@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Primary performance of the common-model development procedure.}\label{tab:model_full}
+\begin{tabular}{lrrr}\toprule
+ & W0 & W12 & W24 \\ \midrule
+Patients & 152 & 89 & 75 \\ 
+MAE (95\% CI) & 3.19 (2.75--3.70) & 1.30 (0.96--1.71) & 1.19 (0.89--1.53) \\ 
+RMSE & 4.45 & 2.29 & 1.87 \\ 
+Mean signed error & -0.59 (-1.27--0.07) & 0.82 (0.43--1.29) & 0.84 (0.50--1.25) \\ 
+Spearman correlation & 0.918 & 0.927 & 0.904 \\ 
+Concordance correlation & 0.910 & 0.900 & 0.869 \\ 
+$R^2$ & 0.819 & 0.770 & 0.656 \\ 
+Calibration intercept & 2.01 (0.92--3.28) & 0.13 (-0.32--0.69) & 0.07 (-0.20--0.42) \\ 
+Calibration slope & 0.91 (0.82--1.00) & 0.81 (0.66--0.94) & 0.73 (0.59--0.82) \\ 
+Within one point, \% & 24.0 & 57.9 & 59.3 \\ 
+Within two points, \% & 41.8 & 84.3 & 82.0 \\ 
+Severity-band agreement, \% & 83.2 & 88.2 & 92.7 \\ 
+Sensitivity for EASI >7, \% & 92.5 & 85.3 & 100.0 \\ 
+Specificity for EASI $\leq$7, \% & 92.1 & 90.3 & 91.9 \\ 
+\bottomrule\end{tabular}
+\par\small W0/W12 use patient-grouped nested validation; W24 is same-cohort temporal application. Structure and penalty selection are internal to each training fold; earlier marker-panel selection is not repeated. Metrics are averaged after scoring each repetition. Intervals are 95\% patient-bootstrap intervals conditional on saved predictions; selection and fitting are not repeated. MAE, mean absolute error; RMSE, root mean squared error. Positive signed error indicates overestimation. Calibration regresses observed EASI on predicted EASI; ideal intercept/slope are 0/1. The single final formula is not independently validated.\end{table}

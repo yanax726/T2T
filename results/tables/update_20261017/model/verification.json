@@ -1,0 +1,14 @@
+{
+  "patient_disjoint": true,
+  "same_patient_same_folds": true,
+  "n_unique_patients": 160,
+  "development_patients": 156,
+  "outcome_not_imputed": true,
+  "validation_not_training_fit": true,
+  "W24_absent_from_fitting_selection": true,
+  "repeats_scored_before_averaging": true,
+  "zero_anchor_held_for_area_model": true,
+  "frozen_stage_predictions_reproduced": true,
+  "maximum_frozen_prediction_difference": 3.552713678800501e-15,
+  "patient_overlap_was_checked_in_inner_and_outer_folds": true
+}

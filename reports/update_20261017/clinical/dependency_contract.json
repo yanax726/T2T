@@ -1,0 +1,91 @@
+{
+  "entrypoint": "PYTHONPATH=src python -m cytot2t.curation.clinical_evidence_20261017 --root /path/to/data-root --bootstrap 1000",
+  "root_environment": "T2T_ROOT",
+  "verification_entrypoint": "PYTHONPATH=src python -m cytot2t.curation.verify_clinical_evidence_20261017",
+  "pipeline_boundary": "Curated clinical snapshot + processed serum matrix/QC table + audited exposure ledger. This is not an original-XLSX-to-results replay.",
+  "inputs": [
+    {
+      "path": "results/tables/update_20260925/clinical.csv",
+      "sha256": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+      "release": "restricted patient data"
+    },
+    {
+      "path": "results/tables/redevelopment/molecular.csv",
+      "sha256": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+      "release": "restricted patient data"
+    },
+    {
+      "path": "results/tables/redevelopment/assay_long.csv",
+      "sha256": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+      "release": "restricted patient data"
+    },
+    {
+      "path": "config/marker_registry.csv",
+      "sha256": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+      "release": "public assay metadata"
+    },
+    {
+      "path": "results/tables/update_20261002/maintenance_patient_ledger.csv",
+      "sha256": "da4763c20dcf78002fe702b3316b83b80bde014b3d3a9101d2de18cbff288532",
+      "release": "restricted patient data"
+    },
+    {
+      "path": "results/tables/update_20261002/exposure_at_visits.csv",
+      "sha256": "55bb93216f70e1b7b7b8819b7df69a36275433167eacccca650aad37d0b6ac5e",
+      "release": "restricted patient data"
+    },
+    {
+      "path": "results/tables/update_20261002/reduction_maintenance_classification.csv",
+      "sha256": "8dff18644db64515a8c2707dd2cf9270f44bc6be63c1fcc927e4b050a61fdef4",
+      "release": "restricted patient data"
+    },
+    {
+      "path": "data/restricted/treatment_episode_v0.csv",
+      "sha256": "ee4f0a8a99709f273168014b632e3d7c3c23ea064187f73e53fa894e79ee81c2",
+      "release": "restricted patient data"
+    }
+  ],
+  "code": [
+    {
+      "path": "src/cytot2t/curation/clinical_evidence_20261017.py",
+      "sha256": "3c9b50d08d0b49328445d4a9f2b6f663463fa01f1e91e388df2632d846182b3a"
+    },
+    {
+      "path": "src/cytot2t/curation/proposal_closure_20261002.py",
+      "sha256": "2fdb84ce243e6ea6ebba0bfc5b7713be6a850901831f0737b0f364516f2a49a6"
+    },
+    {
+      "path": "src/cytot2t/curation/update_20261002_overlap.py",
+      "sha256": "1271da29027f0fd49902c31a1d0b4354f1169a604e49e40ec747ca9562941d16"
+    },
+    {
+      "path": "src/cytot2t/clinical_alignment/doctor_evidence.py",
+      "sha256": "7310ed88882af64a634779bfb8dd0500eb1b6219e7ecfcd7c6f97d4d90feaa99"
+    },
+    {
+      "path": "src/cytot2t/curation/verify_clinical_evidence_20261017.py",
+      "sha256": "77b1e686e2997893e2db219fdbbe936f4f4748a784ecf1b05a2c23e1c0f56f27"
+    }
+  ],
+  "packages": {
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "statsmodels": "0.14.6",
+    "scikit-learn": "1.6.1",
+    "patsy": "1.0.3",
+    "threadpoolctl": "3.6.0"
+  },
+  "seeds": {
+    "main_and_propensity_bootstrap": 20261017,
+    "paired_signflip": 20261002,
+    "doctor_association_bootstrap": 2026091307
+  },
+  "cohort": {
+    "minimum_age": 12,
+    "initial_dose_ambiguity_excluded": true,
+    "adult_DLQI_minimum_age": 18,
+    "patient_n": 163
+  },
+  "release_notes": "Only aggregate tables are candidates for public source data. restricted/ contains patient rows and source clinical notes. Original registry and patient-level records require an approved access/release decision."
+}

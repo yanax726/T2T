@@ -1,0 +1,6 @@
+policy,max_abs_change_bound_at_BSA79,max_abs_change_bound_at_BSA100,domain
+full_precision,0.0,0.0,All combinations within the W0/W12 development molecular ranges; BSA upper bounds as named. Clipping cannot enlarge this bound. Not a clinical-accuracy guarantee.
+direct_2dp,1.2828782464349031,1.623896514474561,All combinations within the W0/W12 development molecular ranges; BSA upper bounds as named. Clipping cannot enlarge this bound. Not a clinical-accuracy guarantee.
+direct_3dp,0.6779803464733852,0.858202970219475,All combinations within the W0/W12 development molecular ranges; BSA upper bounds as named. Clipping cannot enlarge this bound. Not a clinical-accuracy guarantee.
+direct_4dp,0.1194187447423058,0.15116296802823517,All combinations within the W0/W12 development molecular ranges; BSA upper bounds as named. Clipping cannot enlarge this bound. Not a clinical-accuracy guarantee.
+scaled100_2dp,0.1194187447423058,0.15116296802823517,All combinations within the W0/W12 development molecular ranges; BSA upper bounds as named. Clipping cannot enlarge this bound. Not a clinical-accuracy guarantee.

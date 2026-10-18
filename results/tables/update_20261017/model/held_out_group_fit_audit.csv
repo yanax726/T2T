@@ -1,0 +1,6 @@
+held_out_dimension,held_out_group,structure,alpha,n_training_patients,n_test_patients,overlap
+center,CAMS,unified_area_interaction,1.0,33,127,0
+center,HUASHAN,unified_linear,1.0,123,33,0
+treatment,abrocitinib_100mg,unified_area_interaction,1.0,103,54,0
+treatment,abrocitinib_200mg,unified_quadratic,0.1,115,42,0
+treatment,dupilumab,unified_area_interaction,0.1,95,63,0

@@ -1,0 +1,182 @@
+{
+  "version": "2026-10-17",
+  "status": "Exploratory target-specific refit on the current recorded clinical outcomes. PP-NRS and DLQI are separately fitted bounded continuous regressions; IGA is a six-category ordinal model with instrument identity pending. W24 is previously inspected same-cohort temporal transfer.",
+  "private_files": [
+    "predictions_private.csv",
+    "input_private.csv",
+    "fit_audit_private.csv"
+  ],
+  "software": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "scikit_learn": "1.6.1"
+  },
+  "source_hashes": {
+    "config/auxiliary_targets_20261017.json": "4991aabcc76bb9a6a582a04a81bf4e7c954f11ff9f639921a54eefaead22b41b",
+    "src/cytot2t/curation/auxiliary_targets_20261017.py": "3fc936f121022169204a0960c98610ba2886f9fc3e526802497bf4710731d0df",
+    "src/cytot2t/curation/unified_model_20261017.py": "092478679baf1e3ac0332e0a3bad665f3a9084f63f091c42d9efec7d9e8a476a",
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53"
+  },
+  "outputs": [
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/IGA_confusion_by_repeat.csv",
+      "sha256": "b06986901a3fc6d6a14512a74746b4ba84d92167b9e963da5f4f13b0f9b49c53"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/cohort_flow.csv",
+      "sha256": "fd049d2b2ce9ae31a8b01e6b4227c9df3b2fab9baf00c9608cb8a0eaf1c76218"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/example_dlqi.csv",
+      "sha256": "ff72802b60dd57ef4c85bc6d13c9216aa42b0b05600cda15bf59739ec0e7e099"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/example_iga.csv",
+      "sha256": "5c5d1f597930e72e36e7ea640465e6dea79b3e09a58e3b54e552a1c853df927c"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/example_pp_nrs.csv",
+      "sha256": "631e74b6814091fd7f2a2d553ef125263b95ca1f7f3a79c12b10a202d668c49b"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/fit_audit.csv",
+      "sha256": "d3437dfed36757a7972be60cdd9f628df5b43adc6b7c40450956bcc3bafeb947"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/fit_audit_private.csv",
+      "sha256": "898bd1e2d20c9ece2eb04bbcf37c37cf3ff8939c628f5850d15c44abcddac2bc"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/formula_dlqi.json",
+      "sha256": "1720cf0d62305a63f19d3ab7630b985ca7b8fde1cbf46190110a131cb489ea7d"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/formula_iga.json",
+      "sha256": "1d507c8b7293424fa35369e56a23e9434c86654877dea34e8352abff45ef4291"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/formula_pp_nrs.json",
+      "sha256": "7582a8964d327b0b273a7024ac2c862067450f9541a3f76bbcc0636f7eb3d284"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/full_development_selection_dlqi.csv",
+      "sha256": "290bc559a9519fc20254bb42a5bb425162f0efcd540ee272c9602c1961357a68"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/full_development_selection_iga.csv",
+      "sha256": "ea54246bcb5ab10b90fb13194e639525fcaa0efbf4847d8781628611b936bb42"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/full_development_selection_pp_nrs.csv",
+      "sha256": "a6daf8f2671212cde986abcadf0cc87b406bcc74e4868a8f4928a1f4bf0b4521"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/inner_selection.csv",
+      "sha256": "5e78b95507d5956c91081d8d02c927b7161bb479a805edf8a21d49d94e310352"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/input_private.csv",
+      "sha256": "4db124983916ebbff79011d7802df7a9dd36712483e5a4ef99fc4b86e3f3820a"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/metrics.csv",
+      "sha256": "cc8a707307bf7c340c925b6fb9bbf5e4f4a71f8be14247cb44a739aa336b25f5"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/overall_metrics.csv",
+      "sha256": "050a5626706943497ea726ea41f55c138d83fb6c858d0cecdf3e92ddf722db00"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/paired_comparisons.csv",
+      "sha256": "7b5d036c50cc8d14259dd3c4daaa2285744735fe6cc66e9b960a88219a96f682"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/predictions_private.csv",
+      "sha256": "390d55f8c1fc72da508301fda2d2927bdbba63ff5897eff9b3332d72e71187d8"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/repeat_aggregation_audit.csv",
+      "sha256": "f11132b15c02a37b041431e8b32099bf4c0e97630e7e9ce555496d084ee6dc47"
+    },
+    {
+      "path": "results/tables/update_20261017/model/auxiliary_targets/verification.json",
+      "sha256": "231cbaa47980aee16391c052ea322bbe4efc1efcc0f7bf4a2776a62babf53953"
+    }
+  ],
+  "checks": {
+    "patient_disjoint": true,
+    "inner_patient_disjoint": true,
+    "W24_absent_from_training_and_selection": true,
+    "no_current_target_inputs": true,
+    "no_stage_drug_or_history_inputs": true,
+    "DLQI_min_age18": true,
+    "IGA_ordinal_probabilities_sum1": true,
+    "IGA_probabilities_nonnegative": true,
+    "IGA_gradient_finite_difference_error": 1.5021751327466337e-06,
+    "formulas_reconstruct": [
+      {
+        "target": "pp_nrs",
+        "reconstruction_max_abs": 1.7763568394002505e-15
+      },
+      {
+        "target": "dlqi",
+        "reconstruction_max_abs": 7.105427357601002e-15
+      },
+      {
+        "target": "iga",
+        "reconstruction_max_abs": 6.661338147750939e-16
+      }
+    ],
+    "clinical_interpretation": "Exploratory recorded targets; IGA instrument identity and PP-NRS recall window require source confirmation",
+    "isolated_reproduction_18_artifacts_byte_identical": true,
+    "calculator_tests_passed": 6
+  },
+  "evidence_files": [
+    {
+      "path": "reports/update_20261017/model/auxiliary_targets/run.log",
+      "sha256": "c528c905c518b6d83585ffe6b74622e4d576ab98b46c386d7e844442afd14992"
+    },
+    {
+      "path": "reports/update_20261017/model/auxiliary_targets/methods.md",
+      "sha256": "c3f2e967a2fcf7f1724159706fe42bcedd89443fbb08677007d6dea6a294500e"
+    },
+    {
+      "path": "reports/update_20261017/model/auxiliary_targets/results.md",
+      "sha256": "1ee697906c45e694319e1802d1270d9f2219fa46b17aea6e9116d0a41ac321f2"
+    },
+    {
+      "path": "reports/update_20261017/model/auxiliary_targets/manuscript_excerpt.tex",
+      "sha256": "9aeabe20fab33db1ae5e5f3493c211349276b3c11dd70ff91ed7923a30df8afd"
+    },
+    {
+      "path": "reports/update_20261017/model/auxiliary_targets/calculator_tests.log",
+      "sha256": "5f02161a6ed572b0a842ee99c4bccb69597b82a3ac1a60e164dbfae915228a5d"
+    },
+    {
+      "path": "reports/update_20261017/model/auxiliary_targets/isolated_reproduction.log",
+      "sha256": "c528c905c518b6d83585ffe6b74622e4d576ab98b46c386d7e844442afd14992"
+    },
+    {
+      "path": "reports/update_20261017/model/auxiliary_targets/isolated_reproduction_check.json",
+      "sha256": "e4f89216f3ce9f23eb10e6252087f55ee6159ebc6591fb88772ad023e546ce37"
+    },
+    {
+      "path": "tests/test_auxiliary_targets_calculator.py",
+      "sha256": "c66165f610ac94d99037970551698e87205dcdf5c24a9b4d1fb6d5d138165d79"
+    },
+    {
+      "path": "src/cytot2t/curation/auxiliary_targets_calculator_20261017.py",
+      "sha256": "a9dbd4091cbd90401d665cc701515d2538484990a157933d5c7dc2e72d0d2053"
+    },
+    {
+      "path": "examples/auxiliary_targets_input.csv",
+      "sha256": "f146262d611d57d8ce23d2a5bb46832f4447f13e023da92e9e148f4b707b4870"
+    }
+  ],
+  "private_directories": [
+    "results/audit/update_20261017/auxiliary_isolated_reproduction"
+  ]
+}

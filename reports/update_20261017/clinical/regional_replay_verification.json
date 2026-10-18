@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "regional_outputs_identical": {
+    "regional_paired_improvement.csv": true,
+    "whole_body_PP_NRS_improvement.csv": true,
+    "regional_availability.csv": true,
+    "regional_normalized_burden.csv": true,
+    "regional_treatment_contrasts.csv": true
+  },
+  "original_clinical_tables_unchanged": true,
+  "clinical_tables_checked": 46,
+  "independent_head_neck_percentage_check": true,
+  "n_pairs": 39,
+  "mean_percentage_improvement": 75.29889092389092
+}

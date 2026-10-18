@@ -1,0 +1,13 @@
+week,primary,comparator,difference,estimate,ci_low,ci_high,n_patients,n_repeats,bootstrap_replicates,interval_scope
+0,unified_selected,bsa_area,primary minus comparator MAE,0.0714244152176155,-0.03249900375796197,0.1733681695672333,152,2,2000,patient bootstrap conditional on saved predictions
+0,unified_selected,bsa_linear,primary minus comparator MAE,0.15539553628457523,0.04795217488266786,0.2669713157461744,152,2,2000,patient bootstrap conditional on saved predictions
+0,unified_selected,serum_linear,primary minus comparator MAE,-4.434737518482604,-5.446904609067635,-3.5074029259071593,152,2,2000,patient bootstrap conditional on saved predictions
+0,unified_selected,unified_area_interaction,primary minus comparator MAE,-0.061264346767576264,-0.166022276639038,0.05188190322061318,152,2,2000,patient bootstrap conditional on saved predictions
+12,unified_selected,bsa_area,primary minus comparator MAE,0.11908834391045539,0.03513882601305631,0.20375678512580817,89,2,2000,patient bootstrap conditional on saved predictions
+12,unified_selected,bsa_linear,primary minus comparator MAE,-0.2784857357330814,-0.37710657135726017,-0.1701821803261565,89,2,2000,patient bootstrap conditional on saved predictions
+12,unified_selected,serum_linear,primary minus comparator MAE,-6.2704077327500904,-7.149247939675888,-5.373126278355623,89,2,2000,patient bootstrap conditional on saved predictions
+12,unified_selected,unified_area_interaction,primary minus comparator MAE,0.15051231755224795,0.08245292444969429,0.22270461521112106,89,2,2000,patient bootstrap conditional on saved predictions
+24,unified_selected,bsa_area,primary minus comparator MAE,0.17051137207933822,0.1064108206872876,0.24305354594286183,75,2,2000,patient bootstrap conditional on saved predictions
+24,unified_selected,bsa_linear,primary minus comparator MAE,-0.31262728861242517,-0.4149699369924269,-0.20941459128432022,75,2,2000,patient bootstrap conditional on saved predictions
+24,unified_selected,serum_linear,primary minus comparator MAE,-7.498999271264942,-8.571568623932555,-6.470209798626904,75,2,2000,patient bootstrap conditional on saved predictions
+24,unified_selected,unified_area_interaction,primary minus comparator MAE,0.1852311565917085,0.11991782127455002,0.2552966872253633,75,2,2000,patient bootstrap conditional on saved predictions

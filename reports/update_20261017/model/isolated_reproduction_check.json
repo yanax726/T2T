@@ -1,0 +1,121 @@
+{
+  "isolated_root_has_only_model_code_config_private_input": true,
+  "historical_pipeline_modules_not_imported": true,
+  "all_19_core_artifacts_identical": true,
+  "checks": [
+    {
+      "file": "predictions.csv",
+      "equal": true,
+      "sha256_primary": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+      "sha256_isolated": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1"
+    },
+    {
+      "file": "fit_audit.csv",
+      "equal": true,
+      "sha256_primary": "04a9790a80d3c84d450d63cebfecadcec93faeb55b120285bf1af890e727548b",
+      "sha256_isolated": "04a9790a80d3c84d450d63cebfecadcec93faeb55b120285bf1af890e727548b"
+    },
+    {
+      "file": "fit_audit_private.csv",
+      "equal": true,
+      "sha256_primary": "bad322a7f24db61d78f107f97717b07e5a7d4d203bafae98669d5dcfddbf8bb9",
+      "sha256_isolated": "bad322a7f24db61d78f107f97717b07e5a7d4d203bafae98669d5dcfddbf8bb9"
+    },
+    {
+      "file": "inner_selection.csv",
+      "equal": true,
+      "sha256_primary": "8ae73edb030d72f582b77182017e40d215b74025084873f0ec1b321b2acb95f5",
+      "sha256_isolated": "8ae73edb030d72f582b77182017e40d215b74025084873f0ec1b321b2acb95f5"
+    },
+    {
+      "file": "model_metrics.csv",
+      "equal": true,
+      "sha256_primary": "34925b24cb3a19e646ad822dc5569f480d6a617e0d484300e93e37aa470b0bd8",
+      "sha256_isolated": "34925b24cb3a19e646ad822dc5569f480d6a617e0d484300e93e37aa470b0bd8"
+    },
+    {
+      "file": "overall_metrics.csv",
+      "equal": true,
+      "sha256_primary": "8a3c60ba4cdb6f3c162f384f8164f91b92224b611130f8c03f9c0a97f51a2b36",
+      "sha256_isolated": "8a3c60ba4cdb6f3c162f384f8164f91b92224b611130f8c03f9c0a97f51a2b36"
+    },
+    {
+      "file": "paired_model_comparisons.csv",
+      "equal": true,
+      "sha256_primary": "178c5763bb42b3dcf5b88f873fe66b95c0f8a883477bf87350804bcb1f9fcc80",
+      "sha256_isolated": "178c5763bb42b3dcf5b88f873fe66b95c0f8a883477bf87350804bcb1f9fcc80"
+    },
+    {
+      "file": "repeat_aggregation_audit.csv",
+      "equal": true,
+      "sha256_primary": "d2d1c0ea90d490d5e9426fed0171045202444e1583b4b5ce003d85859ee619e0",
+      "sha256_isolated": "d2d1c0ea90d490d5e9426fed0171045202444e1583b4b5ce003d85859ee619e0"
+    },
+    {
+      "file": "paired_change_metrics.csv",
+      "equal": true,
+      "sha256_primary": "3e0be3499360bcba3a756d87809b1a49c99d4e13af7fb98ff32c4c4eb1ec9fd8",
+      "sha256_isolated": "3e0be3499360bcba3a756d87809b1a49c99d4e13af7fb98ff32c4c4eb1ec9fd8"
+    },
+    {
+      "file": "improvement_classification.csv",
+      "equal": true,
+      "sha256_primary": "f1196a941bdcbc1ff28c9e2e9ce1fc3fcebabd6ce1263000c59332f4b3c6e224",
+      "sha256_isolated": "f1196a941bdcbc1ff28c9e2e9ce1fc3fcebabd6ce1263000c59332f4b3c6e224"
+    },
+    {
+      "file": "published_matched_metrics.csv",
+      "equal": true,
+      "sha256_primary": "ff635cd1b44f440cc67128bf0c3d00580a9fb11f1b82713055abc04d47060739",
+      "sha256_isolated": "ff635cd1b44f440cc67128bf0c3d00580a9fb11f1b82713055abc04d47060739"
+    },
+    {
+      "file": "published_matched_predictions_private.csv",
+      "equal": true,
+      "sha256_primary": "b1f5021296f5c16ce5ae235f5542a21134346a71fc84b1d74e75f7adbb833d31",
+      "sha256_isolated": "b1f5021296f5c16ce5ae235f5542a21134346a71fc84b1d74e75f7adbb833d31"
+    },
+    {
+      "file": "held_out_group_metrics.csv",
+      "equal": true,
+      "sha256_primary": "df356cabc7ff41c51eac2948a46abe1dc8bfb76e3045728be0a6eb9792caf353",
+      "sha256_isolated": "df356cabc7ff41c51eac2948a46abe1dc8bfb76e3045728be0a6eb9792caf353"
+    },
+    {
+      "file": "held_out_group_fit_audit.csv",
+      "equal": true,
+      "sha256_primary": "24264264556c9533524ba926d770e6a217b5d073db59b47f2eded5489b513b94",
+      "sha256_isolated": "24264264556c9533524ba926d770e6a217b5d073db59b47f2eded5489b513b94"
+    },
+    {
+      "file": "held_out_group_predictions_private.csv",
+      "equal": true,
+      "sha256_primary": "e8f187d60fd75dd61836ad0a6214623f3341e233e47b20cbe22634358407a6b5",
+      "sha256_isolated": "e8f187d60fd75dd61836ad0a6214623f3341e233e47b20cbe22634358407a6b5"
+    },
+    {
+      "file": "full_development_inner_selection.csv",
+      "equal": true,
+      "sha256_primary": "444e58f2676f09654bfbd0b70379ce3ad9944cf93bbbfcc31c8e1576870f95e4",
+      "sha256_isolated": "444e58f2676f09654bfbd0b70379ce3ad9944cf93bbbfcc31c8e1576870f95e4"
+    },
+    {
+      "file": "formula.json",
+      "equal": true,
+      "sha256_primary": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+      "sha256_isolated": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501"
+    },
+    {
+      "file": "all_candidate_formulas.json",
+      "equal": true,
+      "sha256_primary": "73ed8fff609c200742d14379c3b72f0deab0e4eb5bf3cfe11bcf785d50c69e67",
+      "sha256_isolated": "73ed8fff609c200742d14379c3b72f0deab0e4eb5bf3cfe11bcf785d50c69e67"
+    },
+    {
+      "file": "calculator_examples.csv",
+      "equal": true,
+      "sha256_primary": "674617d65ba7fc71093f51d8d5c9d88a917ebe43ea0524ad66fe907c4402376a",
+      "sha256_isolated": "674617d65ba7fc71093f51d8d5c9d88a917ebe43ea0524ad66fe907c4402376a"
+    }
+  ]
+}

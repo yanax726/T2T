@@ -1,0 +1,4 @@
+week,n_patients,MAE_difference_boundary_minus_reported,difference_lo,difference_hi,qualification
+0,152,-0.007193247989967022,-0.046662968624107654,0.042817135155407623,Alternative censor representation only; primary exported values and formula unchanged
+12,89,0.013644202054372124,-0.002706128713973376,0.03073725165944511,Alternative censor representation only; primary exported values and formula unchanged
+24,75,0.031036107089337617,0.00948419263101389,0.05280121920670842,Alternative censor representation only; primary exported values and formula unchanged

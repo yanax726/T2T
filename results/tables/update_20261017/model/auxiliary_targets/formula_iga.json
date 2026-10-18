@@ -1,0 +1,58 @@
+{
+  "target": "iga",
+  "model": "BSA_three",
+  "features": [
+    "bsa",
+    "log2_CCL17",
+    "log2_CCL26",
+    "log2_IL-5"
+  ],
+  "alpha": 0.1,
+  "link": "identity",
+  "input_units": "BSA percentage 0..100; log2 positive Summary.xlsx concentrations in recorded pg/ml",
+  "missing_policy": "reject incomplete inputs",
+  "training_weeks": [
+    0,
+    12
+  ],
+  "stage_drug_history_inputs": false,
+  "family": "proportional_odds_ordinal_logistic",
+  "categories": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "coefficients": {
+    "bsa": 0.14896204593899648,
+    "log2_CCL17": 0.22532144136382068,
+    "log2_CCL26": -0.09701956376854719,
+    "log2_IL-5": -0.17363749949075694
+  },
+  "thresholds": [
+    -0.4153327450793389,
+    1.2037411202624404,
+    2.837055332973911,
+    5.64870136057182,
+    8.913058098505196
+  ],
+  "formula": "P(recorded_grade <= k)=sigmoid(threshold[k]-sum(coefficient*input)); category probabilities are adjacent cumulative differences",
+  "decision": "argmax category probability; expected grade is a secondary continuous summary",
+  "instrument_status": "Recorded 0..5 grade. Exact IGA instrument identity pending; not validated vIGA-AD.",
+  "optimizer": {
+    "success": true,
+    "iterations": 19,
+    "objective": 263.76210653401836,
+    "max_abs_gradient": 7.304291089323224e-05
+  },
+  "version": "2026-10-17",
+  "status": "Exploratory target-specific refit on the current recorded clinical outcomes. PP-NRS and DLQI are separately fitted bounded continuous regressions; IGA is a six-category ordinal model with instrument identity pending. W24 is previously inspected same-cohort temporal transfer.",
+  "age_min": 12,
+  "n_training_patients": 156,
+  "n_training_visits": 241,
+  "selection": "3-fold patient-inner MAE for continuous targets; normalized RPS for ordinal target. W24 absent from selection.",
+  "validation": "2 repeats of 5-fold patient-held-out outer validation; W24 previously inspected same-cohort temporal transfer",
+  "assay_processing": "Same positive Summary.xlsx exports as EASI input; no half-min replacement; below software detection bounds can remain positive. Assay bridge not established."
+}

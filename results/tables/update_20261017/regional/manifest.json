@@ -1,0 +1,17 @@
+{
+  "source": "results/tables/update_20260925/clinical.csv",
+  "source_sha256": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+  "code_sha256": "332f11185093942a0d69ede7077b16d22d18f93e24b5b05675fffb7f9caaf17b",
+  "n_patients": 163,
+  "n_reliable_patients": 162,
+  "n_reliable_visits": 359,
+  "definition": "Region EASI / theoretical maximum; paired percentage improvement only when starting region > 0",
+  "raw_rebuild": false,
+  "outputs": {
+    "regional_availability.csv": "1be9394bf32ef5a683b45c106eab445401f03d9e36e8137600c7805940a8ce48",
+    "regional_normalized_burden.csv": "6bc6ddbdf6f2c7cd395a47cb4e3c70e9510c3e188a9edd0bdd0eda5101119df6",
+    "regional_paired_improvement.csv": "69ee47e029cfffbe04efc164cd144b5f9f00590ef1f140e9293950d7d9058084",
+    "regional_treatment_contrasts.csv": "ffc4bc13e241cb9d1b8f092c7da9dfa732f36dc668468bc6037585163b6d98bd",
+    "whole_body_PP_NRS_improvement.csv": "9cfb649a9c0d83175a10f041479b204df64462e1070457bb0998a72e95da16bc"
+  }
+}

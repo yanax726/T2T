@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "aggregate_csv_files_compared": 46,
+  "byte_identical": true,
+  "inputs_unchanged": true,
+  "W2_independently_checked": true,
+  "all_207_molecular_three_visit_rows_independently_checked": true,
+  "isolated_root_supported": true,
+  "bootstrap_replicates": 1000,
+  "boundary": "Replay starts from the curated clinical and processed assay snapshots and audited exposure ledger; it does not claim a raw-XLSX rebuild."
+}

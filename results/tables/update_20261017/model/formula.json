@@ -1,0 +1,56 @@
+{
+  "version": "BSA-three-common-v1-20261017",
+  "status": "Exploratory revision following the 2026-10-10 request for a common formula. The three-marker panel and candidate structures were informed by earlier results. W24 was previously inspected and is not an independent external test.",
+  "selected_structure": "unified_area_interaction",
+  "alpha": 1.0,
+  "inputs": [
+    "bsa",
+    "log2_CCL17",
+    "log2_CCL26",
+    "log2_IL-5"
+  ],
+  "formula": {
+    "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+    "intercept": 0.0,
+    "bsa_factor": 0.5127215790257503,
+    "bsa_log2_coefficients": {
+      "log2_CCL17": 0.009847079991894058,
+      "log2_CCL26": 0.009646929477400354,
+      "log2_IL-5": -0.008270558237379214
+    }
+  },
+  "training_weeks": [
+    0,
+    12
+  ],
+  "n_training_visits": 241,
+  "n_training_patients": 156,
+  "units": "BSA percentage from 0 to 100; molecular inputs log2 concentrations in recorded pg/ml units from Summary.xlsx. Assay bridge has not been established.",
+  "assay_processing": "Positive Summary.xlsx exports were log2-transformed unchanged; no half-min or pseudocount replacement. < or > marked concentrations and nonpositive exports were missing, not exact inputs. Numeric positivity does not establish validated quantification; IL-5 software-bound sensitivity is reported separately.",
+  "missing_policy": "Reject incomplete/nonfinite inputs; no imputation of clinical outcome or deployment input.",
+  "output_range": [
+    0,
+    72
+  ],
+  "no_stage_drug_history_inputs": true,
+  "selection": "3-fold patient-inner mean per-patient absolute error; candidate structure and ridge penalty chosen together; all fitting uses W0/W12 only",
+  "performance_scope": "Repeated patient-held-out nested validation of a selection procedure; the single final full-development formula has not been independently validated.",
+  "range_at_development": {
+    "bsa": [
+      0.0,
+      79.0
+    ],
+    "log2_CCL17": [
+      6.272396509037485,
+      15.69283341500077
+    ],
+    "log2_CCL26": [
+      2.269033146455237,
+      12.78463484555752
+    ],
+    "log2_IL-5": [
+      -6.965784284662087,
+      5.13746253751317
+    ]
+  }
+}

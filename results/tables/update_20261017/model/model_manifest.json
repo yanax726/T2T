@@ -1,0 +1,222 @@
+{
+  "version": "2026-10-17",
+  "seed": 20261002,
+  "config": "config/unified_model_20261017.json",
+  "software": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "scikit_learn": "1.6.1"
+  },
+  "private_files": [
+    "predictions.csv",
+    "fit_audit_private.csv",
+    "published_matched_predictions_private.csv",
+    "held_out_group_predictions_private.csv",
+    "assay_sensitivity_predictions_private.csv"
+  ],
+  "source_hashes": {
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "config/unified_model_20261017.json": "1f04c595f962c2e51203ef3bebff4941acbfbe24325da981d9bd1fd5ccee2ff5",
+    "src/cytot2t/curation/unified_model_20261017.py": "092478679baf1e3ac0332e0a3bad665f3a9084f63f091c42d9efec7d9e8a476a",
+    "src/cytot2t/curation/unified_bsa_three_calculator.py": "72281547b1b8dd0854a4723f618cc33eda8095ec59a04caf66d9baa9a5c5aac5",
+    "results/tables/update_20261002/frozen_bsa_three/validation_predictions.csv": "9fb0135e2f64c8e64144a163d412332125e279a355ea735ec654f70de9dc62e3",
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/clinical_alignment/stage_predictions_pp_nrs.csv": "1b447f403f8c682c62a257d91688fbdeb1baef6c1802eba6ed2aa58fb1721a4c",
+    "results/tables/clinical_alignment/stage_splits_pp_nrs.csv": "3e4d56799d2d7cf8a468ca3e7f2e549008abe3370ba187d97712a253e338fc26",
+    "results/tables/clinical_alignment/stage_predictions_dlqi.csv": "c887bf5d6b690422623fbd07c9e771d1364b30ab5bb19acdc1c4ec7d28e64d85",
+    "results/tables/clinical_alignment/stage_splits_dlqi.csv": "2becbd2e33ceb8ec5c1f7f354d8f8fcf80b2390eedd214841928272e157d2d46",
+    "results/tables/clinical_alignment/stage_predictions_iga.csv": "50bccabccfb609f3454638088582af6a08268d87fa54a067d6004dd4995f2426",
+    "results/tables/clinical_alignment/stage_splits_iga.csv": "78edbef4d7b8beb8c416e4e0c4ffe50d0825bb6e347fd24181f99fa369b456ba",
+    "results/tables/clinical_alignment/stage_performance.csv": "f827eb553562e1a6b5b7cbb4a56815fb2002424414a47618f7072949833d7dc6",
+    "results/tables/clinical_alignment/stage_stratified_performance.csv": "3c3e618fe12d86915f3e90613044bbfc89b40d9432cce5720899974e8a528190",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+    "results/tables/refinement/data_forensics_msd_sample_flags.csv": "f29e44f07d09e6b9a52a907f4d54d80ab8d093f0ed4861b563238c92d89edc2d",
+    "src/cytot2t/stages/stage_01_data_lock.py": "f7d4eab7514b9fd6e13dd6b6eba1ea240ae39b9832d28d9eccc4cb68ac0652fb"
+  },
+  "outputs": [
+    {
+      "path": "results/tables/update_20261017/model/all_candidate_formulas.json",
+      "sha256": "73ed8fff609c200742d14379c3b72f0deab0e4eb5bf3cfe11bcf785d50c69e67"
+    },
+    {
+      "path": "results/tables/update_20261017/model/assay_input_reconciliation.csv",
+      "sha256": "1d068ae27678c495dc2b4f4deeeb95dfd3870c7110949a17892fc5d49716a222"
+    },
+    {
+      "path": "results/tables/update_20261017/model/assay_sensitivity_comparison.csv",
+      "sha256": "c55138331eb42da924c3c72051bfbad64a215d21d749c9c487bc24e9c09af4f7"
+    },
+    {
+      "path": "results/tables/update_20261017/model/assay_sensitivity_fit_audit.csv",
+      "sha256": "ab5aeb55639ba79f54051633a37e0a1728ff82055b6edc784780e15bbf88a3a2"
+    },
+    {
+      "path": "results/tables/update_20261017/model/assay_sensitivity_metrics.csv",
+      "sha256": "d50d651772fc985e94212720848f512da355e658639b4bde58b1f3a647b66a70"
+    },
+    {
+      "path": "results/tables/update_20261017/model/assay_sensitivity_predictions_private.csv",
+      "sha256": "e1f9ccb99161334ce73c6bd2524d9270174212f0c2578beb9770534389faf924"
+    },
+    {
+      "path": "results/tables/update_20261017/model/assay_software_boundary_coverage.csv",
+      "sha256": "8855c3e92b771fd5200315666882418e6b94477016f28daa839a9ef437890122"
+    },
+    {
+      "path": "results/tables/update_20261017/model/calculator_examples.csv",
+      "sha256": "674617d65ba7fc71093f51d8d5c9d88a917ebe43ea0524ad66fe907c4402376a"
+    },
+    {
+      "path": "results/tables/update_20261017/model/calculator_raw_example_output.csv",
+      "sha256": "76f60f1169c9890536c28c62d9f1fdc20421517f13454695e9f45cd894788837"
+    },
+    {
+      "path": "results/tables/update_20261017/model/clinical_input_reconciliation.csv",
+      "sha256": "f0090b865401a9479298674f5951b787f2ec1924f571cea01e9790827cbf2ac3"
+    },
+    {
+      "path": "results/tables/update_20261017/model/fit_audit.csv",
+      "sha256": "04a9790a80d3c84d450d63cebfecadcec93faeb55b120285bf1af890e727548b"
+    },
+    {
+      "path": "results/tables/update_20261017/model/fit_audit_private.csv",
+      "sha256": "bad322a7f24db61d78f107f97717b07e5a7d4d203bafae98669d5dcfddbf8bb9"
+    },
+    {
+      "path": "results/tables/update_20261017/model/formula.json",
+      "sha256": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501"
+    },
+    {
+      "path": "results/tables/update_20261017/model/full_development_inner_selection.csv",
+      "sha256": "444e58f2676f09654bfbd0b70379ce3ad9944cf93bbbfcc31c8e1576870f95e4"
+    },
+    {
+      "path": "results/tables/update_20261017/model/held_out_group_fit_audit.csv",
+      "sha256": "24264264556c9533524ba926d770e6a217b5d073db59b47f2eded5489b513b94"
+    },
+    {
+      "path": "results/tables/update_20261017/model/held_out_group_metrics.csv",
+      "sha256": "df356cabc7ff41c51eac2948a46abe1dc8bfb76e3045728be0a6eb9792caf353"
+    },
+    {
+      "path": "results/tables/update_20261017/model/held_out_group_predictions_private.csv",
+      "sha256": "e8f187d60fd75dd61836ad0a6214623f3341e233e47b20cbe22634358407a6b5"
+    },
+    {
+      "path": "results/tables/update_20261017/model/improvement_classification.csv",
+      "sha256": "f1196a941bdcbc1ff28c9e2e9ce1fc3fcebabd6ce1263000c59332f4b3c6e224"
+    },
+    {
+      "path": "results/tables/update_20261017/model/inner_selection.csv",
+      "sha256": "8ae73edb030d72f582b77182017e40d215b74025084873f0ec1b321b2acb95f5"
+    },
+    {
+      "path": "results/tables/update_20261017/model/input_schema.json",
+      "sha256": "d805da99365ae77a8b0c1aadfb83d28f5a3c364af7115d6dc437401852f4f321"
+    },
+    {
+      "path": "results/tables/update_20261017/model/model_metrics.csv",
+      "sha256": "34925b24cb3a19e646ad822dc5569f480d6a617e0d484300e93e37aa470b0bd8"
+    },
+    {
+      "path": "results/tables/update_20261017/model/other_targets_audit.csv",
+      "sha256": "e4575cdc40f91c693b4045c26f48e0cfb58a3b7569c0b00b98f3cf0185e47651"
+    },
+    {
+      "path": "results/tables/update_20261017/model/other_targets_historical_by_week.csv",
+      "sha256": "68c9ae278d2aa4d31328f051df0c8ff650bd46a6d3e01ed42a65800b881eb6f2"
+    },
+    {
+      "path": "results/tables/update_20261017/model/other_targets_historical_metrics.csv",
+      "sha256": "b8a46ff5ff91abc840074f330b522209eb1ee2c93d30f307766617388ba4d443"
+    },
+    {
+      "path": "results/tables/update_20261017/model/overall_metrics.csv",
+      "sha256": "8a3c60ba4cdb6f3c162f384f8164f91b92224b611130f8c03f9c0a97f51a2b36"
+    },
+    {
+      "path": "results/tables/update_20261017/model/paired_change_metrics.csv",
+      "sha256": "3e0be3499360bcba3a756d87809b1a49c99d4e13af7fb98ff32c4c4eb1ec9fd8"
+    },
+    {
+      "path": "results/tables/update_20261017/model/paired_model_comparisons.csv",
+      "sha256": "178c5763bb42b3dcf5b88f873fe66b95c0f8a883477bf87350804bcb1f9fcc80"
+    },
+    {
+      "path": "results/tables/update_20261017/model/predictions.csv",
+      "sha256": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1"
+    },
+    {
+      "path": "results/tables/update_20261017/model/published_matched_metrics.csv",
+      "sha256": "ff635cd1b44f440cc67128bf0c3d00580a9fb11f1b82713055abc04d47060739"
+    },
+    {
+      "path": "results/tables/update_20261017/model/published_matched_predictions_private.csv",
+      "sha256": "b1f5021296f5c16ce5ae235f5542a21134346a71fc84b1d74e75f7adbb833d31"
+    },
+    {
+      "path": "results/tables/update_20261017/model/repeat_aggregation_audit.csv",
+      "sha256": "d2d1c0ea90d490d5e9426fed0171045202444e1583b4b5ce003d85859ee619e0"
+    },
+    {
+      "path": "results/tables/update_20261017/model/verification.json",
+      "sha256": "530ea46c3094680345f9f688876a4139063ff7bd8109f9b0aadafe88cb251883"
+    }
+  ],
+  "selected_structure": "unified_area_interaction",
+  "validation_checks": {
+    "patient_disjoint": true,
+    "same_patient_same_folds": true,
+    "n_unique_patients": 160,
+    "development_patients": 156,
+    "outcome_not_imputed": true,
+    "validation_not_training_fit": true,
+    "W24_absent_from_fitting_selection": true,
+    "repeats_scored_before_averaging": true,
+    "zero_anchor_held_for_area_model": true,
+    "frozen_stage_predictions_reproduced": true,
+    "maximum_frozen_prediction_difference": 3.552713678800501e-15,
+    "patient_overlap_was_checked_in_inner_and_outer_folds": true,
+    "isolated_reproduction_19_core_artifacts_byte_identical": true,
+    "calculator_tests_passed": 7
+  },
+  "evidence_files": [
+    {
+      "path": "reports/update_20261017/model/methods.md",
+      "sha256": "56f9d211f4d1721fc56a5999d9096f5d8fe32d82f1dbea09a40da9bdf90520c2"
+    },
+    {
+      "path": "reports/update_20261017/model/recommendation.md",
+      "sha256": "36fbf41949da680096f51c33034fb15e2c484feae36afa88a67cd58ac04ed5cf"
+    },
+    {
+      "path": "reports/update_20261017/model/model_run.log",
+      "sha256": "72735dd4f5be2fa8a03ce5c1dcd30285239367c356477fa39d0fac87eef0e4ba"
+    },
+    {
+      "path": "reports/update_20261017/model/calculator_tests.log",
+      "sha256": "721ec9199caa9de1286d4bac5596e13a0d4a21cf3748ad41f8ba660e0e5e4dc7"
+    },
+    {
+      "path": "reports/update_20261017/model/isolated_reproduction.log",
+      "sha256": "72735dd4f5be2fa8a03ce5c1dcd30285239367c356477fa39d0fac87eef0e4ba"
+    },
+    {
+      "path": "reports/update_20261017/model/isolated_reproduction_check.json",
+      "sha256": "80266383419676e30bf7fb9cc43168baeadadd1419cdb11e3a78a62b72b0d4cd"
+    },
+    {
+      "path": "tests/test_unified_bsa_three.py",
+      "sha256": "018426a9e636d91355f37f10256b4f5728f51c31bf0b4a417f43f6d6c00c1acf"
+    },
+    {
+      "path": "examples/unified_easi_input.csv",
+      "sha256": "1fc0da23e3298329ac6ee6b105a190a2925e172d3af6e1a91182ccb8359ef707"
+    }
+  ],
+  "private_directories": [
+    "results/audit/update_20261017/model_isolated_reproduction"
+  ]
+}

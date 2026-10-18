@@ -1,0 +1,5 @@
+component,outcome,adjustment,weight,uncertainty,unit
+baseline_overlap_weights,initial treatment propensity,baseline EASI; BMI; age; sex; center (HUASHAN indicator),"generalized overlap: h(x)/e_t(x), h(x)=1/sum_t[1/e_t(x)]",weights re-estimated in original endpoint bootstrap,patient
+clinical_continuous,follow-up clinical score,same clinical outcome at baseline; age; BMI; sex; center; treatment×visit,baseline generalized overlap weights; unweighted outcome-adjusted sensitivity retained,patient-cluster robust t interval,patient with repeated visits
+molecular_changes,log2 concentration at end minus start,start-marker concentration; W0 EASI; age; BMI; sex; center; initial treatment,"none; HC3 least squares, with assay-batch sensitivity","HC3 t interval; minimum support, rank and leverage checks",one paired change per patient
+EASI_estimator,current EASI,current BSA; log2 CCL17; log2 CCL26; log2 IL-5,inverse number of development visits per patient in fitting,patient-held-out outer repeats; no treatment labels,patient-held-out observations

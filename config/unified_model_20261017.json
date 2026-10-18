@@ -1,0 +1,15 @@
+{
+  "seed": 20261002,
+  "outer_repeats": 2,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "ridge_alpha": [0.1, 1, 10, 100],
+  "development_weeks": [0, 12],
+  "input_path": "results/tables/update_20261002/stage_refinement/input.csv",
+  "features": ["bsa", "log2_CCL17", "log2_CCL26", "log2_IL-5"],
+  "models": ["unified_linear", "stage_interaction", "bsa_linear", "serum_linear", "unified_quadratic", "unified_area_interaction", "bsa_area", "bsa_stage"],
+  "unified_selector_candidates": ["unified_linear", "unified_quadratic", "unified_area_interaction"],
+  "bootstrap_replicates": 2000,
+  "output_path": "results/tables/update_20261017/model",
+  "status": "Exploratory revision following the 2026-10-10 request for a common formula. The three-marker panel and candidate structures were informed by earlier results. W24 was previously inspected and is not an independent external test."
+}

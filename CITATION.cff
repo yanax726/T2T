@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: >-
+  Cite this software snapshot by its version and Git commit.
+  The named contributor is the verified repository maintainer, not a manuscript author list.
+type: software
+title: "T2T: clinical and serum analysis for EASI estimation"
+version: "2026.10.18-rc2"
+authors:
+  - name: "Yanax (yanax726), repository maintainer"
+    website: "https://github.com/yanax726"
+repository-code: "https://github.com/yanax726/T2T"
+url: "https://github.com/yanax726/T2T"
+abstract: >-
+  Analysis code, aggregate source tables, figures and a frozen BSA-serum
+  EASI calculator for an observational atopic dermatitis cohort.
+keywords:
+  - atopic dermatitis
+  - EASI
+  - biomarkers
+  - longitudinal analysis

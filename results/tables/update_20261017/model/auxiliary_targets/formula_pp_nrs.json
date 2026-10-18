@@ -1,0 +1,43 @@
+{
+  "target": "pp_nrs",
+  "model": "BSA_three",
+  "features": [
+    "bsa",
+    "log2_CCL17",
+    "log2_CCL26",
+    "log2_IL-5"
+  ],
+  "alpha": 0.1,
+  "link": "identity",
+  "input_units": "BSA percentage 0..100; log2 positive Summary.xlsx concentrations in recorded pg/ml",
+  "missing_policy": "reject incomplete inputs",
+  "training_weeks": [
+    0,
+    12
+  ],
+  "stage_drug_history_inputs": false,
+  "family": "ridge_regression",
+  "formula": {
+    "expression": "clip(intercept+sum(coefficient*input),0,target_max)",
+    "intercept": 1.313210178052774,
+    "coefficients": {
+      "bsa": 0.10340040138928955,
+      "log2_CCL17": 0.17897878833892272,
+      "log2_CCL26": 0.1196983185694055,
+      "log2_IL-5": -0.010818217998420298
+    }
+  },
+  "output_range": [
+    0,
+    10
+  ],
+  "log1p_interpretation": null,
+  "version": "2026-10-17",
+  "status": "Exploratory target-specific refit on the current recorded clinical outcomes. PP-NRS and DLQI are separately fitted bounded continuous regressions; IGA is a six-category ordinal model with instrument identity pending. W24 is previously inspected same-cohort temporal transfer.",
+  "age_min": 12,
+  "n_training_patients": 156,
+  "n_training_visits": 240,
+  "selection": "3-fold patient-inner MAE for continuous targets; normalized RPS for ordinal target. W24 absent from selection.",
+  "validation": "2 repeats of 5-fold patient-held-out outer validation; W24 previously inspected same-cohort temporal transfer",
+  "assay_processing": "Same positive Summary.xlsx exports as EASI input; no half-min replacement; below software detection bounds can remain positive. Assay bridge not established."
+}

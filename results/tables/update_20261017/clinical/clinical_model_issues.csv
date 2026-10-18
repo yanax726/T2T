@@ -1,0 +1,3 @@
+target,week,treatment,analysis,status
+eo_count_numeric,4,dupilumab,overlap_weighted,cell_not_estimable
+eo_count_numeric,4,dupilumab,unweighted_outcome_adjusted,cell_not_estimable

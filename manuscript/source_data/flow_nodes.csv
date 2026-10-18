@@ -1,0 +1,14 @@
+node,label,n_patients,n_records,record_unit,note
+clinical_source,Curated clinical source,170,1700,scheduled slots,170 patients each have ten predefined visit slots; empty slots are not observed visits.
+clinical_observed_slots,Slots with any recorded visit data,170,736,nonempty slots,
+clinical_age_eligible,Age at least 12,164,1640,scheduled slots,
+clinical_main,Clinical treatment comparisons,163,1630,scheduled slots,Age at least 12 and unambiguous initial dose; not the parent of the model population.
+molecular_source,Linked serum source,169,376,serum rows,"W0, W12, W24 and W48."
+molecular_target_weeks,"Serum rows at W0, W12 or W24",168,352,serum rows,
+molecular_age_eligible,Serum rows at age at least 12,162,340,serum rows,
+model_complete,"Complete EASI, BSA and three-marker visits",160,316,complete visits,Initial dose ambiguity is retained because treatment is not an input; no clinical outcome imputation.
+development,W0/W12 development,156,241,complete visits,
+temporal,W24 within-cohort temporal application,75,75,complete visits,Previously inspected W24; overlaps development participants and is not external validation.
+model_W0,Model W0,152,152,complete visits,
+model_W12,Model W12,89,89,complete visits,
+model_W24,Model W24,75,75,complete visits,

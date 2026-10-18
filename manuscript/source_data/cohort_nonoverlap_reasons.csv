@@ -1,0 +1,6 @@
+population,reason,n_patients
+clinical_only,missing_easi_total,1
+clinical_only,missing_log2_CCL26,1
+clinical_only,no_linked_serum_record,1
+clinical_only,serum_only_outside_W0_W12_W24,1
+model_only,ambiguous_initial_dose_retained_in_treatment_free_model,1

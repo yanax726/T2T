@@ -1,0 +1,25 @@
+early_week,early_target,treatment,early_achieved,n,k_W24_overall,rate,ci_low,ci_high,p,interpretation
+2,PP_NRS_le4,abrocitinib_100mg,1,12,10,0.8333333333333334,0.5519691377470265,0.9530348578161462,1.0,Observed early/late association; not a validated prediction model
+2,PP_NRS_le4,abrocitinib_100mg,0,1,1,1.0,0.2065493143772374,1.0,1.0,Observed early/late association; not a validated prediction model
+2,PP_NRS_le4,abrocitinib_200mg,1,20,18,0.9,0.6989663547715127,0.9721335187862318,0.14285714285714285,Observed early/late association; not a validated prediction model
+2,PP_NRS_le4,abrocitinib_200mg,0,1,0,0.0,0.0,0.7934506856227627,0.14285714285714285,Observed early/late association; not a validated prediction model
+2,PP_NRS_le4,dupilumab,1,8,7,0.875,0.5291118177871466,0.9775825085499434,0.576470588235294,Observed early/late association; not a validated prediction model
+2,PP_NRS_le4,dupilumab,0,9,6,0.6666666666666666,0.3542021355803961,0.879416181613089,0.576470588235294,Observed early/late association; not a validated prediction model
+4,overall,abrocitinib_100mg,1,11,11,1.0,0.7411670330319682,1.0,1.0,Observed early/late association; not a validated prediction model
+4,overall,abrocitinib_100mg,0,5,5,1.0,0.5655175352168252,1.0,1.0,Observed early/late association; not a validated prediction model
+4,overall,abrocitinib_200mg,1,9,9,1.0,0.7008549515804557,0.9999999999999999,0.04545454545454545,Observed early/late association; not a validated prediction model
+4,overall,abrocitinib_200mg,0,3,1,0.3333333333333333,0.06149194472039626,0.7923403991979523,0.04545454545454545,Observed early/late association; not a validated prediction model
+4,overall,dupilumab,1,11,9,0.8181818181818182,0.5230194380391557,0.9486323102539149,0.3864416475972539,Observed early/late association; not a validated prediction model
+4,overall,dupilumab,0,13,8,0.6153846153846154,0.3552289151266569,0.8229029220223744,0.3864416475972539,Observed early/late association; not a validated prediction model
+12,overall,abrocitinib_100mg,1,13,13,1.0,0.7719046276458015,1.0,0.08771929824561402,Observed early/late association; not a validated prediction model
+12,overall,abrocitinib_100mg,0,6,4,0.6666666666666666,0.29999331513839184,0.9032285888942195,0.08771929824561402,Observed early/late association; not a validated prediction model
+12,overall,abrocitinib_200mg,1,14,13,0.9285714285714286,0.6853129557584887,0.987277784752109,0.24736842105263152,Observed early/late association; not a validated prediction model
+12,overall,abrocitinib_200mg,0,7,5,0.7142857142857143,0.3589344518326191,0.9177810759959432,0.24736842105263152,Observed early/late association; not a validated prediction model
+12,overall,dupilumab,1,15,13,0.8666666666666667,0.6211801716767763,0.9626387408969347,0.2199728092942776,Observed early/late association; not a validated prediction model
+12,overall,dupilumab,0,16,10,0.625,0.38641040545502714,0.8151876744113636,0.2199728092942776,Observed early/late association; not a validated prediction model
+12,EASI75,abrocitinib_100mg,1,15,15,1.0,0.7961166989641513,1.0,0.11067193675889328,Observed early/late association; not a validated prediction model
+12,EASI75,abrocitinib_100mg,0,8,6,0.75,0.40927543031016883,0.9285207872478909,0.11067193675889328,Observed early/late association; not a validated prediction model
+12,EASI75,abrocitinib_200mg,1,14,13,0.9285714285714286,0.6853129557584887,0.987277784752109,0.24736842105263152,Observed early/late association; not a validated prediction model
+12,EASI75,abrocitinib_200mg,0,7,5,0.7142857142857143,0.3589344518326191,0.9177810759959432,0.24736842105263152,Observed early/late association; not a validated prediction model
+12,EASI75,dupilumab,1,16,15,0.9375,0.7167126242970104,0.9888806552353574,0.03725126683969843,Observed early/late association; not a validated prediction model
+12,EASI75,dupilumab,0,16,9,0.5625,0.331785563988119,0.7690134759450765,0.03725126683969843,Observed early/late association; not a validated prediction model

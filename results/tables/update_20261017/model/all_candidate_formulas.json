@@ -1,0 +1,156 @@
+{
+  "unified_linear": {
+    "structure": "unified_linear",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.136783590361608,
+      "coefficients": {
+        "bsa": 0.6091296472767628,
+        "log2_CCL17": 0.3423504857428655,
+        "log2_CCL26": -0.01951955852347656,
+        "log2_IL-5": -0.062184993574805655
+      }
+    },
+    "reconstruction_max_abs": 7.105427357601002e-15,
+    "sklearn_reference_max_abs": 3.375077994860476e-14,
+    "sklearn_reference_warnings": []
+  },
+  "stage_interaction": {
+    "structure": "stage_interaction",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "by_stage": {
+        "0": {
+          "intercept": -1.416288872286863,
+          "coefficients": {
+            "bsa": 0.5832483730797359,
+            "log2_CCL17": 0.3877274898579887,
+            "log2_CCL26": -0.034146746167335866,
+            "log2_IL-5": -0.05582287154819273
+          }
+        },
+        "1": {
+          "intercept": 2.141530376965367,
+          "coefficients": {
+            "bsa": 0.5311206632057629,
+            "log2_CCL17": -0.13455145291885642,
+            "log2_CCL26": -0.19059138307386791,
+            "log2_IL-5": 0.09443794334093222
+          }
+        }
+      }
+    },
+    "reconstruction_max_abs": 2.1316282072803006e-14,
+    "sklearn_reference_max_abs": 4.263256414560601e-14,
+    "sklearn_reference_warnings": [
+      "divide by zero encountered in matmul",
+      "overflow encountered in matmul",
+      "invalid value encountered in matmul"
+    ]
+  },
+  "bsa_linear": {
+    "structure": "bsa_linear",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": 0.7978773249040945,
+      "coefficients": {
+        "bsa": 0.6247905858618729
+      }
+    },
+    "reconstruction_max_abs": 7.105427357601002e-15,
+    "sklearn_reference_max_abs": 4.263256414560601e-14,
+    "sklearn_reference_warnings": []
+  },
+  "serum_linear": {
+    "structure": "serum_linear",
+    "alpha": 10.0,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -13.111780638682784,
+      "coefficients": {
+        "log2_CCL17": 2.8058611815352825,
+        "log2_CCL26": -0.19459644520980462,
+        "log2_IL-5": 1.191076186434764
+      }
+    },
+    "reconstruction_max_abs": 7.105427357601002e-15,
+    "sklearn_reference_max_abs": 5.684341886080802e-14,
+    "sklearn_reference_warnings": []
+  },
+  "unified_quadratic": {
+    "structure": "unified_quadratic",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.9816791155869,
+      "coefficients": {
+        "bsa": 0.6762536334241158,
+        "log2_CCL17": 0.38708605490930387,
+        "log2_CCL26": -0.06268579998469363,
+        "log2_IL-5": -0.07008652331368585,
+        "bsa_squared": -0.0011746906062508737
+      }
+    },
+    "reconstruction_max_abs": 1.4210854715202004e-14,
+    "sklearn_reference_max_abs": 2.8421709430404007e-13,
+    "sklearn_reference_warnings": []
+  },
+  "unified_area_interaction": {
+    "structure": "unified_area_interaction",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5127215790257503,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.009847079991894058,
+        "log2_CCL26": 0.009646929477400354,
+        "log2_IL-5": -0.008270558237379214
+      }
+    },
+    "reconstruction_max_abs": 1.4210854715202004e-14,
+    "sklearn_reference_max_abs": 1.0658141036401503e-13,
+    "sklearn_reference_warnings": []
+  },
+  "bsa_area": {
+    "structure": "bsa_area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(coefficient * BSA, 0, 72)",
+      "intercept": 0.0,
+      "coefficients": {
+        "bsa": 0.6482483258514001
+      }
+    },
+    "reconstruction_max_abs": 7.105427357601002e-15,
+    "sklearn_reference_max_abs": 2.1316282072803006e-14,
+    "sklearn_reference_warnings": []
+  },
+  "bsa_stage": {
+    "structure": "bsa_stage",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "by_stage": {
+        "0": {
+          "intercept": 1.8939002297339016,
+          "coefficients": {
+            "bsa": 0.6008417258431333
+          }
+        },
+        "1": {
+          "intercept": 0.2852265772361875,
+          "coefficients": {
+            "bsa": 0.5309297099731763
+          }
+        }
+      }
+    },
+    "reconstruction_max_abs": 1.4210854715202004e-14,
+    "sklearn_reference_max_abs": 7.105427357601002e-15,
+    "sklearn_reference_warnings": []
+  }
+}

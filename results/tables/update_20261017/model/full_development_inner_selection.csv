@@ -1,0 +1,13 @@
+structure,alpha,inner_patient_MAE
+unified_linear,0.1,2.4924133041023824
+unified_linear,1.0,2.5014785296840354
+unified_linear,10.0,2.6347973783690875
+unified_linear,100.0,4.0705237632947435
+unified_quadratic,0.1,2.4565955484378654
+unified_quadratic,1.0,2.4891655708183547
+unified_quadratic,10.0,2.7986148982502765
+unified_quadratic,100.0,3.7547666740518695
+unified_area_interaction,0.1,2.4304139989612654
+unified_area_interaction,1.0,2.42946935311891
+unified_area_interaction,10.0,2.464858305306442
+unified_area_interaction,100.0,3.579356720617294

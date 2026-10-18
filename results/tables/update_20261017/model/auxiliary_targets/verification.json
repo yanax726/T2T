@@ -1,0 +1,26 @@
+{
+  "patient_disjoint": true,
+  "inner_patient_disjoint": true,
+  "W24_absent_from_training_and_selection": true,
+  "no_current_target_inputs": true,
+  "no_stage_drug_or_history_inputs": true,
+  "DLQI_min_age18": true,
+  "IGA_ordinal_probabilities_sum1": true,
+  "IGA_probabilities_nonnegative": true,
+  "IGA_gradient_finite_difference_error": 1.5021751327466337e-06,
+  "formulas_reconstruct": [
+    {
+      "target": "pp_nrs",
+      "reconstruction_max_abs": 1.7763568394002505e-15
+    },
+    {
+      "target": "dlqi",
+      "reconstruction_max_abs": 7.105427357601002e-15
+    },
+    {
+      "target": "iga",
+      "reconstruction_max_abs": 6.661338147750939e-16
+    }
+  ],
+  "clinical_interpretation": "Exploratory recorded targets; IGA instrument identity and PP-NRS recall window require source confirmation"
+}

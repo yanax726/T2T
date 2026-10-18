@@ -1,0 +1,10 @@
+initial_treatment,previsit_regimen,initial_conflict,source_treatment_agrees_with_group,interpretation,n
+abrocitinib_100mg,100mg/q1days,False,True,source regimen state; unknown states retained,41
+abrocitinib_100mg,200mg/q1days,True,True,"source regimen at week zero conflicts with initial group; unresolved, no reclassification",2
+abrocitinib_100mg,unknown,False,True,source regimen state; unknown states retained,12
+abrocitinib_100mg,unknown_stop_timing,False,True,source regimen state; unknown states retained,1
+abrocitinib_200mg,100mg/q1days,True,True,"source regimen at week zero conflicts with initial group; unresolved, no reclassification",1
+abrocitinib_200mg,200mg/q1days,False,True,source regimen state; unknown states retained,36
+abrocitinib_200mg,unknown,False,True,source regimen state; unknown states retained,5
+dupilumab,300mg/q14days,False,True,source regimen state; unknown states retained,64
+dupilumab,unknown,False,True,source regimen state; unknown states retained,1

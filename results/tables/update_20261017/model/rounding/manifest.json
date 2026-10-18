@@ -1,0 +1,159 @@
+{
+  "status": "PASS",
+  "version": "2026-10-17 rounding audit",
+  "input_hashes": {
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+    "config/unified_model_20261017.json": "1f04c595f962c2e51203ef3bebff4941acbfbe24325da981d9bd1fd5ccee2ff5",
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "results/tables/update_20261017/model/fit_audit_private.csv": "bad322a7f24db61d78f107f97717b07e5a7d4d203bafae98669d5dcfddbf8bb9",
+    "results/tables/update_20261017/model/predictions.csv": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+    "results/tables/update_20261017/model/overall_metrics.csv": "8a3c60ba4cdb6f3c162f384f8164f91b92224b611130f8c03f9c0a97f51a2b36"
+  },
+  "inputs_unchanged": {
+    "config/unified_bsa_three_v1_20261017.json": true,
+    "config/unified_model_20261017.json": true,
+    "results/tables/update_20261002/stage_refinement/input.csv": true,
+    "results/tables/update_20261017/model/fit_audit_private.csv": true,
+    "results/tables/update_20261017/model/predictions.csv": true,
+    "results/tables/update_20261017/model/overall_metrics.csv": true
+  },
+  "source_hashes": {
+    "src/cytot2t/curation/rounding_20261017.py": "fa28639de6849245394bf03d0c5ad97951317ba70a578ebf5f3197320512cbeb",
+    "src/cytot2t/curation/unified_model_20261017.py": "092478679baf1e3ac0332e0a3bad665f3a9084f63f091c42d9efec7d9e8a476a"
+  },
+  "policies": {
+    "full_precision": {
+      "decimal_places": null,
+      "internal_multiplier": 1
+    },
+    "direct_2dp": {
+      "decimal_places": 2,
+      "internal_multiplier": 1
+    },
+    "direct_3dp": {
+      "decimal_places": 3,
+      "internal_multiplier": 1
+    },
+    "direct_4dp": {
+      "decimal_places": 4,
+      "internal_multiplier": 1
+    },
+    "scaled100_2dp": {
+      "decimal_places": 2,
+      "internal_multiplier": 100
+    }
+  },
+  "scopes": {
+    "frozen_deployment": "Numerical approximation of the final full-development formula; W0/W12 fit performance is apparent, not held-out validation.",
+    "fixed_structure_OOF": "Patient-held-out predictions using the fixed area-interaction structure and the originally selected fold penalties; diagnostic conditional on that structure.",
+    "nested_selection_OOF": "Patient-held-out predictions using each fold's originally selected structure and penalty; the primary nested development procedure. Rounding occurs only after fitting."
+  },
+  "rounding": "Python round (nearest, ties to even), applied to physical-unit coefficients after fitting; logs, clinical inputs and final scores are not rounded by this audit.",
+  "validation_checks": [
+    {
+      "scope": "fixed_structure_OOF",
+      "week": 0,
+      "max_metric_difference": 4.440892098500626e-16
+    },
+    {
+      "scope": "fixed_structure_OOF",
+      "week": 12,
+      "max_metric_difference": 1.1102230246251565e-16
+    },
+    {
+      "scope": "fixed_structure_OOF",
+      "week": 24,
+      "max_metric_difference": 4.440892098500626e-16
+    },
+    {
+      "scope": "nested_selection_OOF",
+      "week": 0,
+      "max_metric_difference": 8.881784197001252e-16
+    },
+    {
+      "scope": "nested_selection_OOF",
+      "week": 12,
+      "max_metric_difference": 4.440892098500626e-16
+    },
+    {
+      "scope": "nested_selection_OOF",
+      "week": 24,
+      "max_metric_difference": 4.440892098500626e-16
+    }
+  ],
+  "folds_reconstructed": 20,
+  "max_prediction_reconstruction_error": 1.4210854715202004e-14,
+  "selection": "No tuning, reselection or refitting to improve outcomes. Existing fold membership, structure and penalty reused solely to reconstruct saved formulas.",
+  "limits": "W24 remains previously inspected same-cohort temporal transfer. Frozen deployment W0/W12 performance is apparent; it is not interchangeable with OOF validation. Coefficient rounding does not remedy severe-disease model error.",
+  "private_files": [
+    "predictions_private.csv"
+  ],
+  "software": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3"
+  },
+  "outputs": [
+    {
+      "path": "results/tables/update_20261017/model/rounding/absolute_target_changes.csv",
+      "sha256": "b367289f098ac59d088172545f8bc42f9ebc66da06e8a359300a1b4b5867fe2b"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/all_formulas.json",
+      "sha256": "87f21132212318541861d18950c719526f8ca7e6570c93100ee63809c3ae756d"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/development_domain_bounds.csv",
+      "sha256": "0324ef7afbd2c081e1d1ed488bca7df84ed040d61066f3728549ff5c67ae2fed"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/display_approximation_effect.csv",
+      "sha256": "926418731c00410ea011dde32608e310fac4b4542e10db623fe789066fe078c4"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/fold_reconstruction_audit.csv",
+      "sha256": "c38ee5a286e0d6cb51d9f4f3476d26aa73a2441e8d84809ef93994e20fb21dac"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/frozen_display_coefficients.csv",
+      "sha256": "9aeef0c274fa5bf56b64ad109e94313424c282dc9af4c82a0d2da3fed578fb18"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/metrics.csv",
+      "sha256": "2b3c859e13b3cd4259a0939c94f359e628b3c0ef9ec9ba6728325f6ba87ee32f"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/overall_metrics.csv",
+      "sha256": "3ea0d8eb04965ddf00875a035e81029f68090d868890cef955f07d9848847b04"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/predictions_private.csv",
+      "sha256": "c3fa80670130cd9445a13545a5ef16d75d7238d7ddf533f371ee2bdc228651b1"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/primary_validation_comparison.csv",
+      "sha256": "8c003689e8108309453c4b7875b5ba5659d831b228161ebbd7a5769f87772d0f"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/recommendation.json",
+      "sha256": "0f0ce720f99d530437de5e6853340dfdcd638774991cfa832df7b3ecee08c6c5"
+    },
+    {
+      "path": "results/tables/update_20261017/model/rounding/response_target_changes.csv",
+      "sha256": "71c766aa08b1e31da23790b70df946a322a2c5f77b8e274a7857b80fe8789e3e"
+    }
+  ],
+  "tests": {
+    "command": "PYTHONPATH=src .venv/bin/python -m unittest discover -s tests -p test_rounding_20261017.py",
+    "passed": 5,
+    "test_source_sha256": "e17cf77d7d81d91a51c7d8e387014fcecce5b2a013cd6b112806e16ed38ae534",
+    "log_sha256": "6273232de4d3ef7acd4ecafa5c86beeeb974f56586b21089a2990b3f72facbe6"
+  },
+  "report_hashes": {
+    "reports/update_20261017/model/rounding/manuscript_note.tex": "5fd8b6b259b51600b12c3382a86b504ad2cf2a060f6932b9aa1d7705c2bc0b05",
+    "reports/update_20261017/model/rounding/methods.md": "0e033b782699bec752ac12c2b700993f26e64fa298ff8ea34097c5e517a50074",
+    "reports/update_20261017/model/rounding/recommendation.md": "cc0955171c7a9556b8afe4e03921fa04e56ad24b29aaf02c1a7c55c840f0c352",
+    "reports/update_20261017/model/rounding/run.log": "9687a966cc9e3f2c3ade8258c71a4ca08c2e0ca6829472222dfaef6477f19ee7",
+    "reports/update_20261017/model/rounding/tests.log": "6273232de4d3ef7acd4ecafa5c86beeeb974f56586b21089a2990b3f72facbe6"
+  }
+}

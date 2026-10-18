@@ -1,0 +1,106 @@
+{
+  "boundary": "Versioned curated snapshots, not a claim of fully automated raw-Excel adjudication.",
+  "inputs": [
+    {
+      "path": "config/marker_registry.csv",
+      "sha256": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+      "availability": "public metadata"
+    },
+    {
+      "path": "data/restricted/treatment_episode_v0.csv",
+      "sha256": "ee4f0a8a99709f273168014b632e3d7c3c23ea064187f73e53fa894e79ee81c2",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_performance.csv",
+      "sha256": "f827eb553562e1a6b5b7cbb4a56815fb2002424414a47618f7072949833d7dc6",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_predictions_dlqi.csv",
+      "sha256": "c887bf5d6b690422623fbd07c9e771d1364b30ab5bb19acdc1c4ec7d28e64d85",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_predictions_iga.csv",
+      "sha256": "50bccabccfb609f3454638088582af6a08268d87fa54a067d6004dd4995f2426",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_predictions_pp_nrs.csv",
+      "sha256": "1b447f403f8c682c62a257d91688fbdeb1baef6c1802eba6ed2aa58fb1721a4c",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_splits_dlqi.csv",
+      "sha256": "2becbd2e33ceb8ec5c1f7f354d8f8fcf80b2390eedd214841928272e157d2d46",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_splits_iga.csv",
+      "sha256": "78edbef4d7b8beb8c416e4e0c4ffe50d0825bb6e347fd24181f99fa369b456ba",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_splits_pp_nrs.csv",
+      "sha256": "3e4d56799d2d7cf8a468ca3e7f2e549008abe3370ba187d97712a253e338fc26",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/clinical_alignment/stage_stratified_performance.csv",
+      "sha256": "3c3e618fe12d86915f3e90613044bbfc89b40d9432cce5720899974e8a528190",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/redevelopment/assay_long.csv",
+      "sha256": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/redevelopment/molecular.csv",
+      "sha256": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/refinement/data_forensics_msd_sample_flags.csv",
+      "sha256": "f29e44f07d09e6b9a52a907f4d54d80ab8d093f0ed4861b563238c92d89edc2d",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/update_20260925/clinical.csv",
+      "sha256": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/update_20261002/exposure_at_visits.csv",
+      "sha256": "55bb93216f70e1b7b7b8819b7df69a36275433167eacccca650aad37d0b6ac5e",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/update_20261002/frozen_bsa_three/validation_predictions.csv",
+      "sha256": "9fb0135e2f64c8e64144a163d412332125e279a355ea735ec654f70de9dc62e3",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/update_20261002/maintenance_patient_ledger.csv",
+      "sha256": "da4763c20dcf78002fe702b3316b83b80bde014b3d3a9101d2de18cbff288532",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/update_20261002/reduction_maintenance_classification.csv",
+      "sha256": "8dff18644db64515a8c2707dd2cf9270f44bc6be63c1fcc927e4b050a61fdef4",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/update_20261002/stage_refinement/input.csv",
+      "sha256": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+      "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/update_20261002/exposure_source_repaired.csv",
+      "sha256": "f4a54855f7c87bbcd40e2e6fe97dcc5fe1dcba2d8a2c393b7faf0d5a973a68b4",
+      "availability": "restricted or historical audit input; not included in public archive"
+    }
+  ],
+  "scope": "Includes primary clinical/serum/exposure snapshots and optional historical/assay reconciliation inputs needed to reproduce every current audit table."
+}

@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "seed": 20261002,
+  "bootstrap_replicates": 2000,
+  "inputs": [
+    {
+      "path": "results/tables/update_20261017/model/predictions.csv",
+      "sha256": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1"
+    },
+    {
+      "path": "results/tables/update_20261017/model/fit_audit_private.csv",
+      "sha256": "bad322a7f24db61d78f107f97717b07e5a7d4d203bafae98669d5dcfddbf8bb9"
+    },
+    {
+      "path": "results/tables/update_20261017/model/published_matched_predictions_private.csv",
+      "sha256": "b1f5021296f5c16ce5ae235f5542a21134346a71fc84b1d74e75f7adbb833d31"
+    },
+    {
+      "path": "results/tables/update_20261017/model/paired_change_metrics.csv",
+      "sha256": "3e0be3499360bcba3a756d87809b1a49c99d4e13af7fb98ff32c4c4eb1ec9fd8"
+    },
+    {
+      "path": "results/tables/update_20261017/model/improvement_classification.csv",
+      "sha256": "f1196a941bdcbc1ff28c9e2e9ce1fc3fcebabd6ce1263000c59332f4b3c6e224"
+    },
+    {
+      "path": "results/tables/update_20261017/model/overall_metrics.csv",
+      "sha256": "8a3c60ba4cdb6f3c162f384f8164f91b92224b611130f8c03f9c0a97f51a2b36"
+    }
+  ],
+  "source_sha256": "91d0134abe036d75c97019c6e9c2f5e85a173d0810daa393972350f1d6132c74",
+  "patient_held_out_audit_passed": true,
+  "no_averaging_predictions_before_scoring": true,
+  "monitoring_points_match_existing_primary_metrics": true,
+  "source_tables": [
+    "results/tables/update_20261017/redesign_20261018/monitoring_change_bins.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_change_bins_repeat0.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_change_metrics_per_repeat.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_change_uncertainty.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_confusion_counts.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_confusion_repeat0.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_confusion_mean_proportions.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_response_uncertainty.csv",
+    "results/tables/update_20261017/redesign_20261018/prediction_uncertainty.csv",
+    "results/tables/update_20261017/redesign_20261018/prediction_error_ecdf.csv",
+    "results/tables/update_20261017/redesign_20261018/published_paired_difference_uncertainty.csv",
+    "results/tables/update_20261017/redesign_20261018/published_paired_difference_per_repeat.csv",
+    "results/tables/update_20261017/redesign_20261018/published_matched_controls_points.csv",
+    "results/tables/update_20261017/redesign_20261018/published_matched_method_uncertainty.csv",
+    "results/tables/update_20261017/redesign_20261018/published_severity_confusion_repeat0.csv",
+    "results/tables/update_20261017/redesign_20261018/model_display_reconciliation.csv"
+  ],
+  "interval_scope": "Percentile patient bootstrap with the same sampled patients in every repeat; compute each repeat metric then average. Conditional on saved held-out predictions, not a refit/bootstrap of model selection.",
+  "ECDF_band": "Pointwise 95% intervals, not a simultaneous confidence band.",
+  "publication_comparison": "Identical eligible samples; original raw and clipped formula sensitivities. Different inputs and unconfirmed IL2RA/sIL-2R assay bridge prevent attribution to algorithm or population ethnicity."
+}

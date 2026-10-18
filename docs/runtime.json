@@ -1,0 +1,96 @@
+{
+  "python": "3.9.6",
+  "operating_system": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "measurements": [
+    {
+      "command": "python -m venv /temporary/path",
+      "seconds": 1.206084458,
+      "scope": "Fresh virtual environment for standard-library calculator; no third-party install"
+    },
+    {
+      "command": "./run.sh demo",
+      "seconds": 0.07157854199999991,
+      "scope": "Fresh standard-library environment; both synthetic rows verified",
+      "expected_easi": [
+        6.704503270491142,
+        0.0
+      ]
+    },
+    {
+      "command": "./run.sh test",
+      "seconds": 2.3235375420000004,
+      "scope": "Existing pinned numerical environment; 31 public tests passed"
+    },
+    {
+      "command": "./run.sh test",
+      "seconds": 27.251167499999998,
+      "scope": "Fresh requirements.lock.txt environment; 31 public tests passed"
+    }
+  ],
+  "full_dependency_installation": "PASS: all requirements.lock.txt packages installed in a fresh Python 3.9.6 virtual environment; pip check found no broken requirements. Download/install elapsed time was not instrumented.",
+  "aggregate_rebuild": {
+    "status": "PASS",
+    "commands": [
+      {
+        "command": "./run.sh demo",
+        "seconds": 0.389447583,
+        "exit_code": 0
+      },
+      {
+        "command": "./run.sh test",
+        "seconds": 3.7026657090000006,
+        "exit_code": 0
+      },
+      {
+        "command": "./run.sh rebuild",
+        "seconds": 34.73692629199999,
+        "exit_code": 0
+      }
+    ],
+    "aggregate_input_files": 205,
+    "aggregate_input_hashes_unchanged": true,
+    "figure_export_byte_identity": {
+      "pdf": true,
+      "svg": true,
+      "png": true
+    },
+    "documents": [
+      {
+        "path": "manuscript/main.pdf",
+        "pages": 11,
+        "byte_identical": true,
+        "extracted_text_identical": true,
+        "page_render_pixels_identical_at_72dpi": true,
+        "metadata_differences": {}
+      },
+      {
+        "path": "manuscript/appendix.pdf",
+        "pages": 55,
+        "byte_identical": true,
+        "extracted_text_identical": true,
+        "page_render_pixels_identical_at_72dpi": true,
+        "metadata_differences": {}
+      },
+      {
+        "path": "manuscript/figure_book.pdf",
+        "pages": 45,
+        "byte_identical": true,
+        "extracted_text_identical": true,
+        "page_render_pixels_identical_at_72dpi": true,
+        "metadata_differences": {}
+      }
+    ],
+    "restricted_preflight_expected_failure": true
+  },
+  "calculator_detail": {
+    "status": "PASS",
+    "rows": 2,
+    "absolute_tolerance": 1e-12,
+    "calculator_seconds": 0.027178209,
+    "python": "3.9.6",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "data": "Synthetic examples, not participant measurements"
+  }
+}

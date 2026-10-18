@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "source_sha256": "371c088adf5611569b968cfde5ac52de0afe8130cf9d18cdbd836451142a9259",
+  "inputs": [
+    {
+      "path": "results/tables/update_20260925/clinical.csv",
+      "sha256": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009"
+    },
+    {
+      "path": "results/tables/redevelopment/molecular.csv",
+      "sha256": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53"
+    },
+    {
+      "path": "results/tables/update_20261017/clinical/restricted/overlap_patient_weights.csv",
+      "sha256": "699c39e3e9a0ff76b81dfb4520af2a000826f35e38e947a4065c49b8a5616e05"
+    },
+    {
+      "path": "results/tables/update_20261017/clinical/baseline_balance.csv",
+      "sha256": "41124c943342faaa78aa8d445d80faa03b34a2afffa2231c94890cf947258ea7"
+    },
+    {
+      "path": "results/tables/update_20261017/clinical/molecular_model_diagnostics.csv",
+      "sha256": "3a6250bab18b3cecbe9b8d88305d8c28831d792bc6671d49b94e499fc56ca190"
+    }
+  ],
+  "propensity_and_weights_reconstruct_saved_values": true,
+  "all_original_baseline_SMD_reconstructed": true,
+  "molecular_model_sample_counts_reconcile": true,
+  "baseline_balance_summary": [
+    {
+      "analysis": "overlap_weighted",
+      "max_abs_SMD": 0.17443001909945524,
+      "n_above_0_1_including_redundant_center_indicator": 5
+    },
+    {
+      "analysis": "unweighted",
+      "max_abs_SMD": 0.9232456299737282,
+      "n_above_0_1_including_redundant_center_indicator": 18
+    }
+  ],
+  "interpretation": "Balance improved but some absolute SMDs exceed 0.1. This is an observational overlap population, not proof that confounding is removed. Categorical center has two complementary indicators; use one in compact balance plots.",
+  "molecular_note": "Molecular effects were covariate-adjusted without propensity weights; molecular ESS therefore equals the unweighted paired n. No fictional after-weighting balance is shown."
+}

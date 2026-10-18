@@ -1,0 +1,1697 @@
+[
+  {
+    "scope": "frozen_deployment",
+    "repeat": 0,
+    "fold": -1,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5127215790257503,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.009847079991894058,
+        "log2_CCL26": 0.009646929477400354,
+        "log2_IL-5": -0.008270558237379214
+      }
+    }
+  },
+  {
+    "scope": "frozen_deployment",
+    "repeat": 0,
+    "fold": -1,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.51,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.01,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "frozen_deployment",
+    "repeat": 0,
+    "fold": -1,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.513,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.01,
+        "log2_IL-5": -0.008
+      }
+    }
+  },
+  {
+    "scope": "frozen_deployment",
+    "repeat": 0,
+    "fold": -1,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5127,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0098,
+        "log2_CCL26": 0.0096,
+        "log2_IL-5": -0.0083
+      }
+    }
+  },
+  {
+    "scope": "frozen_deployment",
+    "repeat": 0,
+    "fold": -1,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5127,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0098,
+        "log2_CCL26": 0.0096,
+        "log2_IL-5": -0.0083
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5659565716026889,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008359892017672963,
+        "log2_CCL26": -0.00025077902227389857,
+        "log2_IL-5": 0.005720944688461185
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.57,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": -0.0,
+        "log2_IL-5": 0.01
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.566,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008,
+        "log2_CCL26": -0.0,
+        "log2_IL-5": 0.006
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.566,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0084,
+        "log2_CCL26": -0.0003,
+        "log2_IL-5": 0.0057
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5660000000000001,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0084,
+        "log2_CCL26": -0.0003,
+        "log2_IL-5": 0.005699999999999999
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -1.6745776256348712,
+      "coefficients": {
+        "bsa": 0.663405518418403,
+        "log2_CCL17": 0.30042024873532847,
+        "log2_CCL26": -0.15927699235419587,
+        "log2_IL-5": 0.11354033754734603,
+        "bsa_squared": -0.0007466664854120621
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -1.67,
+      "coefficients": {
+        "bsa": 0.66,
+        "log2_CCL17": 0.3,
+        "log2_CCL26": -0.16,
+        "log2_IL-5": 0.11,
+        "bsa_squared": -0.0
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -1.675,
+      "coefficients": {
+        "bsa": 0.663,
+        "log2_CCL17": 0.3,
+        "log2_CCL26": -0.159,
+        "log2_IL-5": 0.114,
+        "bsa_squared": -0.001
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -1.6746,
+      "coefficients": {
+        "bsa": 0.6634,
+        "log2_CCL17": 0.3004,
+        "log2_CCL26": -0.1593,
+        "log2_IL-5": 0.1135,
+        "bsa_squared": -0.0007
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 0,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -1.6746,
+      "coefficients": {
+        "bsa": 0.6634,
+        "log2_CCL17": 0.3004,
+        "log2_CCL26": -0.1593,
+        "log2_IL-5": 0.11349999999999999,
+        "bsa_squared": -0.0007000000000000001
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622282529596726,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0037186854264313145,
+        "log2_CCL26": 0.04059574807925079,
+        "log2_IL-5": -0.0027212660694857643
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.46,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0,
+        "log2_CCL26": 0.04,
+        "log2_IL-5": -0.0
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.462,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.004,
+        "log2_CCL26": 0.041,
+        "log2_IL-5": -0.003
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0037,
+        "log2_CCL26": 0.0406,
+        "log2_IL-5": -0.0027
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0037,
+        "log2_CCL26": 0.0406,
+        "log2_IL-5": -0.0027
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622282529596726,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0037186854264313145,
+        "log2_CCL26": 0.04059574807925079,
+        "log2_IL-5": -0.0027212660694857643
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.46,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0,
+        "log2_CCL26": 0.04,
+        "log2_IL-5": -0.0
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.462,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.004,
+        "log2_CCL26": 0.041,
+        "log2_IL-5": -0.003
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0037,
+        "log2_CCL26": 0.0406,
+        "log2_IL-5": -0.0027
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 1,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0037,
+        "log2_CCL26": 0.0406,
+        "log2_IL-5": -0.0027
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.46222347649730255,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.011607643224091926,
+        "log2_CCL26": 0.013636518115309026,
+        "log2_IL-5": -0.004037965281675481
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.46,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.01,
+        "log2_IL-5": -0.0
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.462,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.012,
+        "log2_CCL26": 0.014,
+        "log2_IL-5": -0.004
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0116,
+        "log2_CCL26": 0.0136,
+        "log2_IL-5": -0.004
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4622,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0116,
+        "log2_CCL26": 0.013600000000000001,
+        "log2_IL-5": -0.004
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -5.619485527600746,
+      "coefficients": {
+        "bsa": 0.6391836441856917,
+        "log2_CCL17": 0.6707830268109013,
+        "log2_CCL26": 0.08195712643613547,
+        "log2_IL-5": 0.027679811102362336,
+        "bsa_squared": -0.0011925148878161264
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -5.62,
+      "coefficients": {
+        "bsa": 0.64,
+        "log2_CCL17": 0.67,
+        "log2_CCL26": 0.08,
+        "log2_IL-5": 0.03,
+        "bsa_squared": -0.0
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -5.619,
+      "coefficients": {
+        "bsa": 0.639,
+        "log2_CCL17": 0.671,
+        "log2_CCL26": 0.082,
+        "log2_IL-5": 0.028,
+        "bsa_squared": -0.001
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -5.6195,
+      "coefficients": {
+        "bsa": 0.6392,
+        "log2_CCL17": 0.6708,
+        "log2_CCL26": 0.082,
+        "log2_IL-5": 0.0277,
+        "bsa_squared": -0.0012
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 2,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -5.6195,
+      "coefficients": {
+        "bsa": 0.6392,
+        "log2_CCL17": 0.6708,
+        "log2_CCL26": 0.08199999999999999,
+        "log2_IL-5": 0.0277,
+        "bsa_squared": -0.0012
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5312181686305889,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01351302128588087,
+        "log2_CCL26": 0.0006187100531767911,
+        "log2_IL-5": -0.018609084185651676
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.53,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.0,
+        "log2_IL-5": -0.02
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.531,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.014,
+        "log2_CCL26": 0.001,
+        "log2_IL-5": -0.019
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5312,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0135,
+        "log2_CCL26": 0.0006,
+        "log2_IL-5": -0.0186
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5312,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.013500000000000002,
+        "log2_CCL26": 0.0006,
+        "log2_IL-5": -0.018600000000000002
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5312181686305889,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01351302128588087,
+        "log2_CCL26": 0.0006187100531767911,
+        "log2_IL-5": -0.018609084185651676
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.53,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.0,
+        "log2_IL-5": -0.02
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.531,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.014,
+        "log2_CCL26": 0.001,
+        "log2_IL-5": -0.019
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5312,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0135,
+        "log2_CCL26": 0.0006,
+        "log2_IL-5": -0.0186
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 3,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5312,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.013500000000000002,
+        "log2_CCL26": 0.0006,
+        "log2_IL-5": -0.018600000000000002
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5571050140884111,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.007685322859407103,
+        "log2_CCL26": 0.004324208503276649,
+        "log2_IL-5": -0.013386099090003874
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.56,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.0,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.557,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008,
+        "log2_CCL26": 0.004,
+        "log2_IL-5": -0.013
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5571,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0077,
+        "log2_CCL26": 0.0043,
+        "log2_IL-5": -0.0134
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5571,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0077,
+        "log2_CCL26": 0.0043,
+        "log2_IL-5": -0.0134
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5571050140884111,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.007685322859407103,
+        "log2_CCL26": 0.004324208503276649,
+        "log2_IL-5": -0.013386099090003874
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.56,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.0,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.557,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008,
+        "log2_CCL26": 0.004,
+        "log2_IL-5": -0.013
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5571,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0077,
+        "log2_CCL26": 0.0043,
+        "log2_IL-5": -0.0134
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 0,
+    "fold": 4,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5571,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0077,
+        "log2_CCL26": 0.0043,
+        "log2_IL-5": -0.0134
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5104213269523922,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.009661907760668656,
+        "log2_CCL26": 0.014768437700025772,
+        "log2_IL-5": -0.013893749045719123
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.51,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.01,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.51,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.015,
+        "log2_IL-5": -0.014
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5104,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0097,
+        "log2_CCL26": 0.0148,
+        "log2_IL-5": -0.0139
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5104,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0097,
+        "log2_CCL26": 0.0148,
+        "log2_IL-5": -0.0139
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5104213269523922,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.009661907760668656,
+        "log2_CCL26": 0.014768437700025772,
+        "log2_IL-5": -0.013893749045719123
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.51,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.01,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.51,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.015,
+        "log2_IL-5": -0.014
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5104,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0097,
+        "log2_CCL26": 0.0148,
+        "log2_IL-5": -0.0139
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 0,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5104,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0097,
+        "log2_CCL26": 0.0148,
+        "log2_IL-5": -0.0139
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4510784967917907,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.014398946182997219,
+        "log2_CCL26": 0.013440056233609093,
+        "log2_IL-5": -0.01249108985056855
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.45,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.01,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.451,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.014,
+        "log2_CCL26": 0.013,
+        "log2_IL-5": -0.012
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4511,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0144,
+        "log2_CCL26": 0.0134,
+        "log2_IL-5": -0.0125
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4511,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0144,
+        "log2_CCL26": 0.0134,
+        "log2_IL-5": -0.0125
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -3.1094811083924707,
+      "coefficients": {
+        "bsa": 0.7075355643556566,
+        "log2_CCL17": 0.39001768797810726,
+        "log2_CCL26": -0.10169395425373745,
+        "log2_IL-5": -0.03716318691544388,
+        "bsa_squared": -0.0019287952801624788
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -3.11,
+      "coefficients": {
+        "bsa": 0.71,
+        "log2_CCL17": 0.39,
+        "log2_CCL26": -0.1,
+        "log2_IL-5": -0.04,
+        "bsa_squared": -0.0
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -3.109,
+      "coefficients": {
+        "bsa": 0.708,
+        "log2_CCL17": 0.39,
+        "log2_CCL26": -0.102,
+        "log2_IL-5": -0.037,
+        "bsa_squared": -0.002
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -3.1095,
+      "coefficients": {
+        "bsa": 0.7075,
+        "log2_CCL17": 0.39,
+        "log2_CCL26": -0.1017,
+        "log2_IL-5": -0.0372,
+        "bsa_squared": -0.0019
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 1,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -3.1094999999999997,
+      "coefficients": {
+        "bsa": 0.7075,
+        "log2_CCL17": 0.39,
+        "log2_CCL26": -0.1017,
+        "log2_IL-5": -0.037200000000000004,
+        "bsa_squared": -0.0019
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4947555776543143,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0134733505998537,
+        "log2_CCL26": -0.00090860085732511,
+        "log2_IL-5": -0.008493674934104644
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.49,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": -0.0,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.495,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.013,
+        "log2_CCL26": -0.001,
+        "log2_IL-5": -0.008
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4948,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0135,
+        "log2_CCL26": -0.0009,
+        "log2_IL-5": -0.0085
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.49479999999999996,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.013500000000000002,
+        "log2_CCL26": -0.0009,
+        "log2_IL-5": -0.0085
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4947555776543143,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0134733505998537,
+        "log2_CCL26": -0.00090860085732511,
+        "log2_IL-5": -0.008493674934104644
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.49,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": -0.0,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.495,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.013,
+        "log2_CCL26": -0.001,
+        "log2_IL-5": -0.008
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4948,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0135,
+        "log2_CCL26": -0.0009,
+        "log2_IL-5": -0.0085
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 2,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.49479999999999996,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.013500000000000002,
+        "log2_CCL26": -0.0009,
+        "log2_IL-5": -0.0085
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.44180543562490726,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0053732611863424665,
+        "log2_CCL26": 0.042543536553396925,
+        "log2_IL-5": -0.0045149785370860425
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.44,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": 0.04,
+        "log2_IL-5": -0.0
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.442,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.005,
+        "log2_CCL26": 0.043,
+        "log2_IL-5": -0.005
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.4418,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0054,
+        "log2_CCL26": 0.0425,
+        "log2_IL-5": -0.0045
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.44179999999999997,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0054,
+        "log2_CCL26": 0.0425,
+        "log2_IL-5": -0.0045000000000000005
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.28314229733018,
+      "coefficients": {
+        "bsa": 0.6053659331387345,
+        "log2_CCL17": 0.25946277745841734,
+        "log2_CCL26": 0.27137400340918694,
+        "log2_IL-5": -0.0076902680934727245
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.28,
+      "coefficients": {
+        "bsa": 0.61,
+        "log2_CCL17": 0.26,
+        "log2_CCL26": 0.27,
+        "log2_IL-5": -0.01
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.283,
+      "coefficients": {
+        "bsa": 0.605,
+        "log2_CCL17": 0.259,
+        "log2_CCL26": 0.271,
+        "log2_IL-5": -0.008
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.2831,
+      "coefficients": {
+        "bsa": 0.6054,
+        "log2_CCL17": 0.2595,
+        "log2_CCL26": 0.2714,
+        "log2_IL-5": -0.0077
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 3,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.2831,
+      "coefficients": {
+        "bsa": 0.6053999999999999,
+        "log2_CCL17": 0.2595,
+        "log2_CCL26": 0.27140000000000003,
+        "log2_IL-5": -0.0077
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5983556242065833,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008287351505560684,
+        "log2_CCL26": -0.01069369888552236,
+        "log2_IL-5": 0.004599655212765458
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.6,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": -0.01,
+        "log2_IL-5": 0.0
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.598,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008,
+        "log2_CCL26": -0.011,
+        "log2_IL-5": 0.005
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5984,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0083,
+        "log2_CCL26": -0.0107,
+        "log2_IL-5": 0.0046
+      }
+    }
+  },
+  {
+    "scope": "fixed_structure_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5984,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0083,
+        "log2_CCL26": -0.010700000000000001,
+        "log2_IL-5": 0.0046
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "full_precision",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5983556242065833,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008287351505560684,
+        "log2_CCL26": -0.01069369888552236,
+        "log2_IL-5": 0.004599655212765458
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "direct_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.6,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.01,
+        "log2_CCL26": -0.01,
+        "log2_IL-5": 0.0
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "direct_3dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.598,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.008,
+        "log2_CCL26": -0.011,
+        "log2_IL-5": 0.005
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "direct_4dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5984,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0083,
+        "log2_CCL26": -0.0107,
+        "log2_IL-5": 0.0046
+      }
+    }
+  },
+  {
+    "scope": "nested_selection_OOF",
+    "repeat": 1,
+    "fold": 4,
+    "policy": "scaled100_2dp",
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * log2_concentration)), 0, 72)",
+      "intercept": 0.0,
+      "bsa_factor": 0.5984,
+      "bsa_log2_coefficients": {
+        "log2_CCL17": 0.0083,
+        "log2_CCL26": -0.010700000000000001,
+        "log2_IL-5": 0.0046
+      }
+    }
+  }
+]

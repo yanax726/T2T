@@ -1,0 +1,17 @@
+{
+  "seed": 20261002,
+  "outer_repeats": 2,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "ridge_alpha": [0.1, 1, 10, 100],
+  "continuous_links": ["identity", "log1p"],
+  "bootstrap_replicates": 2000,
+  "development_weeks": [0, 12],
+  "targets": ["pp_nrs", "dlqi", "iga"],
+  "models": ["BSA_three", "BSA_only", "molecules_only", "constant"],
+  "features": ["bsa", "log2_CCL17", "log2_CCL26", "log2_IL-5"],
+  "clinical_path": "results/tables/update_20260925/clinical.csv",
+  "molecular_path": "results/tables/redevelopment/molecular.csv",
+  "output_path": "results/tables/update_20261017/model/auxiliary_targets",
+  "status": "Exploratory target-specific refit on the current recorded clinical outcomes. PP-NRS and DLQI are separately fitted bounded continuous regressions; IGA is a six-category ordinal model with instrument identity pending. W24 is previously inspected same-cohort temporal transfer."
+}

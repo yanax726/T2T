@@ -1,0 +1,5 @@
+branch,reason,n_patients,n_records
+clinical,age_below_12,6,60
+clinical,age_unknown,0,0
+clinical,ambiguous_initial_dose_after_age_filter,1,10
+molecular_time,W48_outside_current_model_scope,24,24

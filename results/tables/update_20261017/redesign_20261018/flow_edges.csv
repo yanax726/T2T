@@ -1,0 +1,10 @@
+source,target,relationship,n_patients,n_records
+clinical_source,clinical_observed_slots,descriptive subset,170,736
+clinical_source,clinical_age_eligible,age eligibility,164,1640
+clinical_age_eligible,clinical_main,initial-dose eligibility,163,1630
+clinical_source,molecular_source,linked independent serum availability branch,169,376
+molecular_source,molecular_target_weeks,time window,168,352
+molecular_target_weeks,molecular_age_eligible,age eligibility,162,340
+molecular_age_eligible,model_complete,complete observed inputs and outcome,160,316
+model_complete,development,visit partition; overlapping people,156,241
+model_complete,temporal,visit partition; overlapping people,75,75

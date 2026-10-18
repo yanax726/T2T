@@ -1,0 +1,10 @@
+visit_week,treatment,n_initial,n_recorded_total,n_reliable,excluded_or_missing
+0,abrocitinib_100mg,56,56,48,8
+0,abrocitinib_200mg,42,42,41,1
+0,dupilumab,65,65,62,3
+12,abrocitinib_100mg,56,42,41,15
+12,abrocitinib_200mg,42,31,29,13
+12,dupilumab,65,50,50,15
+24,abrocitinib_100mg,56,29,27,29
+24,abrocitinib_200mg,42,24,21,21
+24,dupilumab,65,40,40,25

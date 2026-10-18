@@ -1,0 +1,21 @@
+{
+  "private_input": true,
+  "row_unit": "One observed participant visit; unique patient_uid plus visit_week",
+  "columns": {
+    "patient_uid": "De-identified participant identifier; all visits grouped for validation",
+    "visit_week": "0, 12 or 24",
+    "observed": "Observed EASI, range 0..72; no imputed validation truth",
+    "bsa": "BSA percentage, range 0..100",
+    "log2_CCL17": "Finite log2 concentration in the development-assay units",
+    "log2_CCL26": "Finite log2 concentration in the development-assay units",
+    "log2_IL-5": "Finite log2 concentration in the development-assay units",
+    "log2_IL-22": "Optional for published-formula comparison; may be missing",
+    "log2_IL2RA": "Optional nominal sIL-2R proxy; may be missing",
+    "stage": "0 before treatment, 1 during treatment; comparator only, not common model input",
+    "treatment": "Initial treatment group; evaluation only",
+    "center": "Study center; evaluation only",
+    "dose_ambiguous": "Boolean; ambiguous initial dose excluded from treatment-stratified evaluation",
+    "source_contradiction": "Boolean; recorded EASI total differs from complete regional sum by >0.15; sensitivity flag only"
+  },
+  "publication_policy": "Share code, coefficients and approved aggregate tables; do not publish this input or row-level prediction/audit files without authorized controlled data access."
+}

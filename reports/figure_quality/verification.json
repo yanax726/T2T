@@ -1,0 +1,868 @@
+{
+  "status": "PASS",
+  "palette_version": "palette-v4",
+  "palette_registry_sha256": "75c481f3e2552f83e2eb98d4f42fe7b41636b2157c9011f8b37ebed9888e777d",
+  "display": "Colour distinguishes categories; ordinary points are circles and trend lines are solid; pathways and intervals use facet titles.",
+  "scientific_files_compared": 214,
+  "scientific_files_changed": [],
+  "figure_count": 44,
+  "main_figures": 4,
+  "supplementary_figures": 40,
+  "figure_source_mapping_unchanged": true,
+  "figures": [
+    {
+      "id": "Figure1",
+      "exports": {
+        "pdf": "279d6096d24e3abb75f7d80d7563c84e1f72076658883fe4aa67042d5676ac1c",
+        "svg": "2ffc85e169cadbd361cf25e062b6644f73623a5a225e361b0fa9899871659b30",
+        "png": "c609278e2a9f331f1bc843ad7fe87028c06ff95ce492a31a2e2258bc66f4f778"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 167.99999525282118,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "Figure2",
+      "exports": {
+        "pdf": "ff530b9ecedd6abf3dc4d47def85446a5ed9734e4f289245cac04869e60d99f6",
+        "svg": "08804181ea66a5652243930bf7659c46dde4d6c555536e20fa145f14bcf6b346",
+        "png": "18773f774d92ca834857b2d325c021129664509d8112c07d7a693146ef2570cc"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 167.99999525282118,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "Figure3",
+      "exports": {
+        "pdf": "3aa31612affc8bb3640d372cdfef25cc418d61ae39ea6a96572e61b9b121f1a8",
+        "svg": "58b501aa873cf7652b98b9162323f8e6cc4b8d3dff56cfa1850492a1e1f20fdb",
+        "png": "8b8533bf5096144b86e6f6897aeaba7a98da97674500d8135b742d3ef6409069"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "Figure4",
+      "exports": {
+        "pdf": "879d867d2cfdb7455c9964e5aaa5ae4f7e5ffb233fd7da0b6b2ebe75164ea328",
+        "svg": "b98a6c69fb9824627f9e46f861b164abb995003ea802869edd5a91caf1ae2f02",
+        "png": "c905eb988294d43c4446c43169fd63d269b487f312778f4f1c0001252bf83217"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 159.99999906751844,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "FigureS1",
+      "exports": {
+        "pdf": "8bc069f0ba2a6d70d7eb0ae02a5525560d39ece23dfc33a244e8f24767e833af",
+        "svg": "75b83aed01e5943eaa9da3569e8c623130a5bda7a2de073a919b6b377e089297",
+        "png": "b9697d1fbf150ba0d9da485dade3bc0dc89893cca6dd5580d7e0e8e75492a41a"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 220.0000081380208,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS2",
+      "exports": {
+        "pdf": "46759c060069d4101ecbf08457c3563516ecea3545b54c02f640945693d441f9",
+        "svg": "524167d41302092769f899be9e22ef04405efc55e5cd0d197b55e131c2a14fa5",
+        "png": "57540ff9b8a9c198f45cf4b33c3913adf66695fdcc39d66aa6a6e36998c7afa3"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 209.99999406602643,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS3",
+      "exports": {
+        "pdf": "dba7281b744d90390669d10d9a5648af881aef849fdf8dc04473b407aa2d4102",
+        "svg": "09f16713c2e97efd8acec466c530bf1c24ed6a94c01fae8e353e56afb57ccb00",
+        "png": "4cb165dcde3ec992bbfe3fa593a7f8c57a725bdb36943bd278ef3a4be3f2c6f6"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS4",
+      "exports": {
+        "pdf": "9b474367ab108965365611d75681f605b310a04c5e3d3e776720aa49cad080a0",
+        "svg": "cc87f415ab72d8798aca09f8eefbab4f0e8d1b90aadba9ba028e7ceb08827a20",
+        "png": "d066b6c3539b4555cae15cfc4092c42e7e033809635a3e09169b010f478940f5"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS5",
+      "exports": {
+        "pdf": "8becf692760285d54d20c5f6698926c351f1d44824d8affa66dcc9126aa641e8",
+        "svg": "b8a85cdf55a1e814f997dac8c233d523a3e6a8ba4f58e824624596890a8cf139",
+        "png": "9ac835ce382b79c91c6666a025e8c0f2fae00eb957d45396d9a698780c84eac3"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS6",
+      "exports": {
+        "pdf": "89dd81cd017e4bef9419aea31d33e67744cde615435a0b998a8eba986d847c74",
+        "svg": "8c93fb013074f7ec2c9589e0cc78a8168ae3e4604098070e226e62817c23d716",
+        "png": "f2b1f72007e9f2dc8fbeda954e5bcb69b2bf66697ae5784adbc532c4c00e2a48"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS7",
+      "exports": {
+        "pdf": "793fec1016439ddc4755daf0c8cf454f085c88da1a9c9b3abb60f23c538a4715",
+        "svg": "ba5dccbdaf90df2e66cfbfd2a48b6d19845a39bf780e25a88b088d452cb658a7",
+        "png": "3e93d26556b971e75f7bef903748d9ee3c280dcaf73c38d01da656d87d55e4fb"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS8",
+      "exports": {
+        "pdf": "74f02c56532fa0d652042dec035b00faf9c245f7dfe60cf71ab3cd01668e22e6",
+        "svg": "bd31430cf8998588c25f2ac05f51131e2548ff8236ce8e538bad8a21f5ffac5c",
+        "png": "3c4d26ed8a23d93a96d73554e1080f0d6e1f39cfa1c1bb877fd1eb15c553ab8d"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.current": "#7F5D50"
+      }
+    },
+    {
+      "id": "FigureS9",
+      "exports": {
+        "pdf": "1fb12c98f1957df613b7b256985f907d8c944bcaf4c4a587af10f02bf511b7cf",
+        "svg": "06c774f4693d15ead933ab39cb5c0dac61f105076c21f13716e201152508b903",
+        "png": "fec6282c50b8eebe014bad323960fda344c0a4aeee5810b9ea4d721d908c86ab"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.current": "#7F5D50"
+      }
+    },
+    {
+      "id": "FigureS10",
+      "exports": {
+        "pdf": "41aad32352bccafaa2d040c7f94eefe688d1d0ff92bcc13e915521f7d0d867ad",
+        "svg": "2af1e8f8403b145a1fcb9d7e516c1491e681b3d0fd1f31c64cc90ccfa8e9f7dc",
+        "png": "c924c61cfb2748e447f34335aa6a40182002dad2e090e6654a7ef0284cd35c1b"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.current": "#7F5D50"
+      }
+    },
+    {
+      "id": "FigureS11",
+      "exports": {
+        "pdf": "4d0b7dd947f8c61b66f6181009d24fb140490b595be14f2d65044937b256e008",
+        "svg": "a6ced6416b717a388426591494b2106c7f938a22b791059252352f1ab59548ad",
+        "png": "0dd5a94beafd2733d1f1cfac0401540fba89456a00f178c3b4f97e4edf4351c4"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS12",
+      "exports": {
+        "pdf": "8cacb5e7ef14101e482c3cf06a37b5f1fa2c00f6d60dc8953bc7fbf72eda9994",
+        "svg": "fc6ffc1cb69e5db5a33d07d6640d605f41247d8e8845a5898af81942ddb80d41",
+        "png": "f07d7abc78a1a98c4041576629f706ce5f864dc0d57683f3620659bfb13d266d"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS13",
+      "exports": {
+        "pdf": "9586f1dd55882b23b3030a6b5779e59c40987d3c1325f56b77e40788ad9afb2c",
+        "svg": "c9706a03f93411dafda6db6f299ba6b511830588af7a83c21be6217b812a554c",
+        "png": "00e16772c0de563857460ceefa2b017baf6a6b15edd648f4818d5413d8de7cbd"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS14",
+      "exports": {
+        "pdf": "7d97d2e9a90bc1e43b4f8eaf3c1157750e5ae2ddb2c00cc02d038aab667eef57",
+        "svg": "55b49cf83d9a0c50cb77afdde1dca3e8c433e2ba019592ecf2d77e10ea1449de",
+        "png": "d449fd345fb8f5c681e39e03b1213c681481502b2e9981744b7334d4b934c1b8"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "NOT APPLICABLE",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS15",
+      "exports": {
+        "pdf": "c95fcdc9aa048850edff621d1c159206cfb380de81c73916df8c47f3887a29d6",
+        "svg": "baf7e7dac3324df1b8a3a8d63206e447ae19103a13cf0a8e1a1b688eeb394120",
+        "png": "661643fe1191ac8c6de7b4b6f5ec904cd2740af72d90f259f89bcdfa66ff948a"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 115.0000003390842,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "recorded_iga_0_to_5.0": "#E7F1F5",
+        "recorded_iga_0_to_5.1": "#BED9E3",
+        "recorded_iga_0_to_5.2": "#8DB9CB",
+        "recorded_iga_0_to_5.3": "#5D94AF",
+        "recorded_iga_0_to_5.4": "#356F92",
+        "recorded_iga_0_to_5.5": "#19496E"
+      }
+    },
+    {
+      "id": "FigureS16",
+      "exports": {
+        "pdf": "3177bd147330c4831a2f682acb1cb41b5dcd8bd108a246019f86d0b983c4aeed",
+        "svg": "076b803c2e68fe2699c318cacb89ff162462a0e8351b1ccec35ca8be6568b561",
+        "png": "4c3faa11f7f94d6696c566606e6e9dc39718a7fa72d33e580b440b715d59140e"
+      },
+      "minimum_font_pt": 6.5,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 104.99999703301322,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS17",
+      "exports": {
+        "pdf": "2ea3ee73cb3b621667af8f8e46d2e7fbeb2164a2c4345724f020fa5a28fd458a",
+        "svg": "4ca2cde6d3233b2318dceadef93eff93592030a09ebc9a4134b4c7d1df96eeab",
+        "png": "43e74634db2ee447b84efb120ae4b601107b767c1994ec0e1f98f66f9d1df06e"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 204.99999779595268,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS18",
+      "exports": {
+        "pdf": "2f4909cddd07e5da189aded560b7ed211093c4e60f0c2a7ad5dd402c2b36ab97",
+        "svg": "141594128b52b112917006e8c360385ffec701241421dccbcf53035c03e2c279",
+        "png": "4eddbc3c1eb7c2675c069111c5ed8995e19fb84979665d4f9d29b255f1f51a84"
+      },
+      "minimum_font_pt": 6.5,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS19",
+      "exports": {
+        "pdf": "adb4aac4e22ad17ae1d57552bfe739eed34d64db58dd3f5607dadca717d65651",
+        "svg": "cb188d1d3d7dcb39989b09aa145f98c9c13e0efeb1f60fd0d5e0568697b23dd4",
+        "png": "8854faa9fe896d9e74de1e62f405685e41f750b726ff6cac627647d6a524c758"
+      },
+      "minimum_font_pt": 6.5,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "FigureS20",
+      "exports": {
+        "pdf": "d3ba53744eaff23ccc9c103bd03641ff41745f09ef03b991e814b9fc3d85c790",
+        "svg": "a1f24f7286554b74af5f98616c9ab76cb9d1246614d885933e8d21d1a862a6df",
+        "png": "a385164d0c5fcc04efb30fc8de2c002b6ba5874d2e43c61b69cde565773b8a74"
+      },
+      "minimum_font_pt": 6.5,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 100.00000076293945,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS21",
+      "exports": {
+        "pdf": "ff07ff2b54cc762271369ec9d6f1cbf95b98826e356da60f57ae6852b1b6db2a",
+        "svg": "e38b99c611cb2dbe50a4c30f75825537dffbe7a001af3fb31c2ece7ace4c4d3e",
+        "png": "4d5552851061fe1b728a3c2114927d3f763da2d60399d9d9d3d9cfe1e265ec6c"
+      },
+      "minimum_font_pt": 6.5,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 144.99999949137367,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "FigureS22",
+      "exports": {
+        "pdf": "f74805c47bd7a1ce0978924162bb2c59d5a6e9d06dc85f2a0ddaa01ab574b6a6",
+        "svg": "7773c3dd540fb7ac142d5b4cace67da5c6107561b5b9d24529fbcc192a2563b4",
+        "png": "c1dddbc5ae460bd4fc0762d20853f3b15f31bfc724c8af1a5f0548014586c8c0"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 85.00000118679469,
+      "outside_page_text": [],
+      "alignment": "NOT APPLICABLE",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.reference": "#91ADB6",
+        "method.current": "#7F5D50"
+      }
+    },
+    {
+      "id": "FigureS23",
+      "exports": {
+        "pdf": "4c1bf5ba58fb0efc818e9333b33a80fbebf5e4e40c11e5efae0bc8e439b404ab",
+        "svg": "0ecba744056d0c65e96a9b76ed8f52ba665104ee32d30fd458769ae401cb79c0",
+        "png": "41f4806979a41039a279838c0c78f364f45fceb6910c2423c671317bcb4c438b"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 144.99999949137367,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.reference": "#91ADB6",
+        "method.current": "#7F5D50"
+      }
+    },
+    {
+      "id": "FigureS24",
+      "exports": {
+        "pdf": "f846484010bc7356b6199d875e2823250e248c01b48c75c37a0739092effb2bb",
+        "svg": "7746489e0c251fd82e9357420aefae20e23cbcdc50dccf32e4193569ab355484",
+        "png": "bb6b6763156b357a1f9574934d48ddd03531fbad032a2e0de0f41e632c0f39b5"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 144.99999949137367,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.reference": "#91ADB6",
+        "method.current": "#7F5D50"
+      }
+    },
+    {
+      "id": "FigureS25",
+      "exports": {
+        "pdf": "c908d129c2ec2461bca1a4bc8775010eb991d5bcacec4f0fa843d385b73426d1",
+        "svg": "bcf98bacb9cb3b0ace270799b450dc054182ecbeec6d0d90aaac24758fd8d7b7",
+        "png": "0b9f3a553ae9119a2035d15dee53119306631564f3c9b3f887301706829a5cd7"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 144.99999949137367,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.reference": "#91ADB6",
+        "method.current": "#7F5D50"
+      }
+    },
+    {
+      "id": "FigureS26",
+      "exports": {
+        "pdf": "501e06ffa23333b32166db7f5ff4813c8cbba164ede86a635b4cebd7021acb50",
+        "svg": "ad60f9e202397824a5ff4635548e46a38c2baa06cc2e5b98a87eabb3ca6bee34",
+        "png": "b06b2c3ad756454afe7f7f957123dada9fd80468c31af1a75d13f8b5f0d67f6a"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS27",
+      "exports": {
+        "pdf": "0d08742e9f1e9f11a890daeb837bae5b3509f30b660a7e1496968eec6b0a3c97",
+        "svg": "461591f0c1e5be1e22ded47e979065ad342e9e5975b73240e1dfd2cfa34426a8",
+        "png": "1cd2f153f1859a67d245a2adcf121df5eade147a957e9688cb200be0ad86416c"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS28",
+      "exports": {
+        "pdf": "8da7553e49ce9125323790510d6a3b3b91d2de6b600bf03fcc86f2c5d981b910",
+        "svg": "ea82b4bf05c6b366d485bec5d0c8494f7667889379ea91637abbc2fc35da20bb",
+        "png": "1847adff44c2a4ac1ae2cd94954677f1fb9cd64201222a7f6a417899cbfe4f16"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS29",
+      "exports": {
+        "pdf": "ba3aea02f465c5e8d2e89f84f2bae2fc4c73ce618cdeb9bcf5397a3937397fb8",
+        "svg": "5acea37aa7ff1a64d42dab702126b1a41b829cd9b71a4f43088cbdab0e838b46",
+        "png": "1d09eb5d34707d2e3e1440ff88df4588e6a221a4e79a42dafc3649903cebe6a3"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS30",
+      "exports": {
+        "pdf": "52c74c2c9e3b1cef658e737568f6be9a83f1c5823bd112d61af150e14df8caa1",
+        "svg": "44a0f44223b3c14d1d33594d271dcadef0c11966294028a3effcb072e9188ad7",
+        "png": "8cfda3e1dacf40709ab3a4b49bdf01b5dd59a4f35b114184e4085203ee909d41"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS31",
+      "exports": {
+        "pdf": "5ed9a6002b4def9073af854a5c5c5dc046bfd499300f36e2cef383c123915143",
+        "svg": "dfe512c47b1e6a60dcedac6469d41b86cb62aadcb72d3a947081a12f84987998",
+        "png": "899ba0054b9c35b46ffd949c50964fc2bba549ee09997bf09d579c5535f5c08d"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 164.99999533759222,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS32",
+      "exports": {
+        "pdf": "6aa1f17254691c2d6a295b3bd64cc1405e8d95a1b2370470fbee5f94158aff9a",
+        "svg": "de96ed050913d4213c93b3756cbb5472ca467122ec19a80e9b3ed908b1587877",
+        "png": "efb4e64046cba4dcfc11ec40a1e04fa84e01d81589e89a2007ad627064cd09d9"
+      },
+      "minimum_font_pt": 6.5,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 170.00000237358938,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.pooled_abrocitinib": "#A96856"
+      }
+    },
+    {
+      "id": "FigureS33",
+      "exports": {
+        "pdf": "9208eb051861b46543ca9183682ac471ca027c3218a0c5c5a9ae6f1c960705f1",
+        "svg": "e41d44c06857f502c38984535a392cd18a287f9a0e27ab47400931c8e2c8e86a",
+        "png": "73e9e03e794b0fa9e38529b1bd35f2d2dbfa6f9ce275d8295584e333b5226a86"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 170.00000237358938,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS34",
+      "exports": {
+        "pdf": "e39325cd51a02ba3dd48f62654c389a8c780526a8f90bbb67e7d25739cd38184",
+        "svg": "5af783d772aa32d506861fe71720ed5e1316244251610cc3e4939783cabaff84",
+        "png": "a60802fe5981aeee952128e24b325ebcad1f12e04df01368280b0c2249962ccf"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 110.0000040690104,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "FigureS35",
+      "exports": {
+        "pdf": "079f730ca18e8ea5a87b826513b6e1c48fe2d75f34f34a5dbede6c68058fdcfb",
+        "svg": "9ba2dfcff6942e92c61165c4b51de59aa04abf12130b52bbeb05ab894c7bb8a5",
+        "png": "3f402f97c75373c0b04b97d8d9ce2a3e68ac7f9a11f7efee7aff4b4210e59df5"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 149.99999576144748,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "FigureS36",
+      "exports": {
+        "pdf": "86c51f72e5a150239db63c05e82ba3581651d097f42359bca7bd57c46049809d",
+        "svg": "c1959e476b58e3e6aeda1249428b8f7a20c4cebe5a1c2fa2eab2d92d91fb53b3",
+        "png": "1281d9d8cfd15ef811c8ed1491dea5526faf2c0a199b5cc4f8c03a3059692e63"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 155.00000279744467,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS37",
+      "exports": {
+        "pdf": "9ff7683f2047d66888c5365661afbcfcef2a379c95c10929e9e9f54e0f73d34f",
+        "svg": "878e6ebe39b0a7864722c781ee24f894fab51093cfa8a9ec92f81dab43a04472",
+        "png": "b6b4ebd1ddbe4e917156c3512ef245daf61b2eee809d9b896c732e1884a9a132"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 209.99999406602643,
+      "outside_page_text": [],
+      "alignment": "NOT APPLICABLE",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS38",
+      "exports": {
+        "pdf": "4cf94702648e2246738dffb1aacd2dab0e6f2dde57fc563562980e9b63c5b39c",
+        "svg": "747cae447ae68615da23552c6a8e9851e5653b7ac6c65d1bece15914ebe027f6",
+        "png": "2288c2ba921146feb860f8c8b7fbedd9ae5c908433f2690d6b09d6280816715e"
+      },
+      "minimum_font_pt": 6.5,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 155.00000279744467,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "method.reference": "#91ADB6",
+        "method.current": "#7F5D50",
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
+      }
+    },
+    {
+      "id": "FigureS39",
+      "exports": {
+        "pdf": "ac045774d6dac7b733e402d92bffabd1b75b69194a5689f42e46299f0c955548",
+        "svg": "9b47b52741da159a03bde5602b881c24c451ec23833b5c9429af3f7d0ade96f5",
+        "png": "2011f9ee849c957e76b02d5406a63c48a46bfb7129c7f122d61923ef278de5cb"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 159.99999906751844,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {}
+    },
+    {
+      "id": "FigureS40",
+      "exports": {
+        "pdf": "80eb8c881694bd15314770e519e691e72be943d16e083665f06247db553ef6ab",
+        "svg": "3f3597a514d7279830db43bf3086d0a3b383db57b1b461f5ccb6aeb0008a1026",
+        "png": "d9f2bba42c13e1c236a9ecce548120ba967dacec35bbdde16205a5e97364b859"
+      },
+      "minimum_font_pt": 6.300000190734863,
+      "page_width_mm": 183.0000055948893,
+      "page_height_mm": 112.00000042385524,
+      "outside_page_text": [],
+      "alignment": "PASS",
+      "collision_fail": 0,
+      "collision_warn": 0,
+      "categorical_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "file": "manuscript/main.pdf",
+      "pages": 11,
+      "sha256": "d7f6d4244645e8787c81ec3abac7553858e134834d70843b813d18806e09825d",
+      "minimum_embedded_font_pt": 5.97760009765625,
+      "outside_page_text": []
+    },
+    {
+      "file": "manuscript/appendix.pdf",
+      "pages": 55,
+      "sha256": "60f5ef250206ff96616816d12b664f1e71c17f2f39ce648234af002cd7846f84",
+      "minimum_embedded_font_pt": 5.97760009765625,
+      "outside_page_text": []
+    },
+    {
+      "file": "manuscript/figure_book.pdf",
+      "pages": 45,
+      "sha256": "a9523410921ab0369a476c871685b43dae64f53741fb97a18585974c699335b1",
+      "minimum_embedded_font_pt": 5.990480899810791,
+      "outside_page_text": []
+    }
+  ],
+  "visual_review": "All 44 scientific figures individually reviewed; complete-figure colour-vision/grayscale previews inspected separately, with enlarged checks of dense panels.",
+  "colour_vision_simulations": [
+    "Machado2009 protanopia100%",
+    "Machado2009 deuteranopia100%",
+    "Machado2009 tritanopia100%"
+  ],
+  "grayscale_limit": "Signed heatmaps require colour to distinguish direction reliably when cell labels show n; numerical tables preserve signed values.",
+  "scope": "Graphical and reproducibility checks, not clinical validity, external peer review or journal acceptance."
+}

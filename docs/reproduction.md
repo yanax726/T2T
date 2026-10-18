@@ -38,9 +38,7 @@ Creating a fresh standard-library virtual environment took 1.21 seconds; running
 
 Runtime records for the current public demonstration and tests are included in `docs/runtime.json`. All pinned dependencies were installed successfully in a fresh Python 3.9.6 environment, and `pip check` found no broken requirements. Download/install time was not instrumented; it depends on network access and wheel availability. The standard-library calculator needs no package installation.
 
-In an isolated copy of the public package, `rebuild` took 34.74 seconds. All figure PDF/SVG/PNG files and all three manuscript PDFs matched the supplied files byte for byte; all 205 checked numerical and source files were unchanged. Demo and tests also passed, and restricted-input preflight stopped as expected. The [public rebuild report](../reports/update_20261018/revision2/qa/public_rebuild.json) records commands, versions and source hashes. The historical scientific replay logs report analysis timings and hash comparisons for their own recorded source snapshots; those logs do not assert a new model refit during this aggregate rebuild.
-
-The subsequent CI-template relocation changed documentation and package selection only. Scientific code, parameters, numerical results and renderings remained byte-identical to the verified package; the recorded rebuild hashes identify that earlier verification snapshot.
+The [current public rebuild check](../reports/figure_quality/public_rebuild.json) records the tested commands, runtime and hashes. It verifies all figure PDF/SVG/PNG exports and the three manuscript PDFs against the distributed outputs, and checks that numerical source files remain unchanged. The [figure checks](../reports/figure_quality/verification.json) cover the current palette, categorical colour assignments, typography and rendered layouts. These checks rebuild published aggregates; they do not refit the clinical models.
 
 ## Reproduction scope
 

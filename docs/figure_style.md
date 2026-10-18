@@ -1,17 +1,23 @@
 # Figure colours and symbols
 
-Treatment colours are a three-colour subset of the Okabe–Ito palette, discussed in [Nature Methods](https://doi.org/10.1038/nmeth.1618) and its [attribution correction](https://doi.org/10.1038/s41592-023-01974-0).
+All current manuscript and presentation figures use `config/palette_v4_registry.json`. The configuration assigns colours by meaning across the entire numbered figure, including every panel.
 
 | Meaning | Colour | Additional cue |
 |---|---|---|
-| Initial dupilumab | Blue `#0072B2` | Circle |
-| Initial abrocitinib 100 mg | Bluish green `#009E73` | Square |
-| Initial abrocitinib 200 mg | Vermilion `#D55E00` | Triangle |
-| W0 / W12 / W24 | Light / medium / dark grey | Triangle / circle / square; dotted / dashed / solid lines |
-| Negative / zero / positive quantitative effect | Purple / near-white / gold | Labelled, symmetric numerical colour bar |
-| IGA grades or proportions | Sequential grey | Explicit grade or percentage legend |
-| Unavailable estimate | Pale grey | Explicit cross or not-estimable label |
+| Initial dupilumab | Ocean blue `#2878B5` | Circle |
+| Initial abrocitinib 100 mg | Peach `#E49A7C` | Circle with a darker edge |
+| Initial abrocitinib 200 mg | Coral `#C84B4B` | Circle |
+| W0 | Light blue `#79B9CF` | Circle with a darker edge; solid line |
+| W12 | Teal blue `#269DAB` | Circle; solid line |
+| W24 | Deep ocean blue `#245568` | Circle; solid line |
+| Pooled abrocitinib | Muted warm brown `#A96856` | Circle; used only for a defined pooled estimate |
 
-Treatment colours are reserved for initial treatment. They never represent visit, prediction method, achievement status or effect direction within the same multipanel figure. A change in treatment is shown by directly labelled recorded regimens; it does not change the initial-group colour.
+Observed/unadjusted estimates use muted blue `#91ADB6`; adjusted/current estimates use warm brown `#7F5D50` in explicitly labelled method comparisons. These are separate from treatment and visit roles.
 
-All figures read `config/paper_style.json`. Numerical source tables and captions are linked in `manuscript/figure_catalog.json`. Source PDF text is at least 6.3 pt; embedding is checked at the manuscript's final scale. PNG is supplied for viewing, with vector PDF and SVG for publication editing.
+Treatment colours do not also represent visits. In Figure 1, panels a, b and d use treatment colours; panel c uses W12/W24 colours. In Figure 4, the two windows ending at W24 share the endpoint colour but remain separate panels with full interval titles.
+
+Signed heatmaps use the explicit 257-entry ocean–coral LUT, with cold blue for negative values and coral for positive values. Each estimand has its own labelled colour bar. Correlations retain −1 to 1; other families retain their original common symmetric limits. Proportion heatmaps use the ocean sequential LUT fixed at 0–100%. Recorded IGA grades use six ordered blues. Missing estimates, true zero and sparse cells remain distinct. An unknown recorded regimen is a counted category, not a missing cell.
+
+Categorical points, lines and intervals have full opacity. Bands use alpha 0.16 and retain their stated statistical meaning. Dense forests use smaller marks to avoid collisions. Ordinary data points are circles and all trend lines are solid. Colour carries category identity; facet titles and direct labels separate pathways and intervals. Grayscale and colour-vision simulations are diagnostic checks, not accessibility certification.
+
+The [Nature figure specifications](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/) support legible text, accessible presentation and editable RGB vector artwork; they do not prescribe these HEX values. PDF and SVG retain vector text; PNG is supplied for viewing. Source figures retain the project’s 6.3-pt text floor and are checked again at their final manuscript size.

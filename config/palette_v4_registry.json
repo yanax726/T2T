@@ -1,0 +1,1087 @@
+{
+  "version": "palette-v4",
+  "backend": "python",
+  "treatment": {
+    "dupilumab": {
+      "hex": "#2878B5",
+      "marker": "o",
+      "outline": "#2878B5",
+      "area_fill": "#CBDFED"
+    },
+    "abrocitinib_100mg": {
+      "hex": "#E49A7C",
+      "marker": "o",
+      "outline": "#B56D55",
+      "area_fill": "#F9E7E0"
+    },
+    "abrocitinib_200mg": {
+      "hex": "#C84B4B",
+      "marker": "o",
+      "outline": "#C84B4B",
+      "area_fill": "#F2D4D4"
+    },
+    "pooled_abrocitinib": {
+      "hex": "#A96856",
+      "marker": "o",
+      "outline": "#A96856",
+      "area_fill": "#EADBD6"
+    }
+  },
+  "visit": {
+    "W0": {
+      "hex": "#79B9CF",
+      "marker": "o",
+      "outline": "#4D91A9",
+      "area_fill": "#DFEEF3"
+    },
+    "W12": {
+      "hex": "#269DAB",
+      "marker": "o",
+      "outline": "#269DAB",
+      "area_fill": "#CBE7EB"
+    },
+    "W24": {
+      "hex": "#245568",
+      "marker": "o",
+      "outline": "#245568",
+      "area_fill": "#CAD6DB"
+    }
+  },
+  "method": {
+    "reference": {
+      "hex": "#91ADB6",
+      "marker": "o",
+      "outline": "#91ADB6",
+      "area_fill": "#E5EBED"
+    },
+    "current": {
+      "hex": "#7F5D50",
+      "marker": "o",
+      "outline": "#7F5D50",
+      "area_fill": "#E0D8D5"
+    }
+  },
+  "sequences": {
+    "recorded_iga_0_to_5": {
+      "hex": [
+        "#E7F1F5",
+        "#BED9E3",
+        "#8DB9CB",
+        "#5D94AF",
+        "#356F92",
+        "#19496E"
+      ],
+      "labels": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    "response_depth_4": {
+      "hex": [
+        "#E4EFF1",
+        "#A6CDD0",
+        "#5A9DA4",
+        "#245C67"
+      ],
+      "labels": [
+        "<50%",
+        "50–<75%",
+        "75–<90%",
+        "≥90%"
+      ]
+    }
+  },
+  "continuous": {
+    "ocean_coral_diverging": {
+      "lut_hex": [
+        "#225C7A",
+        "#245D7B",
+        "#255E7C",
+        "#27607D",
+        "#29617E",
+        "#2A627F",
+        "#2C6380",
+        "#2E6581",
+        "#306682",
+        "#316783",
+        "#336884",
+        "#356985",
+        "#366B86",
+        "#386C86",
+        "#3A6D87",
+        "#3B6E88",
+        "#3D7089",
+        "#3F718A",
+        "#40728B",
+        "#42738C",
+        "#44748D",
+        "#45768E",
+        "#47778F",
+        "#497890",
+        "#4A7991",
+        "#4C7A92",
+        "#4E7C93",
+        "#507D94",
+        "#517E95",
+        "#537F96",
+        "#558197",
+        "#568298",
+        "#588399",
+        "#5A849A",
+        "#5B859B",
+        "#5D879C",
+        "#5F889D",
+        "#60899E",
+        "#628A9F",
+        "#648C9F",
+        "#668DA0",
+        "#678EA1",
+        "#698FA2",
+        "#6B90A3",
+        "#6C92A4",
+        "#6E93A5",
+        "#7094A6",
+        "#7195A7",
+        "#7396A8",
+        "#7598A9",
+        "#7699AA",
+        "#789AAB",
+        "#7A9BAC",
+        "#7B9DAD",
+        "#7D9EAE",
+        "#7F9FAF",
+        "#80A0B0",
+        "#82A1B1",
+        "#84A3B2",
+        "#86A4B3",
+        "#87A5B4",
+        "#89A6B5",
+        "#8BA8B6",
+        "#8CA9B7",
+        "#8EAAB8",
+        "#90ABB8",
+        "#91ACB9",
+        "#93AEBA",
+        "#95AFBB",
+        "#96B0BC",
+        "#98B1BD",
+        "#9AB3BE",
+        "#9BB4BF",
+        "#9DB5C0",
+        "#9FB6C1",
+        "#A1B7C2",
+        "#A2B9C3",
+        "#A4BAC4",
+        "#A6BBC5",
+        "#A7BCC6",
+        "#A9BEC7",
+        "#ABBFC8",
+        "#ACC0C9",
+        "#AEC1CA",
+        "#B0C2CB",
+        "#B1C4CC",
+        "#B3C5CD",
+        "#B5C6CE",
+        "#B6C7CF",
+        "#B8C8D0",
+        "#BACAD0",
+        "#BCCBD1",
+        "#BDCCD2",
+        "#BFCDD3",
+        "#C1CFD4",
+        "#C2D0D5",
+        "#C4D1D6",
+        "#C6D2D7",
+        "#C7D3D8",
+        "#C9D5D9",
+        "#CBD6DA",
+        "#CCD7DB",
+        "#CED8DC",
+        "#D0DADD",
+        "#D2DBDE",
+        "#D3DCDF",
+        "#D5DDE0",
+        "#D7DEE1",
+        "#D8E0E2",
+        "#DAE1E3",
+        "#DCE2E4",
+        "#DDE3E5",
+        "#DFE4E6",
+        "#E1E6E7",
+        "#E2E7E8",
+        "#E4E8E9",
+        "#E6E9E9",
+        "#E7EBEA",
+        "#E9ECEB",
+        "#EBEDEC",
+        "#ECEEED",
+        "#EEEFEE",
+        "#F0F1EF",
+        "#F2F2F0",
+        "#F3F3F1",
+        "#F5F4F2",
+        "#F7F6F3",
+        "#F8F7F4",
+        "#FAF8F5",
+        "#FAF7F4",
+        "#F9F6F3",
+        "#F9F4F1",
+        "#F8F3F0",
+        "#F8F2EF",
+        "#F7F1EE",
+        "#F7F0EC",
+        "#F6EEEB",
+        "#F6EDEA",
+        "#F5ECE9",
+        "#F5EBE8",
+        "#F4E9E6",
+        "#F4E8E5",
+        "#F3E7E4",
+        "#F3E6E3",
+        "#F2E5E2",
+        "#F2E3E0",
+        "#F1E2DF",
+        "#F1E1DE",
+        "#F0E0DD",
+        "#F0DFDB",
+        "#EFDDDA",
+        "#EFDCD9",
+        "#EEDBD8",
+        "#EEDAD7",
+        "#EDD9D5",
+        "#EDD7D4",
+        "#ECD6D3",
+        "#ECD5D2",
+        "#EBD4D0",
+        "#EBD2CF",
+        "#EAD1CE",
+        "#EAD0CD",
+        "#E9CFCC",
+        "#E9CECA",
+        "#E8CCC9",
+        "#E8CBC8",
+        "#E7CAC7",
+        "#E7C9C5",
+        "#E6C8C4",
+        "#E6C6C3",
+        "#E5C5C2",
+        "#E5C4C1",
+        "#E4C3BF",
+        "#E4C2BE",
+        "#E3C0BD",
+        "#E3BFBC",
+        "#E2BEBB",
+        "#E2BDB9",
+        "#E1BBB8",
+        "#E1BAB7",
+        "#E0B9B6",
+        "#E0B8B4",
+        "#DFB7B3",
+        "#DFB5B2",
+        "#DEB4B1",
+        "#DEB3B0",
+        "#DDB2AE",
+        "#DDB1AD",
+        "#DCAFAC",
+        "#DCAEAB",
+        "#DBADA9",
+        "#DBACA8",
+        "#DAAAA7",
+        "#DAA9A6",
+        "#DAA8A5",
+        "#D9A7A3",
+        "#D9A6A2",
+        "#D8A4A1",
+        "#D8A3A0",
+        "#D7A29E",
+        "#D7A19D",
+        "#D6A09C",
+        "#D69E9B",
+        "#D59D9A",
+        "#D59C98",
+        "#D49B97",
+        "#D49A96",
+        "#D39895",
+        "#D39793",
+        "#D29692",
+        "#D29591",
+        "#D19390",
+        "#D1928F",
+        "#D0918D",
+        "#D0908C",
+        "#CF8F8B",
+        "#CF8D8A",
+        "#CE8C89",
+        "#CE8B87",
+        "#CD8A86",
+        "#CD8985",
+        "#CC8784",
+        "#CC8682",
+        "#CB8581",
+        "#CB8480",
+        "#CA837F",
+        "#CA817E",
+        "#C9807C",
+        "#C97F7B",
+        "#C87E7A",
+        "#C87C79",
+        "#C77B77",
+        "#C77A76",
+        "#C67975",
+        "#C67874",
+        "#C57673",
+        "#C57571",
+        "#C47470",
+        "#C4736F",
+        "#C3726E",
+        "#C3706C",
+        "#C26F6B",
+        "#C26E6A",
+        "#C16D69",
+        "#C16C68",
+        "#C06A66",
+        "#C06965",
+        "#BF6864",
+        "#BF6763",
+        "#BE6562",
+        "#BE6460",
+        "#BD635F",
+        "#BD625E",
+        "#BC615D",
+        "#BC5F5B",
+        "#BB5E5A",
+        "#BB5D59"
+      ],
+      "meaning": "Negative / zero / positive signed value. Endpoints are not treatment identity colours.",
+      "normalization": "Correlation fixed [-1,1]; other families retain original common symmetric ranges."
+    },
+    "ocean_sequential": {
+      "lut_hex": [
+        "#F0F7FA",
+        "#EFF6FA",
+        "#EEF6F9",
+        "#EDF5F8",
+        "#ECF5F8",
+        "#EBF4F8",
+        "#EAF3F7",
+        "#E9F3F6",
+        "#E8F2F6",
+        "#E7F2F5",
+        "#E6F1F5",
+        "#E5F0F4",
+        "#E4F0F4",
+        "#E3EFF3",
+        "#E2EEF3",
+        "#E1EEF2",
+        "#E0EDF2",
+        "#DEEDF2",
+        "#DDECF1",
+        "#DCEBF0",
+        "#DBEBF0",
+        "#DAEAF0",
+        "#D9EAEF",
+        "#D8E9EE",
+        "#D7E8EE",
+        "#D6E8ED",
+        "#D5E7ED",
+        "#D4E7EC",
+        "#D3E6EC",
+        "#D2E5EB",
+        "#D1E5EB",
+        "#D0E4EA",
+        "#CFE3EA",
+        "#CEE3EA",
+        "#CDE2E9",
+        "#CCE2E8",
+        "#CBE1E8",
+        "#CAE0E8",
+        "#C9E0E7",
+        "#C8DFE6",
+        "#C7DFE6",
+        "#C6DEE5",
+        "#C5DDE5",
+        "#C4DDE4",
+        "#C3DCE4",
+        "#C2DCE3",
+        "#C1DBE3",
+        "#C0DAE2",
+        "#BEDAE2",
+        "#BDD9E2",
+        "#BCD9E1",
+        "#BBD8E0",
+        "#BAD7E0",
+        "#B9D7E0",
+        "#B8D6DF",
+        "#B7D5DE",
+        "#B6D5DE",
+        "#B5D4DD",
+        "#B4D4DD",
+        "#B3D3DC",
+        "#B2D2DC",
+        "#B1D2DB",
+        "#B0D1DB",
+        "#AFD1DA",
+        "#AED0DA",
+        "#ADCFD9",
+        "#ACCED9",
+        "#AACED8",
+        "#A9CDD7",
+        "#A8CCD6",
+        "#A7CBD6",
+        "#A5CAD5",
+        "#A4CAD4",
+        "#A3C9D4",
+        "#A2C8D3",
+        "#A0C7D2",
+        "#9FC6D1",
+        "#9EC5D1",
+        "#9DC5D0",
+        "#9BC4CF",
+        "#9AC3CE",
+        "#99C2CE",
+        "#98C1CD",
+        "#97C1CC",
+        "#95C0CC",
+        "#94BFCB",
+        "#93BECA",
+        "#92BDC9",
+        "#90BCC9",
+        "#8FBCC8",
+        "#8EBBC7",
+        "#8DBAC7",
+        "#8BB9C6",
+        "#8AB8C5",
+        "#89B8C4",
+        "#88B7C4",
+        "#86B6C3",
+        "#85B5C2",
+        "#84B4C2",
+        "#83B4C1",
+        "#82B3C0",
+        "#80B2BF",
+        "#7FB1BF",
+        "#7EB0BE",
+        "#7DB0BD",
+        "#7BAFBD",
+        "#7AAEBC",
+        "#79ADBB",
+        "#78ACBA",
+        "#76ABBA",
+        "#75ABB9",
+        "#74AAB8",
+        "#73A9B8",
+        "#72A8B7",
+        "#70A7B6",
+        "#6FA7B5",
+        "#6EA6B5",
+        "#6DA5B4",
+        "#6BA4B3",
+        "#6AA3B2",
+        "#69A3B2",
+        "#68A2B1",
+        "#66A1B0",
+        "#65A0B0",
+        "#649FAF",
+        "#639EAE",
+        "#619EAD",
+        "#609DAD",
+        "#5F9CAC",
+        "#5E9BAB",
+        "#5E9AAA",
+        "#5D99A9",
+        "#5C98A9",
+        "#5B97A8",
+        "#5B96A7",
+        "#5A95A6",
+        "#5994A5",
+        "#5993A4",
+        "#5892A3",
+        "#5791A2",
+        "#5690A2",
+        "#568FA1",
+        "#558EA0",
+        "#548D9F",
+        "#548C9E",
+        "#538B9D",
+        "#528A9C",
+        "#51899B",
+        "#51889B",
+        "#50879A",
+        "#4F8699",
+        "#4E8598",
+        "#4E8497",
+        "#4D8396",
+        "#4C8295",
+        "#4C8194",
+        "#4B8094",
+        "#4A7F93",
+        "#497E92",
+        "#497D91",
+        "#487D90",
+        "#477C8F",
+        "#477B8E",
+        "#467A8D",
+        "#45798C",
+        "#44788C",
+        "#44778B",
+        "#43768A",
+        "#427589",
+        "#427488",
+        "#417387",
+        "#407286",
+        "#3F7186",
+        "#3F7085",
+        "#3E6F84",
+        "#3D6E83",
+        "#3D6D82",
+        "#3C6C81",
+        "#3B6B80",
+        "#3A6A7F",
+        "#3A697E",
+        "#39687E",
+        "#38677D",
+        "#37667C",
+        "#37657B",
+        "#36647A",
+        "#356379",
+        "#356278",
+        "#346178",
+        "#336077",
+        "#325F76",
+        "#325E75",
+        "#315D74",
+        "#315D74",
+        "#305C73",
+        "#305C73",
+        "#2F5B72",
+        "#2F5B72",
+        "#2E5A71",
+        "#2E5A71",
+        "#2D5970",
+        "#2D5970",
+        "#2C586F",
+        "#2C586F",
+        "#2B576F",
+        "#2B576E",
+        "#2A566E",
+        "#2A566D",
+        "#29556D",
+        "#29556C",
+        "#28546C",
+        "#28546B",
+        "#27536B",
+        "#27536A",
+        "#26526A",
+        "#26526A",
+        "#255169",
+        "#255169",
+        "#245068",
+        "#245068",
+        "#234F67",
+        "#234F67",
+        "#224E66",
+        "#224E66",
+        "#224E66",
+        "#214D65",
+        "#214D65",
+        "#204C64",
+        "#204C64",
+        "#1F4B63",
+        "#1F4B63",
+        "#1E4A62",
+        "#1E4A62",
+        "#1D4961",
+        "#1D4961",
+        "#1C4861",
+        "#1C4860",
+        "#1B4760",
+        "#1B475F",
+        "#1A465F",
+        "#1A465E",
+        "#19455E",
+        "#19455D",
+        "#18445D",
+        "#18445C",
+        "#17435C",
+        "#17435C",
+        "#16425B",
+        "#16425B",
+        "#15415A",
+        "#15415A",
+        "#144059",
+        "#144059",
+        "#133F58",
+        "#133F58",
+        "#123E57",
+        "#123E57"
+      ],
+      "meaning": "Numerical proportion, not treatment identity",
+      "normalization": "0–100%"
+    }
+  },
+  "neutral": {
+    "text": "#24323C",
+    "reference": "#8C9AA3",
+    "missing": "#E6E8E9",
+    "background": "#FFFFFF"
+  },
+  "line_width_pt": 1.35,
+  "marker_size_pt": 4.0,
+  "band_alpha": 0.16,
+  "figure_rules": {
+    "Figure1": {
+      "source_id": "Figure1",
+      "question": "Clinical course and target attainment during treatment",
+      "categorical_families": [
+        "method",
+        "treatment",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "a,b,d: initial treatment colour. c: W12/W24 colour. Comparisons remain neutral row labels; stage criteria are blocks."
+    },
+    "Figure2": {
+      "source_id": "Figure2",
+      "question": "Molecular response across treatments and the three-marker input panel",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "a: fixed-triplet within-person log2 changes. b: adjusted between-treatment changes, separate numerical colour bar. c-e: treatment colour."
+    },
+    "Figure3": {
+      "source_id": "Figure3",
+      "question": "A common four-input equation estimates individual EASI readings",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "All visits use their stable colours, circular points and solid curves; no categorical shape or dash code."
+    },
+    "Figure4": {
+      "source_id": "Figure4",
+      "question": "Within-patient change and clinical response from the common equation",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Separate panels retain full change-window titles. End-W12 and end-W24 colours; all points circles and all trends solid."
+    },
+    "FigureS1": {
+      "source_id": "FigureS1",
+      "question": "Ten clinical targets over their specified visits",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS2": {
+      "source_id": "FigureS2",
+      "question": "Observed and baseline-adjusted EASI, PP-NRS, Adult DLQI",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS3": {
+      "source_id": "FigureS3",
+      "question": "Observed and baseline-adjusted BSA (%), SCORAD",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS4": {
+      "source_id": "FigureS4",
+      "question": "Observed and baseline-adjusted IgE (recorded units), Eosinophils (recorded units)",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS5": {
+      "source_id": "FigureS5",
+      "question": "All molecular changes within W0 → W12",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS6": {
+      "source_id": "FigureS6",
+      "question": "All molecular changes within W12 → W24",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS7": {
+      "source_id": "FigureS7",
+      "question": "All molecular changes within W0 → W24",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS8": {
+      "source_id": "FigureS8",
+      "question": "Adjusted treatment contrasts in molecular change: W0 → W12",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS9": {
+      "source_id": "FigureS9",
+      "question": "Adjusted treatment contrasts in molecular change: W12 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS10": {
+      "source_id": "FigureS10",
+      "question": "Adjusted treatment contrasts in molecular change: W0 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS11": {
+      "source_id": "FigureS11",
+      "question": "Clinical–molecular change associations: W0 → W12",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS12": {
+      "source_id": "FigureS12",
+      "question": "Clinical–molecular change associations: W12 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS13": {
+      "source_id": "FigureS13",
+      "question": "Clinical–molecular change associations: W0 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS14": {
+      "source_id": "FigureS14",
+      "question": "Baseline molecular associations with four skin regions",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS15": {
+      "source_id": "FigureS15",
+      "question": "Recorded IGA composition at four visits",
+      "categorical_families": [
+        "method",
+        "recorded_iga_0_to_5"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Blue ordered grade scale; treatment by panel label, visit by x position. Preserve recorded-grade instrument uncertainty."
+    },
+    "FigureS16": {
+      "source_id": "FigureS16",
+      "question": "EASI trajectories before and after the W12 treatment decision",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Three pathway panels, each containing initial-treatment colours. All trajectories use circles and solid lines; panel labels define pathways and show fixed patient counts."
+    },
+    "FigureS17": {
+      "source_id": "FigureS17",
+      "question": "W24 EASI75 status in future-defined recorded pathways",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS18": {
+      "source_id": "FigureS18",
+      "question": "Baseline concentration distributions for the full measured panel",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS19": {
+      "source_id": "FigureS19",
+      "question": "Molecular W0/W12/W24 changes in identical patient sets",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS20": {
+      "source_id": "FigureS21",
+      "question": "IgE with the same patients retained at all three visits",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS21": {
+      "source_id": "FigureS22",
+      "question": "Estimation when a centre or treatment group is left out",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS22": {
+      "source_id": "FigureS23",
+      "question": "Week 2: all initial-treatment target contrasts",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS23": {
+      "source_id": "FigureS24",
+      "question": "Week 4: all initial-treatment target contrasts",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS24": {
+      "source_id": "FigureS25",
+      "question": "Week 12: all initial-treatment target contrasts",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS25": {
+      "source_id": "FigureS26",
+      "question": "Week 24: all initial-treatment target contrasts",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS26": {
+      "source_id": "FigureS27",
+      "question": "Molecular changes by EASI response: W0 → W12",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS27": {
+      "source_id": "FigureS28",
+      "question": "Molecular changes by IGA response: W0 → W12",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS28": {
+      "source_id": "FigureS29",
+      "question": "Molecular changes by EASI response: W12 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS29": {
+      "source_id": "FigureS30",
+      "question": "Molecular changes by IGA response: W12 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS30": {
+      "source_id": "FigureS31",
+      "question": "Molecular changes by EASI response: W0 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS31": {
+      "source_id": "FigureS32",
+      "question": "Molecular changes by IGA response: W0 → W24",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_coral_diverging"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS32": {
+      "source_id": "FigureS33",
+      "question": "Separate paired regional and whole-body itch intervals",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS33": {
+      "source_id": "FigureS34",
+      "question": "Regional burden on a common interpretable scale",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS34": {
+      "source_id": "FigureS35",
+      "question": "Independently fitted PP-NRS, DLQI and ordinal IGA models",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS35": {
+      "source_id": "FigureS37",
+      "question": "Accuracy across observed EASI severity levels",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS36": {
+      "source_id": "FigureS38",
+      "question": "Who is correctly classified as reaching EASI50, EASI75 and EASI90?",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_sequential"
+      ],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS37": {
+      "source_id": "FigureS39",
+      "question": "Patient and data flow through the parallel analyses",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS38": {
+      "source_id": "FigureS40",
+      "question": "Baseline balance, treatment overlap and effective sample size",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS39": {
+      "source_id": "FigureS41",
+      "question": "Recorded regimens evolve after the initial treatment assignment",
+      "categorical_families": [
+        "method"
+      ],
+      "continuous_scales": [
+        "ocean_sequential"
+      ],
+      "panel_rule": "Cell colour is 0–100% of initial treatment group. Actual regimen rows are labels; unknown regimen remains a counted category."
+    },
+    "FigureS40": {
+      "source_id": "FigureS42",
+      "question": "Individual agreement across the full range of EASI",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    }
+  },
+  "source_note": "Author-specified role HEX values. Sequential and continuous LUTs implemented from the stated ocean–peach–coral direction; no external JSON was supplied.",
+  "figure_guide": "https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/",
+  "display_rule": "Ordinary observations use circles and solid lines. Colour identifies categories. Facet labels separate treatment pathways and change windows; no categorical shape or dash code."
+}

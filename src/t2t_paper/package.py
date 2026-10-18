@@ -29,7 +29,7 @@ BASE_FILES = [
     'CITATION.cff', 'CHANGELOG.md', 'VERSION', 'run.sh', '.gitignore',
     'docs/ci/public-checks.yml',
     'requirements.txt', 'requirements.lock.txt',
-    'config/paper_style.json', 'config/paper_figure_plan.json', 'config/figure_identity_map.json',
+    'config/palette_v4_registry.json', 'config/paper_style.json', 'config/paper_figure_plan.json', 'config/figure_identity_map.json',
     'config/marker_registry.csv', 'config/reproduction_inputs.json',
     'config/unified_model_20261017.json', 'config/unified_bsa_three_v1_20261017.json',
     'config/auxiliary_targets_20261017.json',
@@ -48,7 +48,7 @@ ANALYSIS_MODULES = [
     'auxiliary_targets_20261017', 'auxiliary_targets_calculator_20261017',
 ]
 PAPER_MODULES = [
-    '__init__', 'package', 'demo', 'preflight', 'figures', 'build',
+    '__init__', 'package', 'demo', 'preflight', 'figures', 'palette', 'build',
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'redesign_evidence_20261018', 'cohort_flow_20261018',
     'model_display_evidence_20261018', 'balance_support_20261018',
@@ -57,8 +57,8 @@ PAPER_MODULES = [
 ]
 FINAL_QA_REPORTS = [
     'reports/update_20261018/revision2/statistical_checks_manifest.json',
-    'reports/update_20261018/revision2/qa/public_release_checks.json',
-    'reports/update_20261018/revision2/qa/public_rebuild.json',
+    'reports/figure_quality/verification.json',
+    'reports/figure_quality/public_rebuild.json',
 ]
 REPORT_FILES = [
     'clinical/dependency_contract.json', 'clinical/replay_verification.json',

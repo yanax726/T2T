@@ -5,16 +5,6 @@
   "font_size_pt": 7,
   "minimum_font_pt": 6.3,
   "dpi": 600,
-  "treatment_colors": {
-    "dupilumab": "#0072B2",
-    "abrocitinib_100mg": "#009E73",
-    "abrocitinib_200mg": "#D55E00"
-  },
-  "visit_colors": {
-    "0": "#999999",
-    "12": "#555555",
-    "24": "#111111"
-  },
   "treatment_labels": {
     "dupilumab": "Dupilumab",
     "abrocitinib_100mg": "Abrocitinib 100 mg",
@@ -28,41 +18,19 @@
   },
   "missing": "Displayed as unavailable; no zero substitution",
   "model_comparison": "Same patients and patient-grouped folds",
-  "version": "2026-10-18-semantic-v3",
+  "version": "palette-v4",
   "main_maximum_height_mm": 170,
-  "method_colors": {
-    "reference": "#BDBDBD",
-    "current": "#333333"
-  },
-  "diverging_colors": [
-    "#7B3294",
-    "#FAFAF7",
-    "#C29124"
-  ],
   "unknown_color": "#E6E8E9",
   "text_color": "#24323C",
   "neutral_dark": "#404040",
-  "line_width_pt": 0.8,
-  "palette_semantics": "Blue circle: initial dupilumab. Bluish-green square: initial abrocitinib 100 mg. Vermilion triangle: initial abrocitinib 200 mg. Visits use neutral greys with distinct shapes and line styles. Signed quantitative effects use purple for negative values and gold for positive values, with an explicit colour bar. Drug colours never encode visit, method, response status or signed effect. Ordinal grades and proportions use explicitly labelled sequential greys. Missing estimates carry an explicit symbol and are never zero.",
-  "treatment_markers": {
-    "dupilumab": "o",
-    "abrocitinib_100mg": "s",
-    "abrocitinib_200mg": "^"
-  },
-  "visit_markers": {
-    "0": "^",
-    "12": "o",
-    "24": "s"
-  },
+  "line_width_pt": 1.35,
   "visit_linestyles": {
-    "0": ":",
-    "12": "--",
+    "0": "-",
+    "12": "-",
     "24": "-"
   },
   "minimum_embedded_font_pt": 6.0,
-  "palette_name": "Okabe–Ito treatment subset; separate purple–gold signed effects",
-  "palette_reference": [
-    "https://doi.org/10.1038/nmeth.1618",
-    "https://doi.org/10.1038/s41592-023-01974-0"
-  ]
+  "palette_registry": "config/palette_v4_registry.json",
+  "marker_size_pt": 4,
+  "band_alpha": 0.16
 }

@@ -6,15 +6,18 @@ import string
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.colors import LinearSegmentedColormap
 from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle, FancyArrowPatch
 
 from . import figures as base
+from . import palette
 
 MODEL = 'unified_selected'
 SHORT = {'dupilumab': 'D', 'abrocitinib_100mg': 'A100', 'abrocitinib_200mg': 'A200'}
 PANEL = ['CCL17', 'CCL26', 'IL-5']
+LINE_WIDTH = 1.35
+MARKER_SIZE = 4
+BAND_ALPHA = .16
 
 
 def label(ax, letter):
@@ -32,11 +35,15 @@ def legend(fig, at=(.51, .988), kind='treatment'):
     if kind == 'treatment':
         names, colors = base.LABELS, base.COLORS
         markers, styles = base.TREATMENT_MARKERS, ['-'] * 3
+        roles = ['treatment.' + arm for arm in base.ARMS]
     else:
         names, colors = [f'Week {w}' for w in base.TIMES], base.TIME_COLORS
         markers, styles = base.TIME_MARKERS, base.TIME_STYLES
-    fig.legend(handles=[Line2D([], [], color=c, marker=m, ls=s, ms=3, lw=1, label=n)
-                        for c, n, m, s in zip(colors, names, markers, styles)],
+        roles = [f'visit.W{week}' for week in base.TIMES]
+    fig.legend(handles=[Line2D([], [], color=palette.register(fig, role, c), marker=m, ls=s,
+                              ms=MARKER_SIZE, lw=LINE_WIDTH, mec=palette.role_style(role)['outline'],
+                              mew=.55, label=n)
+                        for c, n, m, s, role in zip(colors, names, markers, styles, roles)],
                loc='upper center', bbox_to_anchor=at, ncol=3, frameon=False)
 
 
@@ -77,8 +84,9 @@ def clinical_context(root):
             wanted = [0, 2, 4, 12, 24] if variable == 'pp_nrs' else [0, 4, 12, 24]
             g = g[g.week.isin(wanted)]
             x = g.week.to_numpy(float)
-            ax.fill_between(x, g.q25.to_numpy(float), g.q75.to_numpy(float), color=color, alpha=.10, lw=0)
-            ax.plot(x, g['median'], marker=base.STYLE['treatment_markers'][arm], color=color, lw=1.15, ms=3)
+            ax.fill_between(x, g.q25.to_numpy(float), g.q75.to_numpy(float), color=color, alpha=BAND_ALPHA, lw=0)
+            ax.plot(x, g['median'], marker=base.STYLE['treatment_markers'][arm], color=color, lw=LINE_WIDTH, ms=MARKER_SIZE,
+                    markeredgecolor=palette.role_style('treatment.' + arm)['outline'], markeredgewidth=.55)
             counts.append([int(g.set_index('week').loc[w, 'n']) for w in wanted])
         ax.set(title=title, xlabel='Week', ylabel='PP-NRS (points)' if variable == 'pp_nrs' else 'EASI (points)',
                xticks=wanted, xlim=(-1, 25), ylim=(0, 11 if variable == 'pp_nrs' else 35))
@@ -88,19 +96,21 @@ def clinical_context(root):
     pairs = [('dupilumab', 'abrocitinib_100mg'), ('dupilumab', 'abrocitinib_200mg'),
              ('abrocitinib_100mg', 'abrocitinib_200mg')]
     for j, week in enumerate([12, 24]):
+        palette.register(fig, f'visit.W{week}', base.TIME_COLORS[j + 1])
         subset = contrasts[contrasts.target.eq('easi_total') & contrasts.week.eq(week)
                            & contrasts.analysis.eq('overlap_weighted')]
         for i, (first, second) in enumerate(pairs):
             r = subset[subset.group1.eq(first) & subset.group2.eq(second)].iloc[0]
             ax.errorbar(r.effect, i + (j - .5) * .24,
                         xerr=[[r.effect - r.ci_low], [r.ci_high - r.effect]],
-                        fmt=['o', 's'][j], color=base.TIME_COLORS[j + 1], ms=3.5, capsize=2, lw=.8)
+                        fmt=base.TIME_MARKERS[j + 1], color=base.TIME_COLORS[j + 1],
+                        ms=MARKER_SIZE, capsize=2, lw=LINE_WIDTH)
     ax.axvline(0, color='#B9C2C7', lw=.7, zorder=0)
     ax.set(yticks=range(3), yticklabels=[SHORT[a] + ' − ' + SHORT[b] for a, b in pairs],
            ylim=(2.65, -.65), title='Baseline-adjusted comparison',
            xlabel='EASI difference (first − second)')
-    ax.legend(handles=[Line2D([], [], color=base.TIME_COLORS[j + 1], marker=m, lw=0, ms=3.5,
-                              label=f'Week {w}') for j, (w, m) in enumerate([(12, 'o'), (24, 's')])],
+    ax.legend(handles=[Line2D([], [], color=base.TIME_COLORS[j + 1], marker=m, lw=0, ms=MARKER_SIZE,
+                              label=f'Week {w}') for j, (w, m) in enumerate([(12, 'o'), (24, 'o')])],
               loc='lower left', bbox_to_anchor=(-.04, -.02), ncol=1, fontsize=6.5, frameon=False)
     ax = axes[3]
     positions, names = [], []
@@ -115,7 +125,8 @@ def clinical_context(root):
             y = start + .75 + i * .82
             ax.errorbar(r.rate * 100, y,
                         xerr=[[(r.rate - r.ci_low) * 100], [(r.ci_high - r.rate) * 100]],
-                        fmt=base.STYLE['treatment_markers'][arm], color=color, ms=3.2, capsize=1.6, lw=.8)
+                        fmt=base.STYLE['treatment_markers'][arm], color=color, ms=MARKER_SIZE, capsize=1.6, lw=LINE_WIDTH,
+                        markeredgecolor=palette.role_style('treatment.' + arm)['outline'], markeredgewidth=.55)
             ax.text(1.04, y, f'{100*r.rate:.1f}%  {int(r.k)}/{int(r.n_evaluable)}',
                     transform=ax.get_yaxis_transform(), va='center', fontsize=6.3)
             positions.append(y); names.append(SHORT[arm])
@@ -147,8 +158,7 @@ def molecular_landscape(root):
                            bottom=.115, top=.90, wspace=.90, hspace=.82)
     left = fig.add_subplot(grid[0, :3]); right = fig.add_subplot(grid[0, 3:])
     bottom = [fig.add_subplot(grid[1, k:k + 2]) for k in [0, 2, 4]]
-    cmap = LinearSegmentedColormap.from_list('t2t_signed', base.STYLE['diverging_colors'])
-    cmap.set_bad(base.STYLE['unknown_color'])
+    cmap = palette.cmap('ocean_coral_diverging')
     values = np.full((23, 6), np.nan)
     nvalues = np.zeros_like(values)
     for j, arm in enumerate(base.ARMS):
@@ -167,10 +177,9 @@ def molecular_landscape(root):
             missing = not np.isfinite(values[i,j])
             rgb=cmap((np.clip(values[i,j],-2,2)+2)/4)[:3] if not missing else (1,1,1)
             dark_fill=np.dot(rgb,[.2126,.7152,.0722]) < .45
-            left.text(j, i, '×' if missing else str(int(nvalues[i,j])), ha='center', va='center',
+            count_label = '×' if missing else str(int(nvalues[i,j])) + ('†' if 0 < nvalues[i,j] < 5 else '')
+            left.text(j, i, count_label, ha='center', va='center',
                       fontsize=6.3, color='white' if dark_fill else '#25343F')
-            if 0 < nvalues[i,j] < 5:
-                left.add_patch(Rectangle((j-.48,i-.48),.96,.96,fill=False,ls=':',lw=.65,ec='#25343F'))
     left.set_title('Within-person change\nSame three-visit patients; cells show n', pad=23, fontsize=6.8)
     contrasts = ['D - A100', 'D - A200', 'A200 - A100', 'D - pooled_A']
     current = differences[differences.start.eq(0) & differences.end.eq(12)
@@ -221,8 +230,8 @@ def molecular_landscape(root):
               'concentration, W0 EASI, age, BMI, sex and centre; dots denote the declared FDR-adjusted q<0.05. These use all eligible two-visit pairs, a different population '
               'from panel a. D, dupilumab; A100/A200, initial abrocitinib dose; pooled A, the observed mixture of the two doses. '
               'Both heatmaps use the same signed log₂ scale, but panel b is a difference between treatment changes, not a within-group change. '
-              'Purple denotes a negative value; zero is no change/difference. Cells marked × lack an estimate. Panel a prints paired n; '
-              'dotted cell borders indicate fewer than five pairs. Each estimand has its own labelled colour bar. '
+              'Cool blue denotes a negative value, warm coral a positive value; the near-white centre is zero change/difference. Cells marked × lack an estimate. Panel a prints paired n; '
+              '† marks fewer than five pairs; these estimates are descriptive. Each estimand has its own labelled colour bar. '
               'c–e, W0/W12/W24 paired trajectories and 95% t confidence intervals for the three frozen model inputs. Their inclusion is based on '
               'the existing panel, not selection of significant trajectories. Exact marker-specific counts, intervals, all three windows and '
               'the complete comparison families are retained in source tables and supplementary figures.',
@@ -247,11 +256,13 @@ def model_readout(root):
     schematic.text(0,.35,'EASI ≈ clip{ BSA/100 × [51.27 + 0.98 log₂(CCL17) + 0.96 log₂(CCL26) − 0.83 log₂(IL-5)], 0, 72 }',fontsize=6.5)
     schematic.text(0,.04,'BSA 10% = 10. No treatment or prior score input. Full-precision coefficients are retained in the calculator.',fontsize=6.3)
     scatter = [fig.add_subplot(grid[1,j]) for j in range(3)]
-    for ax, week, color in zip(scatter,base.TIMES,base.TIME_COLORS):
+    for ax, week, color, marker in zip(scatter,base.TIMES,base.TIME_COLORS,base.TIME_MARKERS):
+        palette.register(fig, f'visit.W{week}', color)
         d=bins[bins.visit_week.eq(week)]
         high=max(10,np.ceil(max(d.observed_bin.max(),d.predicted_bin.max())/10)*10)
-        ax.plot([0,high],[0,high],ls='--',color='#9BA6AD',lw=.8)
-        ax.scatter(d.observed_bin,d.predicted_bin,s=9*d['count'],color=base.STYLE['neutral_dark'],alpha=.65,lw=0)
+        ax.plot([0,high],[0,high],ls='-',color='#B9C2C7',lw=.7)
+        ax.scatter(d.observed_bin,d.predicted_bin,s=9*d['count'],color=color,marker=marker,alpha=1,lw=.45,
+                   edgecolors=palette.role_style(f'visit.W{week}')['outline'])
         ax.set(xlim=(-.8,high+.8),ylim=(-.8,high+.8),xlabel='Observed EASI (points)',ylabel='Estimated EASI (points)',
                title=f'Week {week} · {int(metrics.loc[week,"n_patients"])} patients\n'+('Temporal application · repetition 1' if week==24 else 'Held-out repetition 1'))
         clean(ax)
@@ -260,9 +271,9 @@ def model_readout(root):
     curve=fig.add_subplot(grid[2,:2]);numbers=fig.add_subplot(grid[2,2]);numbers.set_axis_off()
     for week,color,style in zip(base.TIMES,base.TIME_COLORS,base.TIME_STYLES):
         d=ecdf[ecdf.week.eq(week)&ecdf.absolute_error.le(10)].sort_values('absolute_error')
-        curve.fill_between(d.absolute_error.to_numpy(),100*d.ci_low.to_numpy(),100*d.ci_high.to_numpy(),color=color,alpha=.10,lw=0)
-        curve.plot(d.absolute_error,100*d.proportion,color=color,lw=1.25,ls=style,label=f'Week {week}')
-    curve.axvline(2,color='#B9C2C7',lw=.6,ls=':')
+        curve.fill_between(d.absolute_error.to_numpy(),100*d.ci_low.to_numpy(),100*d.ci_high.to_numpy(),color=color,alpha=BAND_ALPHA,lw=0)
+        curve.plot(d.absolute_error,100*d.proportion,color=color,lw=LINE_WIDTH,ls=style,label=f'Week {week}')
+    curve.axvline(2,color='#B9C2C7',lw=.6,ls='-')
     curve.set(xlim=(0,10),ylim=(0,101),yticks=[0,25,50,75,100],xlabel='Absolute EASI error threshold (points)',
               ylabel='Predictions within threshold (%)',title='Individual error · both validation repetitions')
     curve.legend(loc='lower right',fontsize=6.5,frameon=False);clean(curve)
@@ -279,7 +290,7 @@ def model_readout(root):
               'BSA is entered as percent (10% as 10), molecular concentrations as positive pg/mL values in the study export, and output is clipped to 0–72. '
               'No additional dilution or assay-conversion factor is applied. Exact blood/clinical timing within a nominal visit is not fully verified. '
               'No treatment, visit or previous score enters the equation. b–d, First patient-held-out repetition, with coordinates rounded to '
-              'one EASI point and symbol area proportional to count. Dashed lines show exact agreement; axes cover the observed range at each visit. '
+              'one EASI point and symbol area proportional to count. Visit colour is fixed across panels; light reference lines show exact agreement, and axes cover the observed range at each visit. '
               'e, Cumulative absolute-error distribution, computed within each validation repetition and then averaged; bands are patient-bootstrap '
               '95% confidence intervals; thresholds from 0 to 10 points are displayed, with all errors contributing to each proportion. '
               'The two-point line is a reading reference, not an accepted replacement margin. f, Primary nested-validation '
@@ -302,14 +313,17 @@ def monitoring(root):
     grid = fig.add_gridspec(2,6,left=.09,right=.975,bottom=.10,top=.92,
                            wspace=1.2,hspace=.62,height_ratios=[1.1,1])
     axes=[fig.add_subplot(grid[0,k:k+2]) for k in [0,2,4]]
-    for ax,window,color in zip(axes,['W0_W12','W0_W24','W12_W24'],[base.TIME_COLORS[1],base.TIME_COLORS[2],base.STYLE['neutral_dark']]):
+    for ax,window,color,marker in zip(
+            axes,['W0_W12','W0_W24','W12_W24'],
+            [base.TIME_COLORS[1],base.TIME_COLORS[2],base.TIME_COLORS[2]],['o','o','o']):
+        palette.register(fig, 'visit.' + window.split('_')[1], color)
         d=changes[changes.window.eq(window)]
         low=np.floor(min(d.observed_change_bin.min(),d.predicted_change_bin.min())/5)*5
         high=np.ceil(max(d.observed_change_bin.max(),d.predicted_change_bin.max())/5)*5
         low,high=min(low,-5),max(high,5)
-        ax.plot([low,high],[low,high],'--',color='#9BA6AD',lw=.8)
+        ax.plot([low,high],[low,high],'-',color='#B9C2C7',lw=.7)
         ax.axhline(0,color='#D9DEE2',lw=.6);ax.axvline(0,color='#D9DEE2',lw=.6)
-        ax.scatter(d.observed_change_bin,d.predicted_change_bin,s=9*d['count'],color=color,alpha=.75,lw=0)
+        ax.scatter(d.observed_change_bin,d.predicted_change_bin,s=9*d['count'],color=color,marker=marker,alpha=1,lw=.35,edgecolors=color)
         m=metrics[metrics.window.eq(window)&metrics.metric.eq('MAE')].iloc[0]
         ax.set(xlim=(low-1,high+1),ylim=(low-1,high+1),xlabel='Observed EASI change',ylabel='Estimated EASI change',
                title=window.replace('_',' → ')+f' · {int(m.n_patients)} patients')
@@ -326,7 +340,7 @@ def monitoring(root):
             c=counts[counts.window.eq(window)&counts.endpoint.eq('EASI75')&counts['repeat'].eq(0)]
             n=int(c[c.observed_response.eq(1 if metric=='sensitivity' else 0)].n_observed_class.iloc[0]) if metric!='agreement' else int(r.n_patients)
             ax.errorbar(r.estimate*100,y,xerr=[[(r.estimate-r.ci_low)*100],[(r.ci_high-r.estimate)*100]],
-                        fmt=marker,color=color,ms=4,lw=1,capsize=2)
+                        fmt=marker,color=color,ms=MARKER_SIZE,lw=LINE_WIDTH,capsize=2)
             ax.text(1.05,y,f'{100*r.estimate:.1f} [{100*r.ci_low:.1f}, {100*r.ci_high:.1f}]',
                     transform=ax.get_yaxis_transform(),va='center',fontsize=6.5)
             row_labels.append(f'W{week}  {name} (n={n})'); positions.append(y)
@@ -341,7 +355,7 @@ def monitoring(root):
     base.save(fig,'Figure4','Within-patient change and clinical response from the common equation',
               'a–c, Each point represents paired predictions and observed EASI from the same patient in the first held-out repetition. '
               'Change is end minus start; negative values indicate improvement. Coordinates are rounded to one point; symbol area represents count. '
-              'Every window is separate, with its own paired population. Dashed lines show exact agreement. MAE annotations use both validation '
+              'Every window is separate, with its own paired population. Colour marks the end visit: W12 in teal and W24 in deep blue; the two W24 windows are separated into panels with full interval labels. Light reference lines show exact agreement. MAE annotations use both validation '
               'repetitions, scoring each before averaging; patient-bootstrap intervals are provided in source tables. '
               'd, EASI75 classification from estimated versus observed percentage improvement from W0, computed separately within each '
               'held-out repetition and then averaged. Intervals are patient-bootstrap 95% confidence intervals conditional on the saved predictions. '
@@ -416,17 +430,18 @@ def balance_diagnostics(root):
     names={'easi_total':'Baseline EASI','bmi':'BMI','age':'Age','sex_male':'Male sex','center_HUASHAN':'Huashan centre'}
     pairs=d[['group1','group2']].drop_duplicates().itertuples(index=False,name=None)
     for ax,(one,two) in zip(axes[:3],pairs):
-        for analysis,color,marker in [('unweighted','#9AA5AE','o'),('overlap_weighted',base.STYLE['neutral_dark'],'s')]:
+        for analysis,role in [('unweighted','method.reference'),('overlap_weighted','method.current')]:
+            color=palette.register(fig,role); marker='o'
             z=d[d.group1.eq(one)&d.group2.eq(two)&d.analysis.eq(analysis)].set_index('variable').reindex(variables)
-            ax.plot(z.absolute_SMD,range(len(variables)),marker=marker,color=color,lw=0,ms=3,label='Observed' if analysis=='unweighted' else 'Overlap weighted')
-        ax.axvline(.1,color='#AEB9BE',lw=.7,ls=':')
+            ax.plot(z.absolute_SMD,range(len(variables)),marker=marker,color=color,lw=0,ms=MARKER_SIZE,label='Observed' if analysis=='unweighted' else 'Overlap weighted')
+        ax.axvline(.1,color='#B9C2C7',lw=.7,ls='-')
         ax.set(yticks=range(len(variables)),yticklabels=[names.get(v,v.replace('_',' ')) for v in variables],
                ylim=(len(variables)-.5,-.5),xlim=(-.02,.9),xticks=[0,.3,.6,.9],xlabel='Absolute standardized difference',title=SHORT[one]+' versus '+SHORT[two]);clean(ax)
     fig.legend(*axes[0].get_legend_handles_labels(),loc='upper center',bbox_to_anchor=(.54,.98),ncol=2,frameon=False)
     for ax,probability_arm in zip(axes[3:],base.ARMS):
         for arm,color in zip(base.ARMS,base.COLORS):
             z=ps[ps.probability_arm.eq(probability_arm)&ps.treatment.eq(arm)].sort_values('bin_low')
-            ax.stairs(z.fraction.to_numpy()*100,np.r_[z.bin_low.to_numpy(),z.bin_high.iloc[-1]],color=color,lw=1,ls=['-','--',':'][base.ARMS.index(arm)],label=base.LABELS[base.ARMS.index(arm)])
+            ax.stairs(z.fraction.to_numpy()*100,np.r_[z.bin_low.to_numpy(),z.bin_high.iloc[-1]],color=color,lw=LINE_WIDTH,ls='-',label=base.LABELS[base.ARMS.index(arm)])
         ax.set(xlim=(0,1),ylim=(0,30),xlabel='Estimated treatment probability',ylabel='Patients within initial group (%)',title='Probability of '+SHORT[probability_arm]);clean(ax)
     for i,ax in enumerate(axes):label(ax,string.ascii_lowercase[i])
     z=ess[ess['sample'].eq('clinical_baseline')&ess.center.eq('all')]
@@ -435,8 +450,8 @@ def balance_diagnostics(root):
     fig.legend(*axes[3].get_legend_handles_labels(),loc='upper center',bbox_to_anchor=(.56,.505),ncol=3,fontsize=6.5,frameon=False)
     base.save(fig,'FigureS40','Baseline balance, treatment overlap and effective sample size',
               'a–c, Absolute standardized mean differences for every covariate in the initial-treatment propensity model, before and after '
-              'generalized overlap weighting. Differences use the unweighted pairwise pooled standard deviation in both displays. The dotted '
-              '0.10 line is a descriptive balance guide, not a statistical significance threshold. Residual imbalance remains. '
+              'generalized overlap weighting. Differences use the unweighted pairwise pooled standard deviation in both displays. The light '
+              '0.10 reference line is a descriptive balance guide, not a statistical significance threshold. Residual imbalance remains. '
               'd–f, Baseline multinomial treatment probabilities, stratified by actual initial treatment; each distribution uses all patients '
               'in that initial group and sums to 100%. These show common support rather than longitudinal drug exposure. '
               'The footer reports original N and effective sample size, (sum w)²/sum(w²). All centre, sex, age, BMI and EASI variables are shown. '

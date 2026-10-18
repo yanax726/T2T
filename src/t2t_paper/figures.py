@@ -10,12 +10,18 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.ticker import ScalarFormatter
 from cytot2t.nature_qa.audit_panel_alignment_redevelopment import require_matplotlib_panel_alignment
+from . import palette
 
 ROOT=Path(__file__).resolve().parents[2]
 ARMS=['dupilumab','abrocitinib_100mg','abrocitinib_200mg']
 LABELS=['Dupilumab','Abrocitinib 100 mg','Abrocitinib 200 mg']
 STYLE=json.loads((ROOT/'config/paper_style.json').read_text())
-COLORS=[STYLE['treatment_colors'][a] for a in ARMS]
+STYLE.update(treatment_colors={a:palette.color('treatment.'+a) for a in ARMS},
+             treatment_markers={a:palette.marker('treatment.'+a) for a in ARMS},
+             visit_colors={str(w):palette.color('visit.W'+str(w)) for w in [0,12,24]},
+             visit_markers={str(w):palette.marker('visit.W'+str(w)) for w in [0,12,24]},
+             method_colors={k:palette.color('method.'+k) for k in ['reference','current']})
+COLORS=[palette.color('treatment.'+a) for a in ARMS]
 TIMES=[0,12,24]
 TIME_COLORS=[STYLE['visit_colors'][str(w)] for w in TIMES]
 TIME_MARKERS=[STYLE['visit_markers'][str(w)] for w in TIMES]
@@ -24,7 +30,7 @@ TREATMENT_MARKERS=[STYLE['treatment_markers'][a] for a in ARMS]
 MARKERS=['IL-4','IL-5','IL-13','IL-31','TSLP','IL-33','CCL17','CCL18','IFN-gamma','IL-12p70','IL-18','TNF-alpha','IL-21','IL-6','IL-17A','IL-22','IL-10','IL2RA','CCL26','Periostin','CCL11','IL-36beta','IFN-beta']
 DISPLAY={'pp_nrs':'PP-NRS','easi_total':'EASI','bsa':'BSA (%)','dlqi':'Adult DLQI','scorad':'SCORAD','ige_numeric':'IgE (recorded units)','eo_count_numeric':'Eosinophils (recorded units)'}
 CATALOG=[]
-plt.rcParams.update({'font.family':STYLE['font'],'font.size':7,'axes.titlesize':7,'axes.labelsize':7,'xtick.labelsize':6.5,'ytick.labelsize':6.5,'legend.fontsize':6.5,'axes.spines.top':False,'axes.spines.right':False,'axes.linewidth':.8,'pdf.fonttype':42,'svg.fonttype':'none','svg.hashsalt':'t2t-20261018-v3','savefig.dpi':600})
+plt.rcParams.update({'font.family':STYLE['font'],'font.size':7,'axes.titlesize':7,'axes.labelsize':7,'xtick.labelsize':6.5,'ytick.labelsize':6.5,'legend.fontsize':6.5,'axes.spines.top':False,'axes.spines.right':False,'axes.linewidth':.8,'pdf.fonttype':42,'svg.fonttype':'none','svg.hashsalt':'t2t-palette-v4','savefig.dpi':600})
 
 def publication_id(source_id):
  if not source_id.startswith('FigureS'):return source_id
@@ -48,13 +54,15 @@ def layout(rows,cols,height=155):
 
 def shared_legend(fig,kind='treatment'):
  labs,colors=(LABELS,COLORS) if kind=='treatment' else ([f'W{x}' for x in TIMES],TIME_COLORS)
- handles=[Line2D([0],[0],color=c,marker='o',ms=3,lw=1,label=l) for l,c in zip(labs,colors)]
+ markers=TREATMENT_MARKERS if kind=='treatment' else TIME_MARKERS
+ handles=[Line2D([0],[0],color=c,marker=m,ms=4,lw=1.35,label=l) for l,c,m in zip(labs,colors,markers)]
  fig.legend(handles=handles,loc='upper center',bbox_to_anchor=(.52,.985),ncol=3,frameon=False)
 
 def errorline(ax,x,y,lo,hi,color,label=None):
  x,y,lo,hi=map(lambda a:np.asarray(a,float),(x,y,lo,hi))
  marker=TREATMENT_MARKERS[COLORS.index(color)] if color in COLORS else 'o'
- ax.errorbar(x,y,yerr=np.vstack([np.maximum(y-lo,0),np.maximum(hi-y,0)]),fmt=marker+'-',ms=3,lw=.9,capsize=2,color=color,label=label)
+ outline=palette.role_style('treatment.'+ARMS[COLORS.index(color)])['outline'] if color in COLORS else color
+ ax.errorbar(x,y,yerr=np.vstack([np.maximum(y-lo,0),np.maximum(hi-y,0)]),fmt=marker+'-',ms=4,lw=1.35,capsize=2,color=color,markeredgecolor=outline,markeredgewidth=.55,label=label)
 
 def save(fig,name,title,caption,sources,root=ROOT):
  source_id=name;name=publication_id(source_id)
@@ -63,6 +71,7 @@ def save(fig,name,title,caption,sources,root=ROOT):
   return
  out=root/'manuscript/figures';qa=root/'results/audit/update_20261017/figures';out.mkdir(parents=True,exist_ok=True);qa.mkdir(parents=True,exist_ok=True)
  fig.canvas.draw()
+ (qa/(name+'.colour.json')).write_text(json.dumps(palette.audit_figure(fig,name),indent=2)+'\n')
  require_matplotlib_panel_alignment(fig,json_out=str(qa/(name+'.alignment.json')),strict=True)
  for ext in ['pdf','svg','png']:
   fig.savefig(out/(name+'.'+ext),dpi=300 if ext=='png' else 600,metadata=({'CreationDate':None,'ModDate':None} if ext=='pdf' else ({'Date':None} if ext=='svg' else None)))

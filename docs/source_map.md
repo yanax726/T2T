@@ -12,6 +12,7 @@ The current figure inventory is [manuscript/figure_catalog.json](../manuscript/f
 | Independently fitted PP-NRS, adult DLQI and recorded IGA | `src/cytot2t/curation/auxiliary_targets_20261017.py` | `results/tables/update_20261017/model/auxiliary_targets/` |
 | Cohort flow, analysis-specific balance, paired monitoring and uncertainty | `src/t2t_paper/redesign_evidence_20261018.py` and its imported modules | `results/tables/update_20261017/redesign_20261018/` |
 | Composite definitions, endpoint-specific balance, missing-outcome bounds, baseline-itch sensitivity and conditional prediction diagnostics | `src/t2t_paper/revision_checks_20261018.py` | `results/tables/update_20261017/revision2_20261018/` |
+| Training-only exclusion of reference-inconsistent development visits | `src/cytot2t/curation/reference_sensitivity_20261018.py` | `results/tables/update_20261017/reference_sensitivity/` |
 | Figure rendering | `src/t2t_paper/figures.py` and current rendering modules | `manuscript/figures/`, `manuscript/source_data/`, figure catalogue |
 | Tables, narrative assembly and TeX compilation | `src/t2t_paper/build.py` | `manuscript/tables/`, main, appendix and figure-book files |
 
@@ -21,7 +22,7 @@ All paths abbreviated as `model/...` above are under `results/tables/update_2026
 
 CSV headers give the analysis grouping and measure. The methods and figure captions define the estimand, uncertainty and multiplicity family. Do not substitute a display bin or group mean for a participant-level record. Blank or non-estimable cells are not zero effects. Within-treatment molecular changes and between-treatment contrasts answer different questions; time windows can share patients.
 
-The numerical archive retains BSA-only and molecular-only controls, alternative structures, auxiliary-target limitations, published-formula sensitivities, sparse cells and negative results even when a redundant display is removed. The manuscript appendix includes a complete source-table catalogue. Figure-specific source copies complement the full result tables; they do not replace them.
+The numerical archive retains BSA-only and molecular-only controls, alternative structures, auxiliary-target limitations, published-formula sensitivities, sparse cells and negative results even when a redundant display is removed. The appendix links to the complete machine-readable source-table catalogue in `manuscript/source_data/index.csv`. Figure-specific source copies complement the full result tables; they do not replace them.
 
 ## Provenance and verification
 

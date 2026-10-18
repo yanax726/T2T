@@ -1,0 +1,24 @@
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{Robustness to training-only exclusion of reference-inconsistent development visits.}\label{tab:reference_sensitivity}
+\begin{tabular}{p{56mm}rrr}\toprule
+ & W0 & W12 & W24 \\ \midrule
+\multicolumn{4}{l}{\textbf{All original held-out observations}} \\
+Patients & 152 & 89 & 75 \\
+Primary MAE (95\% CI) & $3.19$ ($2.75$, $3.70$) & $1.30$ ($0.96$, $1.71$) & $1.19$ ($0.89$, $1.53$) \\
+Training-exclusion MAE (95\% CI) & $3.19$ ($2.72$, $3.70$) & $1.15$ ($0.82$, $1.57$) & $1.06$ ($0.75$, $1.40$) \\
+Paired $\Delta$MAE (95\% CI) & $-0.007$ ($-0.090$, $0.078$) & $-0.149$ ($-0.228$, $-0.073$) & $-0.134$ ($-0.206$, $-0.064$) \\
+Primary calibration slope & 0.913 & 0.814 & 0.735 \\
+Training-exclusion calibration slope & 0.915 & 0.821 & 0.733 \\
+Paired $\Delta$slope (95\% CI) & $0.002$ ($-0.008$, $0.015$) & $0.007$ ($-0.004$, $0.028$) & $-0.002$ ($-0.015$, $0.014$) \\ \addlinespace
+\multicolumn{4}{l}{\textbf{Strict reference-consistent evaluation subset}} \\
+Patients & 140 & 86 & 71 \\
+Primary MAE (95\% CI) & $3.17$ ($2.70$, $3.71$) & $1.32$ ($0.97$, $1.75$) & $1.11$ ($0.82$, $1.42$) \\
+Training-exclusion MAE (95\% CI) & $3.19$ ($2.72$, $3.72$) & $1.18$ ($0.83$, $1.60$) & $0.97$ ($0.70$, $1.30$) \\
+Paired $\Delta$MAE (95\% CI) & $0.012$ ($-0.073$, $0.101$) & $-0.143$ ($-0.223$, $-0.066$) & $-0.131$ ($-0.203$, $-0.063$) \\
+Primary calibration slope & 0.910 & 0.790 & 0.765 \\
+Training-exclusion calibration slope & 0.910 & 0.798 & 0.766 \\
+Paired $\Delta$slope (95\% CI) & $0.001$ ($-0.010$, $0.014$) & $0.008$ ($-0.003$, $0.035$) & $0.001$ ($-0.013$, $0.018$) \\ \addlinespace
+\bottomrule\end{tabular}
+\par\small\raggedright Eight W0 and two W12 visits with complete four-region scores whose sum differed from recorded total EASI by more than 0.15 points were excluded from development fitting only. Visits with missing regional references were retained. Original patient outer folds, evaluation patients and recorded outcomes were unchanged; preprocessing and inner structure/penalty selection were repeated. The strict evaluation subset requires all four regions and an absolute sum-to-total difference at most 0.01. Paired $\Delta$ is training-exclusion minus primary; negative $\Delta$MAE means less error. Calibration regresses observed on predicted EASI, with ideal slope 1. Metrics are scored within each repetition before averaging. Intervals use 2,000 paired patient resamples conditional on the saved predictions (seed 20261002); bootstrap resamples do not repeat fitting or selection. This is robustness to exclusion, not correction of clinical truth, independent validation or a replacement of the primary formula. Matched refitted BSA controls and complete metrics are in the \texttt{reference\_sensitivity} aggregate directory.
+\end{table}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "known_inconsistent_counts": {
+    "0": 8,
+    "12": 2,
+    "24": 0
+  },
+  "development_original_visits": 241,
+  "development_excluded_visits": 10,
+  "all_original_evaluation_visits_retained": true,
+  "original_patient_outer_folds_verified": true,
+  "training_only_exclusion": true,
+  "unknown_regional_reference_retained": true,
+  "clinical_truth_unchanged": true,
+  "marker_panel_fixed": true,
+  "patient_disjoint": true,
+  "preprocessing_and_structure_penalty_selection_repeated": true,
+  "primary_reproduction_max_absolute_prediction_difference": 7.105427357601002e-15,
+  "all_existing_primary_artifact_hashes_unchanged": true,
+  "primary_protected_file_count": 73,
+  "public_outputs_are_aggregate_only": true,
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261002,
+  "interval_scope": "patient percentile bootstrap conditional on saved sensitivity/primary predictions; no fitting or selection repeated in bootstrap"
+}

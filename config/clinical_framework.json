@@ -1,0 +1,59 @@
+{
+  "version": "framework_20260903",
+  "source_type": "Investigator framework and project development summary",
+  "visits": {
+    "2": {
+      "physician": null,
+      "patient": [
+        "pp_nrs <= 4"
+      ]
+    },
+    "4": {
+      "physician": [
+        "easi_pct_improvement >= 50",
+        "iga_baseline - iga >= 2"
+      ],
+      "patient": [
+        "pp_nrs <= 4",
+        "dlqi <= 10"
+      ]
+    },
+    "12": {
+      "physician": [
+        "easi_pct_improvement >= 75",
+        "iga <= 1"
+      ],
+      "patient": [
+        "pp_nrs <= 1",
+        "dlqi <= 4"
+      ]
+    },
+    "24": {
+      "physician": [
+        "easi_pct_improvement >= 75",
+        "easi_total <= 5",
+        "iga <= 1"
+      ],
+      "patient": [
+        "pp_nrs <= 1",
+        "dlqi <= 4"
+      ]
+    }
+  },
+  "logic": "physician_OR AND patient_OR, three-valued missing; W2 physician domain not assessed",
+  "adult_DLQI_analysis_minimum_age": 18,
+  "source_definition_transcribed": true,
+  "approved_implemented_version_status": "Requires investigator confirmation",
+  "development_summary": {
+    "procedure_described": "Two rounds of questionnaire review and discussion",
+    "planned_agreement_criterion": 0.75,
+    "reported_returned_questionnaires": 49,
+    "original_ballots_available": false,
+    "round_specific_agreement_available": false
+  },
+  "source_sha256": {
+    "课题汇报_20260903.pptx": "17768807abae71154651e597a3c3b6a0606c05eeb6201d01865ae2a061b80ec8",
+    "data/raw/241217 中国特应性皮炎达标治疗方案探索与验证 项目.pptx": "2ef603d3d8a7b913d0f002c45781cf8ab799d91ded425aba2524879ce89fbb83"
+  },
+  "interpretation": "The framework is operationalized from recorded scores. Reported consultation details are source-level summaries; no consensus votes or clinical impact are reconstructed."
+}

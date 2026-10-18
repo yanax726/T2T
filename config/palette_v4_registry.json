@@ -635,6 +635,15 @@
   "figure_rules": {
     "Figure1": {
       "source_id": "Figure1",
+      "question": "How are the clinical framework and the research serum estimate related?",
+      "categorical_families": [
+        "visit"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Source-based consultation and clinical workflow. No formula or inferred voting outcomes."
+    },
+    "Figure2": {
+      "source_id": "Figure2",
       "question": "Clinical course and target attainment during treatment",
       "categorical_families": [
         "method",
@@ -644,8 +653,8 @@
       "continuous_scales": [],
       "panel_rule": "a,b,d: initial treatment colour. c: W12/W24 colour. Comparisons remain neutral row labels; stage criteria are blocks."
     },
-    "Figure2": {
-      "source_id": "Figure2",
+    "Figure3": {
+      "source_id": "Figure3",
       "question": "Molecular response across treatments and the three-marker input panel",
       "categorical_families": [
         "method",
@@ -656,25 +665,17 @@
       ],
       "panel_rule": "a: fixed-triplet within-person log2 changes. b: adjusted between-treatment changes, separate numerical colour bar. c-e: treatment colour."
     },
-    "Figure3": {
-      "source_id": "Figure3",
+    "Figure4": {
+      "source_id": "Figure4",
       "question": "A common four-input equation estimates individual EASI readings",
       "categorical_families": [
         "method",
         "visit"
       ],
-      "continuous_scales": [],
-      "panel_rule": "All visits use their stable colours, circular points and solid curves; no categorical shape or dash code."
-    },
-    "Figure4": {
-      "source_id": "Figure4",
-      "question": "Within-patient change and clinical response from the common equation",
-      "categorical_families": [
-        "method",
-        "visit"
+      "continuous_scales": [
+        "ocean_sequential patient counts (logarithmic scale)"
       ],
-      "continuous_scales": [],
-      "panel_rule": "Separate panels retain full change-window titles. End-W12 and end-W24 colours; all points circles and all trends solid."
+      "panel_rule": "Equal-size count cells, common count scale. Visit colours identify summary curves. No bubble size or formula."
     },
     "FigureS1": {
       "source_id": "FigureS1",
@@ -1077,8 +1078,31 @@
         "method",
         "visit"
       ],
-      "continuous_scales": [],
+      "continuous_scales": [
+        "ocean_sequential patient counts (logarithmic scale)"
+      ],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "Figure5": {
+      "source_id": "Figure5",
+      "question": "Within-patient change and clinical response from the common equation",
+      "categorical_families": [
+        "method",
+        "visit"
+      ],
+      "continuous_scales": [
+        "ocean_sequential patient counts (logarithmic scale)"
+      ],
+      "panel_rule": "Equal-size count cells, common count scale. Visit colours identify summary curves. No bubble size or formula."
+    },
+    "FigureS41": {
+      "source_id": "FigureS43",
+      "question": "TNF-alpha and TSLP paired change across EASI response-depth categories in each treatment",
+      "categorical_families": [
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Four fixed-three-visit trajectories, all initial treatment groups. Selection uses the full declared family."
     }
   },
   "source_note": "Author-specified role HEX values. Sequential and continuous LUTs implemented from the stated ocean–peach–coral direction; no external JSON was supplied.",

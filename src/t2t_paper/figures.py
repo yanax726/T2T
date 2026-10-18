@@ -88,12 +88,12 @@ def run(root):
  main_figures(root)
  supplementary_figures(root)
  rows={r['id']:r for r in CATALOG}
- expected=[f'Figure{i}' for i in range(1,5)]+[f'FigureS{i}' for i in range(1,41)]
+ expected=[f'Figure{i}' for i in range(1,6)]+[f'FigureS{i}' for i in range(1,42)]
  if set(rows)!=set(expected) or len(CATALOG)!=len(expected):
   raise RuntimeError('Figure catalogue coverage or duplicate error.')
  (root/'manuscript/figure_catalog.json').write_text(json.dumps([rows[name] for name in expected],ensure_ascii=False,indent=2))
- (root/'config/figure_identity_map.json').write_text(json.dumps({f'FigureS{i}':publication_id(f'FigureS{i}') for i in range(1,43)},indent=2)+'\n')
- (root/'config/paper_figure_plan.json').write_text(json.dumps({'version':'2026-10-18-semantic-v3','status':'Current scientific figure map: 4 main and 40 supplementary figures; all numerical controls retained in source tables.','figures':[rows[name] for name in expected]},ensure_ascii=False,indent=2)+'\n')
+ (root/'config/figure_identity_map.json').write_text(json.dumps({f'FigureS{i}':publication_id(f'FigureS{i}') for i in range(1,44)},indent=2)+'\n')
+ (root/'config/paper_figure_plan.json').write_text(json.dumps({'version':'2026-10-18-reviewed-manuscript','status':'5 main and 41 supplementary manuscript figures. The prior presentation is a separate, unchanged set.','figures':[rows[name] for name in expected]},ensure_ascii=False,indent=2)+'\n')
 
 if __name__=='__main__':
  from t2t_paper.figures import run as entry

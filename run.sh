@@ -46,6 +46,7 @@ case "$mode" in
     for score_target in pp_nrs dlqi iga; do
       "$python_bin" -m cytot2t.curation.auxiliary_targets_calculator_20261017 examples/auxiliary_targets_input.csv "results/tables/update_20261017/model/auxiliary_targets/example_${score_target}.csv" --input-scale raw --target "$score_target"
     done
+    "$python_bin" -m cytot2t.curation.reference_sensitivity_20261018
     "$python_bin" -m t2t_paper.redesign_evidence_20261018
     "$python_bin" -m t2t_paper.revision_checks_20261018
     "$python_bin" -m t2t_paper.figures

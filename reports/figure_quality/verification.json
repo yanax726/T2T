@@ -1,29 +1,57 @@
 {
   "status": "PASS",
+  "scope": "Graphical, document and version-integrity checks. This does not establish clinical validity, independent peer-review acceptance or submission readiness.",
   "palette_version": "palette-v4",
-  "palette_registry_sha256": "75c481f3e2552f83e2eb98d4f42fe7b41636b2157c9011f8b37ebed9888e777d",
-  "display": "Colour distinguishes categories; ordinary points are circles and trend lines are solid; pathways and intervals use facet titles.",
-  "scientific_files_compared": 214,
-  "scientific_files_changed": [],
-  "figure_count": 44,
-  "main_figures": 4,
-  "supplementary_figures": 40,
-  "figure_source_mapping_unchanged": true,
+  "palette_registry_sha256": "b6990c272a83a4bc18d1575590b940f505b67cce9839e52b8bb096f7e04c3b64",
+  "main_figures": 5,
+  "supplementary_figures": 41,
+  "figure_count": 46,
   "figures": [
     {
       "id": "Figure1",
       "exports": {
-        "pdf": "279d6096d24e3abb75f7d80d7563c84e1f72076658883fe4aa67042d5676ac1c",
-        "svg": "2ffc85e169cadbd361cf25e062b6644f73623a5a225e361b0fa9899871659b30",
-        "png": "c609278e2a9f331f1bc843ad7fe87028c06ff95ce492a31a2e2258bc66f4f778"
+        "pdf": "54fdaa96a280e3025f39efbcc3b826d91041d84b47c7d38da868a713a41c9220",
+        "svg": "c11e747a937ce6534d156d6a99aeab616dcc7d0bfa50a3752892fb4630a7ec39",
+        "png": "4186382989629e964cd30b0c404c5930392372765259e668dbba9071ceee3f7e"
       },
-      "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 167.99999525282118,
+      "minimum_font_pt": 6.5,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 140.00000322129992,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
+      "categorical_roles": {
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "Figure2",
+      "exports": {
+        "pdf": "705fc65f80ff2f8acaacd92af151a09db6f37ece17c35abb8387f0faaccbce18",
+        "svg": "1565d01c86ca0a941308b25f23ce1da3de3666b859557db07d1e2c798b4fe4db",
+        "png": "13061d3fd24fc261f57cb1f3276b8c4e67c45fe16ce8f38612df6398f90bdd55"
+      },
+      "minimum_font_pt": 6.0,
+      "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 212.0000011867947,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 39,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
+      "alignment": "PASS",
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -33,19 +61,25 @@
       }
     },
     {
-      "id": "Figure2",
+      "id": "Figure3",
       "exports": {
         "pdf": "ff530b9ecedd6abf3dc4d47def85446a5ed9734e4f289245cac04869e60d99f6",
         "svg": "08804181ea66a5652243930bf7659c46dde4d6c555536e20fa145f14bcf6b346",
         "png": "18773f774d92ca834857b2d325c021129664509d8112c07d7a693146ef2570cc"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 167.99999525282118,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 167.99999525282118,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 157,
+        "contained_image_overlays": 157
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -53,19 +87,25 @@
       }
     },
     {
-      "id": "Figure3",
+      "id": "Figure4",
       "exports": {
-        "pdf": "3aa31612affc8bb3640d372cdfef25cc418d61ae39ea6a96572e61b9b121f1a8",
-        "svg": "58b501aa873cf7652b98b9162323f8e6cc4b8d3dff56cfa1850492a1e1f20fdb",
-        "png": "8b8533bf5096144b86e6f6897aeaba7a98da97674500d8135b742d3ef6409069"
+        "pdf": "323580e1149fe8d02b9f05a6e76d589e65081c1e373ebc9f58dba5e4f02bc2b4",
+        "svg": "4146c80296b7151711459dc48826e000a43a2a2670e465ffbaf87e1649d62e9e",
+        "png": "79b60f49b5d82abf6bfd4a6c189890ad1cbca83eda066481b4b285ef48aa6240"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 159.99999906751844,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 12,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "visit.W0": "#79B9CF",
         "visit.W12": "#269DAB",
@@ -73,19 +113,25 @@
       }
     },
     {
-      "id": "Figure4",
+      "id": "Figure5",
       "exports": {
-        "pdf": "879d867d2cfdb7455c9964e5aaa5ae4f7e5ffb233fd7da0b6b2ebe75164ea328",
-        "svg": "b98a6c69fb9824627f9e46f861b164abb995003ea802869edd5a91caf1ae2f02",
-        "png": "c905eb988294d43c4446c43169fd63d269b487f312778f4f1c0001252bf83217"
+        "pdf": "a281d8a0ac9a9d6459916651dbaa96da6a87285f4d879d4c00ad7318dfdca203",
+        "svg": "7d4afd686fce8383940c179ecac9e82dfda70fdd0540e4cf80cddfc5d7f319a0",
+        "png": "a03cdc8fd83afdab13b577ee104767e4b8fe80a4181f8fee44def0333eacff6d"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 159.99999906751844,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 161.99999542236327,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "visit.W12": "#269DAB",
         "visit.W24": "#245568"
@@ -94,17 +140,23 @@
     {
       "id": "FigureS1",
       "exports": {
-        "pdf": "8bc069f0ba2a6d70d7eb0ae02a5525560d39ece23dfc33a244e8f24767e833af",
-        "svg": "75b83aed01e5943eaa9da3569e8c623130a5bda7a2de073a919b6b377e089297",
-        "png": "b9697d1fbf150ba0d9da485dade3bc0dc89893cca6dd5580d7e0e8e75492a41a"
+        "pdf": "3e74d8b5899e885ce88485ef64a17e55a3fdd9c91d6acf37923de56dd9c28111",
+        "svg": "211aa7dd37f495b57946771ee5425e7e2ca09e5fcf9fa06f250c144e4ed951e1",
+        "png": "a989685e68fed999decf920f0da23e5edeadac4df46dd68ed35e230910db6e3f"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 220.0000081380208,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 225.00000440809464,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -114,17 +166,23 @@
     {
       "id": "FigureS2",
       "exports": {
-        "pdf": "46759c060069d4101ecbf08457c3563516ecea3545b54c02f640945693d441f9",
-        "svg": "524167d41302092769f899be9e22ef04405efc55e5cd0d197b55e131c2a14fa5",
-        "png": "57540ff9b8a9c198f45cf4b33c3913adf66695fdcc39d66aa6a6e36998c7afa3"
+        "pdf": "9331bae9adbce975c6f3624a5dccc823248f594ec518919be317ab727560d627",
+        "svg": "1c6d14ac200c217e049051cf58a2b740e76d28fbe674a4f15558c31bde9461a2",
+        "png": "ecd2eb294028174ce80826884e8db5f5cd624ef0686cba536f8ab1cb8d5d7498"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 209.99999406602643,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 209.99999406602643,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -134,17 +192,23 @@
     {
       "id": "FigureS3",
       "exports": {
-        "pdf": "dba7281b744d90390669d10d9a5648af881aef849fdf8dc04473b407aa2d4102",
-        "svg": "09f16713c2e97efd8acec466c530bf1c24ed6a94c01fae8e353e56afb57ccb00",
-        "png": "4cb165dcde3ec992bbfe3fa593a7f8c57a725bdb36943bd278ef3a4be3f2c6f6"
+        "pdf": "d5c2fa2d7e8d5a3725819b2b7bffa0dd7cf0c248a8c95e868ed68741494b212e",
+        "svg": "d966f19023dc4bde64703b77bd56071276f17864a80aecb692b5335bebd25eca",
+        "png": "4a3fbd739f0d3ff5f6ae5f40e9b34e405aeb3fc5e4f0ee3416653528e7b72bd6"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -154,17 +218,23 @@
     {
       "id": "FigureS4",
       "exports": {
-        "pdf": "9b474367ab108965365611d75681f605b310a04c5e3d3e776720aa49cad080a0",
-        "svg": "cc87f415ab72d8798aca09f8eefbab4f0e8d1b90aadba9ba028e7ceb08827a20",
-        "png": "d066b6c3539b4555cae15cfc4092c42e7e033809635a3e09169b010f478940f5"
+        "pdf": "a4fadc28d2a7e8b56d088b485770b8bd9cc0797b681ebb152543a12df7cbcf9b",
+        "svg": "f2d4995cca5773a24f9a532db650988c8afc69ba05b5216521eaf11f0300da66",
+        "png": "dd68c55e58d846e84a91dcadb9b0386d3aa3a65f5ada1638b496a4007544560e"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -179,12 +249,18 @@
         "png": "9ac835ce382b79c91c6666a025e8c0f2fae00eb957d45396d9a698780c84eac3"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -199,12 +275,18 @@
         "png": "f2b1f72007e9f2dc8fbeda954e5bcb69b2bf66697ae5784adbc532c4c00e2a48"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -219,12 +301,18 @@
         "png": "3e93d26556b971e75f7bef903748d9ee3c280dcaf73c38d01da656d87d55e4fb"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -239,12 +327,18 @@
         "png": "3c4d26ed8a23d93a96d73554e1080f0d6e1f39cfa1c1bb877fd1eb15c553ab8d"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.current": "#7F5D50"
       }
@@ -257,12 +351,18 @@
         "png": "fec6282c50b8eebe014bad323960fda344c0a4aeee5810b9ea4d721d908c86ab"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.current": "#7F5D50"
       }
@@ -275,12 +375,18 @@
         "png": "c924c61cfb2748e447f34335aa6a40182002dad2e090e6654a7ef0284cd35c1b"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.current": "#7F5D50"
       }
@@ -293,12 +399,18 @@
         "png": "0dd5a94beafd2733d1f1cfac0401540fba89456a00f178c3b4f97e4edf4351c4"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -309,12 +421,18 @@
         "png": "f07d7abc78a1a98c4041576629f706ce5f864dc0d57683f3620659bfb13d266d"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -325,44 +443,62 @@
         "png": "00e16772c0de563857460ceefa2b017baf6a6b15edd648f4818d5413d8de7cbd"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
       "id": "FigureS14",
       "exports": {
-        "pdf": "7d97d2e9a90bc1e43b4f8eaf3c1157750e5ae2ddb2c00cc02d038aab667eef57",
-        "svg": "55b49cf83d9a0c50cb77afdde1dca3e8c433e2ba019592ecf2d77e10ea1449de",
-        "png": "d449fd345fb8f5c681e39e03b1213c681481502b2e9981744b7334d4b934c1b8"
+        "pdf": "a94a1414672ae85fa09fe35e7eb1b55287c43d269c3075751d762c706cc0d709",
+        "svg": "0e8259f345585138f78915d5f710b586fee629d5f4136902d4b2ce1e2e4689fc",
+        "png": "7bb9b59ca4d3dd10e429c8c998d5165230f8c94cafa4404db4dc6c96ade6d492"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "NOT APPLICABLE",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
       "id": "FigureS15",
       "exports": {
-        "pdf": "c95fcdc9aa048850edff621d1c159206cfb380de81c73916df8c47f3887a29d6",
-        "svg": "baf7e7dac3324df1b8a3a8d63206e447ae19103a13cf0a8e1a1b688eeb394120",
-        "png": "661643fe1191ac8c6de7b4b6f5ec904cd2740af72d90f259f89bcdfa66ff948a"
+        "pdf": "ea83bf0afcc4a5efa6dc3a0a9f8ec506269e1a0460eef70e1aa43e13fadbeb05",
+        "svg": "28811b25c9efd64aa801ffd7ecd7df6789ed778d1909d623a940a8feb5c21c0a",
+        "png": "0b73ffe56e062b50707e6249d356a1116cc33d80151086c0db574f8b6f7bca5e"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 115.0000003390842,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 115.0000003390842,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 72,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "recorded_iga_0_to_5.0": "#E7F1F5",
         "recorded_iga_0_to_5.1": "#BED9E3",
@@ -380,12 +516,18 @@
         "png": "4c3faa11f7f94d6696c566606e6e9dc39718a7fa72d33e580b440b715d59140e"
       },
       "minimum_font_pt": 6.5,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 104.99999703301322,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 104.99999703301322,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -400,12 +542,18 @@
         "png": "43e74634db2ee447b84efb120ae4b601107b767c1994ec0e1f98f66f9d1df06e"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 204.99999779595268,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 204.99999779595268,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 6,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -420,12 +568,18 @@
         "png": "4eddbc3c1eb7c2675c069111c5ed8995e19fb84979665d4f9d29b255f1f51a84"
       },
       "minimum_font_pt": 6.5,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -440,12 +594,18 @@
         "png": "8854faa9fe896d9e74de1e62f405685e41f750b726ff6cac627647d6a524c758"
       },
       "minimum_font_pt": 6.5,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "visit.W0": "#79B9CF",
         "visit.W12": "#269DAB",
@@ -460,12 +620,18 @@
         "png": "a385164d0c5fcc04efb30fc8de2c002b6ba5874d2e43c61b69cde565773b8a74"
       },
       "minimum_font_pt": 6.5,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 100.00000076293945,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 100.00000076293945,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -480,12 +646,18 @@
         "png": "4d5552851061fe1b728a3c2114927d3f763da2d60399d9d9d3d9cfe1e265ec6c"
       },
       "minimum_font_pt": 6.5,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 144.99999949137367,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 144.99999949137367,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "visit.W0": "#79B9CF",
         "visit.W12": "#269DAB",
@@ -495,17 +667,23 @@
     {
       "id": "FigureS22",
       "exports": {
-        "pdf": "f74805c47bd7a1ce0978924162bb2c59d5a6e9d06dc85f2a0ddaa01ab574b6a6",
-        "svg": "7773c3dd540fb7ac142d5b4cace67da5c6107561b5b9d24529fbcc192a2563b4",
-        "png": "c1dddbc5ae460bd4fc0762d20853f3b15f31bfc724c8af1a5f0548014586c8c0"
+        "pdf": "8faeb900d1c75a5ce4c0de644a831557eccce6434d14fef67c46152e7f2ec62f",
+        "svg": "c986b5809b3f5035258f4d09c803344e699611fd5827f83847aef196740072af",
+        "png": "41178ef9fc80cfd6034767a45fe851dfe2285ad7c6fcdcd92745d86e1595b4eb"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 85.00000118679469,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 85.00000118679469,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "NOT APPLICABLE",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.reference": "#91ADB6",
         "method.current": "#7F5D50"
@@ -519,12 +697,18 @@
         "png": "41f4806979a41039a279838c0c78f364f45fceb6910c2423c671317bcb4c438b"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 144.99999949137367,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 144.99999949137367,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.reference": "#91ADB6",
         "method.current": "#7F5D50"
@@ -538,12 +722,18 @@
         "png": "bb6b6763156b357a1f9574934d48ddd03531fbad032a2e0de0f41e632c0f39b5"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 144.99999949137367,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 144.99999949137367,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.reference": "#91ADB6",
         "method.current": "#7F5D50"
@@ -557,12 +747,18 @@
         "png": "0b9f3a553ae9119a2035d15dee53119306631564f3c9b3f887301706829a5cd7"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 144.99999949137367,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 144.99999949137367,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.reference": "#91ADB6",
         "method.current": "#7F5D50"
@@ -576,12 +772,18 @@
         "png": "b06b2c3ad756454afe7f7f957123dada9fd80468c31af1a75d13f8b5f0d67f6a"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -592,12 +794,18 @@
         "png": "1cd2f153f1859a67d245a2adcf121df5eade147a957e9688cb200be0ad86416c"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -608,12 +816,18 @@
         "png": "1847adff44c2a4ac1ae2cd94954677f1fb9cd64201222a7f6a417899cbfe4f16"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -624,12 +838,18 @@
         "png": "1d09eb5d34707d2e3e1440ff88df4588e6a221a4e79a42dafc3649903cebe6a3"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -640,12 +860,18 @@
         "png": "8cfda3e1dacf40709ab3a4b49bdf01b5dd59a4f35b114184e4085203ee909d41"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -656,12 +882,18 @@
         "png": "899ba0054b9c35b46ffd949c50964fc2bba549ee09997bf09d579c5535f5c08d"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 164.99999533759222,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 164.99999533759222,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 276,
+        "contained_image_overlays": 276
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -672,12 +904,18 @@
         "png": "efb4e64046cba4dcfc11ec40a1e04fa84e01d81589e89a2007ad627064cd09d9"
       },
       "minimum_font_pt": 6.5,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 170.00000237358938,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 170.00000237358938,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.pooled_abrocitinib": "#A96856"
@@ -686,17 +924,23 @@
     {
       "id": "FigureS33",
       "exports": {
-        "pdf": "9208eb051861b46543ca9183682ac471ca027c3218a0c5c5a9ae6f1c960705f1",
-        "svg": "e41d44c06857f502c38984535a392cd18a287f9a0e27ab47400931c8e2c8e86a",
-        "png": "73e9e03e794b0fa9e38529b1bd35f2d2dbfa6f9ce275d8295584e333b5226a86"
+        "pdf": "3592d19e38cce4e4a08b05f1264c1f32a1c4b0cbfc32e823136552d8fc5e9c5d",
+        "svg": "9040d95037a621424697121cf7c4d93aded4468ff47d03b56d1ebeaf455a11c4",
+        "png": "9391372d446dc0eaeef9c6c5a693091a22744f971699c04d2c3ee9a4278958ce"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 170.00000237358938,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 170.00000237358938,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "treatment.dupilumab": "#2878B5",
         "treatment.abrocitinib_100mg": "#E49A7C",
@@ -711,12 +955,18 @@
         "png": "a60802fe5981aeee952128e24b325ebcad1f12e04df01368280b0c2249962ccf"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 110.0000040690104,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 110.0000040690104,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "visit.W0": "#79B9CF",
         "visit.W12": "#269DAB",
@@ -731,12 +981,18 @@
         "png": "3f402f97c75373c0b04b97d8d9ce2a3e68ac7f9a11f7efee7aff4b4210e59df5"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 149.99999576144748,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 149.99999576144748,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 10,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "visit.W0": "#79B9CF",
         "visit.W12": "#269DAB",
@@ -751,28 +1007,40 @@
         "png": "1281d9d8cfd15ef811c8ed1491dea5526faf2c0a199b5cc4f8c03a3059692e63"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 155.00000279744467,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 155.00000279744467,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 48,
+        "contained_image_overlays": 48
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
       "id": "FigureS37",
       "exports": {
-        "pdf": "9ff7683f2047d66888c5365661afbcfcef2a379c95c10929e9e9f54e0f73d34f",
-        "svg": "878e6ebe39b0a7864722c781ee24f894fab51093cfa8a9ec92f81dab43a04472",
-        "png": "b6b4ebd1ddbe4e917156c3512ef245daf61b2eee809d9b896c732e1884a9a132"
+        "pdf": "fb341d7691b7b29969240a3fd362375b690d9ab4be8379fa483f7ffe87e2ad95",
+        "svg": "528459589b48867faf071f0d73a6e409234aa0d99dade0cceb360b0a1231c96b",
+        "png": "58e8a3a4f5d620484c6c60a7b5404b5682ee4d2d89ebe937eaed62e5e578a9ff"
       },
-      "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 209.99999406602643,
+      "minimum_font_pt": 6.699999809265137,
       "outside_page_text": [],
-      "alignment": "NOT APPLICABLE",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "width_mm": 183.0000055948893,
+      "height_mm": 190.0000089857313,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 25,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
+      "alignment": "PASS",
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
@@ -783,12 +1051,18 @@
         "png": "2288c2ba921146feb860f8c8b7fbedd9ae5c908433f2690d6b09d6280816715e"
       },
       "minimum_font_pt": 6.5,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 155.00000279744467,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 155.00000279744467,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "method.reference": "#91ADB6",
         "method.current": "#7F5D50",
@@ -800,69 +1074,930 @@
     {
       "id": "FigureS39",
       "exports": {
-        "pdf": "ac045774d6dac7b733e402d92bffabd1b75b69194a5689f42e46299f0c955548",
-        "svg": "9b47b52741da159a03bde5602b881c24c451ec23833b5c9429af3f7d0ade96f5",
-        "png": "2011f9ee849c957e76b02d5406a63c48a46bfb7129c7f122d61923ef278de5cb"
+        "pdf": "ce55e41f48cef14ca6fbc9c33e3729934978d422b2e83ba6460a87f1c7dbdf8a",
+        "svg": "ed2da69d82d31c2a0e3f2b5f0bc8f5db337a0400b6152705268d99fd3556d678",
+        "png": "4f1d53cd49b40278a9b6a68cc135e6a4d55a5011f62cacaec980e972a041db7a"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 159.99999906751844,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 159.99999906751844,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 79,
+        "contained_image_overlays": 79
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {}
     },
     {
       "id": "FigureS40",
       "exports": {
-        "pdf": "80eb8c881694bd15314770e519e691e72be943d16e083665f06247db553ef6ab",
-        "svg": "3f3597a514d7279830db43bf3086d0a3b383db57b1b461f5ccb6aeb0008a1026",
-        "png": "d9f2bba42c13e1c236a9ecce548120ba967dacec35bbdde16205a5e97364b859"
+        "pdf": "1f9d6acaf03cea6c1e13d019067ce94ab3906897ad8f940530a4298d18140971",
+        "svg": "ecfa8b5fd70b5d6124132c70e6ee316cdd541b986873f780eed45de79a279f50",
+        "png": "36c58933feae1fca46ceb3ba03adecd052802b2170f2252442a14f6663041d92"
       },
       "minimum_font_pt": 6.300000190734863,
-      "page_width_mm": 183.0000055948893,
-      "page_height_mm": 112.00000042385524,
       "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 118.00000025431314,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 6,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
       "alignment": "PASS",
-      "collision_fail": 0,
-      "collision_warn": 0,
+      "colour": "PASS",
       "categorical_roles": {
         "visit.W0": "#79B9CF",
         "visit.W12": "#269DAB",
         "visit.W24": "#245568"
+      }
+    },
+    {
+      "id": "FigureS41",
+      "exports": {
+        "pdf": "6a13319a3a3e0f36530c1eeff4177c7672ed3957bb2522b2e0691df2625bf11b",
+        "svg": "ecd99b780ad824b1a307df005eadca60cf7f00aa817c0ba8c7034a617d8c93ca",
+        "png": "5b0c8e855719b20acaac2067e977eb36e1ed340d76e984383db0891914b0dc07"
+      },
+      "minimum_font_pt": 6.5,
+      "outside_page_text": [],
+      "width_mm": 183.0000055948893,
+      "height_mm": 158.0000027126736,
+      "collision": {
+        "fail": 0,
+        "warn": 0,
+        "contained_fill_overlays": 0,
+        "contained_image_overlays": 0
+      },
+      "text_below_floor": 0,
+      "alignment": "PASS",
+      "colour": "PASS",
+      "categorical_roles": {
+        "treatment.dupilumab": "#2878B5",
+        "treatment.abrocitinib_100mg": "#E49A7C",
+        "treatment.abrocitinib_200mg": "#C84B4B"
       }
     }
   ],
   "documents": [
     {
       "file": "manuscript/main.pdf",
-      "pages": 11,
-      "sha256": "d7f6d4244645e8787c81ec3abac7553858e134834d70843b813d18806e09825d",
-      "minimum_embedded_font_pt": 5.97760009765625,
-      "outside_page_text": []
+      "sha256": "6826f79e6c92a53460d95280b5b4815d4fdaa36cc98b4346bcd270f675e92668",
+      "page_count": 13,
+      "outside_page_text": [],
+      "pages": [
+        {
+          "page": 1,
+          "min_font_pt": 8.966400146484375,
+          "words": 554,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 2,
+          "min_font_pt": 6.973800182342529,
+          "words": 650,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 3,
+          "min_font_pt": 6.973800182342529,
+          "words": 675,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 4,
+          "min_font_pt": 6.180655002593994,
+          "words": 434,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 5,
+          "min_font_pt": 5.97760009765625,
+          "words": 680,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 6,
+          "min_font_pt": 5.318580150604248,
+          "words": 477,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 7,
+          "min_font_pt": 5.990480899810791,
+          "words": 529,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 8,
+          "min_font_pt": 8.966400146484375,
+          "words": 685,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 9,
+          "min_font_pt": 5.990480899810791,
+          "words": 461,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 10,
+          "min_font_pt": 5.990480899810791,
+          "words": 341,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 11,
+          "min_font_pt": 9.962599754333496,
+          "words": 781,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 12,
+          "min_font_pt": 9.962599754333496,
+          "words": 493,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 13,
+          "min_font_pt": 9.962599754333496,
+          "words": 197,
+          "empty": false,
+          "question_marks": false
+        }
+      ]
     },
     {
       "file": "manuscript/appendix.pdf",
-      "pages": 55,
-      "sha256": "60f5ef250206ff96616816d12b664f1e71c17f2f39ce648234af002cd7846f84",
-      "minimum_embedded_font_pt": 5.97760009765625,
-      "outside_page_text": []
+      "sha256": "a767314afb5052ac079ad30202993a854898d4ad9fa95bd3d6afe142595b2bf0",
+      "page_count": 55,
+      "outside_page_text": [],
+      "pages": [
+        {
+          "page": 1,
+          "min_font_pt": 6.973800182342529,
+          "words": 196,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 2,
+          "min_font_pt": 9.962599754333496,
+          "words": 798,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 3,
+          "min_font_pt": 6.973800182342529,
+          "words": 688,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 4,
+          "min_font_pt": 6.973800182342529,
+          "words": 747,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 5,
+          "min_font_pt": 6.973800182342529,
+          "words": 832,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 6,
+          "min_font_pt": 9.962599754333496,
+          "words": 203,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 7,
+          "min_font_pt": 8.966400146484375,
+          "words": 537,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 8,
+          "min_font_pt": 8.966400146484375,
+          "words": 547,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 9,
+          "min_font_pt": 8.966400146484375,
+          "words": 305,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 10,
+          "min_font_pt": 5.97760009765625,
+          "words": 423,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 11,
+          "min_font_pt": 7.970099925994873,
+          "words": 308,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 12,
+          "min_font_pt": 8.966400146484375,
+          "words": 506,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 13,
+          "min_font_pt": 9.962599754333496,
+          "words": 344,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 14,
+          "min_font_pt": 6.370828628540039,
+          "words": 396,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 15,
+          "min_font_pt": 6.180655002593994,
+          "words": 298,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 16,
+          "min_font_pt": 5.990480899810791,
+          "words": 409,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 17,
+          "min_font_pt": 5.990480899810791,
+          "words": 428,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 18,
+          "min_font_pt": 5.990480899810791,
+          "words": 354,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 19,
+          "min_font_pt": 5.990480899810791,
+          "words": 271,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 20,
+          "min_font_pt": 5.990480899810791,
+          "words": 284,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 21,
+          "min_font_pt": 5.990480899810791,
+          "words": 259,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 22,
+          "min_font_pt": 6.180655002593994,
+          "words": 197,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 23,
+          "min_font_pt": 5.990480899810791,
+          "words": 307,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 24,
+          "min_font_pt": 6.180655002593994,
+          "words": 143,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 25,
+          "min_font_pt": 5.990480899810791,
+          "words": 133,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 26,
+          "min_font_pt": 5.990480899810791,
+          "words": 167,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 27,
+          "min_font_pt": 5.990480899810791,
+          "words": 167,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 28,
+          "min_font_pt": 5.990480899810791,
+          "words": 167,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 29,
+          "min_font_pt": 5.990480899810791,
+          "words": 269,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 30,
+          "min_font_pt": 5.990480899810791,
+          "words": 253,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 31,
+          "min_font_pt": 5.990480899810791,
+          "words": 266,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 32,
+          "min_font_pt": 5.990480899810791,
+          "words": 221,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 33,
+          "min_font_pt": 5.990480899810791,
+          "words": 214,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 34,
+          "min_font_pt": 5.990480899810791,
+          "words": 228,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 35,
+          "min_font_pt": 5.990480899810791,
+          "words": 473,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 36,
+          "min_font_pt": 5.990480899810791,
+          "words": 510,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 37,
+          "min_font_pt": 5.990480899810791,
+          "words": 491,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 38,
+          "min_font_pt": 5.990480899810791,
+          "words": 215,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 39,
+          "min_font_pt": 6.180655002593994,
+          "words": 189,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 40,
+          "min_font_pt": 6.180655002593994,
+          "words": 220,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 41,
+          "min_font_pt": 5.990480899810791,
+          "words": 487,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 42,
+          "min_font_pt": 5.990480899810791,
+          "words": 551,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 43,
+          "min_font_pt": 5.990480899810791,
+          "words": 501,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 44,
+          "min_font_pt": 5.990480899810791,
+          "words": 525,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 45,
+          "min_font_pt": 5.990480899810791,
+          "words": 535,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 46,
+          "min_font_pt": 5.990480899810791,
+          "words": 575,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 47,
+          "min_font_pt": 6.180655002593994,
+          "words": 247,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 48,
+          "min_font_pt": 5.990480899810791,
+          "words": 220,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 49,
+          "min_font_pt": 6.180655002593994,
+          "words": 291,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 50,
+          "min_font_pt": 6.180655002593994,
+          "words": 173,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 51,
+          "min_font_pt": 5.990480899810791,
+          "words": 222,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 52,
+          "min_font_pt": 5.990480899810791,
+          "words": 263,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 53,
+          "min_font_pt": 5.990480899810791,
+          "words": 399,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 54,
+          "min_font_pt": 5.990480899810791,
+          "words": 263,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 55,
+          "min_font_pt": 9.962599754333496,
+          "words": 326,
+          "empty": false,
+          "question_marks": false
+        }
+      ]
     },
     {
       "file": "manuscript/figure_book.pdf",
-      "pages": 45,
-      "sha256": "a9523410921ab0369a476c871685b43dae64f53741fb97a18585974c699335b1",
-      "minimum_embedded_font_pt": 5.990480899810791,
-      "outside_page_text": []
+      "sha256": "1a73ea7a9fa344010d1b5ae5e6932e8d9d905dbab7639f9987009d3866bbe5b1",
+      "page_count": 47,
+      "outside_page_text": [],
+      "pages": [
+        {
+          "page": 1,
+          "min_font_pt": 9.962599754333496,
+          "words": 45,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 2,
+          "min_font_pt": 6.180655002593994,
+          "words": 321,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 3,
+          "min_font_pt": 5.614020347595215,
+          "words": 477,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 4,
+          "min_font_pt": 5.990480899810791,
+          "words": 529,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 5,
+          "min_font_pt": 5.990480899810791,
+          "words": 327,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 6,
+          "min_font_pt": 5.990480899810791,
+          "words": 341,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 7,
+          "min_font_pt": 5.990480899810791,
+          "words": 423,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 8,
+          "min_font_pt": 5.990480899810791,
+          "words": 354,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 9,
+          "min_font_pt": 5.990480899810791,
+          "words": 271,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 10,
+          "min_font_pt": 5.990480899810791,
+          "words": 284,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 11,
+          "min_font_pt": 5.990480899810791,
+          "words": 262,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 12,
+          "min_font_pt": 5.990480899810791,
+          "words": 253,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 13,
+          "min_font_pt": 5.990480899810791,
+          "words": 266,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 14,
+          "min_font_pt": 5.990480899810791,
+          "words": 221,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 15,
+          "min_font_pt": 5.990480899810791,
+          "words": 214,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 16,
+          "min_font_pt": 5.990480899810791,
+          "words": 228,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 17,
+          "min_font_pt": 5.990480899810791,
+          "words": 473,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 18,
+          "min_font_pt": 5.990480899810791,
+          "words": 510,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 19,
+          "min_font_pt": 5.990480899810791,
+          "words": 491,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 20,
+          "min_font_pt": 5.990480899810791,
+          "words": 215,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 21,
+          "min_font_pt": 5.990480899810791,
+          "words": 259,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 22,
+          "min_font_pt": 6.180655002593994,
+          "words": 197,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 23,
+          "min_font_pt": 5.990480899810791,
+          "words": 307,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 24,
+          "min_font_pt": 6.180655002593994,
+          "words": 189,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 25,
+          "min_font_pt": 6.180655002593994,
+          "words": 220,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 26,
+          "min_font_pt": 6.180655002593994,
+          "words": 143,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 27,
+          "min_font_pt": 6.180655002593994,
+          "words": 168,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 28,
+          "min_font_pt": 5.990480899810791,
+          "words": 133,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 29,
+          "min_font_pt": 5.990480899810791,
+          "words": 167,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 30,
+          "min_font_pt": 5.990480899810791,
+          "words": 167,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 31,
+          "min_font_pt": 5.990480899810791,
+          "words": 167,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 32,
+          "min_font_pt": 5.990480899810791,
+          "words": 487,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 33,
+          "min_font_pt": 5.990480899810791,
+          "words": 551,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 34,
+          "min_font_pt": 5.990480899810791,
+          "words": 501,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 35,
+          "min_font_pt": 5.990480899810791,
+          "words": 525,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 36,
+          "min_font_pt": 5.990480899810791,
+          "words": 535,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 37,
+          "min_font_pt": 5.990480899810791,
+          "words": 575,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 38,
+          "min_font_pt": 6.180655002593994,
+          "words": 247,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 39,
+          "min_font_pt": 5.990480899810791,
+          "words": 220,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 40,
+          "min_font_pt": 5.990480899810791,
+          "words": 222,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 41,
+          "min_font_pt": 5.990480899810791,
+          "words": 263,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 42,
+          "min_font_pt": 5.990480899810791,
+          "words": 399,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 43,
+          "min_font_pt": 6.370828628540039,
+          "words": 391,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 44,
+          "min_font_pt": 6.180655002593994,
+          "words": 298,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 45,
+          "min_font_pt": 5.990480899810791,
+          "words": 409,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 46,
+          "min_font_pt": 5.990480899810791,
+          "words": 263,
+          "empty": false,
+          "question_marks": false
+        },
+        {
+          "page": 47,
+          "min_font_pt": 6.180655002593994,
+          "words": 291,
+          "empty": false,
+          "question_marks": false
+        }
+      ]
     }
   ],
-  "visual_review": "All 44 scientific figures individually reviewed; complete-figure colour-vision/grayscale previews inspected separately, with enlarged checks of dense panels.",
-  "colour_vision_simulations": [
-    "Machado2009 protanopia100%",
-    "Machado2009 deuteranopia100%",
-    "Machado2009 tritanopia100%"
+  "protected_primary_files": 181,
+  "protected_primary_changes": [],
+  "unchanged_presentation_files": [
+    "manuscript/figure_deck.pptx",
+    "manuscript/figure_deck.pdf",
+    "manuscript/script_zh.pdf"
   ],
-  "grayscale_limit": "Signed heatmaps require colour to distinguish direction reliably when cell labels show n; numerical tables preserve signed values.",
-  "scope": "Graphical and reproducibility checks, not clinical validity, external peer review or journal acceptance."
+  "frozen_review_packet_files": 323,
+  "frozen_packet_changes": [],
+  "frozen_independent_reports": {
+    "reports/manuscript_review/round1/R3_narrative.md": "ef578459ed104ed6b97eebf375756c462b67ca69ee40f7ffd484827624e165e1",
+    "reports/manuscript_review/round1/R2_statistics.md": "09a85916b214e6d681bb7abb2408d3498db6ce6bc23a5f06b97f24da0814fdc1",
+    "reports/manuscript_review/round1/R1_clinical.md": "60a9b33ddd4aa8de10603b26510cb65349cdaae7928e0dd60b938d4263f810ea"
+  },
+  "figure_encoding": "Equal-size patient count cells use a common labelled logarithmic count scale. No variable-size bubbles. Ordinary categorical data points are circles; trend lines are solid.",
+  "visual_review": "All five main and 41 supplementary figures viewed individually; all compiled main and appendix pages checked for layout, with enlarged checks of S3/S4 and affected captions.",
+  "colour_stress_tests": "Grayscale and full-severity Machado 2009 protanopia/deuteranopia/tritanopia previews generated for all 46 figures. Representative multi-panel treatment/heatmap/ordinal displays inspected. This is not accessibility certification.",
+  "minimum_embedded_manuscript_font_pt": {
+    "main": 5.318580150604248,
+    "appendix": 5.97760009765625,
+    "figure_book": 5.614020347595215
+  },
+  "open_author_source_requirements": "Input/reference limits are stated in Supplementary Table S5. Verified ethics and consent details remain author requirements before submission."
 }

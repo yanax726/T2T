@@ -7,6 +7,15 @@ import pandas as pd
 from scipy import stats
 
 
+def count_cells(frame, group, x, y, width=2., height=2.):
+    value = frame.copy()
+    value['cell_x'] = np.floor(value[x] / width) * width
+    value['cell_y'] = np.floor(value[y] / height) * height
+    result = value.groupby([group, 'cell_x', 'cell_y']).size().reset_index(name='count')
+    assert result['count'].sum() == len(frame)
+    return result
+
+
 def combined_moments(frame):
     rows = []
     for (target, week), group in frame.groupby(['target', 'week'], sort=True):
@@ -30,7 +39,8 @@ def run(root):
     clinical = pd.read_csv(root / 'results/tables/update_20261017/clinical/clinical_observed.csv')
     combined_moments(clinical).to_csv(public / 'clinical_overall.csv', index=False)
     private = root / 'results/tables/update_20261017/model/predictions.csv'
-    names = ['model_plot_bins.csv', 'model_agreement_bins.csv', 'model_agreement_summary.csv']
+    names = ['model_plot_bins.csv', 'model_agreement_bins.csv', 'model_agreement_summary.csv',
+             'model_count_cells.csv', 'monitoring_count_cells.csv']
     if private.exists():
         predictions = pd.read_csv(private)
         first = predictions[predictions.model.eq('unified_selected') & predictions['repeat'].eq(0)].copy()
@@ -48,6 +58,17 @@ def run(root):
                              LoA_low=bias - 1.96 * sd, LoA_high=bias + 1.96 * sd,
                              minimum=difference.min(), maximum=difference.max(), display_repeat=0))
         pd.DataFrame(rows).to_csv(public / names[2], index=False)
+        count_cells(first, 'visit_week', 'observed', 'prediction').to_csv(public / names[3], index=False)
+        from .model_display_evidence_20261018 import paired_visits
+        changes = []
+        for start, end in [(0, 12), (0, 24), (12, 24)]:
+            pair = paired_visits(first, start, end)
+            pair['observed_change'] = pair.observed - pair.observed_start
+            pair['predicted_change'] = pair.prediction - pair.prediction_start
+            pair['window'] = f'W{start}_W{end}'
+            changes.append(pair)
+        count_cells(pd.concat(changes, ignore_index=True), 'window',
+                    'observed_change', 'predicted_change').to_csv(public / names[4], index=False)
     else:
         for name in names:
             if not (public / name).is_file():
@@ -59,6 +80,26 @@ def run(root):
         assert actual.reindex(counts.index).eq(counts).all()
     summary = pd.read_csv(public / names[2]).set_index('week')
     assert summary.n.reindex(counts.index).eq(counts).all() and summary.display_repeat.eq(0).all()
+    actual = pd.read_csv(public / names[3]).groupby('visit_week')['count'].sum()
+    assert actual.reindex(counts.index).eq(counts).all()
+    safety_path = root / 'results/tables/update_20261017/clinical/restricted/safety_source_ledger.csv'
+    safety_public = public / 'safety_documentation_windows.csv'
+    if safety_path.exists():
+        notes = pd.read_csv(safety_path)
+        coverage = pd.read_csv(root / 'results/tables/update_20261017/clinical/safety_documentation_summary.csv')
+        rows = []
+        for item in coverage.itertuples():
+            group = notes[notes.treatment.eq(item.initial_treatment)]
+            through24 = group[group.visit_week.le(24)]
+            n24 = int(through24.patient_uid.nunique())
+            rows.append(dict(treatment=item.initial_treatment, n_initial=int(item.n_patients),
+                             n_with_note_through24=n24, n_without_note_through24=int(item.n_patients)-n24,
+                             n_with_note_all_followup=int(group.patient_uid.nunique()),
+                             n_note_records_through24=len(through24),
+                             adjudicated_event_incidence_available=False))
+        pd.DataFrame(rows).to_csv(safety_public, index=False)
+    elif not safety_public.exists():
+        raise FileNotFoundError('Supplied aggregate safety documentation table is required.')
 
 
 if __name__ == '__main__':

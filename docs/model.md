@@ -63,3 +63,5 @@ The final coefficients were fitted to 241 W0/W12 visits from 156 patients after 
 
 PP-NRS, adult DLQI and recorded IGA have separately fitted formulas and parameters in `results/tables/update_20261017/model/auxiliary_targets/`. They do not inherit the EASI performance and did not show comparable accuracy with this restricted panel.
 
+
+A training-only reference-consistency sensitivity is reported in Supplementary Table S4 and [the aggregate directory](../results/tables/update_20261017/reference_sensitivity/). It repeats fitting within the original patient folds after excluding ten discrepant development visits. It does not change the frozen coefficients, adjudicate either clinical reference, or replace the primary performance estimates.

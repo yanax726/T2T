@@ -28,7 +28,7 @@ Run commands from the repository root. Except for the demo, output paths match t
 | `./run.sh figures` | Current aggregate tables, style and parameters | PDF/SVG/PNG figures, `manuscript/figure_catalog.json`, figure source data and layout checks |
 | `./run.sh manuscript` | Catalogue, aggregate tables, manuscript sections and bibliography | Main, appendix and figure-book TeX/PDF; requires TeX |
 | `./run.sh rebuild` | Same public inputs as the preceding two rows | Runs figures, then manuscript compilation; does not refit models |
-| `./run.sh analyse` | Exact authorized snapshots in `config/reproduction_inputs.json` | Recomputes clinical, regional, EASI, rounding, published-formula sensitivity, auxiliary-target and display aggregates, then rebuilds figures and manuscript |
+| `./run.sh analyse` | Exact authorized snapshots in `config/reproduction_inputs.json` | Recomputes clinical, regional, EASI, rounding, published-formula sensitivity, auxiliary-target, reference-exclusion sensitivity and display aggregates, then rebuilds figures and manuscript |
 
 The optional local `guide` command concerns presentation notes and requires local authoring materials; those materials are not distributed with the research repository.
 

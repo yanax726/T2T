@@ -41,7 +41,7 @@ Local demo, tests and isolated aggregate rebuilding passed. An optional [GitHub 
 
 ## Version, citation and license
 
-This research snapshot is version [2026.10.18-rc2](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+This research snapshot is version [2026.10.18-rc3](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
 
 Original code, data and manuscript materials have no assigned reuse license. The existing Apache-2.0 terms for the third-party panel-alignment helper are retained. See [license status](LICENSE_STATUS.md) and [third-party notice](NOTICE.md).
 

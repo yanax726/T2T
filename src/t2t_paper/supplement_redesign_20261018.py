@@ -98,14 +98,18 @@ def heat(ax, values, rowlabels, collabels, title, lim=1, text=None, counts=None)
 
 def count_strip(ax, weeks, data, key='n', txkey='treatment', y=-.30, rowgap=.12):
     """Aligned per-visit denominators, never pooled across outcomes or groups."""
+    compact = len(weeks)>1 and min(np.diff(weeks))<4
+    transform = ax.transAxes if compact else ax.get_xaxis_transform()
+    positions = [(k+.5)/len(weeks) for k in range(len(weeks))] if compact else weeks
     for k,w in enumerate(weeks):
-        ax.text((k+.5)/len(weeks),y+rowgap,f'W{w}',transform=ax.transAxes,ha='center',va='center',fontsize=6.3)
+        ax.text(positions[k],y+rowgap,f'W{w}',transform=transform,ha='center',va='center',fontsize=6.3)
+    ax.text(-.02,y+rowgap,'n',transform=ax.transAxes,ha='right',va='center',fontsize=6.3)
     for j,tx in enumerate(ARMS):
         z=data[data[txkey].eq(tx)].set_index('week')
         ax.text(-.02,y-j*rowgap,['D','A100','A200'][j],transform=ax.transAxes,ha='right',va='center',fontsize=6.3,color='#24323C')
         for k,w in enumerate(weeks):
             value=z.loc[w,key] if w in z.index else np.nan
-            ax.text((k+.5)/len(weeks),y-j*rowgap,str(int(value)) if pd.notna(value) else '—',transform=ax.transAxes,ha='center',va='center',fontsize=6.3,color='#24323C')
+            ax.text(positions[k],y-j*rowgap,str(int(value)) if pd.notna(value) else '—',transform=transform,ha='center',va='center',fontsize=6.3,color='#24323C')
 
 
 def window_header(fig, label, y=.98):
@@ -138,9 +142,11 @@ def finish(fig, number, title, caption, sources, root, base, role, x, y, sample)
 
 def clinical_courses(root, base):
     folder=root/'results/tables/update_20261017/clinical';source=folder/'endpoint_rates.csv';d=pd.read_csv(source)
-    fig,axes=grid(5,2,220,left=.12,top=.945,bottom=.14,hspace=1.22,wspace=.42)
+    targets=list(TARGETS)+['PP_NRS_drop4']
+    labels=list(TARGET_LABELS)+['PP-NRS decrease ≥4']
+    fig,axes=grid(4,3,225,left=.10,top=.945,bottom=.13,hspace=1.30,wspace=.50)
     legend(fig,y=.995)
-    for ax,key,title in zip(axes,TARGETS,TARGET_LABELS):
+    for ax,key,title in zip(axes,targets,labels):
         weeks=[2,4,12,24] if key=='PP_NRS_le4' else [4,12,24]
         subset=d[d.target.eq(key)&d.week.isin(weeks)]
         for j,tx in enumerate(ARMS):
@@ -148,8 +154,9 @@ def clinical_courses(root, base):
             line(ax,z.week+(j-1)*.22,z.rate*100,z.ci_low*100,z.ci_high*100,COLORS[j])
         ax.set(title=title,ylabel='Attainment (%)',xticks=weeks,ylim=(-3,103),yticks=[0,50,100]);ax.grid(axis='y',color='#E7EBED',lw=.4)
         count_strip(ax,weeks,subset,key='n_evaluable',y=-.48,rowgap=.13)
+    axes[-1].set_visible(False)
     fig.text(.55,.012,'Horizontal axis: week · Below each axis: evaluable n by D / A100 / A200 · Points: rate and Wilson 95% CI',ha='center',fontsize=6.3)
-    finish(fig,1,'Ten clinical targets over their specified visits','Observed proportions with Wilson 95% confidence intervals, by initial treatment; the count strips give the available-outcome denominator at every point, in D/A100/A200 order. Only PP-NRS ≤4 is shown at W2. Adult DLQI requires age ≥18; EASI90 requires positive observed baseline EASI. Missing outcomes are unknown, not failures. Connecting lines describe observed visit summaries and do not estimate fixed-dose causal effects.',[source],root,base,'Ten targets including EASI90; shared scales and explicit per-point evaluable counts','Specified week','Observed proportion; Wilson 95% CI','Endpoint-specific available patients')
+    finish(fig,1,'Clinical response and absolute-score targets','Observed proportions with Wilson 95% confidence intervals, by initial treatment. Count strips give the endpoint-specific evaluable denominator at each visit in D/A100/A200 order. Only PP-NRS ≤4 is evaluated at W2. The four-point PP-NRS decrease requires observed baseline PP-NRS ≥4 and an observed follow-up value. EASI percentage responses require a positive observed baseline. Adult DLQI requires age ≥18. Missing outcomes are unknown, not failures. Connecting lines describe observed visit summaries; the patient set can differ between visits. Initial treatment is retained after regimen changes.',[source],root,base,'Eleven specified targets, including four-point itch response, with explicit eligibility and denominators','Specified week','Observed proportion; Wilson 95% CI','Endpoint-specific evaluable patients')
     obs=pd.read_csv(folder/'clinical_observed.csv');adj=pd.read_csv(folder/'clinical_trajectory_adjusted.csv')
     overall_source=root/'manuscript/source_data/clinical_overall.csv'
     overall=pd.read_csv(overall_source)
@@ -175,7 +182,7 @@ def clinical_courses(root, base):
                 else:
                     count_strip(ax,weeks if col==1 else weeks[1:],obs[obs.target.eq(var)] if col==1 else adj[adj.target.eq(var)],key='n' if col==1 else 'n_observed',y=-.41,rowgap=.13)
         fig.text(.55,.02,'Below axes: available n (D / A100 / A200 for treatment columns); adjusted counts are observed outcomes',ha='center',fontsize=6.3)
-        finish(fig,number,'Observed and baseline-adjusted '+', '.join(DISPLAY[x].replace('\n',' ') for x in variables),'Each row is one outcome. Left, overall available-case mean and 95% t confidence interval, exactly combined from group moments. Middle, initial-treatment-specific median and interquartile range. Right, overlap-weighted adjusted trajectories and patient-cluster robust 95% confidence intervals, controlling baseline outcome, age, sex, BMI and centre. IgE/eosinophils use log(1+x) models and back-transformation; these adjusted estimates are not arithmetic means. Visit composition may change. Only investigator-specified visits are shown; no causal current-dose effect is claimed. Exact sample sizes and contrasts accompany the source tables.',[overall_source,folder/'clinical_observed.csv',folder/'clinical_trajectory_adjusted.csv'],root,base,'Rows are outcomes; columns separate three different estimands','Specified week','Outcome in original recorded scale','Available observations per visit; adult DLQI')
+        finish(fig,number,'Observed and baseline-adjusted '+', '.join(DISPLAY[x].replace('\n',' ') for x in variables),'Each row is one outcome. Left, overall available-case mean and 95% t confidence interval, exactly combined from group moments. Middle, initial-treatment-specific median and interquartile range. Right, overlap-weighted adjusted trajectories and patient-cluster robust 95% confidence intervals, controlling baseline outcome, age, sex, BMI and centre.'+(' IgE/eosinophils use log(1+x) models and back-transformation; these adjusted estimates are not arithmetic means.' if number==4 else '')+' Visit composition may change. Only investigator-specified visits are shown; no causal current-dose effect is claimed. Exact sample sizes and contrasts accompany the source tables.',[overall_source,folder/'clinical_observed.csv',folder/'clinical_trajectory_adjusted.csv'],root,base,'Rows are outcomes; columns separate three different estimands','Specified week','Outcome in original recorded scale','Available observations per visit; adult DLQI')
 
 
 def molecular_panels(root,base):
@@ -223,8 +230,8 @@ def molecular_panels(root,base):
     source=folder/'molecular_regional_baseline_correlations.csv';d=pd.read_csv(source);regions=['head_neck','upper_limb','trunk','lower_limb']
     v=d.pivot(index='marker',columns='region',values='rho').reindex(index=MARKERS,columns=regions);q=d.pivot(index='marker',columns='region',values='q').reindex(index=MARKERS,columns=regions)
     fig,axes=grid(1,1,165,left=.18,top=.92,bottom=.18);texts=[[f'ρ={v.iloc[i,j]:.2f}'+('*' if q.iloc[i,j]<.05 else '') for j in range(4)] for i in range(23)]
-    im=heat(axes[0],v,MARKERS,['Head/neck','Upper limbs','Trunk','Lower limbs'],'Before treatment: regional EASI and serum markers',1,texts);colorbar(fig,im,'Colour and cell value: Spearman ρ · ×: not estimable · * FDR q<.05')
-    finish(fig,14,'Baseline molecular associations with four skin regions','Observed baseline Spearman correlations pooled before systemic treatment, using source-consistent regional EASI and matched serum measurements. Values are printed in cells; stars indicate BH q<0.05. Regional records must be complete, within theoretical bounds and sum to total EASI within 0.01. Counts and bootstrap confidence intervals are in the source table. Serum association alone does not establish site-specific pathogenesis.',[source],root,base,'Exact signed correlations on one common matrix','Four regional EASI contributions','All 23 markers','Matched source-consistent baseline records')
+    im=heat(axes[0],v,MARKERS,['Head/neck','Upper limbs','Trunk','Lower limbs'],'Baseline regional EASI and serum markers',1,texts);colorbar(fig,im,'Colour and cell value: Spearman ρ · ×: not estimable · * FDR q<.05')
+    finish(fig,14,'Baseline molecular associations with four skin regions','Observed baseline Spearman correlations pooled across initial-treatment groups, using source-consistent regional EASI and matched serum measurements. Values are printed in cells; stars indicate BH q<0.05. Regional records must be complete, within theoretical bounds and sum to total EASI within 0.01. Counts and bootstrap confidence intervals are in the source table. Serum association alone does not establish site-specific pathogenesis.',[source],root,base,'Exact signed correlations on one common matrix','Four regional EASI contributions','All 23 markers','Matched source-consistent baseline records')
 
 
 def clinical_paths(root,base):
@@ -245,7 +252,7 @@ def clinical_paths(root,base):
         ns=[int(z[z.week.eq(w)].n.iloc[0]) for w in weeks]
         ax.set(title=title,xticks=range(len(weeks)),xticklabels=[f'W{w}\nn={n}' for w,n in zip(weeks,ns)],ylim=(0,100),ylabel='Recorded grades (%)')
     fig.legend(*axes[0].get_legend_handles_labels(),loc='upper center',bbox_to_anchor=(.53,.92),ncol=6,frameon=False)
-    window_header(fig,'Recorded IGA: instrument identity unconfirmed',y=.99)
+    window_header(fig,'Recorded IGA distribution',y=.99)
     fig.text(.54,.04,'Labels inside large segments: grade: patient count · Small segments retain grade colour; all counts in source',ha='center',fontsize=6.3)
     finish(fig,15,'Recorded IGA composition at four visits','Each bar is the recorded IGA composition among evaluable patients, whose total n is printed below the bar. The ordered blue scale encodes recorded grade 0–5, not treatment; borders distinguish grade 0 from the background. Labels in segments occupying at least 10% show grade and exact patient count; all grade counts remain in source data. Grade 5 remains as recorded because instrument identity is unresolved; no conversion to a standard 0–4 scale was made. EASI90 is shown with the other clinical targets in Figure S1.',[folder/'IGA_composition.csv'],root,base,'Three matched IGA-only facets; explicit unverified instrument and six identifiable grades','Specified visit','Proportion of available patients','IGA n printed per bar and counts in large segments')
     paths=pd.read_csv(folder/'clinical_paths_fixed_triplets.csv')
@@ -318,7 +325,7 @@ def treatment_contrasts(root,base):
             fig,axes=grid(1,1,85,left=.27,top=.80,bottom=.22);ax=axes[0]
             for j,(data,col) in enumerate([(raw,CONTROL),(adj,CURRENT)]):
                 z=data[data.week.eq(week)&data.target.eq('PP_NRS_le4')].set_index('comparison').reindex(comparisons);forest(ax,z,np.arange(4)+(j-.5)*.2,col)
-            ax.axvline(0,color='#AAB2B8',lw=.7);ax.set(yticks=range(4),yticklabels=labels,ylim=(3.6,-.6),xlim=(-1.03,1.03),xlabel='Difference in PP-NRS ≤4 attainment',title='Week 2: the only prespecified target')
+            ax.axvline(0,color='#AAB2B8',lw=.7);ax.set(yticks=range(4),yticklabels=labels,ylim=(3.6,-.6),xlim=(-1.03,1.03),xlabel='Difference in PP-NRS ≤4 attainment',title='Week 2 itch target')
         else:
             fig,axes=grid(1,4,145,left=.25,top=.88,bottom=.15,wspace=.18)
             for ax,comp,title in zip(axes,comparisons,labels):
@@ -327,7 +334,7 @@ def treatment_contrasts(root,base):
                 ax.axvline(0,color='#AAB2B8',lw=.7);ax.set(yticks=range(len(targets)),yticklabels=names if ax==axes[0] else ['']*len(names),ylim=(len(targets)-.4,-.6),xlim=(-1.03,1.03),xticks=[-1,0,1],xlabel='Risk difference',title=title);ax.grid(axis='y',lw=.35,color='#EDF0F2')
         window_header(fig,f'Week {week}: initial-treatment target contrasts',y=.98 if week==2 else .995)
         legend(fig,['Observed','Baseline adjusted'],[CONTROL,CURRENT],y=.935 if week==2 else .965,markers=['o','o']);fig.text(.56,.035,'Negative favours second group     |     Positive favours first group',ha='center',fontsize=6.3)
-        finish(fig,23+k,f'Week {week}: all initial-treatment target contrasts','Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. D denotes dupilumab; A100/A200 the initial abrocitinib doses. Pooled abrocitinib is supplementary. W2 includes PP-NRS ≤4 only. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.',[folder/'endpoint_tests.csv',folder/'endpoint_weighted_contrasts.csv'],root,base,'W2 compressed into one purposeful comparison forest; later visits all endpoints','Attainment risk difference; nominal 95% CI','Four contrasts or complete target list','Endpoint-specific evaluable patients; weighted ESS in source')
+        finish(fig,23+k,f'Week {week}: all initial-treatment target contrasts','Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. D denotes dupilumab; A100/A200 the initial abrocitinib doses. Pooled abrocitinib is supplementary. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.',[folder/'endpoint_tests.csv',folder/'endpoint_weighted_contrasts.csv'],root,base,'W2 compressed into one purposeful comparison forest; later visits all endpoints','Attainment risk difference; nominal 95% CI','Four contrasts or complete target list','Endpoint-specific evaluable patients; weighted ESS in source')
 
 
 def model_comparisons(root,base):
@@ -455,13 +462,14 @@ def actual_exposure(root,base):
     cax=axes[0].inset_axes([.35,.085,.40,.018],transform=fig.transFigure)
     cb=fig.colorbar(im,cax=cax,orientation='horizontal',ticks=[0,.5,1]);cb.ax.set_xticklabels(['0%','50%','100%']);cb.ax.set_title('Proportion of full initial-treatment group',fontsize=6.3,pad=4)
     fig.text(.55,.03,'n: patients · u: subset with uncertain visit-boundary timing · All recorded regimen labels retained',ha='center',fontsize=6.3)
-    fig.text(.55,.009,'† W0 source conflicts: two A100 patients recorded at 200 mg; one A200 patient at 100 mg. Classification unresolved.',ha='center',fontsize=6.3)
+    fig.text(.55,.009,'† Initial-label/dose conflict, n=3; source labels retained',ha='center',fontsize=6.3)
     finish(fig,41,'Recorded regimens evolve after the initial treatment assignment','Within each initial-treatment group, the table-like heatmap shows all recorded regimens at W0/W12/W24. Cell n values are patient counts; u denotes the subset with uncertain timing relative to the visit boundary. Blue intensity is the proportion of the full initial-treatment group, with a fixed 0–100% scale. Zero cells are genuine zero counts. Unknown regimens, uncertain stop timing and stopping/switching are retained; all 163 patients remain represented. W0 is the recorded starting regimen and must not be read as prior systemic exposure. Daggers flag three unresolved source conflicts at W0: two patients assigned to the initial A100 source group have a recorded 200 mg regimen and one assigned to A200 has a recorded 100 mg regimen. The source group and recorded regimen are both preserved; these are not presumed switches. Recorded 75 mg and 150 mg labels are preserved without assuming that they mean alternate-day 100 mg or 200 mg. This aggregate display is not an individual transition flow and does not resolve whether a treatment decision preceded or followed the outcome assessment.',[source],root,base,'All recorded dose/interval categories and uncertainty visible; no invented transitions','W0/W12/W24','Recorded dose/interval or unresolved state','All initial-group patients, including unknown exposure')
 
 
 def absolute_agreement(root,base):
+    from . import countmaps
     folder=root/'manuscript/source_data';bins=pd.read_csv(folder/'model_agreement_bins.csv');summary=pd.read_csv(folder/'model_agreement_summary.csv').set_index('week')
-    fig,axes=grid(1,3,112,left=.12,top=.80,bottom=.22,wspace=.43)
+    fig,axes=grid(1,3,118,left=.12,top=.82,bottom=.27,wspace=.43)
     lower=np.floor(min(bins.difference_bin.min(),summary.LoA_low.min())/5)*5-1
     upper=np.ceil(max(bins.difference_bin.max(),summary.LoA_high.max())/5)*5+1
     for j,(ax,week) in enumerate(zip(axes,TIMES)):
@@ -471,13 +479,44 @@ def absolute_agreement(root,base):
         for limit,label,offset,va in [(r.LoA_low,'Lower 95% LoA',-10 if week==0 else -3,'top'),(r.LoA_high,'Upper 95% LoA',7 if week==12 else 3,'bottom')]:
             ax.axhline(limit,color=NEUTRAL,lw=.9)
             ax.annotate(label,(.98,limit),xycoords=ax.get_yaxis_transform(),xytext=(0,offset),textcoords='offset points',ha='right',va=va,fontsize=6.3,color='#59646A')
-        ax.scatter(z.mean_bin,z.difference_bin,s=8+8*np.sqrt(z['count']),alpha=1,color=TIME_COLORS[j],marker=TIME_MARKERS[j],linewidths=.45,edgecolors=marker_outline(TIME_COLORS[j]))
+        z=z.assign(cell_x=z.mean_bin-.5,cell_y=z.difference_bin-.25)
+        image=countmaps.draw(ax,z,'cell_x','cell_y',width=1.,height=.5,maximum=int(bins['count'].max()))
         ax.set(xlim=(-1,max(10,z.mean_bin.max()+2)),ylim=(lower,upper),xlabel='Mean of observed and estimated EASI',ylabel='Estimated − observed EASI',title=f'Week {week} (n={int(r.n)})\nBias {r.bias:+.2f}; limits {r.LoA_low:.1f} to {r.LoA_high:.1f}')
     fig.text(.55,.935,'Coloured line: mean bias · Grey lines: 95% limits of agreement · Shading: ±2 EASI',ha='center',va='top',fontsize=6.5)
-    handles=[plt.scatter([],[],s=8+8*np.sqrt(n),color=NEUTRAL,label=f'{n} '+('patient' if n==1 else 'patients')) for n in [1,5,10]]
-    fig.legend(handles=handles,loc='upper center',bbox_to_anchor=(.55,.08),ncol=3,frameon=False)
-    window_header(fig,'First outer repetition · Positions binned (mean: 1 EASI; difference: 0.5 EASI)',y=.995)
-    finish(fig,42,'Individual agreement across the full range of EASI','First outer-repetition Bland–Altman displays, with prediction minus observed EASI on the vertical axis and their mean horizontally. Symbol area reflects binned patient counts; display coordinates are rounded to one point horizontally and half a point vertically. Coloured lines show mean bias; grey lines labelled Upper/Lower 95% LoA are bias ±1.96 SD (limits of agreement, not confidence intervals). The common vertical scale retains every observed error and both limits. Shading marks ±2 points for reading the plot, not a prespecified equivalence boundary. Negative errors are underestimates. W0/W12 predictions are held out by patient; W24 is within-cohort temporal application after previous inspection. The primary performance table averages both outer repetitions and should not be confused with these single-repetition display statistics.',[folder/'model_agreement_bins.csv',folder/'model_agreement_summary.csv'],root,base,'Restore complementary size-dependent error evidence; all errors and agreement limits retained','Mean observed/estimated EASI','Estimated minus observed EASI','First-repetition held-out patient predictions, n152/89/75')
+    countmaps.colorbar(fig,image,fig.add_axes([.38,.095,.32,.025]),int(bins['count'].max()))
+    window_header(fig,'Individual agreement · first outer repetition',y=.995)
+    finish(fig,42,'Individual agreement across the range of EASI','Bland–Altman count maps from the first outer repetition. Each equal-size cell spans one EASI point horizontally and half a point vertically; colour gives patient count on the labelled logarithmic scale. All 152/89/75 patients at W0/W12/W24 are retained. The vertical axis is estimated minus observed EASI; negative values indicate underestimation. Coloured horizontal lines show mean bias. Grey labelled lines are 95% limits of agreement (mean bias ±1.96 error SD), not confidence intervals. The common vertical scale contains every error and both limits. The ±2-point shaded band is a reading guide, not a validated equivalence margin. W0/W12 predictions are patient-held-out; W24 is same-cohort temporal application. Table 2 gives primary metrics averaged after scoring both repetitions.',[folder/'model_agreement_bins.csv',folder/'model_agreement_summary.csv'],root,base,'Equal-size count cells replace bubble sizes; individual-error range and agreement limits retained','Mean observed/estimated EASI','Estimated minus observed EASI','First-repetition held-out patient predictions, n152/89/75')
+
+
+def associated_response_depth(root,base):
+    folder=root/'results/tables/update_20261017/clinical'
+    source=folder/'molecular_clinical_change_correlations.csv'
+    associations=pd.read_csv(source)
+    selected=associations[associations.outcome.eq('easi_total') & associations.q.lt(.05)]
+    expected={('TNF-alpha',0,24),('TSLP',0,24)}
+    assert set(selected[['marker','start','end']].itertuples(index=False,name=None))==expected
+    depth_source=folder/'doctor_stratified_response_depth.csv'
+    depth=pd.read_csv(depth_source)
+    fig,axes=grid(2,3,158,left=.12,top=.90,bottom=.13,wspace=.50,hspace=.72)
+    for row,marker in enumerate(['TNF-alpha','TSLP']):
+        row_data=depth[depth.marker.eq(marker)&depth.start.eq(0)&depth.end.eq(24)&depth.outcome.eq('easi_total')]
+        limits=row_data[['mean_change','ci_low','ci_high']].to_numpy(dtype=float)
+        limits=limits[np.isfinite(limits)]
+        lo,hi=min(0,float(limits.min())),max(0,float(limits.max()))
+        margin=max(.1,.08*(hi-lo))
+        for j,tx in enumerate(ARMS):
+            ax=axes[row*3+j]
+            bands=['[-inf, 50.0)','[50.0, 75.0)','[75.0, 90.0)','[90.0, inf)']
+            z=depth[depth.marker.eq(marker)&depth.treatment.eq(tx)&depth.start.eq(0)&depth.end.eq(24)&depth.outcome.eq('easi_total')].set_index('band').reindex(bands)
+            if len(z)!=4:
+                raise ValueError('All four declared EASI response categories are required.')
+            x=np.arange(4)
+            line(ax,x,z.mean_change,z.ci_low,z.ci_high,COLORS[j])
+            ax.axhline(0,color='#B9C2C7',lw=.6)
+            ax.set(title=marker+' / '+LABELS[j],xticks=x,
+                   xticklabels=[f'{lab}\nn={int(n)}' for lab,n in zip(['<50','50–<75','75–<90','≥90'],z.n)],
+                   xlabel='EASI improvement category (%)',ylabel='Mean paired log₂ change',ylim=(lo-margin,hi+margin))
+    finish(fig,43,'EASI-associated molecular changes across response depth','Exploratory descriptive plots for every marker whose change–EASI association met q<0.05 in the complete molecular–clinical test family (23 markers, five outcomes, three treatments and three windows). Both selected markers arise from W0–W24. Selection used the association family, not tests performed on these categories. All three initial treatments are shown. Points and available 95% t intervals summarize within-patient log₂ concentration changes in mutually exclusive observed EASI-improvement categories; counts are printed below each category. Connecting lines join ordered categories, not visits. Sparse groups with fewer than five pairs are descriptive; absent intervals are not fabricated. The source tables retain all associations, including non-significant results. These same-data descriptions are not independent validation.',[source,depth_source],root,base,'Complete EASI-associated marker selection from the declared family; descriptive ordered response categories','Mutually exclusive EASI improvement category','Paired log2 concentration change','Marker, treatment and response-category-specific paired patients')
 
 
 def run(root,base=None):
@@ -505,9 +544,10 @@ def run(root,base=None):
     monitoring_classification(root,base)
     actual_exposure(root,base)
     absolute_agreement(root,base)
+    associated_response_depth(root,base)
     report=root/'reports/update_20261018/supplement_redesign';report.mkdir(parents=True,exist_ok=True)
     pd.DataFrame(DESIGNS).sort_values('id',key=lambda x:x.str.extract(r'(\d+)')[0].astype(int)).to_csv(report/'design_and_source_map.csv',index=False)
-    actual={x['id'] for x in DESIGNS};expected={f'FigureS{i}' for i in range(1,39) if i not in (20,36)}|{'FigureS41','FigureS42'}
+    actual={x['id'] for x in DESIGNS};expected={f'FigureS{i}' for i in range(1,39) if i not in (20,36)}|{'FigureS41','FigureS42','FigureS43'}
     if actual!=expected:raise AssertionError(f'Supplement coverage differs: {actual^expected}')
     return DESIGNS
 

@@ -30,7 +30,7 @@ BASE_FILES = [
     'docs/ci/public-checks.yml',
     'requirements.txt', 'requirements.lock.txt',
     'config/palette_v4_registry.json', 'config/paper_style.json', 'config/paper_figure_plan.json', 'config/figure_identity_map.json',
-    'config/marker_registry.csv', 'config/reproduction_inputs.json',
+    'config/marker_registry.csv', 'config/reproduction_inputs.json', 'config/clinical_framework.json',
     'config/unified_model_20261017.json', 'config/unified_bsa_three_v1_20261017.json',
     'config/auxiliary_targets_20261017.json',
     'examples/unified_easi_input.csv', 'examples/unified_easi_log2_input.csv',
@@ -45,6 +45,7 @@ ANALYSIS_MODULES = [
     'proposal_closure_20261002', 'update_20261002_overlap', 'update_20261002_analysis',
     'unified_model_20261017', 'rounding_20261017',
     'published_clipping_sensitivity_20261017', 'unified_bsa_three_calculator',
+    'reference_sensitivity_20261018',
     'auxiliary_targets_20261017', 'auxiliary_targets_calculator_20261017',
 ]
 PAPER_MODULES = [
@@ -53,12 +54,16 @@ PAPER_MODULES = [
     'redesign_evidence_20261018', 'cohort_flow_20261018',
     'model_display_evidence_20261018', 'balance_support_20261018',
     'plot_source_aggregates_20261018',
-    'revision_checks_20261018',
+    'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018',
 ]
 FINAL_QA_REPORTS = [
     'reports/update_20261018/revision2/statistical_checks_manifest.json',
     'reports/figure_quality/verification.json',
     'reports/figure_quality/public_rebuild.json',
+    'reports/figure_quality/public_rebuild_logs_v5/demo.log',
+    'reports/figure_quality/public_rebuild_logs_v5/test.log',
+    'reports/figure_quality/public_rebuild_logs_v5/rebuild.log',
+    'reports/figure_quality/public_rebuild_logs_v5/restricted_preflight.log',
 ]
 REPORT_FILES = [
     'clinical/dependency_contract.json', 'clinical/replay_verification.json',

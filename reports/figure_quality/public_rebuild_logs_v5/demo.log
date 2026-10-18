@@ -1,0 +1,5 @@
+bsa,CCL17,CCL26,IL-5,EASI_estimate
+10,1024,128,2,6.704503270491142
+0,1024,128,2,0.0
+PASS: 2 synthetic rows match expected output (absolute tolerance 1e-12).
+Calculator runtime: 0.030 seconds. Output: results/demo/unified_easi_output.csv

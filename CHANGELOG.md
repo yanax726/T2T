@@ -2,6 +2,13 @@
 
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
+## 2026.10.18-rc3
+
+- Organize the manuscript around the clinical framework, three-group clinical course, complete serum panel, EASI estimation and individual response monitoring.
+- Use equal-size count cells instead of variable-area bubbles; display equation coefficients in Methods.
+- Add the training reference-exclusion sensitivity, weighted missing-outcome bounds, safety-documentation windows and input/reference specifications.
+- Retain the primary formula, original results and all numerical controls. The earlier local presentation is not updated in this manuscript revision.
+
 ## 2026.10.18-rc2
 
 - Provide a documented synthetic calculator demonstration and expected numerical output.

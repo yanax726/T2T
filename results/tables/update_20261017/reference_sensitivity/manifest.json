@@ -1,0 +1,194 @@
+{
+  "status": "PASS",
+  "purpose": "robustness to training-only reference exclusion, not corrected truth",
+  "source_hashes": {
+    "src/cytot2t/curation/reference_sensitivity_20261018.py": "bbd5a229b08c5f7ceabaf2c3d99bfbd8524ee6a339b893fb00dd27069e86757b",
+    "config/unified_model_20261017.json": "1f04c595f962c2e51203ef3bebff4941acbfbe24325da981d9bd1fd5ccee2ff5",
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "results/tables/update_20261017/model/predictions.csv": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+    "src/cytot2t/curation/unified_model_20261017.py": "092478679baf1e3ac0332e0a3bad665f3a9084f63f091c42d9efec7d9e8a476a"
+  },
+  "protected_primary_hashes": {
+    "results/tables/update_20261017/model/all_candidate_formulas.json": "73ed8fff609c200742d14379c3b72f0deab0e4eb5bf3cfe11bcf785d50c69e67",
+    "results/tables/update_20261017/model/assay_input_reconciliation.csv": "1d068ae27678c495dc2b4f4deeeb95dfd3870c7110949a17892fc5d49716a222",
+    "results/tables/update_20261017/model/assay_sensitivity_comparison.csv": "c55138331eb42da924c3c72051bfbad64a215d21d749c9c487bc24e9c09af4f7",
+    "results/tables/update_20261017/model/assay_sensitivity_fit_audit.csv": "ab5aeb55639ba79f54051633a37e0a1728ff82055b6edc784780e15bbf88a3a2",
+    "results/tables/update_20261017/model/assay_sensitivity_metrics.csv": "d50d651772fc985e94212720848f512da355e658639b4bde58b1f3a647b66a70",
+    "results/tables/update_20261017/model/assay_sensitivity_predictions_private.csv": "e1f9ccb99161334ce73c6bd2524d9270174212f0c2578beb9770534389faf924",
+    "results/tables/update_20261017/model/assay_software_boundary_coverage.csv": "8855c3e92b771fd5200315666882418e6b94477016f28daa839a9ef437890122",
+    "results/tables/update_20261017/model/auxiliary_targets/IGA_confusion_by_repeat.csv": "b06986901a3fc6d6a14512a74746b4ba84d92167b9e963da5f4f13b0f9b49c53",
+    "results/tables/update_20261017/model/auxiliary_targets/cohort_flow.csv": "fd049d2b2ce9ae31a8b01e6b4227c9df3b2fab9baf00c9608cb8a0eaf1c76218",
+    "results/tables/update_20261017/model/auxiliary_targets/example_dlqi.csv": "ff72802b60dd57ef4c85bc6d13c9216aa42b0b05600cda15bf59739ec0e7e099",
+    "results/tables/update_20261017/model/auxiliary_targets/example_iga.csv": "5c5d1f597930e72e36e7ea640465e6dea79b3e09a58e3b54e552a1c853df927c",
+    "results/tables/update_20261017/model/auxiliary_targets/example_pp_nrs.csv": "631e74b6814091fd7f2a2d553ef125263b95ca1f7f3a79c12b10a202d668c49b",
+    "results/tables/update_20261017/model/auxiliary_targets/fit_audit.csv": "d3437dfed36757a7972be60cdd9f628df5b43adc6b7c40450956bcc3bafeb947",
+    "results/tables/update_20261017/model/auxiliary_targets/fit_audit_private.csv": "898bd1e2d20c9ece2eb04bbcf37c37cf3ff8939c628f5850d15c44abcddac2bc",
+    "results/tables/update_20261017/model/auxiliary_targets/formula_dlqi.json": "1720cf0d62305a63f19d3ab7630b985ca7b8fde1cbf46190110a131cb489ea7d",
+    "results/tables/update_20261017/model/auxiliary_targets/formula_iga.json": "1d507c8b7293424fa35369e56a23e9434c86654877dea34e8352abff45ef4291",
+    "results/tables/update_20261017/model/auxiliary_targets/formula_pp_nrs.json": "7582a8964d327b0b273a7024ac2c862067450f9541a3f76bbcc0636f7eb3d284",
+    "results/tables/update_20261017/model/auxiliary_targets/full_development_selection_dlqi.csv": "290bc559a9519fc20254bb42a5bb425162f0efcd540ee272c9602c1961357a68",
+    "results/tables/update_20261017/model/auxiliary_targets/full_development_selection_iga.csv": "ea54246bcb5ab10b90fb13194e639525fcaa0efbf4847d8781628611b936bb42",
+    "results/tables/update_20261017/model/auxiliary_targets/full_development_selection_pp_nrs.csv": "a6daf8f2671212cde986abcadf0cc87b406bcc74e4868a8f4928a1f4bf0b4521",
+    "results/tables/update_20261017/model/auxiliary_targets/inner_selection.csv": "5e78b95507d5956c91081d8d02c927b7161bb479a805edf8a21d49d94e310352",
+    "results/tables/update_20261017/model/auxiliary_targets/input_private.csv": "4db124983916ebbff79011d7802df7a9dd36712483e5a4ef99fc4b86e3f3820a",
+    "results/tables/update_20261017/model/auxiliary_targets/manifest.json": "9c2c00d3cf81780f4ade6ce75a23d0859f7d722a3281516f209dd709e2c53592",
+    "results/tables/update_20261017/model/auxiliary_targets/metrics.csv": "cc8a707307bf7c340c925b6fb9bbf5e4f4a71f8be14247cb44a739aa336b25f5",
+    "results/tables/update_20261017/model/auxiliary_targets/overall_metrics.csv": "050a5626706943497ea726ea41f55c138d83fb6c858d0cecdf3e92ddf722db00",
+    "results/tables/update_20261017/model/auxiliary_targets/paired_comparisons.csv": "7b5d036c50cc8d14259dd3c4daaa2285744735fe6cc66e9b960a88219a96f682",
+    "results/tables/update_20261017/model/auxiliary_targets/predictions_private.csv": "390d55f8c1fc72da508301fda2d2927bdbba63ff5897eff9b3332d72e71187d8",
+    "results/tables/update_20261017/model/auxiliary_targets/repeat_aggregation_audit.csv": "f11132b15c02a37b041431e8b32099bf4c0e97630e7e9ce555496d084ee6dc47",
+    "results/tables/update_20261017/model/auxiliary_targets/verification.json": "231cbaa47980aee16391c052ea322bbe4efc1efcc0f7bf4a2776a62babf53953",
+    "results/tables/update_20261017/model/calculator_examples.csv": "674617d65ba7fc71093f51d8d5c9d88a917ebe43ea0524ad66fe907c4402376a",
+    "results/tables/update_20261017/model/calculator_raw_example_output.csv": "76f60f1169c9890536c28c62d9f1fdc20421517f13454695e9f45cd894788837",
+    "results/tables/update_20261017/model/clinical_input_reconciliation.csv": "f0090b865401a9479298674f5951b787f2ec1924f571cea01e9790827cbf2ac3",
+    "results/tables/update_20261017/model/fit_audit.csv": "04a9790a80d3c84d450d63cebfecadcec93faeb55b120285bf1af890e727548b",
+    "results/tables/update_20261017/model/fit_audit_private.csv": "bad322a7f24db61d78f107f97717b07e5a7d4d203bafae98669d5dcfddbf8bb9",
+    "results/tables/update_20261017/model/formula.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+    "results/tables/update_20261017/model/full_development_inner_selection.csv": "444e58f2676f09654bfbd0b70379ce3ad9944cf93bbbfcc31c8e1576870f95e4",
+    "results/tables/update_20261017/model/held_out_group_fit_audit.csv": "24264264556c9533524ba926d770e6a217b5d073db59b47f2eded5489b513b94",
+    "results/tables/update_20261017/model/held_out_group_metrics.csv": "df356cabc7ff41c51eac2948a46abe1dc8bfb76e3045728be0a6eb9792caf353",
+    "results/tables/update_20261017/model/held_out_group_predictions_private.csv": "e8f187d60fd75dd61836ad0a6214623f3341e233e47b20cbe22634358407a6b5",
+    "results/tables/update_20261017/model/improvement_classification.csv": "f1196a941bdcbc1ff28c9e2e9ce1fc3fcebabd6ce1263000c59332f4b3c6e224",
+    "results/tables/update_20261017/model/inner_selection.csv": "8ae73edb030d72f582b77182017e40d215b74025084873f0ec1b321b2acb95f5",
+    "results/tables/update_20261017/model/input_schema.json": "d805da99365ae77a8b0c1aadfb83d28f5a3c364af7115d6dc437401852f4f321",
+    "results/tables/update_20261017/model/model_manifest.json": "6ab83f8728e6a618c627cb43999ebf34b516d7379d7d67c4fa378e7fa5db912d",
+    "results/tables/update_20261017/model/model_metrics.csv": "34925b24cb3a19e646ad822dc5569f480d6a617e0d484300e93e37aa470b0bd8",
+    "results/tables/update_20261017/model/other_targets_audit.csv": "e4575cdc40f91c693b4045c26f48e0cfb58a3b7569c0b00b98f3cf0185e47651",
+    "results/tables/update_20261017/model/other_targets_historical_by_week.csv": "68c9ae278d2aa4d31328f051df0c8ff650bd46a6d3e01ed42a65800b881eb6f2",
+    "results/tables/update_20261017/model/other_targets_historical_metrics.csv": "b8a46ff5ff91abc840074f330b522209eb1ee2c93d30f307766617388ba4d443",
+    "results/tables/update_20261017/model/overall_metrics.csv": "8a3c60ba4cdb6f3c162f384f8164f91b92224b611130f8c03f9c0a97f51a2b36",
+    "results/tables/update_20261017/model/paired_change_metrics.csv": "3e0be3499360bcba3a756d87809b1a49c99d4e13af7fb98ff32c4c4eb1ec9fd8",
+    "results/tables/update_20261017/model/paired_model_comparisons.csv": "178c5763bb42b3dcf5b88f873fe66b95c0f8a883477bf87350804bcb1f9fcc80",
+    "results/tables/update_20261017/model/predictions.csv": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+    "results/tables/update_20261017/model/published_clipping_manifest.json": "2e9207c8240c4f0755a8fe591362fc8fc0d76d04ead0d0b49547e667d0b30dd7",
+    "results/tables/update_20261017/model/published_clipping_sensitivity.csv": "d73cadcafd3e56bc385a81282beeababa07895292ee4b54aed058b2aa7e89f3d",
+    "results/tables/update_20261017/model/published_matched_metrics.csv": "ff635cd1b44f440cc67128bf0c3d00580a9fb11f1b82713055abc04d47060739",
+    "results/tables/update_20261017/model/published_matched_predictions_private.csv": "b1f5021296f5c16ce5ae235f5542a21134346a71fc84b1d74e75f7adbb833d31",
+    "results/tables/update_20261017/model/repeat_aggregation_audit.csv": "d2d1c0ea90d490d5e9426fed0171045202444e1583b4b5ce003d85859ee619e0",
+    "results/tables/update_20261017/model/rounding/absolute_target_changes.csv": "b367289f098ac59d088172545f8bc42f9ebc66da06e8a359300a1b4b5867fe2b",
+    "results/tables/update_20261017/model/rounding/all_formulas.json": "87f21132212318541861d18950c719526f8ca7e6570c93100ee63809c3ae756d",
+    "results/tables/update_20261017/model/rounding/development_domain_bounds.csv": "0324ef7afbd2c081e1d1ed488bca7df84ed040d61066f3728549ff5c67ae2fed",
+    "results/tables/update_20261017/model/rounding/display_approximation_effect.csv": "926418731c00410ea011dde32608e310fac4b4542e10db623fe789066fe078c4",
+    "results/tables/update_20261017/model/rounding/fold_reconstruction_audit.csv": "c38ee5a286e0d6cb51d9f4f3476d26aa73a2441e8d84809ef93994e20fb21dac",
+    "results/tables/update_20261017/model/rounding/frozen_display_coefficients.csv": "9aeef0c274fa5bf56b64ad109e94313424c282dc9af4c82a0d2da3fed578fb18",
+    "results/tables/update_20261017/model/rounding/manifest.json": "7a9eb4e6d758ed63e64815ee640c4f899b1d44ded321a3e078242648587d6e45",
+    "results/tables/update_20261017/model/rounding/metrics.csv": "2b3c859e13b3cd4259a0939c94f359e628b3c0ef9ec9ba6728325f6ba87ee32f",
+    "results/tables/update_20261017/model/rounding/overall_metrics.csv": "3ea0d8eb04965ddf00875a035e81029f68090d868890cef955f07d9848847b04",
+    "results/tables/update_20261017/model/rounding/predictions_private.csv": "c3fa80670130cd9445a13545a5ef16d75d7238d7ddf533f371ee2bdc228651b1",
+    "results/tables/update_20261017/model/rounding/primary_validation_comparison.csv": "8c003689e8108309453c4b7875b5ba5659d831b228161ebbd7a5769f87772d0f",
+    "results/tables/update_20261017/model/rounding/recommendation.json": "0f0ce720f99d530437de5e6853340dfdcd638774991cfa832df7b3ecee08c6c5",
+    "results/tables/update_20261017/model/rounding/response_target_changes.csv": "71c766aa08b1e31da23790b70df946a322a2c5f77b8e274a7857b80fe8789e3e",
+    "results/tables/update_20261017/model/verification.json": "530ea46c3094680345f9f688876a4139063ff7bd8109f9b0aadafe88cb251883",
+    "config/unified_model_20261017.json": "1f04c595f962c2e51203ef3bebff4941acbfbe24325da981d9bd1fd5ccee2ff5",
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501"
+  },
+  "config": {
+    "seed": 20261002,
+    "outer_repeats": 2,
+    "outer_folds": 5,
+    "inner_folds": 3,
+    "ridge_alpha": [
+      0.1,
+      1,
+      10,
+      100
+    ],
+    "development_weeks": [
+      0,
+      12
+    ],
+    "input_path": "results/tables/update_20261002/stage_refinement/input.csv",
+    "features": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "models": [
+      "unified_linear",
+      "stage_interaction",
+      "bsa_linear",
+      "serum_linear",
+      "unified_quadratic",
+      "unified_area_interaction",
+      "bsa_area",
+      "bsa_stage"
+    ],
+    "unified_selector_candidates": [
+      "unified_linear",
+      "unified_quadratic",
+      "unified_area_interaction"
+    ],
+    "bootstrap_replicates": 2000,
+    "output_path": "results/tables/update_20261017/model",
+    "status": "Exploratory revision following the 2026-10-10 request for a common formula. The three-marker panel and candidate structures were informed by earlier results. W24 was previously inspected and is not an independent external test."
+  },
+  "verification": {
+    "status": "PASS",
+    "known_inconsistent_counts": {
+      "0": 8,
+      "12": 2,
+      "24": 0
+    },
+    "development_original_visits": 241,
+    "development_excluded_visits": 10,
+    "all_original_evaluation_visits_retained": true,
+    "original_patient_outer_folds_verified": true,
+    "training_only_exclusion": true,
+    "unknown_regional_reference_retained": true,
+    "clinical_truth_unchanged": true,
+    "marker_panel_fixed": true,
+    "patient_disjoint": true,
+    "preprocessing_and_structure_penalty_selection_repeated": true,
+    "primary_reproduction_max_absolute_prediction_difference": 7.105427357601002e-15,
+    "all_existing_primary_artifact_hashes_unchanged": true,
+    "primary_protected_file_count": 73,
+    "public_outputs_are_aggregate_only": true,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261002,
+    "interval_scope": "patient percentile bootstrap conditional on saved sensitivity/primary predictions; no fitting or selection repeated in bootstrap"
+  },
+  "outputs": [
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/fit_audit.csv",
+      "sha256": "8942e3ecdd078348ae6f524c0cde91dc897c521ca86b9926b189dfc0ce341aa2"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/inner_selection.csv",
+      "sha256": "397ebb1e31a589652920cc2fdfbdca3cb71bd08207bd02f6a13a04a1533dddad"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/metrics.csv",
+      "sha256": "016b8751874e65ee7c7206ea0951a3cfc188f199ad6931ac791a928ccfb01bbc"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/metrics_per_repeat.csv",
+      "sha256": "a95f2138837eb2f67bac01e72ecfe2577257c0def2e21c36f5948adcb859009e"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/paired_differences.csv",
+      "sha256": "ca47c6e63ba48b3cf4ea03f3c12915bbedea7da25909dffad90485d410fdd306"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/reference_exclusion_counts.csv",
+      "sha256": "d70cdf9ede37b323a18b9dbec5cca69d8f4a0608bc108228fe4400b1dbca1284"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/selected_structure_counts.csv",
+      "sha256": "7c16c80ef1dc54b15fea41b8d8875915ef2f7e85a6098df77ce7d26233ee3b8a"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/uncertainty.csv",
+      "sha256": "a6b37b6f2530ed17a0b7903465d879226b09355bf66234c3df5984fdf58301c8"
+    },
+    {
+      "path": "results/tables/update_20261017/reference_sensitivity/verification.json",
+      "sha256": "072e289f7b8ace2acc661e106d143942564b82ab85c8dbf6da30e0facca1fb34"
+    }
+  ],
+  "report": {
+    "path": "reports/manuscript_review/reference_sensitivity.md",
+    "sha256": "9d1abeb7eb6b370bfd333be3a2019c0818f8f924cd14bdbec72584be05623601"
+  }
+}

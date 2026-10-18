@@ -589,7 +589,7 @@ iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAQklEQVR4nGN89fn7fzYWZoZff/4yMIEY
    <text style="font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="439.937008" transform="rotate(-0 285.307087 439.937008)">n: patients · u: subset with uncertain visit-boundary timing · All recorded regimen labels retained</text>
   </g>
   <g id="text_108">
-   <text style="font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="449.461417" transform="rotate(-0 285.307087 449.461417)">† W0 source conflicts: two A100 patients recorded at 200 mg; one A200 patient at 100 mg. Classification unresolved.</text>
+   <text style="font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="449.461417" transform="rotate(-0 285.307087 449.461417)">† Initial-label/dose conflict, n=3; source labels retained</text>
   </g>
  </g>
  <defs>

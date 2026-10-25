@@ -11,7 +11,7 @@ from matplotlib.colors import Normalize
 from . import palette
 from . import supplement_redesign_20261018 as previous
 
-SOURCES = [2, 3, 4, 6, 7, 8, 9, 10, 11, 14, 18, 19, 21, 23, 24, 25, 26, 38]
+SOURCES = [3, 4, 6, 7, 8, 9, 10, 11, 14, 18, 19, 21, 23, 24, 25, 26, 38]
 ARMS = previous.ARMS
 LABELS = previous.LABELS
 MARKERS = previous.MARKERS
@@ -49,8 +49,7 @@ def courses(root, base):
     folder = root / 'results/tables/update_20261017/clinical'
     observed = pd.read_csv(folder / 'clinical_observed.csv')
     adjusted = pd.read_csv(folder / 'clinical_trajectory_adjusted.csv')
-    groups = [(2, ['easi_total', 'pp_nrs', 'dlqi']),
-              (3, ['bsa', 'scorad']), (4, ['ige_numeric', 'eo_count_numeric'])]
+    groups = [(3, ['bsa', 'scorad']), (4, ['ige_numeric', 'eo_count_numeric'])]
     for number, variables in groups:
         fig, axes = previous.grid(len(variables), 2, 195 if number == 2 else 151,
                                   left=.13, top=.90, bottom=.13, hspace=.72, wspace=.40)

@@ -12,8 +12,6 @@ from . import figures as base
 from . import palette
 from .main_redesign_20261018 import label, clean, legend
 
-MODEL = 'unified_selected'
-SHORT = ['D', 'A100', 'A200']
 TARGETS = [
     ('EASI50', 'EASI50', [4, 12, 24]),
     ('EASI75', 'EASI75', [4, 12, 24]),
@@ -41,11 +39,24 @@ PATHS = [
 def clinical_targets(root):
     folder = root / 'results/tables/update_20261017/clinical'
     rates = pd.read_csv(folder / 'endpoint_rates.csv')
-    fig, matrix = plt.subplots(4, 3, figsize=(183 / 25.4, 225 / 25.4))
-    fig.subplots_adjust(left=.09, right=.98, top=.925, bottom=.065, wspace=.40, hspace=.65)
+    observed = pd.read_csv(folder / 'clinical_observed.csv')
+    fig, matrix = plt.subplots(5, 3, figsize=(183 / 25.4, 235 / 25.4))
+    fig.subplots_adjust(left=.09, right=.98, top=.93, bottom=.055, wspace=.40, hspace=.70)
     axes = list(matrix.flat)
-    legend(fig, at=(.52, .987))
-    for ax, (target, title, weeks) in zip(axes, TARGETS):
+    legend(fig, at=(.52, .989))
+    weeks = [0, 12, 24]
+    for ax, variable, title in zip(axes[:3], ['easi_total', 'pp_nrs', 'dlqi'],
+                                    ['EASI', 'PP-NRS', 'Adult DLQI']):
+        for arm, color in zip(base.ARMS, base.COLORS):
+            d = observed[observed.target.eq(variable) & observed.treatment.eq(arm)].set_index('week').reindex(weeks)
+            assert d[['median', 'q25', 'q75']].notna().all().all()
+            ax.fill_between(weeks, d.q25.to_numpy(), d.q75.to_numpy(), color=color, alpha=.13, lw=0)
+            ax.plot(weeks, d['median'], 'o-', color=color, lw=1.35, ms=3.4,
+                    markeredgecolor=palette.role_style('treatment.' + arm)['outline'], markeredgewidth=.4)
+        upper = {'easi_total': 35, 'pp_nrs': 11, 'dlqi': 30}[variable]
+        ax.set(title=title, xticks=weeks, xlim=(-1, 25), ylim=(0, upper),
+               xlabel='Week', ylabel='Score (points)')
+    for ax, (target, title, weeks) in zip(axes[3:], TARGETS):
         for arm, color in zip(base.ARMS, base.COLORS):
             d = rates[rates.target.eq(target) & rates.treatment.eq(arm)].set_index('week').reindex(weeks)
             assert d.rate.notna().all()
@@ -56,7 +67,6 @@ def clinical_targets(root):
                             color=color, alpha=.13, lw=0)
         ax.set(title=title, xticks=weeks, xlim=(-1, 25), ylim=(0, 103),
                yticks=[0, 50, 100], xlabel='Week')
-        ax.tick_params(axis='x', labelsize=6)
     ax = axes[-1]
     for j, (arm, color) in enumerate(zip(base.ARMS, base.COLORS)):
         d = rates[rates.target.eq('overall') & rates.treatment.eq(arm)].set_index('week').reindex([4, 12, 24])
@@ -67,19 +77,22 @@ def clinical_targets(root):
            xlim=(-1, 25), ylim=(0, 103), yticks=[0, 50, 100], xlabel='Week')
     for i, ax in enumerate(axes):
         label(ax, string.ascii_lowercase[i]); clean(ax)
-        if i % 3 == 0: ax.set_ylabel('Patients reaching target (%)')
-    base.save(fig, 'Figure2', 'Clinical target attainment across initial treatment groups',
-              'a–k, Observed attainment of every specified clinical threshold. Lines join available-case proportions; '
-              'shaded bands are pointwise Wilson 95% confidence intervals, not longitudinal model intervals. '
-              'EASI50/75/90 and IGA decrease ≥2 require a recorded baseline and follow-up; absolute thresholds also show W0. '
-              'PP-NRS ≤4 additionally includes W2. The adult DLQI denominator is restricted to age ≥18. '
-              'l, Combined physician-and-patient targets from Fig. 1, with Wilson intervals. These criteria change by stage; '
-              'points are deliberately not connected. All other lines use the same definition over time. '
-              'Colours consistently identify initial treatment. Later dose changes do not reassign groups. '
-              'These are unadjusted observed rates; changing observed denominators and baseline treatment differences preclude '
-              'a causal comparison. All achieved/evaluable counts, missing-outcome bounds and adjusted comparisons accompany '
-              'the source tables; numerical rates and denominators are tabulated in the supplement. No outcomes are imputed.',
-              [str(folder/'endpoint_rates.csv')], root)
+        ax.tick_params(labelsize=6.5)
+        if i >= 3 and i % 3 == 0:
+            ax.set_ylabel('Target attainment (%)')
+    base.save(fig, 'Figure2', 'Observed clinical activity and target attainment by initial treatment',
+              'a–c, Unadjusted observed medians and interquartile ranges for EASI, PP-NRS and adult DLQI at W0, W12 and W24. '
+              'The observations available at each visit are used; these are not fixed-patient trajectories. '
+              'd–n, Observed attainment of every specified clinical threshold. Lines join available-case proportions; '
+              'bands are pointwise Wilson 95% confidence intervals. EASI50/75/90 and IGA decrease ≥2 require a recorded '
+              'baseline and follow-up; absolute thresholds also show W0. PP-NRS ≤4 additionally includes W2. Adult DLQI '
+              'uses patients aged ≥18 years. o, Combined physician-and-patient targets from Fig. 1, with Wilson intervals. '
+              'The combined criteria change by stage, so these points are not connected. Colour identifies initial treatment; '
+              'later treatment changes do not reassign groups. All achieved/evaluable counts, additional designated visits and '
+              'missing-outcome bounds are retained in source tables; baseline-adjusted target comparisons are shown in the supplement. '
+              'Changing available-case denominators and baseline treatment differences preclude a causal comparison. '
+              'No outcomes are imputed.',
+              [str(folder/'clinical_observed.csv'), str(folder/'endpoint_rates.csv')], root)
 
 
 def _forest(ax, data, color, *, stars=True):
@@ -155,13 +168,11 @@ def molecular_response(root):
 
 def model_performance(root):
     folder = root/'results/tables/update_20261017'
-    metrics = pd.read_csv(folder/'model/model_metrics.csv')
     ecdf = pd.read_csv(root/'manuscript/source_data/error_ecdf.csv')
     response = pd.read_csv(folder/'redesign_20261018/monitoring_response_uncertainty.csv')
-    change = pd.read_csv(folder/'redesign_20261018/monitoring_change_uncertainty.csv')
-    fig, matrix = plt.subplots(2, 2, figsize=(183/25.4, 158/25.4))
-    fig.subplots_adjust(left=.12, right=.96, top=.90, bottom=.13, wspace=.62, hspace=.80)
-    axes = list(matrix.flat)
+    fig, matrix = plt.subplots(1, 2, figsize=(183/25.4, 100/25.4))
+    fig.subplots_adjust(left=.105, right=.97, top=.84, bottom=.23, wspace=.65)
+    axes = list(matrix)
     for week in [0,12,24]:
         color = palette.register(fig, f'visit.W{week}')
         d = ecdf[ecdf.week.eq(week) & ecdf.absolute_error.le(10)].sort_values('absolute_error')
@@ -171,24 +182,8 @@ def model_performance(root):
     axes[0].axvline(2, color='#A9B4BA', lw=.7)
     axes[0].set(xlim=(0,10), ylim=(0,102), xlabel='Absolute EASI error (points)',
                 ylabel='Predictions within threshold (%)', title='Individual error distribution')
-    axes[0].legend(loc='lower right', frameon=False, fontsize=6.3)
-    d = metrics[metrics.model.eq(MODEL) & metrics.week.eq(0) & metrics.group_type.eq('severity')].set_index('group')
-    keys = ['EASI_le7','EASI_7_to21','EASI_gt21']
-    labels = ['≤7', '>7 to 21', '>21']
-    for y, key in enumerate(keys):
-        r = d.loc[key]
-        axes[1].errorbar(r.MAE, y, xerr=[[r.MAE-r.MAE_lo],[r.MAE_hi-r.MAE]],
-                         fmt='o', color=palette.color('visit.W0'), ms=4, lw=1.35, capsize=2)
-    axes[1].set(yticks=range(3), yticklabels=[f'{name} (n={int(d.loc[k,"n_patients"])})' for k,name in zip(keys,labels)],
-                xlabel='Mean absolute EASI error (points)', xlim=(0,7), ylim=(2.6,-.6), title='Baseline error by severity')
-    windows = ['W0_W12','W0_W24','W12_W24']
-    d = change[change.metric.eq('MAE')].set_index('window').loc[windows]
-    for y, (window, row) in enumerate(d.iterrows()):
-        axes[2].errorbar(row.estimate, y, xerr=[[row.estimate-row.ci_low],[row.ci_high-row.estimate]],
-                         fmt='o', color='#59666F', ms=4, lw=1.35, capsize=2)
-    axes[2].set(yticks=range(3),yticklabels=[f'{w.replace("_", " → ")}\n(n={int(d.loc[w,"n_patients"])})' for w in windows],
-                xlim=(0,5.3), ylim=(2.6,-.6), xlabel='Mean absolute change error (points)', title='Within-person change accuracy')
-    ax=axes[3]
+    axes[0].legend(loc='lower right', frameon=False, fontsize=6.5)
+    ax=axes[1]
     names = ['Sensitivity','Specificity','Agreement']
     for j,week in enumerate([12,24]):
         color=palette.color(f'visit.W{week}')
@@ -200,25 +195,21 @@ def model_performance(root):
     ax.set(yticks=range(3),yticklabels=names,xlim=(45,102),xticks=[50,75,100],ylim=(2.6,-.6),
            xlabel='Classification performance (%)',title='EASI75 response classification')
     ax.legend(handles=[Line2D([],[],color=palette.color(f'visit.W{w}'),marker='o',lw=0,label=f'Week {w}') for w in [12,24]],
-              frameon=False,loc='upper center',bbox_to_anchor=(.5,-.36),ncol=2,fontsize=6.3)
+              frameon=False,loc='upper center',bbox_to_anchor=(.5,-.26),ncol=2,fontsize=6.5)
     for i,ax in enumerate(axes):label(ax,string.ascii_lowercase[i]);clean(ax)
-    base.save(fig,'Figure5','Accuracy of the common EASI estimate and paired response monitoring',
+    base.save(fig,'Figure5','Individual EASI estimation error and EASI75 response classification',
               'a, Cumulative absolute-error proportions for the common BSA–CCL17–CCL26–IL-5 procedure. Each repetition is scored '
               'before averaging; bands are patient-bootstrap 95% confidence intervals conditional on saved predictions. All predictions '
               'enter the proportions, although thresholds are displayed only through ten points. The two-point line is a reading reference, '
-              'not an accepted replacement margin. W0/W12/W24 include 152/89/75 patients. b, Baseline MAE by observed severity, '
-              'with patient-bootstrap intervals and unique-patient counts. Follow-up severe observations were too sparse to demonstrate '
-              'accuracy across the full severity range. c, Mean absolute error in paired score changes, with patient-bootstrap 95% intervals. '
-              'Intervals are distinct comparisons, not sequential categories, and can share patients. d, EASI75 sensitivity, specificity and '
-              'agreement with observed response, with patient-bootstrap 95% intervals. Each response uses its corresponding observed or '
-              'estimated W0 and follow-up score. W12/W24 sensitivity denominators are 49/54 observed responders; specificity denominators '
-              'are 36/13 nonresponders; agreement includes 85/67 patients. W0/W12 use nested patient-level validation; W24 is previously '
-              'inspected same-cohort temporal application. Metrics assess the development procedure, not independent validation of the final '
-              'formula. MAE is mean absolute error in EASI points. Numerical metrics and matched controls are in Table 2; full agreement '
-              'and response analyses are in the supplement.',
-              [str(root/'manuscript/source_data/error_ecdf.csv'),str(folder/'model/model_metrics.csv'),
-               str(folder/'redesign_20261018/monitoring_response_uncertainty.csv'),
-               str(folder/'redesign_20261018/monitoring_change_uncertainty.csv')],root)
+              'not an accepted replacement margin. W0/W12/W24 include 152/89/75 patients. b, EASI75 sensitivity, specificity and '
+              'agreement with observed response, with patient-bootstrap 95% confidence intervals. Each response uses its corresponding '
+              'observed or estimated W0 and follow-up score. W12/W24 sensitivity denominators are 49/54 observed responders; specificity '
+              'denominators are 36/13 nonresponders; agreement includes 85/67 patients. W0/W12 use nested patient-level validation; '
+              'W24 is previously inspected same-cohort temporal application. Metrics assess the development procedure, not independent '
+              'validation of the final formula. Numerical metrics and matched controls are in Table 2; additional agreement and '
+              'paired-change analyses are in the supplement.',
+              [str(root/'manuscript/source_data/error_ecdf.csv'),
+               str(folder/'redesign_20261018/monitoring_response_uncertainty.csv')],root)
 
 
 def clinical_composition(root):
@@ -227,7 +218,6 @@ def clinical_composition(root):
     paths=pd.read_csv(folder/'maintenance_rates.csv')
     paths=paths[paths.classification.eq('group')]
     grades=palette.sequence('recorded_iga_0_to_5')
-    statuses=palette.sequence('pathway_w24_status')
     fig, matrix=plt.subplots(2,3,figsize=(183/25.4,190/25.4),gridspec_kw={'height_ratios':[1,1.22]})
     fig.subplots_adjust(left=.19,right=.98,top=.87,bottom=.12,wspace=.38,hspace=.73)
     axes=list(matrix.flat)
@@ -247,29 +237,17 @@ def clinical_composition(root):
                loc='upper center',bbox_to_anchor=(.57,.965),ncol=6,frameon=False,handlelength=1,columnspacing=.9,fontsize=6.5)
     for j,(ax,tx,title) in enumerate(zip(axes[3:],base.ARMS,base.LABELS)):
         z=paths[paths.treatment.eq(tx)].set_index('group').reindex([r[0] for r in PATHS])
-        values=z[['n_group','n_evaluable','k','n_missing']].fillna(0).astype(int)
-        n=int(values.n_group.sum());assert n==[65,56,42][j]
-        counts=np.column_stack([values.k, values.n_evaluable-values.k, values.n_missing])
-        assert np.array_equal(counts.sum(axis=1),values.n_group)
-        start=np.zeros(len(PATHS))
-        for column,color in enumerate(statuses):
-            width=counts[:,column]/n*100
-            ax.barh(range(len(PATHS)),width,left=start,color=color,height=.64,edgecolor='white',linewidth=.3)
-            for i,k in enumerate(counts[:,column]):
-                if k>=3:
-                    ax.text(start[i]+width[i]/2,i,str(k),ha='center',va='center',fontsize=6.3,
-                            color='white' if column==1 else '#24333C')
-            start+=width
-        for i,total in enumerate(values.n_group):
-            ax.text(start[i]+1.2,i,str(total),ha='left',va='center',fontsize=6.3)
+        values=z.n_group.fillna(0).astype(int)
+        n=int(values.sum());assert n==[65,56,42][j]
+        proportions=values.to_numpy()/n*100
+        ax.barh(range(len(PATHS)),proportions,color='#6B747C',height=.64,
+                edgecolor='white',linewidth=.3)
+        for i,(total,proportion) in enumerate(zip(values,proportions)):
+            ax.text(proportion+1.2,i,str(total),ha='left',va='center',fontsize=6.3)
         ax.set(yticks=range(len(PATHS)),yticklabels=[r[1] for r in PATHS] if j==0 else ['']*len(PATHS),
                ylim=(len(PATHS)-.5,-.5),xlim=(0,52),xticks=[0,25,50],
                xlabel='Initial group (%)',title=f'{title}\nN={n}')
         ax.tick_params(axis='y',length=0,labelsize=6.3)
-    fig.legend(handles=[Patch(facecolor=c,label=l) for c,l in zip(statuses,
-                ['W24 EASI75 reached','W24 EASI75 not reached','W24 outcome missing'])],
-               loc='upper center',bbox_to_anchor=(.57,.055),ncol=3,frameon=False,fontsize=6.3,
-               handlelength=1,columnspacing=1)
     for i,ax in enumerate(axes):label(ax,string.ascii_lowercase[i]);clean(ax)
     base.save(fig,'Figure3','Recorded skin severity and treatment-reduction pathways',
               'a–c, Recorded IGA compositions at W0, W4, W12 and W24. Each bar totals 100% of the evaluable patients; '
@@ -277,18 +255,16 @@ def clinical_composition(root):
               'not a treatment colour. No score or count is superimposed on the segments. All grade-specific counts and '
               'proportions remain in source tables. d–f, Future-defined pathways formed by W12 EASI75 status and subsequent '
               'recorded treatment changes. Horizontal bar length is the proportion of the complete initial group (N=65/56/42), '
-              'and the number at its end is the pathway size. Warm segments show observed W24 EASI75 status and grey shows '
-              'missing W24 outcomes; segment counts of at least three are printed. The seven mutually exclusive rows exhaust '
-              'each initial group, including zero-size and uncertain-exposure rows. Reached refers to W12 EASI75; later reduction '
-              'means a documented reduction after W12. A W24 EASI75 failure does not by itself establish the timing or cause of relapse. '
-              'These are descriptive paths selected partly by later response, not randomized reduction strategies. Instrument identity '
-              'remains unverified for the recorded IGA scale. Complete counts and conditional W24 response intervals are available in '
-              'source data.',
+              'and the number at its end is the pathway size. The seven mutually exclusive rows exhaust each initial group, '
+              'including zero-size and uncertain-exposure rows. Reached refers to W12 EASI75; later reduction means a '
+              'documented reduction after W12. These are descriptive pathways, not randomized reduction strategies; '
+              'the bars do not encode subsequent efficacy or relapse. Instrument identity remains unverified for the recorded IGA scale. '
+              'Complete pathway counts are available in source data.',
               [str(folder/'IGA_composition.csv'),str(folder/'maintenance_rates.csv')],root)
 
 
 def run(root):
-    from .clinical_framework_20261018 import framework
+    from .clinical_flow_20261025 import framework
     root=Path(root).resolve()
     framework(root,base)
     clinical_targets(root)

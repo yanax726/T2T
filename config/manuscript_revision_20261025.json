@@ -1,9 +1,8 @@
 {
-  "version": "2026-10-25",
+  "version": "2026-10-25-deck-aligned",
   "supplement_source_order": [
     39,
     40,
-    2,
     3,
     4,
     21,
@@ -36,7 +35,6 @@
     {
       "title": "Clinical outcomes and target comparisons",
       "source_ids": [
-        2,
         3,
         4,
         21,
@@ -60,7 +58,7 @@
         14,
         19
       ],
-      "description": "The complete23-marker panel, paired treatment windows, clinical associations and regional burden."
+      "description": "The complete 23-marker panel, paired treatment windows, clinical associations and regional burden."
     },
     {
       "title": "Individual EASI estimation and monitoring",
@@ -69,7 +67,8 @@
         45,
         38
       ],
-      "description": "Absolute-score agreement, baseline severity, paired changes and response classification."
+      "description": "Observed-versus-estimated scores, paired changes and response classification. Severity and holdout estimates remain in numerical source tables."
     }
-  ]
+  ],
+  "reference_deck": "44-slide source: 4 main figures and S1–S40"
 }

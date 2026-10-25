@@ -33,6 +33,6 @@ The generated publication package uses an explicit file allowlist, screens numer
 
 ## Display structure
 
-The current manuscript uses five main and 22 supplementary figures. The display selection and stable internal source identifiers are defined in `config/manuscript_revision_20261025.json`; the build assigns consecutive publication numbers. Main figures answer framework, target-attainment, IGA/management, early molecular-change and model-performance questions. Removed displays remain represented by their numerical source tables.
+The current manuscript uses five main and 21 supplementary figures. The display selection and stable internal source identifiers are defined in `config/manuscript_revision_20261025.json`; the build assigns consecutive publication numbers. Main figures answer framework, target-attainment, IGA/management, early molecular-change and model-performance questions. Removed displays remain represented by their numerical source tables.
 
 Baseline Table 1 uses one eligible W0 record per patient and no weighting or imputation. Quartiles follow linear interpolation at rank 1+(n−1)p (type 7, equivalent to Excel PERCENTILE.INC). Adult DLQI requires age ≥18. These rules are part of the table footnote and Methods.

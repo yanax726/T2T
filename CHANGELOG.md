@@ -2,6 +2,13 @@
 
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
+## 2026.10.25-rc2
+
+- Align figure placement to the original 44-slide source deck: restore observed clinical courses to the main article and combine absolute-error and EASI75 classification panels.
+- Remove repeated or retired visual panels while preserving their numerical source results and limitations. Organize 21 supplementary figures by clinical question.
+- Rebuild the clinical framework and cohort flow as connected stages with distinct clinical and serum-model eligibility branches.
+- Keep the frozen formula, patient records and original presentation unchanged.
+
 ## 2026.10.25-rc1
 
 - Consolidate the main displays into clinical targets, IGA and treatment pathways, early serum changes and individual EASI estimation.

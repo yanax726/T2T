@@ -2,8 +2,8 @@
   {
     "id": "Figure1",
     "source_id": "Figure1",
-    "title": "Source framework, clinical targets and the research readout",
-    "caption": "a, The project development summary describes candidate measures, a two-round questionnaire procedure and a planned ≥75% agreement criterion, and reports 49 returned questionnaires. Original ballots and round-specific agreement results are unavailable; this is not a newly verified consensus experiment. b, The operational target schedule follows the source framework; milestone positions are schematic rather than time-scaled. EASI50/75 denotes at least 50%/75% improvement from positive observed baseline EASI. IGA decrease ≥2 is change from baseline; 0/1 denotes an observed grade or score of 0 or 1. OR applies within a domain and AND across domains. W2 is an itch-only target, not a combined physician-patient target. Adult DLQI requires age ≥18. Missing components use three-valued logic; adult DLQI is unknown below age 18. The IGA instrument and approved, implemented framework version require confirmation; these are exploratory recorded-score targets. c, Clinical assessment supports clinician-directed management. The BSA-serum readout is a parallel research addition, with clinical decision use untested. It does not replace examination, symptoms, quality of life or safety review. The cohort does not test framework effectiveness. Detailed definitions and provenance are provided in the Supplementary Methods.",
+    "title": "Clinical target framework and parallel research EASI estimation",
+    "caption": "a, Framework development described in the investigator materials: candidate clinical measures, a two-round questionnaire and discussion procedure, 49 returned questionnaires, and a planned agreement criterion of at least 75%. Original ballots and round-specific agreement were unavailable; these are source-reported development details, not independently verified consensus results. b, Scheduled targets transcribed from the project framework. Within each domain, any listed criterion is sufficient; from W4 onward both domains must be met. W2 assesses only PP-NRS ≤4. EASI50 and EASI75 denote at least 50% and 75% improvement from a positive observed baseline EASI. IGA decrease ≥2 is relative to baseline; IGA 0/1 and PP-NRS 0/1 denote observed values 0 or 1. DLQI targets apply to adults aged ≥18 years. Missing components are handled with three-valued logic, rather than automatically classified as target failure. The exact IGA instrument and approved implemented framework version require investigator confirmation. Visits are schematic and not spaced in proportion to time. c, Clinician-directed assessment and care are separated from the research estimator using BSA, CCL17, CCL26 and IL-5. The estimator was not a dose-change rule, and this observational analysis does not establish the effectiveness of the proposed integrated management strategy.",
     "sources": [
       "config/clinical_framework.json"
     ]
@@ -11,9 +11,10 @@
   {
     "id": "Figure2",
     "source_id": "Figure2",
-    "title": "Clinical target attainment across initial treatment groups",
-    "caption": "a–k, Observed attainment of every specified clinical threshold. Lines join available-case proportions; shaded bands are pointwise Wilson 95% confidence intervals, not longitudinal model intervals. EASI50/75/90 and IGA decrease ≥2 require a recorded baseline and follow-up; absolute thresholds also show W0. PP-NRS ≤4 additionally includes W2. The adult DLQI denominator is restricted to age ≥18. l, Combined physician-and-patient targets from Fig. 1, with Wilson intervals. These criteria change by stage; points are deliberately not connected. All other lines use the same definition over time. Colours consistently identify initial treatment. Later dose changes do not reassign groups. These are unadjusted observed rates; changing observed denominators and baseline treatment differences preclude a causal comparison. All achieved/evaluable counts, missing-outcome bounds and adjusted comparisons accompany the source tables; numerical rates and denominators are tabulated in the supplement. No outcomes are imputed.",
+    "title": "Observed clinical activity and target attainment by initial treatment",
+    "caption": "a–c, Unadjusted observed medians and interquartile ranges for EASI, PP-NRS and adult DLQI at W0, W12 and W24. The observations available at each visit are used; these are not fixed-patient trajectories. d–n, Observed attainment of every specified clinical threshold. Lines join available-case proportions; bands are pointwise Wilson 95% confidence intervals. EASI50/75/90 and IGA decrease ≥2 require a recorded baseline and follow-up; absolute thresholds also show W0. PP-NRS ≤4 additionally includes W2. Adult DLQI uses patients aged ≥18 years. o, Combined physician-and-patient targets from Fig. 1, with Wilson intervals. The combined criteria change by stage, so these points are not connected. Colour identifies initial treatment; later treatment changes do not reassign groups. All achieved/evaluable counts, additional designated visits and missing-outcome bounds are retained in source tables; baseline-adjusted target comparisons are shown in the supplement. Changing available-case denominators and baseline treatment differences preclude a causal comparison. No outcomes are imputed.",
     "sources": [
+      "results/tables/update_20261017/clinical/clinical_observed.csv",
       "results/tables/update_20261017/clinical/endpoint_rates.csv"
     ]
   },
@@ -21,7 +22,7 @@
     "id": "Figure3",
     "source_id": "Figure3",
     "title": "Recorded skin severity and treatment-reduction pathways",
-    "caption": "a–c, Recorded IGA compositions at W0, W4, W12 and W24. Each bar totals 100% of the evaluable patients; n below the bar is its patient denominator. The ordered blue scale identifies recorded IGA grades 0–5 and is not a treatment colour. No score or count is superimposed on the segments. All grade-specific counts and proportions remain in source tables. d–f, Future-defined pathways formed by W12 EASI75 status and subsequent recorded treatment changes. Horizontal bar length is the proportion of the complete initial group (N=65/56/42), and the number at its end is the pathway size. Warm segments show observed W24 EASI75 status and grey shows missing W24 outcomes; segment counts of at least three are printed. The seven mutually exclusive rows exhaust each initial group, including zero-size and uncertain-exposure rows. Reached refers to W12 EASI75; later reduction means a documented reduction after W12. A W24 EASI75 failure does not by itself establish the timing or cause of relapse. These are descriptive paths selected partly by later response, not randomized reduction strategies. Instrument identity remains unverified for the recorded IGA scale. Complete counts and conditional W24 response intervals are available in source data.",
+    "caption": "a–c, Recorded IGA compositions at W0, W4, W12 and W24. Each bar totals 100% of the evaluable patients; n below the bar is its patient denominator. The ordered blue scale identifies recorded IGA grades 0–5 and is not a treatment colour. No score or count is superimposed on the segments. All grade-specific counts and proportions remain in source tables. d–f, Future-defined pathways formed by W12 EASI75 status and subsequent recorded treatment changes. Horizontal bar length is the proportion of the complete initial group (N=65/56/42), and the number at its end is the pathway size. The seven mutually exclusive rows exhaust each initial group, including zero-size and uncertain-exposure rows. Reached refers to W12 EASI75; later reduction means a documented reduction after W12. These are descriptive pathways, not randomized reduction strategies; the bars do not encode subsequent efficacy or relapse. Instrument identity remains unverified for the recorded IGA scale. Complete pathway counts are available in source data.",
     "sources": [
       "results/tables/update_20261017/clinical/IGA_composition.csv",
       "results/tables/update_20261017/clinical/maintenance_rates.csv"
@@ -40,20 +41,18 @@
   {
     "id": "Figure5",
     "source_id": "Figure5",
-    "title": "Accuracy of the common EASI estimate and paired response monitoring",
-    "caption": "a, Cumulative absolute-error proportions for the common BSA–CCL17–CCL26–IL-5 procedure. Each repetition is scored before averaging; bands are patient-bootstrap 95% confidence intervals conditional on saved predictions. All predictions enter the proportions, although thresholds are displayed only through ten points. The two-point line is a reading reference, not an accepted replacement margin. W0/W12/W24 include 152/89/75 patients. b, Baseline MAE by observed severity, with patient-bootstrap intervals and unique-patient counts. Follow-up severe observations were too sparse to demonstrate accuracy across the full severity range. c, Mean absolute error in paired score changes, with patient-bootstrap 95% intervals. Intervals are distinct comparisons, not sequential categories, and can share patients. d, EASI75 sensitivity, specificity and agreement with observed response, with patient-bootstrap 95% intervals. Each response uses its corresponding observed or estimated W0 and follow-up score. W12/W24 sensitivity denominators are 49/54 observed responders; specificity denominators are 36/13 nonresponders; agreement includes 85/67 patients. W0/W12 use nested patient-level validation; W24 is previously inspected same-cohort temporal application. Metrics assess the development procedure, not independent validation of the final formula. MAE is mean absolute error in EASI points. Numerical metrics and matched controls are in Table 2; full agreement and response analyses are in the supplement.",
+    "title": "Individual EASI estimation error and EASI75 response classification",
+    "caption": "a, Cumulative absolute-error proportions for the common BSA–CCL17–CCL26–IL-5 procedure. Each repetition is scored before averaging; bands are patient-bootstrap 95% confidence intervals conditional on saved predictions. All predictions enter the proportions, although thresholds are displayed only through ten points. The two-point line is a reading reference, not an accepted replacement margin. W0/W12/W24 include 152/89/75 patients. b, EASI75 sensitivity, specificity and agreement with observed response, with patient-bootstrap 95% confidence intervals. Each response uses its corresponding observed or estimated W0 and follow-up score. W12/W24 sensitivity denominators are 49/54 observed responders; specificity denominators are 36/13 nonresponders; agreement includes 85/67 patients. W0/W12 use nested patient-level validation; W24 is previously inspected same-cohort temporal application. Metrics assess the development procedure, not independent validation of the final formula. Numerical metrics and matched controls are in Table 2; additional agreement and paired-change analyses are in the supplement.",
     "sources": [
       "manuscript/source_data/error_ecdf.csv",
-      "results/tables/update_20261017/model/model_metrics.csv",
-      "results/tables/update_20261017/redesign_20261018/monitoring_response_uncertainty.csv",
-      "results/tables/update_20261017/redesign_20261018/monitoring_change_uncertainty.csv"
+      "results/tables/update_20261017/redesign_20261018/monitoring_response_uncertainty.csv"
     ]
   },
   {
     "id": "FigureS1",
     "source_id": "FigureS39",
-    "title": "Parallel clinical and complete-input model populations",
-    "caption": "a, Clinical comparison eligibility starts with 170 curated patients and 1,700 predefined visit slots; 736 slots contain recorded visit data. Six patients aged <12 and one age-eligible patient with an ambiguous initial dose are excluded, leaving 163 patients. This is a record source, not a screened or consented recruitment denominator. b, The linked serum branch is separate and is not a subset of the clinical comparison. Serum records count linked sample rows, not independent participants. Excluding 24 W48 records leaves 168 patients and 352 W0/W12/W24 records; age exclusions remove 12 records from six patients. Complete-case exclusions are sequential and mutually exclusive at the record level. Of the remaining 340 records, 13 lack EASI, one BSA, none CCL17, eight CCL26 and two IL-5, leaving 316 visits from 160 patients. Missing model inputs include unavailable valid positive molecular values. Losing a visit does not necessarily remove the patient. Development comprises 156 patients and 241 visits, W0 n=152 and W12 n=89. W24 comprises 75 patients and 75 visits and is previously inspected within-cohort temporal application, not external validation. The clinical and model populations share 159 patients, with four clinical-only and one model-only. Development and W24 share 71 patients, with 85 development-only and four W24-only. Fifty-one patients have all three complete model visits. Initial-dose ambiguity may remain in the treatment-free model. No missing clinical outcome is filled as validation truth. All exact counts and units remain in the linked flow and overlap source tables.",
+    "title": "Patient and record flow into the clinical and model analyses",
+    "caption": "a, The curated clinical source contains 170 patients, not a screened or consented recruitment denominator. Six patients aged <12 years and one age-eligible patient with an ambiguous initial dose are excluded, leaving 163 patients classified by initial treatment: dupilumab, 65; abrocitinib 100 mg, 56; and abrocitinib 200 mg, 42. b, The linked serum source is a separate entry branch; model eligibility is not conditional on membership of the clinical comparison population. Removing 24 W48 records leaves 168 patients with 352 W0/W12/W24 records; age exclusions remove 12 records from six patients. Further ordered exclusions are mutually exclusive at the record level: 13 EASI, one BSA, zero CCL17, eight CCL26 and two IL-5 inputs are unavailable, leaving 316 complete model visits from 160 patients. A valid molecular input requires an available positive concentration for the log2 transformation. Loss of a record does not necessarily remove a patient. Development uses 241 W0/W12 visits from 156 patients, with patient-level validation splits; W24 includes 75 visits from 75 patients and is previously inspected within-cohort temporal application, not external validation. Development and W24 share 71 patients, with 85 development-only and four W24-only patients. Fifty-one patients have all three complete visits. The clinical and complete-input model populations share 159 patients, with four clinical-only and one model-only patient; the treatment-free model can retain an ambiguous initial dose. Scheduled empty visit slots are not counted as observed visits, and no filled-in clinical outcome is used as validation truth.",
     "sources": [
       "results/tables/update_20261017/redesign_20261018/flow_nodes.csv",
       "results/tables/update_20261017/redesign_20261018/flow_edges.csv",
@@ -77,16 +76,6 @@
   },
   {
     "id": "FigureS3",
-    "source_id": "FigureS2",
-    "title": "Observed and adjusted EASI, PP-NRS, Adult DLQI",
-    "caption": "Left, observed medians with interquartile ranges by initial treatment; all available values are used at each specified visit. Right, generalized-overlap-weighted marginal estimates with patient-cluster robust 95% confidence intervals, adjusted for baseline outcome, age, sex, BMI and centre. Patient sets can differ between visits. Exact outcome-specific counts and numerical comparisons are in the source tables; they are not replaced by a common denominator. Adult DLQI is restricted to age ≥18. Initial treatment groups describe observational management strategies, including subsequent regimen changes, rather than randomized fixed-dose effects.",
-    "sources": [
-      "results/tables/update_20261017/clinical/clinical_observed.csv",
-      "results/tables/update_20261017/clinical/clinical_trajectory_adjusted.csv"
-    ]
-  },
-  {
-    "id": "FigureS4",
     "source_id": "FigureS3",
     "title": "Observed and adjusted BSA (%), SCORAD",
     "caption": "Left, observed medians with interquartile ranges by initial treatment; all available values are used at each specified visit. Right, generalized-overlap-weighted marginal estimates with patient-cluster robust 95% confidence intervals, adjusted for baseline outcome, age, sex, BMI and centre. Patient sets can differ between visits. Exact outcome-specific counts and numerical comparisons are in the source tables; they are not replaced by a common denominator. Initial treatment groups describe observational management strategies, including subsequent regimen changes, rather than randomized fixed-dose effects.",
@@ -96,7 +85,7 @@
     ]
   },
   {
-    "id": "FigureS5",
+    "id": "FigureS4",
     "source_id": "FigureS4",
     "title": "Observed and adjusted IgE (recorded units), Eosinophils (recorded units)",
     "caption": "Left, observed medians with interquartile ranges by initial treatment; all available values are used at each specified visit. Right, generalized-overlap-weighted marginal estimates with patient-cluster robust 95% confidence intervals, adjusted for baseline outcome, age, sex, BMI and centre. Patient sets can differ between visits. Exact outcome-specific counts and numerical comparisons are in the source tables; they are not replaced by a common denominator. IgE and eosinophils use log(1+x) models and back-transformation; adjusted estimates are not arithmetic means. IgE is shown only at W0/W12/W24. No dupilumab W4 eosinophil measurement is available; both the observed and adjusted line break at that visit. No multiple-imputation value is displayed as an observation. The separate same-patient IgE analysis tests the effect of changing sample composition. Initial treatment groups describe observational management strategies, including subsequent regimen changes, rather than randomized fixed-dose effects.",
@@ -106,7 +95,7 @@
     ]
   },
   {
-    "id": "FigureS6",
+    "id": "FigureS5",
     "source_id": "FigureS21",
     "title": "IgE with identical patients at W0, W12 and W24",
     "caption": "Medians and patient-bootstrap 95% confidence intervals in fixed complete three-visit sets: 11 dupilumab, 9 A100 and 10 A200 patients. The same patients contribute at every visit within each treatment. The vertical axis is logarithmic with ticks labelled in the original recorded units; estimates and interval endpoints are unchanged. Small horizontal offsets separate treatment intervals at the same visit. No missing value is filled. These fixed-set summaries differ from available-case visit summaries and baseline-adjusted estimates because their patients and estimands differ. This check describes observation-pattern sensitivity: the small selected subsets neither estimate a causal treatment effect nor establish arithmetic mean changes. Laboratory units require source confirmation.",
@@ -115,7 +104,7 @@
     ]
   },
   {
-    "id": "FigureS7",
+    "id": "FigureS6",
     "source_id": "FigureS23",
     "title": "Week 2: all initial-treatment target contrasts",
     "caption": "Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. D denotes dupilumab; A100/A200 the initial abrocitinib doses. Pooled abrocitinib is supplementary. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.",
@@ -125,7 +114,7 @@
     ]
   },
   {
-    "id": "FigureS8",
+    "id": "FigureS7",
     "source_id": "FigureS24",
     "title": "Week 4: all initial-treatment target contrasts",
     "caption": "Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. D denotes dupilumab; A100/A200 the initial abrocitinib doses. Pooled abrocitinib is supplementary. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.",
@@ -135,7 +124,7 @@
     ]
   },
   {
-    "id": "FigureS9",
+    "id": "FigureS8",
     "source_id": "FigureS25",
     "title": "Week 12: all initial-treatment target contrasts",
     "caption": "Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. D denotes dupilumab; A100/A200 the initial abrocitinib doses. Pooled abrocitinib is supplementary. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.",
@@ -145,7 +134,7 @@
     ]
   },
   {
-    "id": "FigureS10",
+    "id": "FigureS9",
     "source_id": "FigureS26",
     "title": "Week 24: all initial-treatment target contrasts",
     "caption": "Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. D denotes dupilumab; A100/A200 the initial abrocitinib doses. Pooled abrocitinib is supplementary. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.",
@@ -155,7 +144,7 @@
     ]
   },
   {
-    "id": "FigureS11",
+    "id": "FigureS10",
     "source_id": "FigureS18",
     "title": "Baseline distributions of all 23 serum markers",
     "caption": "Cells display the lower quartile, median and upper quartile of baseline log₂ recorded concentration for each initial treatment. All three panels use the same numeric colour scale without row normalization. Compare treatments within a marker: concentration differences between distinct analytes do not indicate differences in biological activity. D denotes dupilumab; A100/A200 initial abrocitinib 100/200 mg. Every measured marker is retained. The source table includes exact counts, censoring-related availability, ranges and distribution summaries; quartiles summarize available positive numeric observations and do not replace censored values.",
@@ -164,7 +153,7 @@
     ]
   },
   {
-    "id": "FigureS12",
+    "id": "FigureS11",
     "source_id": "FigureS6",
     "title": "Molecular changes from W12 to W24",
     "caption": "Mean paired log₂ concentration changes with 95% t confidence intervals. Negative values indicate lower later concentration. Each marker/treatment uses all available pairs for this interval; exact counts are in the source table. All 23 measured markers are retained. Estimates based on fewer than five pairs are descriptive and have no inferential interval; unavailable estimates are blank. Stars denote BH q<0.05 across the full 207 marker-by-treatment-by-window family, not a separate family for the displayed interval.",
@@ -173,7 +162,7 @@
     ]
   },
   {
-    "id": "FigureS13",
+    "id": "FigureS12",
     "source_id": "FigureS7",
     "title": "Molecular changes from W0 to W24",
     "caption": "Mean paired log₂ concentration changes with 95% t confidence intervals. Negative values indicate lower later concentration. Each marker/treatment uses all available pairs for this interval; exact counts are in the source table. All 23 measured markers are retained. Estimates based on fewer than five pairs are descriptive and have no inferential interval; unavailable estimates are blank. Stars denote BH q<0.05 across the full 207 marker-by-treatment-by-window family, not a separate family for the displayed interval.",
@@ -182,7 +171,7 @@
     ]
   },
   {
-    "id": "FigureS14",
+    "id": "FigureS13",
     "source_id": "FigureS8",
     "title": "Adjusted molecular comparisons from W0 to W12",
     "caption": "Differences in within-patient log₂ changes with HC3 95% confidence intervals. Negative values mean a smaller, more negative change in the first named treatment. Models adjust starting log₂ concentration, baseline total EASI, age, sex, BMI and centre. D, dupilumab; A100/A200, initial abrocitinib 100/200 mg. Pooled A retains the observed dose mixture. Stars denote the original BH q<0.05 family; no multiplicity family is recalculated after display selection. Blank positions have no estimable contrast. Complete counts, diagnostics, centre/batch sensitivities and tests remain in the source table. The W0–W12 D-minus-pooled-A and A200-minus-A100 comparisons are in the main molecular figure. These are adjusted observational associations, not randomized current-dose effects.",
@@ -191,7 +180,7 @@
     ]
   },
   {
-    "id": "FigureS15",
+    "id": "FigureS14",
     "source_id": "FigureS9",
     "title": "Adjusted molecular comparisons from W12 to W24",
     "caption": "Differences in within-patient log₂ changes with HC3 95% confidence intervals. Negative values mean a smaller, more negative change in the first named treatment. Models adjust starting log₂ concentration, baseline total EASI, age, sex, BMI and centre. D, dupilumab; A100/A200, initial abrocitinib 100/200 mg. Pooled A retains the observed dose mixture. Stars denote the original BH q<0.05 family; no multiplicity family is recalculated after display selection. Blank positions have no estimable contrast. Complete counts, diagnostics, centre/batch sensitivities and tests remain in the source table. These are adjusted observational associations, not randomized current-dose effects.",
@@ -200,7 +189,7 @@
     ]
   },
   {
-    "id": "FigureS16",
+    "id": "FigureS15",
     "source_id": "FigureS10",
     "title": "Adjusted molecular comparisons from W0 to W24",
     "caption": "Differences in within-patient log₂ changes with HC3 95% confidence intervals. Negative values mean a smaller, more negative change in the first named treatment. Models adjust starting log₂ concentration, baseline total EASI, age, sex, BMI and centre. D, dupilumab; A100/A200, initial abrocitinib 100/200 mg. Pooled A retains the observed dose mixture. Stars denote the original BH q<0.05 family; no multiplicity family is recalculated after display selection. Blank positions have no estimable contrast. Complete counts, diagnostics, centre/batch sensitivities and tests remain in the source table. These are adjusted observational associations, not randomized current-dose effects.",
@@ -209,7 +198,7 @@
     ]
   },
   {
-    "id": "FigureS17",
+    "id": "FigureS16",
     "source_id": "FigureS11",
     "title": "Molecular and clinical changes associated after multiplicity correction",
     "caption": "Every association meeting BH q<0.05 in the full declared change-association family is displayed; selection spans 23 markers, five clinical outcomes, three initial treatments and three intervals. No W12–W24 association met this threshold. Points are Spearman correlations between within-patient clinical change and log₂ molecular change, both later minus earlier, with patient-bootstrap 95% confidence intervals. Positive correlations indicate changes in the same direction. Labels give paired-patient counts and the interval; colours indicate initial treatment only. Adult DLQI requires age ≥18. All tested coefficients, non-significant results and unestimable pairs remain in the complete source table. This significance-selected display is exploratory and is not independent validation, numerical agreement or a causal molecular effect.",
@@ -218,7 +207,7 @@
     ]
   },
   {
-    "id": "FigureS18",
+    "id": "FigureS17",
     "source_id": "FigureS14",
     "title": "Regional clinical burden and molecular associations",
     "caption": "a, Baseline Spearman associations between all 23 markers and the four regional EASI contributions; stars mark BH q<0.05, with complete coefficients, patient counts and bootstrap intervals retained in the source. b, Available-case mean regional EASI divided by its theoretical maximum and multiplied by 100; cells show percentages, not patient counts. c, Mean paired regional decrease as a percentage of the same regional maximum for three separately labelled intervals; positive values indicate improvement. D is dupilumab and A is the observed pooled abrocitinib dose mixture. These heatmaps summarize magnitude; exact 95% t intervals and counts are in the source tables. d, Whole-body PP-NRS mean decreases with 95% t intervals, not region-specific itch. Regional maxima are 7.2, 14.4, 21.6 and 28.8 for head/neck, upper limbs, trunk and lower limbs. All regional analyses require complete, bounded regional records consistent with total EASI. Intervals can share patients and are not successive cumulative effects. Colour bars encode distinct quantities and are not interchangeable. No baseline-adjusted regional treatment contrast passed the FDR threshold; full separate-dose comparisons remain available.",
@@ -231,7 +220,7 @@
     ]
   },
   {
-    "id": "FigureS19",
+    "id": "FigureS18",
     "source_id": "FigureS19",
     "title": "Three-visit molecular trajectories in fixed patient sets",
     "caption": "Within each marker and treatment, the same patients contribute at W0, W12 and W24. W0 is zero by definition; W12/W24 are mean within-patient log₂ changes from W0. Light blue, teal and deep blue encode W0/W12/W24 consistently across all panels. Rows are spaced to separate the three visits; horizontal intervals are 95% t confidence intervals for n≥5. Smaller sets are descriptive without inferential intervals, and absent estimates remain blank. All 23 markers are retained. Fixed triplet counts are available in the source table and may differ across markers or treatments, but never across the three displayed visits within a marker/treatment.",
@@ -240,32 +229,28 @@
     ]
   },
   {
-    "id": "FigureS20",
+    "id": "FigureS19",
     "source_id": "FigureS44",
-    "title": "Individual EASI estimation and its severity boundary",
-    "caption": "a–c, Estimated versus observed EASI in the first patient-held-out repetition at W0/W12 and same-cohort temporal application at W24. Each fixed 2×2-EASI-point cell contains all patients whose exact score pair falls within its boundaries. Colour gives patient count on the shared logarithmic count scale; white cells have no observations. All 152/89/75 eligible patients are retained, and identical axes preserve the severity-range comparison. Grey lines denote exact agreement, not a fitted association. d, Cumulative absolute-error proportions, calculated separately in each validation repetition and then averaged. Bands are patient-bootstrap 95% confidence intervals conditional on saved predictions. All errors enter each proportion; only thresholds from zero to ten points are displayed. The two-point line is a reading reference, not an accepted replacement margin. e, Baseline MAE by observed EASI stratum, with patient-bootstrap 95% confidence intervals and unique-patient counts. These estimates average the two repetition-specific metrics. W12/W24 have only one/no EASI>21 observation, respectively. W0/W12 use nested patient-level structure and penalty selection; earlier marker selection is not repeated. W24 was previously inspected within the same cohort. These results assess the development procedure, not independent validation of the final formula. Primary overall metrics and numerical controls appear in Table 2; molecular added accuracy has not been established.",
+    "title": "Observed and estimated EASI at each visit",
+    "caption": "a–c, Estimated versus observed EASI in the first patient-held-out repetition at W0/W12 and same-cohort temporal application at W24. Each fixed 2×2-EASI-point cell counts all exact score pairs within its boundaries. Colour gives patient count on one shared logarithmic scale; white cells contain no observations. All 152/89/75 eligible patients are retained. Identical axes preserve the severity-range comparison; grey diagonals denote exact agreement. W0/W12 use nested patient-level structure and penalty selection; earlier marker selection is not repeated. W24 had previously been inspected. These results assess the development procedure rather than independent validation of the final coefficient vector. Overall performance is in Table 2; the main figure displays the complete absolute-error distribution.",
     "sources": [
-      "manuscript/source_data/model_count_cells.csv",
-      "manuscript/source_data/error_ecdf.csv",
-      "results/tables/update_20261017/model/model_metrics.csv"
+      "manuscript/source_data/model_count_cells.csv"
     ]
   },
   {
-    "id": "FigureS21",
+    "id": "FigureS20",
     "source_id": "FigureS45",
-    "title": "Within-patient change and EASI75 response classification",
-    "caption": "a–c, Estimated versus observed EASI changes in the first patient-held-out repetition. Change is end minus start, so negative values indicate improvement. Fixed 2×2-EASI-point cells count exact paired score changes, using one logarithmic count scale and identical axes across intervals; white cells contain no observations. All 85, 67 and 55 paired patients are retained in their respective windows, which can share patients. Grey diagonal lines denote exact agreement; horizontal and vertical lines mark no change. Primary change MAEs over W0–W12, W0–W24 and W12–W24 are 3.87, 3.47 and 1.49 points, respectively, with intervals in the source tables. These metrics score each of two repetitions before averaging, whereas the count maps illustrate one repetition. d, EASI75 sensitivity, specificity and overall agreement, averaged after classification within each repetition, with patient-bootstrap 95% confidence intervals conditional on saved predictions. Sensitivity denominators are observed responders (W12 n=49; W24 n=54); specificity denominators are nonresponders (36 and 13). Agreement includes 85 and 67 patients. Observed and estimated response each use their corresponding W0 and follow-up scores; percentage response requires positive observed and estimated W0. W24 is previously inspected same-cohort temporal application, not external validation. Complete EASI50/75/90 classifications and exclusions remain in the supplement. These results assess monitoring agreement, not treatment causality or clinical interchangeability.",
+    "title": "Within-patient EASI change and absolute error",
+    "caption": "a–c, Estimated versus observed EASI changes in the first patient-held-out repetition. Change is end minus start: negative values indicate improvement. Fixed 2×2-EASI-point cells count exact paired changes on one logarithmic count scale. Identical axes retain all 85, 67 and 55 pairs; the intervals can share patients and are not consecutive categories on a time axis. White cells contain no observations; diagonals mark exact agreement. d, Change MAE calculated within each of two repetitions before averaging, with 2,000 patient-bootstrap 95% confidence intervals conditional on saved predictions. Both scores are paired within each repetition before subtraction. W24 is previously inspected same-cohort temporal application. EASI75 classification is shown in the main model figure; complete EASI50/75/90 classifications are retained separately.",
     "sources": [
       "manuscript/source_data/monitoring_count_cells.csv",
-      "results/tables/update_20261017/redesign_20261018/monitoring_response_uncertainty.csv",
-      "results/tables/update_20261017/redesign_20261018/monitoring_confusion_counts.csv",
       "results/tables/update_20261017/redesign_20261018/monitoring_change_uncertainty.csv"
     ]
   },
   {
-    "id": "FigureS22",
+    "id": "FigureS21",
     "source_id": "FigureS38",
-    "title": "Who is correctly classified as reaching EASI50, EASI75 and EASI90?",
+    "title": "Classification of EASI50, EASI75 and EASI90 response",
     "caption": "Each panel shows actual patient counts from the first outer repetition, separately for W0→W12 and W0→W24. Rows are observed response and columns model-estimated response. Diagonal cells are correct; upper-right cells falsely indicate response and lower-left cells miss an observed responder. Percentages are within each observed-response row, so the lower-right percentage is sensitivity and the upper-left percentage specificity. Observed response uses observed baseline/follow-up scores, whereas estimated response uses predicted baseline/follow-up scores. Counts are integers from one repetition, not the primary two-repetition average; the full metrics table retains the latter. The paired denominators are 85 and 67, with no excluded pair for invalid baseline in this displayed repetition. The two intervals can share patients. This assesses response classification, not alternative-treatment outcomes or continuous-score equivalence.",
     "sources": [
       "results/tables/update_20261017/redesign_20261018/monitoring_confusion_repeat0.csv",

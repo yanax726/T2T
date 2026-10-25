@@ -89,9 +89,9 @@
       ],
       "labels": [
         "<50%",
-        "50\u2013<75%",
-        "75\u2013<90%",
-        "\u226590%"
+        "50–<75%",
+        "75–<90%",
+        "≥90%"
       ]
     },
     "pathway_w24_status": {
@@ -632,7 +632,7 @@
         "#123E57"
       ],
       "meaning": "Numerical proportion, not treatment identity",
-      "normalization": "0\u2013100%"
+      "normalization": "0–100%"
     }
   },
   "neutral": {
@@ -694,7 +694,8 @@
       "source_id": "FigureS39",
       "question": "Patient and data flow through the parallel analyses",
       "categorical_families": [
-        "method"
+        "method",
+        "treatment"
       ],
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
@@ -710,16 +711,6 @@
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
     "FigureS3": {
-      "source_id": "FigureS2",
-      "question": "Observed and baseline-adjusted EASI, PP-NRS, Adult DLQI",
-      "categorical_families": [
-        "method",
-        "treatment"
-      ],
-      "continuous_scales": [],
-      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
-    },
-    "FigureS4": {
       "source_id": "FigureS3",
       "question": "Observed and baseline-adjusted BSA (%), SCORAD",
       "categorical_families": [
@@ -729,7 +720,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS5": {
+    "FigureS4": {
       "source_id": "FigureS4",
       "question": "Observed and baseline-adjusted IgE (recorded units), Eosinophils (recorded units)",
       "categorical_families": [
@@ -739,7 +730,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS6": {
+    "FigureS5": {
       "categorical_families": [
         "treatment",
         "visit",
@@ -750,7 +741,7 @@
         "ocean_sequential"
       ]
     },
-    "FigureS7": {
+    "FigureS6": {
       "source_id": "FigureS23",
       "question": "Week 2: all initial-treatment target contrasts",
       "categorical_families": [
@@ -759,7 +750,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS8": {
+    "FigureS7": {
       "source_id": "FigureS24",
       "question": "Week 4: all initial-treatment target contrasts",
       "categorical_families": [
@@ -768,7 +759,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS9": {
+    "FigureS8": {
       "source_id": "FigureS25",
       "question": "Week 12: all initial-treatment target contrasts",
       "categorical_families": [
@@ -777,7 +768,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS10": {
+    "FigureS9": {
       "source_id": "FigureS26",
       "question": "Week 24: all initial-treatment target contrasts",
       "categorical_families": [
@@ -786,7 +777,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS11": {
+    "FigureS10": {
       "categorical_families": [
         "treatment",
         "visit",
@@ -797,9 +788,19 @@
         "ocean_sequential"
       ]
     },
-    "FigureS12": {
+    "FigureS11": {
       "source_id": "FigureS6",
-      "question": "All molecular changes within W12 \u2192 W24",
+      "question": "All molecular changes within W12 → W24",
+      "categorical_families": [
+        "method",
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+    },
+    "FigureS12": {
+      "source_id": "FigureS7",
+      "question": "All molecular changes within W0 → W24",
       "categorical_families": [
         "method",
         "treatment"
@@ -808,18 +809,17 @@
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
     "FigureS13": {
-      "source_id": "FigureS7",
-      "question": "All molecular changes within W0 \u2192 W24",
+      "source_id": "FigureS8",
+      "question": "Adjusted treatment contrasts in molecular change: W0 → W12",
       "categorical_families": [
-        "method",
-        "treatment"
+        "method"
       ],
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
     "FigureS14": {
-      "source_id": "FigureS8",
-      "question": "Adjusted treatment contrasts in molecular change: W0 \u2192 W12",
+      "source_id": "FigureS9",
+      "question": "Adjusted treatment contrasts in molecular change: W12 → W24",
       "categorical_families": [
         "method"
       ],
@@ -827,8 +827,8 @@
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
     "FigureS15": {
-      "source_id": "FigureS9",
-      "question": "Adjusted treatment contrasts in molecular change: W12 \u2192 W24",
+      "source_id": "FigureS10",
+      "question": "Adjusted treatment contrasts in molecular change: W0 → W24",
       "categorical_families": [
         "method"
       ],
@@ -836,13 +836,15 @@
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
     "FigureS16": {
-      "source_id": "FigureS10",
-      "question": "Adjusted treatment contrasts in molecular change: W0 \u2192 W24",
       "categorical_families": [
+        "treatment",
+        "visit",
         "method"
       ],
-      "continuous_scales": [],
-      "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
+      "continuous_scales": [
+        "ocean_coral_diverging",
+        "ocean_sequential"
+      ]
     },
     "FigureS17": {
       "categorical_families": [
@@ -867,17 +869,6 @@
       ]
     },
     "FigureS19": {
-      "categorical_families": [
-        "treatment",
-        "visit",
-        "method"
-      ],
-      "continuous_scales": [
-        "ocean_coral_diverging",
-        "ocean_sequential"
-      ]
-    },
-    "FigureS20": {
       "source_id": "Figure4",
       "question": "A common four-input equation estimates individual EASI readings",
       "categorical_families": [
@@ -889,7 +880,7 @@
       ],
       "panel_rule": "Equal-size count cells, common count scale. Visit colours identify summary curves. No bubble size or formula."
     },
-    "FigureS21": {
+    "FigureS20": {
       "source_id": "Figure5",
       "question": "Within-patient change and clinical response from the common equation",
       "categorical_families": [
@@ -901,7 +892,7 @@
       ],
       "panel_rule": "Equal-size count cells, common count scale. Visit colours identify summary curves. No bubble size or formula."
     },
-    "FigureS22": {
+    "FigureS21": {
       "source_id": "FigureS38",
       "question": "Who is correctly classified as reaching EASI50, EASI75 and EASI90?",
       "categorical_families": [
@@ -913,7 +904,7 @@
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     }
   },
-  "source_note": "Author-specified role HEX values. Sequential and continuous LUTs implemented from the stated ocean\u2013peach\u2013coral direction; no external JSON was supplied.",
+  "source_note": "Author-specified role HEX values. Sequential and continuous LUTs implemented from the stated ocean–peach–coral direction; no external JSON was supplied.",
   "figure_guide": "https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/",
   "display_rule": "Ordinary observations use circles and solid lines. Colour identifies categories. Facet labels separate treatment pathways and change windows; no categorical shape or dash code."
 }

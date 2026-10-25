@@ -55,12 +55,12 @@ PAPER_MODULES = [
     'redesign_evidence_20261018', 'cohort_flow_20261018',
     'model_display_evidence_20261018', 'balance_support_20261018',
     'plot_source_aggregates_20261018',
-    'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018',
+    'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
-    'reports/revision_20261025/public_verification.json',
-    'reports/revision_20261025/tests.log',
-    'reports/revision_20261025/isolated_rebuild.log',
+    'reports/deck_alignment_20261025/public_verification.json',
+    'reports/deck_alignment_20261025/tests.log',
+    'reports/deck_alignment_20261025/isolated_rebuild.log',
     'reports/update_20261018/revision2/statistical_checks_manifest.json',
     'reports/figure_quality/verification.json',
     'reports/figure_quality/public_rebuild.json',

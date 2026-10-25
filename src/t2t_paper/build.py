@@ -249,7 +249,8 @@ def figure_page(row):
     return '\\clearpage\n\\renewcommand{\\thefigure}{'+row['id'].replace('Figure','')+'}\n\\begin{figure}[p]\n\\centering\n\\includegraphics[width=\\linewidth,height='+height+'\\textheight,keepaspectratio]{figures/'+row['id']+'.pdf}\n\\caption{\\textbf{'+tex(row['title'])+'.} '+tex(row['caption'])+'}\\label{fig:'+row['id']+'}\n\\end{figure}\n'
 
 def figure_inline(row):
-    return '\\begin{figure}[!htbp]\n\\centering\n\\includegraphics[width=\\linewidth,height=.72\\textheight,keepaspectratio]{figures/'+row['id']+'.pdf}\n\\caption{\\textbf{'+tex(row['title'])+'.} '+tex(row['caption'])+'}\\label{fig:'+row['id']+'}\n\\end{figure}\n'
+    height = '.83' if row['id'] == 'Figure2' else '.72'
+    return '\\begin{figure}[!htbp]\n\\centering\n\\includegraphics[width=\\linewidth,height='+height+'\\textheight,keepaspectratio]{figures/'+row['id']+'.pdf}\n\\caption{\\textbf{'+tex(row['title'])+'.} '+tex(row['caption'])+'}\\label{fig:'+row['id']+'}\n\\end{figure}\n'
 
 def documents(root):
     m=root/'manuscript';catalog=json.loads((m/'figure_catalog.json').read_text())

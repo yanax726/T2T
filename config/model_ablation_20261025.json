@@ -1,0 +1,172 @@
+{
+  "version": "2026-10-25-input-ablation",
+  "status": "Exploratory post-result component analysis; no replacement of the frozen primary formula.",
+  "input_path": "results/tables/update_20261002/stage_refinement/input.csv",
+  "frozen_predictions_path": "results/tables/update_20261017/model/predictions.csv",
+  "output_path": "results/tables/update_20261025/ablation",
+  "report_path": "reports/update_20261025/ablation",
+  "seed": 20261002,
+  "outer_repeats": 2,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "development_weeks": [
+    0,
+    12
+  ],
+  "evaluation_weeks": [
+    0,
+    12,
+    24
+  ],
+  "ridge_alpha": [
+    0.1,
+    1,
+    10,
+    100
+  ],
+  "bootstrap_replicates": 2000,
+  "comparison_policy": "All models in each comparison are refitted using the same complete-case visits, the original 160-patient outer fold assignment and the same inner-fold rule. No averaging of predictions before error scoring. Bootstrap intervals resample patients jointly across models and repetitions, conditional on saved predictions.",
+  "missing_policy": "No outcome or deployment input imputation. The itch comparison requires current PP-NRS; DLQI comparisons require age >=18 and observed current adult DLQI and PP-NRS.",
+  "structure_policy": "Serum-only and PP-NRS-plus-serum use linear ridge. Models including BSA select linear, BSA-quadratic or BSA-times-other-input interactions and penalty together in inner patient validation. Fixed BSA-area structures additionally isolate molecular inclusion without changing the structural family.",
+  "cohorts": {
+    "core_all": {
+      "required_inputs": [
+        "bsa",
+        "log2_CCL17",
+        "log2_CCL26",
+        "log2_IL-5"
+      ],
+      "minimum_age": 12,
+      "models": [
+        "ccl17",
+        "bsa_ccl17",
+        "serum3",
+        "bsa",
+        "bsa_serum3",
+        "bsa_area",
+        "bsa_serum3_area",
+        "without_CCL17",
+        "without_CCL26",
+        "without_IL5"
+      ]
+    },
+    "itch_matched": {
+      "required_inputs": [
+        "bsa",
+        "log2_CCL17",
+        "log2_CCL26",
+        "log2_IL-5",
+        "pp_nrs"
+      ],
+      "minimum_age": 12,
+      "models": [
+        "serum3",
+        "bsa",
+        "bsa_serum3",
+        "itch_serum3",
+        "bsa_itch",
+        "bsa_serum3_itch"
+      ]
+    },
+    "adult_dlqi_matched": {
+      "required_inputs": [
+        "bsa",
+        "log2_CCL17",
+        "log2_CCL26",
+        "log2_IL-5",
+        "pp_nrs",
+        "dlqi"
+      ],
+      "minimum_age": 18,
+      "models": [
+        "bsa",
+        "bsa_serum3",
+        "bsa_serum3_itch",
+        "bsa_serum3_dlqi",
+        "bsa_itch_dlqi",
+        "bsa_serum3_itch_dlqi"
+      ]
+    }
+  },
+  "paired_contrasts": {
+    "core_all": [
+      [
+        "bsa_serum3",
+        "serum3"
+      ],
+      [
+        "bsa_serum3",
+        "bsa"
+      ],
+      [
+        "bsa_serum3_area",
+        "bsa_area"
+      ],
+      [
+        "bsa_serum3_area",
+        "without_CCL17"
+      ],
+      [
+        "bsa_serum3_area",
+        "without_CCL26"
+      ],
+      [
+        "bsa_serum3_area",
+        "without_IL5"
+      ],
+      [
+        "serum3",
+        "ccl17"
+      ],
+      [
+        "bsa_serum3",
+        "bsa_ccl17"
+      ]
+    ],
+    "itch_matched": [
+      [
+        "bsa_serum3",
+        "serum3"
+      ],
+      [
+        "bsa_serum3",
+        "bsa"
+      ],
+      [
+        "itch_serum3",
+        "serum3"
+      ],
+      [
+        "bsa_serum3_itch",
+        "bsa_serum3"
+      ],
+      [
+        "bsa_serum3_itch",
+        "bsa_itch"
+      ]
+    ],
+    "adult_dlqi_matched": [
+      [
+        "bsa_serum3",
+        "bsa"
+      ],
+      [
+        "bsa_serum3_itch",
+        "bsa_serum3"
+      ],
+      [
+        "bsa_serum3_dlqi",
+        "bsa_serum3"
+      ],
+      [
+        "bsa_serum3_itch_dlqi",
+        "bsa_serum3_itch"
+      ],
+      [
+        "bsa_serum3_itch_dlqi",
+        "bsa_itch_dlqi"
+      ]
+    ]
+  },
+  "inference": "Exploratory effect estimates and 95% bootstrap intervals, not multiplicity-adjusted confirmatory tests. Current symptom inputs make a hybrid clinical-serum estimate, not a wholly objective molecular score. W24 is previously inspected same-cohort temporal application. Lower error is not proof of clinical interchangeability."
+}

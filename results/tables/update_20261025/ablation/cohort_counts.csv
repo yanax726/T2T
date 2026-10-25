@@ -1,0 +1,10 @@
+cohort,week,n_patients,n_visits,excluded_from_core,n_development_patients
+core_all,0,152,152,0,156
+core_all,12,89,89,0,156
+core_all,24,75,75,0,156
+itch_matched,0,151,151,1,156
+itch_matched,12,89,89,0,156
+itch_matched,24,75,75,0,156
+adult_dlqi_matched,0,105,105,47,107
+adult_dlqi_matched,12,58,58,31,107
+adult_dlqi_matched,24,44,44,31,107

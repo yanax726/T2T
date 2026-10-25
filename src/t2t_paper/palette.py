@@ -1,14 +1,49 @@
 """Semantic colours shared by the manuscript and presentation figures."""
 from pathlib import Path
 import json
+import re
 import numpy as np
 from matplotlib.colors import ListedColormap, to_hex, to_rgba
 from matplotlib.lines import Line2D
 from matplotlib.collections import Collection
 from matplotlib.patches import Patch
+from matplotlib.text import Text
 
 ROOT = Path(__file__).resolve().parents[2]
 REGISTRY = json.loads((ROOT / 'config/palette_v4_registry.json').read_text())
+
+
+def treatment_label(key):
+    return REGISTRY['display_labels'][key]
+
+
+def display_text(text):
+    """Use unambiguous treatment names without altering analytical identifiers."""
+    text = str(text)
+    text = re.sub(r'\b(?:Pooled|pooled)[ _](?:abrocitinib|A)\b', 'pooled abro', text)
+    text = re.sub(r'\b(?:Dupilumab|dupilumab)\b', 'dupi', text)
+    text = re.sub(r'\b(?:Abrocitinib|abrocitinib)\b', 'abro', text)
+    text = re.sub(r'\bA100\b', 'abro 100 mg', text)
+    text = re.sub(r'\bA200\b', 'abro 200 mg', text)
+    text = re.sub(r'\bD\b', 'dupi', text)
+    text = re.sub(r'\bA: pooled abro\b', 'pooled abro', text)
+    text = text.replace('dupi: dupi', 'dupi')
+    return text
+
+
+def apply_display_labels(fig):
+    for ax in fig.axes:
+        for axis in [ax.xaxis, ax.yaxis]:
+            labels = [item.get_text() for item in axis.get_majorticklabels()]
+            renamed = [display_text(value) for value in labels]
+            if axis is ax.xaxis:
+                renamed = [value.replace('abro ', 'abro\n', 1)
+                           if value in ['abro 100 mg', 'abro 200 mg'] else value
+                           for value in renamed]
+            if renamed != labels:
+                axis.set_ticks(axis.get_majorticklocs(), labels=renamed)
+    for artist in fig.findobj(match=Text):
+        artist.set_text(display_text(artist.get_text()))
 
 
 def _entry(role):

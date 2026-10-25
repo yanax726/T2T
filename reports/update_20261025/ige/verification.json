@@ -1,0 +1,23 @@
+{
+  "status": "COMPUTATION_VERIFIED_METHOD_SENSITIVITY_REQUIRED",
+  "n_clinical": 163,
+  "n_CAMS": 130,
+  "n_no_primary_visit_IgE": 16,
+  "n_complete_triplets": 30,
+  "observed_values_unchanged": true,
+  "original_files_unchanged": true,
+  "no_W4_IgE_values_created": true,
+  "independent_unit": "patient",
+  "imputations_per_scope": 400,
+  "max_MAR_change_rhat": 1.012703176218837,
+  "max_MAR_change_mcse_over_se": 0.05601554085095951,
+  "mixed_model_warnings": {
+    "CAMS": [],
+    "all_163": []
+  },
+  "source_sha256": {
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/update_20261017/clinical/restricted/overlap_patient_weights.csv": "699c39e3e9a0ff76b81dfb4520af2a000826f35e38e947a4065c49b8a5616e05",
+    "config/ige_missingness_20261025.json": "52bca6ac9d9f6a36c9b825c2d8632f521513c9987239315ad5025576e058a448"
+  }
+}

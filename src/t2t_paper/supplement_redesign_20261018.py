@@ -10,7 +10,7 @@ from matplotlib.colors import to_rgb
 from . import palette
 
 ARMS = ['dupilumab', 'abrocitinib_100mg', 'abrocitinib_200mg']
-LABELS = ['Dupilumab', 'Abrocitinib 100 mg', 'Abrocitinib 200 mg']
+LABELS = [palette.treatment_label(key) for key in ARMS]
 COLORS = []
 TIME_COLORS = []
 TIME_MARKERS = ['o', 'o', 'o']
@@ -317,7 +317,8 @@ def distributions_and_triplets(root,base):
 def treatment_contrasts(root,base):
     folder=root/'results/tables/update_20261017/clinical';raw=pd.read_csv(folder/'endpoint_tests.csv');adj=pd.read_csv(folder/'endpoint_weighted_contrasts.csv')
     comparisons=['dupilumab - abrocitinib_100mg','dupilumab - abrocitinib_200mg','abrocitinib_100mg - abrocitinib_200mg','dupilumab - pooled_abrocitinib']
-    labels=['D minus A100','D minus A200','A100 minus A200','D minus pooled A']
+    labels=['dupi minus\nabro 100 mg','dupi minus\nabro 200 mg',
+            'abro 100 mg minus\nabro 200 mg','dupi minus\npooled abro']
     targets=['EASI50','EASI75','EASI90','EASI_le5','PP_NRS_drop4','PP_NRS_le4','PP_NRS_01','IGA_drop2','IGA_01','DLQI_le10','DLQI_le4','physician','patient','overall']
     names=['EASI50','EASI75','EASI90','EASI ≤5','PP-NRS decrease ≥4','PP-NRS ≤4','PP-NRS 0/1','IGA decrease ≥2','IGA 0/1','Adult DLQI ≤10','Adult DLQI ≤4','Physician target','Patient target','Both targets']
     for k,week in enumerate([2,4,12,24]):
@@ -325,7 +326,7 @@ def treatment_contrasts(root,base):
             fig,axes=grid(1,1,85,left=.27,top=.80,bottom=.22);ax=axes[0]
             for j,(data,col) in enumerate([(raw,CONTROL),(adj,CURRENT)]):
                 z=data[data.week.eq(week)&data.target.eq('PP_NRS_le4')].set_index('comparison').reindex(comparisons);forest(ax,z,np.arange(4)+(j-.5)*.2,col)
-            ax.axvline(0,color='#AAB2B8',lw=.7);ax.set(yticks=range(4),yticklabels=labels,ylim=(3.6,-.6),xlim=(-1.03,1.03),xlabel='Difference in PP-NRS ≤4 attainment',title='Week 2 itch target')
+            ax.axvline(0,color='#AAB2B8',lw=.7);ax.set(yticks=range(4),yticklabels=[x.replace('\n',' ') for x in labels],ylim=(3.6,-.6),xlim=(-1.03,1.03),xlabel='Difference in PP-NRS ≤4 attainment',title='Week 2 itch target')
         else:
             fig,axes=grid(1,4,145,left=.25,top=.88,bottom=.15,wspace=.18)
             for ax,comp,title in zip(axes,comparisons,labels):
@@ -334,7 +335,7 @@ def treatment_contrasts(root,base):
                 ax.axvline(0,color='#AAB2B8',lw=.7);ax.set(yticks=range(len(targets)),yticklabels=names if ax==axes[0] else ['']*len(names),ylim=(len(targets)-.4,-.6),xlim=(-1.03,1.03),xticks=[-1,0,1],xlabel='Risk difference',title=title);ax.grid(axis='y',lw=.35,color='#EDF0F2')
         window_header(fig,f'Week {week}: initial-treatment target contrasts',y=.98 if week==2 else .995)
         legend(fig,['Observed','Baseline adjusted'],[CONTROL,CURRENT],y=.935 if week==2 else .965,markers=['o','o']);fig.text(.56,.035,'Negative favours second group     |     Positive favours first group',ha='center',fontsize=6.3)
-        finish(fig,23+k,f'Week {week}: all initial-treatment target contrasts','Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. D denotes dupilumab; A100/A200 the initial abrocitinib doses. Pooled abrocitinib is supplementary. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.',[folder/'endpoint_tests.csv',folder/'endpoint_weighted_contrasts.csv'],root,base,'W2 compressed into one purposeful comparison forest; later visits all endpoints','Attainment risk difference; nominal 95% CI','Four contrasts or complete target list','Endpoint-specific evaluable patients; weighted ESS in source')
+        finish(fig,23+k,f'Week {week}: all initial-treatment target contrasts','Observed and baseline-adjusted risk differences with nominal 95% confidence intervals. Positive values favour the first named treatment for target attainment. Adjustment uses generalized overlap weights from baseline EASI, age, sex, BMI and centre; it does not estimate a randomized current-dose effect. Treatment labels refer to the initial prescribed regimen. Pooled abrocitinib is supplementary. Missing estimates are left absent; all exact denominators, Fisher/weighted tests, Holm-adjusted P values and exploratory FDR values are in the source tables.',[folder/'endpoint_tests.csv',folder/'endpoint_weighted_contrasts.csv'],root,base,'W2 compressed into one purposeful comparison forest; later visits all endpoints','Attainment risk difference; nominal 95% CI','Four contrasts or complete target list','Endpoint-specific evaluable patients; weighted ESS in source')
 
 
 def model_comparisons(root,base):

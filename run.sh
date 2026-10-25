@@ -34,6 +34,18 @@ case "$mode" in
     "$python_bin" -m t2t_paper.figures
     "$python_bin" -m t2t_paper.build --compile
     ;;
+  sensitivity)
+    "$python_bin" -m t2t_paper.preflight
+    if [[ ! -f results/tables/update_20261017/model/predictions.csv ]]; then
+      echo 'The frozen development predictions are missing. Run ./run.sh analyse with authorized inputs first.' >&2
+      exit 2
+    fi
+    "$python_bin" -m cytot2t.curation.clinical_evidence_20261017
+    "$python_bin" -m cytot2t.curation.ige_missingness_20261025
+    "$python_bin" -m cytot2t.curation.model_ablation_20261025
+    "$python_bin" -m t2t_paper.figures
+    "$python_bin" -m t2t_paper.build --compile
+    ;;
   analyse)
     "$python_bin" -m t2t_paper.preflight
     "$python_bin" -m cytot2t.curation.clinical_evidence_20261017
@@ -49,11 +61,13 @@ case "$mode" in
     "$python_bin" -m cytot2t.curation.reference_sensitivity_20261018
     "$python_bin" -m t2t_paper.redesign_evidence_20261018
     "$python_bin" -m t2t_paper.revision_checks_20261018
+    "$python_bin" -m cytot2t.curation.ige_missingness_20261025
+    "$python_bin" -m cytot2t.curation.model_ablation_20261025
     "$python_bin" -m t2t_paper.figures
     "$python_bin" -m t2t_paper.build --compile
     ;;
   *)
-    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|analyse]'
+    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|analyse]'
     exit 2
     ;;
 esac

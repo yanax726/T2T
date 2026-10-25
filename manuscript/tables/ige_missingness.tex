@@ -1,0 +1,30 @@
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{p{49mm}rrr}
+\caption{IgE observation patterns and missing-data sensitivity.}\label{tab:ige_missingness}\\
+\toprule Initial group / analysis & W0--W12 & W0--W24 & W12--W24 \\ \midrule\endfirsthead
+\toprule Initial group / analysis & W0--W12 & W0--W24 & W12--W24 \\ \midrule\endhead
+\multicolumn{4}{l}{\textbf{Observed all-centre paired ratios of IgE+1 (95\% CI); paired n}} \\
+dupi & 0.51 (0.39, 0.67); 29 & 0.34 (0.20, 0.57); 14 & 0.65 (0.57, 0.75); 12 \\
+abro 100 mg & 0.56 (0.40, 0.79); 19 & 0.66 (0.40, 1.11); 12 & 1.06 (0.88, 1.27); 11 \\
+abro 200 mg & 0.45 (0.18, 1.14); 20 & 0.82 (0.50, 1.36); 13 & 1.16 (0.73, 1.82); 11 \\
+\addlinespace\multicolumn{4}{l}{\textbf{Posterior log-normal imputation: CAMS, MAR}} \\
+dupi & 0.55 (0.35, 0.87) & 0.37 (0.22, 0.62) & 0.67 (0.48, 0.93) \\
+abro 100 mg & 0.56 (0.30, 1.07) & 0.63 (0.31, 1.27) & 1.12 (0.74, 1.69) \\
+abro 200 mg & 0.56 (0.27, 1.14) & 0.69 (0.31, 1.52) & 1.24 (0.80, 1.91) \\
+\addlinespace\multicolumn{4}{l}{\textbf{Within-treatment donor imputation: CAMS, MAR}} \\
+dupi & 0.58 (0.41, 0.84) & 0.43 (0.29, 0.64) & 0.73 (0.53, 1.02) \\
+abro 100 mg & 0.50 (0.28, 0.90) & 0.68 (0.39, 1.19) & 1.37 (0.78, 2.39) \\
+abro 200 mg & 0.78 (0.34, 1.75) & 1.92 (0.88, 4.18) & 2.48 (1.14, 5.41) \\
+\bottomrule\end{longtable}
+}
+\textbf{CAMS W0--W24 sensitivity to missing-value assumptions}
+{\small\begin{longtable}{p{49mm}rrr}\toprule Initial group / method & Half & MAR & Double \\ \midrule\endhead
+dupi; Log-normal & 0.23 (0.13, 0.38) & 0.37 (0.22, 0.62) & 0.60 (0.35, 1.02) \\
+abro 100 mg; Log-normal & 0.39 (0.19, 0.78) & 0.63 (0.31, 1.27) & 1.03 (0.51, 2.09) \\
+abro 200 mg; Log-normal & 0.43 (0.19, 0.96) & 0.69 (0.31, 1.52) & 1.10 (0.50, 2.45) \\
+dupi; Donor & 0.26 (0.18, 0.39) & 0.43 (0.29, 0.64) & 0.70 (0.46, 1.06) \\
+abro 100 mg; Donor & 0.42 (0.24, 0.74) & 0.68 (0.39, 1.19) & 1.12 (0.63, 1.97) \\
+abro 200 mg; Donor & 1.20 (0.56, 2.56) & 1.92 (0.88, 4.18) & 3.08 (1.37, 6.93) \\
+\bottomrule\end{longtable}
+}
+\noindent\footnotesize Ratios exponentiate mean changes in log(IgE+1); they are not arithmetic mean ratios. All-centre observed pairs and CAMS imputation have different target populations. The second block varies missing-value assumptions for W0--W24. MAR assumes that included observed information explains missingness; half/double multiply only missing follow-up (IgE+1) by 0.5/2, retaining the physical lower bound, and illustrate departures from MAR. Imputation targets 130 CAMS patients, with 400 retained completed datasets; these are not 400 independent patient cohorts. Complete all-centre sensitivity, centre-specific coverage, observation-pattern summaries, donor support and numerical diagnostics remain in the source tables. No IgE was observed at W4 and none was created. The value 5000 is retained as recorded; its assay-censoring status is unverified.\normalsize

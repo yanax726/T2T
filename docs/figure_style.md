@@ -1,25 +1,40 @@
-# Figure colours and symbols
+# Figure style
 
-All current manuscript and presentation figures use `config/palette_v4_registry.json`. The configuration assigns colours by meaning across the entire numbered figure, including every panel.
+The current manuscript contains five main figures and 21 supplementary figures. Their plotting sources share `config/palette_v4_registry.json`, version `palette-v5-clinical-20261025`; the filename is retained for compatibility. The earlier presentation deck and speaking script are preserved separately and were not regenerated in this manuscript revision.
 
-| Meaning | Colour | Additional cue |
+## Colours and labels
+
+| Role | Display label | Colour |
 |---|---|---|
-| Initial dupilumab | Ocean blue `#2878B5` | Circle |
-| Initial abrocitinib 100 mg | Peach `#E49A7C` | Circle with a darker edge |
-| Initial abrocitinib 200 mg | Coral `#C84B4B` | Circle |
-| W0 | Light blue `#79B9CF` | Circle with a darker edge; solid line |
-| W12 | Teal blue `#269DAB` | Circle; solid line |
-| W24 | Deep ocean blue `#245568` | Circle; solid line |
-| Pooled abrocitinib | Muted warm brown `#A96856` | Circle; used only for a defined pooled estimate |
+| Initial dupilumab | dupi | `#245C8A` |
+| Initial abrocitinib 100 mg | abro 100 mg | `#E69A3A` |
+| Initial abrocitinib 200 mg | abro 200 mg | `#B84D59` |
+| Defined pooled abrocitinib estimate | pooled abro | `#9B6A42` |
+| Baseline visit | W0 | `#8ABDAE` |
+| Week 12 visit | W12 | `#3C8F80` |
+| Week 24 visit | W24 | `#1D514D` |
+| Observed or reference method | As labelled | `#9FA9B3` |
+| Adjusted or current method | As labelled | `#515B66` |
 
-Observed/unadjusted estimates use muted blue `#91ADB6`; adjusted/current estimates use warm brown `#7F5D50` in explicitly labelled method comparisons. These are separate from treatment and visit roles.
+Treatment and visit colours have separate meanings across the whole numbered figure. Labels identify which variable is coloured; a colour is never reassigned between panels. Treatment changes do not change the initial-treatment colour. Display abbreviations do not rename data fields or treatment codes.
 
-Treatment colours do not also represent visits. In Figure 2, panels a–g use treatment colours; panel h uses W12/W24 colours. In Figure 5, the two windows ending at W24 share the endpoint colour but remain separate panels with full interval titles.
+Ordinary points are circles and trend lines are solid. Points, lines and intervals retain full opacity; uncertainty bands, where used, are derived from the same series colour. Titles and axis text are dark neutral. Dense displays use facets and direct labels rather than additional shapes or line styles.
 
-Signed heatmaps use the explicit 257-entry ocean–coral LUT, with cold blue for negative values and coral for positive values. Each estimand has its own labelled colour bar. Correlations retain −1 to 1; other families retain their original common symmetric limits. Proportion heatmaps use the ocean sequential LUT fixed at 0–100%. Recorded IGA grades use six ordered blues. Missing estimates, true zero and sparse cells remain distinct. An unknown recorded regimen is a counted category, not a missing cell.
+## Main and supplementary displays
 
-Categorical points, lines and intervals have full opacity. Bands use alpha 0.16 and retain their stated statistical meaning. Dense forests use smaller marks to avoid collisions. Ordinary data points are circles and all trend lines are solid. Colour carries category identity; facet titles and direct labels separate pathways and intervals. Grayscale and colour-vision simulations are diagnostic checks, not accessibility certification.
+- **Figure 1:** the clinical target framework and the separate research estimator. The diagram does not imply that the estimator governed treatment decisions.
+- **Figure 2:** treatment colours throughout. Panels a–c show observed medians with interquartile whiskers; d–n show threshold proportions with Wilson 95% confidence intervals. Slight horizontal offsets separate groups without changing their visit labels. Panel o shows stage-specific combined targets as unconnected points because the definitions change by visit.
+- **Figure 3:** recorded IGA uses six ordered blue shades for grades 0–5. Treatment-reduction categories are explicitly labelled; counts and denominators accompany proportions.
+- **Figure 4:** treatment colours identify within-group molecular changes in a–c. Neutral colours identify the adjusted contrasts in d–e. Their axes distinguish within-patient log₂ changes from between-treatment differences.
+- **Figure 5:** visit colours identify W0, W12 and W24 in the matched input comparisons and retained primary-model performance panels. Clinical-only controls are separated by a divider. The matched comparison and primary validation populations have their own denominators in the caption.
+- **Supplementary figures:** the same treatment, visit and method roles apply. S5 separates complete three-visit IgE observations from missing-data analyses, with population and assumptions stated in the caption. Molecular windows remain separately labelled. S19–S20 use fixed-size count cells rather than variable-size patient bubbles. All clinical, molecular and validation figures retain their stated units, uncertainty intervals and available-case denominators.
 
-The [Nature figure specifications](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/) support legible text, accessible presentation and editable RGB vector artwork; they do not prescribe these HEX values. PDF and SVG retain vector text; PNG is supplied for viewing. Source figures target at least 6.3-pt text and are checked again at their final manuscript size.
+Signed heatmaps use an explicit 257-colour blue–near-white–brick lookup table, with negative values in blue and positive values in brick. Correlation limits are −1 to 1; other signed comparisons use a common symmetric range within each comparison family. Count and proportion heatmaps use sequential blues, with proportions fixed at 0–100%. The compatibility keys `ocean_coral_diverging` and `ocean_sequential` name these numerical lookup tables; they do not encode treatments or visits. Missing values, true zero and sparse estimates are distinct. Numerical colour bars carry their own quantity and units.
 
-Individual-score and change plots use fixed-size count cells, with colour indicating the number of patients. Cells do not encode patient identity or variable symbol size; the common logarithmic count scale is labelled. Formula coefficients appear in Methods, separately from nested-procedure performance.
+The fitted equation appears in **Results**, followed by its validation. **Methods** describes fitting, preprocessing and evaluation. Formula coefficients are not inserted into data panels.
+
+## Export and review
+
+PDF and SVG preserve editable vector text; PNG files are supplied for viewing. Shared export checks cover categorical-colour consistency and panel alignment. Final PDFs are checked for font sizes, text collisions, outdated treatment abbreviations and legibility; the minimum final glyph threshold is 5 pt. Actual-size viewing, grayscale and colour-vision simulations supplement these checks and are not accessibility certification.
+
+The palette was informed by the supplied [scientific palette guide](https://www.simplifiedsciencepublishing.com/resources/best-color-palettes-for-scientific-figures-and-data-visualizations) and adapted to this figure set. The [Nature figure specifications](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/) support clear labels, accessible presentation and editable RGB artwork; they do not endorse a particular palette or certify these figures.

@@ -238,34 +238,8 @@ def triplet_forests(root, base):
 
 
 def ige_fixed(root, base):
-    source = root / 'results/tables/update_20261017/clinical/clinical_fixed_triplets.csv'
-    d = pd.read_csv(source)
-    d = d[d.target.eq('ige_numeric')]
-    if not d[['median', 'ci_low', 'ci_high']].gt(0).all().all():
-        raise ValueError('The fixed-patient IgE log-axis display requires positive estimates and bounds.')
-    fig, axes = previous.grid(1, 1, 110, left=.14, top=.81, bottom=.18)
-    ax = axes[0]
-    labels = []
-    for j, tx in enumerate(ARMS):
-        z = d[d.treatment.eq(tx)].sort_values('week')
-        assert z.n.nunique() == 1
-        previous.line(ax, z.week + (j - 1)*.22, z['median'], z.ci_low, z.ci_high, previous.COLORS[j])
-        labels.append(f'{LABELS[j]} (n={int(z.n.iloc[0])})')
-    ax.set_yscale('log')
-    ax.set(xticks=TIMES, xlim=(-1, 25), ylim=(25, 6500), xlabel='Week',
-           ylabel='IgE (recorded units; logarithmic scale)', title='The same patients at each visit',
-           yticks=[50, 100, 500, 1000, 5000], yticklabels=['50', '100', '500', '1000', '5000'])
-    ax.minorticks_off()
-    light_grid(ax)
-    previous.legend(fig, labels, previous.COLORS, y=.98)
-    finish(fig, 21, 'IgE with identical patients at W0, W12 and W24',
-           'Medians and patient-bootstrap 95% confidence intervals in fixed complete three-visit sets: 11 dupilumab, 9 A100 and 10 A200 patients. '
-           'The same patients contribute at every visit within each treatment. The vertical axis is logarithmic with ticks labelled in the original '
-           'recorded units; estimates and interval endpoints are unchanged. Small horizontal offsets separate treatment intervals at the same visit. '
-           'No missing value is filled. These fixed-set summaries differ from available-case visit summaries and baseline-adjusted estimates because '
-           'their patients and estimands differ. This check describes observation-pattern sensitivity: the small selected subsets neither estimate '
-           'a causal treatment effect nor establish arithmetic mean changes. Laboratory units require source confirmation.',
-           [source], root, base)
+    from .sensitivity_figures_20261025 import ige_sensitivity
+    ige_sensitivity(root, base, finish)
 
 
 def regional_composite(root, base):
@@ -299,14 +273,17 @@ def regional_composite(root, base):
         for x in range(3):
             b.text(x, y, f'{values[y,x]:.0f}', ha='center', va='center', fontsize=6.3,
                    color=previous.cell_text_color(previous.PROPORTION_CMAP(values[y,x]/100)))
-    b.set(yticks=range(12), yticklabels=[f'{SHORT[ARMS.index(tx)]} · {REGION_LABELS[REGIONS.index(region)]}' for tx, region in rows],
+    b.set(yticks=range(12), yticklabels=[REGION_LABELS[REGIONS.index(region)] for tx, region in rows],
           xticks=range(3), xticklabels=['W0', 'W12', 'W24'], title='Regional burden (% of maximum)')
+    for j, tx in enumerate(ARMS):
+        b.text(-.40, 4*j+1.5, palette.treatment_label(tx), transform=b.get_yaxis_transform(),
+               ha='center', va='center', rotation=90, fontsize=6.3)
     for y in [3.5, 7.5]: b.axhline(y, color='white', lw=2)
     cbax = b.inset_axes([.14, -.095, .72, .025]); cb = fig.colorbar(im, cax=cbax, orientation='horizontal', ticks=[0, 50, 100]); cbax.tick_params(labelsize=6.3, length=2)
     columns = [(start, end, scope) for start, end in [(0, 12), (0, 24), (12, 24)] for scope in ['dupilumab', 'pooled_abrocitinib']]
     values = np.array([[float(change[change.region.eq(region) & change.start.eq(start) & change.end.eq(end) & change.scope.eq(scope) & change.outcome.eq('normalized_improvement')]['mean'].iloc[0])*100 for start,end,scope in columns] for region in REGIONS])
     limit = max(5, np.ceil(np.nanmax(np.abs(values)) / 5) * 5)
-    im = previous.heat(c, values, REGION_LABELS, ['D', 'A']*3, 'Paired regional decrease', limit,
+    im = previous.heat(c, values, REGION_LABELS, ['dupi', 'abro']*3, 'Paired regional decrease', limit,
                        [[('0' if abs(v)<.5 else f'{v:.0f}') for v in row] for row in values])
     for x, label in zip([.1667, .5, .8333], ['W0–12', 'W0–24', 'W12–24']):
         c.text(x, 1.06, label, transform=c.transAxes, ha='center', fontsize=6.3)
@@ -327,7 +304,7 @@ def regional_composite(root, base):
            'a, Baseline Spearman associations between all 23 markers and the four regional EASI contributions; stars mark BH q<0.05, with complete coefficients, '
            'patient counts and bootstrap intervals retained in the source. b, Available-case mean regional EASI divided by its theoretical maximum and multiplied '
            'by 100; cells show percentages, not patient counts. c, Mean paired regional decrease as a percentage of the same regional maximum for three separately '
-           'labelled intervals; positive values indicate improvement. D is dupilumab and A is the observed pooled abrocitinib dose mixture. These heatmaps summarize '
+           'labelled intervals; positive values indicate improvement. The abro columns represent the observed pooled-dose mixture. These heatmaps summarize '
            'magnitude; exact 95% t intervals and counts are in the source tables. d, Whole-body PP-NRS mean decreases with 95% t intervals, not region-specific itch. '
            'Regional maxima are 7.2, 14.4, 21.6 and 28.8 for head/neck, upper limbs, trunk and lower limbs. All regional analyses require complete, bounded regional '
            'records consistent with total EASI. Intervals can share patients and are not successive cumulative effects. Colour bars encode distinct quantities and '
@@ -358,6 +335,6 @@ def run(root, base=None):
     folder.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(previous.DESIGNS).to_csv(folder / 'design_and_source_map.csv', index=False)
     (folder/'display_contract.json').write_text(json.dumps({'retained_source_ids':SOURCES,
-        'full_numeric_tables_retained':True, 'clinical_missing_observations_imputed':False,
+        'full_numeric_tables_retained':True, 'observed_values_replaced':False, 'IgE_imputation':'Separate post hoc sensitivity; never validation truth',
         'selected_associations':'All six q<0.05 coefficients from the original complete family; exploratory display only'}, indent=2)+'\n')
     return previous.DESIGNS

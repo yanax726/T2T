@@ -2,6 +2,13 @@
 
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
+## 2026.10.25-rc3
+
+- Add matched comparisons of molecular, clinical and combined EASI inputs, including CCL17 and clinical-only controls, paired uncertainty and an adult DLQI extension.
+- Add observed-pair, longitudinal-model and multiple-imputation IgE analyses, retaining method-dependent results and measured values unchanged.
+- Include the new analysis code, protocols, reviewed aggregates and verification records in the public package; add a restricted-data `sensitivity` command.
+- Keep the frozen EASI formula and calculator unchanged.
+
 ## 2026.10.25-rc2
 
 - Align figure placement to the original 44-slide source deck: restore observed clinical courses to the main article and combine absolute-error and EASI75 classification panels.

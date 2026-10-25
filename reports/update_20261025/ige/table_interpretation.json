@@ -1,0 +1,10 @@
+{
+  "ratio_definition": "exp(mean paired change in log(1+IgE)); a ratio of 1+IgE, not a raw arithmetic-mean IgE fold change",
+  "table_roles": {
+    "mi_log_levels.csv": "Back-transformed log means. No level-versus-zero p values are reported; these would not test treatment efficacy.",
+    "mi_log_changes.csv": "Within-group change; estimates and intervals on log(1+IgE), ratio fields exponentiated. Exploratory unadjusted p values, no confirmatory efficacy claims.",
+    "mi_adjusted_contrasts.csv": "Pairwise initial-strategy associations; existing baseline overlap weights held fixed; uncertainty conditional on those weights. No causal fixed-dose effect.",
+    "method_comparison.csv": "All4 methods from same named source population. Pairwise observed subset and MAR-target population differ; use n_observed_pairs for raw data, not n_model_or_group as a group-specific observed denominator. LMM n_model_or_group is total informative patients across treatments."
+  },
+  "predictive_scope": "Imputation uses retrospective cross-wave clinical auxiliaries, including future visits; it is not a prospective individual prediction model."
+}

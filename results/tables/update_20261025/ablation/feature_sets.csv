@@ -1,0 +1,17 @@
+model,label,inputs,structures,no_treatment_or_history_inputs
+ccl17,CCL17 alone,log2_CCL17,linear,True
+bsa_ccl17,BSA + CCL17,bsa|log2_CCL17,linear|quadratic|area,True
+serum3,Three serum markers,log2_CCL17|log2_CCL26|log2_IL-5,linear,True
+bsa,BSA alone,bsa,linear|quadratic|area,True
+bsa_serum3,BSA + three markers,bsa|log2_CCL17|log2_CCL26|log2_IL-5,linear|quadratic|area,True
+itch_serum3,PP-NRS + three markers,pp_nrs|log2_CCL17|log2_CCL26|log2_IL-5,linear,True
+bsa_itch,BSA + PP-NRS,bsa|pp_nrs,linear|quadratic|area,True
+bsa_serum3_itch,BSA + three markers + PP-NRS,bsa|log2_CCL17|log2_CCL26|log2_IL-5|pp_nrs,linear|quadratic|area,True
+bsa_serum3_dlqi,BSA + three markers + adult DLQI,bsa|log2_CCL17|log2_CCL26|log2_IL-5|dlqi,linear|quadratic|area,True
+bsa_itch_dlqi,BSA + PP-NRS + adult DLQI,bsa|pp_nrs|dlqi,linear|quadratic|area,True
+bsa_serum3_itch_dlqi,BSA + three markers + PP-NRS + adult DLQI,bsa|log2_CCL17|log2_CCL26|log2_IL-5|pp_nrs|dlqi,linear|quadratic|area,True
+bsa_area,BSA alone; fixed area structure,bsa,area,True
+bsa_serum3_area,BSA + three markers; fixed area structure,bsa|log2_CCL17|log2_CCL26|log2_IL-5,area,True
+without_CCL17,BSA + CCL26 + IL-5; fixed area structure,bsa|log2_CCL26|log2_IL-5,area,True
+without_CCL26,BSA + CCL17 + IL-5; fixed area structure,bsa|log2_CCL17|log2_IL-5,area,True
+without_IL5,BSA + CCL17 + CCL26; fixed area structure,bsa|log2_CCL17|log2_CCL26,area,True

@@ -1,0 +1,78 @@
+{
+  "version": "IgE-missingness-sensitivity-20261025",
+  "status": "Post hoc sensitivity analysis designed after observing differing available-case and fixed-patient trajectories; not a new primary trial analysis.",
+  "source": "results/tables/update_20260925/clinical.csv",
+  "seed": 20261025,
+  "visits": [
+    0,
+    12,
+    24
+  ],
+  "primary_sensitivity_scope": "CAMS: all three initial groups have measured follow-up IgE",
+  "additional_scope": "All 163 clinical patients; requires borrowing follow-up patterns across centres, including unobserved Huashan dupilumab follow-up cells",
+  "imputation": {
+    "method": "Patient-wide fully conditional specification; Bayesian normal regression draws with residual-variance uncertainty and type-1 predictive mean matching",
+    "donor_pool": "Same variable, nominal visit and initial treatment; 5 nearest predictive-mean donors",
+    "chains": 4,
+    "draws_per_chain": 100,
+    "burn_in_cycles": 200,
+    "cycles_between_draws": 10,
+    "variables": [
+      "log1p_IgE_W0",
+      "log1p_IgE_W12",
+      "log1p_IgE_W24",
+      "log1p_EASI_W12",
+      "log1p_EASI_W24"
+    ],
+    "complete_predictors": [
+      "initial_treatment",
+      "centre_when_variable",
+      "age",
+      "sex",
+      "BMI",
+      "log1p_baseline_EASI"
+    ],
+    "cross_wave_predictors": "All other incomplete variables; clinical EASI imputations are auxiliary draws only and never saved as validation truth",
+    "keep_observed_values": true,
+    "no_W4_IgE_imputation": true
+  },
+  "estimates": {
+    "within_group": "Means and paired changes on log(1+IgE), Rubin pooled with Barnard-Rubin small-sample degrees of freedom; back-transformed levels are shifted geometric means",
+    "adjusted_contrasts": "W12/W24 log(1+IgE) ANCOVA with baseline log(1+IgE), initial treatment by visit, baseline EASI, age, sex, BMI and centre if variable; patient-cluster robust covariance; existing baseline overlap weights held fixed",
+    "all_paired": "Every available pair for each interval, patient-paired t interval on log(1+IgE)",
+    "fixed_triplets": "Same observed W0/W12/W24 patients, shown separately rather than assumed unbiased"
+  },
+  "MNAR_sensitivity": {
+    "followup_missing_only": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "interpretation": "Multiply 1+IgE by 0.5 or 2 only for imputed W12/W24 observations, truncate negative resulting IgE at zero; measured values and imputed W0 stay unchanged. Scenarios are illustrative, not estimated facts."
+  },
+  "diagnostics": [
+    "Observed-value identity",
+    "Same-treatment donor identity",
+    "Per-chain trace",
+    "Split-chain R-hat",
+    "Effective sample size",
+    "Monte Carlo SE / total SE",
+    "Missing information",
+    "Four-chain independence of random seeds",
+    "Design rank and condition number"
+  ],
+  "boundaries": [
+    "No proof of MAR",
+    "No extrapolated W4 curve",
+    "No reclassification after dose reduction",
+    "No causal fixed-dose effect claim",
+    "Repeated 5000 values are retained as recorded, not declared an assay ceiling",
+    "No synthetic clinical validation outcome"
+  ],
+  "method_sensitivity_amendment": {
+    "reason": "Initial PMM versus available-data longitudinal model diverged for abrocitinib 200 mg; low-baseline missing-followup patients have limited same-treatment donor support. Both methods are retained, without selecting a direction.",
+    "additional_method": "Bayesian normal FCS for natural-log IgE, converted to log(1+IgE) for the unchanged analysis; EASI auxiliary variables remain PMM. No upper bound or assumed 5000 assay ceiling is imposed.",
+    "tails": "Report positive imputed values outside the observed range; these diagnose extrapolation rather than measured biology."
+  },
+  "computation_amendment": "Increased burn-in to200 cycles, spacing to10 cycles and retained imputations to400 after the Gaussian sensitivity had split R-hat1.13 and MonteCarlo SE16.6% of inferential SE; direction was not used to choose run length."
+}

@@ -14,7 +14,7 @@ from . import palette
 
 ROOT=Path(__file__).resolve().parents[2]
 ARMS=['dupilumab','abrocitinib_100mg','abrocitinib_200mg']
-LABELS=['Dupilumab','Abrocitinib 100 mg','Abrocitinib 200 mg']
+LABELS=[palette.treatment_label(key) for key in ARMS]
 STYLE=json.loads((ROOT/'config/paper_style.json').read_text())
 STYLE.update(treatment_colors={a:palette.color('treatment.'+a) for a in ARMS},
              treatment_markers={a:palette.marker('treatment.'+a) for a in ARMS},
@@ -72,6 +72,9 @@ def save(fig,name,title,caption,sources,root=ROOT):
   plt.close(fig)
   return
  out=root/'manuscript/figures';qa=root/'results/audit/update_20261017/figures';out.mkdir(parents=True,exist_ok=True);qa.mkdir(parents=True,exist_ok=True)
+ fig.canvas.draw()
+ palette.apply_display_labels(fig)
+ title,caption=palette.display_text(title),palette.display_text(caption)
  fig.canvas.draw()
  (qa/(name+'.colour.json')).write_text(json.dumps(palette.audit_figure(fig,name),indent=2)+'\n')
  require_matplotlib_panel_alignment(fig,json_out=str(qa/(name+'.alignment.json')),strict=True)

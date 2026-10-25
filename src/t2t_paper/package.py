@@ -33,6 +33,7 @@ BASE_FILES = [
     'config/marker_registry.csv', 'config/reproduction_inputs.json', 'config/clinical_framework.json',
     'config/unified_model_20261017.json', 'config/unified_bsa_three_v1_20261017.json',
     'config/auxiliary_targets_20261017.json',
+    'config/ige_missingness_20261025.json', 'config/model_ablation_20261025.json',
     'examples/unified_easi_input.csv', 'examples/unified_easi_log2_input.csv',
     'examples/unified_easi_expected.csv', 'examples/auxiliary_targets_input.csv',
     'tests/test_unified_bsa_three.py', 'tests/test_auxiliary_targets_calculator.py',
@@ -47,17 +48,23 @@ ANALYSIS_MODULES = [
     'published_clipping_sensitivity_20261017', 'unified_bsa_three_calculator',
     'reference_sensitivity_20261018',
     'auxiliary_targets_20261017', 'auxiliary_targets_calculator_20261017',
+    'ige_missingness_20261025', 'model_ablation_20261025',
 ]
 PAPER_MODULES = [
     '__init__', 'package', 'demo', 'preflight', 'figures', 'palette', 'build',
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
+    'sensitivity_figures_20261025', 'sensitivity_tables_20261025',
     'redesign_evidence_20261018', 'cohort_flow_20261018',
     'model_display_evidence_20261018', 'balance_support_20261018',
     'plot_source_aggregates_20261018',
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/update_20261025/integration/final_quality_assurance.json',
+    'reports/update_20261025/integration/final_reproducibility_check.json',
+    'reports/update_20261025/integration/isolated_rebuild.log',
+    'reports/update_20261025/integration/final_tests.log',
     'reports/deck_alignment_20261025/public_verification.json',
     'reports/deck_alignment_20261025/tests.log',
     'reports/deck_alignment_20261025/isolated_rebuild.log',
@@ -68,6 +75,35 @@ FINAL_QA_REPORTS = [
     'reports/figure_quality/public_rebuild_logs_v5/test.log',
     'reports/figure_quality/public_rebuild_logs_v5/rebuild.log',
     'reports/figure_quality/public_rebuild_logs_v5/restricted_preflight.log',
+]
+SENSITIVITY_TABLES = {
+    'ige': [
+        'available_longitudinal_changes.csv', 'baseline_by_followup_observation.csv',
+        'coverage_by_center.csv', 'donor_support_per_imputation.csv',
+        'donor_support_summary.csv', 'imputation_chain_traces.csv',
+        'imputation_design_diagnostics.csv', 'imputation_tail_diagnostics.csv',
+        'method_comparison.csv', 'mi_adjusted_contrasts.csv', 'mi_log_changes.csv',
+        'mi_log_levels.csv', 'missing_patterns.csv', 'observed_log_levels.csv',
+        'paired_log_changes.csv',
+    ],
+    'ablation': [
+        'change_metrics.csv', 'coefficient_stability.csv', 'cohort_counts.csv',
+        'exploratory_formulas.json', 'feature_sets.csv',
+        'fit_audit.csv', 'fold_coefficients.csv', 'inner_selection.csv',
+        'frozen_prediction_reproduction.csv', 'main_input_comparison.csv',
+        'metrics.csv', 'numerical_verification.csv', 'overall_metrics.csv',
+        'paired_comparisons.csv', 'selection_frequencies.csv',
+    ],
+}
+SENSITIVITY_REPORTS = [
+    'ige/methods_en.md', 'ige/results_cn.md', 'ige/table_interpretation.json',
+    'ige/verification.json', 'ige/numerical_verification.json',
+    'ige/replay_verification.json', 'ige/numerical_tests.log', 'ige/references.bib',
+    'ablation/methods_results.md', 'ablation/molecular_evidence.md',
+    'ablation/verification.json', 'ablation/replay_verification.json',
+    'integration/analysis_summary_zh.md', 'integration/ige_independent_code_review.md',
+    'integration/text_statistical_review.md', 'integration/final_visual_review.md',
+    'integration/source_preservation.json',
 ]
 REPORT_FILES = [
     'clinical/dependency_contract.json', 'clinical/replay_verification.json',
@@ -154,6 +190,21 @@ def collect_files():
         else:
             excluded.append(dict(path=relative, reason='Restricted row structure, name or study identifier'))
 
+    # New analyses use a filename allowlist as well as row-structure screening.
+    # Fold-level counts and coefficients are public; participant membership is not.
+    for folder, filenames in SENSITIVITY_TABLES.items():
+        directory = ROOT / 'results/tables/update_20261025' / folder
+        for filename in filenames:
+            path = directory / filename
+            safe = safe_csv(path) if path.suffix == '.csv' else safe_json(path)
+            if not safe:
+                raise RuntimeError('Restricted sensitivity aggregate: ' + str(path))
+            selected.add(str(path.relative_to(ROOT)))
+        for path in sorted(directory.glob('*')):
+            if path.is_file() and path.name not in filenames:
+                excluded.append(dict(path=str(path.relative_to(ROOT)),
+                                     reason='Not in reviewed sensitivity aggregate allowlist'))
+
     catalogue = json.loads((ROOT / 'manuscript/figure_catalog.json').read_text())
     ids = [row['id'] for row in catalogue]
     if len(ids) != len(set(ids)) or not all(re.fullmatch(r'Figure(?:S)?[1-9]\d*', x) for x in ids):
@@ -178,6 +229,11 @@ def collect_files():
             selected.add(relative)
             sanitized.add(relative)
     for relative in FINAL_QA_REPORTS:
+        if (ROOT / relative).exists():
+            selected.add(relative)
+            sanitized.add(relative)
+    for name in SENSITIVITY_REPORTS:
+        relative = 'reports/update_20261025/' + name
         if (ROOT / relative).exists():
             selected.add(relative)
             sanitized.add(relative)
@@ -292,7 +348,7 @@ def run():
                  sanitized_reports=sorted(sanitized), source_sha256=source_hashes,
                  excluded_categories=['Participant inputs and outputs', 'Raw spreadsheets',
                     'Individual predictions and fold membership', 'Clinical dates and safety text',
-                    'Internal review/teacher/author-administration materials', 'Presentation decks and notes'],
+                    'Teacher and author-administration materials', 'Presentation decks and notes'],
                  previous_generated_package_snapshot=snapshot)
     local_audit = ROOT / 'reports/update_20261018/revision2/package_audit.json'
     local_audit.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "files_checked": 16,
+  "mismatches": [],
+  "scope": "All aggregate CSV files, exploratory formulas, and private held-out predictions were byte-identical on a clean re-execution of the component analysis. Source inputs and frozen primary files were not written."
+}

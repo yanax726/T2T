@@ -63,5 +63,19 @@ The final coefficients were fitted to 241 W0/W12 visits from 156 patients after 
 
 PP-NRS, adult DLQI and recorded IGA have separately fitted formulas and parameters in `results/tables/update_20261017/model/auxiliary_targets/`. They do not inherit the EASI performance and did not show comparable accuracy with this restricted panel.
 
+## Matched input comparisons
+
+The [input comparison analysis](../results/tables/update_20261025/ablation/) evaluates EASI estimation from three markers alone, PP-NRS plus markers, BSA plus markers and BSA plus markers plus PP-NRS. BSA-only, CCL17-only and clinical-only controls are retained. These are separately refitted exploratory models, not revisions to the calculator above. BSA is a clinical assessment of affected area, and PP-NRS is the patient's current itch rating; models containing either are clinical-serum estimates rather than wholly molecular scores.
+
+Each comparison uses identical eligible visits and patient splits, with model structure and shrinkage chosen inside the training folds. W0/W12 provide development data; W24 is same-cohort temporal application. The current-itch comparison contains 315 visits from 160 patients (W0: 151; W12: 89; W24: 75). The adult DLQI extension is refitted separately on its matched 207-visit subset, so its errors should not be compared directly with the larger cohort's errors.
+
+| EASI estimator in the current-itch comparison | W0 MAE | W12 MAE | W24 MAE |
+|---|---:|---:|---:|
+| Three serum markers | 7.67 | 7.48 | 8.56 |
+| PP-NRS plus three markers | 7.14 | 4.54 | 4.05 |
+| BSA plus three markers | 3.20 | 1.29 | 1.19 |
+| BSA plus three markers plus PP-NRS | 3.08 | 1.17 | 1.04 |
+
+MAE is the mean absolute difference from observed EASI, in EASI points, calculated within each repeat before averaging. [Paired comparisons](../results/tables/update_20261025/ablation/paired_comparisons.csv) include patient-bootstrap intervals; [all metrics](../results/tables/update_20261025/ablation/overall_metrics.csv) also report RMSE, bias, Spearman correlation, concordance and calibration. Adding itch improved follow-up accuracy relative to BSA plus three markers. The controls do not establish a consistent accuracy advantage from the three markers, or that all three are necessary. Their biological associations are distinct from evidence of predictive benefit. These comparisons were conducted after earlier results were known and have not undergone independent validation.
 
 A training-only reference-consistency sensitivity is reported in Supplementary Table S4 and [the aggregate directory](../results/tables/update_20261017/reference_sensitivity/). It repeats fitting within the original patient folds after excluding ten discrepant development visits. It does not change the frozen coefficients, adjudicate either clinical reference, or replace the primary performance estimates.

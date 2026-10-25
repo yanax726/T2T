@@ -1,0 +1,452 @@
+{
+  "core_all__ccl17": {
+    "inputs": [
+      "log2_CCL17"
+    ],
+    "selected_structure": "linear",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -19.92635859153541,
+      "coefficients": {
+        "log2_CCL17": 3.4169403452099347
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__bsa_ccl17": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17"
+    ],
+    "selected_structure": "area",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.5780339389161544,
+      "interactions": {
+        "log2_CCL17": 0.0064950889946203206
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__serum3": {
+    "inputs": [
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "linear",
+    "alpha": 10.0,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -13.111780638682784,
+      "coefficients": {
+        "log2_CCL17": 2.8058611815352825,
+        "log2_CCL26": -0.19459644520980462,
+        "log2_IL-5": 1.191076186434764
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__bsa": {
+    "inputs": [
+      "bsa"
+    ],
+    "selected_structure": "area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.6482483258514001,
+      "interactions": {}
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__bsa_serum3": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.5127215790257503,
+      "interactions": {
+        "log2_CCL17": 0.009847079991894058,
+        "log2_CCL26": 0.009646929477400354,
+        "log2_IL-5": -0.008270558237379214
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__bsa_area": {
+    "inputs": [
+      "bsa"
+    ],
+    "selected_structure": "area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.6482483258514001,
+      "interactions": {}
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__bsa_serum3_area": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.5127215790257503,
+      "interactions": {
+        "log2_CCL17": 0.009847079991894058,
+        "log2_CCL26": 0.009646929477400354,
+        "log2_IL-5": -0.008270558237379214
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__without_CCL17": {
+    "inputs": [
+      "bsa",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "area",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.5990499186186777,
+      "interactions": {
+        "log2_CCL26": 0.015072260836732498,
+        "log2_IL-5": -0.0021087296336545183
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__without_CCL26": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_IL-5"
+    ],
+    "selected_structure": "area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.537694611961629,
+      "interactions": {
+        "log2_CCL17": 0.010595113039455099,
+        "log2_IL-5": -0.008516483681841016
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "core_all__without_IL5": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26"
+    ],
+    "selected_structure": "area",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.549152955269212,
+      "interactions": {
+        "log2_CCL17": 0.005782592148898814,
+        "log2_CCL26": 0.010722215067228716
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 241,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "itch_matched__serum3": {
+    "inputs": [
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "linear",
+    "alpha": 10.0,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -13.26859037840595,
+      "coefficients": {
+        "log2_CCL17": 2.8118902154968297,
+        "log2_CCL26": -0.17311495173377311,
+        "log2_IL-5": 1.2003720876054136
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 240,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "itch_matched__bsa": {
+    "inputs": [
+      "bsa"
+    ],
+    "selected_structure": "area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.6481379851662543,
+      "interactions": {}
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 240,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "itch_matched__bsa_serum3": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "area",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.511451497331733,
+      "interactions": {
+        "log2_CCL17": 0.00990804076324017,
+        "log2_CCL26": 0.009783233422972984,
+        "log2_IL-5": -0.008250340650445793
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 240,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "itch_matched__itch_serum3": {
+    "inputs": [
+      "pp_nrs",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "linear",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -13.19779819600339,
+      "coefficients": {
+        "pp_nrs": 1.4025472926430997,
+        "log2_CCL17": 2.065345472336254,
+        "log2_CCL26": -0.35050539258599694,
+        "log2_IL-5": 0.9111003526322438
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 240,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "itch_matched__bsa_itch": {
+    "inputs": [
+      "bsa",
+      "pp_nrs"
+    ],
+    "selected_structure": "linear",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -0.262645439016687,
+      "coefficients": {
+        "bsa": 0.5886669117981116,
+        "pp_nrs": 0.3225565867282538
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 240,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "itch_matched__bsa_serum3_itch": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5",
+      "pp_nrs"
+    ],
+    "selected_structure": "linear",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -2.604857315204999,
+      "coefficients": {
+        "bsa": 0.5771956367324574,
+        "log2_CCL17": 0.2895554525717295,
+        "log2_CCL26": -0.05063987863222825,
+        "log2_IL-5": -0.05856637844179603,
+        "pp_nrs": 0.3108571053590559
+      }
+    },
+    "n_training_patients": 156,
+    "n_training_visits": 240,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "adult_dlqi_matched__bsa": {
+    "inputs": [
+      "bsa"
+    ],
+    "selected_structure": "area",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.6736062267388422,
+      "interactions": {}
+    },
+    "n_training_patients": 107,
+    "n_training_visits": 163,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "adult_dlqi_matched__bsa_serum3": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5"
+    ],
+    "selected_structure": "area",
+    "alpha": 0.1,
+    "formula": {
+      "expression": "clip(BSA * (constant + sum(coefficient * input)), 0, 72)",
+      "bsa_factor": 0.6290323161728368,
+      "interactions": {
+        "log2_CCL17": 0.0037099688444141824,
+        "log2_CCL26": 0.0026857466698760285,
+        "log2_IL-5": -0.009800766754589149
+      }
+    },
+    "n_training_patients": 107,
+    "n_training_visits": 163,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "adult_dlqi_matched__bsa_serum3_itch": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5",
+      "pp_nrs"
+    ],
+    "selected_structure": "linear",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -0.6963358576456891,
+      "coefficients": {
+        "bsa": 0.6260727748463727,
+        "log2_CCL17": 0.06186816774895627,
+        "log2_CCL26": -0.08672838578798622,
+        "log2_IL-5": -0.06245314708108773,
+        "pp_nrs": 0.2480158363809248
+      }
+    },
+    "n_training_patients": 107,
+    "n_training_visits": 163,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "adult_dlqi_matched__bsa_serum3_dlqi": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5",
+      "dlqi"
+    ],
+    "selected_structure": "linear",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -0.22998606794083898,
+      "coefficients": {
+        "bsa": 0.6215117275265766,
+        "log2_CCL17": 0.0373048692275263,
+        "log2_CCL26": -0.16766443531511319,
+        "log2_IL-5": 0.023177663399798657,
+        "dlqi": 0.1346070675128414
+      }
+    },
+    "n_training_patients": 107,
+    "n_training_visits": 163,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "adult_dlqi_matched__bsa_itch_dlqi": {
+    "inputs": [
+      "bsa",
+      "pp_nrs",
+      "dlqi"
+    ],
+    "selected_structure": "linear",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -0.6632305146581903,
+      "coefficients": {
+        "bsa": 0.6163480726680112,
+        "pp_nrs": 0.10511063800074437,
+        "dlqi": 0.11049941054021267
+      }
+    },
+    "n_training_patients": 107,
+    "n_training_visits": 163,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  },
+  "adult_dlqi_matched__bsa_serum3_itch_dlqi": {
+    "inputs": [
+      "bsa",
+      "log2_CCL17",
+      "log2_CCL26",
+      "log2_IL-5",
+      "pp_nrs",
+      "dlqi"
+    ],
+    "selected_structure": "linear",
+    "alpha": 1.0,
+    "formula": {
+      "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+      "intercept": -0.41824408597357277,
+      "coefficients": {
+        "bsa": 0.6141108992000636,
+        "log2_CCL17": 0.034559727331704274,
+        "log2_CCL26": -0.1594089900464299,
+        "log2_IL-5": 0.013554114241857282,
+        "pp_nrs": 0.10314696792572867,
+        "dlqi": 0.11256484075441084
+      }
+    },
+    "n_training_patients": 107,
+    "n_training_visits": 163,
+    "status": "Exploratory refit, not a new frozen clinical calculator"
+  }
+}

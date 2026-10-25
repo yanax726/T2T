@@ -11,6 +11,7 @@ The equation uses BSA, CCL17, CCL26 and IL-5. Its primary evaluation uses patien
 | Manuscript and supplementary information | [Main PDF](manuscript/main.pdf), [appendix PDF](manuscript/appendix.pdf) |
 | All current figures and captions | [Figure book](manuscript/figure_book.pdf), [figure catalogue](manuscript/figure_catalog.json) |
 | Numerical results, including controls and negative findings | [Aggregate tables](results/tables/update_20261017/) |
+| Matched input comparisons and IgE missing-data sensitivity | [Model comparisons](results/tables/update_20261025/ablation/), [IgE analyses](results/tables/update_20261025/ige/) |
 | Figure source data | [Source tables](manuscript/source_data/), [source-to-result map](docs/source_map.md) |
 | Frozen formula and input conventions | [Model documentation](docs/model.md), [parameter file](config/unified_bsa_three_v1_20261017.json) |
 
@@ -35,13 +36,15 @@ python3.9 -m venv .venv
 
 PDF rebuilding also requires pdfLaTeX and BibTeX. The [reproduction guide](docs/reproduction.md) documents dependencies, tested environment, runtimes and each command. Figure identities and counts follow the live catalogue rather than a fixed count in this README.
 
-The current revision passed 31 local tests and an isolated aggregate rebuild; 153 distributed manuscript and figure files were byte-identical. See the [verification record](reports/deck_alignment_20261025/public_verification.json). An optional [GitHub Actions template](docs/ci/public-checks.yml) is supplied but is not active. After granting a publishing credential permission to modify workflows, copy it to `.github/workflows/public-checks.yml` to enable Actions.
+The release checks are recorded in the [test log](reports/update_20261025/integration/final_tests.log), [quality checks](reports/update_20261025/integration/final_quality_assurance.json) and [rebuild comparison](reports/update_20261025/integration/final_reproducibility_check.json). An optional [GitHub Actions template](docs/ci/public-checks.yml) is supplied but is not active. After granting a publishing credential permission to modify workflows, copy it to `.github/workflows/public-checks.yml` to enable Actions.
 
-`rebuild` uses the distributed aggregates. `analyse` refits the analyses only after authorized restricted snapshots pass the declared hash checks. Participant records, individual predictions, fold membership, clinical dates and free-text notes are excluded from this repository. See [data access](DATA_ACCESS.md).
+`rebuild` uses the distributed aggregates. `analyse` refits the analyses only after authorized restricted snapshots pass the declared hash checks. `sensitivity` reruns the two new analyses in an authorized workspace with existing primary model predictions. Participant records, individual predictions, fold membership, clinical dates and free-text notes are excluded from this repository. See [data access](DATA_ACCESS.md).
+
+The input comparisons refit each model on the same eligible visits and patient splits. Adding current PP-NRS improved follow-up accuracy relative to BSA plus three markers; this does not establish a molecular contribution, and the frozen calculator is unchanged. IgE analyses compare observed pairs, longitudinal modelling and two multiple-imputation methods. Imputed values are estimates, not new measurements. The abrocitinib 200 mg IgE direction depends on the imputation method and remains uncertain.
 
 ## Version, citation and license
 
-This research snapshot is version [2026.10.25-rc2](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+This research snapshot is version [2026.10.25-rc3](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
 
 Original code, data and manuscript materials have no assigned reuse license. The existing Apache-2.0 terms for the third-party panel-alignment helper are retained. See [license status](LICENSE_STATUS.md) and [third-party notice](NOTICE.md).
 

@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "patient_outer_folds_unchanged": true,
+  "patient_overlap": 0,
+  "outcome_imputed": false,
+  "clinical_inputs_imputed": false,
+  "W24_used_in_fit_or_selection": false,
+  "primary_frozen_files_modified": false,
+  "metrics_scored_before_repeat_averaging": true,
+  "old_predictions_reproduced": [
+    {
+      "model": "serum3",
+      "frozen_model": "serum_linear",
+      "max_abs_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "bsa_serum3",
+      "frozen_model": "unified_selected",
+      "max_abs_prediction_difference": 3.552713678800501e-15
+    },
+    {
+      "model": "bsa_area",
+      "frozen_model": "bsa_area",
+      "max_abs_prediction_difference": 7.105427357601002e-15
+    },
+    {
+      "model": "bsa_serum3_area",
+      "frozen_model": "unified_area_interaction",
+      "max_abs_prediction_difference": 3.552713678800501e-15
+    }
+  ],
+  "identical_patients_within_comparison": true,
+  "conditional_bootstrap_intervals": true,
+  "exact_prediction_metric_check": true,
+  "opposite_repeat_error_check": true,
+  "n_predictive_rows": 12584,
+  "input_files": {
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "results/tables/update_20261017/model/predictions.csv": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+    "config/model_ablation_20261025.json": "a2ac78ad01a4de55c4cc7de5c26ae21b643eb2cb69a47ef28e318596e9592c10",
+    "src/cytot2t/curation/model_ablation_20261025.py": "6ceeca4093de84703e1d3135dac70a746a2c7c7ecd0634ba5826bc46026c1bff"
+  },
+  "software": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "sklearn": "1.6.1"
+  }
+}

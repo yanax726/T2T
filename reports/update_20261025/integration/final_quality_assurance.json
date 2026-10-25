@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "scope": "Current manuscript rendering, numerical integration and preservation checks; not a clinical-use certification",
+  "version": "2026.10.25-rc3",
+  "figure_count": 26,
+  "main_figures": 5,
+  "supplementary_figures": 21,
+  "main_tables": 2,
+  "supplementary_tables": 8,
+  "tests_passed": 31,
+  "protected_input_files": 150,
+  "protected_inputs_changed": [],
+  "primary_formula_unchanged": true,
+  "pdf_results": {
+    "main": {
+      "pages": 14,
+      "minimum_embedded_font_pt": 5.97760009765625,
+      "sha256": "edef7faa3387ffc6b682887d4b529dfbd617cd339b0d8044c411a32850ed349e"
+    },
+    "appendix": {
+      "pages": 40,
+      "minimum_embedded_font_pt": 5.97760009765625,
+      "sha256": "52d56d425754e7f808e9914064244e49885f2712c8d0d0fcef0ceae1a77661fb"
+    },
+    "figure_book": {
+      "pages": 27,
+      "minimum_embedded_font_pt": 5.486584663391113,
+      "sha256": "82166b0fc005986b1f75ca5160eda7359e42de6391a154cfc7432a7a6d178d37"
+    }
+  },
+  "figure_pdf_checks": {
+    "collision_failures": 0,
+    "glyph_failures": 0,
+    "alignment_failures": 0,
+    "alignment_not_applicable": [
+      "FigureS6",
+      "FigureS16"
+    ],
+    "minimum_standalone_font_pt": 6.3
+  },
+  "analysis_checks": {
+    "ige": {
+      "status": "PASS",
+      "files_checked": 15,
+      "byte_identical": 15,
+      "mismatches": [],
+      "scope": "All aggregate IgE output CSVs regenerated from original patient records and fixed seeds"
+    },
+    "ablation": {
+      "status": "PASS",
+      "files_checked": 16,
+      "mismatches": [],
+      "scope": "All aggregate CSV files, exploratory formulas, and private held-out predictions were byte-identical on a clean re-execution of the component analysis. Source inputs and frozen primary files were not written."
+    }
+  },
+  "scientific_boundaries": [
+    "Matching inputs and patient folds were retained within each ablation population.",
+    "IgE imputation is a retrospective sensitivity analysis and never replaces observed values or prediction validation outcomes.",
+    "Molecular added EASI accuracy is not established across visits.",
+    "Abro 200 mg W24 IgE direction depends on missing-data assumptions.",
+    "Frozen equation lacks independent external validation; W24 is previously inspected same-cohort temporal application."
+  ],
+  "reviews": {
+    "final_visual_review.md": "bae42c13e8ad44444d54a7431ec1c06dd62d7f0654f6243f38fad6c202f0a1f7",
+    "text_statistical_review.md": "4976bf8858f71be81583303735c0024dc4b03b25b89fb4c9a8753eb135f73ce2",
+    "ige_independent_code_review.md": "5aa74c5b38037ddf9429d90566a5ccd30aaa27338d68f4179a4fe45dbb2757a9"
+  }
+}

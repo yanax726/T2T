@@ -6,9 +6,9 @@
   "minimum_font_pt": 6.3,
   "dpi": 600,
   "treatment_labels": {
-    "dupilumab": "Dupilumab",
-    "abrocitinib_100mg": "Abrocitinib 100 mg",
-    "abrocitinib_200mg": "Abrocitinib 200 mg"
+    "dupilumab": "dupi",
+    "abrocitinib_100mg": "abro 100 mg",
+    "abrocitinib_200mg": "abro 200 mg"
   },
   "intervals": {
     "clinical_raw": "Median and interquartile range",
@@ -18,10 +18,10 @@
   },
   "missing": "Displayed as unavailable; no zero substitution",
   "model_comparison": "Same patients and patient-grouped folds",
-  "version": "palette-v4",
+  "version": "palette-v5-clinical-20261025",
   "main_maximum_height_mm": 170,
-  "unknown_color": "#E6E8E9",
-  "text_color": "#24323C",
+  "unknown_color": "#E8EAEC",
+  "text_color": "#253341",
   "neutral_dark": "#404040",
   "line_width_pt": 1.35,
   "visit_linestyles": {

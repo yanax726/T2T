@@ -1,0 +1,5 @@
+model,frozen_model,max_abs_prediction_difference
+serum3,serum_linear,3.552713678800501e-15
+bsa_serum3,unified_selected,3.552713678800501e-15
+bsa_area,bsa_area,7.105427357601002e-15
+bsa_serum3_area,unified_area_interaction,3.552713678800501e-15

@@ -196,7 +196,7 @@ def tables(root):
     rates=rates[rates.week.isin([0,2,4,12,24])]
     s=r'\begin{longtable}{llrrr}'+'\n'+r'\caption{Exact target attainment, observed denominators and Wilson 95\% confidence intervals.}\label{tab:exact_target_rates}\\'+'\n'+r'\toprule Week and target & Initial treatment & Achieved/N & Rate, \% & 95\% CI \\ \midrule\endfirsthead'+'\n'+r'\toprule Week and target & Initial treatment & Achieved/N & Rate, \% & 95\% CI \\ \midrule\endhead'+'\n'
     for r in rates.itertuples():
-        short={'dupilumab':'D','abrocitinib_100mg':'A100','abrocitinib_200mg':'A200'}[r.treatment]
+        short={'dupilumab':'dupi','abrocitinib_100mg':'abro 100 mg','abrocitinib_200mg':'abro 200 mg'}[r.treatment]
         s+=f'W{r.week}: '+tex(TARGET.get(r.target,r.target))+f' & {short} & {r.k}/{r.n_evaluable} & {f(100*r.rate,1)} & {f(100*r.ci_low,1)}--{f(100*r.ci_high,1)} \\\\ \n'
     s+=r'\bottomrule\end{longtable}'+'\n'
     (out/'endpoint_rates.tex').write_text(s)
@@ -211,12 +211,12 @@ def tables(root):
     assert (bounds.ESS-bounds.weighted_ESS).abs().lt(1e-8).all()
     s=r'\begin{center}\small\textbf{Unweighted observed outcomes and initial-cohort bounds}\par\smallskip\begin{tabular}{llrrrr}\toprule Target & Initial group & Success/evaluable & Initial N & \shortstack{Observed\\rate, \%} & \shortstack{Unweighted missing-\\outcome bounds, \%} \\ \midrule'+'\n'
     for r in bounds.itertuples():
-        arm={'dupilumab':'D','abrocitinib_100mg':'A100','abrocitinib_200mg':'A200'}[r.treatment]
+        arm={'dupilumab':'dupi','abrocitinib_100mg':'abro 100 mg','abrocitinib_200mg':'abro 200 mg'}[r.treatment]
         target='W2 itch' if r.week==2 else 'W24 combined'
         s+=f'{target} & {arm} & {r.k}/{r.n_evaluable} & {r.n_initial} & {100*r.rate:.1f} & {100*r.lower_missing_bound:.1f}--{100*r.upper_missing_bound:.1f}'+r' \\'+'\n'
     s+=r'\bottomrule\end{tabular}\par\medskip\textbf{Matching baseline-overlap-weighted analysis}\par\smallskip\begin{tabular}{llrrr}\toprule Target & Initial group & \shortstack{Weighted available-\\case rate, \%} & \shortstack{Available-case\\weight ESS} & \shortstack{Weighted missing-\\outcome bounds, \%} \\ \midrule'+'\n'
     for r in bounds.itertuples():
-        arm={'dupilumab':'D','abrocitinib_100mg':'A100','abrocitinib_200mg':'A200'}[r.treatment]
+        arm={'dupilumab':'dupi','abrocitinib_100mg':'abro 100 mg','abrocitinib_200mg':'abro 200 mg'}[r.treatment]
         target='W2 itch' if r.week==2 else 'W24 combined'
         s+=f'{target} & {arm} & {100*r.weighted_available_rate:.1f} & {r.ESS:.1f} & {100*r.weighted_lower_missing_bound:.1f}--{100*r.weighted_upper_missing_bound:.1f}'+r' \\'+'\n'
     s+=r'''\bottomrule\end{tabular}
@@ -227,11 +227,18 @@ def tables(root):
     (out/'safety_documentation.tex').write_text(safety_documentation_table(root))
     (out/'reference_sensitivity.tex').write_text(reference_sensitivity_table(root))
     (out/'input_reference_specification.tex').write_text(input_reference_specification_table())
+    from .sensitivity_tables_20261025 import tables as sensitivity_tables
+    sensitivity_tables(root, tex)
     # Machine-readable source index includes every aggregate table, not only plotted results.
     rows=[]
     for folder in ['clinical','model','model/auxiliary_targets','model/rounding','regional','redesign_20261018','revision2_20261018','reference_sensitivity']:
         d=root/'results/tables/update_20261017'/folder
         for p in sorted(d.glob('*.csv')):
+            df=pd.read_csv(p)
+            if 'private' in p.name or any(c in df for c in ['patient_uid','patient_id','source_record_id','record_id']):continue
+            rows.append({'section':folder,'file':str(p.relative_to(root)),'rows':len(df),'columns':'; '.join(df.columns)})
+    for folder in ['ige', 'ablation']:
+        for p in sorted((root/'results/tables/update_20261025'/folder).glob('*.csv')):
             df=pd.read_csv(p)
             if 'private' in p.name or any(c in df for c in ['patient_uid','patient_id','source_record_id','record_id']):continue
             rows.append({'section':folder,'file':str(p.relative_to(root)),'rows':len(df),'columns':'; '.join(df.columns)})
@@ -297,11 +304,11 @@ Analysis code, versioned parameters, aggregate source tables and figure sources 
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S.\arabic{table}}
 \section*{Supplementary guide}
-The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S5 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity and input/reference specifications. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
+The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S8 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons and IgE missing-data sensitivity. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
 '''
     for title,ids,description in groups:
         app+='\\hyperref[fig:FigureS'+str(ids[0])+']{\\textbf{'+tex(title)+'}}. '+tex(description)+'\\par\n'
-    app+=r'''D denotes dupilumab; A100/A200 denote initial abrocitinib 100/200 mg. Treatment colours are fixed throughout. Molecular changes use log$_2$ concentration units; a change of $-1$ means a halving. Model errors use EASI points. Correlation describes ordering, whereas absolute errors and concordance address numerical agreement.
+    app+=r'''dupi denotes dupilumab; abro denotes abrocitinib, with initial dose stated in mg. Treatment colours are fixed throughout. Molecular changes use log$_2$ concentration units; a change of $-1$ means a halving. Model errors use EASI points. Correlation describes ordering, whereas absolute errors and concordance address numerical agreement.
 \clearpage
 '''
     supplementary_methods=m/'sections/supplementary_methods.tex'
@@ -314,6 +321,9 @@ N is the endpoint-specific evaluable denominator. Unknown outcomes are excluded 
 \input{tables/safety_documentation}
 \clearpage\input{tables/reference_sensitivity}
 \clearpage{\small\input{tables/input_reference_specification}}
+\clearpage\input{tables/input_ablation}
+\clearpage\input{tables/ablation_differences}
+\clearpage\input{tables/ige_missingness}
 \clearpage
 '''
     if (m/'sections/auxiliary_targets.tex').exists():app+=section_text(m/'sections/auxiliary_targets.tex')+'\n'
@@ -327,7 +337,7 @@ Published p-EASI coefficients were applied unchanged to identical eligible recor
                 page=page.replace('\\centering\n','\\centering\n\\pdfbookmark[1]{'+tex(title)+'}{group'+str(group_number)+'}\n{\\large\\bfseries '+tex(title)+'}\\par\\vspace{5pt}\n',1)
             app+=page
     app+=r'''\clearpage\section*{Aggregate source tables}
-The \href{run:source_data/index.csv}{machine-readable source-table index} lists the complete aggregate collection, including unplotted and negative results. Figure-specific dependencies are in \texttt{figure\_catalog.json}. The \href{https://github.com/yanax726/T2T/tree/main/results/tables/update_20261017}{versioned aggregate directory} includes clinical, molecular, model, regional and reference-sensitivity tables; restricted patient-level files are not part of the public collection.
+The \href{run:source_data/index.csv}{machine-readable source-table index} lists the complete aggregate collection, including unplotted and negative results. Figure-specific dependencies are in \texttt{figure\_catalog.json}. The \href{https://github.com/yanax726/T2T/tree/main/results/tables}{versioned aggregate directory} includes clinical, molecular, model, regional, matched-input and missing-data sensitivity tables; restricted patient-level files are not part of the public collection.
 \bibliographystyle{unsrtnat}\bibliography{references}
 '''
     app+='\\end{document}\n';(m/'appendix.tex').write_text(app)
@@ -349,6 +359,10 @@ def compile_pdf(root):
 
 def run(root,compile=False):
     tables(root);documents(root)
+    generated = list((root/'manuscript/tables').glob('*.tex'))
+    generated += [root/'manuscript'/f'{name}.tex' for name in ['main','appendix','figure_book']]
+    for path in generated:
+        path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines())+'\n')
     if compile:compile_pdf(root)
 
 if __name__=='__main__':

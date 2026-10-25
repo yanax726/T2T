@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 from . import figures as base
 from . import countmaps
+from . import palette
 from . import main_redesign_20261018 as previous
 
 
@@ -70,7 +71,7 @@ def paired_changes(root):
     for i, window in enumerate(expected):
         row = metrics[metrics.window.eq(window) & metrics.metric.eq('MAE')].iloc[0]
         ax.errorbar(row.estimate, i, xerr=[[row.estimate-row.ci_low], [row.ci_high-row.estimate]],
-                    fmt='o', color='#536875', lw=1.35, ms=4, capsize=2)
+                    fmt='o', color=palette.register(fig, 'method.current'), lw=1.35, ms=4, capsize=2)
         ax.text(1.04, i, f'{row.estimate:.2f} [{row.ci_low:.2f}, {row.ci_high:.2f}]',
                 transform=ax.get_yaxis_transform(), va='center', fontsize=6.5)
     ax.set(yticks=range(3), yticklabels=[w.replace('_', ' → ') for w in expected],

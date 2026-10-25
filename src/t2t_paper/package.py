@@ -29,7 +29,7 @@ BASE_FILES = [
     'CITATION.cff', 'CHANGELOG.md', 'VERSION', 'run.sh', '.gitignore',
     'docs/ci/public-checks.yml',
     'requirements.txt', 'requirements.lock.txt',
-    'config/palette_v4_registry.json', 'config/paper_style.json', 'config/paper_figure_plan.json', 'config/figure_identity_map.json',
+    'config/manuscript_revision_20261025.json', 'config/palette_v4_registry.json', 'config/paper_style.json', 'config/paper_figure_plan.json', 'config/figure_identity_map.json',
     'config/marker_registry.csv', 'config/reproduction_inputs.json', 'config/clinical_framework.json',
     'config/unified_model_20261017.json', 'config/unified_bsa_three_v1_20261017.json',
     'config/auxiliary_targets_20261017.json',
@@ -51,12 +51,16 @@ ANALYSIS_MODULES = [
 PAPER_MODULES = [
     '__init__', 'package', 'demo', 'preflight', 'figures', 'palette', 'build',
     'main_redesign_20261018', 'supplement_redesign_20261018',
+    'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
     'redesign_evidence_20261018', 'cohort_flow_20261018',
     'model_display_evidence_20261018', 'balance_support_20261018',
     'plot_source_aggregates_20261018',
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018',
 ]
 FINAL_QA_REPORTS = [
+    'reports/revision_20261025/public_verification.json',
+    'reports/revision_20261025/tests.log',
+    'reports/revision_20261025/isolated_rebuild.log',
     'reports/update_20261018/revision2/statistical_checks_manifest.json',
     'reports/figure_quality/verification.json',
     'reports/figure_quality/public_rebuild.json',

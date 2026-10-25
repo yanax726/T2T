@@ -17,9 +17,10 @@ TITLE = 'A common BSA--serum equation for EASI estimation in a Chinese atopic de
 def supplement_number(source_number):
     """Stable internal figure number -> consecutive publication number."""
     source_number = int(source_number)
-    if source_number in {20, 36}:
-        raise ValueError('Retired comparison figure must not be cited: S' + str(source_number))
-    return source_number - (source_number > 20) - (source_number > 36)
+    order = json.loads((ROOT/'config/manuscript_revision_20261025.json').read_text())['supplement_source_order']
+    if source_number not in order:
+        raise ValueError('Retired figure must not be cited: source S' + str(source_number))
+    return order.index(source_number) + 1
 
 def section_text(path):
     return re.sub(r'\\suppfig\{(\d+)\}', lambda m: 'S' + str(supplement_number(m[1])), path.read_text())
@@ -161,7 +162,7 @@ def tables(root):
         s += name+' & '+' & '.join(vals)+' \\\\ \n'
         if var!='sex_male' and any(int(b[(b.variable==var)&(b.treatment==arm)].iloc[0].n) != n for arm,n in zip(ARMS,[65,56,42])):
             s += '\\quad {\\scriptsize Available n} & '+' & '.join('{\\scriptsize '+str(int(b[(b.variable==var)&(b.treatment==arm)].iloc[0].n))+'}' for arm in ARMS)+' \\\\ \n'
-    s += '\\bottomrule\\end{tabular}\n\\par\\small\\raggedright Values are median (interquartile range), unless stated otherwise. Adult DLQI is restricted to age $\\geq18$. IGA is retained on the recorded scale pending instrument confirmation. The column-header n applies unless an available n is shown. Missing values are not filled.\\end{table}\n'
+    s += '\\bottomrule\\end{tabular}\n\\par\\small\\raggedright Values are median (interquartile range), unless stated otherwise. Quartiles use linear interpolation at rank $1+(n-1)p$ in the sorted observations (equivalent to Excel PERCENTILE.INC). Adult DLQI is restricted to age $\\geq18$. IGA is retained on the recorded scale pending instrument confirmation. The column-header n applies unless an available n is shown. Missing values are not filled.\\end{table}\n'
     (out/'table1.tex').write_text(s)
     all_metrics=pd.read_csv(root/'results/tables/update_20261017/model/overall_metrics.csv')
     m=all_metrics[all_metrics.model.eq('unified_selected')].sort_values('week')
@@ -284,25 +285,18 @@ Analysis code, versioned parameters, aggregate source tables and figure sources 
 \end{document}
 '''
     (m/'main.tex').write_text(main)
-    groups = [
-        ('Cohort structure and treatment comparability', [39,40,41],
-         'Parallel patient populations, sequential exclusions, baseline balance, common support and actual recorded exposure.'),
-        ('Clinical outcomes and stage-specific targets', [1,2,3,4,15,16,17,21,23,24,25,26],
-         'Complete specified visits, observed and adjusted trajectories, IGA composition, response targets, dose-reduction pathways and all treatment contrasts.'),
-        ('The full molecular panel and regional disease', [5,6,7,8,9,10,11,12,13,14,18,19,27,28,29,30,31,32,33,34,43],
-         'All 23 markers, paired change windows, clinical associations, response-depth profiles and regional analyses.'),
-        ('Equation validation and other targets', [22,35,37,38,42],
-         'Transport and severity checks, separately fitted PP-NRS/DLQI/IGA targets, and response classification. Matched numerical controls remain in source tables.')]
+    revision=json.loads((root/'config/manuscript_revision_20261025.json').read_text())
+    groups = [(g['title'],g['source_ids'],g['description']) for g in revision['groups']]
     groups=[(title,[supplement_number(i) for i in ids],description) for title,ids,description in groups]
     supplement={r['id']:r for r in catalog if 'S' in r['id']}
     navigation_ids=[f'FigureS{i}' for _,ids,_ in groups for i in ids]
-    if len(navigation_ids)!=41 or len(set(navigation_ids))!=41 or set(navigation_ids)!=set(supplement):
-        raise ValueError('Supplement navigation must cover all 41 figures exactly once.')
+    if len(navigation_ids)!=len(supplement) or len(set(navigation_ids))!=len(supplement) or set(navigation_ids)!=set(supplement):
+        raise ValueError('Supplement navigation must cover all current figures exactly once.')
     app=preamble('Supplementary information: '+TITLE)+r'''\maketitle
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S.\arabic{table}}
 \section*{Supplementary guide}
-The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S5 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity and input/reference specifications. The 41 figures are grouped below; complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
+The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S5 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity and input/reference specifications. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
 '''
     for title,ids,description in groups:
         app+='\\hyperref[fig:FigureS'+str(ids[0])+']{\\textbf{'+tex(title)+'}}. '+tex(description)+'\\par\n'
@@ -337,7 +331,7 @@ The \href{run:source_data/index.csv}{machine-readable source-table index} lists 
 '''
     app+='\\end{document}\n';(m/'appendix.tex').write_text(app)
     book=preamble('Complete figure book: clinical course, serum markers and EASI estimation')+r'\maketitle'+ '\n'
-    book+='This review copy contains the five main figures followed by all 41 supplementary figures. Captions specify populations, uncertainty and what each comparison can establish. Complete numerical results are supplied as CSV source tables.\n'
+    book+=f'This review copy contains the five main figures followed by all {len(supplement)} supplementary figures. Captions specify populations, uncertainty and what each comparison can establish. Complete numerical results are supplied as CSV source tables.\n'
     for row in catalog:book+=figure_page(row)
     book+='\\end{document}\n';(m/'figure_book.tex').write_text(book)
 

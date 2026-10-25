@@ -2,6 +2,13 @@
 
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
+## 2026.10.25-rc1
+
+- Consolidate the main displays into clinical targets, IGA and treatment pathways, early serum changes and individual EASI estimation.
+- Reduce repeated supplementary displays while retaining all aggregate findings and controls; group 22 supplementary figures by clinical question.
+- Make baseline quartile interpolation and adult DLQI eligibility explicit. Independent reconciliation left the baseline values and frozen model unchanged.
+- Retain observed gaps for unmeasured visits and separate fixed-patient IgE trajectories from available-case summaries.
+
 ## 2026.10.18-rc3
 
 - Organize the manuscript around the clinical framework, three-group clinical course, complete serum panel, EASI estimation and individual response monitoring.

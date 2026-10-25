@@ -1,0 +1,32 @@
+{
+  "version": "2026.10.25-rc1",
+  "status": "PASS",
+  "tests_passed": 31,
+  "main_figures": 5,
+  "supplementary_figures": 22,
+  "figure_exports": 81,
+  "all_figure_collision_checks_passed": true,
+  "all_figure_glyph_checks_passed": true,
+  "multipanel_alignment_passed": 24,
+  "single_panel_alignment_not_applicable": 3,
+  "analytical_files_unchanged": 145,
+  "independent_public_rebuild_files_identical": 156,
+  "independent_public_rebuild_scope": "All distributed manuscript PDFs, figure PDF/SVG/PNG, TeX, sourceCSV and catalogueJSON; same declared environment, clean isolated source tree. Model refitting not repeated in this display revision.",
+  "baseline_audit": {
+    "patients": 163,
+    "groups": [
+      65,
+      56,
+      42
+    ],
+    "patient_level_variables": 11,
+    "numeric_summary_checks_passed": 198,
+    "values_changed": false
+  },
+  "pdf_pages": {
+    "main": 13,
+    "appendix": 36,
+    "figure_book": 28
+  },
+  "unresolved_author_facts": "Previously documented ethics/protocol/instrument/assay/source adjudications are not closed by this display revision."
+}

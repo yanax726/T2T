@@ -40,8 +40,8 @@ def clinical_targets(root):
     folder = root / 'results/tables/update_20261017/clinical'
     rates = pd.read_csv(folder / 'endpoint_rates.csv')
     observed = pd.read_csv(folder / 'clinical_observed.csv')
-    fig, matrix = plt.subplots(5, 3, figsize=(183 / 25.4, 235 / 25.4))
-    fig.subplots_adjust(left=.09, right=.98, top=.93, bottom=.18, wspace=.40, hspace=.70)
+    fig, matrix = plt.subplots(5, 3, figsize=(183 / 25.4, 215 / 25.4))
+    fig.subplots_adjust(left=.09, right=.98, top=.93, bottom=.085, wspace=.40, hspace=.68)
     axes = list(matrix.flat)
     legend(fig, at=(.52, .989))
     for ax, variable, title in zip(axes[:3], ['easi_total', 'pp_nrs', 'dlqi'],
@@ -80,28 +80,10 @@ def clinical_targets(root):
     for i, ax in enumerate(axes):
         label(ax, string.ascii_lowercase[i]); clean(ax)
         ax.tick_params(labelsize=6.5)
+        if i < 12:
+            ax.set_xlabel('')
         if i >= 3 and i % 3 == 0:
             ax.set_ylabel('Target attainment (%)')
-    # A shared footer exposes the two clinically decisive denominators without
-    # placing crowded count strips below individual panels in the 5x3 grid.
-    fig.text(.09, .108, 'Evaluable n / initial N', fontsize=6.3, va='center')
-    for target, panel, table_weeks, xpos in [
-            ('PP_NRS_le4', 'k · PP-NRS ≤4', [0, 2, 4, 12, 24], np.linspace(.32, .64, 5)),
-            ('overall', 'o · Combined target', [4, 12, 24], np.array([.76, .86, .96]))]:
-        fig.text(float(np.mean(xpos)), .108, panel, fontsize=6.3,
-                 ha='center', va='center', weight='bold')
-        for x, week in zip(xpos, table_weeks):
-            fig.text(x, .087, f'W{week}', fontsize=6.3, ha='center', va='center')
-        for j, (arm, color) in enumerate(zip(base.ARMS, base.COLORS)):
-            d = rates[rates.target.eq(target) & rates.treatment.eq(arm)].set_index('week')
-            y = .067 - j * .020
-            if target == 'PP_NRS_le4':
-                fig.text(.09, y, palette.treatment_label(arm), fontsize=6.3,
-                         color=color, va='center')
-            for x, week in zip(xpos, table_weeks):
-                row = d.loc[week]
-                fig.text(x, y, f'{int(row.n_evaluable)}/{int(row.n_initial)}',
-                         fontsize=6.3, ha='center', va='center')
     base.save(fig, 'Figure2', 'Observed clinical activity and target attainment by initial treatment',
               'a–c, Observed medians and interquartile ranges for EASI, PP-NRS and adult DLQI. '
               'd–n, Clinical threshold attainment, with pointwise Wilson 95% confidence intervals. '
@@ -109,7 +91,7 @@ def clinical_targets(root):
               'Improvement thresholds require observed baseline and follow-up; adult DLQI requires age ≥18. '
               'o, Combined physician-and-patient targets from Fig. 1, with Wilson intervals. These stage-specific criteria differ, '
               'so points are not connected. Colour denotes initial treatment throughout; subsequent treatment changes do not reassign groups. '
-              'The footer gives evaluable n over the initial-group N for k and o. No outcomes are imputed. '
+              'No outcomes are imputed. '
               'All target numerators and denominators are in Supplementary Table S1; headline missing-outcome bounds are in Results '
               'and headline_missing_outcome_bounds.csv. Baseline-adjusted treatment comparisons are in the supplement. '
               'dupi denotes dupilumab; abro denotes abrocitinib. '
@@ -177,10 +159,6 @@ def molecular_response(root):
     a = axes[3].get_position().x0; b = axes[4].get_position().x1
     fig.text((left+middle)/2, .97, 'Within-person change: W0 → W12', ha='center', fontsize=8, weight='bold')
     fig.text((a+b)/2, .97, 'Treatment contrast: W0 → W12', ha='center', fontsize=8, weight='bold')
-    fig.text(.53, .055, 'Point and 95% CI   ·   * FDR q<0.05   ·   All 23 measured markers',
-             ha='center', fontsize=6.5)
-    fig.text(.53, .03, 'Hollow circle + n: fewer than 5 pairs; descriptive only',
-             ha='center', fontsize=6.3)
     base.save(fig, 'Figure4', 'Serum molecular response during the first 12 weeks',
               'a–c, Mean within-patient change in log₂ concentration from W0 to W12 and 95% t confidence intervals for '
               'all 23 markers, by initial treatment. A change of −1 corresponds to half the baseline concentration. '
@@ -229,7 +207,7 @@ def clinical_composition(root):
         values=z.n_group.fillna(0).astype(int)
         n=int(values.sum());assert n==[65,56,42][j]
         proportions=values.to_numpy()/n*100
-        ax.barh(range(len(PATHS)),proportions,color='#6B747C',height=.64,
+        ax.barh(range(len(PATHS)),proportions,color=palette.register(fig, 'treatment.'+tx),height=.64,
                 edgecolor='white',linewidth=.3)
         for i,(total,proportion) in enumerate(zip(values,proportions)):
             ax.text(proportion+1.2,i,str(total),ha='left',va='center',fontsize=6.3)
@@ -240,11 +218,11 @@ def clinical_composition(root):
     for i,ax in enumerate(axes):label(ax,string.ascii_lowercase[i]);clean(ax)
     base.save(fig,'Figure3','Recorded skin severity and treatment-reduction pathways',
               'a–c, Recorded IGA compositions at W0, W4, W12 and W24. Each bar totals 100% of the evaluable patients; '
-              'n below the bar is its patient denominator. The ordered blue scale identifies recorded IGA grades 0–5 and is '
+              'n below the bar is its patient denominator. The ordered plum scale identifies recorded IGA grades 0–5 and is '
               'not a treatment colour. No score or count is superimposed on the segments. All grade-specific counts and '
               'proportions remain in source tables. d–f, Future-defined pathways formed by W12 EASI75 status and subsequent '
               'recorded treatment changes. Horizontal bar length is the proportion of the complete initial group (N=65/56/42), '
-              'and the number at its end is the pathway size. The seven mutually exclusive rows exhaust each initial group, '
+              'and the number at its end is the pathway size. Lower-panel colours identify initial treatment. The seven mutually exclusive rows exhaust each initial group, '
               'including zero-size and uncertain-exposure rows. Reached refers to W12 EASI75; later reduction means a '
               'documented reduction after W12. These are descriptive pathways, not randomized reduction strategies; '
               'the bars do not encode subsequent efficacy or relapse. Instrument identity remains unverified for the recorded IGA scale. '

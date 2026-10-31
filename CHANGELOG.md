@@ -2,6 +2,12 @@
 
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
+## 2026.10.31-rc5
+
+- Apply one semantic colour system to all five main and 21 supplementary figures.
+- Simplify duplicate numeric annotations and enlarge the clinical panels; preserve exact counts in the existing tables and source data.
+- Check colour semantics, final rendering and numerical preservation. The formula, estimates and uncertainty intervals are unchanged.
+
 ## 2026.10.31-rc4
 
 - Correct near-boundary response-classification intervals without changing predictions or point estimates; provide counts and Wilson intervals for each validation repetition.

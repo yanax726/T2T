@@ -36,46 +36,46 @@ L 62.248819 43.937008
 z
 " style="fill: #ffffff"/>
    </g>
-   <g clip-path="url(#p03aace6462)">
+   <g clip-path="url(#p5b41cc50be)">
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGOQc0n7//DVp/8Md158+K/glvkfAF/zCwWDirqnAAAAAElFTkSuQmCC" id="image3051fa8c7a" transform="matrix(56.284624 0 0 59.019861 62.248819 43.937008)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
+iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGPQ8c79//jVx/8M95+//6/vX/gfAGI7C0O2f5e5AAAAAElFTkSuQmCC" id="imageb7fce5cb59" transform="matrix(56.284624 0 0 59.019861 62.248819 43.937008)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1"/>
      <g id="text_1">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="90.391131" y="170.415715" transform="rotate(-0 90.391131 170.415715)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="90.391131" y="170.415715" transform="rotate(-0 90.391131 170.415715)">Not reached</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_2"/>
      <g id="text_2">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="146.675754" y="170.415715" transform="rotate(-0 146.675754 170.415715)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="146.675754" y="170.415715" transform="rotate(-0 146.675754 170.415715)">Reached</text>
      </g>
     </g>
     <g id="text_3">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="118.533443" y="181.086418" transform="rotate(-0 118.533443 181.086418)">Model classification</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="118.533443" y="181.086418" transform="rotate(-0 118.533443 181.086418)">Model classification</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
     <g id="ytick_1">
      <g id="line2d_3"/>
      <g id="text_4">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="75.916431" transform="rotate(-0 58.748819 75.916431)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="75.916431" transform="rotate(-0 58.748819 75.916431)">Not reached</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_4"/>
      <g id="text_5">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="134.936292" transform="rotate(-0 58.748819 134.936292)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="134.936292" transform="rotate(-0 58.748819 134.936292)">Reached</text>
      </g>
     </g>
     <g id="text_6">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="13.511006" y="102.956869" transform="rotate(-90 13.511006 102.956869)">Observed response</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="13.511006" y="102.956869" transform="rotate(-90 13.511006 102.956869)">Observed response</text>
     </g>
    </g>
    <g id="text_7">
-    <text style="font: 700 8px 'DejaVu Sans'; text-anchor: start" x="45.248819" y="32.937008" transform="rotate(-0 45.248819 32.937008)">a</text>
+    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="45.248819" y="32.937008" transform="rotate(-0 45.248819 32.937008)">a</text>
    </g>
    <g id="text_8">
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(79.406639 71.601243)">n = 14</text>
@@ -94,8 +94,8 @@ iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGOQc0n7//DVp/8Md158+K/g
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(125.243528 137.899683)">91.4% of row</text>
    </g>
    <g id="text_12">
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(83.139818 29.874583)">W0 → W12 · EASI50</text>
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(80.288505 37.937008)">n=85 paired patients</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(83.139818 29.874583)">W0 → W12 · EASI50</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(80.288505 37.937008)">n=85 paired patients</text>
    </g>
    <g id="axes_2">
     <g id="patch_3">
@@ -107,45 +107,45 @@ z
 " style="fill: #ffffff"/>
     </g>
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAABsEAAAA0CAYAAADbqJZ1AAADM0lEQVR4nO3Zsa7bMBAEQCX//69pUqSyAiQ1L9A+WpEXM61w5EkUacH77cfPX+excC6unMeyZFnzL+eicBpumivqcfN4c+/DeEPdarL5WeztI33uq0vb13HsPXtBkx7Hms3jHQ9Z47HH8/+vcXqeLPfdWLK3j2RvpeO94zzJ5grO3em5h3O9ds+1+X16JXPF7+f1e35tXpPk2aZ1r3SfBH2ka7J6vnl/yW9G9pxeN8613gtDf+P6P+N82r7vdv/eBWfXnedTfLZuP5+uX8vHO26c657x5rnC75YH3Ncnr/Gdc8XftA/o/T1zHR/77mb7bhruGffVuMZTI9Nv9bjG6z8MpgGHqcavhkXNVHJ9vLks7f3yRF/4H2z5RZ60MS9msMezZzh+4A2X7tsL8z5JapJ73ru3/tZdvRCON9Sle2H9fu7eW3+uXmlhrHnL+3QG67V5b41DDjXf1zMBAAAAAADAZxKCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAwNHmN9HUKDCLujbuAAAAAElFTkSuQmCC" id="image8742b5a1d3" transform="scale(1 -1) translate(0 -6.24)" x="181.56" y="-408.96" width="207.48" height="6.24"/>
+iVBORw0KGgoAAAANSUhEUgAABsEAAAA0CAYAAADbqJZ1AAADGUlEQVR4nO3ZwY7UMBAE0MD//ysHDtwIQsvVRi71jDKl965Rt53Edna2vv34+eu+Fu71leu8Zlf1t2539bxm221x8Y7va9nwdAr/xsrmEfXbFn7uc0pq9mNtux7XjPd7+N76upTc1/lNx3trU7ccK+53XveU53QFddN7a1eXnp/3+FjD/ZZXsnnsz6fZefxOx4rWU/j+l8/pFe8kqQn6pd/q6fU0PI/xd7wu+eg9Hu+7aA6le3z6b5p0PQU118P3yUt+By3Hev7avR7wrX7n926/PqfPp+H7esVZmNSMv/9t0Xm/YA7/vRbU9J6F2w/Ueb/xeQyf4/uiaKxs7ufPfVe3/w2f3Fc699m1m57x15vGSv53suuX/w0SzmO9yUfHyucenDX3+8aa3gvT591Xx+AsTNfuNfsbKel3vXGs77t2AAAAAAAA8ImEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAFBHCAYAAAAAAEAdIRgAAAAAAAB1hGAAAAAAAADUEYIBAAAAAABQRwgGAAAAAABAHSEYAAAAAAAAdYRgAAAAAAAA1BGCAQAAAAAAUEcIBgAAAAAAQB0hGAAAAAAAAHWEYAAAAAAAANQRggEAAAAAAHC1+QOimxhGPBMIBgAAAABJRU5ErkJggg==" id="image269297eae4" transform="scale(1 -1) translate(0 -6.24)" x="181.56" y="-408.96" width="207.48" height="6.24"/>
     <g id="matplotlib.axis_3">
      <g id="xtick_3">
       <g id="line2d_5">
        <defs>
-        <path id="mc7bb1c56e5" d="M 0 0 
+        <path id="m5ebf6b09c0" d="M 0 0 
 L 0 2 
-" style="stroke: #000000; stroke-width: 0.8"/>
+" style="stroke: #29323b; stroke-width: 0.8"/>
        </defs>
        <g>
-        <use xlink:href="#mc7bb1c56e5" x="181.559055" y="415.204724" style="stroke: #000000; stroke-width: 0.8"/>
+        <use xlink:href="#m5ebf6b09c0" x="181.559055" y="415.204724" style="fill: #29323b; stroke: #29323b; stroke-width: 0.8"/>
        </g>
       </g>
       <g id="text_13">
-       <text style="font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="181.559055" y="425.49174" transform="rotate(-0 181.559055 425.49174)">0%</text>
+       <text style="fill: #29323b; font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="181.559055" y="425.49174" transform="rotate(-0 181.559055 425.49174)">0%</text>
       </g>
      </g>
      <g id="xtick_4">
       <g id="line2d_6">
        <g>
-        <use xlink:href="#mc7bb1c56e5" x="285.307087" y="415.204724" style="stroke: #000000; stroke-width: 0.8"/>
+        <use xlink:href="#m5ebf6b09c0" x="285.307087" y="415.204724" style="fill: #29323b; stroke: #29323b; stroke-width: 0.8"/>
        </g>
       </g>
       <g id="text_14">
-       <text style="font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="425.49174" transform="rotate(-0 285.307087 425.49174)">50%</text>
+       <text style="fill: #29323b; font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="425.49174" transform="rotate(-0 285.307087 425.49174)">50%</text>
       </g>
      </g>
      <g id="xtick_5">
       <g id="line2d_7">
        <g>
-        <use xlink:href="#mc7bb1c56e5" x="389.055118" y="415.204724" style="stroke: #000000; stroke-width: 0.8"/>
+        <use xlink:href="#m5ebf6b09c0" x="389.055118" y="415.204724" style="fill: #29323b; stroke: #29323b; stroke-width: 0.8"/>
        </g>
       </g>
       <g id="text_15">
-       <text style="font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="389.055118" y="425.49174" transform="rotate(-0 389.055118 425.49174)">100%</text>
+       <text style="fill: #29323b; font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="389.055118" y="425.49174" transform="rotate(-0 389.055118 425.49174)">100%</text>
       </g>
      </g>
      <g id="text_16">
-      <text style="font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="435.588959" transform="rotate(-0 285.307087 435.588959)">Percentage within observed-response row</text>
+      <text style="fill: #29323b; font: 6.3px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="435.588959" transform="rotate(-0 285.307087 435.588959)">Percentage within observed-response row</text>
      </g>
     </g>
     <g id="matplotlib.axis_4"/>
@@ -159,7 +159,7 @@ L 389.055118 412.129134
 L 389.055118 415.204724 
 L 181.559055 415.204724 
 z
-" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+" style="fill: none; stroke: #94939a; stroke-width: 0.7; stroke-linejoin: miter; stroke-linecap: square"/>
     </g>
    </g>
   </g>
@@ -172,43 +172,43 @@ L 227.725613 43.937008
 z
 " style="fill: #ffffff"/>
    </g>
-   <g clip-path="url(#pfd918764cd)">
+   <g clip-path="url(#p37e759ed60)">
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGMQt4r6//7Lj/8MW84++G+a1PUfAF4lCwUnRikFAAAAAElFTkSuQmCC" id="imagecda6cd49de" transform="matrix(56.284624 0 0 59.019861 227.725613 43.937008)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
+iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGNQsk/4//7z9/+Me8/d/d+7aBsDAGEyCuZq9fUtAAAAAElFTkSuQmCC" id="image418874fb5a" transform="matrix(56.284624 0 0 59.019861 227.725613 43.937008)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
    </g>
    <g id="matplotlib.axis_5">
     <g id="xtick_6">
      <g id="line2d_8"/>
      <g id="text_17">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="255.867924" y="170.415715" transform="rotate(-0 255.867924 170.415715)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="255.867924" y="170.415715" transform="rotate(-0 255.867924 170.415715)">Not reached</text>
      </g>
     </g>
     <g id="xtick_7">
      <g id="line2d_9"/>
      <g id="text_18">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="312.152548" y="170.415715" transform="rotate(-0 312.152548 170.415715)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="312.152548" y="170.415715" transform="rotate(-0 312.152548 170.415715)">Reached</text>
      </g>
     </g>
     <g id="text_19">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="284.010236" y="181.086418" transform="rotate(-0 284.010236 181.086418)">Model classification</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="284.010236" y="181.086418" transform="rotate(-0 284.010236 181.086418)">Model classification</text>
     </g>
    </g>
    <g id="matplotlib.axis_6">
     <g id="ytick_3">
      <g id="line2d_10"/>
      <g id="text_20">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="75.916431" transform="rotate(-0 224.225613 75.916431)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="75.916431" transform="rotate(-0 224.225613 75.916431)">Not reached</text>
      </g>
     </g>
     <g id="ytick_4">
      <g id="line2d_11"/>
      <g id="text_21">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="134.936292" transform="rotate(-0 224.225613 134.936292)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="134.936292" transform="rotate(-0 224.225613 134.936292)">Reached</text>
      </g>
     </g>
    </g>
    <g id="text_22">
-    <text style="font: 700 8px 'DejaVu Sans'; text-anchor: start" x="210.725613" y="32.937008" transform="rotate(-0 210.725613 32.937008)">b</text>
+    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="210.725613" y="32.937008" transform="rotate(-0 210.725613 32.937008)">b</text>
    </g>
    <g id="text_23">
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(244.883432 71.601243)">n = 36</text>
@@ -227,8 +227,8 @@ iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGMQt4r6//7Lj/8MW84++G+a
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(290.720322 137.899683)">73.5% of row</text>
    </g>
    <g id="text_27">
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(248.616611 29.874583)">W0 → W12 · EASI75</text>
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(245.765299 37.937008)">n=85 paired patients</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(248.616611 29.874583)">W0 → W12 · EASI75</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(245.765299 37.937008)">n=85 paired patients</text>
    </g>
   </g>
   <g id="axes_4">
@@ -240,43 +240,43 @@ L 393.202406 43.937008
 z
 " style="fill: #ffffff"/>
    </g>
-   <g clip-path="url(#pd174106c3a)">
+   <g clip-path="url(#pe92e2feb6c)">
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGOQtIn9/+bT9/+MU7df/L/r2EUGAF82CvQwFojcAAAAAElFTkSuQmCC" id="image6e19956f09" transform="matrix(56.284624 0 0 59.019861 393.202406 43.937008)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
+iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGNQcUr+/+bjt/+MC3ec/X/wzHUGAGEdCyUC/iJKAAAAAElFTkSuQmCC" id="imagebd238fb4ea" transform="matrix(56.284624 0 0 59.019861 393.202406 43.937008)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
    </g>
    <g id="matplotlib.axis_7">
     <g id="xtick_8">
      <g id="line2d_12"/>
      <g id="text_28">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="421.344718" y="170.415715" transform="rotate(-0 421.344718 170.415715)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="421.344718" y="170.415715" transform="rotate(-0 421.344718 170.415715)">Not reached</text>
      </g>
     </g>
     <g id="xtick_9">
      <g id="line2d_13"/>
      <g id="text_29">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="477.629342" y="170.415715" transform="rotate(-0 477.629342 170.415715)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="477.629342" y="170.415715" transform="rotate(-0 477.629342 170.415715)">Reached</text>
      </g>
     </g>
     <g id="text_30">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="449.48703" y="181.086418" transform="rotate(-0 449.48703 181.086418)">Model classification</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="449.48703" y="181.086418" transform="rotate(-0 449.48703 181.086418)">Model classification</text>
     </g>
    </g>
    <g id="matplotlib.axis_8">
     <g id="ytick_5">
      <g id="line2d_14"/>
      <g id="text_31">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="75.916431" transform="rotate(-0 389.702406 75.916431)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="75.916431" transform="rotate(-0 389.702406 75.916431)">Not reached</text>
      </g>
     </g>
     <g id="ytick_6">
      <g id="line2d_15"/>
      <g id="text_32">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="134.936292" transform="rotate(-0 389.702406 134.936292)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="134.936292" transform="rotate(-0 389.702406 134.936292)">Reached</text>
      </g>
     </g>
    </g>
    <g id="text_33">
-    <text style="font: 700 8px 'DejaVu Sans'; text-anchor: start" x="376.202406" y="32.937008" transform="rotate(-0 376.202406 32.937008)">c</text>
+    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="376.202406" y="32.937008" transform="rotate(-0 376.202406 32.937008)">c</text>
    </g>
    <g id="text_34">
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(410.360226 71.601243)">n = 57</text>
@@ -295,8 +295,8 @@ iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGOQtIn9/+bT9/+MU7df/L/r
     <text style="fill: #24323c; font: 6.5px 'DejaVu Sans'" transform="translate(456.197115 137.899683)">63.0% of row</text>
    </g>
    <g id="text_38">
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(414.093405 29.874583)">W0 → W12 · EASI90</text>
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(411.242092 37.937008)">n=85 paired patients</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(414.093405 29.874583)">W0 → W12 · EASI90</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(411.242092 37.937008)">n=85 paired patients</text>
    </g>
   </g>
   <g id="axes_5">
@@ -308,46 +308,46 @@ L 62.248819 242.243742
 z
 " style="fill: #ffffff"/>
    </g>
-   <g clip-path="url(#p623d824a1b)">
+   <g clip-path="url(#p257ee7357e)">
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGMQt4r6//7Lj/8MT99++S/jmPQfAF/uCwiBLEFcAAAAAElFTkSuQmCC" id="image597609d893" transform="matrix(56.284624 0 0 59.019861 62.248819 242.243742)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
+iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGNQsk/4//7z9/8Mz95++q/pkfkfAGGPCzaiFTXuAAAAAElFTkSuQmCC" id="imagec075219fab" transform="matrix(56.284624 0 0 59.019861 62.248819 242.243742)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
    </g>
    <g id="matplotlib.axis_9">
     <g id="xtick_10">
      <g id="line2d_16"/>
      <g id="text_39">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="90.391131" y="368.722449" transform="rotate(-0 90.391131 368.722449)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="90.391131" y="368.722449" transform="rotate(-0 90.391131 368.722449)">Not reached</text>
      </g>
     </g>
     <g id="xtick_11">
      <g id="line2d_17"/>
      <g id="text_40">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="146.675754" y="368.722449" transform="rotate(-0 146.675754 368.722449)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="146.675754" y="368.722449" transform="rotate(-0 146.675754 368.722449)">Reached</text>
      </g>
     </g>
     <g id="text_41">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="118.533443" y="379.393152" transform="rotate(-0 118.533443 379.393152)">Model classification</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="118.533443" y="379.393152" transform="rotate(-0 118.533443 379.393152)">Model classification</text>
     </g>
    </g>
    <g id="matplotlib.axis_10">
     <g id="ytick_7">
      <g id="line2d_18"/>
      <g id="text_42">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="274.223165" transform="rotate(-0 58.748819 274.223165)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="274.223165" transform="rotate(-0 58.748819 274.223165)">Not reached</text>
      </g>
     </g>
     <g id="ytick_8">
      <g id="line2d_19"/>
      <g id="text_43">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="333.243026" transform="rotate(-0 58.748819 333.243026)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="58.748819" y="333.243026" transform="rotate(-0 58.748819 333.243026)">Reached</text>
      </g>
     </g>
     <g id="text_44">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="13.511006" y="301.263603" transform="rotate(-90 13.511006 301.263603)">Observed response</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="13.511006" y="301.263603" transform="rotate(-90 13.511006 301.263603)">Observed response</text>
     </g>
    </g>
    <g id="text_45">
-    <text style="font: 700 8px 'DejaVu Sans'; text-anchor: start" x="45.248819" y="231.243742" transform="rotate(-0 45.248819 231.243742)">d</text>
+    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="45.248819" y="231.243742" transform="rotate(-0 45.248819 231.243742)">d</text>
    </g>
    <g id="text_46">
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(81.474451 269.907977)">n = 7</text>
@@ -366,8 +366,8 @@ iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGMQt4r6//7Lj/8MT99++S/j
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(125.243528 336.206417)">95.0% of row</text>
    </g>
    <g id="text_50">
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(83.139818 228.181317)">W0 → W24 · EASI50</text>
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(80.288505 236.243742)">n=67 paired patients</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(83.139818 228.181317)">W0 → W24 · EASI50</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(80.288505 236.243742)">n=67 paired patients</text>
    </g>
   </g>
   <g id="axes_6">
@@ -379,43 +379,43 @@ L 227.725613 242.243742
 z
 " style="fill: #ffffff"/>
    </g>
-   <g clip-path="url(#p6975b025b2)">
+   <g clip-path="url(#pc39fcf8dfb)">
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGMQt4r6//7Lj/8M5++//q/mX/IfAF8cCwVu8UjaAAAAAElFTkSuQmCC" id="imaged5f22f14cf" transform="matrix(56.284624 0 0 59.019861 227.725613 242.243742)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
+iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGNQsk/4//7z9/8MV+6//G8RVfsfAGEBC0LQYf8tAAAAAElFTkSuQmCC" id="image7a1829d7fe" transform="matrix(56.284624 0 0 59.019861 227.725613 242.243742)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
    </g>
    <g id="matplotlib.axis_11">
     <g id="xtick_12">
      <g id="line2d_20"/>
      <g id="text_51">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="255.867924" y="368.722449" transform="rotate(-0 255.867924 368.722449)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="255.867924" y="368.722449" transform="rotate(-0 255.867924 368.722449)">Not reached</text>
      </g>
     </g>
     <g id="xtick_13">
      <g id="line2d_21"/>
      <g id="text_52">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="312.152548" y="368.722449" transform="rotate(-0 312.152548 368.722449)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="312.152548" y="368.722449" transform="rotate(-0 312.152548 368.722449)">Reached</text>
      </g>
     </g>
     <g id="text_53">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="284.010236" y="379.393152" transform="rotate(-0 284.010236 379.393152)">Model classification</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="284.010236" y="379.393152" transform="rotate(-0 284.010236 379.393152)">Model classification</text>
     </g>
    </g>
    <g id="matplotlib.axis_12">
     <g id="ytick_9">
      <g id="line2d_22"/>
      <g id="text_54">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="274.223165" transform="rotate(-0 224.225613 274.223165)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="274.223165" transform="rotate(-0 224.225613 274.223165)">Not reached</text>
      </g>
     </g>
     <g id="ytick_10">
      <g id="line2d_23"/>
      <g id="text_55">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="333.243026" transform="rotate(-0 224.225613 333.243026)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="224.225613" y="333.243026" transform="rotate(-0 224.225613 333.243026)">Reached</text>
      </g>
     </g>
    </g>
    <g id="text_56">
-    <text style="font: 700 8px 'DejaVu Sans'; text-anchor: start" x="210.725613" y="231.243742" transform="rotate(-0 210.725613 231.243742)">e</text>
+    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="210.725613" y="231.243742" transform="rotate(-0 210.725613 231.243742)">e</text>
    </g>
    <g id="text_57">
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(244.883432 269.907977)">n = 13</text>
@@ -434,8 +434,8 @@ iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGMQt4r6//7Lj/8M5++//q/m
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(290.720322 336.206417)">85.2% of row</text>
    </g>
    <g id="text_61">
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(248.616611 228.181317)">W0 → W24 · EASI75</text>
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(245.765299 236.243742)">n=67 paired patients</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(248.616611 228.181317)">W0 → W24 · EASI75</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(245.765299 236.243742)">n=67 paired patients</text>
    </g>
   </g>
   <g id="axes_7">
@@ -447,43 +447,43 @@ L 393.202406 242.243742
 z
 " style="fill: #ffffff"/>
    </g>
-   <g clip-path="url(#p0d7435afc3)">
+   <g clip-path="url(#pb9b59b7a80)">
     <image xlink:href="data:image/png;base64,
-iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGOQc079/+j1p/+MJQsO/v/+8xcDAF88C0OMkipZAAAAAElFTkSuQmCC" id="image87204d40cf" transform="matrix(56.284624 0 0 59.019861 393.202406 242.243742)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
+iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGPQ9sr5//jVx/+MzQt2///56zcDAGFJC2rdYD4yAAAAAElFTkSuQmCC" id="imagee495cdd7c4" transform="matrix(56.284624 0 0 59.019861 393.202406 242.243742)" style="image-rendering:crisp-edges;image-rendering:pixelated" width="2" height="2"/>
    </g>
    <g id="matplotlib.axis_13">
     <g id="xtick_14">
      <g id="line2d_24"/>
      <g id="text_62">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="421.344718" y="368.722449" transform="rotate(-0 421.344718 368.722449)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="421.344718" y="368.722449" transform="rotate(-0 421.344718 368.722449)">Not reached</text>
      </g>
     </g>
     <g id="xtick_15">
      <g id="line2d_25"/>
      <g id="text_63">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="477.629342" y="368.722449" transform="rotate(-0 477.629342 368.722449)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: middle" x="477.629342" y="368.722449" transform="rotate(-0 477.629342 368.722449)">Reached</text>
      </g>
     </g>
     <g id="text_64">
-     <text style="font: 7px 'DejaVu Sans'; text-anchor: middle" x="449.48703" y="379.393152" transform="rotate(-0 449.48703 379.393152)">Model classification</text>
+     <text style="fill: #29323b; font: 7px 'DejaVu Sans'; text-anchor: middle" x="449.48703" y="379.393152" transform="rotate(-0 449.48703 379.393152)">Model classification</text>
     </g>
    </g>
    <g id="matplotlib.axis_14">
     <g id="ytick_11">
      <g id="line2d_26"/>
      <g id="text_65">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="274.223165" transform="rotate(-0 389.702406 274.223165)">Not reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="274.223165" transform="rotate(-0 389.702406 274.223165)">Not reached</text>
      </g>
     </g>
     <g id="ytick_12">
      <g id="line2d_27"/>
      <g id="text_66">
-      <text style="font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="333.243026" transform="rotate(-0 389.702406 333.243026)">Reached</text>
+      <text style="fill: #29323b; font: 6.5px 'DejaVu Sans'; text-anchor: end" x="389.702406" y="333.243026" transform="rotate(-0 389.702406 333.243026)">Reached</text>
      </g>
     </g>
    </g>
    <g id="text_67">
-    <text style="font: 700 8px 'DejaVu Sans'; text-anchor: start" x="376.202406" y="231.243742" transform="rotate(-0 376.202406 231.243742)">f</text>
+    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="376.202406" y="231.243742" transform="rotate(-0 376.202406 231.243742)">f</text>
    </g>
    <g id="text_68">
     <text style="fill: #ffffff; font: 6.5px 'DejaVu Sans'" transform="translate(410.360226 269.907977)">n = 30</text>
@@ -502,31 +502,31 @@ iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVR4nGOQc079/+j1p/+MJQsO/v/+
     <text style="fill: #24323c; font: 6.5px 'DejaVu Sans'" transform="translate(456.197115 336.206417)">51.4% of row</text>
    </g>
    <g id="text_72">
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(414.093405 228.181317)">W0 → W24 · EASI90</text>
-    <text style="font: 7.2px 'DejaVu Sans'" transform="translate(411.242092 236.243742)">n=67 paired patients</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(414.093405 228.181317)">W0 → W24 · EASI90</text>
+    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'" transform="translate(411.242092 236.243742)">n=67 paired patients</text>
    </g>
   </g>
   <g id="text_73">
-   <text style="font: 700 7.2px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="9.864576" transform="rotate(-0 285.307087 9.864576)">First outer repetition: illustration of response classification</text>
+   <text style="fill: #29323b; font: 700 7.2px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="9.864576" transform="rotate(-0 285.307087 9.864576)">First outer repetition: illustration of response classification</text>
   </g>
  </g>
  <defs>
-  <clipPath id="p03aace6462">
+  <clipPath id="p5b41cc50be">
    <rect x="62.248819" y="43.937008" width="112.569247" height="118.039723"/>
   </clipPath>
-  <clipPath id="pfd918764cd">
+  <clipPath id="p37e759ed60">
    <rect x="227.725613" y="43.937008" width="112.569247" height="118.039723"/>
   </clipPath>
-  <clipPath id="pd174106c3a">
+  <clipPath id="pe92e2feb6c">
    <rect x="393.202406" y="43.937008" width="112.569247" height="118.039723"/>
   </clipPath>
-  <clipPath id="p623d824a1b">
+  <clipPath id="p257ee7357e">
    <rect x="62.248819" y="242.243742" width="112.569247" height="118.039723"/>
   </clipPath>
-  <clipPath id="p6975b025b2">
+  <clipPath id="pc39fcf8dfb">
    <rect x="227.725613" y="242.243742" width="112.569247" height="118.039723"/>
   </clipPath>
-  <clipPath id="p0d7435afc3">
+  <clipPath id="pb9b59b7a80">
    <rect x="393.202406" y="242.243742" width="112.569247" height="118.039723"/>
   </clipPath>
  </defs>

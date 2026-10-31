@@ -32,7 +32,7 @@ DISPLAY={'pp_nrs':'PP-NRS','easi_total':'EASI','bsa':'BSA (%)','dlqi':'Adult DLQ
 CATALOG=[]
 REVISION=json.loads((ROOT/'config/manuscript_revision_20261025.json').read_text())
 SUPPLEMENT_ORDER=REVISION['supplement_source_order']
-plt.rcParams.update({'font.family':STYLE['font'],'font.size':7,'axes.titlesize':7,'axes.labelsize':7,'xtick.labelsize':6.5,'ytick.labelsize':6.5,'legend.fontsize':6.5,'axes.spines.top':False,'axes.spines.right':False,'axes.linewidth':.8,'pdf.fonttype':42,'svg.fonttype':'none','svg.hashsalt':'t2t-palette-v4','savefig.dpi':600})
+plt.rcParams.update({'font.family':STYLE['font'],'font.size':7,'axes.titlesize':7,'axes.labelsize':7,'xtick.labelsize':6.5,'ytick.labelsize':6.5,'legend.fontsize':6.5,'axes.spines.top':False,'axes.spines.right':False,'axes.linewidth':.7,'text.color':palette.REGISTRY['neutral']['text'],'axes.labelcolor':palette.REGISTRY['neutral']['text'],'axes.edgecolor':palette.REGISTRY['neutral']['reference'],'xtick.color':palette.REGISTRY['neutral']['text'],'ytick.color':palette.REGISTRY['neutral']['text'],'pdf.fonttype':42,'svg.fonttype':'none','svg.hashsalt':'t2t-paper-figures','savefig.dpi':600})
 
 def publication_id(source_id):
  if not source_id.startswith('FigureS'):return source_id

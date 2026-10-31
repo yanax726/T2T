@@ -37,7 +37,7 @@ python3.9 -m venv .venv
 
 PDF rebuilding also requires pdfLaTeX and BibTeX. The [reproduction guide](docs/reproduction.md) documents dependencies, tested environment, runtimes and each command. Figure identities and counts follow the live catalogue rather than a fixed count in this README.
 
-The release checks are recorded in the [test log](reports/update_20261025/integration/final_tests.log), [quality checks](reports/update_20261025/integration/final_quality_assurance.json) and [rebuild comparison](reports/update_20261025/integration/final_reproducibility_check.json). An optional [GitHub Actions template](docs/ci/public-checks.yml) is supplied but is not active. After granting a publishing credential permission to modify workflows, copy it to `.github/workflows/public-checks.yml` to enable Actions.
+The current release checks are recorded in the [test log](reports/visual_revision_20261031/tests.log), [quality checks](reports/visual_revision_20261031/final_quality_assurance.json) and [rebuild comparison](reports/visual_revision_20261031/public_reproducibility.json). The [figure style guide](docs/figure_style.md) defines the shared colour roles and display rules. An optional [GitHub Actions template](docs/ci/public-checks.yml) is supplied but is not active. After granting a publishing credential permission to modify workflows, copy it to `.github/workflows/public-checks.yml` to enable Actions.
 
 `rebuild` uses the distributed aggregates. `analyse` refits the analyses only after authorized restricted snapshots pass the declared hash checks. `sensitivity` reruns the two new analyses in an authorized workspace with existing primary model predictions. Participant records, individual predictions, fold membership, clinical dates and free-text notes are excluded from this repository. See [data access](DATA_ACCESS.md).
 
@@ -45,7 +45,7 @@ The input comparisons refit each model on the same eligible visits and patient s
 
 ## Version, citation and license
 
-This research snapshot is version [2026.10.31-rc4](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+This research snapshot is version [2026.10.31-rc5](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
 
 Original code, data and manuscript materials have no assigned reuse license. The existing Apache-2.0 terms for the third-party panel-alignment helper are retained. See [license status](LICENSE_STATUS.md) and [third-party notice](NOTICE.md).
 

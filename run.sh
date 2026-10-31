@@ -20,6 +20,7 @@ case "$mode" in
     "$python_bin" -m unittest discover -s tests -p 'test_redesign_evidence_20261018.py'
     "$python_bin" -m unittest discover -s tests -p 'test_public_package.py'
     "$python_bin" -m unittest discover -s tests -p 'test_response_intervals_20261031.py'
+    "$python_bin" -m unittest discover -s tests -p 'test_palette_semantics_20261031.py'
     ;;
   figures)
     "$python_bin" -m t2t_paper.figures

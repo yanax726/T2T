@@ -18,10 +18,10 @@
   },
   "missing": "Displayed as unavailable; no zero substitution",
   "model_comparison": "Same patients and patient-grouped folds",
-  "version": "palette-v5-clinical-20261025",
+  "version": "palette-v6-blue-apricot-coral-plum-20261031",
   "main_maximum_height_mm": 170,
-  "unknown_color": "#E8EAEC",
-  "text_color": "#253341",
+  "unknown_color": "#EAE8EB",
+  "text_color": "#29323B",
   "neutral_dark": "#404040",
   "line_width_pt": 1.35,
   "visit_linestyles": {
@@ -32,5 +32,21 @@
   "minimum_embedded_font_pt": 6.0,
   "palette_registry": "config/palette_v4_registry.json",
   "marker_size_pt": 4,
-  "band_alpha": 0.16
+  "band_alpha": 0.16,
+  "treatment_colors": {
+    "dupilumab": "#3B7197",
+    "abrocitinib_100mg": "#C78557",
+    "abrocitinib_200mg": "#B85060",
+    "pooled_abrocitinib": "#A97865"
+  },
+  "method_colors": {
+    "reference": "#A18E7F",
+    "current": "#775D78"
+  },
+  "visit_colors": {
+    "0": "#A38ABB",
+    "12": "#7B5F9B",
+    "24": "#47305F"
+  },
+  "palette_version": "palette-v6-blue-apricot-coral-plum-20261031"
 }

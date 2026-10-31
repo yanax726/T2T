@@ -21,7 +21,7 @@ def draw(ax, frame, x, y, width=2., height=2., maximum=None):
         values[i, j] += int(row[2])
     assert values.sum() == frame['count'].sum()
     lut = palette.REGISTRY['continuous']['ocean_sequential']['lut_hex']
-    cmap = ListedColormap(lut[45:], name='ocean_patient_counts')
+    cmap = ListedColormap(lut[72:], name='ocean_patient_counts')
     cmap.set_bad((1, 1, 1, 0))
     maximum = max(2, int(maximum or values.max()))
     image = ax.pcolormesh(xe, ye, np.ma.masked_equal(values, 0),

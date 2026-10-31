@@ -1,0 +1,224 @@
+{
+  "status": "NUMERICAL_PASS_VISUAL_REVIEW_WITH_LIMITATIONS",
+  "method": "Machado et al. 2009 full-severity linear-RGB channel arithmetic; grayscale uses relative luminance.",
+  "simulation_reference": "https://doi.org/10.1109/TVCG.2009.113",
+  "render_command_uses_runtime_warnings_as_errors": true,
+  "rebuild_exit_code": 0,
+  "figure_count": 26,
+  "simulation_image_checks": 130,
+  "runtime_warnings": 0,
+  "all_outputs_finite_in_unit_interval": true,
+  "all_image_shapes_preserved": true,
+  "all_original_pages_unchanged": true,
+  "all_four_transformations_change_coloured_pixels": true,
+  "authoritative_png_hashes_unchanged": true,
+  "legacy_warning_diagnosis": "Platform batched matrix multiplication emitted floating-point warnings for finite RGB inputs. Explicit scalar channel arithmetic removes the warning path. Legacy and corrected outputs agree within floating-point rounding on every pixel checked; no source figure or statistical output changed.",
+  "legacy_to_current_max_absolute_pixel_difference": 4.440892098500626e-16,
+  "legacy_to_current_mode_checks": 104,
+  "test_suite": "tests/test_palette_semantics_20261031.py: 17 tests passed",
+  "rendered_review": [
+    {
+      "figure": "Figure2",
+      "pages_viewed": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "views": [
+        "protanopia",
+        "deuteranopia",
+        "tritanopia",
+        "grayscale"
+      ],
+      "finding": "Across the three colour-vision simulations, treatment identity remains interpretable through the fixed shared legend and colour/lightness differences. Pure grayscale brings dupi and abro 200 mg close together; overlapping curves cannot reliably be identified by shade alone. This is a colour-first figure, not certified for grayscale-only reading.",
+      "decision": "Retain consistent colour encoding and legend; do not claim universal grayscale distinguishability. A grayscale-only publication would require direct group labels or a separate accessible version."
+    },
+    {
+      "figure": "Figure3",
+      "pages_viewed": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "views": [
+        "protanopia",
+        "deuteranopia",
+        "tritanopia",
+        "grayscale"
+      ],
+      "finding": "The ordered IGA lightness ladder remains readable in all inspected views. Treatment pathway panels retain explicit group headings and aligned category labels, so their interpretation does not depend on group-colour discrimination.",
+      "decision": "No transform-specific ambiguity requiring source figure changes found."
+    },
+    {
+      "figure": "Figure5",
+      "pages_viewed": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "views": [
+        "protanopia",
+        "deuteranopia",
+        "tritanopia",
+        "grayscale"
+      ],
+      "finding": "Week-specific lightness differences survive the simulations. Facet titles identify top-panel visits independently of colour. W12 and W24 cumulative-error curves overlap where the estimates are similar; classification points are vertically separated with a visit legend.",
+      "decision": "Retain the same visit order and legend. Do not infer a performance difference from line visibility or overlapping shaded intervals."
+    },
+    {
+      "figure": "FigureS18",
+      "pages_viewed": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "views": [
+        "protanopia",
+        "deuteranopia",
+        "tritanopia",
+        "grayscale"
+      ],
+      "finding": "Treatment is carried by facet headings, while three visit shades use a consistent top-to-bottom offset within each marker row. The time ordering and interval geometry remain readable in all inspected views. Hollow circles and nearby n identify sparse estimates independently of colour.",
+      "decision": "No transform-specific source change required; retain the sparse-sample explanation."
+    }
+  ],
+  "review_limit": "Rendered simulations are diagnostic approximations, not measurements of readers or journal accessibility certification. Only the four specified figures were manually inspected in all four transformed views in this check.",
+  "qa_pdf_files": [
+    {
+      "id": "Figure1",
+      "pages": 5,
+      "sha256": "edac9a7f1d0cb7bba3847044b1fccd0b323cf8215c3567e86909a376fbc10226"
+    },
+    {
+      "id": "Figure2",
+      "pages": 5,
+      "sha256": "17af16a64f521b7f0344706be6e11e75fa4f0c6a775851f3b36a78246d81b180"
+    },
+    {
+      "id": "Figure3",
+      "pages": 5,
+      "sha256": "8b5c09b615289f2a4b3f8e0780c71211419f43a3412a706dba57c638bdc5d1c4"
+    },
+    {
+      "id": "Figure4",
+      "pages": 5,
+      "sha256": "176d494dd69b15e10f0bd83e0c16ae67b8e7470cfe385132fc0d13e60b67af69"
+    },
+    {
+      "id": "Figure5",
+      "pages": 5,
+      "sha256": "b068911a581263c3da6eff40f71742be7bd56b8f44f41f0ca9b3d139a779afad"
+    },
+    {
+      "id": "FigureS1",
+      "pages": 5,
+      "sha256": "cb0bf16315cafac0cc834482c22d16129fc80de0f77605620dae320b21c7bc4b"
+    },
+    {
+      "id": "FigureS2",
+      "pages": 5,
+      "sha256": "3fb7a6085768e6b03407c1839aecb79babd1f5d71359a3c4765b11be59e3f6bc"
+    },
+    {
+      "id": "FigureS3",
+      "pages": 5,
+      "sha256": "4768d76127e3fa5a63bc1ed8dd4e013e85fe9f28623bb2adb83fad4011bee1ac"
+    },
+    {
+      "id": "FigureS4",
+      "pages": 5,
+      "sha256": "86f52a2507b61572fa9626cd3fad82549544812537693393da1486c10c149c8f"
+    },
+    {
+      "id": "FigureS5",
+      "pages": 5,
+      "sha256": "07f3c7934fab590ba97334a2d787068f909b13e04676b44353a7726b2c115a26"
+    },
+    {
+      "id": "FigureS6",
+      "pages": 5,
+      "sha256": "843ef7b13d5f6fa77d6b690750ecdd1998d08894b2c30f81675cfcad0e8c324e"
+    },
+    {
+      "id": "FigureS7",
+      "pages": 5,
+      "sha256": "7ecb7378856a985556dd9f6b0ba2e27e5a000d53aeca63370bcd85229352110c"
+    },
+    {
+      "id": "FigureS8",
+      "pages": 5,
+      "sha256": "6bf59ac4b88327584ed14c02f215accf9ad052aad99a27f02e987422df2474b9"
+    },
+    {
+      "id": "FigureS9",
+      "pages": 5,
+      "sha256": "35126f264212e22ef0ccce025fc6e4599999b1389329a49df7c680093a085672"
+    },
+    {
+      "id": "FigureS10",
+      "pages": 5,
+      "sha256": "b68437e0883631a3b941389cca90470ab1c7e73fa0d243aaf789147357661b86"
+    },
+    {
+      "id": "FigureS11",
+      "pages": 5,
+      "sha256": "66254a6ff75d70d7cc9926db3f02de9b58466644bbfa3624a5243bae80c62307"
+    },
+    {
+      "id": "FigureS12",
+      "pages": 5,
+      "sha256": "58343f22e31a7460d8d4367b1395df7eae770a9106945fa6e87703cad56b98bf"
+    },
+    {
+      "id": "FigureS13",
+      "pages": 5,
+      "sha256": "9be73aa5c7b1921a9a80a9b4083bb7f1cb5552f50e0f46cec9bb29f4b8a8df0d"
+    },
+    {
+      "id": "FigureS14",
+      "pages": 5,
+      "sha256": "e7ac4a96dc2038160f4840249ca95b02163da5ebd50cf47e49bae377b4416fcd"
+    },
+    {
+      "id": "FigureS15",
+      "pages": 5,
+      "sha256": "253c4d585362603d603bd461d63c182d65072f3b2998d13bc462e2b7db006002"
+    },
+    {
+      "id": "FigureS16",
+      "pages": 5,
+      "sha256": "c8b6acc028554f63e025f289ab101fc364c120b659dc56cc132e795d6ad4218b"
+    },
+    {
+      "id": "FigureS17",
+      "pages": 5,
+      "sha256": "b0a2ef1c40f573793ac0ecc2694ea45949d72b57d70730fec423aa920fe8dc21"
+    },
+    {
+      "id": "FigureS18",
+      "pages": 5,
+      "sha256": "67a07aa425d40077e9469628929e923fd72276c006ab0452d5be4542f2c897fa"
+    },
+    {
+      "id": "FigureS19",
+      "pages": 5,
+      "sha256": "517edcfaddf4f1b5a4394bcbf5b1a11897eb16e41bbf9f90066d9b86bb0d4c43"
+    },
+    {
+      "id": "FigureS20",
+      "pages": 5,
+      "sha256": "19c5e2dc9e1aeeb530914bb33544b171cdf07ded3806e1e1a14f35d7dcd71114"
+    },
+    {
+      "id": "FigureS21",
+      "pages": 5,
+      "sha256": "24d1ae59f7e84c28ab346d281057ced9829b31985a6c13aa48088f3cd05cbb52"
+    }
+  ],
+  "source_colour_inventory": "colour_qa/colour_inventory.json",
+  "detailed_numeric_comparison": "colour_simulation_numeric_verification.json"
+}

@@ -9,14 +9,14 @@ from matplotlib.patches import FancyArrowPatch, Rectangle
 
 from . import palette
 
-INK = '#26343C'
-MUTED = '#66747C'
-RULE = '#B8C7CD'
-ACCENT = '#587F8E'
-CLINICAL_FILL = '#EDF3F5'
-PATIENT_FILL = '#FAEEE8'
-RESEARCH_FILL = '#F3F0ED'
-NEUTRAL_FILL = '#F6F7F7'
+INK = palette.REGISTRY['aesthetic']['ink']
+MUTED = palette.REGISTRY['aesthetic']['muted']
+RULE = palette.REGISTRY['aesthetic']['rule']
+ACCENT = palette.REGISTRY['aesthetic']['diagram_accent']
+CLINICAL_FILL = palette.REGISTRY['aesthetic']['clinical_fill']
+PATIENT_FILL = palette.REGISTRY['aesthetic']['patient_fill']
+RESEARCH_FILL = palette.REGISTRY['aesthetic']['research_fill']
+NEUTRAL_FILL = palette.REGISTRY['aesthetic']['neutral_fill']
 
 
 def _text(ax, x, y, text, *, size=7.5, weight='normal', ha='center', va='center', color=INK):

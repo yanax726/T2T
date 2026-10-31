@@ -39,7 +39,7 @@ BASE_FILES = [
     'tests/test_unified_bsa_three.py', 'tests/test_auxiliary_targets_calculator.py',
     'tests/test_rounding_20261017.py', 'tests/test_redesign_evidence_20261018.py',
     'tests/test_public_package.py',
-    'tests/test_response_intervals_20261031.py',
+    'tests/test_response_intervals_20261031.py', 'tests/test_palette_semantics_20261031.py',
 ]
 ANALYSIS_MODULES = [
     'clinical_evidence_20261017', 'regional_evidence_20261017',
@@ -57,13 +57,17 @@ PAPER_MODULES = [
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
     'sensitivity_figures_20261025', 'sensitivity_tables_20261025',
-    'review_tables_20261031',
+    'review_tables_20261031', 'visual_qa_20261031',
     'redesign_evidence_20261018', 'cohort_flow_20261018',
     'model_display_evidence_20261018', 'balance_support_20261018',
     'plot_source_aggregates_20261018',
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/visual_revision_20261031/final_quality_assurance.json',
+    'reports/visual_revision_20261031/colour_transform_verification.json',
+    'reports/visual_revision_20261031/tests.log',
+    'reports/visual_revision_20261031/public_reproducibility.json',
     'reports/review_20261031/checks/numerical_verification.json',
     'reports/review_20261031/checks/numerical_tests.log',
     'reports/review_20261031/checks/iga_verification_20261031.json',

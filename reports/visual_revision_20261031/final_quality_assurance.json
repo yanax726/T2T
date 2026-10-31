@@ -1,0 +1,58 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_COLOUR_ACCESSIBILITY_LIMITATION",
+  "version": "2026.10.31-rc5",
+  "scope": "Visual encoding, layout, captions and reproducible figure export; no new statistical estimation or clinical validation",
+  "main_figures": 5,
+  "supplementary_figures": 21,
+  "main_tables": 2,
+  "supplementary_tables": 11,
+  "tests_passed": 53,
+  "test_suites": 7,
+  "numerical_files_locked": 278,
+  "numerical_files_changed": [],
+  "protected_source_files_locked": 150,
+  "protected_source_files_changed": [],
+  "frozen_formula_unchanged": true,
+  "frozen_formula_sha256": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+  "all_26_semantic_colour_audits_pass": true,
+  "all_26_alignment_and_pdf_audits_pass": true,
+  "all_29_reviewed_pdf_hashes_match": true,
+  "rendered_export_checks": {
+    "all_widths_mm": 183,
+    "editable_svg_text": true,
+    "embedded_fonts": true,
+    "latex_layout_warnings": 0
+  },
+  "pdf_results": {
+    "main": {
+      "pages": 14,
+      "minimum_embedded_font_pt": 5.97760009765625,
+      "sha256": "16761eacce46ab2049b03fdebfbcc69a2f096ed38fc459e7a9c40fa4302226e6"
+    },
+    "appendix": {
+      "pages": 42,
+      "minimum_embedded_font_pt": 5.97760009765625,
+      "sha256": "8319548959d14204ee5e0032c312f4b9dc568d7199fb49532e0adf07ab1207ce"
+    },
+    "figure_book": {
+      "pages": 27,
+      "minimum_embedded_font_pt": 5.990480899810791,
+      "sha256": "2b5410646717a4868090b2eb540d8b8f7b3ec9f71879263ef5d4e8f0af17a8ef"
+    }
+  },
+  "colour_simulation": {
+    "images_checked": 130,
+    "runtime_warnings": 0,
+    "manual_transformed_review_figures": [
+      "Figure2",
+      "Figure3",
+      "Figure5",
+      "FigureS18"
+    ],
+    "limitation": "Figure2 dupi and abro 200 mg converge in pure grayscale at overlapping curves; colour-first figures are not certified for grayscale-only use."
+  },
+  "source_static_preflight": "Raw module scanner flags are retained and manually resolved using actual rendered PDF/SVG evidence; see local source_preflight_disposition.json. Shared-helper settings cannot be inferred by its single-module scan.",
+  "numerical_integrity": "Estimates, intervals, denominators, thresholds, missing-data rules and conclusions remain unchanged. Figure annotations were reduced only where exact values remain in cited tables or source data.",
+  "reproducibility_report": "public_reproducibility.json",
+  "review_scope_limit": "Visual QA is not a guarantee of journal acceptance or independent validation of model performance."
+}

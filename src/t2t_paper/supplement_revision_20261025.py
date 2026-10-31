@@ -51,9 +51,9 @@ def courses(root, base):
     adjusted = pd.read_csv(folder / 'clinical_trajectory_adjusted.csv')
     groups = [(3, ['bsa', 'scorad']), (4, ['ige_numeric', 'eo_count_numeric'])]
     for number, variables in groups:
-        fig, axes = previous.grid(len(variables), 2, 178 if number == 4 else 151,
-                                  left=.13, top=.90, bottom=.20 if number == 4 else .13,
-                                  hspace=1.15 if number == 4 else .72, wspace=.40)
+        fig, axes = previous.grid(len(variables), 2, 151,
+                                  left=.13, top=.90, bottom=.13,
+                                  hspace=.72, wspace=.40)
         previous.legend(fig)
         for row, var in enumerate(variables):
             weeks = [0, 12, 24] if var == 'ige_numeric' else [0, 4, 12, 24]
@@ -64,10 +64,6 @@ def courses(root, base):
                 z = observed[observed.target.eq(var) & observed.treatment.eq(tx)].set_index('week').reindex(weeks)
                 # Explicit missing rows break the line: absent W4 eosinophils are not interpolated.
                 previous.line(obsax, weeks, z['median'], z.q25, z.q75, previous.COLORS[j])
-                if number == 4:
-                    counts = ' / '.join('0' if pd.isna(n) else str(int(n)) for n in z['n'])
-                    obsax.text(.01, -.34 - .12*j, f'{palette.treatment_label(tx)}: n={counts}',
-                               transform=obsax.transAxes, fontsize=6.5, va='top')
                 z = adjusted[adjusted.target.eq(var) & adjusted.treatment.eq(tx)].set_index('week').reindex(weeks[1:])
                 v = z[['adjusted_mean_scale', 'ci_low', 'ci_high']].to_numpy()
                 if var in ['ige_numeric', 'eo_count_numeric']:
@@ -93,7 +89,7 @@ def courses(root, base):
         if number == 2:
             caption += 'Adult DLQI is restricted to age ≥18. '
         if number == 4:
-            caption = ('Left panels use different available patients at each visit: counts below each panel follow the week order on its axis. '
+            caption = ('Left panels use different available patients at each visit; outcome-specific denominators are in Supplementary Table S9 and source data. '
                        'Lines connect visit summaries, not the same patients. IgE uses a logarithmic vertical axis labelled in recorded units. '
                        'Observed points are medians and bars are interquartile ranges. Right panels show baseline-overlap-weighted marginal '
                        'estimates with patient-cluster 95% confidence intervals conditional on the estimated baseline weights, adjusted for '
@@ -210,12 +206,6 @@ def baseline_heatmap(root, base):
     for j, (ax, column, title) in enumerate(zip(axes, ['q25', 'median', 'q75'], ['Lower quartile', 'Median', 'Upper quartile'])):
         matrix = d.pivot(index='marker', columns='treatment', values=column).reindex(index=MARKERS, columns=ARMS)
         im = ax.imshow(matrix, cmap=cmap, vmin=low, vmax=high, aspect='auto', interpolation='none')
-        for y in range(23):
-            for x in range(3):
-                value = matrix.iloc[y, x]
-                if pd.notna(value):
-                    col = previous.cell_text_color(cmap((value - low) / (high - low)))
-                    ax.text(x, y, ('0.0' if abs(value)<.05 else f'{value:.1f}'), ha='center', va='center', fontsize=6.3, color=col)
         ax.set(yticks=range(23), yticklabels=MARKERS if j == 0 else [''] * 23,
                xticks=range(3), xticklabels=SHORT, title=title)
         ax.tick_params(length=0)
@@ -225,10 +215,10 @@ def baseline_heatmap(root, base):
     cb.set_label('Log₂ recorded concentration', fontsize=6.5)
     cb.ax.tick_params(labelsize=6.3, length=2)
     finish(fig, 18, 'Baseline distributions of all 23 serum markers',
-           'Cells display the lower quartile, median and upper quartile of baseline log₂ recorded concentration for each initial treatment. '
+           'Cell colour displays the lower quartile, median and upper quartile of baseline log₂ recorded concentration for each initial treatment. '
            'All three panels use the same numeric colour scale without row normalization. Compare treatments within a marker: concentration '
            'differences between distinct analytes do not indicate differences in biological activity. dupi denotes dupilumab; abro denotes '
-           'abrocitinib, with 100/200 mg identifying initial dose. Every measured marker is retained. The source table includes exact counts, censoring-related availability, '
+           'abrocitinib, with 100/200 mg identifying initial dose. Every measured marker is retained. Exact cell values remain in the source table, alongside counts, censoring-related availability, '
            'ranges and distribution summaries; quartiles summarize available positive numeric observations and do not replace censored values.',
            [source], root, base)
 
@@ -258,7 +248,7 @@ def triplet_forests(root, base):
              ha='center', fontsize=6.3)
     finish(fig, 19, 'Three-visit molecular trajectories in fixed patient sets',
            'Within each marker and treatment, the same patients contribute at W0, W12 and W24. W0 is zero by definition; W12/W24 are mean '
-           'within-patient log₂ changes from W0. Pale green, teal and dark green encode W0/W12/W24 consistently across all panels. '
+           'within-patient log₂ changes from W0. Visit colours follow the shared W0/W12/W24 legend across all panels. '
            'Rows are spaced to separate the three visits; horizontal intervals are 95% t confidence intervals for n≥5. Hollow circles denote '
            'smaller descriptive sets without inferential intervals; the n label applies to all three visits. Absent estimates remain blank. All 23 markers are retained. Fixed triplet counts '
            'are available in the source table and may differ across markers or treatments, but never across the three displayed visits within a marker/treatment.',

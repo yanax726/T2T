@@ -26,7 +26,7 @@ def model_performance(root):
     ecdf_path = root/'manuscript/source_data/error_ecdf.csv'
     ecdf = pd.read_csv(ecdf_path)
     response = pd.read_csv(old/'monitoring_response_uncertainty.csv')
-    fig = plt.figure(figsize=(183/25.4, 185/25.4))
+    fig = plt.figure(figsize=(183/25.4, 175/25.4))
     top = fig.add_gridspec(1, 3, left=.265, right=.93, bottom=.59, top=.925, wspace=.42)
     positions = [0, 1, 2, 3, 4.5, 5.5]
     for i, week in enumerate([0, 12, 24]):
@@ -46,9 +46,8 @@ def model_performance(root):
         ax.tick_params(axis='y', length=0, labelsize=6.5)
         clean(ax); label(ax,'abc'[i])
     fig.text(.265, .972, 'Matched input comparison', fontsize=8, weight='bold')
-    fig.text(.10, .505, 'Unchanged development procedure', fontsize=8, weight='bold')
-    fig.text(.10, .469, 'W0/W12: patient-held-out evaluation · W24: same-cohort temporal application', fontsize=6.5)
-    lower = fig.add_gridspec(1, 2, left=.10, right=.97, bottom=.12, top=.405, wspace=.65)
+    fig.text(.10, .505, 'Performance of the selected estimator', fontsize=8, weight='bold')
+    lower = fig.add_gridspec(1, 2, left=.10, right=.97, bottom=.12, top=.43, wspace=.65)
     ax = fig.add_subplot(lower[0, 0])
     for week in [0,12,24]:
         color = palette.register(fig, f'visit.W{week}')
@@ -75,15 +74,14 @@ def model_performance(root):
     ax.legend(handles=[Line2D([],[],color=palette.color(f'visit.W{w}'),marker='o',lw=0,label=f'Week {w}') for w in [12,24]],
               loc='upper center',bbox_to_anchor=(.5,-.27),ncol=2,frameon=False,fontsize=6.5)
     clean(ax);label(ax,'e')
-    fig.text(.10, .443, 'EASI75 responders/nonresponders: W12 49/36 · W24 54/13', fontsize=6.3)
-    fig.text(.10, .010, 'Severe follow-up coverage (observed EASI >21): W12 n=1; W24 n=0.', fontsize=6.5)
     base.save(fig,'Figure5','Input contributions and performance of the common EASI estimator',
               'a–c, Post hoc input-set comparisons on the same 151/89/75 patients at W0/W12/W24. Points and labels show mean absolute '
               'error (MAE) with 95% paired-patient bootstrap intervals. Markers are CCL17, CCL26 and IL-5; clinical inputs come from the '
               'current visit. Models use the same outer patient folds, W0/W12 training, and training-only preprocessing and inner selection. '
               'Clinical-only controls appear below the divider; molecular added accuracy requires comparison at identical clinical inputs. '
               'd, The unchanged primary procedure on its original 152/89/75 patients: cumulative absolute-error proportions with pointwise '
-              'bootstrap 95% intervals. All errors enter the calculation; thresholds up to ten points are displayed. Two points is a visual '
+              'bootstrap 95% intervals. W0/W12 predictions are patient-held-out. Only one W12 patient and no W24 patients have observed EASI >21. '
+              'All errors enter the calculation; thresholds up to ten points are displayed. Two points is a visual '
               'reference, not an accepted interchangeability margin. e, EASI75 classification uses observed and estimated scores with their '
               'own baselines. Sensitivity uses 49/54 responders, specificity 36/13 nonresponders and agreement 85/67 paired patients at W12/W24. '
               'Conservative conditional 95% bounds average repetition-specific Clopper–Pearson limits with Bonferroni adjustment across '

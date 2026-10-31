@@ -1,40 +1,35 @@
 # Figure style
 
-The current manuscript contains five main figures and 21 supplementary figures. Their plotting sources share `config/palette_v4_registry.json`, version `palette-v5-clinical-20261025`; the filename is retained for compatibility. The earlier presentation deck and speaking script are preserved separately and were not regenerated in this manuscript revision.
+All five main and 21 supplementary figures use one colour registry, `config/palette_v4_registry.json`. Its stable filename is retained for reproducibility; the current palette is **palette-v6-blue-apricot-coral-plum-20261031**. Earlier presentation files are unchanged.
 
-## Colours and labels
+## Colour roles
 
-| Role | Display label | Colour |
-|---|---|---|
-| Initial dupilumab | dupi | `#245C8A` |
-| Initial abrocitinib 100 mg | abro 100 mg | `#E69A3A` |
-| Initial abrocitinib 200 mg | abro 200 mg | `#B84D59` |
-| Defined pooled abrocitinib estimate | pooled abro | `#9B6A42` |
-| Baseline visit | W0 | `#8ABDAE` |
-| Week 12 visit | W12 | `#3C8F80` |
-| Week 24 visit | W24 | `#1D514D` |
-| Observed or reference method | As labelled | `#9FA9B3` |
-| Adjusted or current method | As labelled | `#515B66` |
+The four anchors are blue, apricot, coral and muted plum. Treatment identity uses blue, apricot and coral. Visit identity uses a separate light-to-dark plum sequence. Observed and adjusted estimates use taupe and muted plum. These are fixed roles across the complete numbered figure, not colours selected independently for each panel.
 
-Treatment and visit colours have separate meanings across the whole numbered figure. Labels identify which variable is coloured; a colour is never reassigned between panels. Treatment changes do not change the initial-treatment colour. Display abbreviations do not rename data fields or treatment codes.
+| Role | Colour |
+|---|---|
+| treatment.dupilumab | `#3B7197` |
+| treatment.abrocitinib_100mg | `#C78557` |
+| treatment.abrocitinib_200mg | `#B85060` |
+| treatment.pooled_abrocitinib | `#A97865` |
+| visit.W0 | `#A38ABB` |
+| visit.W12 | `#7B5F9B` |
+| visit.W24 | `#47305F` |
+| method.reference | `#A18E7F` |
+| method.current | `#775D78` |
 
-Ordinary points are circles and trend lines are solid. Molecular estimates based on fewer than five patients use open circles and explicit n labels, with no inferential interval. Points, lines and intervals retain full opacity; uncertainty bands, where used, are derived from the same series colour. Titles and axis text are dark neutral. Dense displays use facets and direct labels rather than additional shapes or line styles.
+Treatment changes do not reassign initial-group colour. Comparisons between treatments use an analysis colour rather than either treatment's colour. A single-series panel uses one colour; there is no colour code for significance. Circles and solid lines are the default. Open circles with explicit n mark descriptive molecular estimates based on fewer than five patients. Titles and labels remain dark neutral.
 
-## Main and supplementary displays
+## Numerical scales and annotations
 
-- **Figure 1:** the clinical target framework and the separate research estimator. The diagram does not imply that the estimator governed treatment decisions.
-- **Figure 2:** treatment colours throughout. Panels a–c show observed medians with interquartile whiskers; d–n show threshold proportions with Wilson 95% confidence intervals. Slight horizontal offsets separate groups without changing their visit labels. Panel o shows stage-specific combined targets as unconnected points because the definitions change by visit.
-- **Figure 3:** recorded IGA uses six ordered blue shades for grades 0–5. Treatment-reduction categories are explicitly labelled; counts and denominators accompany proportions.
-- **Figure 4:** treatment colours identify within-group molecular changes in a–c. Neutral colours identify the adjusted contrasts in d–e. Their axes distinguish within-patient log₂ changes from between-treatment differences.
-- **Figure 5:** visit colours identify W0, W12 and W24 in the matched input comparisons and retained primary-model performance panels. Clinical-only controls are separated by a divider. The matched comparison and primary validation populations have their own denominators in the caption. Response classification uses conservative repetition-aware binomial bounds; the error-distribution bands use patient bootstrap intervals. W24 application and severe-disease coverage are explicit.
-- **Supplementary figures:** the same treatment, visit and method roles apply. S4 gives observed laboratory counts and a logarithmic IgE axis labelled in recorded units; absent dupi W4 eosinophils remain absent. S5 separates complete three-visit IgE observations from missing-data analyses, with population and assumptions stated in the caption. Molecular windows remain separately labelled. S19–S20 use fixed-size count cells rather than variable-size patient bubbles. All clinical, molecular and validation figures retain their stated units, uncertainty intervals and available-case denominators.
+IGA grades 0–5 have their own six-step ordered plum scale. Treatment-pathway bars below them use treatment colours; the two colour meanings do not overlap. Signed heatmaps use a 257-entry blue–off-white–coral lookup table. Correlations retain −1 to 1; other signed quantities retain their original common symmetric limits. Sequential blue heatmaps show numeric concentration, proportion or count with separately labelled units and normalization. Proportion scales remain 0–100%. Missing values are not zero. Count cells retain all patients and use a logarithmic colour scale; single-patient cells remain visible.
 
-Signed heatmaps use an explicit 257-colour blue–near-white–brick lookup table, with negative values in blue and positive values in brick. Correlation limits are −1 to 1; other signed comparisons use a common symmetric range within each comparison family. Count and proportion heatmaps use sequential blues, with proportions fixed at 0–100%. The compatibility keys `ocean_coral_diverging` and `ocean_sequential` name these numerical lookup tables; they do not encode treatments or visits. Missing values, true zero and sparse estimates are distinct. Numerical colour bars carry their own quantity and units.
+Figure 2 keeps all specified outcomes and visits. Its full endpoint denominators are in Supplementary Table S1. IgE/EOS coverage is in Table S9. These repeated numeric strips are no longer placed below the plots. S10 retains all 207 baseline concentration cells, with exact values in the source table rather than printed in each cell. Counts stay in cohort flows, IGA denominators, sparse-data flags and confusion matrices, where they are essential to interpretation. Matched model MAE values also remain directly readable.
 
-The fitted equation appears in **Results**, followed by its validation. **Methods** describes fitting, preprocessing and evaluation. Formula coefficients are not inserted into data panels.
+The selected-estimator figure retains molecular-only, combined and clinical-only input comparisons, the absolute-error distribution and EASI75 classification. The caption distinguishes sample sets, evaluation design, uncertainty and limited severe follow-up coverage. No numerical results or scientific conclusions change with this visual revision.
 
-## Export and review
+## Export and checking
 
-PDF and SVG preserve editable vector text; PNG files are supplied for viewing. Shared export checks cover categorical-colour consistency and panel alignment. Final PDFs are checked for font sizes, text collisions, outdated treatment abbreviations and legibility; the minimum final glyph threshold is 5 pt. Actual-size viewing, grayscale and colour-vision simulations supplement these checks and are not accessibility certification.
+PDF and SVG preserve editable text. PNG previews and the figure book show the complete collection. The shared exporter checks semantic colours and rendered panel alignment. Each PDF is checked for glyph size and collisions and inspected at final size. Colour-vision and grayscale views are diagnostic checks, not a claim of universal accessibility. Direct labels and panel positions remain necessary when colours converge in grayscale.
 
-The palette was informed by the supplied [scientific palette guide](https://www.simplifiedsciencepublishing.com/resources/best-color-palettes-for-scientific-figures-and-data-visualizations) and adapted to this figure set. The [Nature figure specifications](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/) support clear labels, accessible presentation and editable RGB artwork; they do not endorse a particular palette or certify these figures.
+The [reference guide](https://www.simplifiedsciencepublishing.com/resources/best-color-palettes-for-scientific-figures-and-data-visualizations) informed restrained colour families and lightness contrast. The palette is adapted to this complete manuscript, not copied from a separate example for each chart. [Nature's figure guidance](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/) does not certify a particular HEX palette.

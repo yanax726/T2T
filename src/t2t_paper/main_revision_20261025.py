@@ -41,12 +41,12 @@ def clinical_targets(root):
     rates = pd.read_csv(folder / 'endpoint_rates.csv')
     observed = pd.read_csv(folder / 'clinical_observed.csv')
     fig, matrix = plt.subplots(5, 3, figsize=(183 / 25.4, 235 / 25.4))
-    fig.subplots_adjust(left=.09, right=.98, top=.93, bottom=.055, wspace=.40, hspace=.70)
+    fig.subplots_adjust(left=.09, right=.98, top=.93, bottom=.18, wspace=.40, hspace=.70)
     axes = list(matrix.flat)
     legend(fig, at=(.52, .989))
-    weeks = [0, 12, 24]
     for ax, variable, title in zip(axes[:3], ['easi_total', 'pp_nrs', 'dlqi'],
                                     ['EASI', 'PP-NRS', 'Adult DLQI']):
+        weeks = [0, 2, 4, 12, 24] if variable == 'pp_nrs' else [0, 4, 12, 24]
         for j, (arm, color) in enumerate(zip(base.ARMS, base.COLORS)):
             d = observed[observed.target.eq(variable) & observed.treatment.eq(arm)].set_index('week').reindex(weeks)
             assert d[['median', 'q25', 'q75']].notna().all().all()
@@ -82,6 +82,26 @@ def clinical_targets(root):
         ax.tick_params(labelsize=6.5)
         if i >= 3 and i % 3 == 0:
             ax.set_ylabel('Target attainment (%)')
+    # A shared footer exposes the two clinically decisive denominators without
+    # placing crowded count strips below individual panels in the 5x3 grid.
+    fig.text(.09, .108, 'Evaluable n / initial N', fontsize=6.3, va='center')
+    for target, panel, table_weeks, xpos in [
+            ('PP_NRS_le4', 'k · PP-NRS ≤4', [0, 2, 4, 12, 24], np.linspace(.32, .64, 5)),
+            ('overall', 'o · Combined target', [4, 12, 24], np.array([.76, .86, .96]))]:
+        fig.text(float(np.mean(xpos)), .108, panel, fontsize=6.3,
+                 ha='center', va='center', weight='bold')
+        for x, week in zip(xpos, table_weeks):
+            fig.text(x, .087, f'W{week}', fontsize=6.3, ha='center', va='center')
+        for j, (arm, color) in enumerate(zip(base.ARMS, base.COLORS)):
+            d = rates[rates.target.eq(target) & rates.treatment.eq(arm)].set_index('week')
+            y = .067 - j * .020
+            if target == 'PP_NRS_le4':
+                fig.text(.09, y, palette.treatment_label(arm), fontsize=6.3,
+                         color=color, va='center')
+            for x, week in zip(xpos, table_weeks):
+                row = d.loc[week]
+                fig.text(x, y, f'{int(row.n_evaluable)}/{int(row.n_initial)}',
+                         fontsize=6.3, ha='center', va='center')
     base.save(fig, 'Figure2', 'Observed clinical activity and target attainment by initial treatment',
               'a–c, Observed medians and interquartile ranges for EASI, PP-NRS and adult DLQI. '
               'd–n, Clinical threshold attainment, with pointwise Wilson 95% confidence intervals. '
@@ -89,8 +109,10 @@ def clinical_targets(root):
               'Improvement thresholds require observed baseline and follow-up; adult DLQI requires age ≥18. '
               'o, Combined physician-and-patient targets from Fig. 1, with Wilson intervals. These stage-specific criteria differ, '
               'so points are not connected. Colour denotes initial treatment throughout; subsequent treatment changes do not reassign groups. '
-              'No outcomes are imputed. Counts and missing-outcome bounds are in Supplementary Table S1 and source data; '
-              'baseline-adjusted treatment comparisons and additional designated visits are in the supplement. '
+              'The footer gives evaluable n over the initial-group N for k and o. No outcomes are imputed. '
+              'All target numerators and denominators are in Supplementary Table S1; headline missing-outcome bounds are in Results '
+              'and headline_missing_outcome_bounds.csv. Baseline-adjusted treatment comparisons are in the supplement. '
+              'dupi denotes dupilumab; abro denotes abrocitinib. '
               'These available-case, observational trajectories do not establish causal treatment differences.',
               [str(folder/'clinical_observed.csv'), str(folder/'endpoint_rates.csv')], root)
 
@@ -98,16 +120,22 @@ def clinical_targets(root):
 def _forest(ax, data, color, *, stars=True):
     y = np.arange(len(data))
     valid = np.isfinite(data.effect.to_numpy())
-    interval = valid & np.isfinite(data.ci_low.to_numpy()) & np.isfinite(data.ci_high.to_numpy())
+    sparse = valid & data.n.between(1, 4).to_numpy() if 'n' in data else np.zeros(len(data), dtype=bool)
+    interval = valid & ~sparse & np.isfinite(data.ci_low.to_numpy()) & np.isfinite(data.ci_high.to_numpy())
     ax.errorbar(data.effect.to_numpy()[interval], y[interval],
                 xerr=[data.effect.to_numpy()[interval]-data.ci_low.to_numpy()[interval],
                       data.ci_high.to_numpy()[interval]-data.effect.to_numpy()[interval]],
                 fmt='o', color=color, ms=3.2, lw=1.1, capsize=1.5)
-    ax.scatter(data.effect.to_numpy()[valid & ~interval], y[valid & ~interval],
+    ax.scatter(data.effect.to_numpy()[valid & ~interval & ~sparse], y[valid & ~interval & ~sparse],
                s=11, facecolor=color, edgecolor=color, zorder=3)
+    ax.scatter(data.effect.to_numpy()[sparse], y[sparse], s=13,
+               facecolor='white', edgecolor=color, linewidth=.8, zorder=3)
+    for i in np.flatnonzero(sparse):
+        ax.text(1.025, i, f'n={int(data.n.iloc[i])}', transform=ax.get_yaxis_transform(),
+                va='center', ha='left', fontsize=6.3)
     if stars:
         for i, q in enumerate(data.q):
-            if np.isfinite(q) and q < .05:
+            if np.isfinite(q) and q < .05 and not sparse[i]:
                 ax.text(1.075, i, '*', transform=ax.get_yaxis_transform(), va='center',
                         ha='center', fontsize=9, weight='bold')
     ax.axvline(0, color='#B8C1C6', lw=.65, zorder=0)
@@ -149,8 +177,10 @@ def molecular_response(root):
     a = axes[3].get_position().x0; b = axes[4].get_position().x1
     fig.text((left+middle)/2, .97, 'Within-person change: W0 → W12', ha='center', fontsize=8, weight='bold')
     fig.text((a+b)/2, .97, 'Treatment contrast: W0 → W12', ha='center', fontsize=8, weight='bold')
-    fig.text(.53, .04, 'Point and 95% CI   ·   * FDR q<0.05   ·   All 23 measured markers',
+    fig.text(.53, .055, 'Point and 95% CI   ·   * FDR q<0.05   ·   All 23 measured markers',
              ha='center', fontsize=6.5)
+    fig.text(.53, .03, 'Hollow circle + n: fewer than 5 pairs; descriptive only',
+             ha='center', fontsize=6.3)
     base.save(fig, 'Figure4', 'Serum molecular response during the first 12 weeks',
               'a–c, Mean within-patient change in log₂ concentration from W0 to W12 and 95% t confidence intervals for '
               'all 23 markers, by initial treatment. A change of −1 corresponds to half the baseline concentration. '
@@ -158,7 +188,7 @@ def molecular_response(root):
               'with HC3-robust 95% confidence intervals. Models adjust for starting log₂ concentration, W0 EASI, age, sex, BMI and centre. '
               'Pooled abrocitinib preserves the observed dose mixture. Negative contrasts mean a larger decline in the first group. '
               'Stars show q<0.05 under the original declared BH families; no tests or multiplicity families were changed for this display. '
-              'Each marker uses its own available pairs. Estimates with fewer than five pairs have no inferential interval or star; '
+              'Each marker uses its own available pairs. Hollow circles with n labels denote fewer than five pairs and have no inferential interval or star; '
               'missing estimates are left blank. Exact sample sizes, estimates, intervals and q values remain in source tables. '
               'Within-group and between-group panels have separately labelled x axes and cannot be interpreted as the same effect. '
               'The remaining pairwise treatment contrasts, later windows, fixed three-visit trajectories and assay-batch sensitivities '

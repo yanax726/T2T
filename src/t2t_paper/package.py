@@ -39,6 +39,7 @@ BASE_FILES = [
     'tests/test_unified_bsa_three.py', 'tests/test_auxiliary_targets_calculator.py',
     'tests/test_rounding_20261017.py', 'tests/test_redesign_evidence_20261018.py',
     'tests/test_public_package.py',
+    'tests/test_response_intervals_20261031.py',
 ]
 ANALYSIS_MODULES = [
     'clinical_evidence_20261017', 'regional_evidence_20261017',
@@ -49,18 +50,28 @@ ANALYSIS_MODULES = [
     'reference_sensitivity_20261018',
     'auxiliary_targets_20261017', 'auxiliary_targets_calculator_20261017',
     'ige_missingness_20261025', 'model_ablation_20261025',
+    'manuscript_audit_20261031', 'iga_definition_sensitivity_20261031',
 ]
 PAPER_MODULES = [
     '__init__', 'package', 'demo', 'preflight', 'figures', 'palette', 'build',
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
     'sensitivity_figures_20261025', 'sensitivity_tables_20261025',
+    'review_tables_20261031',
     'redesign_evidence_20261018', 'cohort_flow_20261018',
     'model_display_evidence_20261018', 'balance_support_20261018',
     'plot_source_aggregates_20261018',
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/review_20261031/checks/numerical_verification.json',
+    'reports/review_20261031/checks/numerical_tests.log',
+    'reports/review_20261031/checks/iga_verification_20261031.json',
+    'reports/review_20261031/checks/classification_verification.json',
+    'reports/review_20261031/checks/final_quality_assurance.json',
+    'reports/review_20261031/checks/public_reproducibility.json',
+    'reports/review_20261031/checks/final_tests.log',
+    'reports/review_20261031/checks/source_preservation.json',
     'reports/update_20261025/integration/final_quality_assurance.json',
     'reports/update_20261025/integration/final_reproducibility_check.json',
     'reports/update_20261025/integration/isolated_rebuild.log',
@@ -204,6 +215,22 @@ def collect_files():
             if path.is_file() and path.name not in filenames:
                 excluded.append(dict(path=str(path.relative_to(ROOT)),
                                      reason='Not in reviewed sensitivity aggregate allowlist'))
+
+    for filename in [
+        'clinical_claim_contrasts.csv', 'independent_regression_checks.csv',
+        'clinical_contrast_time_changes.csv',
+        'laboratory_coverage.csv', 'laboratory_observation_patterns.csv',
+        'laboratory_paired_changes.csv', 'observed_pair_checks.csv',
+        'iga_cohort_counts.csv', 'iga_definition_paired_comparison.csv',
+        'iga_definition_rates.csv', 'iga_definition_specification.csv',
+        'iga_definition_patient_change_counts.csv',
+        'iga_definition_transitions.csv', 'iga_grade5_audit.csv',
+        'iga_grade5_exclusion_effect.csv', 'iga_primary_reconciliation.csv',
+    ]:
+        path = ROOT/'results/tables/update_20261031'/filename
+        if not safe_csv(path):
+            raise RuntimeError('Restricted review aggregate: '+str(path))
+        selected.add(str(path.relative_to(ROOT)))
 
     catalogue = json.loads((ROOT / 'manuscript/figure_catalog.json').read_text())
     ids = [row['id'] for row in catalogue]

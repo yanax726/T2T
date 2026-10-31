@@ -1,0 +1,70 @@
+target,week,comparison,quantity,max_abs_error,n_patients
+easi_total,4,dupilumab,adjusted_level_and_interval,3.730349362740526e-14,138
+easi_total,4,abrocitinib_100mg,adjusted_level_and_interval,6.572520305780927e-14,138
+easi_total,4,abrocitinib_200mg,adjusted_level_and_interval,5.861977570020827e-14,138
+easi_total,12,dupilumab,adjusted_level_and_interval,9.059419880941277e-14,138
+easi_total,12,abrocitinib_100mg,adjusted_level_and_interval,4.04121180963557e-14,138
+easi_total,12,abrocitinib_200mg,adjusted_level_and_interval,1.687538997430238e-14,138
+easi_total,24,dupilumab,adjusted_level_and_interval,7.72715225139109e-14,138
+easi_total,24,abrocitinib_100mg,adjusted_level_and_interval,7.527312106958561e-14,138
+easi_total,24,abrocitinib_200mg,adjusted_level_and_interval,7.993605777301127e-15,138
+easi_total,4,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,1.021405182655144e-14,138
+easi_total,4,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,1.7763568394002505e-15,138
+easi_total,4,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,2.7533531010703882e-14,138
+easi_total,12,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,1.021405182655144e-14,138
+easi_total,12,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,1.509903313490213e-14,138
+easi_total,12,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,1.4654943925052066e-14,138
+easi_total,24,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,6.217248937900877e-15,138
+easi_total,24,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,2.1316282072803006e-14,138
+easi_total,24,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,9.547918011776346e-15,138
+pp_nrs,2,dupilumab,adjusted_level_and_interval,9.414691248821327e-14,153
+pp_nrs,2,abrocitinib_100mg,adjusted_level_and_interval,1.0702549957386509e-13,153
+pp_nrs,2,abrocitinib_200mg,adjusted_level_and_interval,1.1435297153639112e-13,153
+pp_nrs,4,dupilumab,adjusted_level_and_interval,1.3011813848606835e-13,153
+pp_nrs,4,abrocitinib_100mg,adjusted_level_and_interval,1.247890679678676e-13,153
+pp_nrs,4,abrocitinib_200mg,adjusted_level_and_interval,8.093525849517391e-14,153
+pp_nrs,12,dupilumab,adjusted_level_and_interval,1.2967404927621828e-13,153
+pp_nrs,12,abrocitinib_100mg,adjusted_level_and_interval,1.1546319456101628e-13,153
+pp_nrs,12,abrocitinib_200mg,adjusted_level_and_interval,1.7630341631047486e-13,153
+pp_nrs,24,dupilumab,adjusted_level_and_interval,1.021405182655144e-13,153
+pp_nrs,24,abrocitinib_100mg,adjusted_level_and_interval,1.1973755320582313e-13,153
+pp_nrs,24,abrocitinib_200mg,adjusted_level_and_interval,9.064970996064403e-14,153
+pp_nrs,2,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,6.661338147750939e-15,153
+pp_nrs,2,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,3.552713678800501e-15,153
+pp_nrs,2,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,3.1086244689504383e-15,153
+pp_nrs,4,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,1.2878587085651816e-14,153
+pp_nrs,4,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,1.7763568394002505e-14,153
+pp_nrs,4,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,8.659739592076221e-15,153
+pp_nrs,12,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,5.329070518200751e-15,153
+pp_nrs,12,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,1.3322676295501878e-15,153
+pp_nrs,12,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,5.10702591327572e-15,153
+pp_nrs,24,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,5.329070518200751e-15,153
+pp_nrs,24,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,7.105427357601002e-15,153
+pp_nrs,24,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,5.773159728050814e-15,153
+ige_numeric,12,dupilumab,adjusted_level_and_interval,7.72715225139109e-14,77
+ige_numeric,12,abrocitinib_100mg,adjusted_level_and_interval,1.687538997430238e-14,77
+ige_numeric,12,abrocitinib_200mg,adjusted_level_and_interval,2.6645352591003757e-14,77
+ige_numeric,24,dupilumab,adjusted_level_and_interval,8.260059303211165e-14,77
+ige_numeric,24,abrocitinib_100mg,adjusted_level_and_interval,3.552713678800501e-14,77
+ige_numeric,24,abrocitinib_200mg,adjusted_level_and_interval,4.707345624410664e-14,77
+ige_numeric,12,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,7.882583474838611e-15,77
+ige_numeric,12,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,8.43769498715119e-15,77
+ige_numeric,12,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,1.1324274851176597e-14,77
+ige_numeric,24,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,4.218847493575595e-15,77
+ige_numeric,24,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,1.6653345369377348e-15,77
+ige_numeric,24,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,5.329070518200751e-15,77
+eo_count_numeric,4,abrocitinib_100mg,adjusted_level_and_interval,1.0186296250935811e-14,92
+eo_count_numeric,4,abrocitinib_200mg,adjusted_level_and_interval,8.382183835919932e-15,92
+eo_count_numeric,12,dupilumab,adjusted_level_and_interval,9.131584377541913e-15,92
+eo_count_numeric,12,abrocitinib_100mg,adjusted_level_and_interval,7.757683384568281e-15,92
+eo_count_numeric,12,abrocitinib_200mg,adjusted_level_and_interval,1.8013368574543165e-14,92
+eo_count_numeric,24,dupilumab,adjusted_level_and_interval,5.551115123125783e-15,92
+eo_count_numeric,24,abrocitinib_100mg,adjusted_level_and_interval,1.124100812432971e-14,92
+eo_count_numeric,24,abrocitinib_200mg,adjusted_level_and_interval,7.494005416219807e-15,92
+eo_count_numeric,4,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,1.1657341758564144e-15,92
+eo_count_numeric,12,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,1.5612511283791264e-16,92
+eo_count_numeric,12,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,5.273559366969494e-16,92
+eo_count_numeric,12,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,7.077671781985373e-16,92
+eo_count_numeric,24,dupilumab - abrocitinib_100mg,adjusted_contrast_and_interval,1.3877787807814457e-16,92
+eo_count_numeric,24,dupilumab - abrocitinib_200mg,adjusted_contrast_and_interval,5.273559366969494e-16,92
+eo_count_numeric,24,abrocitinib_100mg - abrocitinib_200mg,adjusted_contrast_and_interval,7.485331798839923e-16,92

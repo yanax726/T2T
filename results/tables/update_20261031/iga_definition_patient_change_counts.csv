@@ -1,0 +1,25 @@
+cohort,treatment,domain,weeks,n_initial,n_patients_classification_changed_any_visit,n_patients_evaluability_changed_any_visit,n_patients_any_state_changed_any_visit,interpretation
+all_eligible,all,any_domain,4;12;24,163,12,1,13,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,all,physician,4;12;24,163,12,1,13,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,all,combined,4;12;24,163,10,1,11,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,dupilumab,any_domain,4;12;24,65,7,0,7,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,dupilumab,physician,4;12;24,65,7,0,7,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,dupilumab,combined,4;12;24,65,6,0,6,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,abrocitinib_100mg,any_domain,4;12;24,56,5,0,5,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,abrocitinib_100mg,physician,4;12;24,56,5,0,5,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,abrocitinib_100mg,combined,4;12;24,56,4,0,4,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,abrocitinib_200mg,any_domain,4;12;24,42,0,1,1,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,abrocitinib_200mg,physician,4;12;24,42,0,1,1,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+all_eligible,abrocitinib_200mg,combined,4;12;24,42,0,1,1,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,all,any_domain,4;12;24,141,8,1,9,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,all,physician,4;12;24,141,8,1,9,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,all,combined,4;12;24,141,6,1,7,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,dupilumab,any_domain,4;12;24,56,3,0,3,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,dupilumab,physician,4;12;24,56,3,0,3,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,dupilumab,combined,4;12;24,56,2,0,2,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,abrocitinib_100mg,any_domain,4;12;24,54,5,0,5,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,abrocitinib_100mg,physician,4;12;24,54,5,0,5,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,abrocitinib_100mg,combined,4;12;24,54,4,0,4,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,abrocitinib_200mg,any_domain,4;12;24,31,0,1,1,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,abrocitinib_200mg,physician,4;12;24,31,0,1,1,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes
+exclude_any_iga5_patient,abrocitinib_200mg,combined,4;12;24,31,0,1,1,Unique patient union across the specified visits and domain(s); not a sum of visit-level changes

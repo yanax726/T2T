@@ -46,6 +46,8 @@ def model_performance(root):
         ax.tick_params(axis='y', length=0, labelsize=6.5)
         clean(ax); label(ax,'abc'[i])
     fig.text(.265, .972, 'Matched input comparison', fontsize=8, weight='bold')
+    fig.text(.10, .505, 'Unchanged development procedure', fontsize=8, weight='bold')
+    fig.text(.10, .469, 'W0/W12: patient-held-out evaluation · W24: same-cohort temporal application', fontsize=6.5)
     lower = fig.add_gridspec(1, 2, left=.10, right=.97, bottom=.12, top=.405, wspace=.65)
     ax = fig.add_subplot(lower[0, 0])
     for week in [0,12,24]:
@@ -56,7 +58,7 @@ def model_performance(root):
                         color=color,alpha=.13,lw=0)
     ax.axvline(2,color='#A9B4BA',lw=.7)
     ax.set(xlim=(0,10),ylim=(0,102),xlabel='Absolute EASI error (points)',
-           ylabel='Predictions within threshold (%)',title='Primary model: individual error')
+           ylabel='Predictions within threshold (%)',title='Individual absolute error')
     ax.legend(loc='lower right',frameon=False,fontsize=6.5)
     clean(ax);label(ax,'d')
     ax = fig.add_subplot(lower[0,1])
@@ -69,24 +71,26 @@ def model_performance(root):
                         fmt='o',color=color,ms=4,lw=1.3,capsize=2)
     ax.set(yticks=range(3),yticklabels=['Sensitivity','Specificity','Agreement'],
            xlim=(45,102),xticks=[50,75,100],ylim=(2.6,-.6),xlabel='Classification performance (%)',
-           title='Primary model: EASI75')
+           title='EASI75 classification')
     ax.legend(handles=[Line2D([],[],color=palette.color(f'visit.W{w}'),marker='o',lw=0,label=f'Week {w}') for w in [12,24]],
               loc='upper center',bbox_to_anchor=(.5,-.27),ncol=2,frameon=False,fontsize=6.5)
     clean(ax);label(ax,'e')
+    fig.text(.10, .443, 'EASI75 responders/nonresponders: W12 49/36 · W24 54/13', fontsize=6.3)
+    fig.text(.10, .010, 'Severe follow-up coverage (observed EASI >21): W12 n=1; W24 n=0.', fontsize=6.5)
     base.save(fig,'Figure5','Input contributions and performance of the common EASI estimator',
-              'a–c, Post hoc input-set comparisons on identical patients with all three serum markers, BSA, PP-NRS and observed EASI. '
-              'W0/W12/W24 contain 151/89/75 visits. Each model was refitted using the same patient outer folds; W0/W12 alone supplied training '
-              'data. Preprocessing, structure and penalty selection used training folds. Serum markers are CCL17, CCL26 and IL-5; clinical inputs '
-              'are from the current visit. Points and labels show mean absolute error (MAE), with 95% paired-patient bootstrap intervals. '
-              'Clinical-only controls appear below the divider. Lower MAE after adding BSA to markers does not demonstrate molecular added accuracy; '
-              'the relevant molecular comparisons retain the same clinical inputs. d–e, The unchanged primary BSA–serum procedure, evaluated on '
-              'its original population. d, Cumulative absolute-error proportions among 152/89/75 patients, with bootstrap 95% intervals. All errors '
-              'enter the calculation; only thresholds up to ten points are displayed. Two points is a visual reference, not an accepted interchangeability '
-              'margin. e, EASI75 sensitivity, specificity and agreement, with bootstrap 95% intervals; W12/W24 responder denominators are 49/54, '
-              'nonresponder denominators 36/13, and total paired denominators 85/67. Observed and estimated responses each use their own baseline '
-              'and follow-up scores. All metrics are scored within each repetition before averaging. Bootstrap intervals condition on saved predictions. '
-              'W24 was previously inspected and is same-cohort temporal application. Additional molecular-panel and adult-DLQI comparisons are in '
-              'Supplementary Table S6 and its complete source tables. The new input comparisons do not replace the frozen primary equation.',
+              'a–c, Post hoc input-set comparisons on the same 151/89/75 patients at W0/W12/W24. Points and labels show mean absolute '
+              'error (MAE) with 95% paired-patient bootstrap intervals. Markers are CCL17, CCL26 and IL-5; clinical inputs come from the '
+              'current visit. Models use the same outer patient folds, W0/W12 training, and training-only preprocessing and inner selection. '
+              'Clinical-only controls appear below the divider; molecular added accuracy requires comparison at identical clinical inputs. '
+              'd, The unchanged primary procedure on its original 152/89/75 patients: cumulative absolute-error proportions with pointwise '
+              'bootstrap 95% intervals. All errors enter the calculation; thresholds up to ten points are displayed. Two points is a visual '
+              'reference, not an accepted interchangeability margin. e, EASI75 classification uses observed and estimated scores with their '
+              'own baselines. Sensitivity uses 49/54 responders, specificity 36/13 nonresponders and agreement 85/67 paired patients at W12/W24. '
+              'Conservative conditional 95% bounds average repetition-specific Clopper–Pearson limits with Bonferroni adjustment across '
+              'repetitions within each endpoint, visit and metric, not all displayed metrics. The binomial working model permits dependent '
+              'repetitions but does not propagate shared fitted models or development uncertainty. Metrics are scored per repetition before '
+              'averaging; intervals condition on saved predictions. W24 is previously inspected same-cohort application. Separate Wilson '
+              'intervals and counts are in Supplementary Table S11; additional input comparisons are in Table S6.',
               [str(source),str(ecdf_path),str(old/'monitoring_response_uncertainty.csv')],root)
 
 

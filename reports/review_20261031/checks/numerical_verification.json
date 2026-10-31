@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "source_sha256": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+  "n_patients": 163,
+  "observed_pair_checks": 38,
+  "independent_regression_checks": 69,
+  "maximum_regression_error": 1.7630341631047486e-13,
+  "observed_values_changed": false,
+  "models_changed": false,
+  "imputed_values_created": false,
+  "software": {
+    "statsmodels": "0.14.6"
+  },
+  "output_hashes": {
+    "clinical_claim_contrasts.csv": "4dc97050aa771b7ffb4d42e4a10336c2c825a8edf89096526bc5f2f55bcb4b54",
+    "clinical_contrast_time_changes.csv": "8d583cdb6b9bf280577dc4691a13fc20b0759ad0923af60241f3c56095fd271d",
+    "iga_cohort_counts.csv": "1d11a4307d9c8ae01dc67bf3282664636857e0607cd5103c35178a1b7ccf0dc5",
+    "iga_definition_paired_comparison.csv": "6b10a1c2af419aef8b1bbbd9b76e1b65d02228027779c4f1803ebddf2693ee99",
+    "iga_definition_patient_change_counts.csv": "692eedb84d2ae5530b9fda9fe17b2e1a19da0a7d38681b5ae00a5862dc2f85dd",
+    "iga_definition_rates.csv": "4ea76acabda8211b1a4780acd43630481aa1e9ceb58b34627af8ee3074eed3a5",
+    "iga_definition_specification.csv": "c41184113619d2623ebb13e2c655eed581da95f6f4eae9ed83709aa040aa0642",
+    "iga_definition_transitions.csv": "6a0b73939abd0f333b23412f4d1bdabc5961e4dc78adcdde0a87202b02d47902",
+    "iga_grade5_audit.csv": "aa321b418a375ce6a4c06629ccf18c7c76f47d0d7e36082ce420a67544781875",
+    "iga_grade5_exclusion_effect.csv": "6a3b2e01f8194d9cebb7325307440c28c6209f1646bcf7976c4611207aa67118",
+    "iga_primary_reconciliation.csv": "8af1342d354608f8d5a63eae399cc32d5e4899f15ec055beef237d6a5f8fea1c",
+    "independent_regression_checks.csv": "5158a44e41ab1308ad6365a5bd86a9c65c772feab82153f94f2421ebbbf20220",
+    "laboratory_coverage.csv": "b52ca95a3836de55a8860ba558a785a51766bb380f861d49356efb27c1e6160f",
+    "laboratory_observation_patterns.csv": "95d5a3674f5a9ba586a79f5e06834d9bb262dbd2db44e1e008582d69d18c20d9",
+    "laboratory_paired_changes.csv": "8483e209171f0128498c6b4df06df322112d7ed6e59703691ee25a33cf683817",
+    "observed_pair_checks.csv": "02625a955eaa0557a498bfd81adaec363661f975592266c80c8d8a74608539ea"
+  }
+}

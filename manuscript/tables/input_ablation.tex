@@ -1,4 +1,4 @@
-{\small\setlength{\tabcolsep}{4pt}
+{\small\renewcommand{\arraystretch}{0.94}\setlength{\tabcolsep}{4pt}
 \begin{longtable}{p{53mm}rrr}
 \caption{Matched input-set performance.}\label{tab:input_ablation}\\
 \toprule Inputs & W0 & W12 & W24 \\ \midrule\endfirsthead
@@ -63,4 +63,4 @@ BSA + three markers + PP-NRS + DLQI & 0.915 / 0.930 & 0.937 / 0.862 & 0.969 / 0.
 \addlinespace
 \bottomrule\end{longtable}
 }
-\noindent\footnotesize All models within a population use identical observations and patient folds. Three markers are CCL17, CCL26 and IL-5. BSA and questionnaires are from the current visit; DLQI requires age at least 18. W0/W12 training precedes previously inspected W24 temporal application. Core and adult populations must not be compared as though their participants were identical. Fixed-area rows hold the model structure constant; other BSA models select among linear, quadratic and area structures inside training folds. Intervals use 2,000 paired patient resamples conditional on saved predictions; all comparisons are exploratory. Full RMSE, bias, calibration and within-one/two-point metrics are retained in \texttt{overall\_metrics.csv}.\normalsize
+\noindent\footnotesize All models within a population use identical observations and patient folds. Three markers are CCL17, CCL26 and IL-5. BSA and questionnaires are from the current visit; DLQI requires age at least 18. W0/W12 training precedes previously inspected W24 temporal application. Core and adult populations must not be compared as though their participants were identical. Fixed-area rows hold the model structure constant; other BSA models select among linear, quadratic and area structures inside training folds. Intervals use 2,000 paired patient resamples conditional on saved predictions; all comparisons are exploratory.\normalsize

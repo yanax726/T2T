@@ -1,0 +1,9 @@
+cohort,treatment,n_original,n_retained,n_excluded,exclusion
+all_eligible,all,163,163,0,none
+all_eligible,dupilumab,65,65,0,none
+all_eligible,abrocitinib_100mg,56,56,0,none
+all_eligible,abrocitinib_200mg,42,42,0,none
+exclude_any_iga5_patient,all,163,141,22,Remove every patient with any recorded IGA=5; in these data all are baseline records. Not adjudication of the correct IGA scale.
+exclude_any_iga5_patient,dupilumab,65,56,9,Remove every patient with any recorded IGA=5; in these data all are baseline records. Not adjudication of the correct IGA scale.
+exclude_any_iga5_patient,abrocitinib_100mg,56,54,2,Remove every patient with any recorded IGA=5; in these data all are baseline records. Not adjudication of the correct IGA scale.
+exclude_any_iga5_patient,abrocitinib_200mg,42,31,11,Remove every patient with any recorded IGA=5; in these data all are baseline records. Not adjudication of the correct IGA scale.

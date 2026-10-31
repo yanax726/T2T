@@ -100,7 +100,7 @@ def run(root):
   raise RuntimeError('Figure catalogue coverage or duplicate error.')
  (root/'manuscript/figure_catalog.json').write_text(json.dumps([rows[name] for name in expected],ensure_ascii=False,indent=2))
  (root/'config/figure_identity_map.json').write_text(json.dumps({f'FigureS{i}':publication_id(f'FigureS{i}') for i in range(1,46)},indent=2)+'\n')
- (root/'config/paper_figure_plan.json').write_text(json.dumps({'version':'2026-10-25-reviewed-manuscript','status':f'5 main and {len(SUPPLEMENT_ORDER)} supplementary manuscript figures. Prior presentation remains unchanged.','figures':[rows[name] for name in expected]},ensure_ascii=False,indent=2)+'\n')
+ (root/'config/paper_figure_plan.json').write_text(json.dumps({'version':(root/'VERSION').read_text().strip(),'status':f'5 main and {len(SUPPLEMENT_ORDER)} supplementary manuscript figures. Prior presentation remains unchanged.','figures':[rows[name] for name in expected]},ensure_ascii=False,indent=2)+'\n')
 
 if __name__=='__main__':
  from t2t_paper.figures import run as entry

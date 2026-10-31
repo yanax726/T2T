@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "source_sha256": {
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "config/clinical_framework.json": "fe5d36982fc450560cd3888dfd7a73a505808081cf661e45144a00929522abf5",
+    "results/tables/update_20261017/clinical/endpoint_rates.csv": "6a187c0b0f32b754338147d8351e2403ff0d9090348df4c2cab2087ba2d68319",
+    "results/tables/update_20261017/clinical/restricted/endpoint_values.csv": "d574ff12b52443c720732b0f795ee1ed857d2e7fd44a838f0e43f955eed0deb4"
+  },
+  "n_eligible_patients": 163,
+  "n_iga5_records": 22,
+  "n_iga5_patients": 22,
+  "all_iga5_at_baseline": true,
+  "n_retained_after_patient_exclusion": 141,
+  "framework_version": "framework_20260903",
+  "no_iga_rules": {
+    "4": [
+      "easi_pct_improvement >= 50"
+    ],
+    "12": [
+      "easi_pct_improvement >= 75"
+    ],
+    "24": [
+      "easi_pct_improvement >= 75",
+      "easi_total <= 5"
+    ]
+  },
+  "frozen_primary_aggregate_cells_reconciled": 18,
+  "truth_table_cases_checked": 9,
+  "frozen_primary_patient_endpoint_values_reconciled": 978,
+  "underlying_clinical_scores_unchanged": true,
+  "clinical_outcomes_imputed": false,
+  "grade5_values_relabelled_or_clipped": false,
+  "outputs_aggregate_only": true,
+  "analysis": "Post hoc definition sensitivity; no efficacy, clinical-adoption or consensus-validation claim"
+}

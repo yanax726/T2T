@@ -133,8 +133,8 @@ def input_reference_specification_table():
         ('Clinical/serum timing','Patient identifier plus nominal W0, W12 or W24 links the clinical and molecular record.','Exact calendar-day separation and a permitted sampling window are unverified; nominal matching does not establish same-day measurement.'),
         ('Development scope','Age ≥12, observed EASI/BSA and all three positive molecular inputs. Fitting and selection use W0/W12 with patient-grouped inner and outer validation.','The marker panel arose from earlier exploration. W24 had previously been inspected and is same-cohort temporal application, not untouched external validation.'),
         ('Calculator output','The precise frozen coefficients return EASI units clipped to 0--72. Missing, nonfinite or nonpositive molecular inputs and invalid BSA are rejected.','BSA=0 returns zero by the area constraint; it does not prove absence of molecular inflammation. Independent validation of the single final coefficient vector is unavailable.'),
-        ('Recorded IGA','Recorded grades 0--5 are retained. IGA 0/1 and decrease ≥2 use those recorded values without conversion to a 0--4 scale.','Exact instrument/version and correspondence to a validated IGA system require source confirmation.'),
-        ('PP-NRS and DLQI','Recorded PP-NRS uses 0--10; adult DLQI uses 0--30 and age ≥18. A PP-NRS decrease ≥4 requires observed baseline ≥4 and observed follow-up.','PP-NRS recall window and exact questionnaire versions remain unconfirmed. Adult DLQI is unknown in adolescent composite rules.'),
+        ('Recorded IGA','Recorded grades 0--5 are retained. The supplied protocol appendix defines grade 5 as very severe, while its inclusion text says 0--4. No grade is recoded.','Actual implementation across centres/visits and correspondence to a validated IGA system require confirmation. IGA-free sensitivity is in Table S10.'),
+        ('PP-NRS and DLQI','Recorded PP-NRS uses 0--10; the supplied protocol specifies a 24-hour recall window. Adult DLQI uses 0--30 and age ≥18. A PP-NRS decrease ≥4 requires observed baseline ≥4.','Actual recall-window implementation and questionnaire versions remain unconfirmed. Adult DLQI is unknown in adolescent composite rules.'),
         ('IgE and eosinophils','Analyses retain the recorded numeric values; adjusted models use log(1+x) and back-transformation.','Clinical laboratory units and the meaning of repeated IgE values of 5000 require source confirmation; no censoring threshold is inferred from repetition alone.'),
         ('Treatment targets','The September investigator framework supplies stage-specific physician and patient thresholds, with the stated three-valued missing-component logic.','The exact approved and prospectively implemented framework version and original voting records are not verified; target attainment is not validation of a new consensus or management effect.')]
     s=r'''\begin{longtable}{p{29mm}p{72mm}p{55mm}}
@@ -229,6 +229,8 @@ def tables(root):
     (out/'input_reference_specification.tex').write_text(input_reference_specification_table())
     from .sensitivity_tables_20261025 import tables as sensitivity_tables
     sensitivity_tables(root, tex)
+    from .review_tables_20261031 import tables as review_tables
+    review_tables(root, tex)
     # Machine-readable source index includes every aggregate table, not only plotted results.
     rows=[]
     for folder in ['clinical','model','model/auxiliary_targets','model/rounding','regional','redesign_20261018','revision2_20261018','reference_sensitivity']:
@@ -242,6 +244,12 @@ def tables(root):
             df=pd.read_csv(p)
             if 'private' in p.name or any(c in df for c in ['patient_uid','patient_id','source_record_id','record_id']):continue
             rows.append({'section':folder,'file':str(p.relative_to(root)),'rows':len(df),'columns':'; '.join(df.columns)})
+    for p in sorted((root/'results/tables/update_20261031').glob('*.csv')):
+        df=pd.read_csv(p)
+        if any(c in df for c in ['patient_uid','patient_id','source_record_id','record_id']):
+            raise ValueError('Patient-level record in review aggregate directory: '+str(p))
+        rows.append({'section':'Definition and laboratory checks','file':str(p.relative_to(root)),
+                     'rows':len(df),'columns':'; '.join(df.columns)})
     p=root/'manuscript/source_data/safety_documentation_windows.csv'
     data=pd.read_csv(p)
     rows.append({'section':'Safety documentation','file':str(p.relative_to(root)),'rows':len(data),'columns':'; '.join(data.columns)})
@@ -256,7 +264,7 @@ def figure_page(row):
     return '\\clearpage\n\\renewcommand{\\thefigure}{'+row['id'].replace('Figure','')+'}\n\\begin{figure}[p]\n\\centering\n\\includegraphics[width=\\linewidth,height='+height+'\\textheight,keepaspectratio]{figures/'+row['id']+'.pdf}\n\\caption{\\textbf{'+tex(row['title'])+'.} '+tex(row['caption'])+'}\\label{fig:'+row['id']+'}\n\\end{figure}\n'
 
 def figure_inline(row):
-    height = '.83' if row['id'] == 'Figure2' else '.72'
+    height = {'Figure2': '.80', 'Figure5': '.66'}.get(row['id'], '.72')
     return '\\begin{figure}[!htbp]\n\\centering\n\\includegraphics[width=\\linewidth,height='+height+'\\textheight,keepaspectratio]{figures/'+row['id']+'.pdf}\n\\caption{\\textbf{'+tex(row['title'])+'.} '+tex(row['caption'])+'}\\label{fig:'+row['id']+'}\n\\end{figure}\n'
 
 def documents(root):
@@ -289,7 +297,7 @@ def documents(root):
     main+=r'''\section*{Data and code availability}
 Analysis code, versioned parameters, aggregate source tables and figure sources are available at \url{https://github.com/yanax726/T2T}. Figures and tables can be rebuilt from aggregates; model refitting requires the declared restricted input snapshots. Patient-level clinical records, serum measurements, dates and free-text notes are not included in the public repository. Access conditions and the institutional contact for these restricted records require author confirmation.
 \bibliographystyle{unsrtnat}
-\bibliography{references}
+{\small\setlength{\bibsep}{2pt}\bibliography{references}}
 \end{document}
 '''
     (m/'main.tex').write_text(main)
@@ -304,7 +312,7 @@ Analysis code, versioned parameters, aggregate source tables and figure sources 
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S.\arabic{table}}
 \section*{Supplementary guide}
-The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S8 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons and IgE missing-data sensitivity. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
+The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S11 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity and classification intervals. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
 '''
     for title,ids,description in groups:
         app+='\\hyperref[fig:FigureS'+str(ids[0])+']{\\textbf{'+tex(title)+'}}. '+tex(description)+'\\par\n'
@@ -324,6 +332,9 @@ N is the endpoint-specific evaluable denominator. Unknown outcomes are excluded 
 \clearpage\input{tables/input_ablation}
 \clearpage\input{tables/ablation_differences}
 \clearpage\input{tables/ige_missingness}
+\clearpage\input{tables/laboratory_support}
+\clearpage\input{tables/iga_definition_support}
+\clearpage\input{tables/classification_intervals}
 \clearpage
 '''
     if (m/'sections/auxiliary_targets.tex').exists():app+=section_text(m/'sections/auxiliary_targets.tex')+'\n'
@@ -338,7 +349,7 @@ Published p-EASI coefficients were applied unchanged to identical eligible recor
             app+=page
     app+=r'''\clearpage\section*{Aggregate source tables}
 The \href{run:source_data/index.csv}{machine-readable source-table index} lists the complete aggregate collection, including unplotted and negative results. Figure-specific dependencies are in \texttt{figure\_catalog.json}. The \href{https://github.com/yanax726/T2T/tree/main/results/tables}{versioned aggregate directory} includes clinical, molecular, model, regional, matched-input and missing-data sensitivity tables; restricted patient-level files are not part of the public collection.
-\bibliographystyle{unsrtnat}\bibliography{references}
+\bibliographystyle{unsrtnat}{\small\setlength{\bibsep}{2pt}\bibliography{references}}
 '''
     app+='\\end{document}\n';(m/'appendix.tex').write_text(app)
     book=preamble('Complete figure book: clinical course, serum markers and EASI estimation')+r'\maketitle'+ '\n'

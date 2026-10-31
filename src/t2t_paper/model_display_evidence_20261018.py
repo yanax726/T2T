@@ -6,13 +6,24 @@ import json
 import os
 import numpy as np
 import pandas as pd
-from scipy.stats import rankdata
+from scipy.stats import binomtest, rankdata
 
 MODEL = 'unified_selected'
 SEED = 20261002
 BOOTSTRAPS = 2000
 METRICS = ['MAE', 'RMSE', 'bias', 'rho', 'CCC', 'within1', 'within2']
 KEYS = ['patient_uid', 'repeat', 'fold']
+RESPONSE_METRICS = ['sensitivity', 'specificity', 'agreement']
+RESPONSE_INTERVAL_METHOD = 'Mean of Bonferroni-adjusted per-repeat Clopper-Pearson bounds'
+RESPONSE_INTERVAL_SCOPE = (
+    'Pointwise 95% bounds for the arithmetic mean of repeat-specific classification probabilities, '
+    'under the working assumption of independent Bernoulli patient outcomes within each repeat. '
+    'Bonferroni controls the repeats within one window/endpoint/metric, not all reported metrics. '
+    'Repeats may be dependent and are never pooled as independent patients. '
+    'Conditional assessment of saved held-out predictions; shared training-fit dependence and '
+    'model-development uncertainty are not propagated, so this is not an exact coverage guarantee '
+    'for the complete cross-validation procedure.'
+)
 
 
 def scores(y, p):
@@ -104,18 +115,62 @@ def ecdf(frame, grid, replicates=BOOTSTRAPS, seed=SEED):
                              n_patients=len(y), n_repeats=p.shape[0], bootstrap_replicates=replicates))
 
 
-def response_uncertainty(pair, window, replicates=BOOTSTRAPS):
+def response_uncertainty(pair, window, replicates=BOOTSTRAPS, return_per_repeat=False):
+    """Classification means with boundary-aware, repeat-preserving intervals.
+
+    Each repeat has a Wilson 95% interval and a Clopper-Pearson interval at
+    1 - 0.05/R. If all R CP intervals cover their respective probabilities,
+    their averaged endpoints cover the mean probability. The union bound
+    gives at least 95% coverage under the per-repeat binomial working model,
+    without requiring independence between repeats. This does not propagate
+    shared training fits or model selection, and is not an exact CV interval.
+    The previous patient-percentile bootstrap remains a diagnostic only.
+
+    scipy.stats.binomtest.proportion_ci documents both interval methods.
+    https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html
+    https://itl.nist.gov/div898/handbook/prc/section4/prc473.htm
+    """
     ids = sorted(pair.patient_uid.unique())
+    repeats = sorted(pair['repeat'].unique())
     values = {column: pair.pivot(index='patient_uid', columns='repeat', values=column).reindex(ids).to_numpy().T
               for column in ['observed', 'observed_start', 'prediction', 'prediction_start']}
     observed, baseline, prediction, predicted_baseline = [values[c] for c in ['observed', 'observed_start', 'prediction', 'prediction_start']]
     valid = (baseline > 0) & (predicted_baseline > 0)
     observed_improvement = 1 - np.divide(observed, baseline, out=np.full_like(observed, np.nan), where=baseline > 0)
     predicted_improvement = 1 - np.divide(prediction, predicted_baseline, out=np.full_like(prediction, np.nan), where=predicted_baseline > 0)
-    result = []
+    result, repeat_results = [], []
+    confidence_level = .95
+    per_repeat_cp_level = 1 - (1 - confidence_level) / len(repeats)
     for threshold in [.5, .75, .9]:
         truth = observed_improvement >= threshold
         estimate = predicted_improvement >= threshold
+        endpoint = f'EASI{int(threshold * 100)}'
+        threshold_rows = []
+        for rep, t, p, use in zip(repeats, truth, estimate, valid):
+            t, p = t[use], p[use]
+            counts = [(int(p[t].sum()), int(t.sum())),
+                      (int((~p[~t]).sum()), int((~t).sum())),
+                      (int((p == t).sum()), len(t))]
+            for metric, (successes, denominator) in zip(RESPONSE_METRICS, counts):
+                wilson_low = wilson_high = cp_low = cp_high = np.nan
+                if denominator:
+                    test = binomtest(successes, denominator)
+                    wilson = test.proportion_ci(confidence_level=confidence_level, method='wilson')
+                    cp = test.proportion_ci(confidence_level=per_repeat_cp_level, method='exact')
+                    wilson_low, wilson_high = wilson.low, wilson.high
+                    cp_low, cp_high = cp.low, cp.high
+                threshold_rows.append(dict(window=window, endpoint=endpoint, repeat=int(rep), metric=metric,
+                    successes=successes, denominator=denominator,
+                    estimate=successes / denominator if denominator else np.nan,
+                    wilson_ci_low=wilson_low, wilson_ci_high=wilson_high,
+                    wilson_confidence_level=confidence_level,
+                    bonferroni_cp_ci_low=cp_low, bonferroni_cp_ci_high=cp_high,
+                    bonferroni_cp_confidence_level=per_repeat_cp_level,
+                    n_evaluable=len(t), n_observed_responders=int(t.sum()),
+                    n_observed_nonresponders=int((~t).sum()), n_repeats=len(repeats),
+                    interval_status='estimated' if denominator else 'no_observed_class',
+                    interval_scope=RESPONSE_INTERVAL_SCOPE))
+        repeat_results.extend(threshold_rows)
 
         def classify(index):
             metrics = []
@@ -130,14 +185,45 @@ def response_uncertainty(pair, window, replicates=BOOTSTRAPS):
         point = classify(np.arange(len(ids)))
         rng = np.random.default_rng(SEED)
         draws = np.array([classify(rng.integers(0, len(ids), len(ids))) for _ in range(replicates)])
-        lo, hi = np.nanquantile(draws, [.025, .975], axis=0)
-        for j, metric in enumerate(['sensitivity', 'specificity', 'agreement']):
-            result.append(dict(window=window, endpoint=f'EASI{int(threshold * 100)}', metric=metric,
-                               estimate=point[j], ci_low=lo[j], ci_high=hi[j],
+        diagnostic_lo, diagnostic_hi = np.array([
+            np.quantile(draws[np.isfinite(draws[:, j]), j], [.025, .975])
+            if np.isfinite(draws[:, j]).any() else [np.nan, np.nan]
+            for j in range(len(RESPONSE_METRICS))]).T
+        for j, metric in enumerate(RESPONSE_METRICS):
+            rows = [r for r in threshold_rows if r['metric'] == metric]
+            all_estimable = all(r['denominator'] > 0 for r in rows)
+            lo = np.mean([r['bonferroni_cp_ci_low'] for r in rows]) if all_estimable else np.nan
+            hi = np.mean([r['bonferroni_cp_ci_high'] for r in rows]) if all_estimable else np.nan
+            result.append(dict(window=window, endpoint=endpoint, metric=metric,
+                               estimate=point[j], ci_low=lo, ci_high=hi,
                                n_patients=len(ids), n_evaluable_min=int(valid.sum(1).min()),
                                n_evaluable_max=int(valid.sum(1).max()), n_repeats=valid.shape[0],
-                               bootstrap_replicates=replicates, valid_bootstrap_replicates=int(np.isfinite(draws[:, j]).sum())))
-    return result
+                               n_estimable_repeats=sum(r['denominator'] > 0 for r in rows),
+                               denominator_min=min(r['denominator'] for r in rows),
+                               denominator_max=max(r['denominator'] for r in rows),
+                               confidence_level=confidence_level,
+                               per_repeat_cp_confidence_level=per_repeat_cp_level,
+                               ci_method=RESPONSE_INTERVAL_METHOD, interval_scope=RESPONSE_INTERVAL_SCOPE,
+                               interval_status='estimated' if all_estimable else 'unavailable_repeat_class',
+                               bootstrap_diagnostic_ci_low=diagnostic_lo[j],
+                               bootstrap_diagnostic_ci_high=diagnostic_hi[j],
+                               bootstrap_interval_role='diagnostic_only', bootstrap_seed=SEED,
+                               bootstrap_replicates=replicates,
+                               valid_bootstrap_replicates=int(np.isfinite(draws[:, j]).sum())))
+    return (result, repeat_results) if return_per_repeat else result
+
+
+def primary_response_summary(response, confusion):
+    """Keep the existing EASI75 aggregate consumer synchronized without clinical reruns."""
+    primary = pd.DataFrame(response)
+    primary = primary[primary.endpoint.eq('EASI75')].copy()
+    classes = pd.DataFrame(confusion)
+    classes = classes[classes.endpoint.eq('EASI75')]
+    for value, label in [(1, 'n_observed_responders'), (0, 'n_observed_nonresponders')]:
+        group = classes[classes.observed_response.eq(value)].groupby('window').n_observed_class
+        assert group.nunique().eq(1).all()
+        primary[label] = primary.window.map(group.first())
+    return primary
 
 
 def run(root, replicates=BOOTSTRAPS):
@@ -159,7 +245,7 @@ def run(root, replicates=BOOTSTRAPS):
         assert row.max_training_week <= 12
         heldout = predictions[predictions['repeat'].eq(row.repeat) & predictions.fold.eq(row.fold)]
         assert set(heldout.patient_uid) <= set(row.test_ids.split('|'))
-    bins, per_repeat, summary, confusion, response_intervals = [], [], [], [], []
+    bins, per_repeat, summary, confusion, response_intervals, response_repeat_intervals = [], [], [], [], [], []
     for start, end in [(0, 12), (0, 24), (12, 24)]:
         pair = paired_visits(predictions, start, end)
         changes = pair.copy()
@@ -178,7 +264,9 @@ def run(root, replicates=BOOTSTRAPS):
         summary.extend(dict(window=window, **r) for r in patient_bootstrap(changes, replicates=replicates))
         if start == 0:
             confusion.extend(confusion_rows(pair, start, end))
-            response_intervals.extend(response_uncertainty(pair, window, replicates=replicates))
+            averaged, individual = response_uncertainty(pair, window, replicates=replicates, return_per_repeat=True)
+            response_intervals.extend(averaged)
+            response_repeat_intervals.extend(individual)
     bins = pd.concat(bins, ignore_index=True)
     confusion = pd.DataFrame(confusion)
     confusion_summary = confusion.groupby(['window', 'endpoint', 'observed_response', 'predicted_response'], as_index=False).agg(
@@ -254,6 +342,7 @@ def run(root, replicates=BOOTSTRAPS):
               'monitoring_confusion_counts': confusion, 'monitoring_confusion_repeat0': confusion[confusion['repeat'].eq(0)],
               'monitoring_confusion_mean_proportions': confusion_summary,
               'monitoring_response_uncertainty': response_intervals,
+              'monitoring_response_per_repeat_uncertainty': response_repeat_intervals,
               'prediction_uncertainty': uncertainty, 'prediction_error_ecdf': pd.concat(ecdfs, ignore_index=True),
               'published_paired_difference_uncertainty': paired,
               'published_paired_difference_per_repeat': paired_repeats,
@@ -266,6 +355,11 @@ def run(root, replicates=BOOTSTRAPS):
         frame = pd.DataFrame(table)
         frame.to_csv(out / (name + '.csv'), index=False)
         frame.to_csv(public / (name + '.csv'), index=False)
+    primary = primary_response_summary(response_intervals, confusion)
+    revision_out = root / 'results/tables/update_20261017/revision2_20261018'
+    revision_out.mkdir(parents=True, exist_ok=True)
+    for directory in [revision_out, public]:
+        primary.to_csv(directory / 'primary_EASI75_uncertainty.csv', index=False)
     pd.concat(ecdfs, ignore_index=True).rename(columns={'error_threshold': 'absolute_error',
         'proportion_within': 'proportion'}).to_csv(public / 'error_ecdf.csv', index=False)
     manifest = dict(status='PASS', seed=SEED, bootstrap_replicates=replicates,
@@ -274,7 +368,12 @@ def run(root, replicates=BOOTSTRAPS):
                     patient_held_out_audit_passed=True, no_averaging_predictions_before_scoring=True,
                     monitoring_points_match_existing_primary_metrics=True,
                     source_tables=[str((out / (key + '.csv')).relative_to(root)) for key in tables],
-                    interval_scope='Percentile patient bootstrap with the same sampled patients in every repeat; compute each repeat metric then average. Conditional on saved held-out predictions, not a refit/bootstrap of model selection.',
+                    interval_scope='Continuous metrics use percentile patient bootstrap with the same sampled patients in every repeat; compute each repeat metric then average. Conditional on saved held-out predictions, not a refit/bootstrap of model selection.',
+                    response_interval_method=RESPONSE_INTERVAL_METHOD,
+                    response_interval_scope=RESPONSE_INTERVAL_SCOPE,
+                    response_per_repeat_intervals='Wilson 95%; Clopper-Pearson at 1 - 0.05/R for averaging bounds.',
+                    response_bootstrap_role='Diagnostic columns only, not the reported classification confidence bounds.',
+                    primary_response_summary=str((revision_out / 'primary_EASI75_uncertainty.csv').relative_to(root)),
                     ECDF_band='Pointwise 95% intervals, not a simultaneous confidence band.',
                     publication_comparison='Identical eligible samples; original raw and clipped formula sensitivities. Different inputs and unconfirmed IL2RA/sIL-2R assay bridge prevent attribution to algorithm or population ethnicity.')
     (report / 'model_display_evidence_manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
@@ -286,7 +385,16 @@ def run(root, replicates=BOOTSTRAPS):
         'EASI50/75/90 require both baseline denominators to be positive. Counts and excluded denominators are provided per repeat. '
         'The primary table evaluates each repetition separately, then averages the metrics. '
         'A display of averaged row percentages is also supplied, but it must not be labelled as integer patient counts.\n\n'
-        'Bootstrap intervals resample patients, carrying all saved predictions for that patient together across repeats. '
+        'Classification sensitivity, specificity and agreement have separate Wilson 95% intervals per repetition. '
+        'For each endpoint/window/metric, obtain a two-sided Clopper-Pearson interval at 1-0.05/R in each of R repetitions '
+        '(97.5% for two repetitions), then average lower limits and upper limits separately. '
+        'By the Bonferroni union bound, simultaneous coverage of the repeat-specific probabilities implies coverage '
+        'of their arithmetic mean without assuming independence between repetitions. '
+        + RESPONSE_INTERVAL_SCOPE + '\n\n'
+        'The old patient-percentile classification intervals are retained only in bootstrap_diagnostic columns. '
+        'Method references: [SciPy 1.13.1](https://docs.scipy.org/doc/scipy-1.13.1/reference/generated/scipy.stats._result_classes.BinomTestResult.proportion_ci.html) '
+        'and [NIST Bonferroni inequality](https://itl.nist.gov/div898/handbook/prc/section4/prc473.htm).\n\n'
+        'For continuous metrics, bootstrap intervals resample patients, carrying all saved predictions for that patient together across repeats. '
         'The procedure quantifies conditional held-out prediction uncertainty and does not refit model selection. '
         'The ECDF is the average of within-repeat fractions below an absolute-error threshold. Its intervals are pointwise. '
         'The published-formula comparison is paired at the patient and visit level; both raw and [0,72]-clipped comparisons are retained. '

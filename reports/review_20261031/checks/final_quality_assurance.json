@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "version": "2026.10.31-rc4",
+  "scope": "Numerical reconciliation, figure geometry, final rendering and source preservation; not independent clinical validation",
+  "figure_count": 26,
+  "main_figures": 5,
+  "supplementary_figures": 21,
+  "main_tables": 2,
+  "supplementary_tables": 11,
+  "tests_passed": 36,
+  "protected_input_files": 150,
+  "protected_inputs_changed": [],
+  "primary_formula_unchanged": true,
+  "continuous_model_metrics_unchanged": true,
+  "classification_intervals_corrected": true,
+  "classification_checks": {
+    "status": "PASS",
+    "mean_metric_rows": 18,
+    "repetition_rows": 36,
+    "point_estimate_max_difference": 0.0,
+    "all_intervals_positive_width": true,
+    "predictions_refitted": false,
+    "interpretation": "Conditional binomial working-model bounds; not full model-development coverage"
+  },
+  "pdf_results": {
+    "main": {
+      "pages": 14,
+      "minimum_embedded_font_pt": 5.5976762771606445,
+      "sha256": "c5dd749f110a2cc74ad53d347021004cf8008e3dc01f8e6a878ec9eab659430a"
+    },
+    "appendix": {
+      "pages": 42,
+      "minimum_embedded_font_pt": 5.97760009765625,
+      "sha256": "92ddb84c843d97a936537412f374c9e9158f5c5a6a19202b4a69a64925964e48"
+    },
+    "figure_book": {
+      "pages": 27,
+      "minimum_embedded_font_pt": 5.317767143249512,
+      "sha256": "fb8785389d35ab623cbe57eeec30681b4aac291401dbc81440709d2eb1deb227"
+    }
+  },
+  "figure_audit_failures": 0,
+  "numerical_regression_checks": 69,
+  "clinical_endpoint_values_reconciled": 978,
+  "sources_confirmed": [
+    "Protocol IGA appendix defines 0–5 despite inclusion-text 0–4 conflict",
+    "Protocol peak-itch recall is 24 hours; implementation unverified",
+    "Core serum report unit labels are pg/ml; dilution compensation unverified"
+  ],
+  "remaining_boundaries": [
+    "Molecular added EASI accuracy not established",
+    "Severe follow-up coverage limited",
+    "No independent validation of final coefficient vector",
+    "Actual ethics, instrument implementation, clinical laboratory units and sampling/assay details still need source confirmation"
+  ],
+  "independent_public_rebuild": {
+    "status": "PASS",
+    "requested_artifacts_byte_identical": 161,
+    "all_original_csv_unchanged": 255,
+    "all_29_pdf_files_byte_identical": true,
+    "scope": "Fresh package-only directory, same installed Python/TeX environment; no private-data refitting"
+  },
+  "post_revision_checks": {
+    "statistics": "PASS",
+    "visual": "PASS"
+  }
+}

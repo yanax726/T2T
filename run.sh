@@ -19,6 +19,7 @@ case "$mode" in
     "$python_bin" -m unittest discover -s tests -p 'test_rounding_20261017.py'
     "$python_bin" -m unittest discover -s tests -p 'test_redesign_evidence_20261018.py'
     "$python_bin" -m unittest discover -s tests -p 'test_public_package.py'
+    "$python_bin" -m unittest discover -s tests -p 'test_response_intervals_20261031.py'
     ;;
   figures)
     "$python_bin" -m t2t_paper.figures
@@ -43,6 +44,9 @@ case "$mode" in
     "$python_bin" -m cytot2t.curation.clinical_evidence_20261017
     "$python_bin" -m cytot2t.curation.ige_missingness_20261025
     "$python_bin" -m cytot2t.curation.model_ablation_20261025
+    "$python_bin" -m cytot2t.curation.manuscript_audit_20261031
+    "$python_bin" -m cytot2t.curation.iga_definition_sensitivity_20261031
+    "$python_bin" -m t2t_paper.model_display_evidence_20261018
     "$python_bin" -m t2t_paper.figures
     "$python_bin" -m t2t_paper.build --compile
     ;;
@@ -63,6 +67,8 @@ case "$mode" in
     "$python_bin" -m t2t_paper.revision_checks_20261018
     "$python_bin" -m cytot2t.curation.ige_missingness_20261025
     "$python_bin" -m cytot2t.curation.model_ablation_20261025
+    "$python_bin" -m cytot2t.curation.manuscript_audit_20261031
+    "$python_bin" -m cytot2t.curation.iga_definition_sensitivity_20261031
     "$python_bin" -m t2t_paper.figures
     "$python_bin" -m t2t_paper.build --compile
     ;;

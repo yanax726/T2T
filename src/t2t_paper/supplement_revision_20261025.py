@@ -51,8 +51,9 @@ def courses(root, base):
     adjusted = pd.read_csv(folder / 'clinical_trajectory_adjusted.csv')
     groups = [(3, ['bsa', 'scorad']), (4, ['ige_numeric', 'eo_count_numeric'])]
     for number, variables in groups:
-        fig, axes = previous.grid(len(variables), 2, 195 if number == 2 else 151,
-                                  left=.13, top=.90, bottom=.13, hspace=.72, wspace=.40)
+        fig, axes = previous.grid(len(variables), 2, 178 if number == 4 else 151,
+                                  left=.13, top=.90, bottom=.20 if number == 4 else .13,
+                                  hspace=1.15 if number == 4 else .72, wspace=.40)
         previous.legend(fig)
         for row, var in enumerate(variables):
             weeks = [0, 12, 24] if var == 'ige_numeric' else [0, 4, 12, 24]
@@ -63,6 +64,10 @@ def courses(root, base):
                 z = observed[observed.target.eq(var) & observed.treatment.eq(tx)].set_index('week').reindex(weeks)
                 # Explicit missing rows break the line: absent W4 eosinophils are not interpolated.
                 previous.line(obsax, weeks, z['median'], z.q25, z.q75, previous.COLORS[j])
+                if number == 4:
+                    counts = ' / '.join('0' if pd.isna(n) else str(int(n)) for n in z['n'])
+                    obsax.text(.01, -.34 - .12*j, f'{palette.treatment_label(tx)}: n={counts}',
+                               transform=obsax.transAxes, fontsize=6.5, va='top')
                 z = adjusted[adjusted.target.eq(var) & adjusted.treatment.eq(tx)].set_index('week').reindex(weeks[1:])
                 v = z[['adjusted_mean_scale', 'ci_low', 'ci_high']].to_numpy()
                 if var in ['ige_numeric', 'eo_count_numeric']:
@@ -75,18 +80,29 @@ def courses(root, base):
                        title=title if row == 0 else '')
                 ax.ticklabel_format(axis='y', style='plain', useOffset=False)
                 ax.set_xlim(min(x) - 1, 25)
+                if var == 'ige_numeric':
+                    ax.set_yscale('log')
+                    ax.minorticks_off()
+                    ax.set(ylim=(25, 6500), yticks=[50, 100, 500, 1000, 5000],
+                           yticklabels=['50', '100', '500', '1000', '5000'])
                 light_grid(ax)
         caption = ('Left, observed medians with interquartile ranges by initial treatment; all available values are used at each specified visit. '
-                   'Right, generalized-overlap-weighted marginal estimates with patient-cluster robust 95% confidence intervals, '
+                   'Right, generalized-overlap-weighted marginal estimates with patient-cluster robust 95% confidence intervals conditional on the estimated baseline weights, '
                    'adjusted for baseline outcome, age, sex, BMI and centre. Patient sets can differ between visits. '
                    'Exact outcome-specific counts and numerical comparisons are in the source tables; they are not replaced by a common denominator. ')
         if number == 2:
             caption += 'Adult DLQI is restricted to age ≥18. '
         if number == 4:
-            caption += ('IgE and eosinophils use log(1+x) models and back-transformation; adjusted estimates are not arithmetic means. '
+            caption = ('Left panels use different available patients at each visit: counts below each panel follow the week order on its axis. '
+                       'Lines connect visit summaries, not the same patients. IgE uses a logarithmic vertical axis labelled in recorded units. '
+                       'Observed points are medians and bars are interquartile ranges. Right panels show baseline-overlap-weighted marginal '
+                       'estimates with patient-cluster 95% confidence intervals conditional on the estimated baseline weights, adjusted for '
+                       'baseline outcome, age, sex, BMI and centre. '
+                       'IgE and eosinophils use log(1+x) models and back-transformation; adjusted estimates are not arithmetic means. '
                         'IgE is shown only at W0/W12/W24. No dupilumab W4 eosinophil measurement is available; both the observed and adjusted '
                         'line break at that visit. No multiple-imputation value is displayed as an observation. '
-                        'The separate same-patient IgE analysis tests the effect of changing sample composition. ')
+                        'The next figure separates fixed-patient IgE change from missing-data sensitivity; Supplementary Table S9 gives laboratory '
+                        'coverage and paired eosinophil changes. ')
         caption += 'Initial treatment groups describe observational management strategies, including subsequent regimen changes, rather than randomized fixed-dose effects.'
         finish(fig, number, 'Observed and adjusted ' + ', '.join(previous.DISPLAY[v].replace('\n', ' ') for v in variables),
                caption, [folder / 'clinical_observed.csv', folder / 'clinical_trajectory_adjusted.csv'], root, base)
@@ -99,23 +115,27 @@ def molecule_windows(root, base):
     for number, start, end in [(6, 12, 24), (7, 0, 24)]:
         d = data[data.start.eq(start) & data.end.eq(end)]
         fig, axes = previous.grid(1, 3, 176, left=.16, top=.91, bottom=.12, wspace=.40)
+        fig.subplots_adjust(right=.94)
         bounds = (min(-.4, d[['effect', 'ci_low']].min().min() - .15),
                   max(.4, d[['effect', 'ci_high']].max().max() + .15))
         for j, (ax, tx) in enumerate(zip(axes, ARMS)):
             z = d[d.treatment.eq(tx)].set_index('marker').reindex(MARKERS)
-            previous.forest(ax, z, np.arange(23), previous.COLORS[j])
+            previous.forest(ax, z, np.arange(23), previous.COLORS[j], sparse_counts=True)
             ax.axvline(0, color='#AAB6BC', lw=.6)
             ax.set(yticks=range(23), yticklabels=MARKERS if j == 0 else [''] * 23,
                    ylim=(22.6, -.6), xlim=bounds, xlabel='Mean log₂ change', title=LABELS[j])
             ax.grid(axis='y', color='#EDF0F2', lw=.35)
             for y, r in enumerate(z.itertuples()):
-                if np.isfinite(r.q) and r.q < .05:
+                if np.isfinite(r.q) and r.q < .05 and r.n >= 5:
                     ax.text(1.025, y, '*', transform=ax.get_yaxis_transform(), ha='left', va='center', fontsize=10)
         previous.window_header(fig, f'W{start} → W{end}: within-patient molecular change')
+        fig.text(.55, .035, 'Hollow circle + n: fewer than 5 pairs; descriptive only',
+                 ha='center', fontsize=6.3)
         finish(fig, number, f'Molecular changes from W{start} to W{end}',
                'Mean paired log₂ concentration changes with 95% t confidence intervals. Negative values indicate lower later concentration. '
                'Each marker/treatment uses all available pairs for this interval; exact counts are in the source table. All 23 measured markers are retained. '
-               'Estimates based on fewer than five pairs are descriptive and have no inferential interval; unavailable estimates are blank. '
+               'Hollow circles with n labels denote fewer than five pairs; these are descriptive and have no inferential interval or star. '
+               'Unavailable estimates are blank. '
                'Stars denote BH q<0.05 across the full 207 marker-by-treatment-by-window family, not a separate family for the displayed interval.',
                [source], root, base)
     source = folder / 'molecular_adjusted_contrasts.csv'
@@ -140,7 +160,7 @@ def molecule_windows(root, base):
         finish(fig, number, f'Adjusted molecular comparisons from W{start} to W{end}',
                'Differences in within-patient log₂ changes with HC3 95% confidence intervals. Negative values mean a smaller, more negative change '
                'in the first named treatment. Models adjust starting log₂ concentration, baseline total EASI, age, sex, BMI and centre. '
-               'D, dupilumab; A100/A200, initial abrocitinib 100/200 mg. Pooled A retains the observed dose mixture. '
+               'dupi denotes dupilumab; abro denotes abrocitinib, with 100/200 mg identifying initial dose. Pooled A retains the observed dose mixture. '
                'Stars denote the original BH q<0.05 family; no multiplicity family is recalculated after display selection. '
                'Blank positions have no estimable contrast. Complete counts, diagnostics, centre/batch sensitivities and tests remain in the source table. '
                + ('The W0–W12 D-minus-pooled-A and A200-minus-A100 comparisons are in the main molecular figure. ' if number == 8 else '')
@@ -207,8 +227,8 @@ def baseline_heatmap(root, base):
     finish(fig, 18, 'Baseline distributions of all 23 serum markers',
            'Cells display the lower quartile, median and upper quartile of baseline log₂ recorded concentration for each initial treatment. '
            'All three panels use the same numeric colour scale without row normalization. Compare treatments within a marker: concentration '
-           'differences between distinct analytes do not indicate differences in biological activity. D denotes dupilumab; A100/A200 initial '
-           'abrocitinib 100/200 mg. Every measured marker is retained. The source table includes exact counts, censoring-related availability, '
+           'differences between distinct analytes do not indicate differences in biological activity. dupi denotes dupilumab; abro denotes '
+           'abrocitinib, with 100/200 mg identifying initial dose. Every measured marker is retained. The source table includes exact counts, censoring-related availability, '
            'ranges and distribution summaries; quartiles summarize available positive numeric observations and do not replace censored values.',
            [source], root, base)
 
@@ -217,22 +237,30 @@ def triplet_forests(root, base):
     source = root / 'results/tables/update_20261017/clinical/molecular_three_visit_paired.csv'
     d = pd.read_csv(source)
     fig, axes = previous.grid(1, 3, 222, left=.16, top=.91, bottom=.11, wspace=.28)
+    fig.subplots_adjust(right=.94)
     previous.legend(fig, [f'Week {w}' for w in TIMES], previous.TIME_COLORS, markers=['o'] * 3)
     bound = np.ceil(np.nanmax(np.abs(d[['ci_low', 'ci_high']].to_numpy())))
     for j, (ax, tx) in enumerate(zip(axes, ARMS)):
         for k, week in enumerate(TIMES):
             z = d[d.treatment.eq(tx) & d.week.eq(week)].set_index('marker').reindex(MARKERS)
             previous.forest(ax, z, np.arange(23) * 1.5 + (k - 1) * .36,
-                            previous.TIME_COLORS[k], marker='o')
+                            previous.TIME_COLORS[k], marker='o', sparse_counts=True, annotate_sparse=False)
+        counts = d[d.treatment.eq(tx) & d.week.eq(24)].set_index('marker').reindex(MARKERS)
+        for y, row in enumerate(counts.itertuples()):
+            if np.isfinite(row.effect) and 0 < row.n < 5:
+                ax.text(1.025, y * 1.5, f'n={int(row.n)}', transform=ax.get_yaxis_transform(),
+                        ha='left', va='center', fontsize=6.3)
         ax.set(yticks=np.arange(23) * 1.5, yticklabels=MARKERS if j == 0 else [''] * 23,
                ylim=(34, -.9), xlim=(-bound, bound), xlabel='Log₂ change from W0', title=LABELS[j])
         ax.axvline(0, color='#B7C0C4', lw=.65)
         ax.grid(axis='y', color='#E9EEF0', lw=.4)
+    fig.text(.55, .035, 'Hollow circles: fewer than 5 patients; n applies to all three visits',
+             ha='center', fontsize=6.3)
     finish(fig, 19, 'Three-visit molecular trajectories in fixed patient sets',
            'Within each marker and treatment, the same patients contribute at W0, W12 and W24. W0 is zero by definition; W12/W24 are mean '
-           'within-patient log₂ changes from W0. Light blue, teal and deep blue encode W0/W12/W24 consistently across all panels. '
-           'Rows are spaced to separate the three visits; horizontal intervals are 95% t confidence intervals for n≥5. Smaller sets are '
-           'descriptive without inferential intervals, and absent estimates remain blank. All 23 markers are retained. Fixed triplet counts '
+           'within-patient log₂ changes from W0. Pale green, teal and dark green encode W0/W12/W24 consistently across all panels. '
+           'Rows are spaced to separate the three visits; horizontal intervals are 95% t confidence intervals for n≥5. Hollow circles denote '
+           'smaller descriptive sets without inferential intervals; the n label applies to all three visits. Absent estimates remain blank. All 23 markers are retained. Fixed triplet counts '
            'are available in the source table and may differ across markers or treatments, but never across the three displayed visits within a marker/treatment.',
            [source], root, base)
 

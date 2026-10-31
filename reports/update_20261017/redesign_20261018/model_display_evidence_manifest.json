@@ -28,7 +28,7 @@
       "sha256": "8a3c60ba4cdb6f3c162f384f8164f91b92224b611130f8c03f9c0a97f51a2b36"
     }
   ],
-  "source_sha256": "91d0134abe036d75c97019c6e9c2f5e85a173d0810daa393972350f1d6132c74",
+  "source_sha256": "359befb6dd1dc653398d27054541db7f2251e851d149ba2d1f5a57efabe2fd88",
   "patient_held_out_audit_passed": true,
   "no_averaging_predictions_before_scoring": true,
   "monitoring_points_match_existing_primary_metrics": true,
@@ -41,6 +41,7 @@
     "results/tables/update_20261017/redesign_20261018/monitoring_confusion_repeat0.csv",
     "results/tables/update_20261017/redesign_20261018/monitoring_confusion_mean_proportions.csv",
     "results/tables/update_20261017/redesign_20261018/monitoring_response_uncertainty.csv",
+    "results/tables/update_20261017/redesign_20261018/monitoring_response_per_repeat_uncertainty.csv",
     "results/tables/update_20261017/redesign_20261018/prediction_uncertainty.csv",
     "results/tables/update_20261017/redesign_20261018/prediction_error_ecdf.csv",
     "results/tables/update_20261017/redesign_20261018/published_paired_difference_uncertainty.csv",
@@ -50,7 +51,12 @@
     "results/tables/update_20261017/redesign_20261018/published_severity_confusion_repeat0.csv",
     "results/tables/update_20261017/redesign_20261018/model_display_reconciliation.csv"
   ],
-  "interval_scope": "Percentile patient bootstrap with the same sampled patients in every repeat; compute each repeat metric then average. Conditional on saved held-out predictions, not a refit/bootstrap of model selection.",
+  "interval_scope": "Continuous metrics use percentile patient bootstrap with the same sampled patients in every repeat; compute each repeat metric then average. Conditional on saved held-out predictions, not a refit/bootstrap of model selection.",
+  "response_interval_method": "Mean of Bonferroni-adjusted per-repeat Clopper-Pearson bounds",
+  "response_interval_scope": "Pointwise 95% bounds for the arithmetic mean of repeat-specific classification probabilities, under the working assumption of independent Bernoulli patient outcomes within each repeat. Bonferroni controls the repeats within one window/endpoint/metric, not all reported metrics. Repeats may be dependent and are never pooled as independent patients. Conditional assessment of saved held-out predictions; shared training-fit dependence and model-development uncertainty are not propagated, so this is not an exact coverage guarantee for the complete cross-validation procedure.",
+  "response_per_repeat_intervals": "Wilson 95%; Clopper-Pearson at 1 - 0.05/R for averaging bounds.",
+  "response_bootstrap_role": "Diagnostic columns only, not the reported classification confidence bounds.",
+  "primary_response_summary": "results/tables/update_20261017/revision2_20261018/primary_EASI75_uncertainty.csv",
   "ECDF_band": "Pointwise 95% intervals, not a simultaneous confidence band.",
   "publication_comparison": "Identical eligible samples; original raw and clipped formula sensitivities. Different inputs and unconfirmed IL2RA/sIL-2R assay bridge prevent attribution to algorithm or population ethnicity."
 }

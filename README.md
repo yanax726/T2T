@@ -12,6 +12,7 @@ The equation uses BSA, CCL17, CCL26 and IL-5. Its primary evaluation uses patien
 | All current figures and captions | [Figure book](manuscript/figure_book.pdf), [figure catalogue](manuscript/figure_catalog.json) |
 | Numerical results, including controls and negative findings | [Aggregate tables](results/tables/update_20261017/) |
 | Matched input comparisons and IgE missing-data sensitivity | [Model comparisons](results/tables/update_20261025/ablation/), [IgE analyses](results/tables/update_20261025/ige/) |
+| Laboratory coverage and clinical definition sensitivity | [Aggregate checks](results/tables/update_20261031/), [repetition-specific response intervals](results/tables/update_20261017/redesign_20261018/monitoring_response_per_repeat_uncertainty.csv) |
 | Figure source data | [Source tables](manuscript/source_data/), [source-to-result map](docs/source_map.md) |
 | Frozen formula and input conventions | [Model documentation](docs/model.md), [parameter file](config/unified_bsa_three_v1_20261017.json) |
 
@@ -44,7 +45,7 @@ The input comparisons refit each model on the same eligible visits and patient s
 
 ## Version, citation and license
 
-This research snapshot is version [2026.10.25-rc3](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+This research snapshot is version [2026.10.31-rc4](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
 
 Original code, data and manuscript materials have no assigned reuse license. The existing Apache-2.0 terms for the third-party panel-alignment helper are retained. See [license status](LICENSE_STATUS.md) and [third-party notice](NOTICE.md).
 

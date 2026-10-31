@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "mean_metric_rows": 18,
+  "repetition_rows": 36,
+  "point_estimate_max_difference": 0.0,
+  "all_intervals_positive_width": true,
+  "predictions_refitted": false,
+  "interpretation": "Conditional binomial working-model bounds; not full model-development coverage"
+}

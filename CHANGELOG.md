@@ -2,6 +2,14 @@
 
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
+## 2026.10.31-rc4
+
+- Correct near-boundary response-classification intervals without changing predictions or point estimates; provide counts and Wilson intervals for each validation repetition.
+- Restore designated early clinical visits, show key available denominators, and distinguish sparse molecular estimates from inferential results.
+- Clarify IgE observation patterns and eosinophil coverage; add paired laboratory summaries and IGA-free target sensitivity.
+- Report early itch associations and persistent W24 differences separately, retaining the observational interpretation.
+- Preserve the frozen formula, all continuous model metrics, original records and earlier presentation.
+
 ## 2026.10.25-rc3
 
 - Add matched comparisons of molecular, clinical and combined EASI inputs, including CCL17 and clinical-only controls, paired uncertainty and an adult DLQI extension.

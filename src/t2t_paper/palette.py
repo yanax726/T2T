@@ -28,6 +28,9 @@ def display_text(text):
     text = re.sub(r'\bD\b', 'dupi', text)
     text = re.sub(r'\bA: pooled abro\b', 'pooled abro', text)
     text = text.replace('dupi: dupi', 'dupi')
+    # Keep abbreviation definitions informative after display-name conversion.
+    text = re.sub(r'\bdupi( denotes |, )dupi\b', r'dupi\1dupilumab', text)
+    text = re.sub(r'\babro( denotes |, )abro\b', r'abro\1abrocitinib', text)
     return text
 
 

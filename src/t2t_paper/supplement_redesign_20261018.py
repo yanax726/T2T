@@ -50,12 +50,20 @@ def line(ax, x, y, lo, hi, color, label=None, style='-', marker=None):
     ax.errorbar(x,y,yerr=[np.maximum(0,y-lo),np.maximum(0,hi-y)],fmt=marker,linestyle=style,color=color,label=label,ms=4,lw=1.35,capsize=1.7,alpha=1,markeredgecolor=marker_outline(color),markeredgewidth=.5)
 
 
-def forest(ax, data, y, color, key='effect', marker=None):
+def forest(ax, data, y, color, key='effect', marker=None, *, sparse_counts=False, annotate_sparse=True):
     marker = marker or 'o'
-    ok = data[key].notna() & data.ci_low.notna() & data.ci_high.notna()
+    sparse = data[key].notna() & data.n.between(1, 4) if sparse_counts else pd.Series(False, index=data.index)
+    ok = data[key].notna() & ~sparse & data.ci_low.notna() & data.ci_high.notna()
     ax.errorbar(data.loc[ok,key], np.asarray(y)[ok], xerr=[np.maximum(0,data.loc[ok,key]-data.loc[ok,'ci_low']),np.maximum(0,data.loc[ok,'ci_high']-data.loc[ok,key])],fmt=marker,color=color,ms=3.3,capsize=1.5,lw=1.0,markerfacecolor=color,alpha=1,markeredgecolor=marker_outline(color),markeredgewidth=.5)
-    missing = data[key].notna() & ~ok
+    missing = data[key].notna() & ~ok & ~sparse
     ax.scatter(data.loc[missing,key],np.asarray(y)[missing],s=11,facecolors=color,edgecolors=marker_outline(color),lw=.5,marker=marker,alpha=1,zorder=3)
+    if sparse.any():
+        ax.scatter(data.loc[sparse,key], np.asarray(y)[sparse], s=13, facecolors='white',
+                   edgecolors=marker_outline(color), lw=.8, marker='o', alpha=1, zorder=3)
+        if annotate_sparse:
+            for yi, n in zip(np.asarray(y)[sparse], data.loc[sparse, 'n']):
+                ax.text(1.025, yi, f'n={int(n)}', transform=ax.get_yaxis_transform(),
+                        ha='left', va='center', fontsize=6.3)
 
 
 def cell_text_color(color):

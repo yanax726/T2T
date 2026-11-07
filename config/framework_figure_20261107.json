@@ -1,0 +1,53 @@
+{
+  "purpose": "English content for an original compact framework-development diagram and target matrix; this is not a treatment recommendation or a replacement for source ballots.",
+  "source": "plan/241217 中国特应性皮炎达标治疗方案探索与验证 项目.pptx, slides 7–9; plan/达标论文-20261025-XBL-yaoxu.docx, framework methods/results",
+  "development": {
+    "title": "Development of the local treatment-target framework",
+    "nodes": [
+      {"id":"evidence","label":"Review measures\nand existing frameworks"},
+      {"id":"stakeholders","label":"Clinicians, nurses\nand patients"},
+      {"id":"round1","label":"Round 1\nSelect measures"},
+      {"id":"feedback","label":"Review feedback\nand discuss"},
+      {"id":"round2","label":"Round 2\nSet targets and timing"},
+      {"id":"review","label":"Steering-group\nreview"},
+      {"id":"framework","label":"Local target\nframework"}
+    ],
+    "edges": [["evidence","round1"],["stakeholders","round1"],["round1","feedback"],["feedback","round2"],["round2","review"],["review","framework"]],
+    "legend_only": "Project materials describe two questionnaire rounds, a planned 75% agreement criterion and 49 returned questionnaires. The planned stakeholder sample was 30 physicians, 10 nurses and 10 patients. Round-specific participation and item-level agreement cannot be reconstructed without the original ballots.",
+    "do_not_print": ["49 experts agreed", "98% consensus", "all targets reached 75% agreement", "a randomized clinical trial"],
+    "evidence_status": "Documented project description; vote-level verification incomplete"
+  },
+  "assessment": {
+    "title": "Targets evaluated in the 24-week cohort",
+    "columns": ["Week 2", "Week 4", "Week 12", "Week 24"],
+    "rows": [
+      {"label":"Clinical signs", "cells":["Not specified", "EASI-50\nor IGA decrease ≥2", "EASI-75\nor IGA 0/1", "EASI-75, IGA 0/1\nor EASI ≤5"]},
+      {"label":"Patient experience", "cells":["PP-NRS ≤4", "PP-NRS ≤4\nor DLQI ≤10", "PP-NRS 0/1\nor DLQI ≤4", "PP-NRS 0/1\nor DLQI ≤4"]}
+    ],
+    "logic_label": "From Week 4: at least one target in each row",
+    "safety_label": "Review safety, tolerability and patient priorities at every visit",
+    "source_month_mapping": "The source framework labels months 1, 3 and 6; the cohort operationalizes these as weeks 4, 12 and 24.",
+    "legend_only": "EASI-50 and EASI-75 denote at least 50% and 75% improvement from the individual's pretreatment EASI. IGA decrease is measured from baseline. At Week 2 the target is PP-NRS ≤4, not a four-point reduction. Adult DLQI analyses use the current analysis eligibility rule; the source questionnaire contains age-specific quality-of-life instruments. Missing outcomes are not assumed to satisfy a target. IGA is the recorded local scale; it is not silently relabelled vIGA-AD. This framework was evaluated observationally, without a usual-care control arm."
+  },
+  "planned_only": {
+    "location": "Supplementary framework table, not an observed cohort branch",
+    "months2": "Same target logic as month 1; low-coverage Week 8 is not a main outcome visit",
+    "months9_and12": "Clinical signs: EASI-90, IGA 0/1 or EASI ≤3. Patient experience: PP-NRS 0/1 or DLQI ≤4. Both domains required.",
+    "scope_note": "The cohort does not establish attainment or durability at months 9–12."
+  },
+  "measurement_extension": {
+    "label": "Exploratory E-EASI assessment",
+    "definition": "E-EASI means estimated EASI; BSA plus CCL17, CCL26 and IL-5 is a hybrid clinical–molecular estimator.",
+    "diagram_use": "Keep separate from the consensus-development arrows. The estimator was evaluated after data collection and did not determine the original clinical decisions.",
+    "claims_to_avoid": ["blood-only EASI", "objective replacement for EASI", "validated dose-reduction rule", "molecularly validated clinician error"]
+  },
+  "layout": {
+    "preferred": "Two converging evidence/stakeholder inputs, a short development chain, then a four-column target matrix. Keep the participant-flow diagram as a separate clinical-cohort panel.",
+    "reference_structures": [
+      {"source":"de Bruin-Weller et al., 2021, Figure 1", "url":"https://medicaljournalssweden.se/actadv/article/download/1068/1344/6011", "idea":"Compact decision pathway above a target matrix; separate process from numeric targets."},
+      {"source":"Silverberg et al., 2024, Figures 1–2", "url":"https://onlinelibrary.wiley.com/doi/10.1111/jdv.20229", "idea":"Converging patient and clinical inputs; explicit selection and review stages."},
+      {"source":"Yeung et al., 2023, Figure 2", "url":"https://www.jaad.org/article/S0190962223005200/pdf", "idea":"Parallel clinician and patient rows with an explicit AND between domains."}
+    ],
+    "design_constraint": "Draw an original vector diagram. Do not copy published artwork or insert paragraphs inside boxes. Printed n values must represent a named population and have a reconstructable denominator."
+  }
+}

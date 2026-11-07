@@ -1,0 +1,33 @@
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{46mm}rrrrr}
+\caption{Molecular-only model extensions evaluated in the same patients and folds.}\label{tab:molecular_extensions}\\
+\toprule Model & Week & n & MAE (95\% CI) & Spearman & CCC \\ \midrule\endfirsthead
+\multicolumn{6}{l}{\tablename~\thetable: continued}\\
+\toprule Model & Week & n & MAE (95\% CI) & Spearman & CCC \\ \midrule\endhead
+Three markers: ridge & 0 & 152 & 7.63 (6.64--8.70) & 0.384 & 0.329 \\
+Three markers: ridge & 12 & 89 & 7.57 (6.70--8.51) & 0.071 & 0.103 \\
+Three markers: ridge & 24 & 75 & 8.69 (7.76--9.66) & 0.114 & 0.051 \\
+\addlinespace
+Three markers: nested candidate selection & 0 & 152 & 7.50 (6.54--8.51) & 0.378 & 0.361 \\
+Three markers: nested candidate selection & 12 & 89 & 7.21 (6.35--8.13) & 0.104 & 0.131 \\
+Three markers: nested candidate selection & 24 & 75 & 7.80 (6.89--8.79) & 0.061 & 0.060 \\
+\addlinespace
+19 markers: ridge & 0 & 152 & 7.53 (6.60--8.49) & 0.357 & 0.401 \\
+19 markers: ridge & 12 & 89 & 7.28 (6.43--8.19) & 0.066 & 0.093 \\
+19 markers: ridge & 24 & 75 & 8.39 (7.47--9.35) & 0.239 & 0.097 \\
+\addlinespace
+19 markers: paired nonlinear & 0 & 152 & 7.51 (6.66--8.40) & 0.338 & 0.420 \\
+19 markers: paired nonlinear & 12 & 89 & 7.08 (6.29--7.97) & 0.097 & 0.122 \\
+19 markers: paired nonlinear & 24 & 75 & 8.31 (7.32--9.29) & 0.176 & 0.091 \\
+\addlinespace
+19 markers: IGA auxiliary & 0 & 152 & 7.53 (6.61--8.48) & 0.353 & 0.403 \\
+19 markers: IGA auxiliary & 12 & 89 & 7.24 (6.39--8.17) & 0.078 & 0.099 \\
+19 markers: IGA auxiliary & 24 & 75 & 8.39 (7.49--9.36) & 0.243 & 0.099 \\
+\addlinespace
+19 markers: inner selection & 0 & 152 & 7.41 (6.57--8.29) & 0.351 & 0.424 \\
+19 markers: inner selection & 12 & 89 & 7.26 (6.48--8.14) & 0.088 & 0.116 \\
+19 markers: inner selection & 24 & 75 & 8.49 (7.54--9.46) & 0.177 & 0.084 \\
+\addlinespace
+\bottomrule\end{longtable}
+All rows use the same legacy core evaluation set, complete for BSA and the three-marker panel, with 152/89/75 patients at W0/W12/W24. Other serum values are imputed within training folds. Only molecular concentrations are inputs at prediction. The three-marker set is CCL17, CCL26 and IL-5; the 19-marker set follows the prespecified assay-quality screen. Training uses W0/W12, with the existing two repeats of five patient-level outer folds and three inner folds. Imputation, scaling and tuning are training-fold operations. The candidate set permits ridge, paired nonlinear constraints (including a zero-constraint setting) and IGA-assisted reduced-rank estimation; the inner criterion selects the candidate without using held-out scores. IGA is an auxiliary training outcome, not a prediction input. W24 is previously inspected same-cohort temporal application. Patient-bootstrap intervals condition on the fitted predictions and do not include all model-selection uncertainty. The extensions are exploratory after prior inspection of this cohort; they do not replace the frozen E-EASI equation. Complete RMSE, bias, calibration, severity strata, paired-change results, expanded-training populations and paired comparisons are in the aggregate CSV tables.
+}

@@ -1,10 +1,10 @@
 # Figure style
 
-All five main and 21 supplementary figures use one colour registry, `config/palette_v4_registry.json`. Its stable filename is retained for reproducibility; the current palette is **palette-v6-blue-apricot-coral-plum-20261031**. Earlier presentation files are unchanged.
+All five main and 21 supplementary figures use one colour registry, `config/palette_v4_registry.json`. Its stable filename is retained for reproducibility; the current palette is **palette-v7-fixed-semantic-roles-20261107**. Earlier presentation files are unchanged.
 
 ## Colour roles
 
-The four anchors are blue, apricot, coral and muted plum. Treatment identity uses blue, apricot and coral. Visit identity uses a separate light-to-dark plum sequence. Observed and adjusted estimates use taupe and muted plum. These are fixed roles across the complete numbered figure, not colours selected independently for each panel.
+The four anchors are blue, apricot, coral and muted plum. Treatment identity uses blue, apricot and coral. Visit identity uses light blue, teal and deep ocean blue. Observed and adjusted estimates use taupe and muted plum. These are fixed roles across the complete numbered figure, not colours selected independently for each panel.
 
 | Role | Colour |
 |---|---|
@@ -12,9 +12,9 @@ The four anchors are blue, apricot, coral and muted plum. Treatment identity use
 | treatment.abrocitinib_100mg | `#C78557` |
 | treatment.abrocitinib_200mg | `#B85060` |
 | treatment.pooled_abrocitinib | `#A97865` |
-| visit.W0 | `#A38ABB` |
-| visit.W12 | `#7B5F9B` |
-| visit.W24 | `#47305F` |
+| visit.W0 | `#79B9CF` |
+| visit.W12 | `#269DAB` |
+| visit.W24 | `#245568` |
 | method.reference | `#A18E7F` |
 | method.current | `#775D78` |
 
@@ -22,14 +22,20 @@ Treatment changes do not reassign initial-group colour. Comparisons between trea
 
 ## Numerical scales and annotations
 
-IGA grades 0–5 have their own six-step ordered plum scale. Treatment-pathway bars below them use treatment colours; the two colour meanings do not overlap. Signed heatmaps use a 257-entry blue–off-white–coral lookup table. Correlations retain −1 to 1; other signed quantities retain their original common symmetric limits. Sequential blue heatmaps show numeric concentration, proportion or count with separately labelled units and normalization. Proportion scales remain 0–100%. Missing values are not zero. Count cells retain all patients and use a logarithmic colour scale; single-patient cells remain visible.
+IGA grades 0–5 have their own six-step ordered plum scale. The main IGA figure contains only the three grade-distribution panels; treatment pathways remain in aggregate tables. Signed heatmaps use a 257-entry blue–off-white–coral lookup table. Correlations retain −1 to 1; other signed quantities retain their original common symmetric limits. Sequential blue heatmaps show numeric concentration, proportion or count with separately labelled units and normalization. Proportion scales remain 0–100%. Missing values are not zero. Count cells retain all patients and use a logarithmic colour scale; single-patient cells remain visible.
 
-Figure 2 keeps all specified outcomes and visits. Its full endpoint denominators are in Supplementary Table S1. IgE/EOS coverage is in Table S9. These repeated numeric strips are no longer placed below the plots. S10 retains all 207 baseline concentration cells, with exact values in the source table rather than printed in each cell. Counts stay in cohort flows, IGA denominators, sparse-data flags and confusion matrices, where they are essential to interpretation. Matched model MAE values also remain directly readable.
+Figure 2 keeps all specified outcomes and visits. Its full endpoint denominators are in Supplementary Table S1. IgE/EOS coverage is in Table S9. These repeated numeric strips are no longer placed below the plots. Baseline molecular concentrations are now a table (S12): original-scale median, quartiles and available numeric counts with recorded quantification flags. The retired baseline heatmap is not regenerated. Counts stay in cohort flows, IGA denominators, sparse-data flags and confusion matrices, where they are essential to interpretation. Matched model MAE values also remain directly readable.
 
-The selected-estimator figure retains molecular-only, combined and clinical-only input comparisons, the absolute-error distribution and EASI75 classification. The caption distinguishes sample sets, evaluation design, uncertainty and limited severe follow-up coverage. No numerical results or scientific conclusions change with this visual revision.
+The selected-estimator figure retains molecular-only, combined and clinical-only input comparisons, the absolute-error distribution and EASI75 classification. The caption distinguishes sample sets, evaluation design, uncertainty and limited severe follow-up coverage. The frozen estimator is unchanged. New laboratory and molecular-only results have separate source tables and explicitly defined populations.
 
 ## Export and checking
 
 PDF and SVG preserve editable text. PNG previews and the figure book show the complete collection. The shared exporter checks semantic colours and rendered panel alignment. Each PDF is checked for glyph size and collisions and inspected at final size. Colour-vision and grayscale views are diagnostic checks, not a claim of universal accessibility. Direct labels and panel positions remain necessary when colours converge in grayscale.
 
 The [reference guide](https://www.simplifiedsciencepublishing.com/resources/best-color-palettes-for-scientific-figures-and-data-visualizations) informed restrained colour families and lightness contrast. The palette is adapted to this complete manuscript, not copied from a separate example for each chart. [Nature's figure guidance](https://research-figure-guide.nature.com/figures/preparing-figures-our-specifications/) does not certify a particular HEX palette.
+
+## Three-visit molecular panel
+
+Figure 4 uses W0/W12/W24 colours consistently within every treatment panel. Each marker-treatment row holds the same patients across visits; W0 is zero and follow-up values are within-person log2 changes from baseline. Stars refer to a 138-hypothesis family for this fixed-patient analysis, not the earlier all-available-pair tests. Drug identity is carried by the panel title rather than borrowing a visit colour. The unadjusted within-group trajectories and baseline-adjusted between-treatment comparisons remain distinct displays.
+
+The English framework figure separates development of the local targets from clinical participant flow. Single-visit IEC-compatible states in Table S16 are not labelled sustained control, remission or full MDA. Estimated EOS values use explicit labels and uncertainty distinct from observed interquartile ranges.

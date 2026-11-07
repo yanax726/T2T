@@ -17,6 +17,7 @@ PRIVATE_COLUMNS = {
     'patient_uid', 'patient_id', 'patient_key', 'participant_id', 'record_id',
     'source_record_id', 'subject_id', 'sample_id', 'train_ids', 'test_ids',
     'visit_date', 'baseline_date', 'free_text', 'name', 'phone', 'dob',
+    'email', 'email_address', 'address', 'patient_name',
 }
 STUDY_ID = re.compile(r'\bPT\d{4}\b')
 # Reviewed metadata-only dictionary; its column names include participant fields,
@@ -33,6 +34,11 @@ BASE_FILES = [
     'config/marker_registry.csv', 'config/reproduction_inputs.json', 'config/clinical_framework.json',
     'config/unified_model_20261017.json', 'config/unified_bsa_three_v1_20261017.json',
     'config/auxiliary_targets_20261017.json',
+    'config/framework_figure_20261107.json', 'config/nature_figure_backend.json',
+    'config/laboratory_molecular_revision_20261107.json',
+    'config/molecular_upgrade_20261107.json',
+    'config/external_molecular_benchmark_20261101.json',
+    'config/local_paired_benchmark_20261101.json',
     'config/ige_missingness_20261025.json', 'config/model_ablation_20261025.json',
     'examples/unified_easi_input.csv', 'examples/unified_easi_log2_input.csv',
     'examples/unified_easi_expected.csv', 'examples/auxiliary_targets_input.csv',
@@ -51,9 +57,12 @@ ANALYSIS_MODULES = [
     'auxiliary_targets_20261017', 'auxiliary_targets_calculator_20261017',
     'ige_missingness_20261025', 'model_ablation_20261025',
     'manuscript_audit_20261031', 'iga_definition_sensitivity_20261031',
+    'laboratory_molecular_revision_20261107', 'molecular_upgrade_20261107', 'repair_treatment_holdout_20261107',
+    'external_molecular_benchmark_20261101', 'local_paired_benchmark_20261101',
 ]
 PAPER_MODULES = [
     '__init__', 'package', 'demo', 'preflight', 'figures', 'palette', 'build',
+    'revision_20261107', 'tables_20261107',
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
     'sensitivity_figures_20261025', 'sensitivity_tables_20261025',
@@ -64,6 +73,19 @@ PAPER_MODULES = [
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/update_20261107/final_quality_assurance.json',
+    'reports/update_20261107/public_reproducibility.json',
+    'reports/update_20261107/tests.log',
+    'reports/update_20261107/public_tests.log',
+    'reports/update_20261107/public_demo.log',
+    'reports/update_20261107/labs/methods.txt',
+    'reports/update_20261107/labs/independent_checks.json',
+    'reports/update_20261107/model/interpretation.md',
+    'reports/update_20261107/model/verification.json',
+    'reports/update_20261107/model/holdout_repair_verification.json',
+    'reports/update_20261107/labs/joint_low_activity_independent_checks.json',
+    'reports/external_validation_20261101/molecular_independent_checks.json',
+    'reports/external_validation_20261101/local_verification.json',
     'reports/visual_revision_20261031/final_quality_assurance.json',
     'reports/visual_revision_20261031/colour_transform_verification.json',
     'reports/visual_revision_20261031/tests.log',
@@ -236,6 +258,15 @@ def collect_files():
             raise RuntimeError('Restricted review aggregate: '+str(path))
         selected.add(str(path.relative_to(ROOT)))
 
+    # Publish aggregate CSVs only; never follow report folders or private outputs.
+    for folder in ['update_20261107', 'external_validation_20261101']:
+        for path in sorted((ROOT / 'results/tables' / folder).rglob('*.csv')):
+            relative = str(path.relative_to(ROOT))
+            if safe_csv(path):
+                selected.add(relative)
+            else:
+                excluded.append(dict(path=relative, reason='Restricted row structure, name or study identifier'))
+
     catalogue = json.loads((ROOT / 'manuscript/figure_catalog.json').read_text())
     ids = [row['id'] for row in catalogue]
     if len(ids) != len(set(ids)) or not all(re.fullmatch(r'Figure(?:S)?[1-9]\d*', x) for x in ids):
@@ -333,11 +364,15 @@ def verify_public_tree():
         if not path.is_file():
             continue
         relative = str(path.relative_to(PACKAGE))
-        if path.suffix in {'.xlsx', '.xls', '.pptx'} or path.is_symlink():
+        if path.suffix in {'.xlsx', '.xls', '.pptx', '.zip'} or path.is_symlink():
             problems.append(relative)
         if path.suffix == '.csv' and not safe_csv(path):
             problems.append(relative)
         if path.suffix == '.json' and not safe_json(path):
+            problems.append(relative)
+        if 'private' in path.name.lower() or relative.startswith('plan/'):
+            problems.append(relative)
+        if relative.startswith('reports/update_20261107/external/'):
             problems.append(relative)
         if any(x in relative.lower() for x in ('/reviews/', 'teacher_', 'author_completion',
                                                'handoff', 'release_review')):

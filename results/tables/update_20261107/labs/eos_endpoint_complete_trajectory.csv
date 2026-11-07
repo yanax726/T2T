@@ -1,0 +1,8 @@
+population,treatment,week,kind,method,n,median,q25,q75,mean,median_ci_low,median_ci_high,mean_ci_low,mean_ci_high,primary,units,conditioning
+paired_W0_W12,dupilumab,0,observed,observed endpoint-complete patients,15,0.31,0.15500000000000003,0.45999999999999996,0.3960000000000001,0.17,0.42,0.23064999999999997,0.5973333333333334,,,
+paired_W0_W12,dupilumab,12,observed,observed endpoint-complete patients,15,0.21,0.115,0.375,0.272,0.13,0.4,0.178,0.38136666666666647,,,
+paired_W0_W12,dupilumab,4,estimated_not_observed,log1p_linear_time,15,0.2810668189436121,0.16206826317282225,0.42201476584493847,0.3462191187659679,0.18318420832331764,0.4477571349747582,0.225430857186399,0.499236874116553,True,recorded EOS units,endpoint-complete selection and assumed temporal shape
+complete_W0_W12_W24,dupilumab,0,observed,observed endpoint-complete patients,7,0.4,0.255,0.5599999999999999,0.42285714285714276,0.17,0.7,0.21857142857142858,0.6314285714285715,,,
+complete_W0_W12_W24,dupilumab,12,observed,observed endpoint-complete patients,7,0.3,0.21,0.375,0.29857142857142854,0.21,0.4,0.19,0.41003571428571395,,,
+complete_W0_W12_W24,dupilumab,24,observed,observed endpoint-complete patients,7,0.16,0.08499999999999999,0.20500000000000002,0.15142857142857144,0.08,0.22,0.09571428571428572,0.20714285714285713,,,
+complete_W0_W12_W24,dupilumab,4,estimated_not_observed,log1p_linear_time,7,0.39627239671511866,0.2391843799350708,0.45113668745914437,0.37030050365085226,0.18318420832331764,0.4545162399435306,0.24164267794741498,0.49470416159813374,True,recorded EOS units,endpoint-complete selection and assumed temporal shape

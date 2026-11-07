@@ -6,8 +6,23 @@ if [[ -n "${T2T_PYTHON:-}" ]]; then python_bin="$T2T_PYTHON";
 elif [[ -x .venv/bin/python ]]; then python_bin="$project_root/.venv/bin/python";
 else python_bin=python3; fi
 export PYTHONPATH="$project_root/src${PYTHONPATH:+:$PYTHONPATH}"
-export MPLCONFIGDIR="$project_root/results/audit/update_20261017/mpl"
-mkdir -p "$MPLCONFIGDIR" reports/update_20261017/logs
+export MPLCONFIGDIR="$project_root/results/.cache/matplotlib"
+export XDG_CACHE_HOME="$project_root/results/.cache"
+mkdir -p "$MPLCONFIGDIR" "$XDG_CACHE_HOME/fontconfig" reports/update_20261017/logs
+export OPENBLAS_NUM_THREADS="${OPENBLAS_NUM_THREADS:-1}"
+export OMP_NUM_THREADS="${OMP_NUM_THREADS:-1}"
+export MKL_NUM_THREADS="${MKL_NUM_THREADS:-1}"
+
+run_update_analysis() {
+  "$python_bin" -m cytot2t.curation.laboratory_molecular_revision_20261107
+  "$python_bin" -m cytot2t.curation.molecular_upgrade_20261107
+  "$python_bin" -m cytot2t.curation.local_paired_benchmark_20261101
+  if [[ -f data/clinical_alignment/external/OMIX002850-01.xlsx ]]; then
+    "$python_bin" -m cytot2t.curation.external_molecular_benchmark_20261101
+  else
+    echo "SKIP: OMIX002850 input unavailable; external benchmark was not rerun. Other update analyses completed." >&2
+  fi
+}
 mode="${1:-rebuild}"
 case "$mode" in
   demo)
@@ -35,6 +50,10 @@ case "$mode" in
   rebuild)
     "$python_bin" -m t2t_paper.figures
     "$python_bin" -m t2t_paper.build --compile
+    ;;
+  update-analysis)
+    "$python_bin" -m t2t_paper.preflight
+    run_update_analysis
     ;;
   sensitivity)
     "$python_bin" -m t2t_paper.preflight
@@ -70,11 +89,12 @@ case "$mode" in
     "$python_bin" -m cytot2t.curation.model_ablation_20261025
     "$python_bin" -m cytot2t.curation.manuscript_audit_20261031
     "$python_bin" -m cytot2t.curation.iga_definition_sensitivity_20261031
+    run_update_analysis
     "$python_bin" -m t2t_paper.figures
     "$python_bin" -m t2t_paper.build --compile
     ;;
   *)
-    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|analyse]'
+    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|update-analysis|analyse]'
     exit 2
     ;;
 esac

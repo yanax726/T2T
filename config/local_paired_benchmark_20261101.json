@@ -1,0 +1,18 @@
+{
+  "version": "2026-11-01-local-matched-pEASI",
+  "scope": "Post-result paired comparison of saved patient-held-out predictions; no refitting or primary-formula change",
+  "seed": 20261101,
+  "bootstrap_replicates": 2000,
+  "input": "results/tables/update_20261002/stage_refinement/input.csv",
+  "saved_predictions": "results/tables/update_20261025/ablation/predictions_private.csv",
+  "cohort": "core_all",
+  "model_ids": ["serum3", "ccl17", "bsa", "bsa_serum3"],
+  "matched_requirements": ["observed", "bsa", "log2_CCL17", "log2_CCL26", "log2_IL-5", "log2_IL-22", "log2_IL2RA"],
+  "evaluation_weeks": [0, 12, 24],
+  "primary_reference": "peasi_precise_clip",
+  "sensitivity_reference": "peasi_rounded_clip",
+  "bounds": [0, 72],
+  "comparisons": [["serum3", "peasi_precise_clip"], ["serum3", "peasi_rounded_clip"], ["serum3", "ccl17"], ["bsa_serum3", "peasi_precise_clip"], ["bsa_serum3", "bsa"]],
+  "uncertainty": "2000 paired-patient bootstrap samples, same draws across methods; score each validation repetition before averaging. Exploratory pointwise intervals, no confirmatory multiplicity claim.",
+  "limits": "Local serum model was developed on this population; p-EASI is transferred across unbridged assays. Low IL22 availability restricts matched sample. W24 previously inspected within-cohort. This comparison cannot establish independent superiority or a wholly molecular explanation of hybrid performance."
+}

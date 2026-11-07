@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ARMS = ['dupilumab', 'abrocitinib_100mg', 'abrocitinib_200mg']
 ARM = dict(zip(ARMS, ['Dupilumab', 'Abrocitinib 100 mg', 'Abrocitinib 200 mg']))
 TARGET = {'PP_NRS_le4':'PP-NRS at most 4','PP_NRS_01':'PP-NRS 0/1','PP_NRS_drop4':'PP-NRS decrease at least 4','EASI_le3':'EASI at most 3','EASI_le5':'EASI at most 5','IGA_01':'IGA 0/1','IGA_drop2':'IGA decrease at least 2','DLQI_le4':'Adult DLQI at most 4','DLQI_le10':'Adult DLQI at most 10','overall':'Both domains','physician':'Physician domain','patient':'Patient domain'}
-TITLE = 'A common BSA--serum equation for EASI estimation in a Chinese atopic dermatitis cohort'
+TITLE = 'EASI estimation alongside clinical targets and serum trajectories in a Chinese atopic dermatitis cohort'
 
 def supplement_number(source_number):
     """Stable internal figure number -> consecutive publication number."""
@@ -250,6 +250,13 @@ def tables(root):
             raise ValueError('Patient-level record in review aggregate directory: '+str(p))
         rows.append({'section':'Definition and laboratory checks','file':str(p.relative_to(root)),
                      'rows':len(df),'columns':'; '.join(df.columns)})
+    for folder in ['update_20261107/labs', 'update_20261107/model', 'update_20261107/framework', 'external_validation_20261101']:
+        for p in sorted((root/'results/tables'/folder).glob('*.csv')):
+            if 'private' in p.name.lower():continue
+            df=pd.read_csv(p)
+            if any(c in df for c in ['patient_uid','patient_id','source_record_id','record_id']):continue
+            rows.append({'section':folder.split('/')[-1], 'file':str(p.relative_to(root)),
+                         'rows':len(df),'columns':'; '.join(df.columns)})
     p=root/'manuscript/source_data/safety_documentation_windows.csv'
     data=pd.read_csv(p)
     rows.append({'section':'Safety documentation','file':str(p.relative_to(root)),'rows':len(data),'columns':'; '.join(data.columns)})
@@ -312,7 +319,7 @@ Analysis code, versioned parameters, aggregate source tables and figure sources 
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S.\arabic{table}}
 \section*{Supplementary guide}
-The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S11 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity and classification intervals. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
+The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S16 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity classification intervals, baseline serum concentrations, framework comparisons, molecular model extensions, transport benchmarks and single-visit low-activity states. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
 '''
     for title,ids,description in groups:
         app+='\\hyperref[fig:FigureS'+str(ids[0])+']{\\textbf{'+tex(title)+'}}. '+tex(description)+'\\par\n'
@@ -335,6 +342,11 @@ N is the endpoint-specific evaluable denominator. Unknown outcomes are excluded 
 \clearpage\input{tables/laboratory_support}
 \clearpage\input{tables/iga_definition_support}
 \clearpage\input{tables/classification_intervals}
+\clearpage\input{tables/baseline_markers}
+\clearpage\input{tables/framework_comparison}
+\clearpage\input{tables/molecular_extensions}
+\clearpage\input{tables/serum_transport}
+\clearpage\input{tables/joint_low_activity}
 \clearpage
 '''
     if (m/'sections/auxiliary_targets.tex').exists():app+=section_text(m/'sections/auxiliary_targets.tex')+'\n'
@@ -359,7 +371,7 @@ The \href{run:source_data/index.csv}{machine-readable source-table index} lists 
 
 def compile_pdf(root):
     env=os.environ.copy();env['SOURCE_DATE_EPOCH']='1792195200';env['FORCE_SOURCE_DATE']='1'
-    logs=root/'reports/update_20261017/logs';logs.mkdir(parents=True,exist_ok=True)
+    logs=root/'reports/update_20261107/logs';logs.mkdir(parents=True,exist_ok=True)
     for name in ['main','appendix','figure_book']:
         commands=[['pdflatex','-interaction=nonstopmode','-halt-on-error',name+'.tex']]
         if name!='figure_book':commands += [['bibtex',name]]
@@ -369,7 +381,8 @@ def compile_pdf(root):
                 subprocess.run(cmd,cwd=root/'manuscript',env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
 
 def run(root,compile=False):
-    tables(root);documents(root)
+    from .tables_20261107 import run as revised_tables
+    tables(root);revised_tables(root);documents(root)
     generated = list((root/'manuscript/tables').glob('*.tex'))
     generated += [root/'manuscript'/f'{name}.tex' for name in ['main','appendix','figure_book']]
     for path in generated:

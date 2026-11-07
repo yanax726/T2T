@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "all_32_rows_independently_counted_patient_by_patient": true,
+  "wilson_intervals_independent_closed_form": true,
+  "known_false_with_missing_partner_not_mislabeled_unknown": true,
+  "full_cohort_bounds_preserve_known_false": true,
+  "clinical_outcomes_not_imputed": true,
+  "treatment_cells": 24,
+  "overall_cells": 8
+}

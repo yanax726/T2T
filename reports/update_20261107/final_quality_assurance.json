@@ -1,0 +1,39 @@
+{
+  "version": "2026.11.07-rc1",
+  "status": "PASS",
+  "scope": "Current numerical revisions, manuscript exports and figure QA; not certification of clinical usability or journal acceptance.",
+  "figures": 26,
+  "font_and_collision_checks_all_pass": true,
+  "colour_and_alignment_all_pass": true,
+  "colour_simulations": {
+    "figure_count": 26,
+    "requires_review": [],
+    "certification": false
+  },
+  "unit_tests": {
+    "passed": 53,
+    "log": "reports/update_20261107/tests.log"
+  },
+  "calculator_demo": "PASS",
+  "numerical_checks": {
+    "laboratory": "reports/update_20261107/labs/independent_checks.json",
+    "joint_low_activity": "reports/update_20261107/labs/joint_low_activity_independent_checks.json",
+    "molecular_extensions": "reports/update_20261107/model/verification.json",
+    "treatment_holdout": "reports/update_20261107/model/holdout_repair_verification.json"
+  },
+  "primary_formula_unchanged": true,
+  "latex_overflow_or_undefined_references": false,
+  "visual_review": "All figure contact sheets plus full-size revised main, laboratory and manuscript/table pages inspected; W12/W24 star headings and grid-line contact corrected.",
+  "static_component_validator": "File-local parser cannot resolve shared font/export/alignment configuration; actual rendered gates used. See figure_qa/static_check_scope.json.",
+  "single_panel_alignment_not_applicable": [
+    "FigureS7",
+    "FigureS17"
+  ],
+  "public_rebuild": {
+    "status": "PASS",
+    "report": "reports/update_20261107/public_reproducibility.json",
+    "byte_identical_manuscript_artifacts": 165,
+    "byte_identical_aggregate_csvs": 219,
+    "public_unit_tests": 53
+  }
+}

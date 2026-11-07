@@ -1,5 +1,5 @@
 {
-  "version": "palette-v6-blue-apricot-coral-plum-20261031",
+  "version": "palette-v7-fixed-semantic-roles-20261107",
   "backend": "python",
   "treatment": {
     "dupilumab": {
@@ -29,22 +29,22 @@
   },
   "visit": {
     "W0": {
-      "hex": "#A38ABB",
+      "hex": "#79B9CF",
       "marker": "o",
-      "outline": "#A38ABB",
-      "area_fill": "#F0ECF4"
+      "outline": "#79B9CF",
+      "area_fill": "#EAF4F7"
     },
     "W12": {
-      "hex": "#7B5F9B",
+      "hex": "#269DAB",
       "marker": "o",
-      "outline": "#7B5F9B",
-      "area_fill": "#EAE5EF"
+      "outline": "#269DAB",
+      "area_fill": "#DCEFF2"
     },
     "W24": {
-      "hex": "#47305F",
+      "hex": "#245568",
       "marker": "o",
-      "outline": "#47305F",
-      "area_fill": "#E2DEE5"
+      "outline": "#245568",
+      "area_fill": "#DCE4E7"
     }
   },
   "method": {
@@ -663,23 +663,17 @@
     },
     "Figure3": {
       "categorical_families": [
-        "recorded_iga_0_to_5",
-        "treatment"
+        "recorded_iga_0_to_5"
       ],
       "continuous_scales": [],
-      "panel_rule": "Top: ordered plum IGA grade scale. Bottom: initial-treatment identity; pathway is row label. No colour reuse between these meanings."
+      "panel_rule": "Colour identifies recorded IGA grade in all three treatment facets."
     },
     "Figure4": {
-      "source_id": "Figure3",
-      "question": "Molecular response across treatments and the three-marker input panel",
       "categorical_families": [
-        "method",
-        "treatment"
+        "visit"
       ],
-      "continuous_scales": [
-        "ocean_coral_diverging"
-      ],
-      "panel_rule": "First three columns: paired within-treatment changes in treatment colours. Last two: adjusted contrasts in one analysis colour. Separate x-axis meanings and ranges."
+      "continuous_scales": [],
+      "panel_rule": "All three treatment facets use colour only for W0/W12/W24. Stars refer to fixed-patient baseline contrasts."
     },
     "Figure5": {
       "categorical_families": [
@@ -736,9 +730,17 @@
       "continuous_scales": [
         "ocean_coral_diverging",
         "ocean_sequential"
-      ]
+      ],
+      "source_id": "FigureS21"
     },
     "FigureS6": {
+      "categorical_families": [
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "source_id": "FigureS46"
+    },
+    "FigureS7": {
       "source_id": "FigureS23",
       "question": "Week 2: all initial-treatment target contrasts",
       "categorical_families": [
@@ -747,7 +749,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS7": {
+    "FigureS8": {
       "source_id": "FigureS24",
       "question": "Week 4: all initial-treatment target contrasts",
       "categorical_families": [
@@ -756,7 +758,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS8": {
+    "FigureS9": {
       "source_id": "FigureS25",
       "question": "Week 12: all initial-treatment target contrasts",
       "categorical_families": [
@@ -765,7 +767,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS9": {
+    "FigureS10": {
       "source_id": "FigureS26",
       "question": "Week 24: all initial-treatment target contrasts",
       "categorical_families": [
@@ -774,18 +776,14 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS10": {
-      "categorical_families": [
-        "treatment",
-        "visit",
-        "method"
-      ],
-      "continuous_scales": [
-        "ocean_coral_diverging",
-        "ocean_sequential"
-      ]
-    },
     "FigureS11": {
+      "categorical_families": [
+        "treatment"
+      ],
+      "continuous_scales": [],
+      "source_id": "FigureS5"
+    },
+    "FigureS12": {
       "source_id": "FigureS6",
       "question": "All molecular changes within W12 → W24",
       "categorical_families": [
@@ -795,7 +793,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS12": {
+    "FigureS13": {
       "source_id": "FigureS7",
       "question": "All molecular changes within W0 → W24",
       "categorical_families": [
@@ -805,7 +803,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS13": {
+    "FigureS14": {
       "source_id": "FigureS8",
       "question": "Adjusted treatment contrasts in molecular change: W0 → W12",
       "categorical_families": [
@@ -814,7 +812,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS14": {
+    "FigureS15": {
       "source_id": "FigureS9",
       "question": "Adjusted treatment contrasts in molecular change: W12 → W24",
       "categorical_families": [
@@ -823,7 +821,7 @@
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
     },
-    "FigureS15": {
+    "FigureS16": {
       "source_id": "FigureS10",
       "question": "Adjusted treatment contrasts in molecular change: W0 → W24",
       "categorical_families": [
@@ -831,17 +829,6 @@
       ],
       "continuous_scales": [],
       "panel_rule": "Keep complete panel titles, outcome denominators and statistical uncertainty; categories use stable semantic keys."
-    },
-    "FigureS16": {
-      "categorical_families": [
-        "treatment",
-        "visit",
-        "method"
-      ],
-      "continuous_scales": [
-        "ocean_coral_diverging",
-        "ocean_sequential"
-      ]
     },
     "FigureS17": {
       "categorical_families": [
@@ -852,7 +839,8 @@
       "continuous_scales": [
         "ocean_coral_diverging",
         "ocean_sequential"
-      ]
+      ],
+      "source_id": "FigureS11"
     },
     "FigureS18": {
       "categorical_families": [
@@ -863,10 +851,11 @@
       "continuous_scales": [
         "ocean_coral_diverging",
         "ocean_sequential"
-      ]
+      ],
+      "source_id": "FigureS14"
     },
     "FigureS19": {
-      "source_id": "Figure4",
+      "source_id": "FigureS44",
       "question": "A common four-input equation estimates individual EASI readings",
       "categorical_families": [
         "method",
@@ -878,7 +867,7 @@
       "panel_rule": "Equal-size count cells, common count scale. Visit colours identify summary curves. No bubble size or formula."
     },
     "FigureS20": {
-      "source_id": "Figure5",
+      "source_id": "FigureS45",
       "question": "Within-patient change and clinical response from the common equation",
       "categorical_families": [
         "method",

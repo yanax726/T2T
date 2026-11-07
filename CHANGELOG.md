@@ -2,6 +2,15 @@
 
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
+## 2026.11.07-rc1
+
+- Name the unchanged frozen hybrid estimator E-EASI (estimated EASI); retain its coefficients and primary performance.
+- Rebuild the local framework and fixed-patient W0/W12/W24 molecular display, using separate visit colours and a declared 138-hypothesis family.
+- Add baseline molecular summary tables, an explicitly estimated dupi W4 eosinophil sensitivity, and single-visit IEC-compatible states.
+- Report nonlinear/paired-change/ordinal-IGA-assisted molecular-only learning and the retrospective OMIX/p-EASI benchmark, including negative findings.
+- Add the authorized-input `update-analysis` command, extend `analyse`, and retain aggregate-only `rebuild`.
+- Publish reviewed code, configurations and screened aggregate tables. Exclude participant outputs, local correspondence and original planning materials.
+
 ## 2026.10.31-rc5
 
 - Apply one semantic colour system to all five main and 21 supplementary figures.

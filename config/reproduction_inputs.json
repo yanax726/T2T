@@ -100,6 +100,11 @@
       "path": "results/tables/update_20261002/exposure_source_repaired.csv",
       "sha256": "f4a54855f7c87bbcd40e2e6fe97dcc5fe1dcba2d8a2c393b7faf0d5a973a68b4",
       "availability": "restricted or historical audit input; not included in public archive"
+    },
+    {
+      "path": "results/tables/redevelopment/clinical.csv",
+      "sha256": "1c4727def26be5bdfffab55a348bfdb03be2ae957053bdba41762769b73539cf",
+      "availability": "restricted curated clinical snapshot required by the molecular-extension audit"
     }
   ],
   "scope": "Includes primary clinical/serum/exposure snapshots and optional historical/assay reconciliation inputs needed to reproduce every current audit table."

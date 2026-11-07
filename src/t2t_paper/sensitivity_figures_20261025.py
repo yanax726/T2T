@@ -88,7 +88,7 @@ def model_performance(root):
               'repetitions within each endpoint, visit and metric, not all displayed metrics. The binomial working model permits dependent '
               'repetitions but does not propagate shared fitted models or development uncertainty. Metrics are scored per repetition before '
               'averaging; intervals condition on saved predictions. W24 is previously inspected same-cohort application. Separate Wilson '
-              'intervals and counts are in Supplementary Table S11; additional input comparisons are in Table S6.',
+              'intervals and counts are in Supplementary Table S11; additional input comparisons, CCL17 controls and marker contributions are in Tables S6–S7.',
               [str(source),str(ecdf_path),str(old/'monitoring_response_uncertainty.csv')],root)
 
 

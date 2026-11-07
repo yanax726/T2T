@@ -1,0 +1,62 @@
+{
+  "status": "PASS_EXPLORATORY_COMPARISON",
+  "date": "2026-11-07",
+  "checks": {
+    "weighted_ridge_matches_sklearn": true,
+    "full_rank_joint_model_reduces_to_ridge": true,
+    "prediction_ignores_all_clinical_and_time_columns": true,
+    "pair_training_penalty_behaves_as_defined": true,
+    "direct_distance_nystroem_matches_sklearn": true,
+    "numerical_reference_runtime_warnings": [
+      "divide by zero encountered in matmul",
+      "invalid value encountered in matmul",
+      "overflow encountered in matmul"
+    ],
+    "existing_three_marker_reference_reproduced_max_abs_diff": 3.552713678800501e-14,
+    "independent_scipy_numpy_metric_max_abs_difference": 8.881784197001252e-16,
+    "patient_outer_folds_preserved": true,
+    "training_test_patient_overlap": 0,
+    "W24_used_for_selection": false,
+    "no_clinical_deployment_input": true,
+    "no_outcome_imputation": true,
+    "clinical_IGA_training_auxiliary_only": true,
+    "predictions_scored_before_repeat_average": true,
+    "prior_main_formula_unchanged": true,
+    "earlier_adaptive_exploration_not_covered_by_validation": true,
+    "ambiguous_initial_dose_patients_labelled_unclassified": 1
+  },
+  "runtime_seconds": 18.735041374999998,
+  "inputs": {
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "results/tables/redevelopment/clinical.csv": "1c4727def26be5bdfffab55a348bfdb03be2ae957053bdba41762769b73539cf",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/update_20261017/model/predictions.csv": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+    "results/tables/update_20261025/ablation/predictions_private.csv": "427d4cfd1a6a83945b3807c59661c37f131a9e74806f81444b2a922e8a4ed6d4",
+    "config/marker_registry.csv": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501"
+  },
+  "config_sha256": "d4f2ab12fb27f15418c12a5db3d5201bf49724a50e5c0124ab1bdc1d499262bd",
+  "code_sha256": "23125d23014fd350cda6122494727dbabe8236f524d3664977a0c185085c6c4c",
+  "software": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "sklearn": "1.6.1"
+  },
+  "scope": "Nested patient procedure comparison; no new clinical formula released; W24 previously examined same cohort",
+  "outputs": {
+    "coverage.csv": "5ce91676f2d6642cc0bb38119a23e64df178b98cfe094f48256bb4de396d1368",
+    "fit_audit_PRIVATE.csv": "d47d73065b0897d1ce35d7b919f418dd9334c690ebdf25e43d85b68debb2b3ec",
+    "fold_map_PRIVATE.csv": "1b532858144e897fa958f000fb1cdb86fa89c159421496d53032632967ca3c25",
+    "historical_method_inventory.csv": "ad7227f79960f472ded2bbd73baad92a3a6b076cd2c64378f77b943f9ad5704f",
+    "inner_candidates.csv": "614155dfde4b59c3fcde07bfaed361cefe5145978db1183ca1451e95c6bca2a3",
+    "manuscript_comparison.csv": "8341037ed932b0cd0dd2f562186b13ffc39156d30098bd66c22f61da963ebd23",
+    "metrics.csv": "5be5182a86a5aa5ed449e4de1cf300c96382df2397c6330df83546e0df40ed55",
+    "overall_metrics.csv": "7f07978fbb7c84b6b596d5922f9ef5cdda5ea0dbb97d18c0f9e0528f04030617",
+    "paired_change_metrics.csv": "a36440212123ac1ffec1ab69766ec51f5aa559fa89e9781923311581b0f61102",
+    "paired_differences.csv": "641391321fe0d4a995834842a3904d8208d8189e819e113dd94a8ed4809ea956",
+    "predictions_PRIVATE.csv": "a2c222cae9493809c566e22ce9b069448649f3b3c2b77b562fbcba2d489ed3f7",
+    "selection_counts.csv": "1e197f3c0eb2c0a344bc450c45e5d999ad0def008e8e58c2e51d7d85c8764ba0"
+  }
+}

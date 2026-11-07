@@ -1,0 +1,143 @@
+{
+  "version": "external-molecular-benchmark-20261101-v1",
+  "date": "2026-11-01",
+  "status": "Plan fixed before this benchmark execution; source data and candidate family were explored previously",
+  "question": "Apply existing local molecular-only equations unchanged to OMIX002850 and compare with published p-EASI on identical AD participants and visits",
+  "source_data": "data/clinical_alignment/external/OMIX002850-01.xlsx",
+  "source_formulas": "results/tables/update_20261025/ablation/exploratory_formulas.json",
+  "protected_sha256": {
+    "results/tables/update_20261025/ablation/exploratory_formulas.json": "7545bfeb7de9a55953598e6a17f4ffe18b04fcf26820d5eb1e940f338c23b240",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+    "data/clinical_alignment/external/OMIX002850-01.xlsx": "78f2325d8ea6b2447278b89f92acf50ec7d1c91ab3d4be5a1c1fa347cb2afb7a"
+  },
+  "local_models": {
+    "core_all__serum3": {
+      "inputs": [
+        "log2_CCL17",
+        "log2_CCL26",
+        "log2_IL-5"
+      ],
+      "selected_structure": "linear",
+      "alpha": 10.0,
+      "formula": {
+        "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+        "intercept": -13.111780638682784,
+        "coefficients": {
+          "log2_CCL17": 2.8058611815352825,
+          "log2_CCL26": -0.19459644520980462,
+          "log2_IL-5": 1.191076186434764
+        }
+      },
+      "n_training_patients": 156,
+      "n_training_visits": 241,
+      "status": "Exploratory refit, not a new frozen clinical calculator"
+    },
+    "core_all__ccl17": {
+      "inputs": [
+        "log2_CCL17"
+      ],
+      "selected_structure": "linear",
+      "alpha": 0.1,
+      "formula": {
+        "expression": "clip(intercept + sum(coefficient * input), 0, 72)",
+        "intercept": -19.92635859153541,
+        "coefficients": {
+          "log2_CCL17": 3.4169403452099347
+        }
+      },
+      "n_training_patients": 156,
+      "n_training_visits": 241,
+      "status": "Exploratory refit, not a new frozen clinical calculator"
+    }
+  },
+  "local_model_identity": "Separate previously fitted exploratory molecular-only ablation models; not the frozen BSA-three-marker hybrid with BSA removed",
+  "peasi": {
+    "peasi_2017_precise": {
+      "before": {
+        "intercept": -36.118,
+        "log10_CCL17": 18.4941,
+        "IL22": 0.008942,
+        "sIL2Ra": -0.00946
+      },
+      "after": {
+        "intercept": -5.8183,
+        "log10_CCL17": 4.0392,
+        "IL22": 0.002739,
+        "sIL2Ra": -0.00284
+      }
+    },
+    "peasi_2020_rounded": {
+      "before": {
+        "intercept": -36.12,
+        "log10_CCL17": 18.49,
+        "IL22": 0.009,
+        "sIL2Ra": -0.009
+      },
+      "after": {
+        "intercept": -5.82,
+        "log10_CCL17": 4.04,
+        "IL22": 0.003,
+        "sIL2Ra": -0.003
+      }
+    }
+  },
+  "peasi_coefficients_scope": "2017 full-precision equations primary; 2020 rounded publication equations sensitivity; pretreatment/treatment selects only p-EASI equation",
+  "eligibility": "Case set with observed EASI in [0,72] and all five nominal serum concentrations finite positive; no imputation, no healthy controls",
+  "prediction_scale": {
+    "primary": "All methods clipped to [0,72] identically",
+    "sensitivity": "Unbounded raw predictions for all methods"
+  },
+  "visits": [
+    0,
+    16
+  ],
+  "strata": {
+    "primary": [
+      "W0",
+      "W16"
+    ],
+    "severity": [
+      "EASI 0–7",
+      "EASI >7–21",
+      "EASI >21–72"
+    ],
+    "paired_change": "W16 minus W0 in same patients, computed after pairing; clipped endpoint differences primary, raw endpoint differences sensitivity"
+  },
+  "metrics": [
+    "MAE",
+    "RMSE",
+    "bias_prediction_minus_observed",
+    "Spearman",
+    "CCC",
+    "R2",
+    "within_1",
+    "within_2",
+    "calibration_intercept",
+    "calibration_slope"
+  ],
+  "confidence_intervals": {
+    "method": "Percentile patient bootstrap; each analysis row is one patient within visit or paired-change stratum; identical resamples used across models",
+    "replicates": 2000,
+    "seed": 20261101,
+    "confidence": 0.95,
+    "minimum_patients_for_interval": 5
+  },
+  "comparisons": "Patient-paired MAE difference (local molecular model minus p-EASI); negative favors local model, positive favors p-EASI; precise primary, rounded sensitivity",
+  "forbidden": [
+    "No fitting or tuning on OMIX EASI",
+    "No outcome-based recalibration",
+    "No BSA inference",
+    "No treating repeated visits as independent people",
+    "No choosing winner across models after viewing OMIX performance",
+    "No pooled correlation as principal result"
+  ],
+  "limitations": [
+    "OMIX002850 was already explored locally in September 2026; this is a retrospective transport benchmark, not untouched validation",
+    "Huashan source may overlap with local participants; unique participant independence not established",
+    "Nominal pg/mL does not establish assay equivalence; source CD25/IL2Ra used as soluble IL2R proxy pending assay bridge",
+    "No BSA available; this benchmark does not assess the selected BSA-three-marker model"
+  ],
+  "prediction_file_visibility": "Private audit export; not to be included in public repository or manuscript package without separate review",
+  "output_table_directory": "results/tables/external_validation_20261101",
+  "output_report_directory": "reports/external_validation_20261101"
+}

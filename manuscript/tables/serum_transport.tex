@@ -1,0 +1,20 @@
+{\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{25mm}p{37mm}rrrr}
+\caption{Unchanged serum equations applied to matched local and OMIX002850 samples.}\label{tab:serum_transport}\\
+\toprule Dataset / visit & Equation & n & MAE (95\% CI) & Spearman & CCC \\ \midrule\endfirsthead
+\multicolumn{6}{l}{\tablename~\thetable: continued}\\
+\toprule Dataset / visit & Equation & n & MAE (95\% CI) & Spearman & CCC \\ \midrule\endhead
+OMIX W0 & Local three-marker serum & 125 & 11.51 (9.87--13.28) & 0.127 & 0.075 \\
+OMIX W0 & Published p-EASI & 125 & 11.27 (9.75--12.90) & 0.140 & 0.128 \\
+OMIX W16 & Local three-marker serum & 60 & 6.92 (6.20--7.69) & 0.557 & 0.332 \\
+OMIX W16 & Published p-EASI & 60 & 3.89 (2.96--4.90) & 0.364 & 0.173 \\
+\addlinespace
+Local W0 & Local three-marker serum & 60 & 9.16 (7.42--11.11) & 0.455 & 0.334 \\
+Local W0 & Published p-EASI & 60 & 9.25 (7.41--11.24) & 0.462 & 0.394 \\
+Local W12 & Local three-marker serum & 12 & 10.42 (7.98--13.01) & 0.168 & 0.169 \\
+Local W12 & Published p-EASI & 12 & 3.84 (2.33--5.71) & 0.014 & 0.122 \\
+Local W24 & Local three-marker serum & 13 & 7.80 (4.36--11.57) & 0.154 & 0.062 \\
+Local W24 & Published p-EASI & 13 & 4.93 (3.48--6.51) & -0.082 & -0.073 \\
+\bottomrule\end{longtable}
+The serum-only model is a separately fitted CCL17/CCL26/IL-5 equation, not the hybrid E-EASI equation with BSA deleted. Local evaluations use held-out predictions and identical eligible records; published p-EASI is applied unchanged. OMIX estimates use the frozen serum equation without refitting; 125 pretreatment and 60 week-16 AD samples are available. Healthy controls are excluded. Both calculations are clipped to 0--72 here; raw outputs and the rounded 2020 p-EASI version are retained in source tables. OMIX lacks BSA, was previously inspected, and may share patients with the local source centre; participant nonoverlap and assay equivalence are unverified. This is a transport benchmark, not untouched independent validation of E-EASI. The local IL2RA assay is an unbridged proxy for published sIL-2R. The three-marker formula did not establish superiority over p-EASI.
+}

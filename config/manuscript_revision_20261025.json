@@ -1,16 +1,17 @@
 {
-  "version": "2026-10-25-deck-aligned",
+  "version": "2026-11-07-framework-and-fixed-patient-trajectories",
   "supplement_source_order": [
     39,
     40,
     3,
     4,
     21,
+    46,
     23,
     24,
     25,
     26,
-    18,
+    5,
     6,
     7,
     8,
@@ -18,7 +19,6 @@
     10,
     11,
     14,
-    19,
     44,
     45,
     38
@@ -38,6 +38,7 @@
         3,
         4,
         21,
+        46,
         23,
         24,
         25,
@@ -48,17 +49,16 @@
     {
       "title": "Serum changes and regional disease",
       "source_ids": [
-        18,
+        5,
         6,
         7,
         8,
         9,
         10,
         11,
-        14,
-        19
+        14
       ],
-      "description": "The complete 23-marker panel, paired treatment windows, clinical associations and regional burden."
+      "description": "All available-pair molecular windows, complete adjusted treatment contrasts, clinical associations and regional burden. Fixed three-visit courses are in main Figure 4; baseline concentrations are in Table S12."
     },
     {
       "title": "Individual EASI estimation and monitoring",

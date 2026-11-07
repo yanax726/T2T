@@ -1,6 +1,6 @@
-# Frozen EASI calculator
+# Frozen E-EASI calculator
 
-The authoritative parameter file is [unified_bsa_three_v1_20261017.json](../config/unified_bsa_three_v1_20261017.json), version `BSA-three-common-v1-20261017`. The calculator is [unified_bsa_three_calculator.py](../src/cytot2t/curation/unified_bsa_three_calculator.py).
+E-EASI means estimated EASI, the manuscript name for the existing hybrid BSA–serum estimator. The coefficients, input conventions and versioned calculator are unchanged. The authoritative parameter file is [unified_bsa_three_v1_20261017.json](../config/unified_bsa_three_v1_20261017.json), version `BSA-three-common-v1-20261017`. The calculator is [unified_bsa_three_calculator.py](../src/cytot2t/curation/unified_bsa_three_calculator.py).
 
 ## Equation
 
@@ -79,3 +79,11 @@ Each comparison uses identical eligible visits and patient splits, with model st
 MAE is the mean absolute difference from observed EASI, in EASI points, calculated within each repeat before averaging. [Paired comparisons](../results/tables/update_20261025/ablation/paired_comparisons.csv) include patient-bootstrap intervals; [all metrics](../results/tables/update_20261025/ablation/overall_metrics.csv) also report RMSE, bias, Spearman correlation, concordance and calibration. Adding itch improved follow-up accuracy relative to BSA plus three markers. The controls do not establish a consistent accuracy advantage from the three markers, or that all three are necessary. Their biological associations are distinct from evidence of predictive benefit. These comparisons were conducted after earlier results were known and have not undergone independent validation.
 
 A training-only reference-consistency sensitivity is reported in Supplementary Table S4 and [the aggregate directory](../results/tables/update_20261017/reference_sensitivity/). It repeats fitting within the original patient folds after excluding ten discrepant development visits. It does not change the frozen coefficients, adjudicate either clinical reference, or replace the primary performance estimates.
+
+## Molecular-only extension and formula transfer
+
+The [7 November comparison](../results/tables/update_20261107/model/manuscript_comparison.csv) tested ridge, nonlinear radial-basis learning with paired-change constraints, and ordinal-IGA-assisted reduced-rank learning. Patient folds and W0/W12 development boundaries were retained. IGA was a training outcome only, and the prediction inputs were serum measurements alone. The selected three-marker procedure gave W0/W12/W24 MAE of 7.50/7.21/7.80; the 19-marker procedure gave 7.41/7.26/8.49. These exploratory results did not yield an accurate blood-only clinical reader and did not replace E-EASI.
+
+The [OMIX benchmark](../results/tables/external_validation_20261101/) applied separate, previously fitted molecular-only formulas without refitting. At W0/W16 their three-marker MAE was 11.51/6.92, versus 11.27/3.89 for unchanged p-EASI on the same participants. Higher W16 correlation did not mean smaller absolute error. OMIX lacks BSA, was previously examined, has possible participant overlap and has no established assay bridge. It is a retrospective formula-transfer comparison, not independent validation of the frozen hybrid formula.
+
+Patients with unclassified initial dose can contribute to treatment-free model development. Treatment-group holdouts exclude them from both fitting and evaluation; this does not change the frozen formula or primary overall validation.

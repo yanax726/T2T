@@ -1,0 +1,17 @@
+cohort,model,alpha,family,gamma,pair_lambda,rank,outer_folds
+core,full19_selected,100,paired_rbf,0.25,0.0,0,4
+core,three_selected,100,paired_rbf,0.25,0.0,0,4
+core,three_selected,100,paired_rbf,0.25,0.3,0,4
+core,full19_selected,100,ordinal_rrr,0.0,0.0,1,3
+extended,full19_selected,10,paired_rbf,0.25,0.0,0,2
+extended,full19_selected,100,ordinal_rrr,0.0,0.0,1,2
+extended,full19_selected,100,paired_rbf,0.25,0.0,0,2
+core,full19_selected,1,paired_rbf,0.25,0.0,0,1
+core,full19_selected,10,paired_rbf,0.25,0.0,0,1
+core,full19_selected,100,paired_rbf,0.25,0.3,0,1
+core,three_selected,1,ordinal_rrr,0.0,0.0,2,1
+core,three_selected,10,paired_rbf,0.25,0.0,0,1
+extended,full19_selected,1,ordinal_rrr,0.0,0.0,1,1
+extended,full19_selected,1,paired_rbf,0.25,0.0,0,1
+extended,full19_selected,10,paired_rbf,0.25,0.3,0,1
+extended,full19_selected,100,ordinal_rrr,0.0,0.0,2,1

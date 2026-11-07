@@ -1,0 +1,87 @@
+{
+  "version": "2026-11-07-molecular-bounded-upgrade-v1",
+  "status": "Post-result exploratory amendment fixed before new fits; repeated cohort reuse disclosed",
+  "seed": 20261002,
+  "outer_repeats": 2,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "bootstrap_replicates": 2000,
+  "input_path": "results/tables/update_20261002/stage_refinement/input.csv",
+  "registry_path": "config/marker_registry.csv",
+  "development_weeks": [
+    0,
+    12
+  ],
+  "evaluation_weeks": [
+    0,
+    12,
+    24
+  ],
+  "core_panel": [
+    "log2_CCL17",
+    "log2_CCL26",
+    "log2_IL-5"
+  ],
+  "expanded_panel": "19 discovery_eligible markers in existing assay registry; four low-coverage/censored exploratory analytes not silently added",
+  "alpha": [
+    0.1,
+    1,
+    10,
+    100
+  ],
+  "rbf_gamma_factors": [
+    0.25,
+    1.0
+  ],
+  "pair_lambda": [
+    0,
+    0.3,
+    1.0,
+    3.0
+  ],
+  "nystroem_components": 32,
+  "rrr_ranks": [
+    1,
+    2
+  ],
+  "auxiliary_target_weight": "five IGA cumulative threshold indicators each scaled by sqrt(1/5) after training-only standardization, so auxiliary block has comparable total scale to EASI",
+  "candidate_families": [
+    "ridge",
+    "paired_rbf",
+    "ordinal_rrr"
+  ],
+  "selection": "Mean per-patient absolute EASI error in original-scale inner held-out predictions. Both panel-specific procedures select among the fixed families. Family-specific diagnostics retained; no outer or W24 selection.",
+  "paired_training_loss": "sum_i w_i (y_i-f(x_i))^2 + lambda*(n_train/n_pairs)*sum_p[(y_p12-y_p0)-(f(x_p12)-f(x_p0))]^2 + alpha*||beta||^2; w_i inverse patient visit count normalized to mean 1. Intercept is unpenalized. RBF Nystroem basis, medians and scaling fitted only in training.",
+  "ordinal_assisted_loss": "Weighted reduced-rank ridge predicts joint standardized EASI and IGA cumulative indicators; rank learned from training fitted-value singular vectors. Deployment uses blood features and EASI output only; recorded IGA 0-5 is auxiliary, not treated as a calibrated continuous response.",
+  "preprocessing": "log2 molecular values already stored; per-fold median imputation for other missing molecules; no missingness indicators, no extra outcome or treatment/time/center/history/BSA input; no value clipping other than final EASI 0-72 bounds",
+  "cohorts": {
+    "core": "All 316 previously frozen comparison visits, 160 patients, identical original folds. Same eligibility supports fair comparisons; BSA is not a predictor here.",
+    "extended_sensitivity": "Observed EASI and age>=12 molecular-linked W0/W12/W24 visits, no BSA or three-marker completeness requirement, at least 8 available QC19. Existing core patient folds unchanged; added patients assigned deterministic fold by SHA256 ID/repeat. Additional training/evaluation is reported separately."
+  },
+  "metrics": [
+    "MAE",
+    "RMSE",
+    "bias",
+    "rho",
+    "CCC",
+    "R2",
+    "calibration_intercept",
+    "calibration_slope",
+    "within1",
+    "within2"
+  ],
+  "strata": "Every visit separately; observed severity <=7, >7-21, >21 only for error diagnosis, never routing at prediction; treatment and centre descriptive",
+  "comparisons": "Paired patient bootstrap using common sampled IDs; score each repeat first. Differences exploratory, conditional on saved predictions and not adjusted for multiple candidates.",
+  "freeze_policy": "Do not replace current BSA-three-marker main formula from this search; all new candidates remain exploratory. No claim of optimal model or clinical interchangeability. W24 previously inspected and same cohort, not untouched external validation.",
+  "protected_sha256": {
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "results/tables/redevelopment/clinical.csv": "1c4727def26be5bdfffab55a348bfdb03be2ae957053bdba41762769b73539cf",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/update_20261017/model/predictions.csv": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+    "results/tables/update_20261025/ablation/predictions_private.csv": "427d4cfd1a6a83945b3807c59661c37f131a9e74806f81444b2a922e8a4ed6d4",
+    "config/marker_registry.csv": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501"
+  },
+  "output_path": "results/tables/update_20261107/model",
+  "report_path": "reports/update_20261107/model"
+}

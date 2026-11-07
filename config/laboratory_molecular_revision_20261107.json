@@ -1,0 +1,95 @@
+{
+  "version": "20261107-v3-joint-low-activity",
+  "date": "2026-11-07",
+  "status": "Design fixed before first numerical run; precision refinement added after observing a simulated q near 0.05, without changing cohorts, effects, hypotheses or test family",
+  "inputs": {
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+    "config/marker_registry.csv": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+    "results/tables/update_20261017/clinical/molecular_three_visit_paired.csv": "8a6f669ab5e5a3f7098f3d12f20693cf45d5767e9918046291ada86cbe0887d6",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501"
+  },
+  "clinical_population": "Existing age>=12 and resolved initial dose population (163 patients); no clinical or molecular source changes",
+  "seed": 20261107,
+  "bootstrap_replicates": 2000,
+  "eos": {
+    "target": "Dupilumab week-4 group median for explicitly defined observed endpoint cohorts, not individual clinical predictions or an observed point",
+    "primary": "Patient-specific log(1+EOS) linear-time interpolation between actual week 0 and week 12, then summarize the resulting group median",
+    "equation": "EOS4_i = expm1((2/3)*log1p(EOS0_i) + (1/3)*log1p(EOS12_i))",
+    "populations": [
+      "paired_W0_W12",
+      "complete_W0_W12_W24"
+    ],
+    "shape_sensitivities": [
+      "linear_original_scale",
+      "early_log_time_log1p",
+      "late_quadratic_time_log1p"
+    ],
+    "shape_weights_at_W4": {
+      "log1p_linear_time": 0.3333333333333333,
+      "linear_original_scale": 0.3333333333333333,
+      "early_log_time_log1p": "log(5)/log(13)",
+      "late_quadratic_time_log1p": 0.1111111111111111
+    },
+    "intervals": "Patient bootstrap percentile interval for the median conditional on endpoint-complete selection and chosen temporal shape; missing-cell/shape uncertainty not identified",
+    "backchecks": "Mask observed W4 among abrocitinib patients with W0/W4/W12; separately mask W12 among dupi complete W0/W12/W24. Neither validates unobserved dupi W4.",
+    "not_used_for": [
+      "clinical source records",
+      "treatment effect significance tests",
+      "EASI model validation",
+      "estimated causal efficacy"
+    ],
+    "limitation": "No dupilumab W4 observation exists. An early transient eosinophil rise cannot be recovered or excluded. Shape sensitivities are illustrative, not exhaustive."
+  },
+  "baseline_markers": {
+    "scale": "Actual numeric pg/mL export concentrations, without extra dilution multiplier",
+    "summaries": "median, Q1, Q3 with linear interpolation/type7 from participant-level values",
+    "eligibility": "W0 clinical eligible subjects; observed finite positive assay concentration only",
+    "censoring": "No replacement; all assay-state counts retained per analyte and treatment",
+    "table_rows": 23
+  },
+  "fixed_triplets": {
+    "population": "For each marker and initial treatment, identical participants have observed finite positive marker at all W0/W12/W24",
+    "value": "Mean of patient-specific log2 concentration differences vs own W0; W0 is reference zero",
+    "intervals": "Pointwise two-sided 95% Student-t CI for mean change, only n>=5",
+    "test": "Two-sided sign flip test of mean paired log2 change, exact for n<=15 otherwise 49,999 Monte Carlo sign vectors with plus-one correction",
+    "minimum_n_for_inference": 5,
+    "family": "23 markers x 3 initial treatments x 2 baseline contrasts = 138 planned hypotheses",
+    "adjustment": "One Benjamini-Hochberg family of size 138; non-estimable hypotheses assigned p=1 for family calculation and q left missing in displayed rows",
+    "stars": "q<0.05; no W0 test; not reused from prior variable-pair populations",
+    "interpretation": "Within-group paired changes; stars do not establish between-treatment differences",
+    "numerical_precision_refinement": "After initial BH calculation, refine Monte Carlo tests with provisional q in [0.04,0.06]: exact sign enumeration for n<=24 (using global-sign symmetry), otherwise 1,999,999 draws. Recompute the same BH family. Initial p/q values retained; no selection of an effect or test."
+  },
+  "outputs": "results/tables/update_20261107/labs",
+  "report": "reports/update_20261107/labs",
+  "joint_low_activity": {
+    "status": "Post hoc descriptive analysis requested 2026-11-07; thresholds fixed before calculating local counts",
+    "source_doi": "10.1001/jamadermatol.2026.0662",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/41984444/",
+    "source_verified_by": "framework_sources_20261107, original IEC abstract",
+    "weeks": [
+      0,
+      4,
+      12,
+      24
+    ],
+    "states": {
+      "LDA": {
+        "easi_max": 7,
+        "pp_nrs_max": 4
+      },
+      "vLDA": {
+        "easi_max": 3,
+        "pp_nrs_max": 1
+      }
+    },
+    "primary_denominator": "Both clinical components actually observed at the same visit; no rounding or imputation",
+    "interval": "Two-sided 95% Wilson score interval",
+    "full_population": "All 163 eligible initial-treatment patients, separately 65/56/42 by initial treatment; missing visits retained",
+    "three_valued_rule": "True only when both observed components pass; false if either observed component fails; otherwise unknown",
+    "bounds": "(known true)/N to (known true+unknown)/N, preserving observed component failures; not CIs",
+    "scope": "Single-visit EASI-and-itch states, not full AHEAD MDA, sustained control, or remission",
+    "additional_significance_tests": false
+  }
+}

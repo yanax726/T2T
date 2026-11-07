@@ -231,10 +231,10 @@ def clinical_composition(root):
 
 
 def run(root):
-    from .clinical_flow_20261025 import framework
+    from . import revision_20261107 as revised
     root=Path(root).resolve()
-    framework(root,base)
+    revised.framework(root,base)
     clinical_targets(root)
-    clinical_composition(root)
-    molecular_response(root)
+    revised.clinical_composition(root,base)
+    revised.molecular_response(root,base)
     model_performance(root)

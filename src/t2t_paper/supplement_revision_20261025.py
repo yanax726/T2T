@@ -11,7 +11,7 @@ from matplotlib.colors import Normalize
 from . import palette
 from . import supplement_redesign_20261018 as previous
 
-SOURCES = [3, 4, 6, 7, 8, 9, 10, 11, 14, 18, 19, 21, 23, 24, 25, 26, 38]
+SOURCES = [3, 4, 5, 6, 7, 8, 9, 10, 11, 14, 21, 23, 24, 25, 26, 38, 46]
 ARMS = previous.ARMS
 LABELS = previous.LABELS
 MARKERS = previous.MARKERS
@@ -51,6 +51,10 @@ def courses(root, base):
     adjusted = pd.read_csv(folder / 'clinical_trajectory_adjusted.csv')
     groups = [(3, ['bsa', 'scorad']), (4, ['ige_numeric', 'eo_count_numeric'])]
     for number, variables in groups:
+        if number == 4:
+            from .revision_20261107 import laboratories
+            laboratories(root, base, finish)
+            continue
         fig, axes = previous.grid(len(variables), 2, 151,
                                   left=.13, top=.90, bottom=.13,
                                   hspace=.72, wspace=.40)
@@ -108,7 +112,7 @@ def molecule_windows(root, base):
     folder = root / 'results/tables/update_20261017/clinical'
     source = folder / 'molecular_paired_changes.csv'
     data = pd.read_csv(source)
-    for number, start, end in [(6, 12, 24), (7, 0, 24)]:
+    for number, start, end in [(5, 0, 12), (6, 12, 24), (7, 0, 24)]:
         d = data[data.start.eq(start) & data.end.eq(end)]
         fig, axes = previous.grid(1, 3, 176, left=.16, top=.91, bottom=.12, wspace=.40)
         fig.subplots_adjust(right=.94)
@@ -132,12 +136,12 @@ def molecule_windows(root, base):
                'Each marker/treatment uses all available pairs for this interval; exact counts are in the source table. All 23 measured markers are retained. '
                'Hollow circles with n labels denote fewer than five pairs; these are descriptive and have no inferential interval or star. '
                'Unavailable estimates are blank. '
-               'Stars denote BH q<0.05 across the full 207 marker-by-treatment-by-window family, not a separate family for the displayed interval.',
+               'Stars denote BH q<0.05 across the 193 estimable tests among 207 planned marker-by-treatment-by-window comparisons, not a separate family for the displayed interval.',
                [source], root, base)
     source = folder / 'molecular_adjusted_contrasts.csv'
     data = pd.read_csv(source)
     for number, start, end in [(8, 0, 12), (9, 12, 24), (10, 0, 24)]:
-        comparisons = ['D - A100', 'D - A200'] if number == 8 else ['D - A100', 'D - A200', 'A200 - A100', 'D - pooled A']
+        comparisons = ['D - A100', 'D - A200', 'A200 - A100', 'D - pooled A']
         d = data[data.start.eq(start) & data.end.eq(end) & data.scope.eq('all_centers') & data.analysis.eq('primary')]
         fig, axes = previous.grid(1, len(comparisons), 176, left=.17, top=.90, bottom=.12, wspace=.30)
         bound = np.ceil(np.nanmax(np.abs(d[['ci_low', 'ci_high']].to_numpy())) * 2) / 2
@@ -159,7 +163,6 @@ def molecule_windows(root, base):
                'dupi denotes dupilumab; abro denotes abrocitinib, with 100/200 mg identifying initial dose. Pooled A retains the observed dose mixture. '
                'Stars denote the original BH q<0.05 family; no multiplicity family is recalculated after display selection. '
                'Blank positions have no estimable contrast. Complete counts, diagnostics, centre/batch sensitivities and tests remain in the source table. '
-               + ('The W0–W12 D-minus-pooled-A and A200-minus-A100 comparisons are in the main molecular figure. ' if number == 8 else '')
                + 'These are adjusted observational associations, not randomized current-dose effects.', [source], root, base)
 
 
@@ -341,8 +344,8 @@ def run(root, base=None):
     molecule_windows(root, base)
     selected_associations(root, base)
     regional_composite(root, base)
-    baseline_heatmap(root, base)
-    triplet_forests(root, base)
+    from .revision_20261107 import eos_sensitivity
+    eos_sensitivity(root, base, finish)
     ige_fixed(root, base)
     previous.treatment_contrasts(root, base)
     previous.monitoring_classification(root, base)

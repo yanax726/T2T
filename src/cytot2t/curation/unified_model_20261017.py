@@ -286,14 +286,17 @@ def published_comparator(data, prediction, cfg):
     return pd.DataFrame(rows), common
 
 
-def held_out_groups(data, cfg):
+def held_out_groups(data, cfg, dimensions=("center", "treatment")):
     predictions, audit = [], []
-    for dimension in ["center", "treatment"]:
+    for dimension in dimensions:
         eligible = data.loc[~data.dose_ambiguous.astype(bool)] if dimension == "treatment" else data
         for group in sorted(eligible[dimension].dropna().unique()):
             test = eligible[eligible[dimension].eq(group)]
             test_ids = set(test.patient_uid)
-            train = data.loc[~data.patient_uid.isin(test_ids) & data.visit_week.isin(cfg["development_weeks"])]
+            train = eligible.loc[~eligible.patient_uid.isin(test_ids) & eligible.visit_week.isin(cfg["development_weeks"])]
+            if dimension == "treatment":
+                assert not train.dose_ambiguous.astype(bool).any()
+                assert not test.dose_ambiguous.astype(bool).any()
             if train.patient_uid.nunique() < 20 or test.patient_uid.nunique() < 3:
                 continue
             fit, _ = select_model(train, cfg["unified_selector_candidates"], cfg)

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "ambiguous_patients_removed_from_treatment_training": 1,
+  "treatment_fit_count": 3,
+  "patient_overlap": 0,
+  "ambiguous_test_patients": 0,
+  "frozen_outputs_unchanged": true,
+  "centre_csv_rows_byte_identical": {
+    "predictions_private": 316,
+    "fit_audit": 2,
+    "metrics": 6
+  },
+  "treatment_evaluation_counts_unchanged": true,
+  "max_abs_treatment_MAE_change": 0.15972452217077215,
+  "before_hashes": {
+    "before": {
+      "src/cytot2t/curation/unified_model_20261017.py": "092478679baf1e3ac0332e0a3bad665f3a9084f63f091c42d9efec7d9e8a476a",
+      "results/tables/update_20261017/model/held_out_group_predictions_private.csv": "e8f187d60fd75dd61836ad0a6214623f3341e233e47b20cbe22634358407a6b5",
+      "results/tables/update_20261017/model/held_out_group_fit_audit.csv": "24264264556c9533524ba926d770e6a217b5d073db59b47f2eded5489b513b94",
+      "results/tables/update_20261017/model/held_out_group_metrics.csv": "df356cabc7ff41c51eac2948a46abe1dc8bfb76e3045728be0a6eb9792caf353"
+    },
+    "protected": {
+      "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+      "results/tables/update_20261017/model/predictions.csv": "ca9491aa470fad02a234c2f07b97eaed20691178cb0da637010cdb4c0c473ac1",
+      "results/tables/update_20261017/model/model_metrics.csv": "34925b24cb3a19e646ad822dc5569f480d6a617e0d484300e93e37aa470b0bd8",
+      "results/tables/update_20261017/model/paired_change_metrics.csv": "3e0be3499360bcba3a756d87809b1a49c99d4e13af7fb98ff32c4c4eb1ec9fd8",
+      "results/tables/update_20261017/model/improvement_classification.csv": "f1196a941bdcbc1ff28c9e2e9ce1fc3fcebabd6ce1263000c59332f4b3c6e224"
+    },
+    "archive_sha256": "4669c18e1da476721f64ba282cf298142ac1360815c4717304fe1e6ca368a065"
+  },
+  "after_sha256": {
+    "src/cytot2t/curation/unified_model_20261017.py": "05357a1e1bc6a6f2727ed2968147199a9940ea461fe743a248ce4a11b4835246",
+    "results/tables/update_20261017/model/held_out_group_predictions_private.csv": "1334cf3a1a3d6d2a0d89f1a6023e79fa13282a864005907993c030b01d65227d",
+    "results/tables/update_20261017/model/held_out_group_fit_audit.csv": "aa95a87cdd4fdc88903d3029d6fa78f9b83d2c71fe208fc19052924a2c9f7ac8",
+    "results/tables/update_20261017/model/held_out_group_metrics.csv": "20fffde5299ded5d4aadbf10ab6b404f4fa564bd883abb350d203ed826a5fd98"
+  },
+  "repair_source_sha256": "9c70206b16eb38e36ea96ce36e2d65ad065ab8ad153e99b62fdd9d7b530bc56e"
+}

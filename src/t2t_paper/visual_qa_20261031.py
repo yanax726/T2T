@@ -149,7 +149,7 @@ def run(root, output, figures=None, copies=True):
     thumbnails = []
     for figure_id in ids:
         png = source / f'{figure_id}.png'
-        colour_report = root / 'results/audit/update_20261017/figures' / f'{figure_id}.colour.json'
+        colour_report = root / 'results/audit/update_20261107/figures' / f'{figure_id}.colour.json'
         colours = json.loads(colour_report.read_text())
         rgb = image_rgb(png)
         row = {'id': figure_id, 'png_sha256': hashlib.sha256(png.read_bytes()).hexdigest(),

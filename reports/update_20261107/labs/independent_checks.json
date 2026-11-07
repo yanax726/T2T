@@ -1,0 +1,11 @@
+{
+  "manual_BH_max_difference": 2.498001805406602e-16,
+  "raw_baseline_cells_independently_reproduced": 69,
+  "raw_quantiles_pandas_describe_max_difference": 5.684341886080802e-14,
+  "primary_EOS_interpolation_independent_multiplicative_identity": true,
+  "all_outputs_aggregate_no_patient_identifiers": true,
+  "status": "PASS",
+  "exact_refinement_matches_independent_full_enumeration": true,
+  "two_near_threshold_tests_refined_exactly": true,
+  "significant_fixed_triplet_contrasts": 24
+}

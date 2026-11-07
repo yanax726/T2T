@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "no_refitting": true,
+  "inputs_unchanged": true,
+  "primary_formula_unchanged": true,
+  "matched_counts": {
+    "0": 60,
+    "12": 12,
+    "24": 13
+  },
+  "n_distinct_matched_patients": 68,
+  "repeat_scored_before_averaging": true,
+  "paired_patient_bootstrap": true,
+  "rounded_formula_reproduces_prior_run": true,
+  "serum_predictions_reproduce_prior_run": true,
+  "inputs": {
+    "config/local_paired_benchmark_20261101.json": "e177a28116aa11f9b1a7ed950b8b35077df902c43ead0c17dd5b2aeb0737edbd",
+    "results/tables/update_20261002/stage_refinement/input.csv": "3f577a55386094b9f7847d6fe854761cc90a06cb212fec0f6c5cade7339ad022",
+    "results/tables/update_20261025/ablation/predictions_private.csv": "427d4cfd1a6a83945b3807c59661c37f131a9e74806f81444b2a922e8a4ed6d4",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+    "results/tables/update_20261025/ablation/exploratory_formulas.json": "7545bfeb7de9a55953598e6a17f4ffe18b04fcf26820d5eb1e940f338c23b240"
+  },
+  "limits": "Local serum model was developed on this population; p-EASI is transferred across unbridged assays. Low IL22 availability restricts matched sample. W24 previously inspected within-cohort. This comparison cannot establish independent superiority or a wholly molecular explanation of hybrid performance."
+}

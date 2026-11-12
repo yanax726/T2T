@@ -47,6 +47,12 @@ case "$mode" in
     "$python_bin" -m t2t_paper.figures
     "$python_bin" -m t2t_paper.build --compile
     ;;
+  itch-update)
+    "$python_bin" -m t2t_paper.preflight
+    "$python_bin" -m cytot2t.curation.itch_prediction_20261112
+    "$python_bin" -m cytot2t.curation.verify_itch_prediction_20261112
+    "$python_bin" -m t2t_paper.build --compile
+    ;;
   manuscript)
     "$python_bin" -m t2t_paper.build --compile
     ;;
@@ -101,7 +107,7 @@ case "$mode" in
     "$python_bin" -m t2t_paper.build --compile
     ;;
   *)
-    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|update-analysis|lab-update|analyse]'
+    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|update-analysis|lab-update|itch-update|analyse]'
     exit 2
     ;;
 esac

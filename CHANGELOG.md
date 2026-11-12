@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026.11.12-rc3
+
+- Add an exploratory baseline three-marker comparison for measured week-12 itch improvement, with matched clinical controls and a predictor-imputation sensitivity.
+- Report repeated patient-held-out AUC, probability errors and uncertainty in Supplementary Table S18; distinguish these models from the frozen E-EASI equation.
+
 ## 2026.11.12-rc2
 
 - Identify complete-three-visit and all-available-pair molecular populations directly on figures and in their captions.

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "model_fits": 75,
+  "captured_warning_operations": 1248,
+  "warnings_captured": 3744,
+  "maximum_warning_safe_arithmetic_error": 3.552713678800501e-15,
+  "maximum_saved_prediction_replay_error": 1.1102230246251565e-16,
+  "maximum_objective_excess": 7.88460461698115e-07,
+  "maximum_probability_difference": 0.0010311268810726526,
+  "maximum_native_gradient_inf": 9.88842955026506e-05,
+  "maximum_independent_gradient_inf": 5.5083973812819487e-08,
+  "native_maximum_n_iter": 18,
+  "independent_successful_fits": 74,
+  "model_changed": false,
+  "regularization_grid_changed": false,
+  "features_changed": false,
+  "conclusion": "Warnings checked against bounded finite inputs, safe arithmetic and the same convex L2 objective; no efficacy-based tuning.",
+  "source_sha256": {
+    "results/tables/update_20261112/itch_prediction/restricted/complete_three_markers_cv_membership.csv": "98caf25e148f8c1f2f6baacf8bc69e1058e5134fd82144ab56f7f5fcf8bd05e6",
+    "results/tables/update_20261112/itch_prediction/restricted/complete_three_markers_oof.csv": "7b98932a6ebaa68f55e6b42399628499a00e435f92b18b8647f0acd320fae727"
+  },
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "numpy": "2.0.2",
+    "sklearn": "1.6.1",
+    "blas": "Apple Accelerate (np.show_config)"
+  },
+  "independent_optimizer_note": "One of 75 tight-tolerance independent solves reported a line-search termination near machine precision; its gradient infinity norm was 7.10e-10, objective excess of native fit 2.01e-10 per observation, and probability difference 1.12e-5. Status success is not treated as proof without gradient/objective checks.",
+  "warning_interpretation": "Observed warnings are consistent with spurious floating-point status flags from Accelerate/NumPy matmul: all captured inputs/results are finite and agree with non-BLAS einsum at numerical precision. This check does not identify the exact library-internal source of the flags."
+}

@@ -53,6 +53,8 @@ for figure in catalog:
                           current_export_triplet_exists=not assets))
 
 source_files=sorted({s for r in catalog for s in r['sources']})
+source_files += ['results/tables/update_20261112/itch_prediction/'+name+'.csv'
+                 for name in ['metrics','paired_differences','repeat_metrics','null_reference']]
 for source in source_files:
     if Path(source).suffix != '.csv':
         continue
@@ -206,6 +208,55 @@ record('S6 EOS sensitivity populations are 15 and seven patients',
 
 tex=(ROOT/'manuscript/main.tex').read_text()
 appendix=(ROOT/'manuscript/appendix.tex').read_text()
+itch_folder='results/tables/update_20261112/itch_prediction/'
+itch=csv(itch_folder+'metrics.csv')
+itch_repeats=csv(itch_folder+'repeat_metrics.csv')
+itch_table=(ROOT/'manuscript/tables/itch_prediction.tex').read_text()
+record('S18 uses three fixed matched input sets',
+       set(itch.model)=={'three_markers','clinical','clinical_three_markers'}
+       and itch.groupby(['population','evaluation']).model.nunique().eq(3).all(),
+       'Three serum markers, clinical reference and combined model')
+record('S18 populations and events match source counts',
+       itch[itch.population.eq('complete_three_markers')].n.eq(102).all()
+       and itch[itch.population.eq('complete_three_markers')].events.eq(88).all()
+       and itch[itch.population.ne('complete_three_markers')].n.eq(105).all()
+       and itch[itch.population.ne('complete_three_markers')].events.eq(89).all(),
+       '102/88/14 complete versus105/89/16 predictor-imputation sensitivity')
+itch_mean=itch[itch.evaluation.eq('mean_repetition')]
+itch_err=[]
+for metric in ['AUROC','AUPRC','Brier','log_loss','mean_prediction']:
+    a=itch_mean[itch_mean.metric.eq(metric)].set_index(['population','model']).estimate
+    b=itch_repeats.groupby(['population','model'])[metric].mean().reindex(a.index)
+    itch_err.extend(abs(a-b))
+record('S18 mean-repetition metrics reproduce stored repetitions',
+       max(itch_err)<1e-12,dict(maximum_absolute_error=float(max(itch_err))))
+record('S18 all AUROC values and intervals match table text',
+       all(f'{r.estimate:.3f} ({r.ci_low:.3f}--{r.ci_high:.3f})' in itch_table
+           for r in itch_mean[itch_mean.metric.eq('AUROC')].itertuples()),'Both populations; mean-repetition estimates displayed')
+record('S18 appears in current supplementary guide and methods',
+       'Tables S1--S18' in appendix and r'\label{tab:itch_prediction}' in itch_table
+       and r'\input{tables/itch_prediction}' in appendix
+       and 'Exploratory baseline prediction of W12 itch improvement' in appendix,
+       'Newly fitted prognostic models are separate from the frozen E-EASI equation')
+itch_delta=csv(itch_folder+'paired_differences.csv')
+matched_delta=itch_delta[itch_delta.population.eq('complete_three_markers')
+                       &itch_delta.evaluation.eq('mean_repetition')
+                       &itch_delta.model.eq('clinical_three_markers')]
+record('S18 paired AUROC difference matches primary estimates',
+       np.isclose(matched_delta[matched_delta.metric.eq('AUROC')].difference.iloc[0],
+           itch_mean[itch_mean.population.eq('complete_three_markers')
+                     &itch_mean.model.eq('clinical_three_markers')&itch_mean.metric.eq('AUROC')].estimate.iloc[0]
+           -itch_mean[itch_mean.population.eq('complete_three_markers')
+                      &itch_mean.model.eq('clinical')&itch_mean.metric.eq('AUROC')].estimate.iloc[0]),
+       'Combined minus matched clinical reference, not historical111-patient comparator')
+record('S18 retains uncertain molecular-increment conclusion',
+       (matched_delta[matched_delta.metric.isin(['AUROC','Brier'])].ci_low.lt(0)
+        &matched_delta[matched_delta.metric.isin(['AUROC','Brier'])].ci_high.gt(0)).all()
+       and 'did not establish molecular added predictive value' in itch_table,
+       'Both paired difference intervals include zero')
+record('S18 labels conditional intervals and predictor-only imputation',
+       'without refitting' in itch_table and 'response labels are never imputed' in itch_table,
+       'No imputed response truth or external-validation claim')
 record('Every current figure has a corresponding caption',
        all(('\\label{fig:'+r['id']+'}') in
            (tex+appendix) for r in catalog),

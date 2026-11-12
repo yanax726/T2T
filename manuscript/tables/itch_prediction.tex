@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Exploratory baseline prediction of week-12 itch improvement.}\label{tab:itch_prediction}
+\begin{tabular}{p{51mm}p{43mm}rr}\toprule
+Inputs & AUROC (95\% CI) & AUPRC & Brier score \\ \midrule
+\multicolumn{4}{l}{\textbf{Complete markers: 102 patients, 88 responders}} \\
+Three baseline markers & 0.630 (0.513--0.736) & 0.926 & 0.1181 \\
+Baseline clinical information & 0.697 (0.555--0.820) & 0.928 & 0.1163 \\
+Clinical + three markers & 0.723 (0.593--0.837) & 0.942 & 0.1163 \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Predictor-imputation sensitivity: 105 patients, 89 responders}} \\
+Three baseline markers & 0.599 (0.484--0.707) & 0.910 & 0.1305 \\
+Baseline clinical information & 0.734 (0.603--0.846) & 0.938 & 0.1231 \\
+Clinical + three markers & 0.753 (0.639--0.846) & 0.947 & 0.1213 \\
+\addlinespace
+\bottomrule\end{tabular}
+\par\small\raggedright Response required measured baseline PP-NRS at least 4 and a measured decrease of at least 4 points by W12. The three markers are CCL17, CCL26 and IL-5. These newly fitted prognostic logistic models are separate from E-EASI. All models use identical patients and splits within each population. This table scores each outer repetition before averaging. Metrics of averaged patient-held-out probabilities, matching the historical aggregation, are reported separately in the source tables. Conditional 95\% intervals use 2,000 paired patient resamples without refitting. The sensitivity includes three CCL26 results below the reporting limit, using training-fold median predictor imputation; response labels are never imputed. Response prevalence was 86.3\% and 84.8\%, respectively, providing the no-information precision reference for AUPRC. Training-fold event-rate prediction gave mean Brier scores of 0.1186 and 0.1294. Clinical inputs, preprocessing and nested model selection are specified in the Supplementary Methods.
+
+In the complete-marker analysis, the combined-minus-clinical mean-repetition AUROC difference was 0.026 (95\% CI, -0.021 to 0.074); the Brier difference was -0.00004 (-0.00474 to 0.00437). The data did not establish molecular added predictive value. Only 14 complete-marker patients were nonresponders. This is a post hoc internal exploratory analysis. Complete metrics, calibration and repetition-specific results are in the distributed itch-prediction source tables.
+\end{table}

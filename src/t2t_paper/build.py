@@ -250,7 +250,7 @@ def tables(root):
             raise ValueError('Patient-level record in review aggregate directory: '+str(p))
         rows.append({'section':'Definition and laboratory checks','file':str(p.relative_to(root)),
                      'rows':len(df),'columns':'; '.join(df.columns)})
-    for folder in ['update_20261107/labs', 'update_20261107/model', 'update_20261107/framework', 'external_validation_20261101', 'update_20261112/labs']:
+    for folder in ['update_20261107/labs', 'update_20261107/model', 'update_20261107/framework', 'external_validation_20261101', 'update_20261112/labs', 'update_20261112/itch_prediction']:
         for p in sorted((root/'results/tables'/folder).glob('*.csv')):
             if 'private' in p.name.lower():continue
             df=pd.read_csv(p)
@@ -319,7 +319,7 @@ Analysis code, versioned parameters, aggregate source tables and figure sources 
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S.\arabic{table}}
 \section*{Supplementary guide}
-The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S17 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity classification intervals, baseline serum concentrations, framework comparisons, molecular model extensions, transport benchmarks, single-visit low-activity states and all-available adjusted IgE changes. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
+The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S18 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity classification intervals, baseline serum concentrations, framework comparisons, molecular model extensions, transport benchmarks, single-visit low-activity states, all-available adjusted IgE changes and exploratory baseline prediction of week-12 itch improvement. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
 '''
     for title,ids,description in groups:
         app+='\\hyperref[fig:FigureS'+str(ids[0])+']{\\textbf{'+tex(title)+'}}. '+tex(description)+'\\par\n'
@@ -348,6 +348,7 @@ N is the endpoint-specific evaluable denominator. Unknown outcomes are excluded 
 \clearpage\input{tables/serum_transport}
 \clearpage\input{tables/joint_low_activity}
 \clearpage\input{tables/ige_all_available}
+\clearpage\input{tables/itch_prediction}
 \clearpage
 '''
     if (m/'sections/auxiliary_targets.tex').exists():app+=section_text(m/'sections/auxiliary_targets.tex')+'\n'

@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "version": "2026.11.12-rc2",
+  "version": "2026.11.12-rc3",
   "scope": "Independent public-only aggregate rebuild of all distributed scientific figures, tables, source CSVs and TeX PDFs. Office copies and their native structures are checked separately; their full rendered review is recorded in office_exports.json. No participant-level fitting is possible from this package.",
   "exit_code": 0,
   "command": "./run.sh test; ./run.sh rebuild",
@@ -8,30 +8,30 @@
     {
       "command": "./run.sh test",
       "exit_code": 0,
-      "elapsed_seconds": 12.101
+      "elapsed_seconds": 11.785
     },
     {
       "command": "./run.sh rebuild",
       "exit_code": 0,
-      "elapsed_seconds": 14.433
+      "elapsed_seconds": 14.188
     }
   ],
-  "manuscript_artifact_count": 167,
-  "aggregate_csv_count": 228,
+  "manuscript_artifact_count": 168,
+  "aggregate_csv_count": 238,
   "all_bytes_identical": true,
   "differences": [],
   "manuscript_artifacts": [
     {
       "path": "manuscript/appendix.pdf",
-      "package_sha256": "ef42f18360ca240a315c848a725f33afb602e38f458807e4a9ebafa8351d34ef",
-      "rebuilt_sha256": "ef42f18360ca240a315c848a725f33afb602e38f458807e4a9ebafa8351d34ef",
-      "workspace_sha256": "ef42f18360ca240a315c848a725f33afb602e38f458807e4a9ebafa8351d34ef"
+      "package_sha256": "09e078148a81d886def61a145e66672a661aa57aca9fbf0231947a66e055f675",
+      "rebuilt_sha256": "09e078148a81d886def61a145e66672a661aa57aca9fbf0231947a66e055f675",
+      "workspace_sha256": "09e078148a81d886def61a145e66672a661aa57aca9fbf0231947a66e055f675"
     },
     {
       "path": "manuscript/appendix.tex",
-      "package_sha256": "d9c3ab4b66c197dabf42599d85af6436b58ce90ffc15068c811547a20df5148f",
-      "rebuilt_sha256": "d9c3ab4b66c197dabf42599d85af6436b58ce90ffc15068c811547a20df5148f",
-      "workspace_sha256": "d9c3ab4b66c197dabf42599d85af6436b58ce90ffc15068c811547a20df5148f"
+      "package_sha256": "aaa10a44ad7cc6aca3db56ea1028a5c5eab64fa9dc0821564f0a92c66dcb63ca",
+      "rebuilt_sha256": "aaa10a44ad7cc6aca3db56ea1028a5c5eab64fa9dc0821564f0a92c66dcb63ca",
+      "workspace_sha256": "aaa10a44ad7cc6aca3db56ea1028a5c5eab64fa9dc0821564f0a92c66dcb63ca"
     },
     {
       "path": "manuscript/figure_book.pdf",
@@ -575,9 +575,9 @@
     },
     {
       "path": "manuscript/sections/supplementary_methods.tex",
-      "package_sha256": "b8c59ed01f14ebde28f2b026d20afae5e5031dcf335fc7f6666c1cecea04e71f",
-      "rebuilt_sha256": "b8c59ed01f14ebde28f2b026d20afae5e5031dcf335fc7f6666c1cecea04e71f",
-      "workspace_sha256": "b8c59ed01f14ebde28f2b026d20afae5e5031dcf335fc7f6666c1cecea04e71f"
+      "package_sha256": "b34f89e2f3eb492c89f224380097139f820153f115787da7d5acbc338e57fc2e",
+      "rebuilt_sha256": "b34f89e2f3eb492c89f224380097139f820153f115787da7d5acbc338e57fc2e",
+      "workspace_sha256": "b34f89e2f3eb492c89f224380097139f820153f115787da7d5acbc338e57fc2e"
     },
     {
       "path": "manuscript/source_data/W2_baseline_itch_sensitivity_balance.csv",
@@ -695,9 +695,9 @@
     },
     {
       "path": "manuscript/source_data/index.csv",
-      "package_sha256": "86cfe64f3a251ae4575360ea0da9eaf89681f0f6e2bcb8561d635c7494bc373a",
-      "rebuilt_sha256": "86cfe64f3a251ae4575360ea0da9eaf89681f0f6e2bcb8561d635c7494bc373a",
-      "workspace_sha256": "86cfe64f3a251ae4575360ea0da9eaf89681f0f6e2bcb8561d635c7494bc373a"
+      "package_sha256": "05c12de7e715b03f8aace90987dd3ada7d79f5b710372c0131d223cd4c9a206a",
+      "rebuilt_sha256": "05c12de7e715b03f8aace90987dd3ada7d79f5b710372c0131d223cd4c9a206a",
+      "workspace_sha256": "05c12de7e715b03f8aace90987dd3ada7d79f5b710372c0131d223cd4c9a206a"
     },
     {
       "path": "manuscript/source_data/model_agreement_bins.csv",
@@ -964,6 +964,12 @@
       "workspace_sha256": "83b3a7c5eba8449167551ac64fdca21eb681f4f44ec619c64af268c37301f9b2"
     },
     {
+      "path": "manuscript/tables/itch_prediction.tex",
+      "package_sha256": "1d754b6789a31cf1e43b98831973c74e3f8dafd533cf407fc5f14cea1225911c",
+      "rebuilt_sha256": "1d754b6789a31cf1e43b98831973c74e3f8dafd533cf407fc5f14cea1225911c",
+      "workspace_sha256": "1d754b6789a31cf1e43b98831973c74e3f8dafd533cf407fc5f14cea1225911c"
+    },
+    {
       "path": "manuscript/tables/joint_low_activity.tex",
       "package_sha256": "f63ea91d0ae7e664775d6cb08c2f8a84e12b00b5eba4204825c36cb588a249bd",
       "rebuilt_sha256": "f63ea91d0ae7e664775d6cb08c2f8a84e12b00b5eba4204825c36cb588a249bd",
@@ -1007,9 +1013,9 @@
     },
     {
       "path": "manuscript/tables/source_index.tex",
-      "package_sha256": "71a6a6308e2be3005963763b56325deb1857816725645fcc251d28a07f938b2f",
-      "rebuilt_sha256": "71a6a6308e2be3005963763b56325deb1857816725645fcc251d28a07f938b2f",
-      "workspace_sha256": "71a6a6308e2be3005963763b56325deb1857816725645fcc251d28a07f938b2f"
+      "package_sha256": "2b4a519efb7bba88acc4e37d668b4189de7695305ba596303dd0c390bfe238ff",
+      "rebuilt_sha256": "2b4a519efb7bba88acc4e37d668b4189de7695305ba596303dd0c390bfe238ff",
+      "workspace_sha256": "2b4a519efb7bba88acc4e37d668b4189de7695305ba596303dd0c390bfe238ff"
     },
     {
       "path": "manuscript/tables/table1.tex",
@@ -2340,6 +2346,66 @@
       "workspace_sha256": "1e197f3c0eb2c0a344bc450c45e5d999ad0def008e8e58c2e51d7d85c8764ba0"
     },
     {
+      "path": "results/tables/update_20261112/itch_prediction/available_serum_imputation_sensitivity_fit_summary.csv",
+      "package_sha256": "abb5ece7e7565e77e700d65da9fb142e4ae7b0cc5b5868970587c2d0c1a4ca97",
+      "rebuilt_sha256": "abb5ece7e7565e77e700d65da9fb142e4ae7b0cc5b5868970587c2d0c1a4ca97",
+      "workspace_sha256": "abb5ece7e7565e77e700d65da9fb142e4ae7b0cc5b5868970587c2d0c1a4ca97"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/available_serum_imputation_sensitivity_fold_coefficients.csv",
+      "package_sha256": "896162762d23289c12be4172f1c93e93c4ff4d7b5e4ac4fba846faeefb73609e",
+      "rebuilt_sha256": "896162762d23289c12be4172f1c93e93c4ff4d7b5e4ac4fba846faeefb73609e",
+      "workspace_sha256": "896162762d23289c12be4172f1c93e93c4ff4d7b5e4ac4fba846faeefb73609e"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/calibration.csv",
+      "package_sha256": "c48452e2054047524dc2d1cce88ada8ac370e848c202547eac85d52ba6b12f31",
+      "rebuilt_sha256": "c48452e2054047524dc2d1cce88ada8ac370e848c202547eac85d52ba6b12f31",
+      "workspace_sha256": "c48452e2054047524dc2d1cce88ada8ac370e848c202547eac85d52ba6b12f31"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/complete_three_markers_fit_summary.csv",
+      "package_sha256": "2eecea41e10b6b2801f4b2ec33903f24220bdb2b1494be7ec3496dab2842468a",
+      "rebuilt_sha256": "2eecea41e10b6b2801f4b2ec33903f24220bdb2b1494be7ec3496dab2842468a",
+      "workspace_sha256": "2eecea41e10b6b2801f4b2ec33903f24220bdb2b1494be7ec3496dab2842468a"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/complete_three_markers_fold_coefficients.csv",
+      "package_sha256": "27489859bc0967ac24647332c94c92416f95054e73291fa0e977958a484ef674",
+      "rebuilt_sha256": "27489859bc0967ac24647332c94c92416f95054e73291fa0e977958a484ef674",
+      "workspace_sha256": "27489859bc0967ac24647332c94c92416f95054e73291fa0e977958a484ef674"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/metrics.csv",
+      "package_sha256": "14bd2200b543561ef8ec17f14dd44f36804807e13e7418999e59d7ea924d3b6a",
+      "rebuilt_sha256": "14bd2200b543561ef8ec17f14dd44f36804807e13e7418999e59d7ea924d3b6a",
+      "workspace_sha256": "14bd2200b543561ef8ec17f14dd44f36804807e13e7418999e59d7ea924d3b6a"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/null_reference.csv",
+      "package_sha256": "c6cc2fe2dab8040085e89e2b2600f4e050b618627cb907ed4e8f3134928ef1d9",
+      "rebuilt_sha256": "c6cc2fe2dab8040085e89e2b2600f4e050b618627cb907ed4e8f3134928ef1d9",
+      "workspace_sha256": "c6cc2fe2dab8040085e89e2b2600f4e050b618627cb907ed4e8f3134928ef1d9"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/paired_differences.csv",
+      "package_sha256": "d97fb3242812049061cddebed9e76e154c17f8724c8bd10858cb5826c8557b59",
+      "rebuilt_sha256": "d97fb3242812049061cddebed9e76e154c17f8724c8bd10858cb5826c8557b59",
+      "workspace_sha256": "d97fb3242812049061cddebed9e76e154c17f8724c8bd10858cb5826c8557b59"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/repeat_metrics.csv",
+      "package_sha256": "e4af3656e8268955ead261839b52f3e4fede9b05052ca8ebd59e92cb1883c4b6",
+      "rebuilt_sha256": "e4af3656e8268955ead261839b52f3e4fede9b05052ca8ebd59e92cb1883c4b6",
+      "workspace_sha256": "e4af3656e8268955ead261839b52f3e4fede9b05052ca8ebd59e92cb1883c4b6"
+    },
+    {
+      "path": "results/tables/update_20261112/itch_prediction/roc_curves.csv",
+      "package_sha256": "3b87aa684bb93e16f435b16724c67e0fff9c6795fe54af31122c768bbe475a71",
+      "rebuilt_sha256": "3b87aa684bb93e16f435b16724c67e0fff9c6795fe54af31122c768bbe475a71",
+      "workspace_sha256": "3b87aa684bb93e16f435b16724c67e0fff9c6795fe54af31122c768bbe475a71"
+    },
+    {
       "path": "results/tables/update_20261112/labs/between_treatment_changes.csv",
       "package_sha256": "38fb7dcc84feceaa57573e9dc5d9c1471be326938328f6510bea03d2b6fcb463",
       "rebuilt_sha256": "38fb7dcc84feceaa57573e9dc5d9c1471be326938328f6510bea03d2b6fcb463",
@@ -2396,10 +2462,10 @@
   ],
   "office_structure": {
     "appendix.docx": {
-      "sha256": "cbbc422c593aaf5d7f3923ad6c6aad3da15a50610456031dced739a77364414b",
+      "sha256": "336a7118c307f59a182d2222a0c5f55be7c14d8dd031c84a67a92751d61511b5",
       "package_copy_identical": true,
-      "native_tables": 22,
-      "office_math_objects": 310
+      "native_tables": 23,
+      "office_math_objects": 315
     },
     "figure_deck.pptx": {
       "sha256": "d63d7a8d00e1f84d744ae6d7a725ecd6ed90da549316b3a945f27bf22f6e0345",
@@ -2416,5 +2482,5 @@
     "test": "reports/update_20261112/public_tests.log",
     "rebuild": "reports/update_20261112/public_rebuild.log"
   },
-  "elapsed_seconds": 26.771
+  "elapsed_seconds": 26.215
 }

@@ -72,6 +72,8 @@ results/tables/update_20261112/labs/longitudinal_changes.csv ordered ratio_low/r
 results/tables/update_20261112/labs/longitudinal_levels.csv ordered ci_low/ci_high,True,72
 results/tables/update_20261112/labs/longitudinal_levels.csv ordered log_ci_low/log_ci_high,True,72
 results/tables/update_20261112/labs/longitudinal_levels.csv ordered ratio_low/ratio_high,True,72
+results/tables/update_20261112/itch_prediction/metrics.csv ordered ci_low/ci_high,True,60
+results/tables/update_20261112/itch_prediction/paired_differences.csv ordered ci_low/ci_high,True,40
 Figure2 rates reproduce counts,True,204
 Figure2 Wilson intervals reproduce,True,204
 Figure2 endpoint missingness arithmetic,True,204
@@ -112,6 +114,14 @@ Figure5 a-c use identical comparison cohort sizes,True,Ablation 151/89/75 differ
 Primary and monitoring population distinction,True,Individual prediction n differs from paired baseline/follow-up monitoring n
 Old fixed IgE subset contains 30 patients,True,Main text contrasts 30 complete-triplet patients with all-available model 147; not interchangeable
 S6 EOS sensitivity populations are 15 and seven patients,True,S6 median interpolation differs from S4 all-available adjusted mean interpolation
+S18 uses three fixed matched input sets,True,"Three serum markers, clinical reference and combined model"
+S18 populations and events match source counts,True,102/88/14 complete versus105/89/16 predictor-imputation sensitivity
+S18 mean-repetition metrics reproduce stored repetitions,True,{'maximum_absolute_error': 2.220446049250313e-16}
+S18 all AUROC values and intervals match table text,True,Both populations; mean-repetition estimates displayed
+S18 appears in current supplementary guide and methods,True,Newly fitted prognostic models are separate from the frozen E-EASI equation
+S18 paired AUROC difference matches primary estimates,True,"Combined minus matched clinical reference, not historical111-patient comparator"
+S18 retains uncertain molecular-increment conclusion,True,Both paired difference intervals include zero
+S18 labels conditional intervals and predictor-only imputation,True,No imputed response truth or external-validation claim
 Every current figure has a corresponding caption,True,Five main captions and 21 supplementary captions
 Main text and Figure4 caption state complete-three-visit population,True,Three-visit population and all-available-pair families distinguished
 FigureS11 caption says third visit not required,True,"Interval-specific paired data, not main complete-triplet subset"

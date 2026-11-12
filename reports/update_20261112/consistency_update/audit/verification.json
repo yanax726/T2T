@@ -1,10 +1,10 @@
 {
   "status": "PASS",
-  "numerical_checks": 130,
-  "passed": 130,
+  "numerical_checks": 140,
+  "passed": 140,
   "failed": [],
   "figures": 26,
-  "source_files": 41,
+  "source_files": 45,
   "stale_current_directory_candidates": [],
   "boundary": "Read-only aggregate and reporting consistency audit; no new model fitting or drug-effect identification."
 }

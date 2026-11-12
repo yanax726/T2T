@@ -41,6 +41,7 @@ BASE_FILES = [
     'config/laboratory_molecular_revision_20261107.json',
     'config/molecular_upgrade_20261107.json',
     'config/lab_display_20261112.json',
+    'config/itch_prediction_20261112.json',
     'config/external_molecular_benchmark_20261101.json',
     'config/local_paired_benchmark_20261101.json',
     'config/ige_missingness_20261025.json', 'config/model_ablation_20261025.json',
@@ -63,6 +64,7 @@ ANALYSIS_MODULES = [
     'manuscript_audit_20261031', 'iga_definition_sensitivity_20261031',
     'laboratory_molecular_revision_20261107', 'molecular_upgrade_20261107', 'repair_treatment_holdout_20261107',
     'lab_display_20261112',
+    'itch_prediction_20261112', 'itch_cohort_audit_20261112', 'verify_itch_prediction_20261112',
     'external_molecular_benchmark_20261101', 'local_paired_benchmark_20261101',
 ]
 PAPER_MODULES = [
@@ -80,6 +82,12 @@ PAPER_MODULES = [
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/update_20261112/itch_prediction/verification.json',
+    'reports/update_20261112/itch_prediction/cohort_audit/verification.json',
+    'reports/update_20261112/itch_prediction/independent_prediction_audit/verification.json',
+    'reports/update_20261112/itch_prediction/independent_prediction_audit/metric_replay.csv',
+    'reports/update_20261112/itch_prediction/independent_prediction_audit/paired_bootstrap_replay.csv',
+    'reports/update_20261112/itch_prediction/method_audit/numerical_warning_diagnostic.json',
     'reports/update_20261112/consistency_update/audit/verification.json',
     'reports/update_20261112/consistency_update/audit/numerical_checks.csv',
     'reports/update_20261112/consistency_update/audit/figure_source_inventory.csv',
@@ -283,7 +291,7 @@ def collect_files():
         selected.add(str(path.relative_to(ROOT)))
 
     # Publish aggregate CSVs only; never follow report folders or private outputs.
-    for folder in ['update_20261107', 'external_validation_20261101', 'update_20261112/labs']:
+    for folder in ['update_20261107', 'external_validation_20261101', 'update_20261112/labs', 'update_20261112/itch_prediction']:
         for path in sorted((ROOT / 'results/tables' / folder).rglob('*.csv')):
             relative = str(path.relative_to(ROOT))
             if safe_csv(path):

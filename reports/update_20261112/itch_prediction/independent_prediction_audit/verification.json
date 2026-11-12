@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "model_fits_checked": 150,
+  "inner_partitions_checked": 450,
+  "patient_train_test_crossing": 0,
+  "outer_split_reproduction": true,
+  "paired_models_use_identical_patient_splits": true,
+  "metrics_replayed": [
+    "AUROC",
+    "AUPRC",
+    "Brier"
+  ],
+  "evaluations_replayed": [
+    "single_repetition",
+    "mean_repetition",
+    "averaged_patient_probability"
+  ],
+  "population_counts": {
+    "complete_three_markers": {
+      "n": 102,
+      "responders": 88,
+      "nonresponders": 14
+    },
+    "available_serum_imputation_sensitivity": {
+      "n": 105,
+      "responders": 89,
+      "nonresponders": 16
+    }
+  },
+  "bootstrap_iterations": 2000,
+  "bootstrap_replayed": [
+    "AUROC and Brier intervals for all three models and both evaluations",
+    "Combined-minus-clinical and molecular-only-minus-clinical AUROC/Brier intervals"
+  ],
+  "independent_bootstrap_method": "Positive-negative pairwise concordance weighted by patient resample multiplicities; direct weighted Brier losses",
+  "maximum_point_metric_error": 1.1102230246251565e-16,
+  "maximum_interval_replay_error": 1.0061396160665481e-16,
+  "baseline_only_predictor_columns": true,
+  "prediction_input_target_or_future_column": false,
+  "adolescent_DLQI_mask_verified": true,
+  "preprocessing_boundary": "Pipeline imputer/scaler and ColumnTransformer are passed inside inner GridSearchCV; outer test values used only in predict_proba",
+  "no_new_fitting": true,
+  "input_values_modified": false,
+  "participant_rows_exported": false,
+  "source_sha256": {
+    "config/itch_prediction_20261112.json": "8c28ae3d84d5b4f006b7c2d84429d91a425a91cd28dc44c0b9e66f04042ff38b",
+    "results/tables/update_20261112/itch_prediction/metrics.csv": "14bd2200b543561ef8ec17f14dd44f36804807e13e7418999e59d7ea924d3b6a",
+    "results/tables/update_20261112/itch_prediction/paired_differences.csv": "d97fb3242812049061cddebed9e76e154c17f8724c8bd10858cb5826c8557b59",
+    "results/tables/update_20261112/itch_prediction/repeat_metrics.csv": "e4af3656e8268955ead261839b52f3e4fede9b05052ca8ebd59e92cb1883c4b6",
+    "src/cytot2t/curation/itch_prediction_20261112.py": "f74aa25e9e3446063f993b92b48791d37efefb616243983485ede82e04f2608f",
+    "results/tables/update_20261112/itch_prediction/restricted/complete_three_markers_oof.csv": "7b98932a6ebaa68f55e6b42399628499a00e435f92b18b8647f0acd320fae727",
+    "results/tables/update_20261112/itch_prediction/restricted/complete_three_markers_cv_membership.csv": "98caf25e148f8c1f2f6baacf8bc69e1058e5134fd82144ab56f7f5fcf8bd05e6",
+    "results/tables/update_20261112/itch_prediction/restricted/available_serum_imputation_sensitivity_oof.csv": "b67b097feb5e12b58d8853ee9540c09485abc29a1899ed22f7783cafadefa00d",
+    "results/tables/update_20261112/itch_prediction/restricted/available_serum_imputation_sensitivity_cv_membership.csv": "04d9cf3a26aaef288effd43b9a3640434267634275e1fb80cf9eb79ddb761492"
+  }
+}

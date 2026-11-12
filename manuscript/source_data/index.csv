@@ -227,4 +227,14 @@ labs,results/tables/update_20261112/labs/model_fit_diagnostics.csv,6,outcome; sc
 labs,results/tables/update_20261112/labs/observation_patterns.csv,54,outcome; centre; treatment; n_observed_visits; n_patients; eligible_visits
 labs,results/tables/update_20261112/labs/prior_model_reproduction.csv,2,scope; n; max_absolute_log_change_difference; max_absolute_standard_error_difference
 labs,results/tables/update_20261112/labs/time_shape_sensitivity.csv,36,outcome; scope; model; n_initial; n_patients; n_observations; treatment; week; kind; time_shape; fraction; n_observed_cell; log_estimate; log_ci_low; log_ci_high; standard_error; estimate; ci_low; ci_high; ratio; ratio_low; ratio_high
+itch_prediction,results/tables/update_20261112/itch_prediction/available_serum_imputation_sensitivity_fit_summary.csv,75,population; model; repeat; fold; train_n; test_n; train_events; test_events; C; solver_iterations
+itch_prediction,results/tables/update_20261112/itch_prediction/available_serum_imputation_sensitivity_fold_coefficients.csv,800,population; model; repeat; fold; feature; standardized_coefficient
+itch_prediction,results/tables/update_20261112/itch_prediction/calibration.csv,30,population; model; repeat; observed_rate; predicted_rate; calibration_in_large; calibration_slope; status; warning_count
+itch_prediction,results/tables/update_20261112/itch_prediction/complete_three_markers_fit_summary.csv,75,population; model; repeat; fold; train_n; test_n; train_events; test_events; C; solver_iterations
+itch_prediction,results/tables/update_20261112/itch_prediction/complete_three_markers_fold_coefficients.csv,800,population; model; repeat; fold; feature; standardized_coefficient
+itch_prediction,results/tables/update_20261112/itch_prediction/metrics.csv,60,population; evaluation; model; metric; estimate; ci_low; ci_high; n; events; nonevents; event_rate
+itch_prediction,results/tables/update_20261112/itch_prediction/null_reference.csv,10,population; repeat; n; events; Brier; log_loss; prevalence_AUPRC_reference
+itch_prediction,results/tables/update_20261112/itch_prediction/paired_differences.csv,40,population; evaluation; model; reference; metric; difference; ci_low; ci_high; n; events
+itch_prediction,results/tables/update_20261112/itch_prediction/repeat_metrics.csv,30,population; model; repeat; n; events; AUROC; AUPRC; Brier; log_loss; mean_prediction
+itch_prediction,results/tables/update_20261112/itch_prediction/roc_curves.csv,3030,population; model; repeat; FPR; TPR
 Safety documentation,manuscript/source_data/safety_documentation_windows.csv,3,treatment; n_initial; n_with_note_through24; n_without_note_through24; n_with_note_all_followup; n_note_records_through24; adjudicated_event_incidence_available

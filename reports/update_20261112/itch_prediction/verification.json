@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "primary_n": 102,
+  "primary_events": 88,
+  "primary_nonevents": 14,
+  "sensitivity_n": 105,
+  "sensitivity_events": 89,
+  "candidates": [
+    "three_markers",
+    "clinical",
+    "clinical_three_markers"
+  ],
+  "outer_repetitions": 5,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "fit_patient_crossing": 0,
+  "baseline_only_inputs": true,
+  "imputed_response_values": 0,
+  "source_values_changed": false,
+  "model_and_preprocessing_refit_in_training_folds": true,
+  "primary_evaluation": "mean_repetition",
+  "historical_comparable_evaluation": "averaged_patient_probability",
+  "bootstrap": "2000 paired patient resamples of saved cross-validated predictions, conditional only",
+  "input_sha256": {
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+    "config/itch_prediction_20261112.json": "8c28ae3d84d5b4f006b7c2d84429d91a425a91cd28dc44c0b9e66f04042ff38b"
+  },
+  "package_boundary": "Patient predictions and split membership stay under restricted/"
+}

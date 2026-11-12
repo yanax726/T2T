@@ -1,0 +1,57 @@
+{
+  "version": "2026-11-12-fixed-three-marker-itch-prognosis",
+  "status": "post-result exploratory extension; not a prospectively registered study",
+  "target": "W0 PP-NRS >=4 and measured W12 PP-NRS at least4 points lower than measured W0",
+  "clinical_eligibility": "Current age>=12, unambiguous initial dose, same163-patient clinical comparison population",
+  "sources": [
+    "results/tables/update_20260925/clinical.csv",
+    "results/tables/redevelopment/molecular.csv",
+    "results/tables/redevelopment/assay_long.csv"
+  ],
+  "markers": [
+    "log2_CCL17",
+    "log2_CCL26",
+    "log2_IL-5"
+  ],
+  "clinical_inputs": [
+    "age",
+    "sex_male",
+    "bmi",
+    "center",
+    "treatment",
+    "easi_total",
+    "pp_nrs",
+    "iga",
+    "bsa",
+    "dlqi"
+  ],
+  "adolescent_DLQI": "Unavailable for ages<18; training-fold median predictor imputation only, no response imputation",
+  "candidates": [
+    "three_markers",
+    "clinical",
+    "clinical_three_markers"
+  ],
+  "primary_population": "Both observed PP-NRS measurements, baseline >=4 and all three baseline serum readings finite",
+  "sensitivity_population": "At least one observed baseline marker; training-fold median replaces missing predictor concentrations; no missingness flag; does not create observed blood measurements",
+  "no_blood_samples": "Not predicted by serum model; retained in clinical eligibility accounting only",
+  "seed": 20240801,
+  "outer_repeats": 5,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "logistic_C": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "tuning_score": "neg_log_loss",
+  "class_weight": null,
+  "bootstrap_iterations": 2000,
+  "primary_evaluation": "Mean of separately scored outer-repetition OOF metrics",
+  "historical_comparison_evaluation": "Metrics of repeat-averaged patient probabilities, reported separately",
+  "bootstrap_scope": "Paired patient resamples retaining every saved repetition, conditional on fitted OOF predictions; not a full model-development interval",
+  "reference": "Clinical model; paired combined-minus-clinical AUROC and Brier",
+  "null_model": "Each outer training-fold event rate, evaluated on its held-out patients",
+  "model_scope": "Baseline-only prospective prediction of binary itch improvement, distinct from contemporaneous E-EASI frozen equation",
+  "selection_boundary": "Three-panel composition fixed from earlier same-cohort exploration; no independent validation or universal clinical AUC threshold",
+  "publication_rule": "Report all three comparisons together. If serum-only AUC lower conditional95%bound>.5 it may be described as exploratory discrimination. Claim incremental value only with paired delta AUC lower bound>0 and no probability-error deterioration. Sparse nonresponse and post hoc design must remain explicit."
+}

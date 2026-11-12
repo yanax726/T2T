@@ -1,14 +1,14 @@
 {
   "status": "PASS",
-  "version": "2026.11.12-rc2",
-  "word_native_tables": 22,
-  "numbered_supplementary_tables": 17,
+  "version": "2026.11.12-rc3",
+  "word_native_tables": 23,
+  "numbered_supplementary_tables": 18,
   "word_tables_rasterized": 0,
   "word_table_text_unchanged": true,
-  "word_table_group_labels_preserved": 13,
+  "word_table_group_labels_preserved": 15,
   "word_editable_formula_alignment_tokens_removed": 2,
   "word_no_empty_superscript_base": true,
-  "word_render_pages": 61,
+  "word_render_pages": 63,
   "deck_slides": 26,
   "deck_render_pages": 26,
   "exact_source_image_bytes": true,
@@ -16,31 +16,238 @@
   "speaker_note_count": 26,
   "current_captions_and_sources_per_slide": true,
   "sources_unchanged": true,
-  "visual_review": "All 61 Word pages and all 26 deck pages visually reviewed. Final Word pages 40 and 44 were re-reviewed after the last correction; remaining 59 pages and all 26 deck pages have pixel-identical PNG hashes to the reviewed versions. Chinese selection document also rendered and reviewed on all 3 pages.",
+  "visual_review": "The 12 new or changed Word pages (1, 2, 3, 11, 12, 33\u201339) were visually inspected at full size. The other 51 pages have pixel-identical bodies to rc2 pages already reviewed, masking only the centred page-number area. All 63 pages were rendered in a fresh directory. All 3 Chinese selection pages are pixel-identical to reviewed rc2 renders. The unchanged 26-page deck retains its rc2 visual review; it was not rebuilt or presented as newly changed.",
   "render_difference": {
-    "word_render": {
-      "pages": 61,
-      "changed_pages": [
-        40,
-        44
-      ],
-      "stale_generated_previews_removed": [
-        "page-62.png"
-      ]
-    },
-    "deck_pages": {
-      "pages": 26,
-      "changed_pages": [],
-      "stale_generated_previews_removed": []
-    }
+    "word_render_pages": 63,
+    "rc2_body_identical_pages": [
+      {
+        "new_page": 4,
+        "rc2_reviewed_page": 4
+      },
+      {
+        "new_page": 5,
+        "rc2_reviewed_page": 5
+      },
+      {
+        "new_page": 6,
+        "rc2_reviewed_page": 6
+      },
+      {
+        "new_page": 7,
+        "rc2_reviewed_page": 7
+      },
+      {
+        "new_page": 8,
+        "rc2_reviewed_page": 8
+      },
+      {
+        "new_page": 9,
+        "rc2_reviewed_page": 9
+      },
+      {
+        "new_page": 10,
+        "rc2_reviewed_page": 10
+      },
+      {
+        "new_page": 13,
+        "rc2_reviewed_page": 12
+      },
+      {
+        "new_page": 14,
+        "rc2_reviewed_page": 13
+      },
+      {
+        "new_page": 15,
+        "rc2_reviewed_page": 14
+      },
+      {
+        "new_page": 16,
+        "rc2_reviewed_page": 15
+      },
+      {
+        "new_page": 17,
+        "rc2_reviewed_page": 16
+      },
+      {
+        "new_page": 18,
+        "rc2_reviewed_page": 17
+      },
+      {
+        "new_page": 19,
+        "rc2_reviewed_page": 18
+      },
+      {
+        "new_page": 20,
+        "rc2_reviewed_page": 19
+      },
+      {
+        "new_page": 21,
+        "rc2_reviewed_page": 20
+      },
+      {
+        "new_page": 22,
+        "rc2_reviewed_page": 21
+      },
+      {
+        "new_page": 23,
+        "rc2_reviewed_page": 22
+      },
+      {
+        "new_page": 24,
+        "rc2_reviewed_page": 23
+      },
+      {
+        "new_page": 25,
+        "rc2_reviewed_page": 24
+      },
+      {
+        "new_page": 26,
+        "rc2_reviewed_page": 25
+      },
+      {
+        "new_page": 27,
+        "rc2_reviewed_page": 26
+      },
+      {
+        "new_page": 28,
+        "rc2_reviewed_page": 27
+      },
+      {
+        "new_page": 29,
+        "rc2_reviewed_page": 28
+      },
+      {
+        "new_page": 30,
+        "rc2_reviewed_page": 29
+      },
+      {
+        "new_page": 31,
+        "rc2_reviewed_page": 30
+      },
+      {
+        "new_page": 32,
+        "rc2_reviewed_page": 31
+      },
+      {
+        "new_page": 40,
+        "rc2_reviewed_page": 38
+      },
+      {
+        "new_page": 41,
+        "rc2_reviewed_page": 39
+      },
+      {
+        "new_page": 42,
+        "rc2_reviewed_page": 40
+      },
+      {
+        "new_page": 43,
+        "rc2_reviewed_page": 41
+      },
+      {
+        "new_page": 44,
+        "rc2_reviewed_page": 42
+      },
+      {
+        "new_page": 45,
+        "rc2_reviewed_page": 43
+      },
+      {
+        "new_page": 46,
+        "rc2_reviewed_page": 44
+      },
+      {
+        "new_page": 47,
+        "rc2_reviewed_page": 45
+      },
+      {
+        "new_page": 48,
+        "rc2_reviewed_page": 46
+      },
+      {
+        "new_page": 49,
+        "rc2_reviewed_page": 47
+      },
+      {
+        "new_page": 50,
+        "rc2_reviewed_page": 48
+      },
+      {
+        "new_page": 51,
+        "rc2_reviewed_page": 49
+      },
+      {
+        "new_page": 52,
+        "rc2_reviewed_page": 50
+      },
+      {
+        "new_page": 53,
+        "rc2_reviewed_page": 51
+      },
+      {
+        "new_page": 54,
+        "rc2_reviewed_page": 52
+      },
+      {
+        "new_page": 55,
+        "rc2_reviewed_page": 53
+      },
+      {
+        "new_page": 56,
+        "rc2_reviewed_page": 54
+      },
+      {
+        "new_page": 57,
+        "rc2_reviewed_page": 55
+      },
+      {
+        "new_page": 58,
+        "rc2_reviewed_page": 56
+      },
+      {
+        "new_page": 59,
+        "rc2_reviewed_page": 57
+      },
+      {
+        "new_page": 60,
+        "rc2_reviewed_page": 58
+      },
+      {
+        "new_page": 61,
+        "rc2_reviewed_page": 59
+      },
+      {
+        "new_page": 62,
+        "rc2_reviewed_page": 60
+      },
+      {
+        "new_page": 63,
+        "rc2_reviewed_page": 61
+      }
+    ],
+    "pages_requiring_full_review": [
+      1,
+      2,
+      3,
+      11,
+      12,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "masked_area": "Only centred bottom page-number rectangle; x45-55%, y93.5-100% portrait or 91-100% landscape"
   },
   "outputs_sha256": {
-    "manuscript/appendix.docx": "cbbc422c593aaf5d7f3923ad6c6aad3da15a50610456031dced739a77364414b",
+    "manuscript/appendix.docx": "336a7118c307f59a182d2222a0c5f55be7c14d8dd031c84a67a92751d61511b5",
     "manuscript/figure_deck.pdf": "891ede768796ce3672cef2bd4f217febe6e7de30a2a35a49ba2e0c337eede00d",
     "manuscript/figure_deck.pptx": "d63d7a8d00e1f84d744ae6d7a725ecd6ed90da549316b3a945f27bf22f6e0345",
-    "manuscript/three_marker_selection.docx": "1a6415e94cdced73c07d2cbc674a5c5a63c2ea31da4ab561bf8399af592076b0"
+    "manuscript/three_marker_selection.docx": "889c7f69619975d262b85ce2193a88733a66fb4dc349cbf2febd0e4628532615"
   },
-  "export_receipt": "reports/update_20261112/consistency_update/exports/export_verification.json",
+  "export_receipt": "reports/update_20261112/itch_prediction/exports/export_verification.json",
   "deck_slides_verified": [
     {
       "slide": 1,
@@ -199,5 +406,23 @@
       "current_caption_and_sources": true
     }
   ],
-  "scope": "Office layout, image identities, captions and source preservation. No model refitting or new scientific inference."
+  "scope": "Only the Word appendix was updated for Table S18 and Supplementary Methods. The 26 figures, deck PPTX/PDF, frozen E-EASI formula and scientific source data were not changed by this export task.",
+  "previous_deck_review_receipt": "reports/update_20261112/consistency_update/exports/office_exports.json",
+  "deck_validation": {
+    "review_version": "2026.11.12-rc2",
+    "rebuilt_this_round": false,
+    "both_files_byte_identical_to_rc2": true,
+    "all_26_source_images_and_catalogue_byte_identical_to_rc2": true,
+    "slides": 26
+  },
+  "word_new_content": {
+    "table": "S18",
+    "word_page": 39,
+    "six_prediction_rows_verified": true,
+    "supplementary_methods_word_pages": [
+      11,
+      12
+    ]
+  },
+  "previous_22_native_tables_byte_text_identical": true
 }

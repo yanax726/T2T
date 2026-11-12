@@ -1,0 +1,2846 @@
+{
+  "palette_version": "palette-v7-fixed-semantic-roles-20261107",
+  "figures": [
+    {
+      "id": "Figure1",
+      "png_sha256": "3a39e9de4819cccfb99385b3692edda93505ba2781a32692ac6e8d7b8116cf8e",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {},
+      "roles": {},
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [],
+      "source_rgb_shape": [
+        2102,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1682964,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4542422,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1679107,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1679107,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "Figure2",
+      "png_sha256": "d0088928b0d5704d674f46c4266e7987ca0979a5e514f82a8137ea7ab687cc96",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2539,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 311485,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 5486779,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 307750,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 307750,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "Figure3",
+      "png_sha256": "976cf2788ff7fc64d7350d70d569de3203f576f3f3def22c00a7dd3a9dd7e81c",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "recorded_iga_0_to_5.0": "#F0ECF3",
+        "recorded_iga_0_to_5.1": "#D5CDDF",
+        "recorded_iga_0_to_5.2": "#B5A6C5",
+        "recorded_iga_0_to_5.3": "#927DA9",
+        "recorded_iga_0_to_5.4": "#715889",
+        "recorded_iga_0_to_5.5": "#4B355D"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "recorded_iga_0_to_5.0": "#F0ECF3",
+        "recorded_iga_0_to_5.1": "#D5CDDF",
+        "recorded_iga_0_to_5.2": "#B5A6C5",
+        "recorded_iga_0_to_5.3": "#927DA9",
+        "recorded_iga_0_to_5.4": "#715889",
+        "recorded_iga_0_to_5.5": "#4B355D"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "recorded_iga_0_to_5.0",
+          "role_b": "recorded_iga_0_to_5.1",
+          "cie76_delta_e": {
+            "original": 12.021,
+            "protanopia": 11.701,
+            "deuteranopia": 11.428,
+            "tritanopia": 10.373,
+            "grayscale": 10.363
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.0",
+          "role_b": "recorded_iga_0_to_5.2",
+          "cie76_delta_e": {
+            "original": 27.455,
+            "protanopia": 26.569,
+            "deuteranopia": 25.785,
+            "tritanopia": 23.732,
+            "grayscale": 23.613
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.0",
+          "role_b": "recorded_iga_0_to_5.3",
+          "cie76_delta_e": {
+            "original": 44.329,
+            "protanopia": 42.78,
+            "deuteranopia": 41.623,
+            "tritanopia": 38.319,
+            "grayscale": 38.149
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.0",
+          "role_b": "recorded_iga_0_to_5.4",
+          "cie76_delta_e": {
+            "original": 58.862,
+            "protanopia": 57.021,
+            "deuteranopia": 55.662,
+            "tritanopia": 52.402,
+            "grayscale": 52.194
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.0",
+          "role_b": "recorded_iga_0_to_5.5",
+          "cie76_delta_e": {
+            "original": 71.619,
+            "protanopia": 70.502,
+            "deuteranopia": 69.437,
+            "tritanopia": 67.702,
+            "grayscale": 67.626
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.1",
+          "role_b": "recorded_iga_0_to_5.2",
+          "cie76_delta_e": {
+            "original": 15.446,
+            "protanopia": 14.87,
+            "deuteranopia": 14.36,
+            "tritanopia": 13.377,
+            "grayscale": 13.249
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.1",
+          "role_b": "recorded_iga_0_to_5.3",
+          "cie76_delta_e": {
+            "original": 32.321,
+            "protanopia": 31.082,
+            "deuteranopia": 30.198,
+            "tritanopia": 27.957,
+            "grayscale": 27.786
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.1",
+          "role_b": "recorded_iga_0_to_5.4",
+          "cie76_delta_e": {
+            "original": 46.882,
+            "protanopia": 45.364,
+            "deuteranopia": 44.274,
+            "tritanopia": 42.038,
+            "grayscale": 41.831
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.1",
+          "role_b": "recorded_iga_0_to_5.5",
+          "cie76_delta_e": {
+            "original": 59.897,
+            "protanopia": 59.102,
+            "deuteranopia": 58.273,
+            "tritanopia": 57.337,
+            "grayscale": 57.262
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.2",
+          "role_b": "recorded_iga_0_to_5.3",
+          "cie76_delta_e": {
+            "original": 16.875,
+            "protanopia": 16.212,
+            "deuteranopia": 15.839,
+            "tritanopia": 14.589,
+            "grayscale": 14.537
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.2",
+          "role_b": "recorded_iga_0_to_5.4",
+          "cie76_delta_e": {
+            "original": 31.496,
+            "protanopia": 30.553,
+            "deuteranopia": 29.956,
+            "tritanopia": 28.672,
+            "grayscale": 28.582
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.2",
+          "role_b": "recorded_iga_0_to_5.5",
+          "cie76_delta_e": {
+            "original": 45.062,
+            "protanopia": 44.731,
+            "deuteranopia": 44.311,
+            "tritanopia": 44.012,
+            "grayscale": 44.013
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.3",
+          "role_b": "recorded_iga_0_to_5.4",
+          "cie76_delta_e": {
+            "original": 14.812,
+            "protanopia": 14.524,
+            "deuteranopia": 14.283,
+            "tritanopia": 14.09,
+            "grayscale": 14.045
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.3",
+          "role_b": "recorded_iga_0_to_5.5",
+          "cie76_delta_e": {
+            "original": 29.53,
+            "protanopia": 29.592,
+            "deuteranopia": 29.4,
+            "tritanopia": 29.486,
+            "grayscale": 29.477
+          }
+        },
+        {
+          "role_a": "recorded_iga_0_to_5.4",
+          "role_b": "recorded_iga_0_to_5.5",
+          "cie76_delta_e": {
+            "original": 15.873,
+            "protanopia": 15.836,
+            "deuteranopia": 15.747,
+            "tritanopia": 15.484,
+            "grayscale": 15.431
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        992,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1747034972221298,
+            0.9999999999999999
+          ],
+          "pixels_changed": 675083,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 2143712,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 674350,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 674350,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "Figure4",
+      "png_sha256": "278f663891ab8c96dacb6015178237724056921fa61af778c5c9950d6243facc",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "visit.W0",
+          "role_b": "visit.W12",
+          "cie76_delta_e": {
+            "original": 17.132,
+            "protanopia": 11.856,
+            "deuteranopia": 12.912,
+            "tritanopia": 12.052,
+            "grayscale": 12.333
+          }
+        },
+        {
+          "role_a": "visit.W0",
+          "role_b": "visit.W24",
+          "cie76_delta_e": {
+            "original": 38.344,
+            "protanopia": 38.463,
+            "deuteranopia": 37.802,
+            "tritanopia": 38.535,
+            "grayscale": 38.022
+          }
+        },
+        {
+          "role_a": "visit.W12",
+          "role_b": "visit.W24",
+          "cie76_delta_e": {
+            "original": 30.547,
+            "protanopia": 26.918,
+            "deuteranopia": 24.912,
+            "tritanopia": 29.761,
+            "grayscale": 25.69
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2480,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.1411764770746231,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.1411764770746231,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 267079,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 5359280,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 213051,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 213051,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "Figure5",
+      "png_sha256": "b78e085efda72b9e7741cdfaf5f1b34afa9e092b5a2813a89819207746b08348",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "visit.W0": "#79B9CF",
+        "visit.W12": "#269DAB",
+        "visit.W24": "#245568"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "visit.W0",
+          "role_b": "visit.W12",
+          "cie76_delta_e": {
+            "original": 17.132,
+            "protanopia": 11.856,
+            "deuteranopia": 12.912,
+            "tritanopia": 12.052,
+            "grayscale": 12.333
+          }
+        },
+        {
+          "role_a": "visit.W0",
+          "role_b": "visit.W24",
+          "cie76_delta_e": {
+            "original": 38.344,
+            "protanopia": 38.463,
+            "deuteranopia": 37.802,
+            "tritanopia": 38.535,
+            "grayscale": 38.022
+          }
+        },
+        {
+          "role_a": "visit.W12",
+          "role_b": "visit.W24",
+          "cie76_delta_e": {
+            "original": 30.547,
+            "protanopia": 26.918,
+            "deuteranopia": 24.912,
+            "tritanopia": 29.761,
+            "grayscale": 25.69
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2066,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.1411764770746231,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.1411764770746231,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 204894,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4464626,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 203156,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 203156,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS1",
+      "png_sha256": "d43f900ff341282a0162a1c520847f49da36b14f432396e679ffa81f6712d2be",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2244,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1841166,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4849284,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1840383,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1840383,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS2",
+      "png_sha256": "62a098430e4d7651458a8e7124e036b463d34cc3408f464de81b6e4ee6165817",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "inferred_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78",
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "method.reference",
+          "role_b": "method.current",
+          "cie76_delta_e": {
+            "original": 29.966,
+            "protanopia": 28.802,
+            "deuteranopia": 27.59,
+            "tritanopia": 17.672,
+            "grayscale": 17.374
+          }
+        },
+        {
+          "role_a": "method.reference",
+          "role_b": "treatment.dupilumab",
+          "cie76_delta_e": {
+            "original": 40.856,
+            "protanopia": 35.5,
+            "deuteranopia": 42.939,
+            "tritanopia": 42.735,
+            "grayscale": 14.699
+          }
+        },
+        {
+          "role_a": "method.reference",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 29.076,
+            "protanopia": 22.176,
+            "deuteranopia": 25.727,
+            "tritanopia": 28.571,
+            "grayscale": 1.014
+          }
+        },
+        {
+          "role_a": "method.reference",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 40.834,
+            "protanopia": 18.039,
+            "deuteranopia": 11.141,
+            "tritanopia": 47.035,
+            "grayscale": 12.326
+          }
+        },
+        {
+          "role_a": "method.current",
+          "role_b": "treatment.dupilumab",
+          "cie76_delta_e": {
+            "original": 26.403,
+            "protanopia": 11.864,
+            "deuteranopia": 18.184,
+            "tritanopia": 39.642,
+            "grayscale": 2.676
+          }
+        },
+        {
+          "role_a": "method.current",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 49.855,
+            "protanopia": 47.878,
+            "deuteranopia": 51.029,
+            "tritanopia": 35.104,
+            "grayscale": 18.389
+          }
+        },
+        {
+          "role_a": "method.current",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 36.453,
+            "protanopia": 16.24,
+            "deuteranopia": 27.672,
+            "tritanopia": 46.785,
+            "grayscale": 5.048
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1830,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 206149,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3954630,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 203927,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 203927,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS3",
+      "png_sha256": "216b98aa7e706ac5f2d2e4900dfc27e071e885242200fa5306209de7bd68de5b",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1783,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 188903,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3853063,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 187691,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 187691,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS4",
+      "png_sha256": "df4a367f92829c5bc8bb82231363500770afbfb33ed7d39cb3b423351eb4b932",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1807,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 189924,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3904927,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 188432,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 188432,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS5",
+      "png_sha256": "1a13e0df0b5fd2f4889236a89c2fdef992135985fcb835ad245b1ba8684552e9",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1807,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 190647,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3904927,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 189233,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 189233,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS6",
+      "png_sha256": "cc644899d16a7b896d403072928f0ac7463b4dd4ad407ffd63447ba7350e5536",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "treatment.dupilumab": "#3B7197"
+      },
+      "inferred_roles": {
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1216,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 84399,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 2627776,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 83438,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 83438,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS7",
+      "png_sha256": "cb96d19df4f482c5f760db09fed0d72c09e4a887782a766c856f74e8c4183b1b",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "method.reference",
+          "role_b": "method.current",
+          "cie76_delta_e": {
+            "original": 29.966,
+            "protanopia": 28.802,
+            "deuteranopia": 27.59,
+            "tritanopia": 17.672,
+            "grayscale": 17.374
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1003,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 56048,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 2167483,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 55396,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 55396,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS8",
+      "png_sha256": "30888e67af52ad17af2bc92572259b24b3c27d153d8291bccb75de284d383c36",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "method.reference",
+          "role_b": "method.current",
+          "cie76_delta_e": {
+            "original": 29.966,
+            "protanopia": 28.802,
+            "deuteranopia": 27.59,
+            "tritanopia": 17.672,
+            "grayscale": 17.374
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1712,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 210163,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3699632,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 208479,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 208479,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS9",
+      "png_sha256": "dc2f1f270903babc1e0c6d614a8bd05501386d5b156d6ec010ca1ac15afe5af0",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "method.reference",
+          "role_b": "method.current",
+          "cie76_delta_e": {
+            "original": 29.966,
+            "protanopia": 28.802,
+            "deuteranopia": 27.59,
+            "tritanopia": 17.672,
+            "grayscale": 17.374
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1712,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 203077,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3699632,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 201395,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 201395,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS10",
+      "png_sha256": "5b896aa13b89e887d8086f4d0bc6c0cb83cf1fe5fdfa6c24c57bd81033551b2f",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "roles": {
+        "method.reference": "#A18E7F",
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "method.reference",
+          "role_b": "method.current",
+          "cie76_delta_e": {
+            "original": 29.966,
+            "protanopia": 28.802,
+            "deuteranopia": 27.59,
+            "tritanopia": 17.672,
+            "grayscale": 17.374
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1712,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 204078,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3699632,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 202412,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 202412,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS11",
+      "png_sha256": "22fde8d599c46008e0d2c915fec357f2df6a12689bb5134de94d9407584ec9de",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2078,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 190496,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4490558,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 189179,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 189179,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS12",
+      "png_sha256": "c18388f34fd51a340650daf4a220cccfe7b8e966feaf2c34016a388494af2506",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2078,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 187127,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4490558,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 185913,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 185913,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS13",
+      "png_sha256": "fd12d8674c8691170b49a52d14a9914aafdfe2c6c1352c8699b1209287417152",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_100mg",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2078,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 191507,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4490558,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 190186,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 190186,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS14",
+      "png_sha256": "9d8525f9ce9ada3741ba3aebd45c5d2a20ffb613da8e3a09072d1ede908fab50",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "method.current": "#775D78"
+      },
+      "roles": {
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [],
+      "source_rgb_shape": [
+        2078,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 213470,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4490558,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 212006,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 212006,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS15",
+      "png_sha256": "68c8add49f8980fe0eb08c86125c511aa280abe01042500c6f3a810e4d4db61b",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "method.current": "#775D78"
+      },
+      "roles": {
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [],
+      "source_rgb_shape": [
+        2078,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 209825,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4490558,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 208459,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 208459,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS16",
+      "png_sha256": "ce7c7105848da4a3b0bdc8ba66ca0e1a7aa261a7541328125783fa4891b08780",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "method.current": "#775D78"
+      },
+      "roles": {
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [],
+      "source_rgb_shape": [
+        2078,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 204646,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 4490558,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.14085681158855828,
+            0.9999999999999999
+          ],
+          "pixels_changed": 203324,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 203324,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS17",
+      "png_sha256": "fac144d1e32cf5e0da4a61b2063ae51e7f699760bc4d2b270360c6a86cc6d929",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060",
+        "treatment.dupilumab": "#3B7197"
+      },
+      "roles": {
+        "treatment.abrocitinib_100mg": "#C78557",
+        "treatment.abrocitinib_200mg": "#B85060",
+        "treatment.dupilumab": "#3B7197"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.abrocitinib_200mg",
+          "cie76_delta_e": {
+            "original": 35.237,
+            "protanopia": 32.746,
+            "deuteranopia": 23.818,
+            "tritanopia": 21.592,
+            "grayscale": 13.34
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_100mg",
+          "role_b": "treatment.dupilumab",
+          "cie76_delta_e": {
+            "original": 68.285,
+            "protanopia": 56.574,
+            "deuteranopia": 67.891,
+            "tritanopia": 70.528,
+            "grayscale": 15.713
+          }
+        },
+        {
+          "role_a": "treatment.abrocitinib_200mg",
+          "role_b": "treatment.dupilumab",
+          "cie76_delta_e": {
+            "original": 62.354,
+            "protanopia": 27.165,
+            "deuteranopia": 45.29,
+            "tritanopia": 85.825,
+            "grayscale": 2.373
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        1440,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.16078431904315948,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.16078431904315948,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 92464,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.17419362906094274,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3111840,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 91369,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 91369,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS18",
+      "png_sha256": "048c81d341a9472881e3b9ccc5297a4e44bdbac5819c841703e7eeb16bff3e9c",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.pooled_abrocitinib": "#A97865"
+      },
+      "roles": {
+        "treatment.dupilumab": "#3B7197",
+        "treatment.pooled_abrocitinib": "#A97865"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [
+        {
+          "artist": "AxesImage",
+          "name": "ocean_coral_diverging",
+          "registry_scale": "ocean_coral_diverging",
+          "variant": "complete",
+          "vmin": -1.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_coral_diverging",
+          "registry_scale": "ocean_coral_diverging",
+          "variant": "complete",
+          "vmin": -1.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "AxesImage",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 100.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 100.0
+        },
+        {
+          "artist": "AxesImage",
+          "name": "ocean_coral_diverging",
+          "registry_scale": "ocean_coral_diverging",
+          "variant": "complete",
+          "vmin": -25.0,
+          "vmax": 25.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_coral_diverging",
+          "registry_scale": "ocean_coral_diverging",
+          "variant": "complete",
+          "vmin": -25.0,
+          "vmax": 25.0
+        }
+      ],
+      "pairwise_separation": [
+        {
+          "role_a": "treatment.dupilumab",
+          "role_b": "treatment.pooled_abrocitinib",
+          "cie76_delta_e": {
+            "original": 50.419,
+            "protanopia": 39.191,
+            "deuteranopia": 49.695,
+            "tritanopia": 58.39,
+            "grayscale": 9.274
+          }
+        }
+      ],
+      "source_rgb_shape": [
+        2539,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.13333334028720856,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.13333334028720856,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.179245745675159,
+            0.9999999999999999
+          ],
+          "pixels_changed": 2322766,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.16003680093640782,
+            0.9999999999999999
+          ],
+          "pixels_changed": 5486779,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 2291053,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.18915296168404494,
+            0.9999999999999999
+          ],
+          "pixels_changed": 2291053,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS19",
+      "png_sha256": "1659c5c0ca1ab502b834e8a2a716f4374e7d871aaa5624583d8d0faf9bbbf3b6",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {},
+      "roles": {},
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 50.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 50.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 50.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 50.0
+        }
+      ],
+      "pairwise_separation": [],
+      "source_rgb_shape": [
+        1263,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.13333334028720856,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.13333334028720856,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 102617,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.16003680093640782,
+            0.9999999999999999
+          ],
+          "pixels_changed": 2729343,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 100844,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 100844,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS20",
+      "png_sha256": "095ccaaa933ac9369dc194580992bffbf5d7040630b1c7c3d04ef23533fd7324",
+      "audit_status": "PASS",
+      "declared_roles": {
+        "method.current": "#775D78"
+      },
+      "inferred_roles": {},
+      "roles": {
+        "method.current": "#775D78"
+      },
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 20.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 20.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 20.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_patient_counts",
+          "registry_scale": "ocean_sequential",
+          "variant": "contiguous subset 72:257",
+          "vmin": 1.0,
+          "vmax": 20.0
+        }
+      ],
+      "pairwise_separation": [],
+      "source_rgb_shape": [
+        1795,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.13333334028720856,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.13333334028720856,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.1827775786233802,
+            0.9999999999999999
+          ],
+          "pixels_changed": 135612,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.16003680093640782,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3878995,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 127981,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.19205771080939615,
+            0.9999999999999999
+          ],
+          "pixels_changed": 127981,
+          "shape_preserved": true
+        }
+      }
+    },
+    {
+      "id": "FigureS21",
+      "png_sha256": "a25a83fd19610096776231d28d53b0d9ef4a05452f90cd6c48f0c8940d1fab99",
+      "audit_status": "PASS",
+      "declared_roles": {},
+      "inferred_roles": {},
+      "roles": {},
+      "unregistered_chromatic_colours": {},
+      "continuous_scales": [
+        {
+          "artist": "AxesImage",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "QuadMesh",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "AxesImage",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "AxesImage",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "AxesImage",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "AxesImage",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 1.0
+        },
+        {
+          "artist": "AxesImage",
+          "name": "ocean_sequential",
+          "registry_scale": "ocean_sequential",
+          "variant": "complete",
+          "vmin": 0.0,
+          "vmax": 1.0
+        }
+      ],
+      "pairwise_separation": [],
+      "source_rgb_shape": [
+        1830,
+        2161,
+        3
+      ],
+      "source_rgb_range": [
+        0.13333334028720856,
+        1.0
+      ],
+      "simulation_checks": {
+        "original": {
+          "all_finite": true,
+          "range": [
+            0.13333334028720856,
+            1.0
+          ],
+          "pixels_changed": 0,
+          "shape_preserved": true
+        },
+        "protanopia": {
+          "all_finite": true,
+          "range": [
+            0.17814702002628033,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1391652,
+          "shape_preserved": true
+        },
+        "deuteranopia": {
+          "all_finite": true,
+          "range": [
+            0.16003680093640782,
+            0.9999999999999999
+          ],
+          "pixels_changed": 3954630,
+          "shape_preserved": true
+        },
+        "tritanopia": {
+          "all_finite": true,
+          "range": [
+            0.0,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1390112,
+          "shape_preserved": true
+        },
+        "grayscale": {
+          "all_finite": true,
+          "range": [
+            0.18915296168404494,
+            0.9999999999999999
+          ],
+          "pixels_changed": 1390112,
+          "shape_preserved": true
+        }
+      }
+    }
+  ],
+  "simulation_reference": "https://doi.org/10.1109/TVCG.2009.113",
+  "page_order": [
+    "original",
+    "protanopia",
+    "deuteranopia",
+    "tritanopia",
+    "grayscale"
+  ],
+  "scope": "QA simulations at full dichromacy severity on linear RGB; grayscale uses relative luminance. Delta E76 is descriptive and is not an accessibility pass/fail criterion. Inspect labels, overlap and actual physical size.",
+  "source_data_changed": false,
+  "figure_count": 26,
+  "figures_requiring_colour_review": []
+}

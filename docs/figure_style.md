@@ -38,6 +38,8 @@ The [reference guide](https://www.simplifiedsciencepublishing.com/resources/best
 
 Figure 4 uses W0/W12/W24 colours consistently within every treatment panel. Each marker-treatment row holds the same patients across visits; W0 is zero and follow-up values are within-person log2 changes from baseline. Stars refer to a 138-hypothesis family for this fixed-patient analysis, not the earlier all-available-pair tests. Drug identity is given by the panel key in the caption rather than borrowing a visit colour. Stars sit beside the marker row in the corresponding visit colour; duplicate W12/W24 star-column headings are removed. The unadjusted within-group trajectories and baseline-adjusted between-treatment comparisons remain distinct displays.
 
+The population is printed as a short note below the molecular plots: complete W0/W12/W24 records in Figure 4, and all available pairs for the stated interval in Figures S11–S13. These notes identify the analysis, without restoring plot titles. A W0/W12 pair can contribute to S11 even if W24 is unavailable. Both displays use the same type of paired sign-flip test; patient sets and multiplicity families differ. A confidence interval excluding zero does not by itself imply a BH-adjusted star. The group-specific source tables retain exact counts, effects and q values.
+
 The English framework figure separates development of the local targets from clinical participant flow. Single-visit IEC-compatible states in Table S16 are not labelled sustained control, remission or full MDA. Estimated EOS values use explicit labels and uncertainty distinct from observed interquartile ranges.
 
 ## Typography and incomplete laboratory records

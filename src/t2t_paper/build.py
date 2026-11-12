@@ -382,6 +382,7 @@ def compile_pdf(root):
                 subprocess.run(cmd,cwd=root/'manuscript',env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
 
 def run(root,compile=False):
+    import runpy
     from .tables_20261107 import run as revised_tables
     from .tables_20261112 import run as laboratory_tables
     tables(root);revised_tables(root);laboratory_tables(root);documents(root)
@@ -390,6 +391,16 @@ def run(root,compile=False):
     for path in generated:
         path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines())+'\n')
     if compile:compile_pdf(root)
+    # Check the distributed estimates and the captions from the same rebuild.
+    prior = os.environ.get('T2T_ROOT')
+    os.environ['T2T_ROOT'] = str(Path(root).resolve())
+    try:
+        runpy.run_module('t2t_paper.consistency_checks_20261112', run_name='__main__')
+    finally:
+        if prior is None:
+            os.environ.pop('T2T_ROOT', None)
+        else:
+            os.environ['T2T_ROOT'] = prior
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=ROOT);p.add_argument('--compile',action='store_true');a=p.parse_args();run(a.root,a.compile)

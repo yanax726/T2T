@@ -21,7 +21,7 @@ def tables(root, tex):
             s += ' & '.join([name, LABELS[arm], *cells]) + r' \\' + '\n'
     s += end()
     s += (r'\noindent Observed/initial patients. Zero denotes no recorded measurement, not a laboratory value of zero. '
-          r'Patients may differ between visits. All values remain in their recorded units. No W4 IgE or dupi eosinophil point was imputed.'+'\n\n')
+          r'Patients may differ between visits. All values remain in their recorded units. Counts describe observed measurements only. Hollow W4 points in Figures S4--S5 are conditional temporal interpolations; they are not included in these counts or tests.'+'\n\n')
     s += (r'{\small\begin{tabular}{llrr}\toprule Interval & Initial group & Pairs & '
           r'Mean eosinophil change (95\% CI) \\ \midrule'+'\n')
     for a,b in [(0,12),(0,24),(12,24)]:

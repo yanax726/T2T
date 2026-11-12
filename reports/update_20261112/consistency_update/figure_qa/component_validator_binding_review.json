@@ -1,0 +1,94 @@
+{
+  "scope": "File-local component checks do not see the shared exporter; listed findings are resolved at the actual rendering boundary, not suppressed by changing thresholds.",
+  "component_findings": {
+    "revision_20261107.py": {
+      "FONT-FAMILY": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "resolved_font": "DejaVu Sans",
+        "source_key": "STYLE['font']"
+      },
+      "EDITABLE-TEXT": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "pdf.fonttype": 42,
+        "svg.fonttype": "none"
+      },
+      "EXPORT-VECTOR": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "formats": [
+          "pdf",
+          "svg"
+        ],
+        "all_26_files_present": true
+      },
+      "EXPORT-RASTER": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "format": "png",
+        "preview_dpi": 300,
+        "all_26_files_present": true
+      },
+      "PANEL-ALIGNMENT-GATE": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "function": "require_matplotlib_panel_alignment",
+        "fresh_results": "results/audit/update_20261112/figures/"
+      }
+    },
+    "supplement_revision_20261025.py": {
+      "FONT-FAMILY": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "resolved_font": "DejaVu Sans",
+        "source_key": "STYLE['font']"
+      },
+      "EDITABLE-TEXT": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "pdf.fonttype": 42,
+        "svg.fonttype": "none"
+      },
+      "EXPORT-VECTOR": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "formats": [
+          "pdf",
+          "svg"
+        ],
+        "all_26_files_present": true
+      },
+      "EXPORT-RASTER": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "format": "png",
+        "preview_dpi": 300,
+        "all_26_files_present": true
+      },
+      "PANEL-ALIGNMENT-GATE": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "function": "require_matplotlib_panel_alignment",
+        "fresh_results": "results/audit/update_20261112/figures/"
+      }
+    },
+    "figure_style_20261112.py": {
+      "FONT-FAMILY": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "resolved_font": "DejaVu Sans",
+        "source_key": "STYLE['font']"
+      },
+      "EDITABLE-TEXT": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "pdf.fonttype": 42,
+        "svg.fonttype": "none"
+      },
+      "EXPORT-VECTOR": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "formats": [
+          "pdf",
+          "svg"
+        ],
+        "all_26_files_present": true
+      },
+      "EXPORT-RASTER": {
+        "shared_exporter": "src/t2t_paper/figures.py",
+        "format": "png",
+        "preview_dpi": 300,
+        "all_26_files_present": true
+      }
+    }
+  },
+  "final_rendered_font_collision_alignment_colour_gates": "PASS"
+}

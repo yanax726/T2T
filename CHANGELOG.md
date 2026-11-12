@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026.11.12-rc2
+
+- Identify complete-three-visit and all-available-pair molecular populations directly on figures and in their captions.
+- Align the clinical narrative, molecular correction families and unmeasured laboratory-point descriptions across publication outputs.
+- Recheck the current figure set against distributed aggregate results; preserve model parameters and numerical estimates.
+
 ## 2026.11.12-rc1
 
 - Use all-available standardized IgE/EOS trajectories with explicit centre and temporal-shape sensitivities; retain earlier imputation analyses.

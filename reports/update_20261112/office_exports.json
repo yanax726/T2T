@@ -1,19 +1,203 @@
 {
   "status": "PASS",
+  "version": "2026.11.12-rc2",
   "word_native_tables": 22,
   "numbered_supplementary_tables": 17,
   "word_tables_rasterized": 0,
   "word_table_text_unchanged": true,
-  "word_render_pages": 62,
+  "word_table_group_labels_preserved": 13,
+  "word_editable_formula_alignment_tokens_removed": 2,
+  "word_no_empty_superscript_base": true,
+  "word_render_pages": 61,
   "deck_slides": 26,
   "deck_render_pages": 26,
   "exact_source_image_bytes": true,
+  "word_figure_source_images_exact": true,
   "speaker_note_count": 26,
+  "current_captions_and_sources_per_slide": true,
   "sources_unchanged": true,
-  "outputs_sha256": {
-    "manuscript/appendix.docx": "31136b2127f4ddf892981d9896587e972470816012a6ba217b0dced6bbee1946",
-    "manuscript/figure_deck.pdf": "47fdcc892b89255fda66fc26f3029247d6abb8e654ade7465378a36f75cf9b77",
-    "manuscript/figure_deck.pptx": "aa2d701a7fb396b4ea322258e3301628cd0e3606f21f7aebe09aa05b6677001b"
+  "visual_review": "All 61 Word pages and all 26 deck pages visually reviewed. Final Word pages 40 and 44 were re-reviewed after the last correction; remaining 59 pages and all 26 deck pages have pixel-identical PNG hashes to the reviewed versions. Chinese selection document also rendered and reviewed on all 3 pages.",
+  "render_difference": {
+    "word_render": {
+      "pages": 61,
+      "changed_pages": [
+        40,
+        44
+      ],
+      "stale_generated_previews_removed": [
+        "page-62.png"
+      ]
+    },
+    "deck_pages": {
+      "pages": 26,
+      "changed_pages": [],
+      "stale_generated_previews_removed": []
+    }
   },
-  "portable_export_test": "Separate Pandoc, python-docx and LibreOffice export completed without proprietary Artifact Tool imports; Office bytes may vary by rendering environment."
+  "outputs_sha256": {
+    "manuscript/appendix.docx": "cbbc422c593aaf5d7f3923ad6c6aad3da15a50610456031dced739a77364414b",
+    "manuscript/figure_deck.pdf": "891ede768796ce3672cef2bd4f217febe6e7de30a2a35a49ba2e0c337eede00d",
+    "manuscript/figure_deck.pptx": "d63d7a8d00e1f84d744ae6d7a725ecd6ed90da549316b3a945f27bf22f6e0345",
+    "manuscript/three_marker_selection.docx": "1a6415e94cdced73c07d2cbc674a5c5a63c2ea31da4ab561bf8399af592076b0"
+  },
+  "export_receipt": "reports/update_20261112/consistency_update/exports/export_verification.json",
+  "deck_slides_verified": [
+    {
+      "slide": 1,
+      "figure": "Figure1",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 2,
+      "figure": "Figure2",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 3,
+      "figure": "Figure3",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 4,
+      "figure": "Figure4",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 5,
+      "figure": "Figure5",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 6,
+      "figure": "FigureS1",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 7,
+      "figure": "FigureS2",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 8,
+      "figure": "FigureS3",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 9,
+      "figure": "FigureS4",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 10,
+      "figure": "FigureS5",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 11,
+      "figure": "FigureS6",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 12,
+      "figure": "FigureS7",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 13,
+      "figure": "FigureS8",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 14,
+      "figure": "FigureS9",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 15,
+      "figure": "FigureS10",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 16,
+      "figure": "FigureS11",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 17,
+      "figure": "FigureS12",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 18,
+      "figure": "FigureS13",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 19,
+      "figure": "FigureS14",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 20,
+      "figure": "FigureS15",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 21,
+      "figure": "FigureS16",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 22,
+      "figure": "FigureS17",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 23,
+      "figure": "FigureS18",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 24,
+      "figure": "FigureS19",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 25,
+      "figure": "FigureS20",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    },
+    {
+      "slide": 26,
+      "figure": "FigureS21",
+      "exact_source_image": true,
+      "current_caption_and_sources": true
+    }
+  ],
+  "scope": "Office layout, image identities, captions and source preservation. No model refitting or new scientific inference."
 }

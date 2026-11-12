@@ -125,6 +125,7 @@ def clinical_composition(root, base):
 
 
 def molecular_response(root, base):
+    from .figure_style_20261112 import population_note
     source = Path(root)/'results/tables/update_20261107/labs/molecular_three_visit_changes.csv'
     data = pd.read_csv(source)
     fig, axes = plt.subplots(1, 3, figsize=(183/25.4, 210/25.4))
@@ -174,9 +175,12 @@ def molecular_response(root, base):
         ax.tick_params(axis='y',length=0)
         ax.annotate('abc'[j],(0,1),xycoords='axes fraction',xytext=(-12,11),
                     textcoords='offset points',fontsize=8,weight='bold')
-    base.save(fig,'Figure4','Molecular changes across three visits in the same patients',
-              'a–c, All 23 serum markers by initial treatment. For each marker and treatment, the same patients contribute at '
-              'W0, W12 and W24; patient sets can differ between markers and treatments. W0 is the reference value zero, not zero '
+    population_note(fig, 'Complete W0/W12/W24 records · stars: adjusted q < 0.05', y=.005)
+    base.save(fig,'Figure4','Molecular trajectories in patients with all three visits',
+              'a–c, Only patients with an available result at all three visits (W0, W12 and W24) for the stated marker '
+              'and initial treatment are included. The same patients contribute at every point within that row; sets can differ '
+              'between markers and treatments. These are a subset of the W0/W12 pairs in Supplementary Fig. S5, so the W12 '
+              'estimates and stars need not match that all-available-pair analysis. W0 is the reference value zero, not zero '
               'concentration. Coloured points show mean within-person log₂ changes from W0; horizontal bars are 95% t confidence '
               'intervals for n≥5. A change of −1 means a geometric paired concentration ratio of 0.5. Hollow later-visit points '
               'denote n<5 without inference; blank rows have no complete three-visit set. A coloured star beside a marker row refers '

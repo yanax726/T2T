@@ -5,6 +5,14 @@ from matplotlib.text import Text
 from matplotlib.axes import Axes
 
 
+def population_note(fig, text, *, y=.018):
+    """Keep the analysis population visible without adding a plot title."""
+    note = fig.text(.55, y, text, ha='center', va='bottom',
+                    fontsize=7.5, color='#46545E')
+    note._analysis_population_note = True
+    return note
+
+
 def apply(fig, source_id, caption):
     panel_keys = []
     removed = []
@@ -36,7 +44,7 @@ def apply(fig, source_id, caption):
     figure_notes = []
     keep = {getattr(fig, '_supxlabel', None), getattr(fig, '_supylabel', None)}
     for artist in list(fig.texts):
-        if artist not in keep:
+        if artist not in keep and not getattr(artist, '_analysis_population_note', False):
             figure_notes.append(artist.get_text())
             artist.remove()
     for artist in fig.findobj(match=Text):
@@ -55,6 +63,8 @@ def apply(fig, source_id, caption):
         'figure_source_id': source_id,
         'axes_titles_removed': removed,
         'figure_prose_removed_from_graphic': figure_notes,
+        'analysis_population_notes': [t.get_text() for t in fig.texts
+                                      if getattr(t, '_analysis_population_note', False)],
         'axis_label_pt': 8.5,
         'tick_and_annotation_floor_pt': 7.5,
         'panel_letter_pt': 9.5,

@@ -91,9 +91,14 @@ def prepare_tex(root, build):
                                   lambda s: s.replace('\\\\', r'\newline '))
     text = text.replace('log$_2$', r'$\log_2$')
     text = re.sub(r'\b([A-Za-z])\$\^(\{[^}]+\}|\d)\$', r'$\1^\2$', text)
+    text = re.sub(r'(\([^()\n]*\))\$\^(\{[^}]+\}|\d)\$',
+                  r'$\1^\2$', text)
     # Word repeats its first table row; LaTeX's alternate continuation head
     # would otherwise become duplicate data rows in Pandoc's native table.
     text = re.sub(r'\\endfirsthead.*?\\endhead', lambda _: r'\endhead', text, flags=re.S)
+    # Word supplies its own row spacing. Pandoc's LaTeX reader can otherwise
+    # discard a following multicolumn label after this booktabs-only command.
+    text = re.sub(r'\\addlinespace(?:\[[^\]]*\])?', '', text)
     text = re.sub(r'\\pdfbookmark\[[^\]]*\]\{[^}]*\}\{[^}]*\}', '', text)
     text = re.sub(r'\{\\large\\bfseries [^}]*\}\\par\\vspace\{[^}]*\}', '', text)
     text = re.sub(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\.pdf\}',
@@ -250,6 +255,10 @@ def word_style(path, numbered_tables):
                             'text_sha256': hashlib.sha256('\n'.join(c.text for row in table.rows for c in row.cells).encode()).hexdigest()})
     # Separate figure pages, retaining the complete editable caption with its image.
     for p in doc.paragraphs:
+        following = p._p.getnext()
+        if (following is not None and following.tag == qn('w:tbl')
+                and (p._p.xpath('.//w:b') or 'Caption' in p.style.name)):
+            p.paragraph_format.keep_with_next = True
         if p._p.xpath('.//w:drawing'):
             p.paragraph_format.page_break_before = True
             p.paragraph_format.keep_with_next = True
@@ -258,6 +267,11 @@ def word_style(path, numbered_tables):
             # Keep the final compact table and its explanatory notes together
             # before the portrait text section resumes.
             p.paragraph_format.page_break_before = True
+    # Pandoc retains LaTeX alignment separators as visible runs in equation
+    # arrays. Their removal preserves the native editable two-line equation.
+    alignment_tokens = doc.element.xpath('.//m:eqArr//m:r[m:t="&"]')
+    for token in alignment_tokens:
+        token.getparent().remove(token)
     # A page field remains editable in Word.
     for sec in doc.sections:
         footer = sec.footer.paragraphs[0]
@@ -266,7 +280,8 @@ def word_style(path, numbered_tables):
             field = OxmlElement('w:fldSimple'); field.set(qn('w:instr'), 'PAGE'); footer._p.append(field)
     doc.save(path)
     return {'native_table_count': len(doc.tables), 'numbered_supplementary_tables': numbered_tables,
-            'table_shapes': table_audit, 'inline_images': len(doc.inline_shapes)}
+            'table_shapes': table_audit, 'inline_images': len(doc.inline_shapes),
+            'removed_math_alignment_tokens': len(alignment_tokens)}
 
 
 def make_docx(root, out, build, tc):
@@ -283,6 +298,25 @@ def make_docx(root, out, build, tc):
     audit['native_table_text_unchanged_after_formatting'] = all_cells(Document(raw)) == all_cells(Document(final))
     if not audit['native_table_text_unchanged_after_formatting']:
         raise RuntimeError('A table value changed while applying Word formatting')
+    labels = []
+    source = flat.read_text()
+    for match in re.finditer(r'\\multicolumn\{\d+\}\{l\}\{', source):
+        depth, end = 1, match.end()
+        while depth and end < len(source):
+            if source[end] == '{' and source[end-1] != '\\':
+                depth += 1
+            elif source[end] == '}' and source[end-1] != '\\':
+                depth -= 1
+            end += 1
+        label = source[match.end():end-1]
+        label = replace_braced_command(label, 'textbf', lambda value: value)
+        labels.append(label.replace(r'\%', '%'))
+    normalize = lambda value: ''.join(c.lower() for c in value if c.isalnum())
+    table_text = normalize(' '.join(value for table in all_cells(Document(final)) for value in table))
+    missing = [label for label in labels if normalize(label) not in table_text]
+    if missing:
+        raise RuntimeError('A table population or metric label was lost during conversion: ' + ', '.join(missing))
+    audit['table_group_labels_preserved'] = len(labels)
     audit['references'] = n_refs
     audit['tables_rasterized'] = 0
     return audit

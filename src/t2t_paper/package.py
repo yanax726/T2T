@@ -24,6 +24,9 @@ STUDY_ID = re.compile(r'\bPT\d{4}\b')
 # but it has no participant rows. A changed file must be reviewed again.
 PUBLIC_SCHEMA_SHA256 = {
     'd805da99365ae77a8b0c1aadfb83d28f5a3c364af7115d6dc437401852f4f321',
+    # Reviewed colour inventory: ``continuous_scales[].name`` identifies a
+    # colormap (ocean_*), never a person. All remaining entries are figure QA.
+    '40248e54439de48320b1856f104435e13635a388061416891fb01360cb05c2b1',
 }
 BASE_FILES = [
     'README.md', 'DATA_ACCESS.md', 'NOTICE.md', 'LICENSE_STATUS.md',
@@ -66,6 +69,7 @@ PAPER_MODULES = [
     '__init__', 'package', 'demo', 'preflight', 'figures', 'palette', 'build',
     'revision_20261107', 'tables_20261107',
     'revision_20261112', 'tables_20261112', 'figure_style_20261112', 'editable_exports_20261112',
+    'consistency_checks_20261112',
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
     'sensitivity_figures_20261025', 'sensitivity_tables_20261025',
@@ -76,6 +80,16 @@ PAPER_MODULES = [
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/update_20261112/consistency_update/audit/verification.json',
+    'reports/update_20261112/consistency_update/audit/numerical_checks.csv',
+    'reports/update_20261112/consistency_update/audit/figure_source_inventory.csv',
+    'reports/update_20261112/consistency_update/audit/aggregate_source_sha256.json',
+    'reports/update_20261112/consistency_update/audit/removed_prose_caption_review.csv',
+    'reports/update_20261112/consistency_update/figure_qa/audit_returncodes.json',
+    'reports/update_20261112/consistency_update/figure_qa/component_validator_binding_review.json',
+    'reports/update_20261112/consistency_update/colour_qa/colour_inventory.json',
+    'reports/update_20261112/consistency_update/protected_input_hashes.json',
+    'reports/update_20261112/consistency_update/final_checks.json',
     'reports/update_20261112/final_quality_assurance.json',
     'reports/update_20261112/public_reproducibility.json',
     'reports/update_20261112/tests.log',

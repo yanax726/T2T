@@ -109,6 +109,7 @@ def courses(root, base):
 
 
 def molecule_windows(root, base):
+    from .figure_style_20261112 import population_note
     folder = root / 'results/tables/update_20261017/clinical'
     source = folder / 'molecular_paired_changes.csv'
     data = pd.read_csv(source)
@@ -131,9 +132,13 @@ def molecule_windows(root, base):
         previous.window_header(fig, f'W{start} → W{end}: within-patient molecular change')
         fig.text(.55, .035, 'Hollow circle + n: fewer than 5 pairs; descriptive only',
                  ha='center', fontsize=6.3)
-        finish(fig, number, f'Molecular changes from W{start} to W{end}',
-               'Mean paired log₂ concentration changes with 95% t confidence intervals. Negative values indicate lower later concentration. '
-               'Each marker/treatment uses all available pairs for this interval; exact counts are in the source table. All 23 measured markers are retained. '
+        population_note(fig, f'All available W{start}/W{end} pairs · stars: adjusted q < 0.05', y=.025)
+        finish(fig, number, f'Molecular changes in all available W{start}/W{end} pairs',
+               f'All patients with an available result at both W{start} and W{end} for the stated marker and initial treatment '
+               'are included; a result at the third visit is not required. These are interval-specific paired populations, '
+               'unlike the complete-three-visit population in main Figure 4. Mean within-person log₂ concentration changes '
+               'have 95% t confidence intervals. Negative values indicate lower later concentration. '
+               'Exact counts are in the source table. All 23 measured markers are retained. '
                'Hollow circles with n labels denote fewer than five pairs; these are descriptive and have no inferential interval or star. '
                'Unavailable estimates are blank. '
                'Stars denote BH q<0.05 across the 193 estimable tests among 207 planned marker-by-treatment-by-window comparisons, not a separate family for the displayed interval.',
@@ -161,7 +166,9 @@ def molecule_windows(root, base):
                'Differences in within-patient log₂ changes with HC3 95% confidence intervals. Negative values mean a smaller, more negative change '
                'in the first named treatment. Models adjust starting log₂ concentration, baseline total EASI, age, sex, BMI and centre. '
                'dupi denotes dupilumab; abro denotes abrocitinib, with 100/200 mg identifying initial dose. Pooled A retains the observed dose mixture. '
-               'Stars denote the original BH q<0.05 family; no multiplicity family is recalculated after display selection. '
+               'Stars denote BH q<0.05 across the 240 estimable tests among 276 planned marker-by-window-by-treatment '
+               'contrasts (23 markers, three windows and four contrasts) in the all-centre primary analysis. '
+               'The family is not recalculated for this displayed interval; centre- and assay-batch sensitivities have separate families. '
                'Blank positions have no estimable contrast. Complete counts, diagnostics, centre/batch sensitivities and tests remain in the source table. '
                + 'These are adjusted observational associations, not randomized current-dose effects.', [source], root, base)
 

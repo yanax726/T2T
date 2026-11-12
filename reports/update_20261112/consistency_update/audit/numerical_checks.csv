@@ -1,0 +1,131 @@
+check,passed,detail
+Live catalogue size,True,"5 main and 21 supplementary figures; checked current content, not archived numbering"
+Figure1 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+Figure2 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+Figure3 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+Figure4 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+Figure5 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS1 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS2 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS3 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS4 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS5 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS6 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS7 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS8 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS9 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS10 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS11 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS12 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS13 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS14 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS15 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS16 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS17 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS18 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS19 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS20 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+FigureS21 source and assets,True,"{'missing_sources': [], 'missing_assets': []}"
+manuscript/source_data/error_ecdf.csv ordered ci_low/ci_high,True,139
+results/tables/update_20261017/clinical/clinical_trajectory_adjusted.csv ordered ci_low/ci_high,True,62
+results/tables/update_20261017/clinical/endpoint_rates.csv ordered ci_low/ci_high,True,204
+results/tables/update_20261017/clinical/endpoint_tests.csv ordered ci_low/ci_high,True,244
+results/tables/update_20261017/clinical/endpoint_tests.csv valid p,True,303
+results/tables/update_20261017/clinical/endpoint_tests.csv valid p_holm,True,183
+results/tables/update_20261017/clinical/endpoint_tests.csv valid q_exploratory,True,303
+results/tables/update_20261017/clinical/endpoint_weighted_contrasts.csv ordered ci_low/ci_high,True,244
+results/tables/update_20261017/clinical/endpoint_weighted_contrasts.csv valid p,True,293
+results/tables/update_20261017/clinical/endpoint_weighted_contrasts.csv valid p_holm,True,176
+results/tables/update_20261017/clinical/endpoint_weighted_contrasts.csv valid q_exploratory,True,293
+results/tables/update_20261017/clinical/molecular_adjusted_contrasts.csv ordered ci_low/ci_high,True,704
+results/tables/update_20261017/clinical/molecular_adjusted_contrasts.csv valid p,True,704
+results/tables/update_20261017/clinical/molecular_adjusted_contrasts.csv valid q,True,704
+results/tables/update_20261017/clinical/molecular_clinical_change_correlations.csv ordered ci_low/ci_high,True,883
+results/tables/update_20261017/clinical/molecular_clinical_change_correlations.csv valid p,True,883
+results/tables/update_20261017/clinical/molecular_clinical_change_correlations.csv valid q,True,883
+results/tables/update_20261017/clinical/molecular_paired_changes.csv ordered ci_low/ci_high,True,193
+results/tables/update_20261017/clinical/molecular_paired_changes.csv valid p,True,193
+results/tables/update_20261017/clinical/molecular_paired_changes.csv valid q,True,193
+results/tables/update_20261017/clinical/molecular_regional_baseline_correlations.csv ordered ci_low/ci_high,True,92
+results/tables/update_20261017/clinical/molecular_regional_baseline_correlations.csv valid p,True,92
+results/tables/update_20261017/clinical/molecular_regional_baseline_correlations.csv valid q,True,92
+results/tables/update_20261017/redesign_20261018/monitoring_change_uncertainty.csv ordered ci_low/ci_high,True,21
+results/tables/update_20261017/redesign_20261018/monitoring_response_uncertainty.csv ordered ci_low/ci_high,True,18
+results/tables/update_20261017/regional/regional_normalized_burden.csv ordered ci_low/ci_high,True,60
+results/tables/update_20261017/regional/regional_paired_improvement.csv ordered ci_low/ci_high,True,180
+results/tables/update_20261017/regional/regional_treatment_contrasts.csv ordered ci_low/ci_high,True,192
+results/tables/update_20261017/regional/regional_treatment_contrasts.csv valid p,True,192
+results/tables/update_20261017/regional/regional_treatment_contrasts.csv valid q,True,192
+results/tables/update_20261017/regional/whole_body_PP_NRS_improvement.csv ordered ci_low/ci_high,True,15
+results/tables/update_20261025/ablation/main_input_comparison.csv ordered MAE_lo/MAE_hi,True,18
+results/tables/update_20261107/labs/molecular_three_visit_changes.csv ordered ci_low/ci_high,True,186
+results/tables/update_20261107/labs/molecular_three_visit_changes.csv valid p,True,124
+results/tables/update_20261107/labs/molecular_three_visit_changes.csv valid q,True,124
+results/tables/update_20261112/labs/between_treatment_changes.csv ordered ci_low/ci_high,True,36
+results/tables/update_20261112/labs/between_treatment_changes.csv ordered log_ci_low/log_ci_high,True,36
+results/tables/update_20261112/labs/between_treatment_changes.csv ordered ratio_low/ratio_high,True,36
+results/tables/update_20261112/labs/between_treatment_changes.csv valid p,True,36
+results/tables/update_20261112/labs/between_treatment_changes.csv valid p_holm,True,36
+results/tables/update_20261112/labs/longitudinal_changes.csv ordered ci_low/ci_high,True,72
+results/tables/update_20261112/labs/longitudinal_changes.csv ordered log_ci_low/log_ci_high,True,72
+results/tables/update_20261112/labs/longitudinal_changes.csv ordered ratio_low/ratio_high,True,72
+results/tables/update_20261112/labs/longitudinal_levels.csv ordered ci_low/ci_high,True,72
+results/tables/update_20261112/labs/longitudinal_levels.csv ordered log_ci_low/log_ci_high,True,72
+results/tables/update_20261112/labs/longitudinal_levels.csv ordered ratio_low/ratio_high,True,72
+Figure2 rates reproduce counts,True,204
+Figure2 Wilson intervals reproduce,True,204
+Figure2 endpoint missingness arithmetic,True,204
+Figure3 proportions reproduce counts,True,72
+Figure3 six grades add to denominator,True,12 treatment/visit bars
+S7-S10 endpoint_tests.csv Holm replay,True,"{'maximum_absolute_error': 2.7755575615628914e-16, 'tests': 183}"
+S7-S10 endpoint_weighted_contrasts.csv Holm replay,True,"{'maximum_absolute_error': 2.220446049250313e-16, 'tests': 176}"
+S2 absolute SMD preserves signed source,True,108
+S2 propensity histogram fractions reproduce counts,True,180
+S2 each propensity distribution sums to one,True,Three propensity axes by three actual initial arms
+S2 effective sample sizes bounded by observed patients,True,"{'estimable': 628, 'not_estimable': 20}"
+Figure4 BH replay,True,"{'planned': 138, 'estimable': 124}"
+Figure4 fixed counts and zero baseline,True,69 marker-treatment sets
+Figure4 small groups have no test or CI,True,n<5
+Figure4 displayed significance agrees with q,True,All saved star flags
+results/tables/update_20261017/clinical/molecular_paired_changes.csv BH replay,True,"{'maximum_absolute_error': 1.1102230246251565e-16, 'finite_tests': 193, 'groups': ['family']}"
+results/tables/update_20261017/clinical/molecular_adjusted_contrasts.csv BH replay,True,"{'maximum_absolute_error': 2.501471252358556e-15, 'finite_tests': 704, 'groups': ['scope', 'analysis']}"
+results/tables/update_20261017/clinical/molecular_clinical_change_correlations.csv BH replay,True,"{'maximum_absolute_error': 1.672273430841642e-14, 'finite_tests': 883, 'groups': ['family']}"
+results/tables/update_20261017/clinical/molecular_regional_baseline_correlations.csv BH replay,True,"{'maximum_absolute_error': 8.083811398051921e-16, 'finite_tests': 92, 'groups': ['family']}"
+results/tables/update_20261017/regional/regional_treatment_contrasts.csv BH replay,True,"{'maximum_absolute_error': 2.789435349370706e-15, 'finite_tests': 192, 'groups': ['analysis', 'outcome']}"
+S11-S13 small groups have no inference,True,All three windows
+S17 includes exactly six qualifying associations,True,6
+S17 no W12-W24 corrected association,True,"Full association family, not selected-row correction"
+S18 no adjusted regional contrast passes FDR,True,All adjusted regional contrasts
+S18 regional normalized burden is within theoretical bounds,True,60
+S4-S5 interpolated cells are exactly unmeasured cells,True,"W4 IgE for all arms, W4 dupi eosinophils only"
+S4-S5 model counts match declared coverage,True,IgE 258 values/147 patients; EOS 320 values/138 patients
+S5 Holm replay,True,{'maximum_absolute_error': 5.273559366969494e-16}
+S19 cell counts retain all patients,True,152/89/75
+S20 cell counts retain all pairs,True,85/67/55
+S21 row fractions reproduce counts,True,24
+S21 all displayed repeats have valid paired baselines,True,All six panels
+S21 pair counts consistent across displayed cells,True,Six confusion matrices
+Main model MAE numbers round to primary source,True,"[3.193973675883095, 1.2968724715789248, 1.1920464353134088]"
+Main model Spearman numbers round to primary source,True,"[0.918300849512632, 0.9274133028716818, 0.9038701631635202]"
+Figure5 d error curves agree with within-two percentages,True,Exact error threshold 2 evaluated separately by visit
+Figure5 a-c use identical comparison cohort sizes,True,Ablation 151/89/75 differs from primary 152/89/75 at baseline only; Figure5 caption states both
+Primary and monitoring population distinction,True,Individual prediction n differs from paired baseline/follow-up monitoring n
+Old fixed IgE subset contains 30 patients,True,Main text contrasts 30 complete-triplet patients with all-available model 147; not interchangeable
+S6 EOS sensitivity populations are 15 and seven patients,True,S6 median interpolation differs from S4 all-available adjusted mean interpolation
+Every current figure has a corresponding caption,True,Five main captions and 21 supplementary captions
+Main text and Figure4 caption state complete-three-visit population,True,Three-visit population and all-available-pair families distinguished
+FigureS11 caption says third visit not required,True,"Interval-specific paired data, not main complete-triplet subset"
+FigureS12 caption says third visit not required,True,"Interval-specific paired data, not main complete-triplet subset"
+FigureS13 caption says third visit not required,True,"Interval-specific paired data, not main complete-triplet subset"
+Appendix says third visit not required for pair analyses,True,Supplementary methods and all three interval captions
+FigureS14 caption states complete adjusted-comparison correction family,True,All-centre primary: 240 estimable of 276 planned; centre/batch sensitivity separate
+FigureS15 caption states complete adjusted-comparison correction family,True,All-centre primary: 240 estimable of 276 planned; centre/batch sensitivity separate
+FigureS16 caption states complete adjusted-comparison correction family,True,All-centre primary: 240 estimable of 276 planned; centre/batch sensitivity separate
+Appendix captions retain 240/276 adjusted family,True,All three between-treatment interval captions
+Table S9 observed counts distinguish hollow W4 illustrations,True,No interpolation is recast as an observed assay or treatment-test input
+Figure4 exported PDF shows patient-population note,True,"Text extracted from exported vector PDF, not inferred from source code"
+FigureS11 exported PDF shows patient-population note,True,"Text extracted from exported vector PDF, not inferred from source code"
+FigureS12 exported PDF shows patient-population note,True,"Text extracted from exported vector PDF, not inferred from source code"
+FigureS13 exported PDF shows patient-population note,True,"Text extracted from exported vector PDF, not inferred from source code"
+Incompatible old script and export receipt no longer in current manuscript root,True,"Historical files belong in identified archive, not current manuscript directory"
+Current captions do not refer to a removed footer,True,Figure-level prose was removed by the common title-free style; sample sizes and ESS must point to source tables

@@ -51,8 +51,8 @@ case "$mode" in
     "$python_bin" -m t2t_paper.build --compile
     ;;
   guide)
-    "$python_bin" -m t2t_paper.figure_script_zh
-    "$python_bin" -m t2t_paper.export_script_pdf
+    echo 'The legacy Chinese guide uses retired figure numbers and is archived. Current figure explanations are in manuscript/figure_book.pdf and the notes of manuscript/figure_deck.pptx.' >&2
+    exit 2
     ;;
   rebuild)
     "$python_bin" -m t2t_paper.figures

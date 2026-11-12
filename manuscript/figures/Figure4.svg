@@ -2217,6 +2217,9 @@ L 450.180139 544.188602
     <text style="fill: #245568; font: 9px 'DejaVu Sans'; text-anchor: start" x="507.355176" y="433.948957" transform="rotate(-0 507.355176 433.948957)">*</text>
    </g>
   </g>
+  <g id="text_63">
+   <text style="fill: #46545e; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="285.307087" y="590.739447" transform="rotate(-0 285.307087 590.739447)">Complete W0/W12/W24 records · stars: adjusted q &lt; 0.05</text>
+  </g>
   <g id="legend_1">
    <g id="line2d_178">
     <path d="M 219.353962 12.250206 
@@ -2240,7 +2243,7 @@ z
      <use xlink:href="#m60efc57402" x="225.853962" y="12.250206" style="fill: #79b9cf; stroke: #79b9cf"/>
     </g>
    </g>
-   <g id="text_63">
+   <g id="text_64">
     <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: start" x="237.553962" y="14.525206" transform="rotate(-0 237.553962 14.525206)">W0</text>
    </g>
    <g id="line2d_179">
@@ -2265,7 +2268,7 @@ z
      <use xlink:href="#m6f132cd306" x="271.841462" y="12.250206" style="fill: #269dab; stroke: #269dab"/>
     </g>
    </g>
-   <g id="text_64">
+   <g id="text_65">
     <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: start" x="283.541462" y="14.525206" transform="rotate(-0 283.541462 14.525206)">W12</text>
    </g>
    <g id="line2d_180">
@@ -2290,7 +2293,7 @@ z
      <use xlink:href="#m5de8d639e9" x="322.600837" y="12.250206" style="fill: #245568; stroke: #245568"/>
     </g>
    </g>
-   <g id="text_65">
+   <g id="text_66">
     <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: start" x="334.300837" y="14.525206" transform="rotate(-0 334.300837 14.525206)">W24</text>
    </g>
   </g>

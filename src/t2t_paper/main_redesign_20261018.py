@@ -472,7 +472,8 @@ def balance_diagnostics(root):
               '0.10 reference line is a descriptive balance guide, not a statistical significance threshold. Residual imbalance remains. '
               'd–f, Baseline multinomial treatment probabilities, stratified by actual initial treatment; each distribution uses all patients '
               'in that initial group and sums to 100%. These show common support rather than longitudinal drug exposure. '
-              'The footer reports original N and effective sample size, (sum w)²/sum(w²). All centre, sex, age, BMI and EASI variables are shown. '
+              'Original group sizes and effective sample sizes, (sum w)²/sum(w²), are provided in the source tables. '
+              'All centre, sex, age, BMI and EASI variables are shown. '
               'Overlap weighting targets comparable baseline patients; it cannot remove unmeasured confounding or correct outcome-driven dose changes. '
               'Endpoint- and marker-specific availability/ESS diagnostics are retained in the source tables.',
               [str(folder/f) for f in ['baseline_balance_full.csv','propensity_overlap_bins.csv','analysis_effective_sample_sizes.csv']],root)

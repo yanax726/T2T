@@ -71,7 +71,10 @@ def save(fig,name,title,caption,sources,root=ROOT):
  if name is None:
   plt.close(fig)
   return
- out=root/'manuscript/figures';qa=root/'results/audit/update_20261107/figures';out.mkdir(parents=True,exist_ok=True);qa.mkdir(parents=True,exist_ok=True)
+ out=root/'manuscript/figures';qa=root/'results/audit/update_20261112/figures';out.mkdir(parents=True,exist_ok=True);qa.mkdir(parents=True,exist_ok=True)
+ from .figure_style_20261112 import apply as apply_style
+ caption,style_audit=apply_style(fig,source_id,caption)
+ (qa/(name+'.style.json')).write_text(json.dumps(style_audit,indent=2)+'\n')
  fig.canvas.draw()
  palette.apply_display_labels(fig)
  title,caption=palette.display_text(title),palette.display_text(caption)

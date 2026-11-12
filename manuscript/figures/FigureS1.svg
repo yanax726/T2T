@@ -171,53 +171,50 @@ z
 " clip-path="url(#pbf9551540f)" style="fill: #b85060"/>
    </g>
    <g id="text_1">
-    <text style="fill: #29323b; font: 700 8.5px 'DejaVu Sans'; text-anchor: start" x="16.530709" y="21.544882" transform="rotate(-0 16.530709 21.544882)">a</text>
+    <text style="fill: #29323b; font: 700 9.5px 'DejaVu Sans'; text-anchor: start" x="16.530709" y="21.544882" transform="rotate(-0 16.530709 21.544882)">a</text>
    </g>
    <g id="text_2">
-    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="28.530709" y="21.544882" transform="rotate(-0 28.530709 21.544882)">Clinical comparison population</text>
-   </g>
-   <g id="text_3">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="98.482819" y="51.441015" transform="rotate(-0 98.482819 51.441015)">Clinical records</text>
    </g>
-   <g id="text_4">
+   <g id="text_3">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="98.482819" y="67.999959" transform="rotate(-0 98.482819 67.999959)">170 patients</text>
    </g>
-   <g id="text_5">
+   <g id="text_4">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="51.382422" transform="rotate(-0 269.744882 51.382422)">Age ≥12 years</text>
    </g>
-   <g id="text_6">
+   <g id="text_5">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="67.999959" transform="rotate(-0 269.744882 67.999959)">164 patients</text>
    </g>
-   <g id="text_7">
+   <g id="text_6">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="441.006945" y="51.441015" transform="rotate(-0 441.006945 51.441015)">Clinical comparison set</text>
    </g>
-   <g id="text_8">
+   <g id="text_7">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="441.006945" y="67.999959" transform="rotate(-0 441.006945 67.999959)">163 patients</text>
    </g>
+   <g id="text_8">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(163.591389 100.625446)">6 excluded</text>
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(156.242561 109.593688)">Age &lt;12 years</text>
+   </g>
    <g id="text_9">
-    <text style="fill: #697078; font: 7.2px 'DejaVu Sans'" transform="translate(164.412288 100.722029)">6 excluded</text>
-    <text style="fill: #697078; font: 7.2px 'DejaVu Sans'" transform="translate(157.357413 109.331542)">Age &lt;12 years</text>
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(334.853452 100.625446)">1 excluded</text>
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(312.924742 109.593688)">Initial dose ambiguous</text>
    </g>
    <g id="text_10">
-    <text style="fill: #697078; font: 7.2px 'DejaVu Sans'" transform="translate(335.674351 100.722029)">1 excluded</text>
-    <text style="fill: #697078; font: 7.2px 'DejaVu Sans'" transform="translate(314.622788 109.331542)">Initial dose ambiguous</text>
-   </g>
-   <g id="text_11">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="98.482819" y="156.375049" transform="rotate(-0 98.482819 156.375049)">dupi</text>
    </g>
-   <g id="text_12">
+   <g id="text_11">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="98.482819" y="172.933993" transform="rotate(-0 98.482819 172.933993)">65 patients</text>
    </g>
-   <g id="text_13">
+   <g id="text_12">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="156.345752" transform="rotate(-0 269.744882 156.345752)">abro 100 mg</text>
    </g>
-   <g id="text_14">
+   <g id="text_13">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="172.933993" transform="rotate(-0 269.744882 172.933993)">56 patients</text>
    </g>
-   <g id="text_15">
+   <g id="text_14">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="441.006945" y="156.345752" transform="rotate(-0 441.006945 156.345752)">abro 200 mg</text>
    </g>
-   <g id="text_16">
+   <g id="text_15">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="441.006945" y="172.933993" transform="rotate(-0 441.006945 172.933993)">42 patients</text>
    </g>
   </g>
@@ -386,106 +383,103 @@ L 396.188394 448.271297
 z
 " clip-path="url(#p82a47282cf)" style="fill: #697078; stroke: #697078; stroke-width: 0.8; stroke-linecap: round"/>
    </g>
+   <g id="text_16">
+    <text style="fill: #29323b; font: 700 9.5px 'DejaVu Sans'; text-anchor: start" x="16.530709" y="224.363946" transform="rotate(-0 16.530709 224.363946)">b</text>
+   </g>
    <g id="text_17">
-    <text style="fill: #29323b; font: 700 8.5px 'DejaVu Sans'; text-anchor: start" x="16.530709" y="224.363946" transform="rotate(-0 16.530709 224.363946)">b</text>
-   </g>
-   <g id="text_18">
-    <text style="fill: #29323b; font: 700 8px 'DejaVu Sans'; text-anchor: start" x="28.530709" y="224.363946" transform="rotate(-0 28.530709 224.363946)">Serum-linked model population</text>
-   </g>
-   <g id="text_19">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="98.482819" y="255.003429" transform="rotate(-0 98.482819 255.003429)">Linked serum source</text>
    </g>
-   <g id="text_20">
-    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'; text-anchor: middle" x="98.482819" y="273.837611" transform="rotate(-0 98.482819 273.837611)">169 patients · 376 records</text>
+   <g id="text_18">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="98.482819" y="273.920392" transform="rotate(-0 98.482819 273.920392)">169 patients · 376 records</text>
    </g>
-   <g id="text_21">
+   <g id="text_19">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="255.003429" transform="rotate(-0 269.744882 255.003429)">W0, W12 or W24</text>
    </g>
-   <g id="text_22">
-    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="273.837611" transform="rotate(-0 269.744882 273.837611)">168 patients · 352 records</text>
+   <g id="text_20">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="273.920392" transform="rotate(-0 269.744882 273.920392)">168 patients · 352 records</text>
    </g>
-   <g id="text_23">
+   <g id="text_21">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="441.006945" y="254.944835" transform="rotate(-0 441.006945 254.944835)">Age ≥12 years</text>
    </g>
+   <g id="text_22">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="441.006945" y="273.920392" transform="rotate(-0 441.006945 273.920392)">162 patients · 340 records</text>
+   </g>
+   <g id="text_23">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(154.547444 303.925124)">24 W48 records</text>
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(167.169124 312.893366)">excluded</text>
+   </g>
    <g id="text_24">
-    <text style="fill: #29323b; font: 7.2px 'DejaVu Sans'; text-anchor: middle" x="441.006945" y="273.837611" transform="rotate(-0 441.006945 273.837611)">162 patients · 340 records</text>
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(317.344468 303.925124)">12 records excluded</text>
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'" transform="translate(316.835288 312.893366)">6 patients aged &lt;12</text>
    </g>
    <g id="text_25">
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'" transform="translate(156.518538 304.086097)">24 W48 records</text>
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'" transform="translate(168.298772 312.456456)">excluded</text>
-   </g>
-   <g id="text_26">
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'" transform="translate(319.879898 304.086097)">12 records excluded</text>
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'" transform="translate(319.404663 312.456456)">6 patients aged &lt;12</text>
-   </g>
-   <g id="text_27">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: start" x="45.415701" y="348.204076" transform="rotate(-0 45.415701 348.204076)">Sequential selection of observed outcomes and valid inputs</text>
    </g>
-   <g id="text_28">
-    <text style="fill: #29323b; font: 7.1px 'DejaVu Sans'; text-anchor: middle" x="81.597827" y="367.126011" transform="rotate(-0 81.597827 367.126011)">Age-eligible</text>
+   <g id="text_26">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="81.597827" y="367.236386" transform="rotate(-0 81.597827 367.236386)">Age-eligible</text>
    </g>
-   <g id="text_29">
+   <g id="text_27">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="81.597827" y="379.636224" transform="rotate(-0 81.597827 379.636224)">340 records</text>
    </g>
-   <g id="text_30">
-    <text style="fill: #29323b; font: 7.1px 'DejaVu Sans'; text-anchor: middle" x="175.671354" y="367.126011" transform="rotate(-0 175.671354 367.126011)">EASI observed</text>
+   <g id="text_28">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="175.671354" y="367.236386" transform="rotate(-0 175.671354 367.236386)">EASI observed</text>
    </g>
-   <g id="text_31">
+   <g id="text_29">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="175.671354" y="379.636224" transform="rotate(-0 175.671354 379.636224)">327 records</text>
    </g>
+   <g id="text_30">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="175.671354" y="392.324431" transform="rotate(-0 175.671354 392.324431)">13 excluded</text>
+   </g>
+   <g id="text_31">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="367.236386" transform="rotate(-0 269.744882 367.236386)">BSA observed</text>
+   </g>
    <g id="text_32">
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'; text-anchor: middle" x="175.671354" y="392.186462" transform="rotate(-0 175.671354 392.186462)">13 excluded</text>
-   </g>
-   <g id="text_33">
-    <text style="fill: #29323b; font: 7.1px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="367.126011" transform="rotate(-0 269.744882 367.126011)">BSA observed</text>
-   </g>
-   <g id="text_34">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="379.636224" transform="rotate(-0 269.744882 379.636224)">326 records</text>
    </g>
+   <g id="text_33">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="392.324431" transform="rotate(-0 269.744882 392.324431)">1 excluded</text>
+   </g>
+   <g id="text_34">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="363.818409" y="367.236386" transform="rotate(-0 363.818409 367.236386)">CCL26 valid</text>
+   </g>
    <g id="text_35">
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'; text-anchor: middle" x="269.744882" y="392.186462" transform="rotate(-0 269.744882 392.186462)">1 excluded</text>
-   </g>
-   <g id="text_36">
-    <text style="fill: #29323b; font: 7.1px 'DejaVu Sans'; text-anchor: middle" x="363.818409" y="367.126011" transform="rotate(-0 363.818409 367.126011)">CCL26 valid</text>
-   </g>
-   <g id="text_37">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="363.818409" y="379.636224" transform="rotate(-0 363.818409 379.636224)">318 records</text>
    </g>
+   <g id="text_36">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="363.818409" y="392.324431" transform="rotate(-0 363.818409 392.324431)">8 excluded</text>
+   </g>
+   <g id="text_37">
+    <text style="fill: #29323b; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="457.891937" y="367.236386" transform="rotate(-0 457.891937 367.236386)">IL-5 valid</text>
+   </g>
    <g id="text_38">
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'; text-anchor: middle" x="363.818409" y="392.186462" transform="rotate(-0 363.818409 392.186462)">8 excluded</text>
-   </g>
-   <g id="text_39">
-    <text style="fill: #29323b; font: 7.1px 'DejaVu Sans'; text-anchor: middle" x="457.891937" y="367.126011" transform="rotate(-0 457.891937 367.126011)">IL-5 valid</text>
-   </g>
-   <g id="text_40">
     <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: middle" x="457.891937" y="379.636224" transform="rotate(-0 457.891937 379.636224)">316 records</text>
    </g>
+   <g id="text_39">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="457.891937" y="392.324431" transform="rotate(-0 457.891937 392.324431)">2 excluded</text>
+   </g>
+   <g id="text_40">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'; text-anchor: start" x="45.415701" y="411.068373" transform="rotate(-0 45.415701 411.068373)">CCL17: no additional exclusions</text>
+   </g>
    <g id="text_41">
-    <text style="fill: #697078; font: 7px 'DejaVu Sans'; text-anchor: middle" x="457.891937" y="392.186462" transform="rotate(-0 457.891937 392.186462)">2 excluded</text>
+    <text style="fill: #29323b; font: 700 7.5px 'DejaVu Sans'; text-anchor: end" x="496.486205" y="411.068373" transform="rotate(-0 496.486205 411.068373)">Complete model: 160 patients · 316 visits</text>
    </g>
    <g id="text_42">
-    <text style="fill: #697078; font: 7.1px 'DejaVu Sans'; text-anchor: start" x="45.415701" y="410.957998" transform="rotate(-0 45.415701 410.957998)">CCL17: no additional exclusions</text>
-   </g>
-   <g id="text_43">
-    <text style="fill: #29323b; font: 700 7.4px 'DejaVu Sans'; text-anchor: end" x="496.486205" y="411.040779" transform="rotate(-0 496.486205 411.040779)">Complete model: 160 patients · 316 visits</text>
-   </g>
-   <g id="text_44">
     <text style="fill: #29323b; font: 700 7.8px 'DejaVu Sans'; text-anchor: middle" x="151.549937" y="465.941138" transform="rotate(-0 151.549937 465.941138)">Development · W0 and W12</text>
    </g>
-   <g id="text_45">
+   <g id="text_43">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="151.549937" y="483.875163" transform="rotate(-0 151.549937 483.875163)">156 patients · 241 visits</text>
    </g>
-   <g id="text_46">
-    <text style="fill: #697078; font: 7.3px 'DejaVu Sans'; text-anchor: middle" x="151.549937" y="500.119002" transform="rotate(-0 151.549937 500.119002)">W0: 152 visits · W12: 89 visits</text>
+   <g id="text_44">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="151.549937" y="500.174189" transform="rotate(-0 151.549937 500.174189)">W0: 152 visits · W12: 89 visits</text>
    </g>
-   <g id="text_47">
+   <g id="text_45">
     <text style="fill: #29323b; font: 700 7.8px 'DejaVu Sans'; text-anchor: middle" x="397.588394" y="465.941138" transform="rotate(-0 397.588394 465.941138)">Temporal application · W24</text>
    </g>
-   <g id="text_48">
+   <g id="text_46">
     <text style="fill: #29323b; font: 8px 'DejaVu Sans'; text-anchor: middle" x="397.588394" y="483.875163" transform="rotate(-0 397.588394 483.875163)">75 patients · 75 visits</text>
    </g>
-   <g id="text_49">
-    <text style="fill: #697078; font: 7.3px 'DejaVu Sans'; text-anchor: middle" x="397.588394" y="500.119002" transform="rotate(-0 397.588394 500.119002)">Previously inspected within-cohort data</text>
+   <g id="text_47">
+    <text style="fill: #697078; font: 7.5px 'DejaVu Sans'; text-anchor: middle" x="397.588394" y="500.174189" transform="rotate(-0 397.588394 500.174189)">Previously inspected within-cohort data</text>
    </g>
   </g>
  </g>

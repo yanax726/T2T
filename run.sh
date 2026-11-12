@@ -16,6 +16,7 @@ export MKL_NUM_THREADS="${MKL_NUM_THREADS:-1}"
 run_update_analysis() {
   "$python_bin" -m cytot2t.curation.laboratory_molecular_revision_20261107
   "$python_bin" -m cytot2t.curation.molecular_upgrade_20261107
+  "$python_bin" -m cytot2t.curation.lab_display_20261112
   "$python_bin" -m cytot2t.curation.local_paired_benchmark_20261101
   if [[ -f data/clinical_alignment/external/OMIX002850-01.xlsx ]]; then
     "$python_bin" -m cytot2t.curation.external_molecular_benchmark_20261101
@@ -39,6 +40,12 @@ case "$mode" in
     ;;
   figures)
     "$python_bin" -m t2t_paper.figures
+    ;;
+  lab-update)
+    "$python_bin" -m t2t_paper.preflight
+    "$python_bin" -m cytot2t.curation.lab_display_20261112
+    "$python_bin" -m t2t_paper.figures
+    "$python_bin" -m t2t_paper.build --compile
     ;;
   manuscript)
     "$python_bin" -m t2t_paper.build --compile
@@ -94,7 +101,7 @@ case "$mode" in
     "$python_bin" -m t2t_paper.build --compile
     ;;
   *)
-    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|update-analysis|analyse]'
+    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|update-analysis|lab-update|analyse]'
     exit 2
     ;;
 esac

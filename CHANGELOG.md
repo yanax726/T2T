@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026.11.12-rc1
+
+- Use all-available standardized IgE/EOS trajectories with explicit centre and temporal-shape sensitivities; retain earlier imputation analyses.
+- Clarify the fixed three-marker candidate history and its distinct supervised-search comparison.
+- Unify title-free figure typography, simplify the main input display and move molecular significance marks beside their rows.
+- Supply editable supplementary tables and a complete labelled review deck.
+
+
 The optional CI workflow is distributed at `docs/ci/public-checks.yml`. It is not active until a maintainer with workflow permission installs it under `.github/workflows/`; local verification is unaffected.
 
 ## 2026.11.07-rc1

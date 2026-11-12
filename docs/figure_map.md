@@ -13,7 +13,7 @@ Numbers below refer to the manuscript reviewed on 31 October and the current man
 | FigureS2 | FigureS2 | Baseline balance, treatment overlap and effective sample size |
 | FigureS3 | FigureS3 | Observed and adjusted BSA (%), SCORAD |
 | FigureS4 | FigureS4 | Observed and adjusted IgE (recorded units), Eosinophils (recorded units) |
-| FigureS5 | FigureS5 | IgE: fixed-patient observations and missing-data sensitivity |
+| FigureS5 | FigureS5 | IgE: all-available standardized trajectories, own-baseline ratios and CAMS sensitivity |
 | FigureS6 | FigureS7 | Week 2: all initial-treatment target contrasts |
 | FigureS7 | FigureS8 | Week 4: all initial-treatment target contrasts |
 | FigureS8 | FigureS9 | Week 12: all initial-treatment target contrasts |

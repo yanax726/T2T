@@ -22,9 +22,9 @@ def framework(root, base):
     grid = fig.add_gridspec(3, 1, height_ratios=[1.05, 1.5, 1.0],
                           left=.06, right=.98, bottom=.045, top=.945, hspace=.28)
     a, b, c = [fig.add_subplot(grid[i, 0]) for i in range(3)]
-    _panel(a, 'a', 'Framework development')
-    _panel(b, 'b', 'Targets evaluated through week 24')
-    _panel(c, 'c', 'Clinical review and exploratory measurement')
+    _panel(a, 'a', '')
+    _panel(b, 'b', '')
+    _panel(c, 'c', '')
 
     # Two source streams converge before the sequential review stages.
     for y, title in [(.60, 'Evidence review\nMeasures and frameworks'),
@@ -34,17 +34,18 @@ def framework(root, base):
     _line(a, [.235, .265, .265], [.76, .76, .51])
     _line(a, [.235, .265, .265], [.26, .26, .51])
     _arrow(a, (.265, .51), (.30, .51))
-    stages = [(.30, 'Round 1', 'Select measures'),
-              (.485, 'Feedback', 'Review and discuss'),
-              (.67, 'Round 2', 'Targets and timing'),
-              (.855, 'Final review', 'Local framework')]
+    stages = [(.30, 'Round 1', 'Vote on\nmeasures'),
+              (.485, 'Feedback', 'Discuss and\nrevise items'),
+              (.67, 'Round 2', 'Vote on targets\nand timing'),
+              (.855, 'Final review', 'Steering\ngroup')]
     for i, (x, title, detail) in enumerate(stages):
         _box(a, x, .29, .145, .44, face=CLINICAL_FILL)
         _text(a, x + .0725, .60, title, size=7.0, weight='bold')
-        _text(a, x + .0725, .43, detail.replace(' and ', '\nand '), size=6.5)
+        _text(a, x + .0725, .43, detail, size=7.5)
         if i < len(stages) - 1:
             _arrow(a, (x + .145, .51), (stages[i+1][0], .51))
 
+    _text(a,.65,.08,'Planned agreement criterion ≥75%',size=7.5)
     x0, width, gap = .18, .188, .022
     columns = [x0 + i * (width + gap) for i in range(4)]
     for row, ypos in zip(content['assessment']['rows'], [.60, .18]):
@@ -73,7 +74,7 @@ def framework(root, base):
     _arrow(c, (.64, .75), (.73, .75))
     _box(c, .0, .02, 1, .35, face=RESEARCH_FILL)
     _text(c, .02, .28, 'Research assessment', ha='left', size=7, weight='bold')
-    _text(c, .235, .125, 'BSA + CCL17, CCL26, IL-5', size=7)
+    _text(c, .235, .125, 'BSA + CCL17, CCL26, IL-5', size=7.5)
     _arrow(c, (.47, .125), (.54, .125))
     _text(c, .77, .125, 'E-EASI: estimated EASI', size=7, weight='bold')
     base.save(fig, 'Figure1', 'Development, clinical targets and the E-EASI research assessment',
@@ -162,8 +163,9 @@ def molecular_response(root, base):
                         markerfacecolor='white',markeredgewidth=.8,zorder=3)
                 for i,r in enumerate(z.itertuples()):
                     if np.isfinite(r.q) and r.q < .05 and r.n >=5:
-                        ax.text(1.055 if w==12 else 1.19,i,'*',color=color,fontsize=10,
-                                va='center',ha='center',transform=ax.get_yaxis_transform())
+                        ax.text(1.04 if w==12 else 1.16,i,'*',color=color,fontsize=9,
+                                va='center',ha='left',zorder=5,
+                                transform=ax.get_yaxis_transform())
         ax.axvline(0,color='#BBC6CB',lw=.65,zorder=0)
         ax.grid(axis='y',color='#E8EEF0',lw=.5,zorder=0)
         ax.set(yticks=np.arange(23),yticklabels=base.MARKERS if j==0 else ['']*23,
@@ -172,16 +174,13 @@ def molecular_response(root, base):
         ax.tick_params(axis='y',length=0)
         ax.annotate('abc'[j],(0,1),xycoords='axes fraction',xytext=(-12,11),
                     textcoords='offset points',fontsize=8,weight='bold')
-        for xpos,w in [(1.055,12),(1.19,24)]:
-            ax.text(xpos,1.01,f'W{w}',transform=ax.transAxes,ha='center',va='bottom',
-                    fontsize=6,color=INK)
     base.save(fig,'Figure4','Molecular changes across three visits in the same patients',
               'a–c, All 23 serum markers by initial treatment. For each marker and treatment, the same patients contribute at '
               'W0, W12 and W24; patient sets can differ between markers and treatments. W0 is the reference value zero, not zero '
               'concentration. Coloured points show mean within-person log₂ changes from W0; horizontal bars are 95% t confidence '
               'intervals for n≥5. A change of −1 means a geometric paired concentration ratio of 0.5. Hollow later-visit points '
-              'denote n<5 without inference; blank rows have no complete three-visit set. The two star columns labelled W12 and W24 '
-              'refer to the corresponding visit versus W0: *BH q<0.05 across all 138 planned marker-by-treatment-by-contrast tests, '
+              'denote n<5 without inference; blank rows have no complete three-visit set. A coloured star beside a marker row refers '
+              'to that same-colour visit versus W0: *BH q<0.05 across all 138 planned marker-by-treatment-by-contrast tests, '
               'using paired sign-flip tests and retaining non-estimable hypotheses in the family. These stars are calculated in the '
               'displayed fixed patient sets, not copied from analyses of all available pairs. No baseline covariate adjustment is '
               'applied to this descriptive figure. Between-treatment adjusted comparisons and all available-pair windows are '

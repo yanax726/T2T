@@ -250,7 +250,7 @@ def tables(root):
             raise ValueError('Patient-level record in review aggregate directory: '+str(p))
         rows.append({'section':'Definition and laboratory checks','file':str(p.relative_to(root)),
                      'rows':len(df),'columns':'; '.join(df.columns)})
-    for folder in ['update_20261107/labs', 'update_20261107/model', 'update_20261107/framework', 'external_validation_20261101']:
+    for folder in ['update_20261107/labs', 'update_20261107/model', 'update_20261107/framework', 'external_validation_20261101', 'update_20261112/labs']:
         for p in sorted((root/'results/tables'/folder).glob('*.csv')):
             if 'private' in p.name.lower():continue
             df=pd.read_csv(p)
@@ -267,11 +267,11 @@ def tables(root):
     (out/'source_index.tex').write_text(s)
 
 def figure_page(row):
-    height='.84' if row['id'].startswith('FigureS') else '.76'
+    height=('.76' if len(row['caption'].split())>170 else '.84') if row['id'].startswith('FigureS') else '.76'
     return '\\clearpage\n\\renewcommand{\\thefigure}{'+row['id'].replace('Figure','')+'}\n\\begin{figure}[p]\n\\centering\n\\includegraphics[width=\\linewidth,height='+height+'\\textheight,keepaspectratio]{figures/'+row['id']+'.pdf}\n\\caption{\\textbf{'+tex(row['title'])+'.} '+tex(row['caption'])+'}\\label{fig:'+row['id']+'}\n\\end{figure}\n'
 
 def figure_inline(row):
-    height = {'Figure2': '.80', 'Figure5': '.66'}.get(row['id'], '.72')
+    height = {'Figure2': '.79', 'Figure5': '.66'}.get(row['id'], '.72')
     return '\\begin{figure}[!htbp]\n\\centering\n\\includegraphics[width=\\linewidth,height='+height+'\\textheight,keepaspectratio]{figures/'+row['id']+'.pdf}\n\\caption{\\textbf{'+tex(row['title'])+'.} '+tex(row['caption'])+'}\\label{fig:'+row['id']+'}\n\\end{figure}\n'
 
 def documents(root):
@@ -319,7 +319,7 @@ Analysis code, versioned parameters, aggregate source tables and figure sources 
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S.\arabic{table}}
 \section*{Supplementary guide}
-The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S16 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity classification intervals, baseline serum concentrations, framework comparisons, molecular model extensions, transport benchmarks and single-visit low-activity states. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
+The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S17 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity classification intervals, baseline serum concentrations, framework comparisons, molecular model extensions, transport benchmarks, single-visit low-activity states and all-available adjusted IgE changes. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
 '''
     for title,ids,description in groups:
         app+='\\hyperref[fig:FigureS'+str(ids[0])+']{\\textbf{'+tex(title)+'}}. '+tex(description)+'\\par\n'
@@ -347,6 +347,7 @@ N is the endpoint-specific evaluable denominator. Unknown outcomes are excluded 
 \clearpage\input{tables/molecular_extensions}
 \clearpage\input{tables/serum_transport}
 \clearpage\input{tables/joint_low_activity}
+\clearpage\input{tables/ige_all_available}
 \clearpage
 '''
     if (m/'sections/auxiliary_targets.tex').exists():app+=section_text(m/'sections/auxiliary_targets.tex')+'\n'
@@ -371,7 +372,7 @@ The \href{run:source_data/index.csv}{machine-readable source-table index} lists 
 
 def compile_pdf(root):
     env=os.environ.copy();env['SOURCE_DATE_EPOCH']='1792195200';env['FORCE_SOURCE_DATE']='1'
-    logs=root/'reports/update_20261107/logs';logs.mkdir(parents=True,exist_ok=True)
+    logs=root/'reports/update_20261112/logs';logs.mkdir(parents=True,exist_ok=True)
     for name in ['main','appendix','figure_book']:
         commands=[['pdflatex','-interaction=nonstopmode','-halt-on-error',name+'.tex']]
         if name!='figure_book':commands += [['bibtex',name]]
@@ -382,7 +383,8 @@ def compile_pdf(root):
 
 def run(root,compile=False):
     from .tables_20261107 import run as revised_tables
-    tables(root);revised_tables(root);documents(root)
+    from .tables_20261112 import run as laboratory_tables
+    tables(root);revised_tables(root);laboratory_tables(root);documents(root)
     generated = list((root/'manuscript/tables').glob('*.tex'))
     generated += [root/'manuscript'/f'{name}.tex' for name in ['main','appendix','figure_book']]
     for path in generated:

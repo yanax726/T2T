@@ -52,7 +52,7 @@ def courses(root, base):
     groups = [(3, ['bsa', 'scorad']), (4, ['ige_numeric', 'eo_count_numeric'])]
     for number, variables in groups:
         if number == 4:
-            from .revision_20261107 import laboratories
+            from .revision_20261112 import laboratories
             laboratories(root, base, finish)
             continue
         fig, axes = previous.grid(len(variables), 2, 151,
@@ -259,7 +259,7 @@ def triplet_forests(root, base):
 
 
 def ige_fixed(root, base):
-    from .sensitivity_figures_20261025 import ige_sensitivity
+    from .revision_20261112 import ige_sensitivity
     ige_sensitivity(root, base, finish)
 
 
@@ -271,7 +271,7 @@ def regional_composite(root, base):
     change = pd.read_csv(regional / 'regional_paired_improvement.csv')
     itch = pd.read_csv(regional / 'whole_body_PP_NRS_improvement.csv')
     fig = plt.figure(figsize=(183 / 25.4, 215 / 25.4))
-    gs = fig.add_gridspec(12, 12, left=.145, right=.975, top=.91, bottom=.12, wspace=.80, hspace=1.50)
+    gs = fig.add_gridspec(12, 12, left=.145, right=.975, top=.91, bottom=.14, wspace=.80, hspace=1.50)
     a = fig.add_subplot(gs[:, :5])
     b = fig.add_subplot(gs[:5, 7:])
     c = fig.add_subplot(gs[6:9, 7:])
@@ -300,7 +300,7 @@ def regional_composite(root, base):
         b.text(-.40, 4*j+1.5, palette.treatment_label(tx), transform=b.get_yaxis_transform(),
                ha='center', va='center', rotation=90, fontsize=6.3)
     for y in [3.5, 7.5]: b.axhline(y, color='white', lw=2)
-    cbax = b.inset_axes([.14, -.095, .72, .025]); cb = fig.colorbar(im, cax=cbax, orientation='horizontal', ticks=[0, 50, 100]); cbax.tick_params(labelsize=6.3, length=2)
+    cbax = b.inset_axes([.14, -.15, .72, .025]); cb = fig.colorbar(im, cax=cbax, orientation='horizontal', ticks=[0, 50, 100]); cbax.tick_params(labelsize=6.3, length=2)
     columns = [(start, end, scope) for start, end in [(0, 12), (0, 24), (12, 24)] for scope in ['dupilumab', 'pooled_abrocitinib']]
     values = np.array([[float(change[change.region.eq(region) & change.start.eq(start) & change.end.eq(end) & change.scope.eq(scope) & change.outcome.eq('normalized_improvement')]['mean'].iloc[0])*100 for start,end,scope in columns] for region in REGIONS])
     limit = max(5, np.ceil(np.nanmax(np.abs(values)) / 5) * 5)

@@ -30,9 +30,7 @@ def _panel(ax, letter, title):
     ax.annotate(letter, (0, 1), xycoords='axes fraction', xytext=(-12, 7),
                 textcoords='offset points', weight='bold', fontsize=8.5,
                 color=INK, annotation_clip=False)
-    ax.annotate(title, (0, 1), xycoords='axes fraction', xytext=(0, 7),
-                textcoords='offset points', weight='bold', fontsize=8,
-                color=INK, annotation_clip=False)
+    ax._panel_caption_title = title
 
 
 def _box(ax, x, y, w, h, *, face='white', edge=RULE, accent=None):

@@ -429,7 +429,7 @@ def regional_panels(root,base):
 
 def monitoring_classification(root,base):
     source=root/'results/tables/update_20261017/redesign_20261018/monitoring_confusion_repeat0.csv';d=pd.read_csv(source)
-    fig,axes=grid(2,3,155,left=.12,top=.90,bottom=.18,wspace=.47,hspace=.68)
+    fig,axes=grid(2,3,155,left=.17,top=.90,bottom=.18,wspace=.47,hspace=.68)
     cmap=PROPORTION_CMAP
     for row,window in enumerate(['W0_W12','W0_W24']):
         for col,endpoint in enumerate(['EASI50','EASI75','EASI90']):
@@ -443,7 +443,7 @@ def monitoring_classification(root,base):
             ax.tick_params(length=0)
             for spine in ax.spines.values():spine.set_visible(False)
     window_header(fig,'First outer repetition: illustration of response classification',y=.99)
-    cax=axes[0].inset_axes([.35,.055,.40,.014],transform=fig.transFigure)
+    cax=axes[0].inset_axes([.35,.075,.40,.014],transform=fig.transFigure)
     cb=fig.colorbar(im,cax=cax,orientation='horizontal',ticks=[0,.5,1]);cb.ax.set_xticklabels(['0%','50%','100%']);cb.set_label('Percentage within observed-response row',fontsize=6.3);cax.tick_params(labelsize=6.3,length=2)
     finish(fig,38,'Classification of EASI50, EASI75 and EASI90 response','Each panel shows actual patient counts from the first outer repetition, separately for W0→W12 and W0→W24. Rows are observed response and columns model-estimated response. Diagonal cells are correct; upper-right cells falsely indicate response and lower-left cells miss an observed responder. Percentages are within each observed-response row, so the lower-right percentage is sensitivity and the upper-left percentage specificity. Observed response uses observed baseline/follow-up scores, whereas estimated response uses predicted baseline/follow-up scores. Counts are integers from one repetition, not the primary two-repetition average; the full metrics table retains the latter. The paired denominators are 85 and 67, with no excluded pair for invalid baseline in this displayed repetition. The two intervals can share patients. This assesses response classification, not alternative-treatment outcomes or continuous-score equivalence.',[source,root/'results/tables/update_20261017/model/improvement_classification.csv'],root,base,'Replace isolated metric dots with six directly readable confusion matrices','Predicted response: no/yes','Observed response: no/yes','First repeat same-patient pairs n85/n67; actual integer counts')
 

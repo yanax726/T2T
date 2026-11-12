@@ -9,7 +9,8 @@ E-EASI means estimated EASI. The equation uses BSA, CCL17, CCL26 and IL-5; this 
 | Material | Location |
 |---|---|
 | Manuscript and supplementary information | [Main PDF](manuscript/main.pdf), [appendix PDF](manuscript/appendix.pdf) |
-| All current figures and captions | [Figure book](manuscript/figure_book.pdf), [figure catalogue](manuscript/figure_catalog.json) |
+| All current figures and captions | [Figure book](manuscript/figure_book.pdf), [review deck](manuscript/figure_deck.pdf), [PPTX](manuscript/figure_deck.pptx), [figure catalogue](manuscript/figure_catalog.json) |
+| Editable supplementary tables | [Word appendix](manuscript/appendix.docx) |
 | Numerical results, including controls and negative findings | [Aggregate tables](results/tables/update_20261017/) |
 | Matched input comparisons and IgE missing-data sensitivity | [Model comparisons](results/tables/update_20261025/ablation/), [IgE analyses](results/tables/update_20261025/ige/) |
 | Laboratory coverage and clinical definition sensitivity | [Aggregate checks](results/tables/update_20261031/), [repetition-specific response intervals](results/tables/update_20261017/redesign_20261018/monitoring_response_per_repeat_uncertainty.csv) |
@@ -38,7 +39,7 @@ python3.9 -m venv .venv
 
 PDF rebuilding also requires pdfLaTeX and BibTeX. The [reproduction guide](docs/reproduction.md) documents dependencies, tested environment, runtimes and each command. Figure identities and counts follow the live catalogue rather than a fixed count in this README.
 
-The current [tests](reports/update_20261107/tests.log), [quality checks](reports/update_20261107/final_quality_assurance.json) and [isolated public rebuild](reports/update_20261107/public_reproducibility.json) document the checks actually run. The separate rebuild reproduced 165 manuscript artifacts and retained 219 aggregate CSVs byte for byte. Earlier records retain their original dates and do not certify later changes. The [figure style guide](docs/figure_style.md) defines the shared colour roles and display rules. An optional [GitHub Actions template](docs/ci/public-checks.yml) is supplied but is not active. After granting a publishing credential permission to modify workflows, copy it to `.github/workflows/public-checks.yml` to enable Actions.
+The current [tests](reports/update_20261112/tests.log), [quality checks](reports/update_20261112/final_quality_assurance.json) and [isolated public rebuild](reports/update_20261112/public_reproducibility.json) document the checks actually run. The core rebuild reproduces publication figures, tables and TeX PDFs from distributed aggregates; Office exports have a separate [portable workflow](docs/editable_exports.md). Earlier records retain their original dates and do not certify later changes. The [figure style guide](docs/figure_style.md) defines the shared colour roles and display rules. An optional [GitHub Actions template](docs/ci/public-checks.yml) is supplied but is not active. After granting a publishing credential permission to modify workflows, copy it to `.github/workflows/public-checks.yml` to enable Actions.
 
 `rebuild` uses the distributed aggregates. `analyse` refits the analyses only after authorized restricted snapshots pass the declared hash checks. `sensitivity` reruns the earlier sensitivity analyses. `update-analysis` runs the new laboratory, molecular-learning and formula-transfer comparisons in an authorized workspace with existing curated inputs and predictions. It skips only the external benchmark when its OMIX workbook is absent. Participant records, individual predictions, fold membership, clinical dates and free-text notes are excluded from this repository. See [data access](DATA_ACCESS.md).
 
@@ -48,11 +49,11 @@ The input comparisons refit each model on the same eligible visits and patient s
 
 The frozen E-EASI procedure has W0/W12/W24 MAE of 3.19/1.30/1.19 points. It is a hybrid clinical–molecular estimate: BSA contributes clinical information, and a consistent molecular accuracy gain was not established. New blood-only learning used nonlinear patterns, paired changes and ordinal IGA during training. Its three-marker MAE remained 7.50/7.21/7.80; a 19-marker panel did not improve performance consistently.
 
-Supplementary Tables S12–S16 cover baseline molecular distributions, framework definitions, the new molecular-only comparisons, the existing formula-transfer benchmark and post hoc single-visit IEC-compatible EASI-and-itch states. The main molecular figure uses fixed patients across three visits and its own multiplicity family. The missing dupi W4 eosinophil point is an explicitly labelled interpolation estimate, not an observed measurement. OMIX002850 has no BSA and cannot validate E-EASI; prior inspection, possible overlap and assay differences also prevent an independent-validation claim.
+Supplementary Tables S12–S17 cover baseline molecular distributions, framework definitions, the new molecular-only comparisons, the existing formula-transfer benchmark, post hoc single-visit IEC-compatible EASI-and-itch states and all-available adjusted IgE changes. The main molecular figure uses fixed patients across three visits and its own multiplicity family. All W4 IgE and dupi W4 eosinophil values are unmeasured; hollow display points are explicit conditional temporal interpolations, not recovered measurements. The revised IgE display uses all available responses and shows CAMS-only sensitivity for missing Huashan dupi follow-up. OMIX002850 has no BSA and cannot validate E-EASI; prior inspection, possible overlap and assay differences also prevent an independent-validation claim.
 
 ## Version, citation and license
 
-This research snapshot is version [2026.11.07-rc1](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
+This research snapshot is version [2026.11.12-rc1](VERSION). Cite the version and Git commit using [CITATION.cff](CITATION.cff); no manuscript DOI or manuscript author list is asserted. Changes are recorded in [CHANGELOG.md](CHANGELOG.md).
 
 Original code, data and manuscript materials have no assigned reuse license. The existing Apache-2.0 terms for the third-party panel-alignment helper are retained. See [license status](LICENSE_STATUS.md) and [third-party notice](NOTICE.md).
 

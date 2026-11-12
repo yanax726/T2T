@@ -1,0 +1,32 @@
+{
+  "version": "2026.11.12-rc1",
+  "status": "PASS",
+  "scope": "Rendered figures, laboratory computations, publication documents and reproduction; not a claim of clinical interchangeability or journal acceptance.",
+  "figures": 26,
+  "font_and_collision_checks_all_pass": true,
+  "latex_overflow_or_undefined_references": false,
+  "unit_tests": {
+    "passed": 53,
+    "log": "reports/update_20261112/tests.log"
+  },
+  "primary_formula_unchanged": true,
+  "primary_formula_sha256": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+  "lab_checks": "reports/update_20261112/labs/verification.json",
+  "independent_statistical_review": "reports/update_20261112/labs/independent_review.json",
+  "all_observed_inputs_unchanged": true,
+  "interpolated_W4_used_for_significance_or_validation": false,
+  "static_component_validator": "Shared typography/alignment/export configuration is resolved by the renderer. File-local static findings cannot validate delegated helpers; final rendered gates and visual review are recorded separately.",
+  "visual_review": "All26 figures inspected in contact sheets and revised figures at full size; main PDF/table pages reviewed. Word appendix, Chinese selection explanation and deck rendered and reviewed; log2 math, continuation headers and CJK rendering repaired. No clipping remains.",
+  "semantic_colours_all_pass": true,
+  "rendered_alignment_all_pass": true,
+  "single_panel_alignment_not_applicable": [
+    "FigureS7",
+    "FigureS17"
+  ],
+  "colour_simulations_report": "reports/update_20261112/colour_qa/colour_inventory.json",
+  "office_exports": "reports/update_20261112/office_exports.json",
+  "public_rebuild": "reports/update_20261112/public_reproducibility.json",
+  "public_core_artifacts_byte_identical": 166,
+  "public_aggregate_csvs_byte_identical": 228,
+  "public_unit_tests_passed": 53
+}

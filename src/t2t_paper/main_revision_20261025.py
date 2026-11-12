@@ -57,7 +57,7 @@ def clinical_targets(root):
                         markeredgecolor=palette.role_style('treatment.' + arm)['outline'], markeredgewidth=.4)
         upper = {'easi_total': 35, 'pp_nrs': 11, 'dlqi': 30}[variable]
         ax.set(title=title, xticks=weeks, xlim=(-1, 25), ylim=(0, upper),
-               xlabel='Week', ylabel='Score (points)')
+               xlabel='Week', ylabel=title+' (points)')
     for ax, (target, title, weeks) in zip(axes[3:], TARGETS):
         for j, (arm, color) in enumerate(zip(base.ARMS, base.COLORS)):
             d = rates[rates.target.eq(target) & rates.treatment.eq(arm)].set_index('week').reindex(weeks)
@@ -67,7 +67,7 @@ def clinical_targets(root):
                         yerr=np.maximum(0, np.vstack([100*(d.rate-d.ci_low), 100*(d.ci_high-d.rate)])),
                         fmt='o-', color=color, lw=1.35, elinewidth=.85, capsize=1.4, ms=3.4,
                         markeredgecolor=palette.role_style('treatment.' + arm)['outline'], markeredgewidth=.4)
-        ax.set(title=title, xticks=weeks, xlim=(-1, 25), ylim=(0, 103),
+        ax.set(title=title, ylabel=title+' (%)', xticks=weeks, xlim=(-1, 25), ylim=(0, 103),
                yticks=[0, 50, 100], xlabel='Week')
     ax = axes[-1]
     for j, (arm, color) in enumerate(zip(base.ARMS, base.COLORS)):
@@ -76,14 +76,13 @@ def clinical_targets(root):
                     yerr=np.maximum(0, np.vstack([100*(d.rate-d.ci_low), 100*(d.ci_high-d.rate)])),
                     fmt='o', color=color, lw=1.1, ms=3.5, capsize=1.5)
     ax.set(title='Combined stage-specific target', xticks=[4, 12, 24],
-           xlim=(-1, 25), ylim=(0, 103), yticks=[0, 50, 100], xlabel='Week')
+           xlim=(-1, 25), ylim=(0, 103), yticks=[0, 50, 100], xlabel='Week',
+           ylabel='Combined target (%)')
     for i, ax in enumerate(axes):
         label(ax, string.ascii_lowercase[i]); clean(ax)
         ax.tick_params(labelsize=6.5)
         if i < 12:
             ax.set_xlabel('')
-        if i >= 3 and i % 3 == 0:
-            ax.set_ylabel('Target attainment (%)')
     base.save(fig, 'Figure2', 'Observed clinical activity and target attainment by initial treatment',
               'a–c, Observed medians and interquartile ranges for EASI, PP-NRS and adult DLQI. '
               'd–n, Clinical threshold attainment, with pointwise Wilson 95% confidence intervals. '

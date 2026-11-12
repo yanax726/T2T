@@ -67,3 +67,9 @@ The live figure catalogue is the authority for current figure identifiers and so
 The new configurations are `laboratory_molecular_revision_20261107.json`, `molecular_upgrade_20261107.json`, `local_paired_benchmark_20261101.json` and `external_molecular_benchmark_20261101.json`. No raw participant data, individual predictions, fold membership, local email records or original planning documents are included in the public package. New CSV outputs pass the same identifier and column screening as the earlier aggregates. Table S12–S16 source data are distributed with the manuscript package.
 
 `rebuild` reads aggregate results and redraws the manuscript; it never trains models or fills missing patient values. `run.sh` sets both `MPLCONFIGDIR` and `XDG_CACHE_HOME` below `results/.cache/`, giving Matplotlib and Fontconfig a project-local writable cache. BLAS thread counts default to one and can be overridden by the environment. These caches are generated locally and are not publication inputs.
+
+## 12 November laboratory and editable-document update
+
+`./run.sh lab-update` requires the authorized curated clinical snapshot. It recomputes the all-available IgE/eosinophil response-profile models and explicit W4 interpolation sensitivities, then rebuilds figures and manuscript PDFs. These steps also run inside `update-analysis` and `analyse`. Interpolated points never enter observed data, treatment tests or prediction truth. `rebuild` uses the distributed aggregates and does not refit these models.
+
+The package also contains editable supplementary tables in `manuscript/appendix.docx` and a review deck in `manuscript/figure_deck.pptx`/`.pdf`. Those review exports are separate from the core numerical/TeX rebuild. Their optional export module documents additional document-rendering dependencies. Publication figures remain vector PDF/SVG; the review deck uses exact PNG previews to avoid SVG font-substitution differences.

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "word_native_tables": 22,
+  "numbered_supplementary_tables": 17,
+  "word_tables_rasterized": 0,
+  "word_table_text_unchanged": true,
+  "word_render_pages": 62,
+  "deck_slides": 26,
+  "deck_render_pages": 26,
+  "exact_source_image_bytes": true,
+  "speaker_note_count": 26,
+  "sources_unchanged": true,
+  "outputs_sha256": {
+    "manuscript/appendix.docx": "31136b2127f4ddf892981d9896587e972470816012a6ba217b0dced6bbee1946",
+    "manuscript/figure_deck.pdf": "47fdcc892b89255fda66fc26f3029247d6abb8e654ade7465378a36f75cf9b77",
+    "manuscript/figure_deck.pptx": "aa2d701a7fb396b4ea322258e3301628cd0e3606f21f7aebe09aa05b6677001b"
+  },
+  "portable_export_test": "Separate Pandoc, python-docx and LibreOffice export completed without proprietary Artifact Tool imports; Office bytes may vary by rendering environment."
+}

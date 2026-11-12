@@ -1,0 +1,18 @@
+{
+  "version": "laboratory-all-available-display-20261112",
+  "status": "Post hoc display revision after reviewing all-available versus complete-triplet discrepancies; models and interpolation are not selected by treatment-effect direction.",
+  "source": "results/tables/update_20260925/clinical.csv",
+  "eligibility": "Age at least12 and unambiguous initial dose; same163 clinical patients as frozen manuscript evidence",
+  "outcomes": {"IgE": {"column": "ige_numeric", "observed_weeks": [0,12,24]}, "EOS": {"column": "eo_count_numeric", "observed_weeks": [0,4,12,24]}},
+  "primary_model": "Maximum-likelihood random-intercept response-profile model on log(1+recorded measurement), initial treatment by categorical nominal visit, log(1+baseline EASI), age, sex, BMI and centre where variable. Treatment-specific baseline means are free. A person need not have a baseline or all visits to contribute an observed response.",
+  "standardization": "Fixed-effect log-scale predictions average the design over all baseline patients in the declared scope; inverse transform only after averaging. These shifted geometric means are not arithmetic means or medians. Follow-up changes subtract each treatment's own modelled baseline.",
+  "scopes": ["all_163", "CAMS"],
+  "centre_sensitivity": "Add centre-by-visit to the full-cohort model; shared centre differences across initial drugs are an explicit extrapolation assumption because Huashan dupi follow-up IgE is unobserved.",
+  "intervals": "Two-sided95% normal Wald intervals using the model fixed-effect covariance; no claim of individual prediction intervals or recovery of unobserved measurements.",
+  "missing_W4": "No W4 IgE was measured in any patient and no dupi W4 EOS was measured. These cells cannot be identified by ordinary MAR imputation. Optional hollow points are separately labelled temporal interpolations between modelled W0 and W12 log(1+x) group levels, with1/3 elapsed-time weight.",
+  "interpolation_sensitivity": {"log1p_linear_time": 0.3333333333333333, "early_log_time": 0.6274735630753034, "late_quadratic_time": 0.1111111111111111},
+  "interpolation_scope": "Conditional curve illustration only; never patient records, clinical validation truth, or treatment-significance inputs. W4 intervals propagate fitted endpoint covariance but exclude uncertainty in temporal shape and nonignorable missingness.",
+  "multiplicity": "Six W12/W24 pairwise differences in baseline-relative log change, Holm adjusted separately per outcome, scope and model. No significance test at interpolated W4.",
+  "references": ["https://doi.org/10.1136/bmj.b2393", "https://doi.org/10.1056/NEJMoa1610020", "https://pubmed.ncbi.nlm.nih.gov/35636689/"],
+  "unchanged": ["Observed records", "Initial treatment labels", "Frozen E-EASI parameters", "Existing two-method four-chain multiple-imputation results"]
+}

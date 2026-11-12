@@ -1,0 +1,50 @@
+{
+  "status": "PASS_WITH_STATED_INTERPRETIVE_LIMITS",
+  "date": "2026-11-12",
+  "scope": "Independent read-only statistical/numerical review of laboratory analysis and S4/S5 field/legend semantics; not certification of unbiased causal effects. No source edits.",
+  "material_computational_errors_found": false,
+  "observed_data_counts": {
+    "IgE": {
+      "n_patients": 147,
+      "n_measurements": 258,
+      "n_single_measurement_patients": 66
+    },
+    "EOS": {
+      "n_patients": 138,
+      "n_measurements": 320,
+      "n_single_measurement_patients": 40
+    }
+  },
+  "likelihood_max_abs_loglik_difference": 8.668700957059627e-08,
+  "EOS_max_abs_fixed_coefficient_difference": 5.712239615207615e-07,
+  "all_final_information_matrices_positive_definite": true,
+  "independent_coefficient_SE_max_abs_difference": 1.6355692822322965e-07,
+  "independent_level_change_SE_max_abs_difference": 3.1727323723806933e-07,
+  "independent_Holm_p_max_abs_difference": 2.40861792372149e-07,
+  "W4_used_in_significance_tests": false,
+  "clinical_validation_truth_created": false,
+  "baseline_IgE_explicit_ANCOVA_new_model": false,
+  "adjusted_level_estimator": "exp(mean fixed-effect log1p predictions over declared baseline reference population))-1",
+  "relative_change_estimator": "exp(followup modeled log1p mean minus own-group W0 modeled log1p mean)",
+  "scientific_limits": [
+    "W4 entirely unobserved cells require imposed temporal shape; conditional intervals omit shape uncertainty.",
+    "Huashan dupi IgE follow-up absent; pooled model borrows centre effects; centre-by-visit sensitivity does not identify absent treatment-centre interaction.",
+    "MAR/correct mean and covariance assumptions remain; one-visit participants are retained but do not create paired changes.",
+    "Initial groups include regimen changes and do not identify causal dose effects.",
+    "Generic estimate field in change/contrast CSV is exp(logcontrast)-1, not original-unit concentration difference."
+  ],
+  "sources_sha256": {
+    "src/cytot2t/curation/lab_display_20261112.py": "6768dd8eae588726d5421bea0b66d581d0d174478b3709f1aac8f5ceb5c0a038",
+    "config/lab_display_20261112.json": "6f045d5675d3ef75613ed4b0e19f0ffff370b7cbc62728cb2d2036a4118bd478",
+    "src/t2t_paper/revision_20261112.py": "4a290a41a279fa37c19bfe8f9bdf7a89fe47f27b65449324209703642df28875",
+    "results/tables/update_20261112/labs/longitudinal_levels.csv": "f27bac0c910e32ba478143ee9b8cb837820e8ce926f8c4fe5239b821fa69f0c1",
+    "results/tables/update_20261112/labs/longitudinal_changes.csv": "158d3cb712fe728246ef21697d97195f6ba2e675dd0d0fb8e73bfee94c9ecc12",
+    "results/tables/update_20261112/labs/prior_model_reproduction.csv": "706d6b791bef3510f2fdda422519a5ce74159405ded5dda14d0c13f08906fa8e",
+    "results/tables/update_20261112/labs/model_coefficients.csv": "46f2e50ab3461c95f5f5afa94946d99b06ce5c248a3b444fa45b7cbbd32e3799",
+    "results/tables/update_20261112/labs/model_fit_diagnostics.csv": "24146f93826c12307503d228552e81702a988447f08b49555795c94786856c65",
+    "results/tables/update_20261112/labs/between_treatment_changes.csv": "38fb7dcc84feceaa57573e9dc5d9c1471be326938328f6510bea03d2b6fcb463",
+    "results/tables/update_20261112/labs/coverage_by_centre.csv": "eefbfb8af819e7699c6eafff71963042992ab80da7a3bc81c8fb7bde1a5223ef",
+    "results/tables/update_20261112/labs/observation_patterns.csv": "358a66d07a1cc7c30cdd9a303967d53709a430a11bc12258b63c2c899dc3a196",
+    "results/tables/update_20261112/labs/time_shape_sensitivity.csv": "a75667901dfc7ba2bd3016432d549094293f3e95fae4f80b93cf5ba77de19b2c"
+  }
+}

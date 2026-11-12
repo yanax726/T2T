@@ -29,7 +29,7 @@ BASE_FILES = [
     'README.md', 'DATA_ACCESS.md', 'NOTICE.md', 'LICENSE_STATUS.md',
     'CITATION.cff', 'CHANGELOG.md', 'VERSION', 'run.sh', '.gitignore',
     'docs/ci/public-checks.yml',
-    'requirements.txt', 'requirements.lock.txt',
+    'requirements.txt', 'requirements.lock.txt', 'requirements.exports.txt',
     'config/manuscript_revision_20261025.json', 'config/palette_v4_registry.json', 'config/paper_style.json', 'config/paper_figure_plan.json', 'config/figure_identity_map.json',
     'config/marker_registry.csv', 'config/reproduction_inputs.json', 'config/clinical_framework.json',
     'config/unified_model_20261017.json', 'config/unified_bsa_three_v1_20261017.json',
@@ -37,6 +37,7 @@ BASE_FILES = [
     'config/framework_figure_20261107.json', 'config/nature_figure_backend.json',
     'config/laboratory_molecular_revision_20261107.json',
     'config/molecular_upgrade_20261107.json',
+    'config/lab_display_20261112.json',
     'config/external_molecular_benchmark_20261101.json',
     'config/local_paired_benchmark_20261101.json',
     'config/ige_missingness_20261025.json', 'config/model_ablation_20261025.json',
@@ -58,11 +59,13 @@ ANALYSIS_MODULES = [
     'ige_missingness_20261025', 'model_ablation_20261025',
     'manuscript_audit_20261031', 'iga_definition_sensitivity_20261031',
     'laboratory_molecular_revision_20261107', 'molecular_upgrade_20261107', 'repair_treatment_holdout_20261107',
+    'lab_display_20261112',
     'external_molecular_benchmark_20261101', 'local_paired_benchmark_20261101',
 ]
 PAPER_MODULES = [
     '__init__', 'package', 'demo', 'preflight', 'figures', 'palette', 'build',
     'revision_20261107', 'tables_20261107',
+    'revision_20261112', 'tables_20261112', 'figure_style_20261112', 'editable_exports_20261112',
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
     'sensitivity_figures_20261025', 'sensitivity_tables_20261025',
@@ -73,6 +76,13 @@ PAPER_MODULES = [
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/update_20261112/final_quality_assurance.json',
+    'reports/update_20261112/public_reproducibility.json',
+    'reports/update_20261112/tests.log',
+    'reports/update_20261112/public_tests.log',
+    'reports/update_20261112/office_exports.json',
+    'reports/update_20261112/labs/verification.json',
+    'reports/update_20261112/labs/independent_review.json',
     'reports/update_20261107/final_quality_assurance.json',
     'reports/update_20261107/public_reproducibility.json',
     'reports/update_20261107/tests.log',
@@ -259,7 +269,7 @@ def collect_files():
         selected.add(str(path.relative_to(ROOT)))
 
     # Publish aggregate CSVs only; never follow report folders or private outputs.
-    for folder in ['update_20261107', 'external_validation_20261101']:
+    for folder in ['update_20261107', 'external_validation_20261101', 'update_20261112/labs']:
         for path in sorted((ROOT / 'results/tables' / folder).rglob('*.csv')):
             relative = str(path.relative_to(ROOT))
             if safe_csv(path):
@@ -275,6 +285,8 @@ def collect_files():
     selected.add('manuscript/references.bib')
     for stem in ['main', 'appendix', 'figure_book']:
         selected.update(f'manuscript/{stem}.{ext}' for ext in ['tex', 'pdf'])
+    selected.update(['manuscript/appendix.docx', 'manuscript/figure_deck.pptx',
+                     'manuscript/figure_deck.pdf'])
     for figure_id in ids:
         selected.update(f'manuscript/figures/{figure_id}.{ext}' for ext in ['pdf', 'svg', 'png'])
     for folder in ['sections', 'tables', 'source_data']:
@@ -364,12 +376,21 @@ def verify_public_tree():
         if not path.is_file():
             continue
         relative = str(path.relative_to(PACKAGE))
-        if path.suffix in {'.xlsx', '.xls', '.pptx', '.zip'} or path.is_symlink():
+        if (path.suffix in {'.xlsx', '.xls', '.zip'}
+                or (path.suffix == '.pptx' and relative != 'manuscript/figure_deck.pptx')
+                or path.is_symlink()):
             problems.append(relative)
         if path.suffix == '.csv' and not safe_csv(path):
             problems.append(relative)
         if path.suffix == '.json' and not safe_json(path):
             problems.append(relative)
+        if path.suffix in {'.docx', '.pptx'}:
+            with zipfile.ZipFile(path) as office:
+                if office.testzip() is not None or any(
+                    STUDY_ID.search(office.read(item).decode('utf-8', errors='ignore'))
+                    for item in office.namelist() if item.endswith('.xml')
+                ):
+                    problems.append(relative)
         if 'private' in path.name.lower() or relative.startswith('plan/'):
             problems.append(relative)
         if relative.startswith('reports/update_20261107/external/'):
@@ -414,7 +435,7 @@ def run():
                  sanitized_reports=sorted(sanitized), source_sha256=source_hashes,
                  excluded_categories=['Participant inputs and outputs', 'Raw spreadsheets',
                     'Individual predictions and fold membership', 'Clinical dates and safety text',
-                    'Teacher and author-administration materials', 'Presentation decks and notes'],
+                    'Teacher and author-administration materials', 'Private teacher presentation decks and author notes'],
                  previous_generated_package_snapshot=snapshot)
     local_audit = ROOT / 'reports/update_20261018/revision2/package_audit.json'
     local_audit.parent.mkdir(parents=True, exist_ok=True)

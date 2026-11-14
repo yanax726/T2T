@@ -1,0 +1,62 @@
+{
+  "status": "DESIGN_REVIEW_ONLY_NO_FITTING",
+  "candidate_markers": [
+    "CCL11",
+    "CCL17",
+    "CCL26",
+    "IFN-beta",
+    "IFN-gamma",
+    "IL-10",
+    "IL-12p70",
+    "IL-17A",
+    "IL-18",
+    "IL-21",
+    "IL-33",
+    "IL-36beta",
+    "IL-4",
+    "IL-5",
+    "IL-6",
+    "IL2RA",
+    "Periostin",
+    "TNF-alpha",
+    "TSLP"
+  ],
+  "fixed_sizes": [
+    3,
+    4,
+    5,
+    6,
+    19
+  ],
+  "compact_inner_sizes": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "seed": 20240801,
+  "cohorts": {
+    "primary": {
+      "n": 102,
+      "events": 88,
+      "nonevents": 14
+    },
+    "sensitivity": {
+      "n": 105,
+      "events": 89,
+      "nonevents": 16
+    }
+  },
+  "objective": "minimize inner log-loss; final selected procedure evaluated only in outer held-out patients",
+  "source_sha256": {
+    "config/marker_registry.csv": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+    "config/itch_prediction_20261112.json": "8c28ae3d84d5b4f006b7c2d84429d91a425a91cd28dc44c0b9e66f04042ff38b",
+    "src/cytot2t/curation/itch_prediction_20261112.py": "f74aa25e9e3446063f993b92b48791d37efefb616243983485ede82e04f2608f",
+    "src/cytot2t/stages/stage_n3_prediction_models.py": "c12439d423c93ef7c908bebffd7c0a25f43e4161a869c57e83cbd9af8c71122e"
+  }
+}

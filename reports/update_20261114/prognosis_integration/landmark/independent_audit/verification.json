@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "no_new_fitting": true,
+  "participant_rows_exported": false,
+  "raw_clinical_patients": 163,
+  "clinically_evaluable": {
+    "n": 93,
+    "events": 77,
+    "nonevents": 16
+  },
+  "cohorts_and_partitions": [
+    {
+      "population": "complete_three_markers",
+      "n": 68,
+      "events": 59,
+      "nonevents": 9,
+      "outer_model_records": 75,
+      "inner_partition_records": 225
+    },
+    {
+      "population": "available_serum_imputation_sensitivity",
+      "n": 72,
+      "events": 63,
+      "nonevents": 9,
+      "outer_model_records": 75,
+      "inner_partition_records": 225
+    }
+  ],
+  "outer_model_records_checked": 150,
+  "inner_partition_records_checked": 450,
+  "patient_crossing": 0,
+  "matched_model_splits": true,
+  "raw_W24_EASI75_labels_reconstructed": true,
+  "W12_marker_inputs_only": true,
+  "adolescent_DLQI_mask": true,
+  "W24_predictor_columns": false,
+  "bootstrap_iterations": 2000,
+  "bootstrap_method": "Independent patient-count-weighted concordance, tied score-group precision/recall, and direct weighted Brier/log-loss/predicted-rate means",
+  "interval_metrics_replayed": [
+    "AUROC",
+    "AUPRC",
+    "Brier",
+    "log_loss",
+    "mean_prediction"
+  ],
+  "max_point_error": 2.220446049250313e-16,
+  "max_interval_error": 4.77048955893622e-16,
+  "scope": "Current fixed-three W12 concentrations predicting W24 EASI75 relative to W0, not W12-to-W24 improvement or contemporaneous EASI",
+  "historical_landmark_not_same_population": "Historical n68=60/8 included one under12; current n68=59/9 uses current eligibility and W12 three-marker availability",
+  "source_sha256": {
+    "config/landmark_three_20261114.json": "9468d551433faff3a647b86ba13c7c232e954d9cdfccb3883d700448cf398c7a",
+    "src/cytot2t/curation/verify_landmark_three_20261114.py": "fd776bcfa183fe9dfbc9a6219c6af1430ff20c22ae74833b2b3876c090e9616d",
+    "src/cytot2t/curation/landmark_three_20261114.py": "0e2d9cddb2b292eed8cf7b4531854b03e5a41ea16c7d19ff55ce6702fd285b06",
+    "src/cytot2t/curation/itch_prediction_20261112.py": "f74aa25e9e3446063f993b92b48791d37efefb616243983485ede82e04f2608f",
+    "results/tables/update_20261114/landmark_three/metrics.csv": "ece1b779bc150ab2da1afb34d6965b11d50d897b866fba30891c21ede58a4665",
+    "results/tables/update_20261114/landmark_three/paired_differences.csv": "646714702f704e23aaea09d587f5e910c0a31062e0d1ac07e7cc54e2ea2ac65e",
+    "results/tables/update_20261114/landmark_three/repeat_metrics.csv": "df2fab570f427ae3bf3426beab480fa5d94529ccddc9d97e6f55cbfbef31ffe9",
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+    "results/tables/update_20261114/landmark_three/restricted/complete_three_markers_oof.csv": "03199d3eae8dca8f1a85b6c1ce5706190aa628df6dbdce571135d978d895439e",
+    "results/tables/update_20261114/landmark_three/restricted/complete_three_markers_cv_membership.csv": "9686903d5d89d5214f8aa466346b18fa19dbc1cbee3c15ad77a2fddbff04ce16",
+    "results/tables/update_20261114/landmark_three/restricted/available_serum_imputation_sensitivity_oof.csv": "5a6e14246f542ae093916dae06f1a1a1a79149197d7d8c4280454ec0a88cfd31",
+    "results/tables/update_20261114/landmark_three/restricted/available_serum_imputation_sensitivity_cv_membership.csv": "7003ba4bbf5db5e908c2dbfe9cee79c70de61d7250c54efd59403835016a2078"
+  }
+}

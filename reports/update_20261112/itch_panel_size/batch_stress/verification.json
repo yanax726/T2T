@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "config/marker_registry.csv": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+    "config/itch_prediction_20261112.json": "8c28ae3d84d5b4f006b7c2d84429d91a425a91cd28dc44c0b9e66f04042ff38b",
+    "config/itch_panel_size_20261112.json": "a7d07e27840770fd810e28f77b4afaf45cc4b624ffba919bbd89315d8935dfeb",
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+    "config/itch_panel_batch_stress_20261112.json": "2ed72c09b20cdf0f53c1c0859928dfd6592eb91b9294412fba2915d7086aad7a"
+  },
+  "models": [
+    "clinical",
+    "fixed_three_serum",
+    "clinical_fixed_three",
+    "serum_compact",
+    "clinical_serum_compact"
+  ],
+  "source_file_groups": 4,
+  "populations": {
+    "complete_three_markers": {
+      "n": 102,
+      "responders": 88
+    },
+    "available_serum_imputation_sensitivity": {
+      "n": 105,
+      "responders": 89
+    }
+  },
+  "outer_fits": 40,
+  "patient_train_test_overlap": 0,
+  "heldout_file_seen_in_training": false,
+  "assay_file_used_as_predictor": false,
+  "outcomes_imputed": 0,
+  "main_panel_choice_rule_changed": false,
+  "single_class_AUC": "NE; Brier/logloss retained",
+  "interpretation": "Joint assay-file/case-mix transport stress, not external validation or causal batch adjustment",
+  "interval_scope": "Conditional patient bootstrap within each held-out assay-file group, retaining its observed group size. No refitting or assay-file-universe resampling."
+}

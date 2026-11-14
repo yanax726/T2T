@@ -1,0 +1,70 @@
+{
+  "version": "2026-11-12-IL4-assay-file-heldout-itch-stress",
+  "status": "Post-result diagnostic stress test, fixed before these new fits; not external validation",
+  "target": "Measured W0 PP-NRS>=4 and measured W0-W12 drop>=4",
+  "populations": {
+    "complete_three_markers": {
+      "n": 102,
+      "responders": 88
+    },
+    "available_serum_imputation_sensitivity": {
+      "n": 105,
+      "responders": 89
+    }
+  },
+  "grouping": "Recorded baseline IL-4 assay_file. Alias labels use sorted unique source filenames in the full baseline IL-4 assay table before cohort restriction. Source files are not confirmed biological or analytical batches for every marker.",
+  "outer_design": "Leave one of four source-file groups out; all held-out patients are predicted once per model",
+  "models": [
+    "clinical",
+    "fixed_three_serum",
+    "clinical_fixed_three",
+    "serum_compact",
+    "clinical_serum_compact"
+  ],
+  "predictors": "Same baseline columns as the current three-marker and panel-size analyses; assay-file/group itself is excluded from predictor columns",
+  "compact_sizes": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "inner_folds": 3,
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "selection": "Training-only median imputation, standardization, SelectKBest f_classif inside inner pipeline; same mean inner log-loss and sample-ddof1 1SE compact choice; strongest shrinkage breaks exact C ties",
+  "seed": 20240801,
+  "bootstrap_iterations": 2000,
+  "bootstrap_seed_offset": 1909,
+  "aggregate_interval": "Conditional patient bootstrap within each held-out assay-file group, retaining its observed group size. No refitting or assay-file-universe resampling.",
+  "single_class_group": "AUROC and AUPRC not estimable; all patients retained for Brier and log-loss. No synthetic class is added.",
+  "comparisons": [
+    {
+      "model": "serum_compact",
+      "reference": "fixed_three_serum"
+    },
+    {
+      "model": "clinical_serum_compact",
+      "reference": "clinical"
+    },
+    {
+      "model": "clinical_serum_compact",
+      "reference": "clinical_fixed_three"
+    },
+    {
+      "model": "clinical_fixed_three",
+      "reference": "clinical"
+    }
+  ],
+  "interpretation": "Assay-file membership, centre, treatment and baseline case mix overlap; held-out performance is a joint transport stress test. A decline does not identify measurement artifact or a causal batch effect. No main selection rule or candidate is revised from these results.",
+  "protected_sources": [
+    "config/marker_registry.csv",
+    "config/itch_prediction_20261112.json",
+    "config/itch_panel_size_20261112.json",
+    "results/tables/update_20260925/clinical.csv",
+    "results/tables/redevelopment/molecular.csv",
+    "results/tables/redevelopment/assay_long.csv"
+  ]
+}

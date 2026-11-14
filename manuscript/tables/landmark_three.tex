@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Exploratory prediction of W24 EASI75 from W12 measurements.}\label{tab:landmark_three}
+\begin{tabular}{p{61mm}p{43mm}rr}\toprule
+Inputs & AUROC (95\% CI) & AUPRC & Brier score \\ \midrule
+\multicolumn{4}{l}{\textbf{Complete W12 markers: 68 patients, 59 responders, 9 nonresponders}} \\
+W12 three markers & 0.406 (0.267--0.544) & 0.837 & 0.1160 \\
+Clinical information through W12 & 0.817 (0.681--0.941) & 0.965 & 0.0930 \\
+Clinical information + W12 markers & 0.789 (0.623--0.940) & 0.954 & 0.0940 \\
+\addlinespace
+\multicolumn{4}{l}{\textbf{Predictor-imputation sensitivity: 72 patients, 63 responders, 9 nonresponders}} \\
+W12 three markers & 0.372 (0.219--0.513) & 0.841 & 0.1112 \\
+Clinical information through W12 & 0.793 (0.618--0.947) & 0.959 & 0.0840 \\
+Clinical information + W12 markers & 0.783 (0.587--0.949) & 0.953 & 0.0898 \\
+\addlinespace
+\bottomrule\end{tabular}
+\par\small\raggedright W24 EASI75 means a measured EASI reduction of at least 75\% from the patient's pretreatment W0 score. Eligibility requires observed positive W0 EASI, observed W24 EASI and a W12 visit; it does not require EASI75 at W12. The response therefore includes both maintained and newly achieved target states. The three markers are the measured W12 concentrations of CCL17, CCL26 and IL-5, rather than W0--W12 differences. The complete-marker and sensitivity populations use the same current age-at-least-12 eligibility rule as the main study. No W24 outcome is imputed.
+
+Three prespecified logistic models use W12 markers alone, clinical information available through W12, or their combination. Clinical inputs comprise pretreatment EASI, age, sex, BMI, centre, initial treatment and W12 EASI, PP-NRS, IGA, BSA and adult DLQI; adolescent DLQI is masked. Initial treatment does not encode subsequent regimen changes. Five outer patient folds are repeated five times, with three inner folds selecting the ridge penalty by log-loss. All preprocessing is fitted within training folds. Metrics are scored within each repetition before averaging. Conditional 95\% intervals use 2,000 paired patient resamples of saved held-out predictions without refitting; they do not account for the prior exploration of this cohort. AUROC concerns W24 target discrimination, not continuous EASI error or validation of the contemporaneous E-EASI formula. AUPRC must be read against the high response prevalence.
+
+68-patient analysis: response prevalence 0.868, mean training-fold-event-rate Brier 0.1152, combined-minus-clinical AUROC difference -0.029 (95\% CI, -0.083 to 0.012). 72-patient analysis: response prevalence 0.875, mean training-fold-event-rate Brier 0.1098, combined-minus-clinical AUROC difference -0.011 (95\% CI, -0.049 to 0.032).
+\end{table}

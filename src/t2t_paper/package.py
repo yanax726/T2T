@@ -42,6 +42,8 @@ BASE_FILES = [
     'config/molecular_upgrade_20261107.json',
     'config/lab_display_20261112.json',
     'config/itch_prediction_20261112.json',
+    'config/itch_panel_size_20261112.json', 'config/itch_panel_batch_stress_20261112.json',
+    'config/landmark_three_20261114.json',
     'config/external_molecular_benchmark_20261101.json',
     'config/local_paired_benchmark_20261101.json',
     'config/ige_missingness_20261025.json', 'config/model_ablation_20261025.json',
@@ -65,6 +67,8 @@ ANALYSIS_MODULES = [
     'laboratory_molecular_revision_20261107', 'molecular_upgrade_20261107', 'repair_treatment_holdout_20261107',
     'lab_display_20261112',
     'itch_prediction_20261112', 'itch_cohort_audit_20261112', 'verify_itch_prediction_20261112',
+    'itch_panel_size_20261112', 'itch_panel_batch_stress_20261112', 'verify_itch_panel_size_20261112',
+    'landmark_three_20261114', 'verify_landmark_three_20261114',
     'external_molecular_benchmark_20261101', 'local_paired_benchmark_20261101',
 ]
 PAPER_MODULES = [
@@ -72,6 +76,7 @@ PAPER_MODULES = [
     'revision_20261107', 'tables_20261107',
     'revision_20261112', 'tables_20261112', 'figure_style_20261112', 'editable_exports_20261112',
     'consistency_checks_20261112',
+    'prognosis_tables_20261114', 'prognosis_checks_20261114',
     'main_redesign_20261018', 'supplement_redesign_20261018',
     'main_revision_20261025', 'supplement_revision_20261025', 'revision_integration_20261025',
     'sensitivity_figures_20261025', 'sensitivity_tables_20261025',
@@ -82,6 +87,39 @@ PAPER_MODULES = [
     'revision_checks_20261018', 'countmaps', 'clinical_framework_20261018', 'clinical_flow_20261025',
 ]
 FINAL_QA_REPORTS = [
+    'reports/update_20261114/prognosis_integration/final_quality_assurance.json',
+    'reports/update_20261114/prognosis_integration/public_reproducibility.json',
+    'reports/update_20261114/prognosis_integration/public_tests.log',
+    'reports/update_20261114/prognosis_integration/public_rebuild.log',
+    'reports/update_20261114/prognosis_integration/publication_checks.json',
+    'reports/update_20261114/prognosis_integration/publication_checks.csv',
+    'reports/update_20261114/prognosis_integration/metric_replay_verification.json',
+    'reports/update_20261114/prognosis_integration/metric_replay_checks.csv',
+    'reports/update_20261114/prognosis_integration/exports/office_exports.json',
+    'reports/update_20261114/prognosis_integration/landmark/protocol_before_fit.json',
+    'reports/update_20261114/prognosis_integration/landmark/verification.json',
+    'reports/update_20261114/prognosis_integration/landmark/methods_and_results.md',
+    'reports/update_20261114/prognosis_integration/landmark/independent_audit/verification.json',
+    'reports/update_20261114/prognosis_integration/landmark/independent_audit/metric_replay.csv',
+    'reports/update_20261114/prognosis_integration/landmark/independent_audit/interval_replay.csv',
+    'reports/update_20261114/prognosis_integration/landmark/independent_audit/paired_difference_replay.csv',
+    'reports/update_20261112/itch_panel_size/protocol_before_fit.json',
+    'reports/update_20261112/itch_panel_size/verification.json',
+    'reports/update_20261112/itch_panel_size/delivery_check.json',
+    'reports/update_20261112/itch_panel_size/method_audit/design_before_panel_results.md',
+    'reports/update_20261112/itch_panel_size/method_audit/design_before_panel_results.json',
+    'reports/update_20261112/itch_panel_size/method_audit/source_review.json',
+    'reports/update_20261112/itch_panel_size/independent_audit/verification.json',
+    'reports/update_20261112/itch_panel_size/independent_audit/metric_replay.csv',
+    'reports/update_20261112/itch_panel_size/independent_audit/paired_bootstrap_replay.csv',
+    'reports/update_20261112/itch_panel_size/independent_audit/selection_replay.csv',
+    'reports/update_20261112/itch_panel_size/independent_audit/panel_composition_counts.csv',
+    'reports/update_20261112/itch_panel_size/independent_audit/IL4_center_assay_distribution.csv',
+    'reports/update_20261112/itch_panel_size/independent_audit/IL4_interpretation.md',
+    'reports/update_20261112/itch_panel_size/batch_stress/verification.json',
+    'reports/update_20261112/itch_panel_size/batch_stress/saved_output_replay.json',
+    'reports/update_20261112/itch_panel_size/batch_stress/root_readonly_replay.json',
+    'reports/update_20261112/itch_panel_size/batch_stress/interpretation.md',
     'reports/update_20261112/itch_prediction/verification.json',
     'reports/update_20261112/itch_prediction/cohort_audit/verification.json',
     'reports/update_20261112/itch_prediction/independent_prediction_audit/verification.json',
@@ -291,7 +329,9 @@ def collect_files():
         selected.add(str(path.relative_to(ROOT)))
 
     # Publish aggregate CSVs only; never follow report folders or private outputs.
-    for folder in ['update_20261107', 'external_validation_20261101', 'update_20261112/labs', 'update_20261112/itch_prediction']:
+    for folder in ['update_20261107', 'external_validation_20261101',
+                   'update_20261112/labs', 'update_20261112/itch_prediction',
+                   'update_20261112/itch_panel_size', 'update_20261114/landmark_three']:
         for path in sorted((ROOT / 'results/tables' / folder).rglob('*.csv')):
             relative = str(path.relative_to(ROOT))
             if safe_csv(path):

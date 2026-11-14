@@ -1,0 +1,41 @@
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{p{34mm}p{42mm}p{42mm}rr}
+\caption{Exploratory panel-size comparisons for baseline prediction of W12 itch improvement.}\label{tab:itch_panel_size}\\
+\toprule Panel procedure & Serum AUROC (95\% CI) & Clinical + serum AUROC (95\% CI) & Serum Brier & Combined Brier \\ \midrule\endfirsthead
+\toprule Panel procedure & Serum AUROC (95\% CI) & Clinical + serum AUROC (95\% CI) & Serum Brier & Combined Brier \\ \midrule\endhead
+\multicolumn{5}{l}{\textbf{Patient-held-out validation: Complete original panel: 102 patients, 88 responders}} \\
+Clinical reference & --- & 0.697 (0.555--0.820) & --- & 0.1163 \\
+Original fixed three & 0.630 (0.513--0.736) & 0.723 (0.593--0.837) & 0.1181 & 0.1163 \\
+Training-selected 3 & 0.688 (0.534--0.819) & 0.800 (0.680--0.900) & 0.1097 & 0.1017 \\
+Training-selected 4 & 0.698 (0.552--0.825) & 0.808 (0.690--0.904) & 0.1095 & 0.1005 \\
+Training-selected 5 & 0.693 (0.552--0.816) & 0.805 (0.687--0.904) & 0.1102 & 0.1014 \\
+Training-selected 6 & 0.692 (0.548--0.812) & 0.799 (0.675--0.902) & 0.1099 & 0.1026 \\
+Training-selected 19 & 0.708 (0.571--0.824) & 0.802 (0.699--0.899) & 0.1112 & 0.1067 \\
+Inner-selected size 3--6 & 0.688 (0.535--0.819) & 0.800 (0.680--0.900) & 0.1099 & 0.1017 \\
+\addlinespace
+\multicolumn{5}{l}{\textbf{Patient-held-out validation: Predictor-imputation sensitivity: 105 patients, 89 responders}} \\
+Clinical reference & --- & 0.734 (0.603--0.846) & --- & 0.1231 \\
+Original fixed three & 0.599 (0.484--0.707) & 0.753 (0.639--0.846) & 0.1305 & 0.1213 \\
+Training-selected 3 & 0.708 (0.565--0.842) & 0.816 (0.700--0.906) & 0.1140 & 0.1078 \\
+Training-selected 4 & 0.715 (0.569--0.845) & 0.824 (0.710--0.912) & 0.1140 & 0.1060 \\
+Training-selected 5 & 0.728 (0.590--0.850) & 0.830 (0.717--0.917) & 0.1140 & 0.1042 \\
+Training-selected 6 & 0.728 (0.597--0.847) & 0.827 (0.716--0.914) & 0.1144 & 0.1072 \\
+Training-selected 19 & 0.699 (0.567--0.817) & 0.826 (0.727--0.906) & 0.1188 & 0.1101 \\
+Inner-selected size 3--6 & 0.707 (0.563--0.842) & 0.816 (0.700--0.906) & 0.1143 & 0.1078 \\
+\addlinespace
+\multicolumn{5}{l}{\textbf{Entire report-file holdout: Complete original panel: 102 patients, 88 responders}} \\
+Clinical reference & --- & 0.484 (0.315--0.642) & --- & 0.1337 \\
+Original fixed three & 0.361 (0.232--0.489) & 0.509 (0.362--0.649) & 0.1426 & 0.1387 \\
+Inner-selected size 3--6 & 0.512 (0.374--0.642) & 0.617 (0.463--0.753) & 0.1294 & 0.1274 \\
+\addlinespace
+\multicolumn{5}{l}{\textbf{Entire report-file holdout: Predictor-imputation sensitivity: 105 patients, 89 responders}} \\
+Clinical reference & --- & 0.515 (0.344--0.679) & --- & 0.1413 \\
+Original fixed three & 0.393 (0.276--0.504) & 0.527 (0.364--0.685) & 0.1443 & 0.1462 \\
+Inner-selected size 3--6 & 0.605 (0.464--0.742) & 0.711 (0.572--0.841) & 0.1283 & 0.1306 \\
+\addlinespace
+\bottomrule\end{longtable}}
+\noindent\footnotesize Response is a measured PP-NRS decrease of at least four points from baseline to W12, among patients with baseline PP-NRS at least four. The clinical reference and original fixed CCL17/CCL26/IL-5 panel reproduce Table S18. Candidate panels use the 19 discovery-eligible markers; ranking, median imputation, scaling and penalty selection are fitted within training folds. Fixed-size rows evaluate selection procedures, not one fixed marker list. All rows within each population use the same patients, outcomes and outer partitions. AUROC measures discrimination; lower Brier score indicates lower squared probability error. Complete AUPRC, calibration, log-loss and paired comparisons are in the source tables.
+
+The first two blocks average performance over five outer repetitions. Conditional 95\% intervals use 2,000 paired patient resamples without refitting. For the size-selected procedure, each inner validation chooses the smallest size from 3--6 within one standard error of the lowest inner log-loss; this is a simplicity heuristic, not a noninferiority test. The clinical-plus-serum procedure chose three markers in all 25 overlapping training folds in each population. Serum-only selection chose three in 24 folds and four in one. The primary three-marker procedure produced eight different marker sets; no fixed new panel was validated. Clinical inputs are specified in Table S18 and the Supplementary Methods.
+
+The final two blocks hold out each of four original assay-report files in turn, repeat all selection using the remaining patients, and pool the held-out predictions. Intervals resample patients within held-out files, conditional on these four sources and fitted models. A file containing responders only has no within-file AUROC; its patients remain in the pooled metrics and Brier score. Report file is not a verified physical assay batch. Files differ in centre, treatment and response prevalence, so this is a joint source-and-case-mix stress test, not external validation or proof of a technical batch effect. These intervals are not interchangeable with the patient-held-out intervals. No simultaneous inferential claim is made across panel sizes.\normalsize

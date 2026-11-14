@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026.11.14-rc1
+
+- Add training-only selection of compact baseline panels for week-12 itch response, including matched clinical controls, panel stability and source-file holdout results.
+- Add current-cohort week-12 three-marker prediction of week-24 EASI75, retaining its negative molecular result and the predictor-imputation sensitivity.
+- Present these exploratory analyses in Supplementary Tables S18–S20, with conditional uncertainty and a short main-text summary. The E-EASI equation and figure set are unchanged.
+
 ## 2026.11.12-rc3
 
 - Add an exploratory baseline three-marker comparison for measured week-12 itch improvement, with matched clinical controls and a predictor-imputation sensitivity.

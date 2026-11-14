@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "scope": "Exploratory panel-size comparison; not a validated fixed clinical panel",
+  "primary_n": 102,
+  "responders": 88,
+  "nonresponders": 14,
+  "sizes": [
+    3,
+    4,
+    5,
+    6,
+    19
+  ],
+  "recommended_research_range": [
+    3,
+    4
+  ],
+  "fixed_panel_finalized": false,
+  "file_holdout_transfer_stable": false,
+  "output_hashes": {
+    "results/tables/update_20261112/itch_panel_size/panel_size_summary.csv": "5d2d2fb2d3ac4a8fed6c6074aee477a34bd5cebfb5a981e0d92b945d1ac605d4",
+    "results/tables/update_20261112/itch_panel_size/metrics.csv": "108507f15e23beba40fa2a28653173364ec9778bb709b13b2c15dea25597f567",
+    "results/tables/update_20261112/itch_panel_size/paired_differences.csv": "06270098efef38f8fbc4b82f7775825b8bdaa849f1e3cbb29d45516dd37cbf29"
+  }
+}

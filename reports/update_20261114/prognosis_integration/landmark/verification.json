@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "protocol_saved_before_fit": true,
+  "n_clinical": 163,
+  "cohort_counts": [
+    {
+      "population": "all_clinically_evaluable",
+      "n": 93,
+      "events": 77,
+      "nonevents": 16
+    },
+    {
+      "population": "complete_three_markers",
+      "n": 68,
+      "events": 59,
+      "nonevents": 9
+    },
+    {
+      "population": "available_serum_imputation_sensitivity",
+      "n": 72,
+      "events": 63,
+      "nonevents": 9
+    }
+  ],
+  "outer_fits": 150,
+  "outer_patient_crossing": 0,
+  "observed_outcomes_only": true,
+  "predictor_times_at_or_before_W12": true,
+  "same_patients_and_splits_across_models": true,
+  "endpoint": "W24 EASI75 relative to W0",
+  "no_new_panel_selection": true,
+  "primary_evaluation": "mean_repetition",
+  "protected_inputs_unchanged": true,
+  "source_sha256": {
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+    "config/itch_prediction_20261112.json": "8c28ae3d84d5b4f006b7c2d84429d91a425a91cd28dc44c0b9e66f04042ff38b",
+    "src/cytot2t/curation/itch_prediction_20261112.py": "f74aa25e9e3446063f993b92b48791d37efefb616243983485ede82e04f2608f",
+    "results/tables/update_20261112/itch_prediction/metrics.csv": "14bd2200b543561ef8ec17f14dd44f36804807e13e7418999e59d7ea924d3b6a",
+    "results/tables/update_20261112/itch_prediction/paired_differences.csv": "d97fb3242812049061cddebed9e76e154c17f8724c8bd10858cb5826c8557b59"
+  },
+  "config_sha256": "9468d551433faff3a647b86ba13c7c232e954d9cdfccb3883d700448cf398c7a",
+  "code_sha256": "0e2d9cddb2b292eed8cf7b4531854b03e5a41ea16c7d19ff55ce6702fd285b06",
+  "outputs_sha256": {
+    "available_serum_imputation_sensitivity_fit_summary.csv": "44e1182245a4ee29aea49f2ff825196a46d2dfbbe6c3c301eeb00870600ee768",
+    "available_serum_imputation_sensitivity_fold_coefficients.csv": "eed2bf273803fdead4f50c2f0839883487edd160066ac0f1e0c4de806a35dcde",
+    "calibration.csv": "d9b8f0782d24cc990731efa2e1d6d9693ebd4fd16bcc0fec5a70a936c9bbb994",
+    "cohort_counts.csv": "5aecac19e1a4ada1dc7a88b739e1b9fcdbf323d7c6573db271c9ef6a14f546ab",
+    "complete_three_markers_fit_summary.csv": "d1ed1bfa9cd73a91a5d824a670d97de14f46760c578e9af714fc51fca5d0f1be",
+    "complete_three_markers_fold_coefficients.csv": "9ecc3e5029f484a2b8e48c6c52ede4d917caf16f306baacd63c0dfc6a6af292d",
+    "metrics.csv": "ece1b779bc150ab2da1afb34d6965b11d50d897b866fba30891c21ede58a4665",
+    "null_reference.csv": "4ee9cee8ca5530ffb2ee3834d5ab67dff46affad320a0b8bf642e6bce65c046b",
+    "paired_differences.csv": "646714702f704e23aaea09d587f5e910c0a31062e0d1ac07e7cc54e2ea2ac65e",
+    "repeat_metrics.csv": "df2fab570f427ae3bf3426beab480fa5d94529ccddc9d97e6f55cbfbef31ffe9",
+    "roc_curves.csv": "6977800f448175eca3ff1862e1dd2cce61e64e1e2686cdbbe489af09996a25cb"
+  },
+  "limitations": [
+    "Only9 primary nonresponders",
+    "Same cohort previously explored",
+    "No independent external validation",
+    "Initial treatment does not represent current dose after change",
+    "Endpoint is W24 EASI75 relative to W0, not W12-to-W24 EASI improvement"
+  ]
+}

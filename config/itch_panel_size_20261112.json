@@ -1,0 +1,69 @@
+{
+  "version": "2026-11-12-bounded-itch-panel-size",
+  "status": "Exploratory extension after earlier results; all candidates and decisions retained",
+  "target": "Observed PP-NRS W0>=4 and measured W0-W12 decrease>=4",
+  "populations": {
+    "complete_three_markers": {
+      "n": 102,
+      "responders": 88
+    },
+    "available_serum_imputation_sensitivity": {
+      "n": 105,
+      "responders": 89
+    }
+  },
+  "candidate_registry": "config/marker_registry.csv discovery_eligible==True (19 markers)",
+  "excluded_markers": [
+    "CCL18",
+    "IL-13",
+    "IL-22",
+    "IL-31"
+  ],
+  "selection": "Training-fold median imputation, standardization, SelectKBest(f_classif), L2 logistic; selector refitted inside every inner and outer training fit",
+  "panel_sizes": [
+    3,
+    4,
+    5,
+    6,
+    19
+  ],
+  "branches": [
+    "serum",
+    "clinical_serum"
+  ],
+  "controls": [
+    "clinical",
+    "fixed_three_serum",
+    "clinical_fixed_three"
+  ],
+  "clinical_inputs": "Same10 baseline fields and adolescent-DLQI masking as fixed-three analysis",
+  "outer_folds": 5,
+  "outer_repeats": 5,
+  "inner_folds": 3,
+  "seed": 20240801,
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "inner_score": "neg_log_loss",
+  "class_weight": null,
+  "nested_compact_rule": "For each k3/4/5/6 select C with lowest mean inner logloss. Take lowest overall loss and sample-SD(ddof1)/sqrt3 SE. Choose smallest k with loss<=best+SE, and its best C. Exact C ties prefer smaller C. k19 excluded from compact selection.",
+  "interpretation_of_1SE": "Simplicity heuristic, not an equivalence/noninferiority test; inner folds are dependent",
+  "evaluation": "Mean repetition-specific OOF metrics primary; averaged held-out probabilities separately for historical comparison",
+  "bootstrap": 2000,
+  "bootstrap_scope": "Paired patient resampling retaining all saved repeats; conditional on fitted predictions and does not encompass previous project adaptation",
+  "primary_comparisons": [
+    "ranked4/5/6 minus ranked3 within branch",
+    "clinical+selected panel minus matched clinical control",
+    "nested compact procedure minus ranked3 within branch"
+  ],
+  "reporting_rule": "Do not select a global outer-AUC winner as an unbiased fixed panel. Report all sizes, inner-selected size distribution, marker-selection frequencies, selected-input observation coverage, and fixed-three controls. Larger panel justified only by meaningful/stable discrimination and probability-error gains; no universal clinical AUC cutoff.",
+  "deployment_boundary": "No particular final marker set independently validated; same-cohort panel and endpoint exploration remains; no outcomes imputed",
+  "protected_sources": [
+    "config/marker_registry.csv",
+    "config/itch_prediction_20261112.json",
+    "results/tables/update_20260925/clinical.csv",
+    "results/tables/redevelopment/molecular.csv"
+  ]
+}

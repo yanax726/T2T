@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "outer_fit_records_checked": 40,
+  "inner_partitions_checked": 120,
+  "compact_selections_replayed": 16,
+  "patient_and_source_file_crossing": 0,
+  "same_patients_across_all_five_models": true,
+  "maximum_point_metric_error": 1.1102230246251565e-16,
+  "single_class_file_kept_for_Brier": true,
+  "fit_replication": "No models refitted during independent arithmetic/split replay",
+  "source_code_sha256": "aa44d83c67b8dc09b35c599174692136758e6baf1a8eb278eb5b1abed6e1c72f"
+}

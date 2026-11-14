@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "pooled_AUC_Brier_replayed": true,
+  "maximum_metric_error": 1.1102230246251565e-16,
+  "membership_records": 40,
+  "patient_train_test_crossing": 0,
+  "matched_file_holdouts_across_models": true,
+  "no_patient_rows_exported": true
+}

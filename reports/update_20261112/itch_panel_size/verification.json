@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "input_sha256": {
+    "config/marker_registry.csv": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+    "config/itch_prediction_20261112.json": "8c28ae3d84d5b4f006b7c2d84429d91a425a91cd28dc44c0b9e66f04042ff38b",
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "config/itch_panel_size_20261112.json": "a7d07e27840770fd810e28f77b4afaf45cc4b624ffba919bbd89315d8935dfeb",
+    "results/tables/update_20261112/itch_prediction/restricted/complete_three_markers_oof.csv": "7b98932a6ebaa68f55e6b42399628499a00e435f92b18b8647f0acd320fae727",
+    "results/tables/update_20261112/itch_prediction/restricted/available_serum_imputation_sensitivity_oof.csv": "b67b097feb5e12b58d8853ee9540c09485abc29a1899ed22f7783cafadefa00d"
+  },
+  "markers": [
+    "log2_CCL11",
+    "log2_CCL17",
+    "log2_CCL26",
+    "log2_IFN-beta",
+    "log2_IFN-gamma",
+    "log2_IL-10",
+    "log2_IL-12p70",
+    "log2_IL-17A",
+    "log2_IL-18",
+    "log2_IL-21",
+    "log2_IL-33",
+    "log2_IL-36beta",
+    "log2_IL-4",
+    "log2_IL-5",
+    "log2_IL-6",
+    "log2_IL2RA",
+    "log2_Periostin",
+    "log2_TNF-alpha",
+    "log2_TSLP"
+  ],
+  "populations": {
+    "complete_three_markers": {
+      "n": 102,
+      "responders": 88
+    },
+    "available_serum_imputation_sensitivity": {
+      "n": 105,
+      "responders": 89
+    }
+  },
+  "no_patient_train_test_crossing": true,
+  "baseline_only": true,
+  "no_outcomes_imputed": true,
+  "selector_inside_inner_pipeline": true,
+  "nested_compact_selection": "inner-logloss1SE only",
+  "outer_metric_selection_used": false,
+  "final_fixed_marker_panel_independently_validated": false,
+  "fitted_in_this_invocation": false
+}

@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "check_count": 764,
+  "failures": [],
+  "new_models_fitted": 0,
+  "participant_rows_exported": false,
+  "scope": "Saved point metrics and summary consistency only; existing independent audits retain bootstrap/split/selection verification.",
+  "source_sha256": {
+    "results/tables/baseline_W12_itch_response_metrics.csv": "51de47918c97269322e263fc1fc13644adccebb034faec02365ffc3b5e71f746",
+    "results/tables/baseline_W12_itch_response_oof_repeats.csv": "ded3bded7a142c4bfecd36d7f5964f82a522533cfcbce5e8460bb373a2a5f225",
+    "results/tables/landmark_W12_W24_metrics.csv": "1429a63ec20a0c7c8dcd396c81cf94286bdd4bc3350d1743f0df5f899a3553e7",
+    "results/tables/landmark_W12_W24_oof_repeats.csv": "bd9e02ba4106d8b5dd692553ad59e45f58ecf1802e4ca68c01cc86bfd83700e8",
+    "results/tables/update_20261112/itch_panel_size/batch_stress/aggregate_metrics.csv": "39031fa939caa159061e7e794774eb27f32bf35fc2015021ed6a3d94bb26bfab",
+    "results/tables/update_20261112/itch_panel_size/batch_stress/restricted/available_serum_imputation_sensitivity_predictions.csv": "fac01467ed58724361d55e29bcf6b20cbb84a83a91d8abe08a65560ff7437296",
+    "results/tables/update_20261112/itch_panel_size/batch_stress/restricted/complete_three_markers_predictions.csv": "2435be2243d4dadbe68fda0e1204ec42abfc32bf830b4f046088379094605038",
+    "results/tables/update_20261112/itch_panel_size/metrics.csv": "108507f15e23beba40fa2a28653173364ec9778bb709b13b2c15dea25597f567",
+    "results/tables/update_20261112/itch_panel_size/panel_size_summary.csv": "5d2d2fb2d3ac4a8fed6c6074aee477a34bd5cebfb5a981e0d92b945d1ac605d4",
+    "results/tables/update_20261112/itch_panel_size/restricted/available_serum_imputation_sensitivity_oof.csv": "b0ce7e20a3ffe5eacd29982943db3a76edac982620e524b06401f3833a751c40",
+    "results/tables/update_20261112/itch_panel_size/restricted/complete_three_markers_oof.csv": "4f11fc9a142f818d65755c4f018c7e661e7dcc35b04e2993f3e829c724cb4dbc",
+    "results/tables/update_20261112/itch_prediction/metrics.csv": "14bd2200b543561ef8ec17f14dd44f36804807e13e7418999e59d7ea924d3b6a",
+    "results/tables/update_20261112/itch_prediction/restricted/available_serum_imputation_sensitivity_oof.csv": "b67b097feb5e12b58d8853ee9540c09485abc29a1899ed22f7783cafadefa00d",
+    "results/tables/update_20261112/itch_prediction/restricted/complete_three_markers_oof.csv": "7b98932a6ebaa68f55e6b42399628499a00e435f92b18b8647f0acd320fae727"
+  }
+}

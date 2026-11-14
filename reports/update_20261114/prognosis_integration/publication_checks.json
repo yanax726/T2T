@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": 102,
+  "failed": [],
+  "source_sha256": {
+    "results/tables/update_20261112/itch_panel_size/metrics.csv": "108507f15e23beba40fa2a28653173364ec9778bb709b13b2c15dea25597f567",
+    "results/tables/update_20261112/itch_panel_size/batch_stress/aggregate_metrics.csv": "39031fa939caa159061e7e794774eb27f32bf35fc2015021ed6a3d94bb26bfab",
+    "results/tables/update_20261114/landmark_three/metrics.csv": "ece1b779bc150ab2da1afb34d6965b11d50d897b866fba30891c21ede58a4665",
+    "results/tables/update_20261114/landmark_three/paired_differences.csv": "646714702f704e23aaea09d587f5e910c0a31062e0d1ac07e7cc54e2ea2ac65e",
+    "results/tables/update_20261114/landmark_three/repeat_metrics.csv": "df2fab570f427ae3bf3426beab480fa5d94529ccddc9d97e6f55cbfbef31ffe9",
+    "manuscript/source_data/index.csv": "2f0b267c03b47630ab86bc446225c6bc2de3a803bc7941aa6084c670a47b8a73"
+  },
+  "version": "2026.11.14-rc1",
+  "scope": "Aggregate-to-publication consistency; independent raw-data audits are separate."
+}

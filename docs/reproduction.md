@@ -30,9 +30,12 @@ Run commands from the repository root. Except for the demo, output paths match t
 | `./run.sh rebuild` | Same public inputs as the preceding two rows | Runs figures, then manuscript compilation; does not refit models |
 | `./run.sh sensitivity` | Authorized snapshots plus existing primary model predictions | Rebuilds clinical weights, runs IgE missing-data, matched-input and IGA-definition analyses, reconciles laboratory/clinical results, updates classification bounds, then rebuilds figures and manuscript |
 | `./run.sh update-analysis` | Authorized snapshots and existing frozen/ablation predictions | Runs laboratory revision, molecular-only extension and local paired benchmark; runs OMIX benchmark only if its workbook is present; does not regenerate figures |
+| `./run.sh itch-update` | Authorized clinical and serum snapshots | Refits the fixed-three-marker W0-to-W12 itch comparisons and rebuilds Table S18 |
+| `./run.sh itch-panel-update` | Authorized snapshots and saved fixed-three itch OOF controls | Repeats training-only panel selection and whole-source-file holdout, then rebuilds Table S19 |
+| `./run.sh landmark-update` | Authorized clinical and serum snapshots | Refits W12 three-marker prediction of observed W24 EASI75 and rebuilds Table S20 |
 | `./run.sh analyse` | Exact authorized snapshots in `config/reproduction_inputs.json` | Recomputes clinical, regional, EASI, rounding, published-formula sensitivity, auxiliary-target, reference-exclusion, IgE missing-data, matched-input and display analyses, followed by the 7 November laboratory/molecular and paired-benchmark analyses, then rebuilds figures and manuscript |
 
-The optional local `guide` command concerns presentation notes and requires local authoring materials; those materials are not distributed with the research repository.
+The retired local `guide` command exits with a notice; its earlier figure numbering is no longer current. Figure explanations are in the figure book and review-deck notes.
 
 ## Runtime and expected output
 
@@ -77,3 +80,13 @@ The package also contains editable supplementary tables in `manuscript/appendix.
 ## Baseline prediction of week-12 itch improvement
 
 `./run.sh itch-update` requires the declared clinical and molecular participant snapshots and refits the fixed three-marker, clinical-only and combined logistic comparisons. The target uses two observed PP-NRS values; missing outcomes are never imputed. Training-fold-only predictor imputation is a separate 105-patient sensitivity. Aggregate `rebuild` reproduces Supplementary Table S18 from distributed metrics without refitting. Individual probabilities and fold membership remain under the restricted subdirectory. The two probability aggregations and their conditional intervals are reported separately; no final prognostic calculator or clinical risk threshold is validated.
+
+## Compact panels and the week-12 landmark analysis
+
+Supplementary Table S19 reports fixed-size training-selection procedures for three, four, five, six and 19 baseline markers, plus an inner-validation simplicity rule. Preprocessing and marker selection are repeated within training; the held-out outcome does not select the panel size. The roughly 0.80 AUROC includes baseline clinical information. It does not apply to markers alone or to a fixed list selected after seeing the full cohort. The paired fourth-versus-third marker gain is uncertain. Whole-source-file holdout is reported alongside patient-level cross-validation because the compact models were sensitive to source and case composition; report-file groups are not confirmed physical assay batches.
+
+`./run.sh itch-panel-update` requires both private OOF control files produced by `itch-update`, in addition to authorized clinical and molecular snapshots. It refits the panel-size procedures, verifies their saved metrics and training selections, runs the limited source-file stress test and rebuilds the manuscript. The control filenames and hashes are recorded in the protocol and result receipts. This command cannot run from the aggregate-only public checkout. To replay metrics from existing restricted predictions without fitting, an authorized workspace can run `PYTHONPATH=src .venv/bin/python -m cytot2t.curation.itch_panel_size_20261112 --replay-only`.
+
+`./run.sh landmark-update` uses measured W0 EASI, W12 information and measured W24 EASI. The target is W24 EASI75 relative to W0, not an additional 75% improvement after W12. The primary population has 68 patients, including only nine nonresponders; the 72-patient sensitivity permits training-only imputation of missing W12 predictors. Clinical and combined controls use information available by W12, and no W24 predictor is admitted. All three model comparisons remain in Table S20 despite the negative molecular result.
+
+Tables S18–S20 score each repeated held-out prediction set separately before averaging. Their patient-bootstrap intervals condition on saved predictions; neither these intervals nor high AUPRC in a predominantly responsive sample prove clinical utility or external validity. An alternative aggregation that scores each patient's averaged probabilities is explicitly separate in the source data. The public `rebuild` reproduces all three tables from distributed aggregates without patient records. No future-response calculator is provided.

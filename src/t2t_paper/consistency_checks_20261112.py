@@ -234,7 +234,7 @@ record('S18 all AUROC values and intervals match table text',
        all(f'{r.estimate:.3f} ({r.ci_low:.3f}--{r.ci_high:.3f})' in itch_table
            for r in itch_mean[itch_mean.metric.eq('AUROC')].itertuples()),'Both populations; mean-repetition estimates displayed')
 record('S18 appears in current supplementary guide and methods',
-       'Tables S1--S18' in appendix and r'\label{tab:itch_prediction}' in itch_table
+       'Tables S1--S20' in appendix and r'\label{tab:itch_prediction}' in itch_table
        and r'\input{tables/itch_prediction}' in appendix
        and 'Exploratory baseline prediction of W12 itch improvement' in appendix,
        'Newly fitted prognostic models are separate from the frozen E-EASI equation')

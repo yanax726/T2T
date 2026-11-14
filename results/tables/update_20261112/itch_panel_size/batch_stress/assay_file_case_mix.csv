@@ -1,0 +1,9 @@
+population,holdout_assay_file,n,responders,nonresponders,centers,n_dupi,n_abro100,n_abro200
+complete_three_markers,assay_file_1,33,24,9,CAMS,29,4,0
+complete_three_markers,assay_file_2,40,37,3,CAMS,0,14,26
+complete_three_markers,assay_file_3,14,14,0,HUASHAN,14,0,0
+complete_three_markers,assay_file_4,15,13,2,HUASHAN,0,14,1
+available_serum_imputation_sensitivity,assay_file_1,33,24,9,CAMS,29,4,0
+available_serum_imputation_sensitivity,assay_file_2,40,37,3,CAMS,0,14,26
+available_serum_imputation_sensitivity,assay_file_3,14,14,0,HUASHAN,14,0,0
+available_serum_imputation_sensitivity,assay_file_4,18,14,4,HUASHAN,0,17,1

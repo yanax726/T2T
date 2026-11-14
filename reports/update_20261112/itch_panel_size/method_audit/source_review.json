@@ -1,0 +1,32 @@
+{
+  "status": "PASS_SOURCE_REVIEW",
+  "scope": "Independent source review only; no panel model was refitted and no new panel-size performance output was read.",
+  "reviewed_source": "src/cytot2t/curation/itch_panel_size_20261112.py",
+  "reviewed_source_sha256": "e5e84b1f63f0b05288100f0e2f654c632b87865697bc99d36bbd10b872682cbd",
+  "checks": {
+    "feature_selector_inside_inner_training_pipeline": true,
+    "median_and_scaler_refit_with_each_inner_training_set": true,
+    "C_selected_within_each_fixed_k": true,
+    "exact_C_ties_prefer_smaller_C": true,
+    "compact_k19_excluded": true,
+    "one_SE_sample_ddof1_divided_by_sqrt3": true,
+    "compact_smallest_k_below_inner_best_loss_plus_SE": true,
+    "compact_uses_that_k_best_C_and_outer_refit": true,
+    "no_outer_metric_used_to_select_k": true,
+    "baseline_patient_sort_matches_reused_controls": true,
+    "test_patient_sets_and_response_labels_asserted_against_controls": true,
+    "inner_and_outer_patient_disjointness_asserted": true,
+    "one_OOF_prediction_per_patient_model_repetition_asserted": true,
+    "ranked3_retained_separately_from_fixed_three": true,
+    "both_evaluation_aggregations_separately_reported": true,
+    "coverage_counts_saved_without_patient_records_in_public_summary": true
+  },
+  "provenance_recommendation": "Also record SHA256 of the two actual reused restricted control-OOF input files; currently protected_sources covers the registry, prior config and clinical/molecular snapshots. This does not require model refitting.",
+  "reporting_recommendations": [
+    "If comparing compact versus all19 directly, compute its paired difference from saved probabilities; current delta outputs compare against clinical, fixed3 and ranked3 but do not include compact-versus19.",
+    "Coverage denominators count repeated patient-validation records, not independent participants.",
+    "Selection frequencies across25 overlapping training partitions describe stability rather than25 independent confirmations.",
+    "Global SIZES matches the config; an assertion could guard against a later config/code discrepancy.",
+    "Nested procedure performance does not independently validate a later full-data fixed marker set or coefficient vector."
+  ]
+}

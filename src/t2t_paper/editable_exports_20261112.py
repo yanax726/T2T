@@ -210,7 +210,10 @@ def word_style(path, numbered_tables):
         # Text labels need more room than numerical visit columns.
         if cols == 4:
             weights = [0.40, 0.20, 0.20, 0.20]
-            if n >= len(doc.tables) - 4:
+            header = [cell.text.strip() for cell in table.rows[0].cells]
+            if header in [
+                    ['Inputs', 'AUROC (95% CI)', 'AUPRC', 'Brier score'],
+                    ['分子', '旧登记W0可用数/检测人数', 'W12可用数', 'W24可用数']]:
                 weights = [0.17, 0.28, 0.29, 0.26]
         elif cols == 5:
             weights = [0.21, 0.22, 0.16, 0.18, 0.23]
@@ -231,6 +234,7 @@ def word_style(path, numbered_tables):
             borders.append(el)
         for row_no, row in enumerate(table.rows):
             trpr = row._tr.get_or_add_trPr()
+            group_heading = len({cell._tc for cell in row.cells}) == 1
             if row_no == 0:
                 header = OxmlElement('w:tblHeader'); trpr.append(header)
             cant = OxmlElement('w:cantSplit'); trpr.append(cant)
@@ -244,6 +248,8 @@ def word_style(path, numbered_tables):
                 if row_no == 0:
                     shade = OxmlElement('w:shd'); shade.set(qn('w:fill'), 'E6EEF3'); tcpr.append(shade)
                 for p in cell.paragraphs:
+                    if group_heading or row_no == 0:
+                        p.paragraph_format.keep_with_next = True
                     p.paragraph_format.space_after = Pt(2)
                     p.paragraph_format.space_before = Pt(1)
                     p.paragraph_format.line_spacing = 1.0
@@ -251,6 +257,14 @@ def word_style(path, numbered_tables):
                     for run_ in p.runs:
                         run_.font.name = 'Arial'; run_.font.size = Pt(9)
                         run_.font.color.rgb = RGBColor(0, 0, 0)
+        if table.rows[0].cells[0].text.strip() == 'Panel procedure':
+            group_starts = [i for i, row in enumerate(table.rows)
+                            if len({cell._tc for cell in row.cells}) == 1]
+            for start, end in zip(group_starts, group_starts[1:] + [len(table.rows)]):
+                for row in list(table.rows)[start:end-1]:
+                    for cell in row.cells:
+                        for paragraph in cell.paragraphs:
+                            paragraph.paragraph_format.keep_with_next = True
         table_audit.append({'native_table': n, 'rows': len(table.rows), 'columns': cols,
                             'text_sha256': hashlib.sha256('\n'.join(c.text for row in table.rows for c in row.cells).encode()).hexdigest()})
     # Separate figure pages, retaining the complete editable caption with its image.
@@ -263,7 +277,11 @@ def word_style(path, numbered_tables):
             p.paragraph_format.page_break_before = True
             p.paragraph_format.keep_with_next = True
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-        if numbered_tables and p.text.startswith(f'Table S{numbered_tables}.'):
+        prognosis_caption = any(title in p.text for title in [
+            'Exploratory baseline prediction of week-12 itch improvement.',
+            'Exploratory panel-size comparisons for baseline prediction of W12 itch improvement.',
+        ])
+        if (numbered_tables and p.text.startswith(f'Table S{numbered_tables}.')) or prognosis_caption:
             # Keep the final compact table and its explanatory notes together
             # before the portrait text section resumes.
             p.paragraph_format.page_break_before = True

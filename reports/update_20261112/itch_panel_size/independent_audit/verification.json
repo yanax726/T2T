@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "population_counts": {
+    "complete_three_markers": {
+      "n": 102,
+      "events": 88
+    },
+    "available_serum_imputation_sensitivity": {
+      "n": 105,
+      "events": 89
+    }
+  },
+  "models_per_population": 15,
+  "OOF_rows_per_patient_model": 5,
+  "new_outer_model_records": 600,
+  "stored_inner_partitions_checked": 1800,
+  "independent_outer_splits": 50,
+  "independent_inner_partitions": 150,
+  "patient_crossing": 0,
+  "topk_training_ANOVA_replays": 600,
+  "inner_grid_rows_replayed": 1500,
+  "inner_SE_definition": "Sample SD(ddof=1) divided by sqrt(3)",
+  "one_SE_and_C_choices_reproduced": true,
+  "fixed_three_controls_copied_exactly": true,
+  "selector_inside_inner_pipeline": true,
+  "point_metric_max_error": 1.1102230246251565e-16,
+  "bootstrap_interval_max_error": 2.0469737016526324e-16,
+  "independent_bootstrap_method": "Patient-count-weighted positive/negative concordance and direct Brier losses",
+  "bootstrap_replays": 432,
+  "IL4_assay_files": 4,
+  "IL4_file_grouping_boundary": "Assay-file groups are observed report-file groups, not independently verified plate or technical batch identifiers.",
+  "IL4_file_case_mix_sensitivity": true,
+  "IL4_selection_frequency_not_biomarker_validation": true,
+  "new_models_fitted": 0,
+  "input_values_modified": false,
+  "patient_rows_exported": false,
+  "source_sha256": {
+    "config/itch_panel_size_20261112.json": "a7d07e27840770fd810e28f77b4afaf45cc4b624ffba919bbd89315d8935dfeb",
+    "config/marker_registry.csv": "92c5c53f73e507cdace1e47d3a479fcefae65a0839d4c065856960587fb10659",
+    "results/tables/update_20261112/itch_panel_size/metrics.csv": "108507f15e23beba40fa2a28653173364ec9778bb709b13b2c15dea25597f567",
+    "results/tables/update_20261112/itch_panel_size/paired_differences.csv": "06270098efef38f8fbc4b82f7775825b8bdaa849f1e3cbb29d45516dd37cbf29",
+    "results/tables/update_20261112/itch_panel_size/repeat_metrics.csv": "fbe85fc0328d5d53d9d9d46d60143e78db99f3798291e4daa734da5eff600c1b",
+    "src/cytot2t/curation/itch_panel_size_20261112.py": "0c5024682b82504635c72b81337cc7a3785c8286d728df419f4bda6c9c2fe50d",
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/update_20261112/itch_panel_size/restricted/complete_three_markers_oof.csv": "4f11fc9a142f818d65755c4f018c7e661e7dcc35b04e2993f3e829c724cb4dbc",
+    "results/tables/update_20261112/itch_panel_size/restricted/complete_three_markers_membership.csv": "8b7e1ed55196c3cb61e11b3d968debae9f17e83646645b27498eb558281606cb",
+    "results/tables/update_20261112/itch_panel_size/complete_three_markers_inner_grid.csv": "47b03bf1d62c57b9a54f8b13f017fa221b11ce0aaf91172c0fa3eaa487bf2b1d",
+    "results/tables/update_20261112/itch_panel_size/restricted/available_serum_imputation_sensitivity_oof.csv": "b0ce7e20a3ffe5eacd29982943db3a76edac982620e524b06401f3833a751c40",
+    "results/tables/update_20261112/itch_panel_size/restricted/available_serum_imputation_sensitivity_membership.csv": "c10cdc04a578e2cfd9e3a05bcf3b3a9ad8bc0c3697f2c202cb6db251ceee984a",
+    "results/tables/update_20261112/itch_panel_size/available_serum_imputation_sensitivity_inner_grid.csv": "4e24a8c743908af45e1e05537cf922a373a4b479b7dc0d6b7b3a7b35b5c32dc3",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605"
+  }
+}

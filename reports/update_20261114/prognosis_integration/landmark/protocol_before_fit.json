@@ -1,0 +1,89 @@
+{
+  "version": "2026-11-14-landmark-fixed-three",
+  "status": "Post hoc exploratory; protocol saved before this landmark fit, after broader cohort exploration",
+  "target": "Observed W24 EASI <= 0.25 * observed W0 EASI; W0 EASI > 0",
+  "landmark_week": 12,
+  "outcome_week": 24,
+  "clinical_eligibility": "Age>=12, unambiguous initial dose; same163 clinical participants",
+  "sources": [
+    "results/tables/update_20260925/clinical.csv",
+    "results/tables/redevelopment/molecular.csv",
+    "results/tables/redevelopment/assay_long.csv"
+  ],
+  "source_sha256": {
+    "results/tables/update_20260925/clinical.csv": "46400b31d29fe51e62c13f61fd6d643bdcb06d5a59b8f46f7c4452417ce1b009",
+    "results/tables/redevelopment/molecular.csv": "12606264dde257f794a5e157262bfebacdaff923ced1eb6d23e4c21efd2ddd53",
+    "results/tables/redevelopment/assay_long.csv": "4c8e0eeb6693bb60751a6edc54bf62d5de53dc5d3916e77a94c2d055f97b4605",
+    "config/unified_bsa_three_v1_20261017.json": "d90d4ff66484f817e7d49d43887a5a31ab782d3a609c0d8e0f558783506be501",
+    "config/itch_prediction_20261112.json": "8c28ae3d84d5b4f006b7c2d84429d91a425a91cd28dc44c0b9e66f04042ff38b",
+    "src/cytot2t/curation/itch_prediction_20261112.py": "f74aa25e9e3446063f993b92b48791d37efefb616243983485ede82e04f2608f",
+    "results/tables/update_20261112/itch_prediction/metrics.csv": "14bd2200b543561ef8ec17f14dd44f36804807e13e7418999e59d7ea924d3b6a",
+    "results/tables/update_20261112/itch_prediction/paired_differences.csv": "d97fb3242812049061cddebed9e76e154c17f8724c8bd10858cb5826c8557b59"
+  },
+  "markers": [
+    "log2_CCL17",
+    "log2_CCL26",
+    "log2_IL-5"
+  ],
+  "clinical_inputs": [
+    "age",
+    "sex_male",
+    "bmi",
+    "center",
+    "treatment",
+    "baseline_easi",
+    "easi_total",
+    "pp_nrs",
+    "iga",
+    "bsa",
+    "dlqi"
+  ],
+  "clinical_input_times": "Demographics and initial treatment from W0, baseline_easi from W0; EASI, PP-NRS, IGA, BSA, adult DLQI from W12 only",
+  "candidates": [
+    "three_markers",
+    "clinical",
+    "clinical_three_markers"
+  ],
+  "populations": {
+    "complete_three_markers": {
+      "n": 68,
+      "events": 59,
+      "nonevents": 9
+    },
+    "available_serum_imputation_sensitivity": {
+      "n": 72,
+      "events": 63,
+      "nonevents": 9
+    }
+  },
+  "primary_population": "Observed W0 EASI>0 and W24 EASI, a W12 clinical record, and all three W12 markers observed and finite",
+  "sensitivity_population": "Same outcome availability, at least one W12 panel marker; median imputation within training only",
+  "adolescent_DLQI": "Mask W12 DLQI for age<18; predictor-only training imputation",
+  "outcome_imputation": false,
+  "predictor_availability": "Only information available at or before W12; no W24 predictor or W0-to-W12 marker change input",
+  "seed": 20240801,
+  "outer_folds": 5,
+  "outer_repeats": 5,
+  "inner_folds": 3,
+  "logistic_C": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "tuning_score": "neg_log_loss",
+  "bootstrap_iterations": 2000,
+  "class_weight": null,
+  "primary_evaluation": "Mean of repetition-specific held-out metrics",
+  "secondary_evaluation": "Patient probabilities averaged over repetitions before scoring, separately labelled",
+  "bootstrap_scope": "Paired patient resampling retaining all repetitions, conditional on saved predictions; no refitting or historical selection uncertainty",
+  "null_reference": "Outer training event rate",
+  "reference": "Matched clinical model; combined-minus-clinical AUROC/Brier intervals",
+  "limitations": [
+    "Only9 primary nonresponders",
+    "Same cohort previously explored",
+    "No independent external validation",
+    "Initial treatment does not represent current dose after change",
+    "Endpoint is W24 EASI75 relative to W0, not W12-to-W24 EASI improvement"
+  ],
+  "no_adaptive_expansion": "No new outcome, marker selection, panel size or model family based on landmark results"
+}

@@ -250,7 +250,7 @@ def tables(root):
             raise ValueError('Patient-level record in review aggregate directory: '+str(p))
         rows.append({'section':'Definition and laboratory checks','file':str(p.relative_to(root)),
                      'rows':len(df),'columns':'; '.join(df.columns)})
-    for folder in ['update_20261107/labs', 'update_20261107/model', 'update_20261107/framework', 'external_validation_20261101', 'update_20261112/labs', 'update_20261112/itch_prediction']:
+    for folder in ['update_20261107/labs', 'update_20261107/model', 'update_20261107/framework', 'external_validation_20261101', 'update_20261112/labs', 'update_20261112/itch_prediction', 'update_20261112/itch_panel_size', 'update_20261112/itch_panel_size/batch_stress', 'update_20261114/landmark_three']:
         for p in sorted((root/'results/tables'/folder).glob('*.csv')):
             if 'private' in p.name.lower():continue
             df=pd.read_csv(p)
@@ -319,7 +319,7 @@ Analysis code, versioned parameters, aggregate source tables and figure sources 
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\theHtable}{S.\arabic{table}}
 \section*{Supplementary guide}
-The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S18 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity classification intervals, baseline serum concentrations, framework comparisons, molecular model extensions, transport benchmarks, single-visit low-activity states, all-available adjusted IgE changes and exploratory baseline prediction of week-12 itch improvement. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
+The Supplementary Methods define the analysis populations, endpoints and validation. Tables S1--S20 provide exact target rates, complete model metrics, safety-documentation coverage, reference-exclusion sensitivity, input/reference specifications, matched input comparisons, IgE missing-data sensitivity, laboratory coverage, IGA-definition sensitivity classification intervals, baseline serum concentrations, framework comparisons, molecular model extensions, transport benchmarks, single-visit low-activity states, all-available adjusted IgE changes and exploratory future-response prediction. Tables S18--S20 separate the original three-marker baseline itch analysis, training-selected panel sizes with source-file sensitivity, and W12 markers predicting W24 EASI75. Figures are grouped by their clinical or measurement question below. Complete aggregate results, including negative and non-estimable findings, remain in the linked CSV collection. Missing estimates are not zero effects.
 '''
     for title,ids,description in groups:
         app+='\\hyperref[fig:FigureS'+str(ids[0])+']{\\textbf{'+tex(title)+'}}. '+tex(description)+'\\par\n'
@@ -349,6 +349,8 @@ N is the endpoint-specific evaluable denominator. Unknown outcomes are excluded 
 \clearpage\input{tables/joint_low_activity}
 \clearpage\input{tables/ige_all_available}
 \clearpage\input{tables/itch_prediction}
+\clearpage\input{tables/itch_panel_size}
+\clearpage\input{tables/landmark_three}
 \clearpage
 '''
     if (m/'sections/auxiliary_targets.tex').exists():app+=section_text(m/'sections/auxiliary_targets.tex')+'\n'
@@ -386,7 +388,8 @@ def run(root,compile=False):
     import runpy
     from .tables_20261107 import run as revised_tables
     from .tables_20261112 import run as laboratory_tables
-    tables(root);revised_tables(root);laboratory_tables(root);documents(root)
+    from .prognosis_tables_20261114 import run as prognosis_tables
+    tables(root);revised_tables(root);laboratory_tables(root);prognosis_tables(root);documents(root)
     generated = list((root/'manuscript/tables').glob('*.tex'))
     generated += [root/'manuscript'/f'{name}.tex' for name in ['main','appendix','figure_book']]
     for path in generated:
@@ -397,6 +400,7 @@ def run(root,compile=False):
     os.environ['T2T_ROOT'] = str(Path(root).resolve())
     try:
         runpy.run_module('t2t_paper.consistency_checks_20261112', run_name='__main__')
+        runpy.run_module('t2t_paper.prognosis_checks_20261114', run_name='__main__')
     finally:
         if prior is None:
             os.environ.pop('T2T_ROOT', None)

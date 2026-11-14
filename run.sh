@@ -53,6 +53,25 @@ case "$mode" in
     "$python_bin" -m cytot2t.curation.verify_itch_prediction_20261112
     "$python_bin" -m t2t_paper.build --compile
     ;;
+  itch-panel-update)
+    "$python_bin" -m t2t_paper.preflight
+    for population in complete_three_markers available_serum_imputation_sensitivity; do
+      if [[ ! -f "results/tables/update_20261112/itch_prediction/restricted/${population}_oof.csv" ]]; then
+        echo 'The restricted fixed-three itch controls are missing. Run ./run.sh itch-update with authorized inputs first.' >&2
+        exit 2
+      fi
+    done
+    "$python_bin" -m cytot2t.curation.itch_panel_size_20261112
+    "$python_bin" -m cytot2t.curation.verify_itch_panel_size_20261112
+    "$python_bin" -m cytot2t.curation.itch_panel_batch_stress_20261112
+    "$python_bin" -m t2t_paper.build --compile
+    ;;
+  landmark-update)
+    "$python_bin" -m t2t_paper.preflight
+    "$python_bin" -m cytot2t.curation.landmark_three_20261114
+    "$python_bin" -m cytot2t.curation.verify_landmark_three_20261114
+    "$python_bin" -m t2t_paper.build --compile
+    ;;
   manuscript)
     "$python_bin" -m t2t_paper.build --compile
     ;;
@@ -107,7 +126,7 @@ case "$mode" in
     "$python_bin" -m t2t_paper.build --compile
     ;;
   *)
-    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|update-analysis|lab-update|itch-update|analyse]'
+    echo 'Usage: ./run.sh [demo|rebuild|figures|manuscript|guide|test|sensitivity|update-analysis|lab-update|itch-update|itch-panel-update|landmark-update|analyse]'
     exit 2
     ;;
 esac
